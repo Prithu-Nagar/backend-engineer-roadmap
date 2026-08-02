@@ -1,13 +1,15 @@
 # Backend Development
 
-Topics to be covered
+This folder will contain backend development concepts, sample applications and interview preparation material.
+
+## Planned Topics
 
 - HTTP
 - REST APIs
 - Flask
 - Django
-- FastAPI
 - Authentication
 - JWT
+- Middleware
 - Logging
 - Testing

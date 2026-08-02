@@ -1,9 +1,12 @@
 # Projects
 
-Projects to be built during the roadmap
+Projects developed during the Backend Engineer Roadmap.
+
+## Planned Projects
 
 - Task Manager API
 - URL Shortener
-- AI Resume Analyzer
-- Distributed File Storage
-- Production Backend Project
+- Authentication Service
+- Expense Tracker
+- RAG Chatbot
+- E-commerce Backend

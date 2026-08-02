@@ -76,3 +76,19 @@ This repository documents my 90-day journey towards becoming a Backend Python En
 - Two Sum
 - Contains Duplicate
 - Valid Anagram
+
+### ✅ Day 2
+- Strings
+- Two Pointers
+- Functions
+- *args & **kwargs
+- Variable Scope (LEGB)
+- Lambda Functions
+- HTTP Fundamentals
+- SQL Joins
+
+### LeetCode
+
+- Valid Palindrome
+- Reverse String
+- Is Subsequence

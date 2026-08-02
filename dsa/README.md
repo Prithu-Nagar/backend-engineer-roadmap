@@ -1,7 +1,19 @@
 # Data Structures & Algorithms
 
-This folder contains all DSA topics and LeetCode solutions organized by topic.
+This directory contains my DSA preparation for Backend Engineer interviews.
 
-Current Topics
+## Topics
 
-- Arrays
+### Arrays
+
+- Contains Duplicate
+- Two Sum
+- Valid Anagram
+
+### Strings
+
+- Valid Palindrome
+- Reverse String
+- Is Subsequence
+
+More topics will be added throughout the roadmap.

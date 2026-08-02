@@ -1,8 +1,25 @@
+"""
+Problem:
+Two Sum
+
+Pattern:
+HashMap
+
+Time Complexity:
+O(n)
+
+Space Complexity:
+O(n)
+"""
+
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        seen = {}
+    def twoSum(self, nums, target):
+        hashmap = {}
+
         for i, num in enumerate(nums):
-            comp = target-num
-            if comp in seen:
-                return [seen[comp],i]
-            seen[num] = i
+            complement = target - num
+
+            if complement in hashmap:
+                return [hashmap[complement], i]
+
+            hashmap[num] = i

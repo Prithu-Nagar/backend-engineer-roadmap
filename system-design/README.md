@@ -1,11 +1,13 @@
 # System Design
 
-Topics to be covered
+This section will contain notes, diagrams and implementations for Backend System Design.
 
-- LLD
-- HLD
+## Planned Topics
+
+- Scalability
 - Caching
-- Load Balancer
-- Redis
-- Kafka
+- Load Balancing
+- Databases
+- CAP Theorem
 - Microservices
+- Message Queues
