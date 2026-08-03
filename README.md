@@ -92,3 +92,28 @@ This repository documents my 90-day journey towards becoming a Backend Python En
 - Valid Palindrome
 - Reverse String
 - Is Subsequence
+
+### ✅ Day 3
+
+- Linked Lists
+- Fast & Slow Pointer
+- Dummy Node Pattern
+- Nested Functions
+- Closures
+- First-Class Functions
+- Higher-Order Functions
+- REST APIs
+- HTTP Methods
+- HTTP Status Codes
+- Aggregate Functions
+- GROUP BY
+- HAVING
+- Client-Server Architecture
+- Prompt Engineering Basics
+- Task Manager API Planning
+
+### LeetCode
+
+- Reverse Linked List
+- Merge Two Sorted Lists
+- Linked List Cycle

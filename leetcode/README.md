@@ -14,8 +14,9 @@
 
 ## Linked List
 
-- [ ] Reverse Linked List
-- [ ] Merge Two Sorted Lists
+- [x] 206. Reverse Linked List
+- [x] 21. Merge Two Sorted Lists
+- [x] 141. Linked List Cycle
 
 ## Stack
 
