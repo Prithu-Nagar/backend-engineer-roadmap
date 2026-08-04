@@ -1,12 +1,39 @@
 # Projects
 
-Projects developed during the Backend Engineer Roadmap.
+This directory contains end-to-end backend projects built throughout the roadmap.
+
+---
+
+## Current Project
+
+### Task Manager REST API
+
+Status
+
+🚧 In Progress
+
+Technologies
+
+- Python
+- Flask
+- REST API
+
+Upcoming Features
+
+- CRUD Operations
+- SQLite Integration
+- SQLAlchemy
+- Validation
+- Authentication
+- JWT
+- Docker
+- Unit Testing
+
+---
 
 ## Planned Projects
 
-- Task Manager API
 - URL Shortener
-- Authentication Service
-- Expense Tracker
-- RAG Chatbot
-- E-commerce Backend
+- Expense Tracker API
+- Blog API
+- Chat Application

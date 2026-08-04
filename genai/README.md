@@ -1,13 +1,36 @@
 # Generative AI
 
-This section contains hands-on implementations related to LLMs and Generative AI.
+This directory contains Generative AI concepts relevant to modern backend engineering.
 
-## Planned Topics
+---
+
+## Completed
+
+### Prompt Chaining
+
+Topics Covered
+
+- Multi-step Prompting
+- Workflow Design
+- Prompt Decomposition
+- AI Pipelines
+
+---
+
+## Files
+
+- prompt_chaining.md
+
+---
+
+## Upcoming
 
 - Prompt Engineering
-- LangChain
-- RAG
 - Embeddings
 - Vector Databases
+- Retrieval-Augmented Generation (RAG)
+- LangChain
 - AI Agents
-- MCP
+- Model Context Protocol (MCP)
+- Function Calling
+- Tool Calling

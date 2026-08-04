@@ -1,36 +1,47 @@
 # LeetCode Progress
 
+This directory tracks the LeetCode problems solved during the Backend Engineer Roadmap.
+
+---
+
 ## Arrays
 
-- [x] 217. Contains Duplicate
-- [x] 1. Two Sum
-- [x] 242. Valid Anagram
+- ✅ Two Sum
+- ✅ Contains Duplicate
+- ✅ Valid Anagram
+
+---
 
 ## Strings
 
-- [x] 125. Valid Palindrome
-- [x] 344. Reverse String
-- [x] 392. Is Subsequence
+- ✅ Valid Palindrome
+- ✅ Reverse String
+- ✅ Is Subsequence
+
+---
 
 ## Linked List
 
-- [x] 206. Reverse Linked List
-- [x] 21. Merge Two Sorted Lists
-- [x] 141. Linked List Cycle
+- ✅ Reverse Linked List
+- ✅ Merge Two Sorted Lists
+- ✅ Linked List Cycle
+
+---
 
 ## Stack
 
-- [ ] Valid Parentheses
+- ✅ Valid Parentheses
+- ✅ Min Stack
+- ✅ Baseball Game
 
-## Queue
+---
 
-- [ ] Implement Queue using Stacks
+## Upcoming Topics
 
-## Trees
-
-- [ ] Maximum Depth of Binary Tree
-- [ ] Invert Binary Tree
-
-## Graphs
-
-- [ ] Number of Islands
+- Queue
+- Binary Search
+- Sliding Window
+- Trees
+- Heap
+- Graph
+- Dynamic Programming

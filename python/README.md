@@ -1,22 +1,59 @@
 # Python
 
-This folder contains runnable Python examples covering the concepts required for Backend Development interviews.
+This directory contains Python concepts and executable examples that are essential for backend development and coding interviews.
 
-## Topics
+---
+
+## Completed
+
+### Core Python
 
 - Iterables & Iterators
 - enumerate()
 - zip()
-- Comprehensions
+- List Comprehensions
+- Dictionary Comprehensions
+
+### Functions
+
 - Functions
 - *args & **kwargs
+- Variable Scope (LEGB)
 - Lambda Functions
-- Variable Scope
-
-Upcoming
-
+- First-Class Functions
+- Higher-Order Functions
+- Nested Functions
+- Closures
 - Decorators
+
+---
+
+## Files
+
+- iterables_iterators.py
+- enumerate_examples.py
+- zip_examples.py
+- comprehensions.py
+- functions.py
+- args_kwargs.py
+- variable_scope.py
+- lambda_examples.py
+- first_class_functions.py
+- higher_order_functions.py
+- nested_functions.py
+- closures.py
+- decorators.py
+
+---
+
+## Upcoming
+
 - Generators
+- Exception Handling
 - Context Managers
-- Asyncio
+- Itertools
+- Collections Module
 - Threading
+- Multiprocessing
+- AsyncIO
+- Type Hinting
