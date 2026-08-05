@@ -46,18 +46,24 @@ Problems Solved
 
 ---
 
+### Queue
+
+Problems Solved
+
+- Implement Queue using Stacks
+- Number of Recent Calls
+- Time Needed to Buy Tickets
+
+---
+
 ## Upcoming
 
-- Queue
-- Binary Search
-- Sliding Window
 - Trees
 - Binary Search Tree
 - Heap
+- Trie
 - Graph
 - Backtracking
 - Dynamic Programming
 
 ---
-
-Each folder contains solutions for one data structure or algorithmic pattern, making it easier to revise topics before interviews.

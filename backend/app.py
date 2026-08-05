@@ -1,6 +1,11 @@
 """
 Task Manager API
-Main Flask Application
+
+This file contains the primary Flask application developed throughout the
+Backend Engineer Roadmap.
+
+The application is extended incrementally as new backend concepts are learned,
+making it a single evolving project rather than multiple isolated examples.
 """
 
 from flask import Flask, jsonify

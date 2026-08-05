@@ -4,6 +4,14 @@ This directory contains Python concepts and executable examples that are essenti
 
 ---
 
+## Learning Philosophy
+
+Each Python concept is implemented in a dedicated file using small, focused examples.
+
+The objective is to understand one concept thoroughly before building upon it, making the directory useful for both interview preparation and quick revision.
+
+---
+
 ## Completed
 
 ### Core Python
@@ -25,6 +33,7 @@ This directory contains Python concepts and executable examples that are essenti
 - Nested Functions
 - Closures
 - Decorators
+- Generators
 
 ---
 
@@ -43,17 +52,26 @@ This directory contains Python concepts and executable examples that are essenti
 - nested_functions.py
 - closures.py
 - decorators.py
+- generators.py
 
 ---
 
-## Upcoming
+## How to Use
 
-- Generators
+Each file is independent and can be executed individually.
+
+```bash
+python filename.py
+```
+
+The examples are intentionally kept simple so that each concept can be understood without relying on previously covered topics.
+
+---
+
+## Next Topics
+
 - Exception Handling
 - Context Managers
 - Itertools
 - Collections Module
-- Threading
-- Multiprocessing
-- AsyncIO
-- Type Hinting
+- Object-Oriented Programming

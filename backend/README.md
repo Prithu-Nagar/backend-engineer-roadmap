@@ -36,9 +36,32 @@ Topics Covered
 
 ---
 
+### Flask Routing
+
+Files
+
+- flask_routing.py
+
+Topics Covered
+
+- Static Routes
+- Dynamic Routes
+- Variable Rules
+- Route Converters
+- Multiple Routes
+- URL Building
+- Route Methods (GET & POST)
+
+---
+
+## Learning Approach
+
+The backend module is organized progressively.
+
+Concepts are first implemented in small standalone examples to understand the fundamentals. Once understood, they are integrated into the main Task Manager API (`app.py`), allowing the project to evolve into a more complete backend application over time.
+
 ## Upcoming
 
-- REST APIs
 - CRUD APIs
 - Blueprints
 - SQLAlchemy

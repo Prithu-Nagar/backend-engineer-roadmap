@@ -1,8 +1,22 @@
-# Backend Engineer Roadmap 🚀
+# Backend Engineer Roadmap
 
-This repository documents my **90-day journey** to become a Backend Python Engineer targeting Product-Based Companies.
+A structured roadmap to become a Backend Engineer through consistent learning, hands-on coding, and project-based development.
 
-The repository contains interview preparation, Python concepts, backend development, SQL, system design, Generative AI, and hands-on backend projects.
+This repository documents my journey towards becoming an interview-ready Backend Engineer. It combines Data Structures & Algorithms, Python, Backend Development, SQL, System Design, Generative AI, and practical projects into a single organized learning repository.
+
+The primary objective is not just to study these topics, but to implement them with clean, well-documented code while maintaining a repository that demonstrates continuous learning and practical problem-solving.
+
+---
+
+## Repository Goals
+
+- Strengthen problem-solving using Data Structures & Algorithms.
+- Master Python for backend development.
+- Learn backend development with Flask.
+- Build strong SQL fundamentals.
+- Understand core System Design concepts.
+- Explore Generative AI fundamentals.
+- Develop a production-style backend project incrementally.
 
 ---
 
@@ -14,7 +28,7 @@ The repository contains interview preparation, Python concepts, backend developm
 - ✅ Strings
 - ✅ Linked List
 - ✅ Stack
-- ⏳ Queue
+- ✅ Queue
 - ⏳ Binary Search
 - ⏳ Trees
 - ⏳ Heap
@@ -39,7 +53,7 @@ The repository contains interview preparation, Python concepts, backend developm
 - ✅ Nested Functions
 - ✅ Closures
 - ✅ Decorators
-- ⏳ Generators
+- ✅ Generators
 - ⏳ Context Managers
 - ⏳ Exception Handling
 - ⏳ Threading
@@ -52,7 +66,8 @@ The repository contains interview preparation, Python concepts, backend developm
 
 - ✅ HTTP Fundamentals
 - ✅ Flask Basics
-- ⏳ REST APIs
+- ✅ REST APIs
+- ✅ Flask Routing
 - ⏳ FastAPI
 - ⏳ Django
 - ⏳ Authentication
@@ -70,8 +85,8 @@ The repository contains interview preparation, Python concepts, backend developm
 - ✅ Joins
 - ✅ Aggregate Functions
 - ✅ Subqueries
+- ✅ Common Table Expressions (CTEs)
 - ⏳ Window Functions
-- ⏳ Common Table Expressions (CTEs)
 - ⏳ Indexes
 - ⏳ Transactions
 - ⏳ Query Optimization
@@ -81,6 +96,7 @@ The repository contains interview preparation, Python concepts, backend developm
 ## System Design
 
 - ✅ Monolith vs Microservices
+- ✅ Reverse Proxy
 - ⏳ Load Balancing
 - ⏳ Caching
 - ⏳ Redis
@@ -92,8 +108,10 @@ The repository contains interview preparation, Python concepts, backend developm
 
 ## Generative AI
 
+- ✅ Prompt Engineering
 - ✅ Prompt Chaining
-- ⏳ Prompt Engineering
+- ✅ Prompt Templates
+- ✅ Tokens & Tokenization
 - ⏳ Embeddings
 - ⏳ Vector Databases
 - ⏳ Retrieval-Augmented Generation (RAG)
@@ -208,6 +226,8 @@ The repository contains interview preparation, Python concepts, backend developm
 ### Backend
 
 - Flask Basics
+- Flask Routing
+- REST APIs
 
 ### SQL
 
@@ -233,6 +253,45 @@ The repository contains interview preparation, Python concepts, backend developm
 
 ---
 
+## ✅ Day 5
+
+### DSA
+
+- Queue
+
+### Python
+
+- Generators
+
+### Backend
+
+- Flask Routing
+
+### SQL
+
+- Common Table Expressions (CTEs)
+
+### System Design
+
+- Reverse Proxy
+
+### Generative AI
+
+- Prompt Templates
+- Tokens & Tokenization
+
+### Projects
+
+- Task Manager REST API Routing
+
+### LeetCode
+
+- Implement Queue using Stacks
+- Number of Recent Calls
+- Time Needed to Buy Tickets
+
+---
+
 # Repository Structure
 
 ```
@@ -248,4 +307,42 @@ system-design/
 
 ---
 
-More updates will be added daily as part of the 90-day Backend Engineer Roadmap.
+## Repository Organization
+
+Each directory focuses on a specific area of backend engineering.
+
+| Directory | Purpose |
+|-----------|---------|
+| dsa | Data Structures, Algorithms and interview problems |
+| python | Core and advanced Python concepts |
+| backend | Flask applications and backend development |
+| sql | SQL concepts with practical queries |
+| system-design | Core system design concepts |
+| genai | Generative AI and LLM fundamentals |
+| projects | Incremental backend project development |
+| leetcode | Progress tracker for solved interview problems |
+
+---
+
+## Learning Strategy
+
+Every topic in this repository follows the same workflow:
+
+1. Learn the underlying concept.
+2. Take structured notes for revision.
+3. Implement the concept with clean, readable code.
+4. Solve interview-oriented problems.
+5. Continuously improve existing implementations as new concepts are learned.
+
+This approach ensures that concepts are not only understood but also applied in practical scenarios.
+
+---
+
+## Next Topics
+
+- Trees
+- Binary Search Trees
+- Heap
+- Graphs
+- Exception Handling
+- CRUD APIs

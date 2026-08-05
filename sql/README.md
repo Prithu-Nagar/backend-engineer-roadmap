@@ -4,6 +4,14 @@ This directory contains SQL scripts covering fundamental to intermediate databas
 
 ---
 
+## Learning Approach
+
+Each SQL topic is introduced through practical examples that can be executed independently.
+
+The focus is on understanding query construction, writing optimized SQL, and developing the problem-solving skills commonly evaluated in backend engineering interviews.
+
+---
+
 ## Completed
 
 ### SQL Basics
@@ -38,6 +46,14 @@ This directory contains SQL scripts covering fundamental to intermediate databas
 - EXISTS
 - NOT EXISTS
 
+### Common Table Expressions (CTEs)
+
+- WITH Clause
+- Basic CTE
+- CTE with Aggregate Functions
+- Multiple CTEs
+- Readability using CTEs
+
 ---
 
 ## Files
@@ -46,15 +62,14 @@ This directory contains SQL scripts covering fundamental to intermediate databas
 - joins.sql
 - aggregate_functions.sql
 - subqueries.sql
+- ctes.sql
 
 ---
 
-## Upcoming
+## Next Topics
 
-- Common Table Expressions (CTEs)
 - Window Functions
 - Views
 - Indexes
-- Transactions
 - Stored Procedures
-- Query Optimization
+- Transactions
