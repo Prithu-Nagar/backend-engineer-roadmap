@@ -48,10 +48,10 @@ Current Features
 - JSON responses
 - GET endpoints
 - POST endpoints
+- CRUD Operations
 
 Planned Enhancements
 
-- CRUD Operations
 - SQLite Integration
 - SQLAlchemy
 - Validation

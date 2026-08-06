@@ -34,6 +34,8 @@ Topics Covered
 - Input Tokens
 - Output Tokens
 - Prompt Optimization
+- Embeddings
+
 ---
 
 ## Files
@@ -45,7 +47,6 @@ Topics Covered
 
 ## Next Topics
 
-- Embeddings
 - Vector Databases
 - Retrieval-Augmented Generation (RAG)
 - Function Calling

@@ -37,6 +37,10 @@ Topics Covered
 - Advantages
 - Real-world Examples
 
+---
+
+### Load Balancer
+
 ## Files
 
 - monolith_vs_microservices.md
@@ -46,7 +50,6 @@ Topics Covered
 
 ## Next Topics
 
-- Load Balancing
 - Caching
 - Redis
 - Database Replication

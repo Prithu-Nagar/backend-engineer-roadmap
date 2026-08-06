@@ -34,6 +34,7 @@ The objective is to understand one concept thoroughly before building upon it, m
 - Closures
 - Decorators
 - Generators
+- Exception Handling
 
 ---
 
@@ -70,7 +71,6 @@ The examples are intentionally kept simple so that each concept can be understoo
 
 ## Next Topics
 
-- Exception Handling
 - Context Managers
 - Itertools
 - Collections Module

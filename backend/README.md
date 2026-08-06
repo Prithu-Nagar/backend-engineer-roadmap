@@ -54,6 +54,25 @@ Topics Covered
 
 ---
 
+### REST APIs
+
+Topics Covered
+
+- REST Architecture
+- REST Constraints
+- Resources
+- CRUD Operations
+- REST URL Design
+- GET Endpoint
+- POST Endpoint
+- PUT Endpoint
+- DELETE Endpoint
+- JSON Request Body
+- JSON Response
+- Route Parameters
+
+---
+
 ## Learning Approach
 
 The backend module is organized progressively.

@@ -56,6 +56,8 @@ The focus is on understanding query construction, writing optimized SQL, and dev
 
 ---
 
+### Window Functions
+
 ## Files
 
 - basics.sql
@@ -68,7 +70,6 @@ The focus is on understanding query construction, writing optimized SQL, and dev
 
 ## Next Topics
 
-- Window Functions
 - Views
 - Indexes
 - Stored Procedures

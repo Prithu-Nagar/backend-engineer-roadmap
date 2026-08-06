@@ -29,7 +29,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Linked List
 - ✅ Stack
 - ✅ Queue
-- ⏳ Binary Search
+- ✅ Binary Search
 - ⏳ Trees
 - ⏳ Heap
 - ⏳ Graph
@@ -54,8 +54,8 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Closures
 - ✅ Decorators
 - ✅ Generators
+- ✅ Exception Handling
 - ⏳ Context Managers
-- ⏳ Exception Handling
 - ⏳ Threading
 - ⏳ Multiprocessing
 - ⏳ AsyncIO
@@ -66,8 +66,8 @@ The primary objective is not just to study these topics, but to implement them w
 
 - ✅ HTTP Fundamentals
 - ✅ Flask Basics
-- ✅ REST APIs
 - ✅ Flask Routing
+- ✅ REST APIs
 - ⏳ FastAPI
 - ⏳ Django
 - ⏳ Authentication
@@ -86,7 +86,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Aggregate Functions
 - ✅ Subqueries
 - ✅ Common Table Expressions (CTEs)
-- ⏳ Window Functions
+- ✅ Window Functions
 - ⏳ Indexes
 - ⏳ Transactions
 - ⏳ Query Optimization
@@ -97,7 +97,7 @@ The primary objective is not just to study these topics, but to implement them w
 
 - ✅ Monolith vs Microservices
 - ✅ Reverse Proxy
-- ⏳ Load Balancing
+- ✅ Load Balancing
 - ⏳ Caching
 - ⏳ Redis
 - ⏳ Kafka
@@ -112,7 +112,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Prompt Chaining
 - ✅ Prompt Templates
 - ✅ Tokens & Tokenization
-- ⏳ Embeddings
+- ✅ Embeddings
 - ⏳ Vector Databases
 - ⏳ Retrieval-Augmented Generation (RAG)
 - ⏳ LangChain
@@ -292,6 +292,45 @@ The primary objective is not just to study these topics, but to implement them w
 
 ---
 
+## ✅ Day 6
+
+### DSA
+
+- Binary Search
+
+### Python
+
+- Exception Handling
+
+### Backend
+
+- REST APIs
+- CRUD APIs
+
+### SQL
+
+- Window Functions
+
+### System Design
+
+- Load Balancer
+
+### Generative AI
+
+- Embeddings
+
+### Projects
+
+- Task Manager CRUD API
+
+### LeetCode
+
+- Binary Search
+- Search Insert Position
+- Guess Number Higher or Lower
+
+---
+
 # Repository Structure
 
 ```
@@ -344,5 +383,7 @@ This approach ensures that concepts are not only understood but also applied in 
 - Binary Search Trees
 - Heap
 - Graphs
-- Exception Handling
-- CRUD APIs
+- Context Managers
+- Indexes
+- Caching
+- Vector Databases

@@ -56,6 +56,15 @@ Problems Solved
 
 ---
 
+### Binary Search
+
+- Binary Search
+- Search Patterns
+- Lower Bound
+- Upper Bound
+
+---
+
 ## Upcoming
 
 - Trees
