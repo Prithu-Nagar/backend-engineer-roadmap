@@ -1,38 +1,72 @@
-from flask import Flask
+"""
+Flask Routing and Blueprints
 
-app = Flask(__name__)
+Demonstrates:
+- Dynamic URL parameters
+- Query parameters
+- HTTP methods
+- Flask Blueprints
+"""
 
-
-@app.route("/")
-def home():
-    return "<h1>Welcome to the Task Manager API</h1>"
-
-
-@app.route("/about")
-def about():
-    return "<h2>This API is built using Flask.</h2>"
+from flask import Blueprint, jsonify, request
 
 
-@app.route("/hello/<name>")
-def hello(name):
-    return f"<h2>Hello, {name}!</h2>"
+# ---------------------------------------
+# Task Blueprint
+# ---------------------------------------
+
+task_bp = Blueprint(
+    "tasks",
+    __name__,
+    url_prefix="/api/tasks"
+)
 
 
-@app.route("/square/<int:number>")
-def square(number):
-    return {
-        "number": number,
-        "square": number * number
-    }
+# ---------------------------------------
+# Get All Tasks
+# ---------------------------------------
+
+@task_bp.route("/", methods=["GET"])
+def get_tasks():
+    return jsonify({
+        "tasks": []
+    })
 
 
-@app.route("/status")
-def status():
-    return {
-        "status": "running",
-        "message": "Task Manager API is up and running."
-    }
+# ---------------------------------------
+# Get Single Task
+# ---------------------------------------
+
+@task_bp.route("/<int:task_id>", methods=["GET"])
+def get_task(task_id):
+    return jsonify({
+        "task_id": task_id
+    })
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# ---------------------------------------
+# Create Task
+# ---------------------------------------
+
+@task_bp.route("/", methods=["POST"])
+def create_task():
+    data = request.get_json(silent=True) or {}
+
+    return jsonify({
+        "message": "Task created",
+        "task": data
+    }), 201
+
+
+# ---------------------------------------
+# Search Tasks
+# ---------------------------------------
+
+@task_bp.route("/search", methods=["GET"])
+def search_tasks():
+    query = request.args.get("query", "")
+
+    return jsonify({
+        "query": query,
+        "tasks": []
+    })

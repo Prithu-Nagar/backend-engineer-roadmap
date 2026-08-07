@@ -23,7 +23,7 @@ The reverse proxy then forwards the request to the appropriate backend server.
 
 ## Request Flow
 
-```text
+
 Client
    │
    ▼
@@ -31,7 +31,6 @@ Reverse Proxy
    │
    ▼
 Backend Server
-```
 
 ---
 

@@ -27,13 +27,11 @@ This enables:
 
 ### One-Hot Encoding
 
-```text
 Cat → [1,0,0]
 
 Dog → [0,1,0]
 
 Car → [0,0,1]
-```
 
 Problems:
 
@@ -45,13 +43,11 @@ Problems:
 
 ### Embeddings
 
-```text
 Cat → [0.32, -0.11, 0.74, ...]
 
 Dog → [0.30, -0.08, 0.79, ...]
 
 Car → [-0.91, 0.62, -0.14, ...]
-```
 
 Semantically similar concepts are positioned close together in vector space.
 
@@ -59,7 +55,6 @@ Semantically similar concepts are positioned close together in vector space.
 
 ## Embedding Pipeline
 
-```text
 Input Text
 
 ↓
@@ -81,7 +76,6 @@ Vector Representation
 ↓
 
 LLM / RAG / Search / Recommendation System
-```
 
 ---
 
@@ -99,7 +93,6 @@ LLM / RAG / Search / Recommendation System
 
 The most common similarity metric is **Cosine Similarity**.
 
-```text
 Cosine Similarity =
 
 (A · B)
@@ -107,7 +100,6 @@ Cosine Similarity =
 ──────────────
 
 ||A|| × ||B||
-```
 
 Values:
 
@@ -131,7 +123,6 @@ Values:
 
 ## Embeddings in RAG
 
-```text
 User Query
 
 ↓
@@ -157,7 +148,6 @@ LLM
 ↓
 
 Final Response
-```
 
 Instead of keyword matching, RAG retrieves information using semantic similarity.
 

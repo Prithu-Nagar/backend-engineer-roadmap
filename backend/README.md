@@ -70,6 +70,21 @@ Topics Covered
 - JSON Request Body
 - JSON Response
 - Route Parameters
+- Flask Blueprints
+
+---
+
+### Flask Blueprints
+
+Flask Blueprints provide a way to organize routes into modular components.
+
+The Task Manager API uses a Blueprint for task-related routes.
+
+task_bp = Blueprint(
+    "tasks",
+    __name__,
+    url_prefix="/api/tasks"
+)
 
 ---
 
@@ -81,8 +96,6 @@ Concepts are first implemented in small standalone examples to understand the fu
 
 ## Upcoming
 
-- CRUD APIs
-- Blueprints
 - SQLAlchemy
 - Authentication
 - JWT

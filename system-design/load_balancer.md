@@ -22,7 +22,7 @@ With a Load Balancer:
 
 ## Architecture
 
-```text
+
               Users
                  │
                  ▼
@@ -34,7 +34,6 @@ With a Load Balancer:
     Server1  Server2  Server3
           \      |      /
              Database
-```
 
 ---
 
@@ -64,7 +63,7 @@ Unhealthy servers are temporarily removed until they recover.
 
 Requests are distributed sequentially.
 
-```text
+
 Request 1 → Server A
 
 Request 2 → Server B
@@ -72,7 +71,6 @@ Request 2 → Server B
 Request 3 → Server C
 
 Request 4 → Server A
-```
 
 ---
 
@@ -90,11 +88,10 @@ Servers receive traffic proportional to assigned weights.
 
 Example:
 
-```text
+
 Server A → Weight 3
 
 Server B → Weight 1
-```
 
 Server A receives approximately three times more requests.
 

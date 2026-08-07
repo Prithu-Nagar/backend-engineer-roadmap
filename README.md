@@ -30,6 +30,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Stack
 - ✅ Queue
 - ✅ Binary Search
+- ✅ Binary Trees
 - ⏳ Trees
 - ⏳ Heap
 - ⏳ Graph
@@ -55,7 +56,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Decorators
 - ✅ Generators
 - ✅ Exception Handling
-- ⏳ Context Managers
+- ✅ Context Managers
 - ⏳ Threading
 - ⏳ Multiprocessing
 - ⏳ AsyncIO
@@ -68,6 +69,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Flask Basics
 - ✅ Flask Routing
 - ✅ REST APIs
+- ✅ Flask Blueprints
 - ⏳ FastAPI
 - ⏳ Django
 - ⏳ Authentication
@@ -87,7 +89,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Subqueries
 - ✅ Common Table Expressions (CTEs)
 - ✅ Window Functions
-- ⏳ Indexes
+- ✅ Indexes
 - ⏳ Transactions
 - ⏳ Query Optimization
 
@@ -98,7 +100,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Monolith vs Microservices
 - ✅ Reverse Proxy
 - ✅ Load Balancing
-- ⏳ Caching
+- ✅ Caching
 - ⏳ Redis
 - ⏳ Kafka
 - ⏳ API Gateway
@@ -113,7 +115,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Prompt Templates
 - ✅ Tokens & Tokenization
 - ✅ Embeddings
-- ⏳ Vector Databases
+- ✅ Vector Databases
 - ⏳ Retrieval-Augmented Generation (RAG)
 - ⏳ LangChain
 - ⏳ AI Agents
@@ -331,9 +333,46 @@ The primary objective is not just to study these topics, but to implement them w
 
 ---
 
+## ✅ Day 7
+
+### DSA
+
+- Binary Trees
+
+### Python
+
+- Context Managers
+
+### Backend
+
+- Flask Blueprints
+
+### SQL
+
+- Indexes
+
+### System Design
+
+- Caching
+
+### Generative AI
+
+- Vector Databases
+
+### Projects
+
+- Task Manager REST API Architecture
+
+### LeetCode
+
+- Maximum Depth of Binary Tree
+- Invert Binary Tree
+- Same Tree
+
+---
+
 # Repository Structure
 
-```
 backend/
 dsa/
 genai/
@@ -342,7 +381,6 @@ projects/
 python/
 sql/
 system-design/
-```
 
 ---
 
@@ -350,16 +388,16 @@ system-design/
 
 Each directory focuses on a specific area of backend engineering.
 
-| Directory | Purpose |
-|-----------|---------|
-| dsa | Data Structures, Algorithms and interview problems |
-| python | Core and advanced Python concepts |
-| backend | Flask applications and backend development |
-| sql | SQL concepts with practical queries |
-| system-design | Core system design concepts |
-| genai | Generative AI and LLM fundamentals |
-| projects | Incremental backend project development |
-| leetcode | Progress tracker for solved interview problems |
+| Directory     |                       Purpose                      |
+|---------------|----------------------------------------------------|
+| dsa           | Data Structures, Algorithms and interview problems |
+| python        | Core and advanced Python concepts                  |
+| backend       | Flask applications and backend development         |
+| sql           | SQL concepts with practical queries                |
+| system-design | Core system design concepts                        |
+| genai         | Generative AI and LLM fundamentals                 |
+| projects      | Incremental backend project development            |
+| leetcode      | Progress tracker for solved interview problems     |
 
 ---
 
@@ -383,7 +421,3 @@ This approach ensures that concepts are not only understood but also applied in 
 - Binary Search Trees
 - Heap
 - Graphs
-- Context Managers
-- Indexes
-- Caching
-- Vector Databases
