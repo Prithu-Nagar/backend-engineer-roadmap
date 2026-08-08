@@ -15,12 +15,12 @@ The goal is to build strong problem-solving skills and develop the ability to id
 - Queue
 - Binary Search
 - Binary Trees
+- Binary Search Tree
 
 ---
 
 ## Upcoming Topics
 
-- Binary Search Tree
 - Heap
 - Graph
 - Dynamic Programming
@@ -40,7 +40,8 @@ dsa/
 ├── stack/
 ├── queue/
 ├── binary_search/
-└── binary_tree/
+├── binary_tree/
+└── binary_search_tree/
 
 ---
 
@@ -50,13 +51,6 @@ dsa/
 
 Covers fundamental array and hashing-based problems.
 
-Topics include:
-
-* Array traversal
-* Hashing
-* Duplicate detection
-* Two-pointer fundamentals
-
 **Directory:** `arrays/`
 
 ---
@@ -64,13 +58,6 @@ Topics include:
 ## Strings
 
 Covers common string manipulation and two-pointer techniques.
-
-Topics include:
-
-* String traversal
-* Palindrome checking
-* Subsequence checking
-* String reversal
 
 **Directory:** `strings/`
 
@@ -80,13 +67,6 @@ Topics include:
 
 Covers fundamental linked-list operations and pointer manipulation.
 
-Topics include:
-
-* Traversal
-* Reversal
-* Merging lists
-* Cycle detection
-
 **Directory:** `linked_list/`
 
 ---
@@ -94,13 +74,6 @@ Topics include:
 ## Stack
 
 Covers stack-based problem-solving patterns.
-
-Topics include:
-
-* Parentheses validation
-* Min Stack
-* Stack simulation
-* Expression/state tracking
 
 **Directory:** `stack/`
 
@@ -110,13 +83,6 @@ Topics include:
 
 Covers queue-based data structures and problems.
 
-Topics include:
-
-* Queue operations
-* Circular queues
-* Queue simulation
-* Stack using queues
-
 **Directory:** `queue/`
 
 ---
@@ -125,43 +91,23 @@ Topics include:
 
 Binary Search efficiently searches a sorted search space.
 
-The general pattern is:
-
-left
-  ↓
-[mid]
-  ↓
-right
-
-At each step, the search space is reduced approximately by half.
-
 **Directory:** `binary_search/`
 
 ---
 
 ## Binary Trees
 
-Binary Trees contain nodes with at most two children.
-
-Common recursive problems follow the pattern:
-
-if root is None:
-    return base_case
-
-left = solve(root.left)
-right = solve(root.right)
-
-return combine(left, right)
-
-Topics covered include:
-
-* Tree height
-* Tree comparison
-* Tree inversion
-* DFS
-* Recursive tree traversal
+Covers common recursive binary-tree problems.
 
 **Directory:** `binary_tree/`
+
+---
+
+## Binary Search Tree
+
+Covers BST search, validation, and inorder traversal patterns.
+
+**Directory:** `binary_search_tree/`
 
 ---
 
@@ -176,7 +122,7 @@ Topics covered include:
 | Queue               | Completed |
 | Binary Search       | Completed |
 | Binary Trees        | Completed |
-| Binary Search Tree  | Upcoming  |
+| Binary Search Tree  | Completed |
 | Heap                | Upcoming  |
 | Graph               | Upcoming  |
 | Dynamic Programming | Upcoming  |

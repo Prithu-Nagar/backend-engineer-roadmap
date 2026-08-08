@@ -38,7 +38,6 @@ The actual problem implementations are organized inside the `dsa/` directory acc
 - Number of Recent Calls
 - Time Needed to Buy Tickets
 
-
 ## Binary Search
 
 - Binary Search
@@ -51,6 +50,12 @@ The actual problem implementations are organized inside the `dsa/` directory acc
 - Invert Binary Tree
 - Same Tree
 
+## Binary Search Tree
+
+- Search in a Binary Search Tree
+- Validate Binary Search Tree
+- Minimum Distance Between BST Nodes
+
 ---
 
 # Problem Organization
@@ -62,41 +67,42 @@ dsa/
 ├── stack/
 ├── queue/
 ├── binary_search/
-└── binary_tree/
+├── binary_tree/
+└── binary_search_tree/
 
 Each solution follows a consistent structure containing:
 
-* Problem
-* Pattern
-* Approach
-* Time Complexity
-* Space Complexity
+- Problem
+- Pattern
+- Approach
+- Time Complexity
+- Space Complexity
 
 ---
 
 # Progress
 
-| Topic         | Problems | Status    |
-| ------------- | -------: | --------- |
-| Arrays        |        3 | Completed |
-| Strings       |        3 | Completed |
-| Linked List   |        3 | Completed |
-| Stack         |        3 | Completed |
-| Queue         |        3 | Completed |
-| Binary Search |        3 | Completed |
-| Binary Tree   |        3 | Completed |
+| Topic              | Problems | Status    |
+| ------------------ | -------: | --------- |
+| Arrays             |        3 | Completed |
+| Strings            |        3 | Completed |
+| Linked List        |        3 | Completed |
+| Stack              |        3 | Completed |
+| Queue              |        3 | Completed |
+| Binary Search      |        3 | Completed |
+| Binary Tree        |        3 | Completed |
+| Binary Search Tree |        3 | Completed |
 
 ---
 
 # Upcoming Topics
 
-* Heap
-* Graph
-* Dynamic Programming
-* Binary Search Tree
-* Tree Traversals
-* Backtracking
-* Advanced Graph Algorithms
+- Heap
+- Graph
+- Dynamic Programming
+- Tree Traversals
+- Backtracking
+- Advanced Graph Algorithms
 
 ---
 

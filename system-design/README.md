@@ -1,6 +1,6 @@
 # System Design
 
-This directory contains core system design concepts required for backend engineering and technical interviews.
+This directory contains system design concepts studied as part of the Backend Engineer Roadmap.
 
 The focus is on understanding how backend systems are structured, how components communicate, and how systems can scale reliably.
 
@@ -10,13 +10,9 @@ The focus is on understanding how backend systems are structured, how components
 
 - Monolith vs Microservices
 - Caching
-
----
-
-## Current Topics
-
-- Load Balancing
 - Reverse Proxy
+- Load Balancing
+- Database Scaling
 
 ---
 
@@ -26,7 +22,6 @@ The focus is on understanding how backend systems are structured, how components
 - Kafka
 - API Gateway
 - Rate Limiting
-- Database Scaling
 - Message Queues
 - Distributed Systems
 
@@ -36,102 +31,51 @@ The focus is on understanding how backend systems are structured, how components
 
 ## Monolith vs Microservices
 
-Covers the architectural differences between monolithic and microservice-based applications.
-
-Topics include:
-
-- Monolithic architecture
-- Microservices architecture
-- Advantages and disadvantages
-- Service boundaries
-- Communication between services
-- Scalability considerations
-
 **File:** `monolith_vs_microservices.md`
-
----
 
 ## Caching
 
-Covers techniques for improving system performance by storing frequently accessed data in a faster storage layer.
-
-Topics include:
-
-- Cache hit
-- Cache miss
-- TTL
-- Cache invalidation
-- Cache eviction
-- LRU
-- LFU
-- Cache-aside
-- Read-through
-- Write-through
-- Write-back
-- Cache stampede
-- Cache penetration
-- Cache avalanche
-
 **File:** `caching.md`
-
----
 
 ## Load Balancing
 
-Load balancing distributes incoming traffic across multiple backend servers.
-
-Topics include:
-
-- Load balancer
-- Health checks
-- Horizontal scaling
-- Traffic distribution
-- Load-balancing strategies
-
 **File:** `load_balancer.md`
-
----
 
 ## Reverse Proxy
 
-A reverse proxy sits between clients and backend servers.
-
-It can provide:
-
-- Request routing
-- TLS termination
-- Load balancing
-- Security
-- Request filtering
-
 **File:** `reverse_proxy.md`
+
+## Database Scaling
+
+**File:** `database-scaling.md`
 
 ---
 
 # Repository Files
-
 
 system-design/
 ├── README.md
 ├── monolith_vs_microservices.md
 ├── caching.md
 ├── load_balancer.md
-└── reverse_proxy.md
+├── reverse_proxy.md
+└── database-scaling.md
 
 ---
 
 # Learning Progress
 
-| Topic                     | Status      |
-| ------------------------- | ----------- |
-| Monolith vs Microservices | Completed   |
-| Caching                   | Completed   |
-| Load Balancing            | In Progress |
-| Reverse Proxy             | In Progress |
-| Redis                     | Upcoming    |
-| Kafka                     | Upcoming    |
-| API Gateway               | Upcoming    |
-| Rate Limiting             | Upcoming    |
+|           Topic           |   Status  |
+|---------------------------|-----------|
+| Monolith vs Microservices | Completed |
+| Reverse Proxy             | Completed |
+| Load Balancing            | Completed |
+| Caching                   | Completed |
+| Database Scaling          | Completed |
+| Redis                     | Upcoming  |
+| Kafka                     | Upcoming  |
+| API Gateway               | Upcoming  |
+| Rate Limiting             | Upcoming  |
 
 ---
 
@@ -147,4 +91,3 @@ For each system design topic:
 6. Practice explaining the architecture clearly.
 
 The goal is to develop the ability to reason about backend systems rather than simply memorize system design diagrams.
-

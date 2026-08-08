@@ -25,13 +25,13 @@ The focus is on building strong Python fundamentals and understanding features c
 - Generators
 - Exception Handling
 - Context Managers
+- Threading
 
 ---
 
 ## Upcoming Topics
 
 - Type Hints
-- Threading
 - Multiprocessing
 - AsyncIO
 - Advanced OOP
@@ -201,6 +201,14 @@ Topics include:
 
 ---
 
+## Threading
+
+Covers basic thread creation, execution, and synchronization using `start()` and `join()`.
+
+**File:** `threading_basics.py`
+
+---
+
 # Repository Files
 
 python/
@@ -219,6 +227,7 @@ python/
 ├── iterables_iterators.py
 ├── lambda_examples.py
 ├── nested_functions.py
+├── threading_basics.py
 ├── variable_scope.py
 └── zip_examples.py
 
@@ -244,8 +253,8 @@ python/
 | Generators                       | Completed |
 | Exception Handling               | Completed |
 | Context Managers                 | Completed |
+| Threading                        | Completed |
 | Type Hints                       | Upcoming  |
-| Threading                        | Upcoming  |
 | Multiprocessing                  | Upcoming  |
 | AsyncIO                          | Upcoming  |
 
@@ -255,12 +264,10 @@ python/
 
 For each Python topic:
 
-1. Understand the underlying concept.
-2. Study the syntax and behavior.
-3. Implement a small example.
-4. Understand common use cases.
-5. Identify common mistakes.
-6. Apply the concept to backend development where appropriate.
+1. Understand the concept.
+2. Implement a focused example.
+3. Understand the practical use case.
+4. Review the implementation.
+5. Apply the concept in backend development where appropriate.
 
 The goal is to build strong Python fundamentals that can be applied to real backend applications and technical interviews.
-

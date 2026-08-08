@@ -35,18 +35,22 @@ Instead of creating multiple small projects, the same application evolves over t
 - JSON responses
 - HTTP methods
 - Route parameters
+- Query parameters
+- Flask Blueprints
+- Request validation
 
 ### REST API
 
-The current API supports basic CRUD operations for tasks.
+The current API supports basic task retrieval and creation.
 
-| Method | Endpoint | Purpose |
-|---|---|---|
-| GET | `/tasks` | Get all tasks |
-| GET | `/tasks/<task_id>` | Get a single task |
-| POST | `/tasks` | Create a task |
-| PUT | `/tasks/<task_id>` | Update a task |
-| DELETE | `/tasks/<task_id>` | Delete a task |
+|Method |          Endpoint             |        Purpose      |
+|-------|-------------------------------|---------------------|
+| GET   | `/api/tasks/`                 | Get tasks           |
+| GET   | `/api/tasks/<task_id>`        | Get a specific task |
+| GET   | `/api/tasks/search?query=...` | Search tasks        |
+| POST  | `/api/tasks/`                 | Create a task       |
+
+PUT and DELETE operations have not been implemented yet.
 
 ---
 
@@ -65,13 +69,13 @@ Current routing concepts include:
 - JSON responses
 - Flask Blueprints
 
-The Blueprint example is currently implemented in:
+The Blueprint is implemented in:
 
-backend/flask_routing.py
+`backend/flask_routing.py`
 
-The main Task Manager application remains in:
+The main Task Manager application is initialized in:
 
-backend/app.py
+`backend/app.py`
 
 ---
 
@@ -84,7 +88,8 @@ Current structure:
 backend/
 ├── app.py
 ├── flask_basics.py
-└── flask_routing.py
+├── flask_routing.py
+└── request_response.py
 
 The long-term direction is:
 
@@ -104,41 +109,42 @@ The service and database layers will be introduced as the project progresses thr
 
 ## Planned Enhancements
 
-* SQLite Integration
-* SQLAlchemy
-* Service Layer
-* Request Validation
-* Error Handling
-* Authentication
-* JWT
-* Testing
-* Logging
-* Docker
-* Deployment
+- SQLite Integration
+- SQLAlchemy
+- Service Layer
+- Request Validation
+- Error Handling
+- Authentication
+- JWT
+- Testing
+- Logging
+- Docker
+- Deployment
 
 ---
 
 ## Future API Improvements
 
-The current CRUD API will be extended with:
+Future iterations will introduce:
 
-* Better request validation
-* Consistent error responses
-* Persistent database storage
-* Database models
-* Authentication
-* Authorization
-* Automated tests
-* API documentation
+- PUT and DELETE operations
+- Persistent database storage
+- Database models
+- Improved validation
+- Consistent error responses
+- Authentication
+- Authorization
+- Automated tests
+- API documentation
 
 ---
 
 ## Planned Projects
 
-* URL Shortener
-* Expense Tracker API
-* Blog API
-* Chat Application
+- URL Shortener
+- Expense Tracker API
+- Blog API
+- Chat Application
 
 ---
 
@@ -149,4 +155,3 @@ This project grows alongside the roadmap.
 Each new backend concept is integrated into the existing application where appropriate instead of creating separate demo projects.
 
 The goal is to gradually transform the initial Flask application into a production-oriented backend service while maintaining clean code and clear separation of responsibilities.
-

@@ -1,105 +1,83 @@
 # Backend
 
-This directory contains backend development concepts, Flask applications, and REST API implementations built during the Backend Engineer Roadmap.
+This directory contains Flask-based backend development examples and the Task Manager API implementation.
 
 ---
 
-## Completed
+## Completed Topics
 
-### HTTP Fundamentals
-
-- HTTP Methods
-- HTTP Status Codes
-- Request & Response
-- Headers
-- URL Parameters
-- Query Parameters
-
-### Flask Basics
-
-Files
-
-- app.py
-- flask_basics.py
-
-Topics Covered
-
-- Creating a Flask Application
-- Running a Flask Server
-- Routes
-- Dynamic Routes
-- URL Parameters
-- JSON Responses
-- Request Object
-- HTTP Methods
-- Debug Mode
-
----
-
-### Flask Routing
-
-Files
-
-- flask_routing.py
-
-Topics Covered
-
-- Static Routes
-- Dynamic Routes
-- Variable Rules
-- Route Converters
-- Multiple Routes
-- URL Building
-- Route Methods (GET & POST)
-
----
-
-### REST APIs
-
-Topics Covered
-
-- REST Architecture
-- REST Constraints
-- Resources
-- CRUD Operations
-- REST URL Design
-- GET Endpoint
-- POST Endpoint
-- PUT Endpoint
-- DELETE Endpoint
-- JSON Request Body
-- JSON Response
-- Route Parameters
+- HTTP Fundamentals
+- Flask Basics
+- Flask Routing
+- REST APIs
 - Flask Blueprints
+- Request & Response Handling
 
 ---
 
-### Flask Blueprints
+## Repository Files
 
-Flask Blueprints provide a way to organize routes into modular components.
-
-The Task Manager API uses a Blueprint for task-related routes.
-
-task_bp = Blueprint(
-    "tasks",
-    __name__,
-    url_prefix="/api/tasks"
-)
+backend/
+├── README.md
+├── app.py
+├── flask_basics.py
+├── flask_routing.py
+└── request_response.py
 
 ---
 
-## Learning Approach
+## Flask Application
 
-The backend module is organized progressively.
+The Task Manager API is initialized in:
 
-Concepts are first implemented in small standalone examples to understand the fundamentals. Once understood, they are integrated into the main Task Manager API (`app.py`), allowing the project to evolve into a more complete backend application over time.
+`app.py`
 
-## Upcoming
+The Flask Blueprint and Task Manager routes are implemented in:
 
-- SQLAlchemy
+`flask_routing.py`
+
+---
+
+## Request & Response Handling
+
+The repository demonstrates:
+
+- Path parameters
+- Query parameters
+- JSON request bodies
+- Basic request validation
+- HTTP status codes
+- JSON responses
+
+The standalone examples are available in:
+
+`request_response.py`
+
+The concepts are also integrated into the Task Manager routes in:
+
+`flask_routing.py`
+
+---
+
+## Current API
+
+The Task Manager currently supports:
+
+| Method |          Endpoint             |      Purpose        |
+|--------|-------------------------------|---------------------|
+| GET    | `/api/tasks/`                 | Get tasks           |
+| GET    | `/api/tasks/<task_id>`        | Get a specific task |
+| GET    | `/api/tasks/search?query=...` | Search tasks        |
+| POST   | `/api/tasks/`                 | Create a task       |
+
+PUT and DELETE operations will be introduced in a later iteration.
+
+---
+
+## Upcoming Topics
+
 - Authentication
 - JWT
-- Validation
 - Logging
 - Testing
 - FastAPI

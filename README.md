@@ -31,6 +31,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Queue
 - ✅ Binary Search
 - ✅ Binary Trees
+- ✅ Binary Search Trees
 - ⏳ Trees
 - ⏳ Heap
 - ⏳ Graph
@@ -57,7 +58,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Generators
 - ✅ Exception Handling
 - ✅ Context Managers
-- ⏳ Threading
+- ✅ Threading
 - ⏳ Multiprocessing
 - ⏳ AsyncIO
 
@@ -90,8 +91,8 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Common Table Expressions (CTEs)
 - ✅ Window Functions
 - ✅ Indexes
+- ✅ Query Optimization
 - ⏳ Transactions
-- ⏳ Query Optimization
 
 ---
 
@@ -101,6 +102,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Reverse Proxy
 - ✅ Load Balancing
 - ✅ Caching
+- ✅ Database Scaling
 - ⏳ Redis
 - ⏳ Kafka
 - ⏳ API Gateway
@@ -116,7 +118,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Tokens & Tokenization
 - ✅ Embeddings
 - ✅ Vector Databases
-- ⏳ Retrieval-Augmented Generation (RAG)
+- ✅ Retrieval-Augmented Generation (RAG)
 - ⏳ LangChain
 - ⏳ AI Agents
 - ⏳ Model Context Protocol (MCP)
@@ -307,7 +309,7 @@ The primary objective is not just to study these topics, but to implement them w
 ### Backend
 
 - REST APIs
-- CRUD APIs
+- CRUD operations
 
 ### SQL
 
@@ -371,6 +373,44 @@ The primary objective is not just to study these topics, but to implement them w
 
 ---
 
+## ✅ Day 8
+
+### DSA
+
+- Binary Search Trees
+
+### Python
+
+- Threading
+
+### Backend
+
+- Flask Request & Response Handling
+
+### SQL
+
+- Query Optimization
+
+### System Design
+
+- Database Scaling
+
+### Generative AI
+
+- Retrieval-Augmented Generation (RAG)
+
+### Projects
+
+- Task Manager API Request & Response Handling
+
+### LeetCode
+
+- Search in a Binary Search Tree
+- Validate Binary Search Tree
+- Minimum Distance Between BST Nodes
+
+---
+
 # Repository Structure
 
 backend/
@@ -417,7 +457,12 @@ This approach ensures that concepts are not only understood but also applied in 
 
 ## Next Topics
 
-- Trees
-- Binary Search Trees
 - Heap
 - Graphs
+- Dynamic Programming
+- Multiprocessing
+- AsyncIO
+- Transactions
+- Redis
+- Kafka
+- Vector Search
