@@ -1,29 +1,8 @@
 # System Design
 
-This directory contains system design concepts studied as part of the Backend Engineer Roadmap.
+This directory contains practical notes covering the fundamentals of designing scalable, reliable, and maintainable backend systems.
 
-The focus is on understanding how backend systems are structured, how components communicate, and how systems can scale reliably.
-
----
-
-## Completed Topics
-
-- Monolith vs Microservices
-- Caching
-- Reverse Proxy
-- Load Balancing
-- Database Scaling
-
----
-
-## Upcoming Topics
-
-- Redis
-- Kafka
-- API Gateway
-- Rate Limiting
-- Message Queues
-- Distributed Systems
+The focus is on understanding how individual components work together and the trade-offs involved when designing backend systems.
 
 ---
 
@@ -31,27 +10,105 @@ The focus is on understanding how backend systems are structured, how components
 
 ## Monolith vs Microservices
 
-**File:** `monolith_vs_microservices.md`
+Covers the architectural differences between monolithic and microservices-based applications.
 
-## Caching
+Topics include:
 
-**File:** `caching.md`
+- Monolithic architecture
+- Microservices architecture
+- Service boundaries
+- Deployment considerations
+- Scalability trade-offs
 
-## Load Balancing
-
-**File:** `load_balancer.md`
-
-## Reverse Proxy
-
-**File:** `reverse_proxy.md`
-
-## Database Scaling
-
-**File:** `database-scaling.md`
+File: `monolith_vs_microservices.md`
 
 ---
 
-# Repository Files
+## Reverse Proxy
+
+Covers the role of reverse proxies in backend architectures.
+
+Topics include:
+
+- Request forwarding
+- SSL termination
+- Load distribution
+- Security
+- Routing
+
+File: `reverse_proxy.md`
+
+---
+
+## Load Balancing
+
+Covers distributing incoming traffic across multiple backend instances.
+
+Topics include:
+
+- Load balancers
+- Horizontal scaling
+- Health checks
+- Load-balancing strategies
+- High availability
+
+File: `load_balancer.md`
+
+---
+
+## Caching
+
+Covers caching as a technique for reducing latency and database load.
+
+Topics include:
+
+- Cache-aside pattern
+- Cache hits and misses
+- TTL
+- Cache invalidation
+- Distributed caching
+
+File: `caching.md`
+
+---
+
+## Database Scaling
+
+Covers techniques for scaling databases as application traffic and data volume increase.
+
+Topics include:
+
+- Vertical scaling
+- Horizontal scaling
+- Read replicas
+- Database partitioning
+- Sharding
+- Replication
+
+File: `database-scaling.md`
+
+---
+
+## Redis
+
+Covers Redis as an in-memory data store and caching layer.
+
+Topics include:
+
+- Cache-aside pattern
+- Cache keys
+- TTL
+- Cache invalidation
+- Cache hits and misses
+- Redis vs primary database
+- Common Redis use cases
+- Scaling considerations
+
+File: `redis.md`
+
+---
+
+# Repository Structure
 
 system-design/
 ├── README.md
@@ -59,35 +116,40 @@ system-design/
 ├── caching.md
 ├── load_balancer.md
 ├── reverse_proxy.md
-└── database-scaling.md
+├── database-scaling.md
+└── redis.md
 
 ---
 
-# Learning Progress
+# Completed Topics
 
-|           Topic           |   Status  |
-|---------------------------|-----------|
-| Monolith vs Microservices | Completed |
-| Reverse Proxy             | Completed |
-| Load Balancing            | Completed |
-| Caching                   | Completed |
-| Database Scaling          | Completed |
-| Redis                     | Upcoming  |
-| Kafka                     | Upcoming  |
-| API Gateway               | Upcoming  |
-| Rate Limiting             | Upcoming  |
+- Monolith vs Microservices
+- Reverse Proxy
+- Load Balancing
+- Caching
+- Database Scaling
+- Redis
 
 ---
 
-# Learning Strategy
+# Upcoming Topics
+
+- Kafka
+- API Gateway
+- Rate Limiting
+- Message Queues
+- Distributed Systems
+- Advanced System Design
+
+---
+
+# Learning Approach
 
 For each system design topic:
 
-1. Understand the problem being solved.
-2. Understand the major components.
-3. Study how the components communicate.
-4. Understand scalability and reliability trade-offs.
-5. Identify common failure scenarios.
-6. Practice explaining the architecture clearly.
-
-The goal is to develop the ability to reason about backend systems rather than simply memorize system design diagrams.
+1. Understand the problem the component solves.
+2. Understand where it fits in a backend architecture.
+3. Study common implementation patterns.
+4. Identify scalability and reliability considerations.
+5. Understand the major trade-offs.
+6. Apply the concepts to practical backend systems where appropriate.

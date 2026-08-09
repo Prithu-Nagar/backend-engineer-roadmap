@@ -20,6 +20,6 @@ Inorder traversal of a valid BST produces values in sorted order.
 
 ## Files
 
-* `search_in_bst.py`
-* `validate_bst.py`
-* `min_diff_in_bst.py`
+- `search_in_bst.py`
+- `validate_bst.py`
+- `min_diff_in_bst.py`

@@ -62,9 +62,9 @@ Checks whether two binary trees have the same structure and node values.
 
 ## Key Takeaways
 
-* Recursion is a natural approach for binary trees.
-* Always consider the base case first.
-* Tree traversal usually visits each node once.
-* Recursive space complexity depends on tree height.
-* A balanced tree has `O(log n)` height.
-* A skewed tree can have `O(n)` height.
+- Recursion is a natural approach for binary trees.
+- Always consider the base case first.
+- Tree traversal usually visits each node once.
+- Recursive space complexity depends on tree height.
+- A balanced tree has `O(log n)` height.
+- A skewed tree can have `O(n)` height.

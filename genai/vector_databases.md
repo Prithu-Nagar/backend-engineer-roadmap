@@ -55,9 +55,9 @@ can retrieve documents discussing Flask or REST APIs even when the exact words a
 
 Common metrics include:
 
-* Cosine similarity
-* Euclidean distance
-* Dot product
+- Cosine similarity
+- Euclidean distance
+- Dot product
 
 ### Cosine Similarity
 
@@ -77,9 +77,9 @@ Approximate Nearest Neighbor (ANN) techniques improve search performance.
 
 Common approaches include:
 
-* HNSW
-* IVF
-* Product Quantization
+- HNSW
+- IVF
+- Product Quantization
 
 ---
 
@@ -139,8 +139,8 @@ Result 5
 
 Choosing `K` involves a trade-off:
 
-* Too few results → potentially missing relevant information
-* Too many results → potentially introducing irrelevant context
+- Too few results → potentially missing relevant information
+- Too many results → potentially introducing irrelevant context
 
 ---
 
@@ -191,12 +191,12 @@ A vector index is a data structure used to make similarity searches faster.
 
 A vector database provides a broader system for:
 
-* Vector storage
-* Indexing
-* Metadata
-* Search
-* APIs
-* Persistence
+- Vector storage
+- Indexing
+- Metadata
+- Search
+- APIs
+- Persistence
 
 ---
 
@@ -204,10 +204,10 @@ A vector database provides a broader system for:
 
 Examples include:
 
-* Pinecone
-* ChromaDB
-* Weaviate
-* FAISS
+- Pinecone
+- ChromaDB
+- Weaviate
+- FAISS
 
 FAISS is primarily a similarity-search library rather than a complete managed vector database.
 
@@ -217,11 +217,11 @@ FAISS is primarily a similarity-search library rather than a complete managed ve
 
 Vector databases are useful for:
 
-* Semantic document search
-* RAG applications
-* Recommendation systems
-* Similarity matching
-* Natural-language search
+- Semantic document search
+- RAG applications
+- Recommendation systems
+- Similarity matching
+- Natural-language search
 
 ---
 
@@ -231,9 +231,9 @@ A vector database is not required for the current Task Manager CRUD API.
 
 It could become useful later for features such as:
 
-* Semantic task search
-* Natural-language task queries
-* AI-powered task recommendations
+- Semantic task search
+- Natural-language task queries
+- AI-powered task recommendations
 
 Example:
 

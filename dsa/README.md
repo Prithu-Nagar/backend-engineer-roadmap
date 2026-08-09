@@ -1,32 +1,75 @@
 # Data Structures & Algorithms
 
-This directory contains Data Structures and Algorithms concepts along with LeetCode solutions implemented throughout the Backend Engineer Roadmap.
+This directory contains implementations of Data Structures and Algorithms along with LeetCode problems used to strengthen problem-solving and interview preparation.
 
-The goal is to build strong problem-solving skills and develop the ability to identify common interview patterns.
-
----
-
-## Completed Topics
-
-- Arrays
-- Strings
-- Linked List
-- Stack
-- Queue
-- Binary Search
-- Binary Trees
-- Binary Search Tree
+The implementations focus on understanding the underlying data structure, applying it to common problems, and analyzing time and space complexity.
 
 ---
 
-## Upcoming Topics
+## Topics
 
-- Heap
-- Graph
-- Dynamic Programming
-- Backtracking
-- Advanced Tree Algorithms
-- Advanced Graph Algorithms
+### Arrays
+
+Covers array manipulation, searching, hashing-based techniques, and common array interview patterns.
+
+Directory: `arrays/`
+
+### Strings
+
+Covers string traversal, comparison, manipulation, and common string problem-solving patterns.
+
+Directory: `strings/`
+
+### Linked List
+
+Covers singly linked lists, traversal, insertion, deletion, reversal, and common linked-list problems.
+
+Directory: `linked_list/`
+
+### Stack
+
+Covers stack-based problem solving and applications of LIFO behavior.
+
+Directory: `stack/`
+
+### Queue
+
+Covers queue-based problem solving and FIFO behavior.
+
+Directory: `queue/`
+
+### Binary Search
+
+Covers binary search and its applications on sorted data.
+
+Directory: `binary_search/`
+
+### Binary Trees
+
+Covers binary tree traversal and common binary tree problems.
+
+Directory: `binary_tree/`
+
+### Binary Search Trees
+
+Covers BST properties, searching, validation, traversal, and common BST problems.
+
+Directory: `binary_search_tree/`
+
+### Heap
+
+Covers heap-based problem solving using Python's `heapq` module.
+
+Topics include:
+
+- Min Heap
+- Max Heap
+- Heap construction
+- Heap insertion and removal
+- Maintaining top K elements
+- Priority queue concepts
+
+Directory: `heap/`
 
 ---
 
@@ -41,106 +84,67 @@ dsa/
 ├── queue/
 ├── binary_search/
 ├── binary_tree/
-└── binary_search_tree/
+├── binary_search_tree/
+└── heap/
 
 ---
 
-# Topics
+# LeetCode Problems
 
-## Arrays
+DSA implementations are primarily focused on interview-oriented LeetCode problems.
 
-Covers fundamental array and hashing-based problems.
+Each topic contains solutions organized by data structure or algorithm.
 
-**Directory:** `arrays/`
+The corresponding problem list is maintained in:
 
----
-
-## Strings
-
-Covers common string manipulation and two-pointer techniques.
-
-**Directory:** `strings/`
+`leetcode/README.md`
 
 ---
 
-## Linked List
+# Complexity Analysis
 
-Covers fundamental linked-list operations and pointer manipulation.
+Solutions should include consideration of:
 
-**Directory:** `linked_list/`
+- Time Complexity
+- Space Complexity
+- Input constraints
+- Trade-offs between different approaches
 
----
-
-## Stack
-
-Covers stack-based problem-solving patterns.
-
-**Directory:** `stack/`
+The goal is not only to produce a working solution but also to understand its performance characteristics.
 
 ---
 
-## Queue
+# Completed Topics
 
-Covers queue-based data structures and problems.
-
-**Directory:** `queue/`
-
----
-
-## Binary Search
-
-Binary Search efficiently searches a sorted search space.
-
-**Directory:** `binary_search/`
+- Arrays
+- Strings
+- Linked List
+- Stack
+- Queue
+- Binary Search
+- Binary Trees
+- Binary Search Trees
+- Heap
 
 ---
 
-## Binary Trees
+# Upcoming Topics
 
-Covers common recursive binary-tree problems.
-
-**Directory:** `binary_tree/`
-
----
-
-## Binary Search Tree
-
-Covers BST search, validation, and inorder traversal patterns.
-
-**Directory:** `binary_search_tree/`
+- Graph
+- Dynamic Programming
+- Backtracking
+- Advanced Tree Algorithms
+- Advanced Graph Algorithms
 
 ---
 
-# Learning Progress
+# Learning Approach
 
-| Topic               | Status    |
-| ------------------- | --------- |
-| Arrays              | Completed |
-| Strings             | Completed |
-| Linked List         | Completed |
-| Stack               | Completed |
-| Queue               | Completed |
-| Binary Search       | Completed |
-| Binary Trees        | Completed |
-| Binary Search Tree  | Completed |
-| Heap                | Upcoming  |
-| Graph               | Upcoming  |
-| Dynamic Programming | Upcoming  |
+For each DSA topic:
 
----
-
-# Problem-Solving Strategy
-
-For every DSA problem:
-
-1. Understand the problem.
-2. Identify the data structure.
-3. Identify the underlying pattern.
-4. Consider a brute-force approach.
-5. Optimize the solution.
-6. Implement the solution cleanly.
-7. Analyze time complexity.
-8. Analyze space complexity.
-9. Record the key insight for revision.
-
-The goal is to develop pattern-recognition skills that can be applied to new interview problems.
+1. Understand the underlying data structure or algorithm.
+2. Study common patterns and operations.
+3. Implement solutions in Python.
+4. Solve representative interview problems.
+5. Analyze time and space complexity.
+6. Review alternative approaches where appropriate.

@@ -66,10 +66,10 @@ Question + Retrieved Context
 
 ## Production Considerations
 
-* Chunking strategy
-* Embedding model
-* Retrieval quality
-* Top-K selection
-* Metadata filtering
-* Context size
-* Evaluation
+- Chunking strategy
+- Embedding model
+- Retrieval quality
+- Top-K selection
+- Metadata filtering
+- Context size
+- Evaluation

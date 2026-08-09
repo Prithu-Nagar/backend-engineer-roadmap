@@ -134,10 +134,10 @@ High Load
 
 Possible mitigations:
 
-* Request coalescing
-* Locking
-* Early refresh
-* Randomized TTLs
+- Request coalescing
+- Locking
+- Early refresh
+- Randomized TTLs
 
 ### Cache Penetration
 
@@ -145,9 +145,9 @@ Repeated requests are made for data that does not exist.
 
 Possible mitigations:
 
-* Cache negative results
-* Input validation
-* Bloom filters
+- Cache negative results
+- Input validation
+- Bloom filters
 
 ### Cache Avalanche
 
@@ -155,10 +155,10 @@ Many cached entries expire around the same time.
 
 Possible mitigations:
 
-* Randomized TTLs
-* Staggered expiration
-* Cache warming
-* Rate limiting
+- Randomized TTLs
+- Staggered expiration
+- Cache warming
+- Rate limiting
 
 ---
 
@@ -225,18 +225,18 @@ A cache should generally not replace the primary persistent database.
 
 ## Benefits
 
-* Lower latency
-* Reduced database load
-* Higher throughput
-* Better scalability
+- Lower latency
+- Reduced database load
+- Higher throughput
+- Better scalability
 
 ## Trade-offs
 
-* Additional infrastructure
-* Cache invalidation complexity
-* Potential stale data
-* Additional memory usage
-* More complicated debugging
+- Additional infrastructure
+- Cache invalidation complexity
+- Potential stale data
+- Additional memory usage
+- More complicated debugging
 
 ---
 

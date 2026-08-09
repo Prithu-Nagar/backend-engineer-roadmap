@@ -1,32 +1,145 @@
 # SQL
 
-This directory contains SQL concepts and practical queries covered throughout the Backend Engineer Roadmap.
+This directory contains practical SQL examples covering database fundamentals, querying, analysis, optimization, and transaction management.
+
+The focus is on writing correct and efficient SQL while understanding how queries interact with relational databases.
 
 ---
 
-## Completed Topics
+# Topics
 
-- SQL Basics
-- Joins
-- Aggregate Functions
-- Subqueries
-- Common Table Expressions (CTEs)
-- Window Functions
-- Indexes
-- Query Optimization
+## SQL Basics
 
----
+Covers fundamental SQL operations including:
 
-## Upcoming Topics
+- `SELECT`
+- `INSERT`
+- `UPDATE`
+- `DELETE`
+- `WHERE`
+- `ORDER BY`
+- `GROUP BY`
+- `HAVING`
 
-- Transactions
-- Advanced Query Optimization
-- Database Design
-- Normalization
+File: `basics.sql`
 
 ---
 
-# Repository Files
+## Joins
+
+Covers combining data from multiple tables using:
+
+- `INNER JOIN`
+- `LEFT JOIN`
+- `RIGHT JOIN`
+- `FULL OUTER JOIN`
+
+File: `joins.sql`
+
+---
+
+## Aggregate Functions
+
+Covers functions used to perform calculations across rows.
+
+Examples include:
+
+- `COUNT()`
+- `SUM()`
+- `AVG()`
+- `MIN()`
+- `MAX()`
+
+---
+
+## Subqueries
+
+Covers queries nested inside other SQL statements.
+
+Topics include:
+
+- Scalar subqueries
+- Subqueries with `WHERE`
+- Subqueries with `FROM`
+- Subqueries with aggregate functions
+
+---
+
+## Common Table Expressions
+
+Covers Common Table Expressions using the `WITH` clause.
+
+CTEs can improve query organization and make complex queries easier to understand.
+
+File: `ctes.sql`
+
+---
+
+## Window Functions
+
+Covers analytical functions that operate across related rows without collapsing the result set.
+
+Examples include:
+
+- `ROW_NUMBER()`
+- `RANK()`
+- `DENSE_RANK()`
+- `LAG()`
+- `LEAD()`
+
+File: `window_functions.sql`
+
+---
+
+## Indexes
+
+Covers database indexes and how they can improve query performance.
+
+Topics include:
+
+- Index purpose
+- Index creation
+- Index usage
+- Index trade-offs
+- Read vs write performance
+
+File: `indexes.sql`
+
+---
+
+## Query Optimization
+
+Covers techniques for understanding and improving SQL query performance.
+
+Topics include:
+
+- Execution plans
+- `EXPLAIN`
+- Index usage
+- Avoiding unnecessary scans
+- Query performance analysis
+
+File: `query_optimization.sql`
+
+---
+
+## Transactions
+
+Covers maintaining consistency across multiple database operations.
+
+Topics include:
+
+- `BEGIN`
+- `COMMIT`
+- `ROLLBACK`
+- `SAVEPOINT`
+- Atomic operations
+
+File: `transactions.sql`
+
+---
+
+# Repository Structure
 
 sql/
 ├── README.md
@@ -37,70 +150,40 @@ sql/
 ├── ctes.sql
 ├── window_functions.sql
 ├── indexes.sql
-└── query_optimization.sql
+├── query_optimization.sql
+└── transactions.sql
 
 ---
 
-# Topics
+# Completed Topics
 
-## SQL Basics
-
-**File:** `basics.sql`
-
-## Joins
-
-**File:** `joins.sql`
-
-## Aggregate Functions
-
-**File:** `aggregate_functions.sql`
-
-## Subqueries
-
-**File:** `subqueries.sql`
-
-## Common Table Expressions
-
-**File:** `ctes.sql`
-
-## Window Functions
-
-**File:** `window_functions.sql`
-
-## Indexes
-
-**File:** `indexes.sql`
-
-## Query Optimization
-
-Covers execution plans and practical techniques for improving query performance.
-
-**File:** `query_optimization.sql`
+- SQL Basics
+- Joins
+- Aggregate Functions
+- Subqueries
+- Common Table Expressions
+- Window Functions
+- Indexes
+- Query Optimization
+- Transactions
 
 ---
 
-# Learning Progress
+# Upcoming Topics
 
-|           Topic          |   Status  |
-|--------------------------|-----------|
-| SQL Basics               | Completed |
-| Joins                    | Completed |
-| Aggregate Functions      | Completed |
-| Subqueries               | Completed |
-| Common Table Expressions | Completed |
-| Window Functions         | Completed |
-| Indexes                  | Completed |
-| Query Optimization       | Completed |
-| Transactions             | Upcoming  |
+- Advanced Query Optimization
+- Database Design
+- Normalization
 
 ---
 
-# Learning Strategy
+# Learning Approach
 
 For each SQL topic:
 
-1. Understand the concept.
-2. Write practical queries.
-3. Understand execution behavior.
+1. Understand the underlying database concept.
+2. Write practical SQL examples.
+3. Analyze query behavior.
 4. Consider performance implications.
-5. Apply the concept to backend applications.
+5. Understand how indexes and execution plans affect queries.
+6. Apply transaction and consistency concepts to backend applications.

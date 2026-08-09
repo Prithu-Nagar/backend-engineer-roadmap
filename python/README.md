@@ -1,60 +1,93 @@
 # Python
 
-This directory contains Python concepts and practical examples covered throughout the Backend Engineer Roadmap.
+This directory contains practical examples covering Python fundamentals and advanced concepts relevant to backend development.
 
-The focus is on building strong Python fundamentals and understanding features commonly used in backend development.
-
----
-
-## Completed Topics
-
-- Iterables & Iterators
-- enumerate()
-- zip()
-- List Comprehensions
-- Dictionary Comprehensions
-- Functions
-- *args & **kwargs
-- Variable Scope (LEGB)
-- Lambda Functions
-- First-Class Functions
-- Higher-Order Functions
-- Nested Functions
-- Closures
-- Decorators
-- Generators
-- Exception Handling
-- Context Managers
-- Threading
-
----
-
-## Upcoming Topics
-
-- Type Hints
-- Multiprocessing
-- AsyncIO
-- Advanced OOP
-- Testing
-- Packaging
+The focus is on writing clean, readable Python code while understanding how the language behaves internally and how its features are used in real backend applications.
 
 ---
 
 # Topics
 
+## Functions
+
+Covers Python functions, parameters, return values, and function-related concepts.
+
+Files include:
+
+* `functions.py`
+* `args_kwargs.py`
+
+---
+
+## Variable Scope
+
+Covers Python's LEGB scope resolution model and variable visibility.
+
+File: `variable_scope.py`
+
+---
+
+## Lambda Functions
+
+Demonstrates anonymous functions and common use cases for `lambda`.
+
+File: `lambda_examples.py`
+
+---
+
+## First-Class Functions
+
+Covers treating functions as objects, passing functions as arguments, and returning functions from other functions.
+
+File: `first_class_functions.py`
+
+---
+
+## Higher-Order Functions
+
+Covers functions that accept other functions as arguments or return functions.
+
+File: `higher_order_functions.py`
+
+---
+
+## Nested Functions
+
+Covers defining functions inside other functions.
+
+File: `nested_functions.py`
+
+---
+
+## Closures
+
+Covers nested functions that retain access to variables from their enclosing scope.
+
+File: `closures.py`
+
+---
+
+## Decorators
+
+Covers function decorators and how they can be used to extend or modify function behavior.
+
+File: `decorators.py`
+
+---
+
 ## Iterables & Iterators
 
-Covers the difference between iterables and iterators and how Python iteration works.
+Covers iterable objects, iterators, `iter()`, and `next()`.
 
-**File:** `iterables_iterators.py`
+File: `iterables_iterators.py`
 
 ---
 
 ## enumerate()
 
-Demonstrates using `enumerate()` to access both indexes and values while iterating.
+Demonstrates using `enumerate()` to iterate over values while maintaining their indexes.
 
-**File:** `enumerate_examples.py`
+File: `enumerate_examples.py`
 
 ---
 
@@ -62,154 +95,81 @@ Demonstrates using `enumerate()` to access both indexes and values while iterati
 
 Demonstrates combining multiple iterables using `zip()`.
 
-**File:** `zip_examples.py`
+File: `zip_examples.py`
 
 ---
 
 ## Comprehensions
 
-Covers:
+Covers concise ways to construct collections using comprehensions.
 
-- List comprehensions
-- Dictionary comprehensions
-
-**File:** `comprehensions.py`
-
----
-
-## Functions
-
-Covers function definitions, parameters, return values, and reusable functions.
-
-**File:** `functions.py`
-
----
-
-## *args & **kwargs
-
-Demonstrates variable-length positional and keyword arguments.
-
-**File:** `args_kwargs.py`
-
----
-
-## Variable Scope
-
-Covers Python's LEGB scope resolution rule.
-
-**File:** `variable_scope.py`
-
----
-
-## Lambda Functions
-
-Demonstrates anonymous functions and common use cases.
-
-**File:** `lambda_examples.py`
-
----
-
-## First-Class Functions
-
-Demonstrates treating functions as objects that can be:
-
-- Assigned to variables
-- Passed as arguments
-- Returned from other functions
-
-**File:** `first_class_functions.py`
-
----
-
-## Higher-Order Functions
-
-Covers functions that accept or return other functions.
-
-**File:** `higher_order_functions.py`
-
----
-
-## Nested Functions
-
-Demonstrates defining functions inside other functions.
-
-**File:** `nested_functions.py`
-
----
-
-## Closures
-
-Demonstrates how nested functions can retain access to variables from their enclosing scope.
-
-**File:** `closures.py`
-
----
-
-## Decorators
-
-Covers function decorators and how they can extend existing function behavior.
-
-**File:** `decorators.py`
+File: `comprehensions.py`
 
 ---
 
 ## Generators
 
-Covers generator functions and the `yield` keyword.
+Covers generator functions, `yield`, lazy evaluation, and memory-efficient iteration.
 
-Generators allow values to be produced lazily rather than storing the entire result in memory.
-
-**File:** `generators.py`
+File: `generators.py`
 
 ---
 
 ## Exception Handling
 
-Covers:
+Covers handling runtime errors using:
 
-- try
-- except
-- else
-- finally
-- Raising exceptions
-- Custom exceptions
-- Exception hierarchy
+* `try`
+* `except`
+* `else`
+* `finally`
+* `raise`
 
-**File:** `exception_handling.py`
+File: `exception_handling.py`
 
 ---
 
 ## Context Managers
 
-Context managers provide controlled setup and cleanup of resources.
+Covers resource management using the `with` statement and context managers.
 
-Commonly used with:
-
-with resource:
-    ...
-
-Topics include:
-
-* `with` statements
-* `__enter__()`
-* `__exit__()`
-* `contextlib.contextmanager`
-* Resource cleanup
-* Exception handling
-
-**File:** `context_managers.py`
+File: `context_managers.py`
 
 ---
 
 ## Threading
 
-Covers basic thread creation, execution, and synchronization using `start()` and `join()`.
+Covers concurrent execution using Python's `threading` module.
 
-**File:** `threading_basics.py`
+Topics include:
+
+* Threads
+* Starting threads
+* Joining threads
+* Shared resources
+* Basic concurrency concepts
+
+File: `threading_basics.py`
 
 ---
 
-# Repository Files
+## Multiprocessing
+
+Covers process-based parallelism using Python's `multiprocessing` module.
+
+Topics include:
+
+* Creating processes
+* Starting processes
+* Joining processes
+* Process-based parallelism
+* The `if __name__ == "__main__"` guard
+
+File: `multiprocessing_basics.py`
+
+---
+
+# Repository Structure
 
 python/
 ├── README.md
@@ -226,6 +186,7 @@ python/
 ├── higher_order_functions.py
 ├── iterables_iterators.py
 ├── lambda_examples.py
+├── multiprocessing_basics.py
 ├── nested_functions.py
 ├── threading_basics.py
 ├── variable_scope.py
@@ -233,41 +194,45 @@ python/
 
 ---
 
-# Learning Progress
+# Completed Topics
 
-| Topic                            | Status    |
-| -------------------------------- | --------- |
-| Iterables & Iterators            | Completed |
-| enumerate()                      | Completed |
-| zip()                            | Completed |
-| List & Dictionary Comprehensions | Completed |
-| Functions                        | Completed |
-| *args & **kwargs                 | Completed |
-| Variable Scope                   | Completed |
-| Lambda Functions                 | Completed |
-| First-Class Functions            | Completed |
-| Higher-Order Functions           | Completed |
-| Nested Functions                 | Completed |
-| Closures                         | Completed |
-| Decorators                       | Completed |
-| Generators                       | Completed |
-| Exception Handling               | Completed |
-| Context Managers                 | Completed |
-| Threading                        | Completed |
-| Type Hints                       | Upcoming  |
-| Multiprocessing                  | Upcoming  |
-| AsyncIO                          | Upcoming  |
+* Functions
+* *args & **kwargs
+* Variable Scope
+* Lambda Functions
+* First-Class Functions
+* Higher-Order Functions
+* Nested Functions
+* Closures
+* Decorators
+* Iterables & Iterators
+* enumerate()
+* zip()
+* Comprehensions
+* Generators
+* Exception Handling
+* Context Managers
+* Threading
+* Multiprocessing
 
 ---
 
-# Learning Strategy
+# Upcoming Topics
+
+* Type Hints
+* AsyncIO
+* Testing
+* Advanced Concurrency
+
+---
+
+# Learning Approach
 
 For each Python topic:
 
-1. Understand the concept.
-2. Implement a focused example.
-3. Understand the practical use case.
-4. Review the implementation.
-5. Apply the concept in backend development where appropriate.
-
-The goal is to build strong Python fundamentals that can be applied to real backend applications and technical interviews.
+1. Understand the language feature.
+2. Implement a small practical example.
+3. Understand how Python executes the feature.
+4. Identify common backend use cases.
+5. Consider performance and concurrency implications where relevant.
+6. Apply the concept in backend projects when appropriate.

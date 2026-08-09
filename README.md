@@ -32,8 +32,8 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Binary Search
 - ✅ Binary Trees
 - ✅ Binary Search Trees
+- ✅ Heap
 - ⏳ Trees
-- ⏳ Heap
 - ⏳ Graph
 - ⏳ Dynamic Programming
 
@@ -59,7 +59,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Exception Handling
 - ✅ Context Managers
 - ✅ Threading
-- ⏳ Multiprocessing
+- ✅ Multiprocessing
 - ⏳ AsyncIO
 
 ---
@@ -92,7 +92,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Window Functions
 - ✅ Indexes
 - ✅ Query Optimization
-- ⏳ Transactions
+- ✅ Transactions
 
 ---
 
@@ -103,7 +103,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Load Balancing
 - ✅ Caching
 - ✅ Database Scaling
-- ⏳ Redis
+- ✅ Redis
 - ⏳ Kafka
 - ⏳ API Gateway
 - ⏳ Rate Limiting
@@ -119,6 +119,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Embeddings
 - ✅ Vector Databases
 - ✅ Retrieval-Augmented Generation (RAG)
+- ✅ RAG Evaluation
 - ⏳ LangChain
 - ⏳ AI Agents
 - ⏳ Model Context Protocol (MCP)
@@ -411,6 +412,40 @@ The primary objective is not just to study these topics, but to implement them w
 
 ---
 
+## ✅ Day 9
+
+### DSA
+
+- Heap
+
+### Python
+
+- Multiprocessing
+
+### Backend
+
+- Error Handling
+
+### SQL
+
+- Transactions
+
+### System Design
+
+- Redis
+
+### Generative AI
+
+- RAG Evaluation
+
+### LeetCode
+
+- Kth Largest Element in an Array
+- Top K Frequent Elements
+- Last Stone Weight
+
+---
+
 # Repository Structure
 
 backend/
@@ -426,18 +461,16 @@ system-design/
 
 ## Repository Organization
 
-Each directory focuses on a specific area of backend engineering.
-
-| Directory     |                       Purpose                      |
-|---------------|----------------------------------------------------|
-| dsa           | Data Structures, Algorithms and interview problems |
-| python        | Core and advanced Python concepts                  |
-| backend       | Flask applications and backend development         |
-| sql           | SQL concepts with practical queries                |
-| system-design | Core system design concepts                        |
-| genai         | Generative AI and LLM fundamentals                 |
-| projects      | Incremental backend project development            |
-| leetcode      | Progress tracker for solved interview problems     |
+| Directory       | Purpose                                            |
+| --------------- | -------------------------------------------------- |
+| `dsa`           | Data Structures, Algorithms and interview problems |
+| `python`        | Core and advanced Python concepts                  |
+| `backend`       | Flask applications and backend development         |
+| `sql`           | SQL concepts with practical queries                |
+| `system-design` | Core system design concepts                        |
+| `genai`         | Generative AI and LLM fundamentals                 |
+| `projects`      | Incremental backend project development            |
+| `leetcode`      | Progress tracker for solved interview problems     |
 
 ---
 
@@ -457,12 +490,8 @@ This approach ensures that concepts are not only understood but also applied in 
 
 ## Next Topics
 
-- Heap
 - Graphs
 - Dynamic Programming
-- Multiprocessing
 - AsyncIO
-- Transactions
-- Redis
 - Kafka
 - Vector Search

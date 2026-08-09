@@ -1,12 +1,12 @@
 # LeetCode
 
-This directory tracks LeetCode problems solved as part of the Backend Engineer Roadmap.
+This directory tracks the LeetCode problems solved as part of the Backend Engineer Roadmap.
 
-The actual problem implementations are organized inside the `dsa/` directory according to their data structure or algorithm category.
+The actual solution implementations are organized inside the corresponding directories under `dsa/`.
 
 ---
 
-## Solved Problems
+# Problems by Topic
 
 ## Arrays
 
@@ -14,11 +14,19 @@ The actual problem implementations are organized inside the `dsa/` directory acc
 - Contains Duplicate
 - Valid Anagram
 
+Directory: `dsa/arrays/`
+
+---
+
 ## Strings
 
 - Valid Palindrome
 - Reverse String
 - Is Subsequence
+
+Directory: `dsa/strings/`
+
+---
 
 ## Linked List
 
@@ -26,11 +34,19 @@ The actual problem implementations are organized inside the `dsa/` directory acc
 - Merge Two Sorted Lists
 - Linked List Cycle
 
+Directory: `dsa/linked_list/`
+
+---
+
 ## Stack
 
 - Valid Parentheses
 - Min Stack
 - Baseball Game
+
+Directory: `dsa/stack/`
+
+---
 
 ## Queue
 
@@ -38,27 +54,67 @@ The actual problem implementations are organized inside the `dsa/` directory acc
 - Number of Recent Calls
 - Time Needed to Buy Tickets
 
+Directory: `dsa/queue/`
+
+---
+
 ## Binary Search
 
 - Binary Search
 - Search Insert Position
 - Guess Number Higher or Lower
 
-## Binary Tree
+Directory: `dsa/binary_search/`
+
+---
+
+## Binary Trees
 
 - Maximum Depth of Binary Tree
 - Invert Binary Tree
 - Same Tree
 
-## Binary Search Tree
+Directory: `dsa/binary_tree/`
+
+---
+
+## Binary Search Trees
 
 - Search in a Binary Search Tree
 - Validate Binary Search Tree
 - Minimum Distance Between BST Nodes
 
+Directory: `dsa/binary_search_tree/`
+
 ---
 
-# Problem Organization
+## Heap
+
+- Kth Largest Element in an Array
+- Top K Frequent Elements
+- Last Stone Weight
+
+Directory: `dsa/heap/`
+
+---
+
+# Progress
+
+| Topic               | Problems Solved | Status    |
+| ------------------- | --------------: | --------- |
+| Arrays              |               3 | Completed |
+| Strings             |               3 | Completed |
+| Linked List         |               3 | Completed |
+| Stack               |               3 | Completed |
+| Queue               |               3 | Completed |
+| Binary Search       |               3 | Completed |
+| Binary Trees        |               3 | Completed |
+| Binary Search Trees |               3 | Completed |
+| Heap                |               3 | Completed |
+
+---
+
+# Repository Structure
 
 dsa/
 ├── arrays/
@@ -68,54 +124,20 @@ dsa/
 ├── queue/
 ├── binary_search/
 ├── binary_tree/
-└── binary_search_tree/
+├── binary_search_tree/
+└── heap/
 
-Each solution follows a consistent structure containing:
-
-- Problem
-- Pattern
-- Approach
-- Time Complexity
-- Space Complexity
+Each solution is stored in the directory corresponding to its data structure or algorithm.
 
 ---
 
-# Progress
+# Problem-Solving Approach
 
-| Topic              | Problems | Status    |
-| ------------------ | -------: | --------- |
-| Arrays             |        3 | Completed |
-| Strings            |        3 | Completed |
-| Linked List        |        3 | Completed |
-| Stack              |        3 | Completed |
-| Queue              |        3 | Completed |
-| Binary Search      |        3 | Completed |
-| Binary Tree        |        3 | Completed |
-| Binary Search Tree |        3 | Completed |
+For each problem:
 
----
-
-# Upcoming Topics
-
-- Heap
-- Graph
-- Dynamic Programming
-- Tree Traversals
-- Backtracking
-- Advanced Graph Algorithms
-
----
-
-# Learning Strategy
-
-For every LeetCode problem:
-
-1. Understand the problem.
-2. Identify the underlying pattern.
-3. Develop the optimal approach.
-4. Implement the solution.
-5. Analyze time complexity.
-6. Analyze space complexity.
-7. Record the important insight for future revision.
-
-The goal is to recognize patterns rather than memorize individual solutions.
+1. Understand the problem and constraints.
+2. Identify the underlying data structure or algorithm.
+3. Develop an efficient approach.
+4. Implement the solution in Python.
+5. Analyze time and space complexity.
+6. Consider edge cases.
