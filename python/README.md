@@ -14,8 +14,8 @@ Covers Python functions, parameters, return values, and function-related concept
 
 Files include:
 
-* `functions.py`
-* `args_kwargs.py`
+- `functions.py`
+- `args_kwargs.py`
 
 ---
 
@@ -119,11 +119,11 @@ File: `generators.py`
 
 Covers handling runtime errors using:
 
-* `try`
-* `except`
-* `else`
-* `finally`
-* `raise`
+- `try`
+- `except`
+- `else`
+- `finally`
+- `raise`
 
 File: `exception_handling.py`
 
@@ -143,11 +143,13 @@ Covers concurrent execution using Python's `threading` module.
 
 Topics include:
 
-* Threads
-* Starting threads
-* Joining threads
-* Shared resources
-* Basic concurrency concepts
+- Threads
+- Starting threads
+- Joining threads
+- Passing arguments to threads
+- Shared resources
+- Synchronization using locks
+- Basic concurrency concepts
 
 File: `threading_basics.py`
 
@@ -159,11 +161,11 @@ Covers process-based parallelism using Python's `multiprocessing` module.
 
 Topics include:
 
-* Creating processes
-* Starting processes
-* Joining processes
-* Process-based parallelism
-* The `if __name__ == "__main__"` guard
+- Creating processes
+- Starting processes
+- Joining processes
+- Process-based parallelism
+- The `if __name__ == "__main__"` guard
 
 File: `multiprocessing_basics.py`
 
@@ -196,33 +198,33 @@ python/
 
 # Completed Topics
 
-* Functions
-* *args & **kwargs
-* Variable Scope
-* Lambda Functions
-* First-Class Functions
-* Higher-Order Functions
-* Nested Functions
-* Closures
-* Decorators
-* Iterables & Iterators
-* enumerate()
-* zip()
-* Comprehensions
-* Generators
-* Exception Handling
-* Context Managers
-* Threading
-* Multiprocessing
+- Functions
+- *args & **kwargs
+- Variable Scope
+- Lambda Functions
+- First-Class Functions
+- Higher-Order Functions
+- Nested Functions
+- Closures
+- Decorators
+- Iterables & Iterators
+- enumerate()
+- zip()
+- Comprehensions
+- Generators
+- Exception Handling
+- Context Managers
+- Threading
+- Multiprocessing
 
 ---
 
 # Upcoming Topics
 
-* Type Hints
-* AsyncIO
-* Testing
-* Advanced Concurrency
+- Type Hints
+- AsyncIO
+- Testing
+- Advanced Concurrency
 
 ---
 

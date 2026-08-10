@@ -33,8 +33,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Binary Trees
 - ✅ Binary Search Trees
 - ✅ Heap
-- ⏳ Trees
-- ⏳ Graph
+- ✅ Graph
 - ⏳ Dynamic Programming
 
 ---
@@ -71,9 +70,10 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Flask Routing
 - ✅ REST APIs
 - ✅ Flask Blueprints
-- ⏳ FastAPI
-- ⏳ Django
-- ⏳ Authentication
+- ✅ Request & Response Handling
+- ✅ Error Handling
+- ✅ Authentication Fundamentals
+- ⏳ Authorization
 - ⏳ JWT
 - ⏳ Logging
 - ⏳ Testing
@@ -93,6 +93,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Indexes
 - ✅ Query Optimization
 - ✅ Transactions
+- ✅ Constraints
 
 ---
 
@@ -104,6 +105,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Caching
 - ✅ Database Scaling
 - ✅ Redis
+- ✅ Authentication & Authorization
 - ⏳ Kafka
 - ⏳ API Gateway
 - ⏳ Rate Limiting
@@ -120,6 +122,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Vector Databases
 - ✅ Retrieval-Augmented Generation (RAG)
 - ✅ RAG Evaluation
+- ✅ Tool Integration
 - ⏳ LangChain
 - ⏳ AI Agents
 - ⏳ Model Context Protocol (MCP)
@@ -446,6 +449,40 @@ The primary objective is not just to study these topics, but to implement them w
 
 ---
 
+## ✅ Day 10
+
+### DSA
+
+- Graphs
+
+### Backend
+
+- Authentication Fundamentals
+
+### SQL
+
+- Constraints
+
+### System Design
+
+- Authentication & Authorization
+
+### Generative AI
+
+- Tool Integration
+
+### Projects
+
+- Task Manager Authentication & Authorization Architecture
+
+### LeetCode
+
+- Number of Islands
+- Clone Graph
+- Course Schedule
+
+---
+
 # Repository Structure
 
 backend/
@@ -490,8 +527,11 @@ This approach ensures that concepts are not only understood but also applied in 
 
 ## Next Topics
 
-- Graphs
 - Dynamic Programming
 - AsyncIO
 - Kafka
-- Vector Search
+- API Gateway
+- Rate Limiting
+- LangChain
+- AI Agents
+- Model Context Protocol (MCP)

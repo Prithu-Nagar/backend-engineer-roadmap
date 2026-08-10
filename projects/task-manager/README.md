@@ -1,96 +1,207 @@
 # Task Manager REST API
 
-A backend API developed incrementally as part of the Backend Engineer Roadmap.
+A backend REST API built incrementally as part of the Backend Engineer Roadmap.
 
-The project is being built progressively to apply backend concepts learned throughout the roadmap.
-
----
-
-## Current Status
-
-The Task Manager API currently demonstrates basic Flask routing, request/response handling, validation, HTTP status codes, and JSON responses.
+The project is being developed alongside the roadmap so that concepts learned in DSA, Python, backend development, SQL, and system design can be applied to a practical backend application.
 
 ---
 
-## Day 8
+## Current Features
 
-Added request and response handling to the Task Manager API.
+The API currently covers:
 
-### Implemented
-
-* Path parameters
-* Query parameters
-* JSON request bodies
-* Basic request validation
-* HTTP status codes
-* JSON responses
-* Flask Blueprint-based routing
-
----
-
-## Endpoints
-
-| Method | Endpoint                      | Purpose                  |
-| ------ | ----------------------------- | ------------------------ |
-| GET    | `/api/tasks/`                 | Retrieve tasks           |
-| GET    | `/api/tasks/<task_id>`        | Retrieve a specific task |
-| GET    | `/api/tasks/search?query=...` | Search tasks             |
-| POST   | `/api/tasks/`                 | Create a task            |
-
-PUT and DELETE operations are planned for a future iteration.
+- Flask application setup
+- REST API structure
+- Routing
+- Request handling
+- Response handling
+- JSON responses
+- CRUD operations
+- Error handling
+- Blueprint-based application structure
+- Authentication fundamentals
 
 ---
 
-## Request Flow
+## Architecture
+
+The application follows a modular Flask architecture.
 
 Client
-  ↓
-HTTP Request
-  ↓
+  |
+  v
 Flask Application
-  ↓
-Task Manager Blueprint
-  ↓
-Request Data
-  ↓
-Validation
-  ↓
-Response
+  |
+  v
+Blueprint / Routes
+  |
+  +----> Request Validation
+  |
+  +----> Authentication
+  |
+  +----> Authorization
+  |
+  v
+Business Logic
+  |
+  v
+Database
+
+The goal is to keep request handling, authentication, business logic, and persistence responsibilities separated as the project grows.
 
 ---
 
-## Implementation
+## API Flow
 
-The Task Manager API implementation is currently located in the repository's `backend/` directory.
+A protected request follows this general flow:
 
-Relevant files include:
+Client
+  |
+  | HTTP Request
+  v
+Flask Route
+  |
+  v
+Authentication
+  |
+  v
+Authorization
+  |
+  v
+Request Validation
+  |
+  v
+Business Logic
+  |
+  v
+Database
+  |
+  v
+HTTP Response
 
-* `backend/app.py`
-* `backend/flask_routing.py`
-* `backend/request_response.py`
+Authentication establishes the identity of the caller.
 
-The standalone request/response examples are demonstrated in `backend/request_response.py`, while the Task Manager routes are implemented through the Blueprint in `backend/flask_routing.py`.
+Authorization determines whether that caller is allowed to access or modify the requested resource.
 
 ---
 
-## API Structure
+## Authentication
 
-The Task Manager Blueprint uses the following base path:
+Authentication is responsible for verifying the identity of a user before allowing access to protected resources.
 
-/api/tasks
+The current roadmap implementation demonstrates:
 
-This keeps the Task Manager endpoints grouped under a dedicated API namespace.
+- Password hashing
+- Password verification
+- Basic authentication
+- Protected Flask endpoints
+- Authentication decorators
+- `401 Unauthorized` responses
+
+The standalone authentication example is available at:
+
+`backend/authentication.py`
+
+This project documentation establishes the architectural direction for integrating authentication into the Task Manager API.
 
 ---
 
-## Roadmap
+## Authorization
 
-Future iterations will introduce:
+Authentication alone is not sufficient.
 
-* Persistent database storage
-* PUT and DELETE operations
-* Automated testing
-* Authentication
-* Authorization
-* Logging
-* Production-oriented infrastructure
+For example, if user `A` requests:
+
+GET /tasks/15
+
+the application must determine whether task `15` belongs to user `A` or whether the user otherwise has permission to access it.
+
+Authorization should therefore happen before returning protected resources.
+
+A future implementation can introduce:
+
+- User identity
+- Resource ownership
+- Roles
+- Permissions
+- Role-based access control
+
+---
+
+## Security Principles
+
+The API should follow these principles as authentication is integrated:
+
+- Never store plaintext passwords.
+- Use HTTPS in production.
+- Validate incoming requests.
+- Authenticate protected requests.
+- Authorize access to resources.
+- Follow least-privilege principles.
+- Keep secrets outside source control.
+- Return appropriate HTTP status codes.
+- Avoid exposing sensitive internal errors.
+- Log security-relevant events appropriately.
+
+---
+
+## Example Protected Request
+
+GET /tasks/15
+Authorization: Bearer <access-token>
+
+The application should:
+
+1. Receive the request.
+2. Validate the authentication credential.
+3. Identify the user.
+4. Check whether the user can access task 15.
+5. Retrieve the task.
+6. Return the appropriate response.
+
+The client should never be trusted to enforce authorization by itself.
+
+---
+
+## Current API Direction
+
+The Task Manager API is being developed incrementally.
+
+Current architectural priorities are:
+
+1. HTTP fundamentals
+2. REST API design
+3. CRUD operations
+4. Request and response handling
+5. Error handling
+6. Authentication
+7. Authorization
+8. Database integration
+9. Testing
+10. Deployment
+
+---
+
+## Future Improvements
+
+Planned improvements include:
+
+- User management
+- JWT-based authentication
+- Role-based authorization
+- Persistent database storage
+- Request validation
+- Automated tests
+- Logging
+- Dockerization
+- API documentation
+- Production deployment
+
+---
+
+## Learning Purpose
+
+This project is intentionally developed incrementally rather than as a single large application.
+
+Each roadmap milestone introduces another production-relevant backend concept while keeping the application understandable and maintainable.
+

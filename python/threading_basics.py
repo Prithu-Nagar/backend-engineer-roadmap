@@ -1,36 +1,72 @@
 """
 Python Threading Basics
 
-Demonstrates creating threads, starting threads,
-and waiting for threads using join().
+Demonstrates:
+- Creating threads
+- Starting and joining threads
+- Passing arguments to threads
+- Protecting shared state with a lock
 """
 
 import threading
+import time
 
 
-def task(name):
-    print(f"Running {name}")
+def worker(name: str, delay: float) -> None:
+    """Simulate work performed by a thread."""
+    print(f"{name} started")
+
+    time.sleep(delay)
+
+    print(f"{name} finished")
 
 
-def main():
-    thread1 = threading.Thread(
-        target=task,
-        args=("Task 1",),
-    )
+def run_basic_threads() -> None:
+    """Create and run multiple worker threads."""
+    threads = [
+        threading.Thread(
+            target=worker,
+            args=("Worker-1", 1),
+        ),
+        threading.Thread(
+            target=worker,
+            args=("Worker-2", 1),
+        ),
+    ]
 
-    thread2 = threading.Thread(
-        target=task,
-        args=("Task 2",),
-    )
+    for thread in threads:
+        thread.start()
 
-    thread1.start()
-    thread2.start()
+    for thread in threads:
+        thread.join()
 
-    thread1.join()
-    thread2.join()
 
-    print("All tasks completed.")
+def run_shared_counter() -> None:
+    """Demonstrate protecting shared state with a Lock."""
+    counter = 0
+    lock = threading.Lock()
+
+    def increment() -> None:
+        nonlocal counter
+
+        for _ in range(100_000):
+            with lock:
+                counter += 1
+
+    threads = [
+        threading.Thread(target=increment)
+        for _ in range(2)
+    ]
+
+    for thread in threads:
+        thread.start()
+
+    for thread in threads:
+        thread.join()
+
+    print(f"Final counter: {counter}")
 
 
 if __name__ == "__main__":
-    main()
+    run_basic_threads()
+    run_shared_counter()

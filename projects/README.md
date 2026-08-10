@@ -113,8 +113,6 @@ The service and database layers will be introduced as the project progresses thr
 - SQLAlchemy
 - Service Layer
 - Request Validation
-- Error Handling
-- Authentication
 - JWT
 - Testing
 - Logging

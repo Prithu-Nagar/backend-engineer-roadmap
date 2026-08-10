@@ -1,8 +1,37 @@
 # SQL
 
-This directory contains practical SQL examples covering database fundamentals, querying, analysis, optimization, and transaction management.
+This directory contains SQL concepts and practical query examples covered throughout the Backend Engineer Roadmap.
 
-The focus is on writing correct and efficient SQL while understanding how queries interact with relational databases.
+The goal is to build strong SQL fundamentals required for backend development, database interaction, performance optimization, data integrity, and technical interviews.
+
+---
+
+## Completed Topics
+
+- SQL Basics
+- Joins
+- Aggregate Functions
+- Subqueries
+- Indexes
+- Window Functions
+- Common Table Expressions (CTEs)
+- Query Optimization
+- Transactions
+- Constraints
+
+---
+
+## Current Topics
+
+None
+
+---
+
+## Upcoming Topics
+
+- Advanced Database Design
+- Database Scaling
+- Advanced Query Optimization
 
 ---
 
@@ -12,98 +41,122 @@ The focus is on writing correct and efficient SQL while understanding how querie
 
 Covers fundamental SQL operations including:
 
-- `SELECT`
-- `INSERT`
-- `UPDATE`
-- `DELETE`
-- `WHERE`
-- `ORDER BY`
-- `GROUP BY`
-- `HAVING`
+- SELECT
+- INSERT
+- UPDATE
+- DELETE
+- WHERE
+- ORDER BY
+- GROUP BY
+- HAVING
+- DISTINCT
+- LIMIT
 
-File: `basics.sql`
+**File:** `basics.sql`
 
 ---
 
 ## Joins
 
-Covers combining data from multiple tables using:
+Covers combining data from multiple tables.
 
-- `INNER JOIN`
-- `LEFT JOIN`
-- `RIGHT JOIN`
-- `FULL OUTER JOIN`
+Topics include:
 
-File: `joins.sql`
+- INNER JOIN
+- LEFT JOIN
+- RIGHT JOIN
+- FULL OUTER JOIN
+- SELF JOIN
+
+**File:** `joins.sql`
 
 ---
 
 ## Aggregate Functions
 
-Covers functions used to perform calculations across rows.
+Covers SQL functions used to calculate values across multiple rows.
 
 Examples include:
 
-- `COUNT()`
-- `SUM()`
-- `AVG()`
-- `MIN()`
-- `MAX()`
+- COUNT()
+- SUM()
+- AVG()
+- MIN()
+- MAX()
+- GROUP BY
+- HAVING
+
+**File:** `aggregate_functions.sql`
 
 ---
 
 ## Subqueries
 
-Covers queries nested inside other SQL statements.
+Covers queries nested inside other SQL queries.
 
 Topics include:
 
 - Scalar subqueries
-- Subqueries with `WHERE`
-- Subqueries with `FROM`
-- Subqueries with aggregate functions
+- Subqueries with WHERE
+- Subqueries with IN
+- Correlated subqueries
+- EXISTS
 
----
-
-## Common Table Expressions
-
-Covers Common Table Expressions using the `WITH` clause.
-
-CTEs can improve query organization and make complex queries easier to understand.
-
-File: `ctes.sql`
-
----
-
-## Window Functions
-
-Covers analytical functions that operate across related rows without collapsing the result set.
-
-Examples include:
-
-- `ROW_NUMBER()`
-- `RANK()`
-- `DENSE_RANK()`
-- `LAG()`
-- `LEAD()`
-
-File: `window_functions.sql`
+**File:** `subqueries.sql`
 
 ---
 
 ## Indexes
 
-Covers database indexes and how they can improve query performance.
+Indexes improve the performance of database queries by providing a faster way to locate rows.
 
 Topics include:
 
-- Index purpose
-- Index creation
-- Index usage
+- Basic indexes
+- Unique indexes
+- Composite indexes
+- Index column order
+- EXPLAIN
+- EXPLAIN ANALYZE
 - Index trade-offs
-- Read vs write performance
 
-File: `indexes.sql`
+**File:** `indexes.sql`
+
+---
+
+## Window Functions
+
+Window functions perform calculations across a set of related rows without collapsing them into a single row.
+
+Common examples include:
+
+- ROW_NUMBER()
+- RANK()
+- DENSE_RANK()
+- LAG()
+- LEAD()
+- PARTITION BY
+- ORDER BY
+
+**File:** `window_functions.sql`
+
+---
+
+## Common Table Expressions (CTEs)
+
+CTEs allow complex queries to be broken into named temporary result sets.
+
+Example:
+
+WITH high_value_orders AS (
+    SELECT *
+    FROM orders
+    WHERE amount > 1000
+)
+SELECT *
+FROM high_value_orders;
+
+**File:** `ctes.sql`
 
 ---
 
@@ -113,77 +166,102 @@ Covers techniques for understanding and improving SQL query performance.
 
 Topics include:
 
-- Execution plans
-- `EXPLAIN`
+- Selecting only required columns
+- Filtering efficiently
 - Index usage
-- Avoiding unnecessary scans
-- Query performance analysis
+- Composite indexes
+- EXPLAIN
+- EXPLAIN ANALYZE
+- Query execution plans
 
-File: `query_optimization.sql`
+**File:** `query_optimization.sql`
 
 ---
 
 ## Transactions
 
-Covers maintaining consistency across multiple database operations.
+Transactions allow multiple database operations to be treated as a single unit of work.
 
 Topics include:
 
-- `BEGIN`
-- `COMMIT`
-- `ROLLBACK`
-- `SAVEPOINT`
-- Atomic operations
+- COMMIT
+- ROLLBACK
+- Atomicity
+- Consistency
+- Isolation
+- Durability
+- Transaction boundaries
 
-File: `transactions.sql`
+**File:** `transactions.sql`
 
 ---
 
-# Repository Structure
+## Constraints
+
+Constraints enforce data integrity at the database level.
+
+Topics include:
+
+- PRIMARY KEY
+- FOREIGN KEY
+- UNIQUE
+- NOT NULL
+- CHECK
+- DEFAULT
+- Referential integrity
+- Parameterized queries
+
+**File:** `constraints.sql`
+
+The examples demonstrate how database constraints can prevent invalid data and enforce relationships between tables.
+
+Parameterized queries should be used by application code rather than constructing SQL statements through string concatenation.
+
+---
+
+# Repository Files
 
 sql/
 ├── README.md
-├── basics.sql
-├── joins.sql
 ├── aggregate_functions.sql
-├── subqueries.sql
+├── basics.sql
+├── constraints.sql
 ├── ctes.sql
-├── window_functions.sql
 ├── indexes.sql
+├── joins.sql
 ├── query_optimization.sql
-└── transactions.sql
+├── subqueries.sql
+└── window_functions.sql
 
 ---
 
-# Completed Topics
+# Learning Progress
 
-- SQL Basics
-- Joins
-- Aggregate Functions
-- Subqueries
-- Common Table Expressions
-- Window Functions
-- Indexes
-- Query Optimization
-- Transactions
-
----
-
-# Upcoming Topics
-
-- Advanced Query Optimization
-- Database Design
-- Normalization
+| Topic               | Status    |
+| ------------------- | --------- |
+| SQL Basics          | Completed |
+| Joins               | Completed |
+| Aggregate Functions | Completed |
+| Subqueries          | Completed |
+| Indexes             | Completed |
+| Window Functions    | Completed |
+| CTEs                | Completed |
+| Query Optimization  | Completed |
+| Transactions        | Completed |
+| Constraints         | Completed |
 
 ---
 
-# Learning Approach
+# Learning Strategy
 
 For each SQL topic:
 
-1. Understand the underlying database concept.
-2. Write practical SQL examples.
-3. Analyze query behavior.
-4. Consider performance implications.
-5. Understand how indexes and execution plans affect queries.
-6. Apply transaction and consistency concepts to backend applications.
+1. Understand the underlying concept.
+2. Study the syntax.
+3. Write practical queries.
+4. Understand query performance.
+5. Understand data integrity and database constraints.
+6. Practice interview-oriented problems.
+7. Apply the concept to backend database operations.
+
+The goal is to understand not only how to write SQL queries, but also how those queries behave in real backend applications.

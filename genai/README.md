@@ -1,16 +1,28 @@
 # Generative AI
 
-This directory contains practical notes and examples covering Generative AI, Large Language Models, embeddings, vector databases, and Retrieval-Augmented Generation.
+This directory contains notes and practical examples covering Generative AI concepts relevant to backend engineering and modern AI-powered applications.
 
-The focus is on understanding the core concepts behind modern LLM-powered applications and how they can be applied to backend systems.
+The focus is on understanding how LLM-based systems work and how they can be integrated into practical backend applications.
 
 ---
 
-# Topics
+## Topics Covered
+
+- Prompt Engineering
+- Prompt Chaining
+- Prompt Templates
+- Tokens & Tokenization
+- Embeddings
+- Vector Databases
+- Retrieval-Augmented Generation (RAG)
+- RAG Evaluation
+- Tool Integration
+
+---
 
 ## Prompt Engineering
 
-Covers techniques for designing effective prompts for Large Language Models.
+Covers designing effective prompts for obtaining reliable and useful model outputs.
 
 Topics include:
 
@@ -24,30 +36,27 @@ Topics include:
 
 ## Prompt Chaining
 
-Covers breaking complex tasks into multiple sequential LLM calls.
+Covers breaking complex tasks into multiple sequential LLM operations.
 
 Topics include:
 
 - Sequential prompts
 - Intermediate outputs
 - Multi-step workflows
-- Chaining LLM operations
-
-File: `prompt_chaining.md`
+- Structured pipelines
 
 ---
 
 ## Prompt Templates
 
-Covers reusable prompt structures that can be populated with dynamic inputs.
+Covers reusable prompt structures with dynamic inputs.
 
 Topics include:
 
-- Template variables
-- Reusable prompts
-- Structured prompt construction
-
-File: `prompt_templates.md`
+- Variables
+- Reusable instructions
+- Structured prompts
+- Consistent model interactions
 
 ---
 
@@ -59,107 +68,141 @@ Topics include:
 
 - Tokens
 - Tokenization
-- Token limits
 - Context windows
+- Token limits
 - Token usage
-
-File: `tokens_and_tokenization.md`
 
 ---
 
 ## Embeddings
 
-Covers converting text into numerical vector representations that capture semantic relationships.
+Covers representing text as numerical vectors for semantic comparison.
 
-Topics include:
+Common applications include:
 
-- Embedding vectors
-- Semantic similarity
-- Vector representations
+- Semantic search
 - Similarity search
-
-File: `embeddings.md`
+- Recommendation systems
+- Retrieval systems
 
 ---
 
 ## Vector Databases
 
-Covers storing and searching vector embeddings.
+Covers databases designed to store and retrieve vector embeddings efficiently.
 
 Topics include:
 
-- Vector storage
+- Embeddings
 - Similarity search
-- Nearest-neighbor search
 - Metadata filtering
-- Vector database use cases
-
-File: `vector_databases.md`
+- Approximate nearest-neighbor search
 
 ---
 
-## Retrieval-Augmented Generation (RAG)
+## Retrieval-Augmented Generation
 
-Covers combining information retrieval with Large Language Models.
+RAG combines information retrieval with generation.
 
-A typical RAG pipeline is:
+Basic flow:
 
+text
 User Query
-    ↓
-Query Processing
-    ↓
+    |
+    v
 Embedding
-    ↓
+    |
+    v
 Vector Search
-    ↓
-Relevant Documents
-    ↓
-Context
-    ↓
+    |
+    v
+Relevant Context
+    |
+    v
 LLM
-    ↓
-Generated Answer
+    |
+    v
+Answer
 
-File: `rag.md`
+RAG can help ground model responses in external or application-specific information.
 
 ---
 
 ## RAG Evaluation
 
-Covers evaluating the quality of both retrieval and generated responses in a RAG system.
+Covers evaluating retrieval and generation quality.
 
-Topics include:
+Important areas include:
 
-- Precision
-- Recall
-- Precision@K
-- Recall@K
-- Mean Reciprocal Rank (MRR)
-- NDCG
+- Retrieval relevance
+- Context quality
+- Answer correctness
 - Faithfulness
-- Answer Relevance
-- Correctness
-- Retrieval vs generation failures
-
-File: `rag_evaluation.md`
+- Groundedness
+- End-to-end evaluation
 
 ---
 
-# Repository Structure
+## Tool Integration
+
+Tool integration allows an LLM application to interact with controlled external systems and backend functions.
+
+Examples include:
+
+- Database lookups
+- API calls
+- Application services
+- Calculations
+- Resource operations
+
+The application should control tool execution and validate the model-generated arguments.
+
+File: `tool_integration.md`
+
+### Basic Flow
+
+text
+User
+ |
+ v
+LLM
+ |
+ | Tool Call
+ v
+Application
+ |
+ v
+Tool
+ |
+ v
+Tool Result
+ |
+ v
+LLM
+ |
+ v
+Final Response
+
+Tool calling and RAG can also be combined when an application needs both retrieved knowledge and live application data.
+
+---
+
+## Repository Structure
 
 genai/
 ├── README.md
+├── embeddings.md
 ├── prompt_chaining.md
 ├── prompt_templates.md
-├── tokens_and_tokenization.md
-├── embeddings.md
-├── vector_databases.md
 ├── rag.md
-└── rag_evaluation.md
+├── rag_evaluation.md
+├── tokens_and_tokenization.md
+├── tool_integration.md
+└── vector_databases.md
 
 ---
 
-# Completed Topics
+## Completed Topics
 
 - Prompt Engineering
 - Prompt Chaining
@@ -167,28 +210,28 @@ genai/
 - Tokens & Tokenization
 - Embeddings
 - Vector Databases
-- Retrieval-Augmented Generation (RAG)
+- Retrieval-Augmented Generation
 - RAG Evaluation
+- Tool Integration
 
 ---
 
-# Upcoming Topics
+## Upcoming Topics
 
 - LangChain
 - AI Agents
-- Vector Search
 - Model Context Protocol (MCP)
-- Advanced RAG
-- LLM Application Architecture
 
 ---
 
-# Learning Approach
+## Learning Approach
 
 For each Generative AI topic:
 
 1. Understand the underlying concept.
-2. Study how it is used in LLM-powered applications.
-3. Implement or analyze practical examples where appropriate.
-4. Understand the limitations and trade-offs.
-5. Connect the concept to backend and production use cases.
+2. Understand where it fits in an AI application.
+3. Implement or document a practical example.
+4. Understand limitations and failure modes.
+5. Consider security and reliability.
+6. Apply the concept to backend and AI-powered projects.
+

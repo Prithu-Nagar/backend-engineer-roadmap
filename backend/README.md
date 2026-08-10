@@ -1,6 +1,6 @@
 # Backend
 
-This directory contains practical backend development examples using Flask, with a focus on HTTP, routing, REST APIs, request/response handling, error handling, and modular application structure.
+This directory contains practical backend development examples using Flask, with a focus on HTTP, routing, REST APIs, request/response handling, error handling, authentication, and modular application structure.
 
 ---
 
@@ -20,14 +20,14 @@ Covers Flask routing and the Task Manager API structure.
 
 Topics include:
 
-* Flask routes
-* Dynamic path parameters
-* Query parameters
-* HTTP methods
-* JSON request bodies
-* Basic request validation
-* HTTP status codes
-* Flask Blueprints
+- Flask routes
+- Dynamic path parameters
+- Query parameters
+- HTTP methods
+- JSON request bodies
+- Basic request validation
+- HTTP status codes
+- Flask Blueprints
 
 File: `flask_routing.py`
 
@@ -39,12 +39,12 @@ Covers handling incoming HTTP requests and constructing appropriate responses.
 
 Topics include:
 
-* Path parameters
-* Query parameters
-* JSON request bodies
-* Request validation
-* HTTP status codes
-* JSON responses
+- Path parameters
+- Query parameters
+- JSON request bodies
+- Request validation
+- HTTP status codes
+- JSON responses
 
 File: `request_response.py`
 
@@ -56,13 +56,36 @@ Covers handling invalid requests and application errors in Flask.
 
 Topics include:
 
-* HTTP 400 Bad Request
-* HTTP 404 Not Found
-* HTTP 500 Internal Server Error
-* JSON error responses
-* Flask error handlers
+- HTTP 400 Bad Request
+- HTTP 404 Not Found
+- HTTP 500 Internal Server Error
+- JSON error responses
+- Flask error handlers
 
 File: `error_handling.py`
+
+---
+
+## Authentication
+
+Covers the basic authentication flow for protecting backend endpoints.
+
+Topics include:
+
+- Authentication vs authorization
+- Password hashing
+- Password verification
+- HTTP Basic Authentication
+- Protected endpoints
+- Authentication decorators
+- `401 Unauthorized`
+- `WWW-Authenticate` response headers
+
+File: `authentication.py`
+
+The example uses Werkzeug's password hashing utilities instead of storing plaintext passwords.
+
+> This is a learning example. Production applications should use a proper authentication architecture, secure secret management, HTTPS, appropriate session or token management, and additional security controls.
 
 ---
 
@@ -81,32 +104,34 @@ The application registers the Task Manager Blueprint defined in `flask_routing.p
 backend/
 ├── README.md
 ├── app.py
+├── authentication.py
+├── error_handling.py
 ├── flask_basics.py
 ├── flask_routing.py
-├── request_response.py
-└── error_handling.py
+└── request_response.py
 
 ---
 
 # Completed Topics
 
-* Flask Basics
-* Flask Routing
-* Request & Response Handling
-* Error Handling
+- Flask Basics
+- Flask Routing
+- Request & Response Handling
+- Error Handling
+- Authentication Fundamentals
 
 ---
 
 # Upcoming Topics
 
-* Authentication
-* JWT
-* Logging
-* Testing
-* FastAPI
-* Django
-* Docker
-* Deployment
+- JWT
+- Authorization
+- Logging
+- Testing
+- FastAPI
+- Django
+- Docker
+- Deployment
 
 ---
 

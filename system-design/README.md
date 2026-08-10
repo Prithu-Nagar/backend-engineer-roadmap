@@ -1,24 +1,35 @@
 # System Design
 
-This directory contains practical notes covering the fundamentals of designing scalable, reliable, and maintainable backend systems.
+This directory contains system design concepts relevant to backend engineering, scalable applications, distributed systems, and production architecture.
 
-The focus is on understanding how individual components work together and the trade-offs involved when designing backend systems.
+The focus is on understanding how backend systems are structured, how components communicate, and how systems scale as traffic and data grow.
 
 ---
 
-# Topics
+## Topics Covered
+
+- Monolith vs Microservices
+- Reverse Proxy
+- Load Balancing
+- Caching
+- Database Scaling
+- Redis
+- Authentication & Authorization
+
+---
 
 ## Monolith vs Microservices
 
-Covers the architectural differences between monolithic and microservices-based applications.
+Covers the architectural differences between monolithic and microservice-based systems.
 
 Topics include:
 
 - Monolithic architecture
 - Microservices architecture
 - Service boundaries
-- Deployment considerations
-- Scalability trade-offs
+- Independent deployment
+- Scalability
+- Operational complexity
 
 File: `monolith_vs_microservices.md`
 
@@ -26,13 +37,13 @@ File: `monolith_vs_microservices.md`
 
 ## Reverse Proxy
 
-Covers the role of reverse proxies in backend architectures.
+Covers the role of reverse proxies between clients and backend services.
 
 Topics include:
 
 - Request forwarding
-- SSL termination
-- Load distribution
+- TLS termination
+- Load balancing
 - Security
 - Routing
 
@@ -42,15 +53,15 @@ File: `reverse_proxy.md`
 
 ## Load Balancing
 
-Covers distributing incoming traffic across multiple backend instances.
+Covers distributing incoming requests across multiple backend instances.
 
 Topics include:
 
-- Load balancers
 - Horizontal scaling
+- Load-balancing algorithms
 - Health checks
-- Load-balancing strategies
-- High availability
+- Availability
+- Fault tolerance
 
 File: `load_balancer.md`
 
@@ -58,15 +69,16 @@ File: `load_balancer.md`
 
 ## Caching
 
-Covers caching as a technique for reducing latency and database load.
+Covers using caches to reduce latency and database load.
 
 Topics include:
 
-- Cache-aside pattern
-- Cache hits and misses
-- TTL
+- Cache-aside
+- Read-through caching
+- Write-through caching
 - Cache invalidation
-- Distributed caching
+- TTL
+- Cache consistency
 
 File: `caching.md`
 
@@ -74,7 +86,7 @@ File: `caching.md`
 
 ## Database Scaling
 
-Covers techniques for scaling databases as application traffic and data volume increase.
+Covers approaches for scaling databases as traffic and data volume increase.
 
 Topics include:
 
@@ -84,6 +96,7 @@ Topics include:
 - Database partitioning
 - Sharding
 - Replication
+- Connection management
 
 File: `database-scaling.md`
 
@@ -91,65 +104,77 @@ File: `database-scaling.md`
 
 ## Redis
 
-Covers Redis as an in-memory data store and caching layer.
+Covers Redis as an in-memory data store commonly used for caching and other backend use cases.
 
 Topics include:
 
-- Cache-aside pattern
-- Cache keys
+- Key-value storage
+- Caching
 - TTL
-- Cache invalidation
-- Cache hits and misses
-- Redis vs primary database
-- Common Redis use cases
-- Scaling considerations
+- Sessions
+- Counters
+- Distributed locks
 
 File: `redis.md`
 
 ---
 
-# Repository Structure
+## Authentication & Authorization
 
-system-design/
-├── README.md
-├── monolith_vs_microservices.md
-├── caching.md
-├── load_balancer.md
-├── reverse_proxy.md
-├── database-scaling.md
-└── redis.md
+Authentication establishes the identity of a user, while authorization determines what that user is allowed to access.
 
----
+Topics include:
 
-# Completed Topics
+- Authentication vs authorization
+- Session-based authentication
+- Token-based authentication
+- Password hashing
+- Access control
+- Least privilege
+- Secure credential handling
+- Authentication architecture
+- Authorization checks
 
-- Monolith vs Microservices
-- Reverse Proxy
-- Load Balancing
-- Caching
-- Database Scaling
-- Redis
+File: `authentication-authorization.md`
 
 ---
 
-# Upcoming Topics
+# System Design Approach
+
+For each system design topic:
+
+1. Understand the problem.
+2. Identify functional requirements.
+3. Identify non-functional requirements.
+4. Define the major system components.
+5. Understand data flow between components.
+6. Identify scalability and reliability concerns.
+7. Consider failure scenarios.
+8. Evaluate architectural trade-offs.
+
+The goal is to understand why a particular architecture is appropriate rather than memorizing a single system design.
+
+---
+
+## Learning Progress
+
+| Topic | Status |
+|---|---|
+| Monolith vs Microservices | Completed |
+| Reverse Proxy | Completed |
+| Load Balancing | Completed |
+| Caching | Completed |
+| Database Scaling | Completed |
+| Redis | Completed |
+| Authentication & Authorization | Completed |
+
+---
+
+## Upcoming Topics
 
 - Kafka
 - API Gateway
 - Rate Limiting
-- Message Queues
 - Distributed Systems
-- Advanced System Design
-
----
-
-# Learning Approach
-
-For each system design topic:
-
-1. Understand the problem the component solves.
-2. Understand where it fits in a backend architecture.
-3. Study common implementation patterns.
-4. Identify scalability and reliability considerations.
-5. Understand the major trade-offs.
-6. Apply the concepts to practical backend systems where appropriate.
+- Message Queues
+- Event-Driven Architecture

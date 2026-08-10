@@ -98,6 +98,16 @@ Directory: `dsa/heap/`
 
 ---
 
+## Graphs
+
+- Number of Islands
+- Clone Graph
+- Course Schedule
+
+Directory: `dsa/graphs/`
+
+---
+
 # Progress
 
 | Topic               | Problems Solved | Status    |
@@ -111,6 +121,7 @@ Directory: `dsa/heap/`
 | Binary Trees        |               3 | Completed |
 | Binary Search Trees |               3 | Completed |
 | Heap                |               3 | Completed |
+| Graphs              |               3 | Completed |
 
 ---
 
@@ -125,7 +136,8 @@ dsa/
 ├── binary_search/
 ├── binary_tree/
 ├── binary_search_tree/
-└── heap/
+├── heap/
+└── graphs/
 
 Each solution is stored in the directory corresponding to its data structure or algorithm.
 

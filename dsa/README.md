@@ -71,6 +71,20 @@ Topics include:
 
 Directory: `heap/`
 
+### Graphs
+
+Covers graph traversal, connected components, cloning, and cycle detection.
+
+Topics include:
+
+- DFS/BFS traversal
+- Connected components
+- Graph cloning
+- Topological sort
+- Cycle detection
+
+Directory: `graphs/`
+
 ---
 
 # Repository Structure
@@ -85,7 +99,8 @@ dsa/
 ├── binary_search/
 ├── binary_tree/
 ├── binary_search_tree/
-└── heap/
+├── heap/
+└── graphs/
 
 ---
 
@@ -125,12 +140,12 @@ The goal is not only to produce a working solution but also to understand its pe
 - Binary Trees
 - Binary Search Trees
 - Heap
+- Graph
 
 ---
 
 # Upcoming Topics
 
-- Graph
 - Dynamic Programming
 - Backtracking
 - Advanced Tree Algorithms
