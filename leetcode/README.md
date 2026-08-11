@@ -108,6 +108,14 @@ Directory: `dsa/graphs/`
 
 ---
 
+## Dynamic Programming
+
+- Climbing Stairs
+- House Robber
+- Min Cost Climbing Stairs
+
+---
+
 # Progress
 
 | Topic               | Problems Solved | Status    |
@@ -122,6 +130,7 @@ Directory: `dsa/graphs/`
 | Binary Search Trees |               3 | Completed |
 | Heap                |               3 | Completed |
 | Graphs              |               3 | Completed |
+| Dynamic Programming |               3 | Completed |
 
 ---
 
@@ -137,7 +146,8 @@ dsa/
 ├── binary_tree/
 ├── binary_search_tree/
 ├── heap/
-└── graphs/
+├── graphs/
+└── dynamic_programming/
 
 Each solution is stored in the directory corresponding to its data structure or algorithm.
 

@@ -128,6 +128,46 @@ A future implementation can introduce:
 
 ---
 
+## Day 11 — JWT Authentication
+
+The Task Manager API is extended with JWT-based authentication.
+
+### Milestone
+
+Implement JWT authentication for protected API resources.
+
+### Authentication Flow
+
+Client
+   |
+   | Login
+   v
+Task Manager API
+   |
+   | Validate credentials
+   v
+JWT Access Token
+   |
+   v
+Client
+   |
+   | Bearer Token
+   v
+Protected Task API
+JWT Responsibilities
+
+The project introduces:
+
+Access token generation
+JWT claims
+Token expiration
+Token validation
+Protected API access
+
+The JWT implementation is maintained separately so authentication logic can be reused by protected endpoints.
+
+---
+
 ## Security Principles
 
 The API should follow these principles as authentication is integrated:
@@ -187,7 +227,6 @@ Current architectural priorities are:
 Planned improvements include:
 
 - User management
-- JWT-based authentication
 - Role-based authorization
 - Persistent database storage
 - Request validation

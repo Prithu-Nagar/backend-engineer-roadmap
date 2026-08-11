@@ -34,7 +34,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Binary Search Trees
 - ✅ Heap
 - ✅ Graph
-- ⏳ Dynamic Programming
+- ✅ Dynamic Programming
 
 ---
 
@@ -59,7 +59,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Context Managers
 - ✅ Threading
 - ✅ Multiprocessing
-- ⏳ AsyncIO
+- ✅ AsyncIO
 
 ---
 
@@ -73,8 +73,8 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Request & Response Handling
 - ✅ Error Handling
 - ✅ Authentication Fundamentals
-- ⏳ Authorization
-- ⏳ JWT
+- ✅ Authorization
+- ✅ JWT
 - ⏳ Logging
 - ⏳ Testing
 - ⏳ Docker
@@ -106,8 +106,8 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Database Scaling
 - ✅ Redis
 - ✅ Authentication & Authorization
+- ✅ API Gateway
 - ⏳ Kafka
-- ⏳ API Gateway
 - ⏳ Rate Limiting
 
 ---
@@ -123,7 +123,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Retrieval-Augmented Generation (RAG)
 - ✅ RAG Evaluation
 - ✅ Tool Integration
-- ⏳ LangChain
+- ✅ LangChain
 - ⏳ AI Agents
 - ⏳ Model Context Protocol (MCP)
 
@@ -480,6 +480,57 @@ The primary objective is not just to study these topics, but to implement them w
 - Number of Islands
 - Clone Graph
 - Course Schedule
+
+---
+
+## ✅ Day 11
+
+### DSA
+
+- Dynamic Programming
+- 1D Dynamic Programming
+- DP State
+- Recurrence Relations
+- Memoization
+- Tabulation
+- Space Optimization
+
+### Python
+
+- AsyncIO
+- Event Loop
+- Coroutines
+- async
+- await
+- asyncio.gather()
+
+### Backend
+
+- JWT Authentication
+- Access Tokens
+- Token Validation
+
+### SQL
+
+- Transactions Revision
+- ACID Properties
+- COMMIT
+- ROLLBACK
+- SAVEPOINT
+
+### System Design
+
+- API Gateway
+
+### Projects
+
+- Task Manager JWT Authentication Implementation
+
+### LeetCode
+
+- Climbing Stairs
+- House Robber
+- Min Cost Climbing Stairs
 
 ---
 

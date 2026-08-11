@@ -87,6 +87,33 @@ Directory: `graphs/`
 
 ---
 
+## Dynamic Programming
+
+Day 11 introduces Dynamic Programming with a focus on common 1D DP patterns.
+
+Topics covered:
+
+- Dynamic Programming fundamentals
+- DP state
+- Recurrence relations
+- Base cases
+- Memoization
+- Tabulation
+- Space optimization
+- 1D Dynamic Programming
+
+Problems covered:
+
+- Climbing Stairs
+- House Robber
+- Min Cost Climbing Stairs
+
+The goal is to recognize when a problem can be represented using previous states and to understand how the same recurrence can be implemented using memoization, tabulation, or constant-space optimization.
+
+Directory: `dynamic_programming/`
+
+---
+
 # Repository Structure
 
 dsa/
@@ -100,7 +127,8 @@ dsa/
 ├── binary_tree/
 ├── binary_search_tree/
 ├── heap/
-└── graphs/
+├── graphs/
+└── dynamic_programming/
 
 ---
 
@@ -141,12 +169,12 @@ The goal is not only to produce a working solution but also to understand its pe
 - Binary Search Trees
 - Heap
 - Graph
+- Dynamic Programming
 
 ---
 
 # Upcoming Topics
 
-- Dynamic Programming
 - Backtracking
 - Advanced Tree Algorithms
 - Advanced Graph Algorithms

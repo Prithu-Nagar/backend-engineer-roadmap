@@ -89,6 +89,66 @@ The example uses Werkzeug's password hashing utilities instead of storing plaint
 
 ---
 
+## JWT Authentication
+
+JSON Web Tokens (JWT) can be used to authenticate requests to protected backend resources.
+
+A typical authentication flow is:
+
+Client
+   |
+   | Login credentials
+   v
+Backend
+   |
+   | Validate credentials
+   v
+Generate JWT
+   |
+   v
+Client
+   |
+   | Authorization: Bearer <token>
+   v
+Protected Endpoint
+
+A JWT commonly contains:
+
+Subject (sub)
+Issued-at time (iat)
+Expiration time (exp)
+
+The backend validates the token before allowing access to protected resources.
+
+Access Token
+
+An access token represents the authenticated user's session or authorization context.
+
+The client sends the token using the HTTP Authorization header:
+
+Authorization: Bearer <token>
+Token Validation
+
+The backend should:
+
+Extract the token.
+Verify its signature.
+Verify that it has not expired.
+Read the relevant claims.
+Continue only when the token is valid.
+
+Authentication answers:
+
+Who is the user?
+
+Authorization answers:
+
+What is the user allowed to do?
+
+JWT is therefore primarily an authentication mechanism, while authorization rules determine what authenticated users can access.
+
+---
+
 # Main Application
 
 The Task Manager API application is initialized through:

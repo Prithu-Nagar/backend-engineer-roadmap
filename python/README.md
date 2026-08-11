@@ -219,6 +219,55 @@ python/
 
 ---
 
+## AsyncIO
+
+AsyncIO provides asynchronous programming capabilities in Python.
+
+Day 11 covers the fundamentals of asynchronous execution and how Python handles I/O-bound work using an event loop.
+
+### Topics Covered
+
+- Event Loop
+- Coroutines
+- `async`
+- `await`
+- `asyncio.gather()`
+- I/O-bound asynchronous execution
+- Concurrent coroutine execution
+
+### Key Concept
+
+An `async` function returns a coroutine.
+
+The `await` keyword pauses the current coroutine while it waits for another asynchronous operation to complete.
+
+Multiple independent coroutines can be executed concurrently using `asyncio.gather()`.
+
+Example:
+
+```python
+async def fetch_data():
+    await asyncio.sleep(1)
+    return "data"
+
+Multiple operations can be scheduled together:
+
+results = await asyncio.gather(
+    fetch_data(),
+    fetch_data()
+)
+
+AsyncIO is particularly useful for I/O-bound workloads where the program spends significant time waiting for operations such as:
+
+Network requests
+API calls
+Database operations
+File I/O
+
+The objective is to understand when asynchronous execution is useful and how it differs from threading and multiprocessing.
+
+---
+
 # Upcoming Topics
 
 - Type Hints

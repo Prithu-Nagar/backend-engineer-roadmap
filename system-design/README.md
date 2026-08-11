@@ -139,6 +139,189 @@ File: `authentication-authorization.md`
 
 ---
 
+An API Gateway acts as a centralized entry point for clients communicating with backend services.
+
+It can handle common API-level concerns such as:
+
+- Request routing
+- Authentication
+- Rate limiting
+- Request validation
+- Logging
+- Monitoring
+- API versioning
+- Request transformation
+
+Example:
+
+Client
+   |
+   v
+API Gateway
+   |
+   +----> User Service
+   |
+   +----> Task Service
+   |
+   +----> Order Service
+
+The client does not need to know the internal topology of the backend services.
+
+API Gateway Responsibilities
+Request Routing
+
+The gateway determines which backend service should process a request.
+
+GET /users
+    |
+    v
+API Gateway
+    |
+    v
+User Service
+GET /tasks
+    |
+    v
+API Gateway
+    |
+    v
+Task Service
+Authentication
+
+The gateway can validate authentication credentials or tokens before forwarding requests.
+
+However, services should still enforce authorization for resources they own.
+
+Rate Limiting
+
+The gateway can restrict how many requests a client can make within a given period.
+
+Example:
+
+100 requests per minute per user
+
+When the limit is exceeded:
+
+Client
+   |
+   v
+API Gateway
+   |
+   v
+429 Too Many Requests
+Observability
+
+The gateway is a useful location for collecting:
+
+Request counts
+Response times
+Error rates
+Access logs
+Trace IDs
+API Gateway vs Reverse Proxy
+
+A reverse proxy forwards requests to backend servers.
+
+An API Gateway can provide reverse-proxy functionality while also handling API-specific concerns such as:
+
+Authentication
+Rate limiting
+API routing
+API versioning
+Request transformation
+Observability
+API Gateway vs Load Balancer
+
+A load balancer primarily distributes traffic across backend instances.
+
+An API Gateway focuses on API-level concerns.
+
+They can also be used together:
+
+Client
+   |
+   v
+API Gateway
+   |
+   v
+Load Balancer
+   |
+   +----> Service 1
+   |
+   +----> Service 2
+   |
+   +----> Service 3
+High Availability
+
+The API Gateway can become a critical component of the architecture.
+
+A single gateway instance can become a single point of failure.
+
+Multiple gateway instances can improve availability:
+
+             Client
+                |
+                v
+          Load Balancer
+           /          \
+          v            v
+     Gateway 1    Gateway 2
+          \            /
+           \          /
+            v        v
+              Services
+Business Logic
+
+Business logic should generally remain inside backend services rather than the API Gateway.
+
+Prefer:
+
+API Gateway
+    |
+    +----> Routing
+    |
+    +----> Authentication
+    |
+    +----> Rate Limiting
+    |
+    +----> Observability
+    |
+    v
+Backend Services
+    |
+    +----> Business Logic
+    |
+    +----> Data Access
+Revision Summary
+Client
+    |
+    v
+API Gateway
+    |
+    +----> Authentication
+    |
+    +----> Rate Limiting
+    |
+    +----> Routing
+    |
+    +----> Observability
+    |
+    v
+Backend Services
+
+Remember:
+
+Reverse Proxy
+→ Forwards traffic
+
+Load Balancer
+→ Distributes traffic
+
+API Gateway
+→ Central API entry point and API-level cross-cutting concerns
+
+---
+
 # System Design Approach
 
 For each system design topic:
@@ -158,22 +341,22 @@ The goal is to understand why a particular architecture is appropriate rather th
 
 ## Learning Progress
 
-| Topic | Status |
-|---|---|
-| Monolith vs Microservices | Completed |
-| Reverse Proxy | Completed |
-| Load Balancing | Completed |
-| Caching | Completed |
-| Database Scaling | Completed |
-| Redis | Completed |
+|             Topic              |  Status   |
+|--------------------------------|-----------|
+| Monolith vs Microservices      | Completed |
+| Reverse Proxy                  | Completed |
+| Load Balancing                 | Completed |
+| Caching                        | Completed |
+| Database Scaling               | Completed |
+| Redis                          | Completed |
 | Authentication & Authorization | Completed |
+| API Gateway                    | Completed |
 
 ---
 
 ## Upcoming Topics
 
 - Kafka
-- API Gateway
 - Rate Limiting
 - Distributed Systems
 - Message Queues
