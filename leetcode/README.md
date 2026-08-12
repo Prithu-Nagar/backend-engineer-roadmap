@@ -1,114 +1,96 @@
 # LeetCode
 
-This directory tracks the LeetCode problems solved as part of the Backend Engineer Roadmap.
+This directory tracks the LeetCode problems solved throughout the Backend Engineer Roadmap.
 
-The actual solution implementations are organized inside the corresponding directories under `dsa/`.
+The purpose is to strengthen problem-solving skills, recognize common DSA patterns, and prepare for backend engineering interviews.
+
+Solutions are organized according to the DSA topics being studied in the roadmap.
 
 ---
 
-# Problems by Topic
+# Problem Progress
 
-## Arrays
+## Day 1 — Arrays & Hashing
 
 - Two Sum
 - Contains Duplicate
 - Valid Anagram
 
-Directory: `dsa/arrays/`
-
 ---
 
-## Strings
+## Day 2 — Strings
 
 - Valid Palindrome
 - Reverse String
 - Is Subsequence
 
-Directory: `dsa/strings/`
-
 ---
 
-## Linked List
+## Day 3 — Linked List
 
 - Reverse Linked List
 - Merge Two Sorted Lists
 - Linked List Cycle
 
-Directory: `dsa/linked_list/`
-
 ---
 
-## Stack
+## Day 4 — Stack
 
 - Valid Parentheses
 - Min Stack
 - Baseball Game
 
-Directory: `dsa/stack/`
-
 ---
 
-## Queue
+## Day 5 — Queue
 
 - Implement Queue using Stacks
 - Number of Recent Calls
 - Time Needed to Buy Tickets
 
-Directory: `dsa/queue/`
-
 ---
 
-## Binary Search
+## Day 6 — Binary Search
 
 - Binary Search
 - Search Insert Position
 - Guess Number Higher or Lower
 
-Directory: `dsa/binary_search/`
-
 ---
 
-## Binary Trees
+## Day 7 — Binary Trees
 
 - Maximum Depth of Binary Tree
 - Invert Binary Tree
 - Same Tree
 
-Directory: `dsa/binary_tree/`
-
 ---
 
-## Binary Search Trees
+## Day 8 — Binary Search Trees
 
 - Search in a Binary Search Tree
 - Validate Binary Search Tree
 - Minimum Distance Between BST Nodes
 
-Directory: `dsa/binary_search_tree/`
-
 ---
 
-## Heap
+## Day 9 — Heap
 
 - Kth Largest Element in an Array
 - Top K Frequent Elements
 - Last Stone Weight
 
-Directory: `dsa/heap/`
-
 ---
 
-## Graphs
+## Day 10 — Graphs
 
 - Number of Islands
 - Clone Graph
 - Course Schedule
 
-Directory: `dsa/graphs/`
-
 ---
 
-## Dynamic Programming
+## Day 11 — Dynamic Programming
 
 - Climbing Stairs
 - House Robber
@@ -116,25 +98,61 @@ Directory: `dsa/graphs/`
 
 ---
 
-# Progress
+## Day 12 — Dynamic Programming
 
-| Topic               | Problems Solved | Status    |
-| ------------------- | --------------: | --------- |
-| Arrays              |               3 | Completed |
-| Strings             |               3 | Completed |
-| Linked List         |               3 | Completed |
-| Stack               |               3 | Completed |
-| Queue               |               3 | Completed |
-| Binary Search       |               3 | Completed |
-| Binary Trees        |               3 | Completed |
-| Binary Search Trees |               3 | Completed |
-| Heap                |               3 | Completed |
-| Graphs              |               3 | Completed |
-| Dynamic Programming |               3 | Completed |
+- Unique Paths
+- Minimum Path Sum
+- Longest Common Subsequence
 
 ---
 
-# Repository Structure
+# Problem-Solving Approach
+
+For each LeetCode problem:
+
+1. Understand the problem statement.
+2. Identify the underlying DSA pattern.
+3. Determine the appropriate data structure or algorithm.
+4. Consider edge cases.
+5. Implement the solution.
+6. Analyze time complexity.
+7. Analyze space complexity.
+8. Review alternative approaches when useful.
+
+---
+
+# DSA Pattern Progress
+
+The problems solved so far cover:
+
+- Arrays
+- Hashing
+- Strings
+- Linked Lists
+- Stacks
+- Queues
+- Binary Search
+- Binary Trees
+- Binary Search Trees
+- Heaps
+- Graphs
+- Dynamic Programming
+
+Dynamic Programming currently includes:
+
+- 1D DP
+- 2D DP
+- Grid DP
+- Sequence-based DP
+- Space optimization
+
+---
+
+# Organization
+
+LeetCode solutions are stored under the relevant DSA directories.
+
+For example:
 
 dsa/
 ├── arrays/
@@ -149,17 +167,15 @@ dsa/
 ├── graphs/
 └── dynamic_programming/
 
-Each solution is stored in the directory corresponding to its data structure or algorithm.
+The leetcode/ directory serves as the progress tracker, while the actual implementations are maintained under dsa/.
 
----
+Future Problems
 
-# Problem-Solving Approach
+Future LeetCode problems will be added as new DSA topics are introduced in the roadmap.
 
-For each problem:
+Upcoming areas include:
 
-1. Understand the problem and constraints.
-2. Identify the underlying data structure or algorithm.
-3. Develop an efficient approach.
-4. Implement the solution in Python.
-5. Analyze time and space complexity.
-6. Consider edge cases.
+Backtracking
+Advanced Trees
+Advanced Graph Algorithms
+More Dynamic Programming patterns

@@ -1,123 +1,96 @@
 # Python
 
-This directory contains practical examples covering Python fundamentals and advanced concepts relevant to backend development.
+This directory contains Python concepts and implementations covered throughout the Backend Engineer Roadmap.
 
-The focus is on writing clean, readable Python code while understanding how the language behaves internally and how its features are used in real backend applications.
-
----
-
-# Topics
-
-## Functions
-
-Covers Python functions, parameters, return values, and function-related concepts.
-
-Files include:
-
-- `functions.py`
-- `args_kwargs.py`
+The focus is on building strong Python fundamentals for backend development, followed by advanced topics related to concurrency and asynchronous programming.
 
 ---
 
-## Variable Scope
+## Topics
 
-Covers Python's LEGB scope resolution model and variable visibility.
+### Iterables & Iterators
 
-File: `variable_scope.py`
+- Iterables
+- Iterators
+- `iter()`
+- `next()`
 
----
+### enumerate()
 
-## Lambda Functions
+Using `enumerate()` to iterate over collections while tracking indexes.
 
-Demonstrates anonymous functions and common use cases for `lambda`.
+### zip()
 
-File: `lambda_examples.py`
+Combining multiple iterables into pairs or groups of related values.
 
----
+### List Comprehensions
 
-## First-Class Functions
+Concise syntax for creating lists from iterable data.
 
-Covers treating functions as objects, passing functions as arguments, and returning functions from other functions.
+### Dictionary Comprehensions
 
-File: `first_class_functions.py`
+Concise syntax for creating dictionaries from iterable data.
 
----
+### Functions
 
-## Higher-Order Functions
+- Function definitions
+- Parameters
+- Return values
+- Default arguments
+- Keyword arguments
 
-Covers functions that accept other functions as arguments or return functions.
+### *args & **kwargs
 
-File: `higher_order_functions.py`
+Handling variable numbers of positional and keyword arguments.
 
----
+### Variable Scope
 
-## Nested Functions
+Understanding Python's LEGB scope resolution:
 
-Covers defining functions inside other functions.
+- Local
+- Enclosing
+- Global
+- Built-in
 
-File: `nested_functions.py`
+### Lambda Functions
 
----
+Small anonymous functions commonly used with functional programming patterns.
 
-## Closures
+### First-Class Functions
 
-Covers nested functions that retain access to variables from their enclosing scope.
+Functions as first-class objects that can be:
 
-File: `closures.py`
+- Assigned to variables
+- Passed as arguments
+- Returned from other functions
 
----
+### Higher-Order Functions
 
-## Decorators
+Functions that accept other functions as arguments or return functions.
 
-Covers function decorators and how they can be used to extend or modify function behavior.
+### Nested Functions
 
-File: `decorators.py`
+Functions defined inside other functions.
 
----
+### Closures
 
-## Iterables & Iterators
+Functions that retain access to variables from their enclosing scope.
 
-Covers iterable objects, iterators, `iter()`, and `next()`.
+### Decorators
 
-File: `iterables_iterators.py`
+Functions that modify or extend the behavior of other functions.
 
----
+### Generators
 
-## enumerate()
+Lazy iteration using:
 
-Demonstrates using `enumerate()` to iterate over values while maintaining their indexes.
+- `yield`
+- Generator functions
+- Generator expressions
 
-File: `enumerate_examples.py`
+### Exception Handling
 
----
-
-## zip()
-
-Demonstrates combining multiple iterables using `zip()`.
-
-File: `zip_examples.py`
-
----
-
-## Comprehensions
-
-Covers concise ways to construct collections using comprehensions.
-
-File: `comprehensions.py`
-
----
-
-## Generators
-
-Covers generator functions, `yield`, lazy evaluation, and memory-efficient iteration.
-
-File: `generators.py`
-
----
-
-## Exception Handling
-
-Covers handling runtime errors using:
+Handling runtime errors using:
 
 - `try`
 - `except`
@@ -125,165 +98,208 @@ Covers handling runtime errors using:
 - `finally`
 - `raise`
 
-File: `exception_handling.py`
+### Context Managers
 
----
+Managing resources safely using:
 
-## Context Managers
+- `with`
+- `__enter__`
+- `__exit__`
+- `contextlib`
 
-Covers resource management using the `with` statement and context managers.
+### Threading
 
-File: `context_managers.py`
-
----
-
-## Threading
-
-Covers concurrent execution using Python's `threading` module.
+Running multiple threads within a process.
 
 Topics include:
 
-- Threads
+- `threading.Thread`
+- Thread creation
 - Starting threads
 - Joining threads
-- Passing arguments to threads
-- Shared resources
-- Synchronization using locks
-- Basic concurrency concepts
+- Shared state
+- Race conditions
+- Locks
 
-File: `threading_basics.py`
+### Multiprocessing
 
----
-
-## Multiprocessing
-
-Covers process-based parallelism using Python's `multiprocessing` module.
+Running work across multiple processes.
 
 Topics include:
 
-- Creating processes
+- `multiprocessing.Process`
+- Process creation
 - Starting processes
 - Joining processes
-- Process-based parallelism
-- The `if __name__ == "__main__"` guard
-
-File: `multiprocessing_basics.py`
+- Process isolation
+- CPU-bound workloads
 
 ---
 
-# Repository Structure
+# AsyncIO
 
-python/
-├── README.md
-├── args_kwargs.py
-├── closures.py
-├── comprehensions.py
-├── context_managers.py
-├── decorators.py
-├── enumerate_examples.py
-├── exception_handling.py
-├── first_class_functions.py
-├── functions.py
-├── generators.py
-├── higher_order_functions.py
-├── iterables_iterators.py
-├── lambda_examples.py
-├── multiprocessing_basics.py
-├── nested_functions.py
-├── threading_basics.py
-├── variable_scope.py
-└── zip_examples.py
+AsyncIO provides asynchronous programming capabilities for handling I/O-bound operations efficiently.
+
+Day 11 introduced the fundamentals of asynchronous programming.
+
+Day 12 builds on those fundamentals by working with asyncio tasks, concurrency, timeouts, and cancellation.
 
 ---
 
-# Completed Topics
+## AsyncIO Fundamentals
 
-- Functions
-- *args & **kwargs
-- Variable Scope
-- Lambda Functions
-- First-Class Functions
-- Higher-Order Functions
-- Nested Functions
-- Closures
-- Decorators
-- Iterables & Iterators
-- enumerate()
-- zip()
-- Comprehensions
-- Generators
-- Exception Handling
-- Context Managers
-- Threading
-- Multiprocessing
+Topics covered:
 
----
-
-## AsyncIO
-
-AsyncIO provides asynchronous programming capabilities in Python.
-
-Day 11 covers the fundamentals of asynchronous execution and how Python handles I/O-bound work using an event loop.
-
-### Topics Covered
-
-- Event Loop
+- Event loop
 - Coroutines
 - `async`
 - `await`
-- `asyncio.gather()`
 - I/O-bound asynchronous execution
-- Concurrent coroutine execution
+- `asyncio.run()`
+- `asyncio.sleep()`
 
-### Key Concept
+File:
 
-An `async` function returns a coroutine.
-
-The `await` keyword pauses the current coroutine while it waits for another asynchronous operation to complete.
-
-Multiple independent coroutines can be executed concurrently using `asyncio.gather()`.
-
-Example:
-
-```python
-async def fetch_data():
-    await asyncio.sleep(1)
-    return "data"
-
-Multiple operations can be scheduled together:
-
-results = await asyncio.gather(
-    fetch_data(),
-    fetch_data()
-)
-
-AsyncIO is particularly useful for I/O-bound workloads where the program spends significant time waiting for operations such as:
-
-Network requests
-API calls
-Database operations
-File I/O
-
-The objective is to understand when asynchronous execution is useful and how it differs from threading and multiprocessing.
+`asyncio_basics.py`
 
 ---
 
-# Upcoming Topics
+## AsyncIO Tasks
 
-- Type Hints
-- AsyncIO
-- Testing
-- Advanced Concurrency
+Topics covered:
+
+- `asyncio.create_task()`
+- `asyncio.gather()`
+- Running multiple coroutines concurrently
+- Timeouts
+- `asyncio.wait_for()`
+- `asyncio.TimeoutError`
+- Task cancellation
+- `asyncio.CancelledError`
+
+File:
+
+`asyncio_tasks.py`
+
+---
+
+## Sequential vs Concurrent Async Execution
+
+Sequential execution waits for each coroutine to finish before starting the next operation.
+
+Concurrent execution schedules multiple coroutines so they can make progress while other coroutines are waiting for I/O.
+
+Example:
+
+Sequential:
+
+Task 1
+   ↓
+Wait
+   ↓
+Task 2
+   ↓
+Wait
+   ↓
+Complete
+
+Concurrent:
+
+Task 1 ──────────────┐
+                     ├── Complete
+Task 2 ────────┐     │
+               └─────┘
+
+---
+
+## asyncio.create_task()
+
+`asyncio.create_task()` schedules a coroutine to run as an asyncio Task.
+
+Example:
+
+task = asyncio.create_task(fetch_data())
+
+The task can then be awaited later.
+
+This is useful when multiple asynchronous operations should be scheduled before waiting for their results.
+
+---
+
+## asyncio.gather()
+
+`asyncio.gather()` waits for multiple awaitable objects and returns their results.
+
+Example:
+
+results = await asyncio.gather(
+    task_1,
+    task_2,
+)
+
+The returned results preserve the order of the awaitables passed to `gather()`.
+
+---
+
+## Timeouts
+
+Long-running asynchronous operations can be limited using:
+
+`asyncio.wait_for()`
+
+Example:
+
+result = await asyncio.wait_for(
+    fetch_data(),
+    timeout=2,
+)
+
+If the operation exceeds the timeout, `asyncio.TimeoutError` is raised.
+
+Timeouts are useful for preventing an application from waiting indefinitely for an external service.
+
+---
+
+## Task Cancellation
+
+An asyncio task can be cancelled using:
+
+task.cancel()
+
+The coroutine can respond to cancellation through `asyncio.CancelledError`.
+
+Cancellation is useful when:
+
+- A timeout occurs
+- A request is disconnected
+- A task is no longer required
+- An application is shutting down
+
+---
+
+# AsyncIO vs Threading vs Multiprocessing
+
+| Feature | AsyncIO | Threading | Multiprocessing |
+| --- | --- | --- | --- |
+| Execution model | Cooperative | Concurrent threads | Separate processes |
+| Best suited for | I/O-bound work | I/O-bound work | CPU-bound work |
+| Memory | Shared process | Shared process | Separate processes |
+| Context switching | Cooperative | OS-managed | OS-managed |
+| CPU parallelism | No | Limited by GIL for Python code | Yes |
+| Typical use | Network I/O | Blocking I/O | CPU-heavy workloads |
 
 ---
 
 # Learning Approach
 
-For each Python topic:
+For Python topics:
 
-1. Understand the language feature.
-2. Implement a small practical example.
-3. Understand how Python executes the feature.
-4. Identify common backend use cases.
-5. Consider performance and concurrency implications where relevant.
-6. Apply the concept in backend projects when appropriate.
+1. Understand the underlying language feature.
+2. Implement a small example.
+3. Understand common use cases.
+4. Analyze trade-offs.
+5. Apply the concept to backend development.
+6. Practice with realistic examples.
+7. Review how the concept interacts with other Python features.
+
+The goal is to build Python knowledge that can be directly applied to production backend systems.

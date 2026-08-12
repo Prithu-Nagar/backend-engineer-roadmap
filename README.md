@@ -35,6 +35,8 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Heap
 - ✅ Graph
 - ✅ Dynamic Programming
+    - ✅ 1D DP
+    - ✅ 2D DP
 
 ---
 
@@ -107,8 +109,8 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Redis
 - ✅ Authentication & Authorization
 - ✅ API Gateway
+- ✅ Rate Limiting
 - ⏳ Kafka
-- ⏳ Rate Limiting
 
 ---
 
@@ -123,7 +125,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Retrieval-Augmented Generation (RAG)
 - ✅ RAG Evaluation
 - ✅ Tool Integration
-- ✅ LangChain
+- ⏳ LangChain
 - ⏳ AI Agents
 - ⏳ Model Context Protocol (MCP)
 
@@ -488,21 +490,20 @@ The primary objective is not just to study these topics, but to implement them w
 ### DSA
 
 - Dynamic Programming
-- 1D Dynamic Programming
+    - 1D DP
+    - 2D DP
 - DP State
-- Recurrence Relations
-- Memoization
-- Tabulation
+- Recurrence
+- Memoization vs Tabulation
 - Space Optimization
 
 ### Python
 
-- AsyncIO
+- AsyncIO Fundamentals
 - Event Loop
 - Coroutines
-- async
-- await
-- asyncio.gather()
+- async / await
+
 
 ### Backend
 
@@ -512,25 +513,70 @@ The primary objective is not just to study these topics, but to implement them w
 
 ### SQL
 
-- Transactions Revision
-- ACID Properties
-- COMMIT
-- ROLLBACK
-- SAVEPOINT
-
+- Transactions
+- ACID
+- Isolation Levels
+- Locks
 ### System Design
 
-- API Gateway
+- API Gateway Fundamentals
 
 ### Projects
 
-- Task Manager JWT Authentication Implementation
+- Task Manager JWT Authentication
 
 ### LeetCode
 
 - Climbing Stairs
 - House Robber
 - Min Cost Climbing Stairs
+
+---
+
+## ✅ Day 12
+
+### DSA
+
+- Dynamic Programming — 2D DP
+- Grid / State Formulation
+
+### Python
+
+- AsyncIO Tasks
+- asyncio.gather()
+- Timeouts
+- Cancellation
+
+### SQL
+
+- Constraints
+- PRIMARY KEY
+- FOREIGN KEY
+- UNIQUE
+- CHECK
+- NOT NULL
+
+### Backend
+
+- Authorization
+- Roles
+- Permissions
+- Role-Based Access Control (RBAC)
+
+### System Design
+
+- Rate Limiting
+
+### Projects
+
+- Task Manager Authorization
+- Role-Based Access Control (RBAC)
+
+### LeetCode
+
+- Unique Paths
+- Minimum Path Sum
+- Longest Common Subsequence
 
 ---
 
@@ -582,7 +628,6 @@ This approach ensures that concepts are not only understood but also applied in 
 - AsyncIO
 - Kafka
 - API Gateway
-- Rate Limiting
 - LangChain
 - AI Agents
 - Model Context Protocol (MCP)

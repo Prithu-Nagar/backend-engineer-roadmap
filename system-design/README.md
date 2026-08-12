@@ -192,7 +192,22 @@ The gateway can validate authentication credentials or tokens before forwarding 
 
 However, services should still enforce authorization for resources they own.
 
-Rate Limiting
+## Rate Limiting
+
+Covers controlling request frequency to protect backend services.
+
+Topics include:
+
+- Fixed Window
+- Sliding Window
+- Token Bucket
+- Leaky Bucket
+- HTTP 429
+- Distributed Rate Limiting
+- Redis-based rate limiting
+- API Gateway rate limiting
+
+File: `rate_limiting.md`
 
 The gateway can restrict how many requests a client can make within a given period.
 
@@ -351,13 +366,13 @@ The goal is to understand why a particular architecture is appropriate rather th
 | Redis                          | Completed |
 | Authentication & Authorization | Completed |
 | API Gateway                    | Completed |
+| Rate Limiting                  | Completed |
 
 ---
 
 ## Upcoming Topics
 
 - Kafka
-- Rate Limiting
 - Distributed Systems
 - Message Queues
 - Event-Driven Architecture

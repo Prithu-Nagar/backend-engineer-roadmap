@@ -89,7 +89,9 @@ Directory: `graphs/`
 
 ## Dynamic Programming
 
-Day 11 introduces Dynamic Programming with a focus on common 1D DP patterns.
+Day 11 introduced Dynamic Programming with a focus on common 1D DP patterns.
+
+Day 12 expands Dynamic Programming into 2D DP and grid-based state formulation.
 
 Topics covered:
 
@@ -101,14 +103,20 @@ Topics covered:
 - Tabulation
 - Space optimization
 - 1D Dynamic Programming
+- 2D Dynamic Programming
+- Grid-based Dynamic Programming
+- State formulation
 
 Problems covered:
 
 - Climbing Stairs
 - House Robber
 - Min Cost Climbing Stairs
+- Unique Paths
+- Minimum Path Sum
+- Longest Common Subsequence
 
-The goal is to recognize when a problem can be represented using previous states and to understand how the same recurrence can be implemented using memoization, tabulation, or constant-space optimization.
+The goal is to recognize how a problem can be represented using previous states and to extend that reasoning from one-dimensional sequences to two-dimensional grids and state tables.
 
 Directory: `dynamic_programming/`
 

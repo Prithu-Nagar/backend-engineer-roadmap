@@ -1,207 +1,279 @@
-# Backend
+# Backend Development
 
-This directory contains practical backend development examples using Flask, with a focus on HTTP, routing, REST APIs, request/response handling, error handling, authentication, and modular application structure.
+This directory contains backend development concepts and Flask implementations covered throughout the Backend Engineer Roadmap.
 
----
-
-# Topics
-
-## Flask Basics
-
-Covers creating Flask applications, defining routes, handling requests, and returning responses.
-
-File: `flask_basics.py`
+The focus is on understanding how web applications work, building REST APIs with Flask, implementing authentication and authorization, and gradually moving toward production-oriented backend development.
 
 ---
 
-## Flask Routing
+## Topics
 
-Covers Flask routing and the Task Manager API structure.
+### HTTP Fundamentals
+
+Covers the fundamentals of HTTP communication between clients and servers.
 
 Topics include:
 
-- Flask routes
-- Dynamic path parameters
-- Query parameters
+- HTTP requests
+- HTTP responses
 - HTTP methods
-- JSON request bodies
-- Basic request validation
-- HTTP status codes
-- Flask Blueprints
-
-File: `flask_routing.py`
+- Status codes
+- Headers
+- Request body
+- Response body
 
 ---
 
-## Request & Response Handling
+### Flask Basics
 
-Covers handling incoming HTTP requests and constructing appropriate responses.
+Introduction to Flask and the basic structure of a Flask application.
 
 Topics include:
 
-- Path parameters
+- Flask application creation
+- Routes
+- Running the development server
+- Request handling
+- Response generation
+
+---
+
+### Flask Routing
+
+Understanding how URLs are mapped to application functions.
+
+Topics include:
+
+- Route definitions
+- URL parameters
+- HTTP methods
+- Route handlers
+
+---
+
+### REST APIs
+
+Building APIs around REST principles.
+
+Topics include:
+
+- Resources
+- HTTP methods
+- Request and response formats
+- Status codes
+- CRUD operations
+
+---
+
+### Flask Blueprints
+
+Organizing Flask applications into modular components using Blueprints.
+
+Blueprints help separate application functionality into logical modules and make larger Flask applications easier to maintain.
+
+---
+
+### Request & Response Handling
+
+Working with incoming requests and outgoing responses.
+
+Topics include:
+
+- Request data
+- JSON payloads
 - Query parameters
-- JSON request bodies
-- Request validation
+- Path parameters
 - HTTP status codes
 - JSON responses
 
-File: `request_response.py`
-
 ---
 
-## Error Handling
+### Error Handling
 
-Covers handling invalid requests and application errors in Flask.
+Handling application errors consistently.
 
 Topics include:
 
-- HTTP 400 Bad Request
-- HTTP 404 Not Found
-- HTTP 500 Internal Server Error
-- JSON error responses
-- Flask error handlers
-
-File: `error_handling.py`
+- HTTP error responses
+- Custom error handlers
+- Validation errors
+- Appropriate status codes
+- Consistent API error responses
 
 ---
 
-## Authentication
-
-Covers the basic authentication flow for protecting backend endpoints.
-
-Topics include:
-
-- Authentication vs authorization
-- Password hashing
-- Password verification
-- HTTP Basic Authentication
-- Protected endpoints
-- Authentication decorators
-- `401 Unauthorized`
-- `WWW-Authenticate` response headers
-
-File: `authentication.py`
-
-The example uses Werkzeug's password hashing utilities instead of storing plaintext passwords.
-
-> This is a learning example. Production applications should use a proper authentication architecture, secure secret management, HTTPS, appropriate session or token management, and additional security controls.
-
----
-
-## JWT Authentication
-
-JSON Web Tokens (JWT) can be used to authenticate requests to protected backend resources.
-
-A typical authentication flow is:
-
-Client
-   |
-   | Login credentials
-   v
-Backend
-   |
-   | Validate credentials
-   v
-Generate JWT
-   |
-   v
-Client
-   |
-   | Authorization: Bearer <token>
-   v
-Protected Endpoint
-
-A JWT commonly contains:
-
-Subject (sub)
-Issued-at time (iat)
-Expiration time (exp)
-
-The backend validates the token before allowing access to protected resources.
-
-Access Token
-
-An access token represents the authenticated user's session or authorization context.
-
-The client sends the token using the HTTP Authorization header:
-
-Authorization: Bearer <token>
-Token Validation
-
-The backend should:
-
-Extract the token.
-Verify its signature.
-Verify that it has not expired.
-Read the relevant claims.
-Continue only when the token is valid.
+# Authentication
 
 Authentication answers:
 
-Who is the user?
+"Who is the user?"
+
+The application verifies the identity of a user before allowing access to protected resources.
+
+File:
+
+`authentication.py`
+
+Topics include:
+
+- Authentication fundamentals
+- User identity
+- Password-based authentication
+- Authentication flow
+- Access control foundations
+
+---
+
+# Authorization
 
 Authorization answers:
 
-What is the user allowed to do?
+"What is the authenticated user allowed to do?"
 
-JWT is therefore primarily an authentication mechanism, while authorization rules determine what authenticated users can access.
+Authentication and authorization are separate concepts.
 
----
+Authentication
+      ↓
+Who are you?
+      ↓
+Authorization
+      ↓
+What are you allowed to do?
 
-# Main Application
+Day 12 introduces:
 
-The Task Manager API application is initialized through:
+Roles
+Permissions
+Role-Based Access Control (RBAC)
+Permission checks
+Resource ownership
+Access control
 
-`app.py`
+Authorization should be applied after the user has been authenticated.
 
-The application registers the Task Manager Blueprint defined in `flask_routing.py`.
+File:
 
----
+`authorization.py`
 
-# Repository Structure
+# JWT Authentication
 
-backend/
-├── README.md
-├── app.py
-├── authentication.py
-├── error_handling.py
-├── flask_basics.py
-├── flask_routing.py
-└── request_response.py
+JSON Web Tokens can be used to represent authenticated user identity between a client and backend service.
 
----
+Topics include:
 
-# Completed Topics
+JWT structure
+Access tokens
+Token generation
+Token validation
+Protected endpoints
+Token-based authentication
 
-- Flask Basics
-- Flask Routing
-- Request & Response Handling
-- Error Handling
-- Authentication Fundamentals
+The Task Manager project implements JWT authentication incrementally.
 
----
+Authentication vs Authorization
+Concept	Purpose
+Authentication	Verifies user identity
+Authorization	Determines allowed actions
+Role	Groups permissions
+Permission	Represents an allowed operation
 
-# Upcoming Topics
+Example:
 
-- JWT
-- Authorization
-- Logging
-- Testing
-- FastAPI
-- Django
-- Docker
-- Deployment
+User logs in
+    ↓
+Authentication
+    ↓
+JWT issued
+    ↓
+Request contains JWT
+    ↓
+JWT validated
+    ↓
+User identity established
+    ↓
+Authorization check
+    ↓
+Permission granted or denied
+Role-Based Access Control
 
----
+RBAC assigns permissions to roles.
 
-# Learning Approach
+Example:
+
+Admin
+ ├── create_task
+ ├── read_task
+ ├── update_task
+ ├── delete_task
+ └── manage_users
+
+User
+ ├── create_task
+ ├── read_task
+ ├── update_task
+ └── delete_task
+
+This allows authorization rules to be managed through roles instead of checking individual users throughout the application.
+
+Authorization Responses
+
+A backend should distinguish between authentication and authorization failures.
+
+401 Unauthorized
+
+Used when authentication is required or the provided authentication credentials are invalid.
+
+403 Forbidden
+
+Used when the user is authenticated but does not have permission to perform the requested action.
+
+Example:
+
+Unauthenticated request
+        ↓
+       401
+
+Authenticated but insufficient permission
+        ↓
+       403
+Backend Learning Progress
+
+File:
+
+`jwt_authentication.py`
+
+Completed:
+
+HTTP Fundamentals
+Flask Basics
+Flask Routing
+REST APIs
+Flask Blueprints
+Request & Response Handling
+Error Handling
+Authentication Fundamentals
+
+Current focus:
+
+Authorization
+JWT Authentication
+
+Upcoming:
+
+Logging
+Testing
+Docker
+Deployment
+Learning Approach
 
 For each backend topic:
 
-1. Understand the underlying web or framework concept.
-2. Implement a small practical example.
-3. Follow HTTP and REST conventions.
-4. Handle successful and unsuccessful requests appropriately.
-5. Keep application structure modular and maintainable.
-6. Apply the concepts progressively to backend projects.
+Understand the underlying web concept.
+Implement the concept using Flask.
+Build small API examples.
+Apply the concept to the Task Manager project.
+Consider security and scalability implications.
+Test the implementation.
+Document the design and important decisions.
+
+The goal is to gradually transform the Task Manager project from a basic Flask API into a production-style backend application.

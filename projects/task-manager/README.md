@@ -1,246 +1,276 @@
 # Task Manager REST API
 
-A backend REST API built incrementally as part of the Backend Engineer Roadmap.
+The Task Manager is the primary backend project for the Backend Engineer Roadmap.
 
-The project is being developed alongside the roadmap so that concepts learned in DSA, Python, backend development, SQL, and system design can be applied to a practical backend application.
+The project is being developed incrementally alongside the roadmap so that concepts learned each day are applied to a realistic backend application.
 
 ---
 
-## Current Features
+## Project Goals
 
-The API currently covers:
+The Task Manager API is designed to demonstrate:
 
-- Flask application setup
-- REST API structure
-- Routing
-- Request handling
-- Response handling
-- JSON responses
+- REST API development
+- Flask application structure
 - CRUD operations
+- Request and response handling
 - Error handling
-- Blueprint-based application structure
-- Authentication fundamentals
+- Authentication
+- JWT authentication
+- Authorization
+- Role-Based Access Control (RBAC)
+- Database integration
+- API security
+- Production-oriented backend design
 
 ---
 
-## Architecture
+# Current Architecture
 
-The application follows a modular Flask architecture.
+The project is being developed incrementally.
 
-Client
-  |
-  v
-Flask Application
-  |
-  v
-Blueprint / Routes
-  |
-  +----> Request Validation
-  |
-  +----> Authentication
-  |
-  +----> Authorization
-  |
-  v
-Business Logic
-  |
-  v
-Database
-
-The goal is to keep request handling, authentication, business logic, and persistence responsibilities separated as the project grows.
-
----
-
-## API Flow
-
-A protected request follows this general flow:
+The current authentication and authorization flow is:
 
 Client
-  |
-  | HTTP Request
-  v
-Flask Route
-  |
-  v
+   ↓
+Login
+   ↓
 Authentication
-  |
-  v
-Authorization
-  |
-  v
-Request Validation
-  |
-  v
-Business Logic
-  |
-  v
-Database
-  |
-  v
-HTTP Response
-
-Authentication establishes the identity of the caller.
-
-Authorization determines whether that caller is allowed to access or modify the requested resource.
-
----
-
-## Authentication
-
-Authentication is responsible for verifying the identity of a user before allowing access to protected resources.
-
-The current roadmap implementation demonstrates:
-
-- Password hashing
-- Password verification
-- Basic authentication
-- Protected Flask endpoints
-- Authentication decorators
-- `401 Unauthorized` responses
-
-The standalone authentication example is available at:
-
-`backend/authentication.py`
-
-This project documentation establishes the architectural direction for integrating authentication into the Task Manager API.
-
----
-
-## Authorization
-
-Authentication alone is not sufficient.
-
-For example, if user `A` requests:
-
-GET /tasks/15
-
-the application must determine whether task `15` belongs to user `A` or whether the user otherwise has permission to access it.
-
-Authorization should therefore happen before returning protected resources.
-
-A future implementation can introduce:
-
-- User identity
-- Resource ownership
-- Roles
-- Permissions
-- Role-based access control
-
----
-
-## Day 11 — JWT Authentication
-
-The Task Manager API is extended with JWT-based authentication.
-
-### Milestone
-
-Implement JWT authentication for protected API resources.
-
-### Authentication Flow
-
-Client
-   |
-   | Login
-   v
-Task Manager API
-   |
-   | Validate credentials
-   v
+   ↓
 JWT Access Token
-   |
-   v
-Client
-   |
-   | Bearer Token
-   v
-Protected Task API
-JWT Responsibilities
+   ↓
+Authenticated Request
+   ↓
+JWT Validation
+   ↓
+Authorization
+   ↓
+Role / Permission Check
+   ↓
+Task Resource
 
-The project introduces:
+Authentication determines who the user is.
 
-Access token generation
-JWT claims
-Token expiration
+Authorization determines what the authenticated user is allowed to do.
+
+Features
+Task Management
+
+The project demonstrates authorization rules for:
+
+- Create task
+- Read task
+- Update task
+- Delete task
+
+The underlying REST API endpoints for PUT and DELETE will be implemented as the project evolves.
+
+Authentication verifies the identity of the user.
+
+The project has progressively introduced:
+
+Authentication fundamentals
+User identity
+Password verification
+JWT access tokens
 Token validation
-Protected API access
 
-The JWT implementation is maintained separately so authentication logic can be reused by protected endpoints.
+JWT tokens contain information required to identify the authenticated user.
 
----
+JWT Authentication
 
-## Security Principles
+The authentication flow is:
 
-The API should follow these principles as authentication is integrated:
+User
+ ↓
+Login Request
+ ↓
+Verify Credentials
+ ↓
+Create JWT
+ ↓
+Return Access Token
+ ↓
+Client Stores Token
+ ↓
+Client Sends Token
+ ↓
+Backend Validates JWT
+ ↓
+Authenticated User
 
-- Never store plaintext passwords.
-- Use HTTPS in production.
-- Validate incoming requests.
-- Authenticate protected requests.
-- Authorize access to resources.
-- Follow least-privilege principles.
-- Keep secrets outside source control.
-- Return appropriate HTTP status codes.
-- Avoid exposing sensitive internal errors.
-- Log security-relevant events appropriately.
+The JWT contains user-related claims such as:
 
----
+User ID
+Username
+Role
+Issued-at time
+Expiration time
+Authorization
 
-## Example Protected Request
+Authorization is performed after authentication.
 
-GET /tasks/15
-Authorization: Bearer <access-token>
+The project uses role-based authorization.
 
-The application should:
+Example roles:
 
-1. Receive the request.
-2. Validate the authentication credential.
-3. Identify the user.
-4. Check whether the user can access task 15.
-5. Retrieve the task.
-6. Return the appropriate response.
+Admin
+User
 
-The client should never be trusted to enforce authorization by itself.
+Permissions are associated with roles.
 
----
+Example:
 
-## Current API Direction
+Admin
+ ├── create_task
+ ├── read_task
+ ├── update_task
+ ├── delete_task
+ └── manage_users
 
-The Task Manager API is being developed incrementally.
+User
+ ├── create_task
+ ├── read_task
+ ├── update_task
+ └── delete_task
+Role-Based Access Control
 
-Current architectural priorities are:
+RBAC allows permissions to be associated with roles rather than implementing separate authorization rules for every user.
 
-1. HTTP fundamentals
-2. REST API design
-3. CRUD operations
-4. Request and response handling
-5. Error handling
-6. Authentication
-7. Authorization
-8. Database integration
-9. Testing
-10. Deployment
+The basic flow is:
 
----
+Authenticated User
+        ↓
+      Role
+        ↓
+   Permissions
+        ↓
+Permission Check
+        ↓
+Allow / Deny
 
-## Future Improvements
+For example, an administrator can access user-management functionality while a normal user cannot.
+
+Resource Authorization
+
+Authorization can also depend on resource ownership.
+
+For example:
+
+User A
+   ↓
+Owns Task 1
+   ↓
+Can access Task 1
+
+A normal user should not automatically be allowed to modify another user's task.
+
+An administrator can be granted broader access.
+
+Therefore, authorization can involve both:
+
+Role permissions
+Resource ownership
+HTTP Authorization Responses
+
+The project distinguishes between authentication and authorization failures.
+
+401 Unauthorized
+
+Returned when authentication is required but the user has not successfully authenticated.
+
+403 Forbidden
+
+Returned when the user is authenticated but does not have permission to perform the requested operation.
+
+Example:
+
+No valid authentication
+        ↓
+       401
+
+Authenticated
+      ↓
+Permission check
+      ↓
+Permission denied
+      ↓
+       403
+Project Structure
+
+The project is being expanded incrementally as new backend concepts are introduced.
+
+Relevant authentication and authorization files include:
+
+projects/
+└── task-manager/
+    ├── README.md
+    └── jwt_authentication.py
+
+Backend-level authentication and authorization implementations are maintained separately from the project-specific implementation.
+
+Development Strategy
+
+The Task Manager follows the same incremental approach as the roadmap.
+
+Each major concept is first learned independently and then applied to the project.
+
+Example progression:
+
+Flask Basics
+      ↓
+Routing
+      ↓
+REST API
+      ↓
+CRUD
+      ↓
+Request / Response Handling
+      ↓
+Error Handling
+      ↓
+Authentication
+      ↓
+JWT
+      ↓
+Authorization
+      ↓
+RBAC
+
+This keeps the project aligned with the concepts being studied.
+
+Current Progress
+
+Completed project concepts:
+
+Task Manager REST API setup
+Flask routing
+CRUD operations
+Request and response handling
+Authentication and authorization architecture
+JWT authentication
+JWT access-token handling
+Authorization
+Role-Based Access Control
+
+Current focus:
+
+Applying authorization rules to task operations
+Separating authentication from authorization
+Enforcing role and permission checks
+Future Improvements
 
 Planned improvements include:
 
-- User management
-- Role-based authorization
-- Persistent database storage
-- Request validation
-- Automated tests
-- Logging
-- Dockerization
-- API documentation
-- Production deployment
+Database persistence
+Better password hashing
+Token refresh mechanism
+More granular permissions
+Automated tests
+Logging
+Dockerization
+Production deployment
+Improved configuration management
+API documentation
 
----
-
-## Learning Purpose
-
-This project is intentionally developed incrementally rather than as a single large application.
-
-Each roadmap milestone introduces another production-relevant backend concept while keeping the application understandable and maintainable.
-
+The project will continue evolving as new backend, system-design, SQL, and Python concepts are introduced throughout the roadmap.

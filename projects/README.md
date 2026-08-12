@@ -89,6 +89,10 @@ backend/
 ├── app.py
 ├── flask_basics.py
 ├── flask_routing.py
+├── authentication.py
+├── authorization.py ← NEW
+├── error_handling.py
+├── jwt_authentication.py
 └── request_response.py
 
 The long-term direction is:
@@ -107,6 +111,16 @@ The service and database layers will be introduced as the project progresses thr
 
 ---
 
+Current authentication/authorization concepts:
+
+- JWT authentication
+- Authorization
+- Role-Based Access Control
+- Permissions
+- Resource ownership
+
+---
+
 ## Planned Enhancements
 
 - SQLite Integration
@@ -118,6 +132,8 @@ The service and database layers will be introduced as the project progresses thr
 - Logging
 - Docker
 - Deployment
+- Authentication
+- Authorization
 
 ---
 
@@ -130,8 +146,6 @@ Future iterations will introduce:
 - Database models
 - Improved validation
 - Consistent error responses
-- Authentication
-- Authorization
 - Automated tests
 - API documentation
 
