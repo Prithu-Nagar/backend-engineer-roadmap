@@ -173,8 +173,12 @@ Topics include:
 - EXPLAIN
 - EXPLAIN ANALYZE
 - Query execution plans
+- Avoiding unnecessary scans
+- Matching indexes to read patterns
 
 **File:** `query_optimization.sql`
+
+Example patterns include reduced result sets, index-friendly predicates, and using execution plans to confirm where the database is spending time.
 
 ---
 

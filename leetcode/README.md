@@ -106,6 +106,13 @@ Solutions are organized according to the DSA topics being studied in the roadmap
 
 ---
 
+## Day 13 — Graphs
+
+- Flood Fill
+- Rotting Oranges
+- Binary Tree Level Order Traversal
+
+---
 # Problem-Solving Approach
 
 For each LeetCode problem:

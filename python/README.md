@@ -136,6 +136,18 @@ Topics include:
 
 ---
 
+### AsyncIO vs Threading vs Multiprocessing
+
+Python supports different concurrency models, and each is best suited to different kinds of workloads.
+
+- Threading is often used for I/O-bound tasks.
+- Multiprocessing is better for CPU-bound operations.
+- AsyncIO is efficient for many concurrent I/O operations with a single event loop.
+
+File: `asyncio_vs_threading_vs_multiprocessing.py`
+
+---
+
 # AsyncIO
 
 AsyncIO provides asynchronous programming capabilities for handling I/O-bound operations efficiently.

@@ -60,6 +60,14 @@ Checks whether two binary trees have the same structure and node values.
 
 ---
 
+### Binary Tree Level Order Traversal
+
+Traverses the tree level by level using a queue-based breadth-first search.
+
+**File:** `binary_tree_level_order_traversal.py`
+
+---
+
 ## Key Takeaways
 
 - Recursion is a natural approach for binary trees.

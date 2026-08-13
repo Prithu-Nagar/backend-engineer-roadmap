@@ -77,7 +77,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Authentication Fundamentals
 - ✅ Authorization
 - ✅ JWT
-- ⏳ Logging
+- ✅ Logging
 - ⏳ Testing
 - ⏳ Docker
 - ⏳ Deployment
@@ -125,7 +125,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Retrieval-Augmented Generation (RAG)
 - ✅ RAG Evaluation
 - ✅ Tool Integration
-- ⏳ LangChain
+- ✅ LangChain
 - ⏳ AI Agents
 - ⏳ Model Context Protocol (MCP)
 
@@ -580,6 +580,54 @@ The primary objective is not just to study these topics, but to implement them w
 
 ---
 
+## ✅ Day 13
+
+### DSA
+- Graph BFS/DFS Patterns
+- Multi-source BFS
+- Grid Traversal
+
+### Python
+- AsyncIO vs Threading vs Multiprocessing
+- Choosing the right concurrency model
+
+### Backend
+- Logging Fundamentals
+- Log Levels
+- Logger
+- Handlers
+- Formatters
+- Exception Logging
+- Structured Logging
+
+### SQL
+- EXPLAIN
+- Query Plans
+- Selectivity
+- Index Usage
+- Query Performance
+
+### System Design
+- Fixed Window
+- Sliding Window
+- Token Bucket
+- Rate Limiting
+
+### Generative AI
+- LangChain Fundamentals
+- Models
+- Prompts
+- Prompt Templates
+- Chains
+- Basic Composition
+
+### LeetCode
+- Flood Fill
+- Rotting Oranges
+- Binary Tree Level Order Traversal
+
+---
+
 # Repository Structure
 
 backend/
@@ -624,10 +672,9 @@ This approach ensures that concepts are not only understood but also applied in 
 
 ## Next Topics
 
-- Dynamic Programming
-- AsyncIO
 - Kafka
-- API Gateway
-- LangChain
 - AI Agents
 - Model Context Protocol (MCP)
+- Testing
+- Docker
+- Deployment

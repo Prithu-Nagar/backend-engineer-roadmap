@@ -9,6 +9,8 @@ This directory contains graph-related LeetCode problems and solutions.
 - Number of Islands
 - Clone Graph
 - Course Schedule
+- Flood Fill
+- Rotting Oranges
 
 ---
 
@@ -18,6 +20,8 @@ This directory contains graph-related LeetCode problems and solutions.
 - Connected components
 - Graph cloning
 - Topological sort and cycle detection
+- Multi-source BFS
+- Grid-based traversal
 
 ---
 

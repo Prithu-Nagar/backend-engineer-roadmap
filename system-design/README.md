@@ -15,6 +15,8 @@ The focus is on understanding how backend systems are structured, how components
 - Database Scaling
 - Redis
 - Authentication & Authorization
+- API Gateway
+- Rate Limiting
 
 ---
 

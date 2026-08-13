@@ -17,6 +17,7 @@ The focus is on understanding how LLM-based systems work and how they can be int
 - Retrieval-Augmented Generation (RAG)
 - RAG Evaluation
 - Tool Integration
+- LangChain Basics
 
 ---
 
@@ -192,6 +193,7 @@ Tool calling and RAG can also be combined when an application needs both retriev
 genai/
 ├── README.md
 ├── embeddings.md
+├── langchain_basics.md
 ├── prompt_chaining.md
 ├── prompt_templates.md
 ├── rag.md
@@ -218,7 +220,6 @@ genai/
 
 ## Upcoming Topics
 
-- LangChain
 - AI Agents
 - Model Context Protocol (MCP)
 

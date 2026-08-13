@@ -82,6 +82,8 @@ Topics include:
 - Graph cloning
 - Topological sort
 - Cycle detection
+- Flood fill
+- Rotting oranges
 
 Directory: `graphs/`
 
@@ -133,9 +135,18 @@ dsa/
 ├── queue/
 ├── binary_search/
 ├── binary_tree/
+│   ├── maximum_depth.py
+│   ├── invert_binary_tree.py
+│   ├── same_tree.py
+│   └── binary_tree_level_order_traversal.py
 ├── binary_search_tree/
 ├── heap/
 ├── graphs/
+│   ├── number_of_islands.py
+│   ├── clone_graph.py
+│   ├── course_schedule.py
+│   ├── flood_fill.py
+│   └── rotting_oranges.py
 └── dynamic_programming/
 
 ---

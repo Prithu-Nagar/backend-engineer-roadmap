@@ -140,14 +140,14 @@ Authorization
       ↓
 What are you allowed to do?
 
-Day 12 introduces:
+Topics include:
 
-Roles
-Permissions
-Role-Based Access Control (RBAC)
-Permission checks
-Resource ownership
-Access control
+- Roles
+- Permissions
+- Role-Based Access Control (RBAC)
+- Permission checks
+- Resource ownership
+- Access control
 
 Authorization should be applied after the user has been authenticated.
 
@@ -155,125 +155,94 @@ File:
 
 `authorization.py`
 
+---
+
 # JWT Authentication
 
 JSON Web Tokens can be used to represent authenticated user identity between a client and backend service.
 
 Topics include:
 
-JWT structure
-Access tokens
-Token generation
-Token validation
-Protected endpoints
-Token-based authentication
+- JWT structure
+- Access tokens
+- Token generation
+- Token validation
+- Protected endpoints
+- Token-based authentication
 
 The Task Manager project implements JWT authentication incrementally.
 
-Authentication vs Authorization
-Concept	Purpose
-Authentication	Verifies user identity
-Authorization	Determines allowed actions
-Role	Groups permissions
-Permission	Represents an allowed operation
+---
 
-Example:
+# Logging
 
-User logs in
-    ↓
-Authentication
-    ↓
-JWT issued
-    ↓
-Request contains JWT
-    ↓
-JWT validated
-    ↓
-User identity established
-    ↓
-Authorization check
-    ↓
-Permission granted or denied
-Role-Based Access Control
+Logging records information about application execution and helps developers monitor, debug, and troubleshoot backend systems.
 
-RBAC assigns permissions to roles.
+Day 13 introduces:
 
-Example:
-
-Admin
- ├── create_task
- ├── read_task
- ├── update_task
- ├── delete_task
- └── manage_users
-
-User
- ├── create_task
- ├── read_task
- ├── update_task
- └── delete_task
-
-This allows authorization rules to be managed through roles instead of checking individual users throughout the application.
-
-Authorization Responses
-
-A backend should distinguish between authentication and authorization failures.
-
-401 Unauthorized
-
-Used when authentication is required or the provided authentication credentials are invalid.
-
-403 Forbidden
-
-Used when the user is authenticated but does not have permission to perform the requested action.
-
-Example:
-
-Unauthenticated request
-        ↓
-       401
-
-Authenticated but insufficient permission
-        ↓
-       403
-Backend Learning Progress
+- Logging fundamentals
+- Log levels
+- Logger
+- Handlers
+- Formatters
+- Exception logging
+- Structured logging
 
 File:
 
-`jwt_authentication.py`
+`logging_basics.py`
+
+Common log levels include:
+
+- DEBUG
+- INFO
+- WARNING
+- ERROR
+- CRITICAL
+
+Structured logs represent important event information in a consistent machine-readable format.
+
+---
+
+# Backend Learning Progress
 
 Completed:
 
-HTTP Fundamentals
-Flask Basics
-Flask Routing
-REST APIs
-Flask Blueprints
-Request & Response Handling
-Error Handling
-Authentication Fundamentals
+- HTTP Fundamentals
+- Flask Basics
+- Flask Routing
+- REST APIs
+- Flask Blueprints
+- Request & Response Handling
+- Error Handling
+- Authentication Fundamentals
+- Authorization
+- JWT Authentication
+- Logging Fundamentals
 
 Current focus:
 
-Authorization
-JWT Authentication
+- Logging
+- Testing
 
 Upcoming:
 
-Logging
-Testing
-Docker
-Deployment
-Learning Approach
+- Testing
+- Docker
+- Deployment
+
+---
+
+## Learning Approach
 
 For each backend topic:
 
-Understand the underlying web concept.
-Implement the concept using Flask.
-Build small API examples.
-Apply the concept to the Task Manager project.
-Consider security and scalability implications.
-Test the implementation.
-Document the design and important decisions.
+1. Understand the underlying web concept.
+2. Implement the concept using Flask or Python.
+3. Build small API examples where appropriate.
+4. Apply the concept to the Task Manager project when the roadmap assigns a project milestone.
+5. Consider security and scalability implications.
+6. Test the implementation.
+7. Document the design and important decisions.
 
 The goal is to gradually transform the Task Manager project from a basic Flask API into a production-style backend application.

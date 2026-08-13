@@ -218,6 +218,34 @@ Server 3 → 100
 
 The client could effectively make 300 requests.
 
+---
+
+## Practical Example
+
+A typical API gateway may enforce a rule such as:
+
+- 100 requests per minute per user
+- 10 requests per second per IP address
+- 500 requests per minute across a shared service
+
+A Redis-backed counter is often used in distributed systems so each request can be checked against a shared rate-limit state.
+
+Example flow:
+
+Client request
+   |
+   v
+API gateway
+   |
+   v
+Check rate-limit key in Redis
+   |
+   +-- within limit --> forward request
+   |
+   +-- over limit ----> 429 Too Many Requests
+
+This allows consistent enforcement even when multiple application instances are serving traffic.
+
 Centralized Rate Limiting
 
 A shared store can maintain rate-limit state.

@@ -127,13 +127,9 @@ Current authentication/authorization concepts:
 - SQLAlchemy
 - Service Layer
 - Request Validation
-- JWT
 - Testing
-- Logging
 - Docker
 - Deployment
-- Authentication
-- Authorization
 
 ---
 
