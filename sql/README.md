@@ -18,6 +18,9 @@ The goal is to build strong SQL fundamentals required for backend development, d
 - Query Optimization
 - Transactions
 - Constraints
+- Covering indexes
+- PostgreSQL `INCLUDE` columns
+- Index-only scan concept
 
 ---
 

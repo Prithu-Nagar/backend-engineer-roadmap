@@ -38,6 +38,8 @@ Instead of creating multiple small projects, the same application evolves over t
 - Query parameters
 - Flask Blueprints
 - Request validation
+- Structured logging configuration
+- Basic automated testing
 
 ### REST API
 

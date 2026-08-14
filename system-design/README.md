@@ -141,6 +141,8 @@ File: `authentication-authorization.md`
 
 ---
 
+## API Gateway
+
 An API Gateway acts as a centralized entry point for clients communicating with backend services.
 
 It can handle common API-level concerns such as:

@@ -113,3 +113,36 @@ WHERE city = 'Lucknow';
 -- ---------------------------------------
 
 DROP INDEX idx_users_city_age;
+
+-- ---------------------------------------
+-- Covering Index
+-- ---------------------------------------
+
+/*
+    A covering index contains all columns
+    required by a query.
+
+    PostgreSQL supports INCLUDE columns
+    for this purpose.
+*/
+
+CREATE INDEX idx_users_city_covering
+ON users(city)
+INCLUDE (name, age);
+
+
+-- Query that can potentially be satisfied
+-- directly from the index
+
+SELECT name, age
+FROM users
+WHERE city = 'Lucknow';
+
+
+-- Inspect whether the planner can use
+-- an index-only scan
+
+EXPLAIN ANALYZE
+SELECT name, age
+FROM users
+WHERE city = 'Lucknow';

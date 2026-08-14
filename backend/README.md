@@ -204,6 +204,34 @@ Structured logs represent important event information in a consistent machine-re
 
 ---
 
+# Testing
+
+Testing helps verify that backend logic behaves as expected and prevents regressions as the application grows.
+
+Day 14 introduces:
+
+- Unit tests
+- Assertions
+- Test functions
+- Arrange / Act / Assert patterns
+- Automated verification for backend behavior
+
+File:
+
+`testing_basics.py`
+
+Testing is especially useful for:
+
+- Authentication checks
+- Authorization rules
+- Request validation
+- Business logic validation
+- Route behavior
+
+A project-level test suite is also being added to the Task Manager API to validate behavior as the roadmap advances.
+
+---
+
 # Backend Learning Progress
 
 Completed:
@@ -219,15 +247,15 @@ Completed:
 - Authorization
 - JWT Authentication
 - Logging Fundamentals
+- Testing Basics
 
 Current focus:
 
-- Logging
-- Testing
+- Task Manager validation
+- Project-level automated testing
 
 Upcoming:
 
-- Testing
 - Docker
 - Deployment
 

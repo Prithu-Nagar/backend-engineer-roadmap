@@ -11,6 +11,8 @@ This directory contains graph-related LeetCode problems and solutions.
 - Course Schedule
 - Flood Fill
 - Rotting Oranges
+- Network Delay Time
+- Shortest Path in a Binary Matrix
 
 ---
 
@@ -22,6 +24,9 @@ This directory contains graph-related LeetCode problems and solutions.
 - Topological sort and cycle detection
 - Multi-source BFS
 - Grid-based traversal
+- Shortest-path problems
+- Dijkstra-style approaches
+- BFS shortest path on grids
 
 ---
 

@@ -148,6 +148,24 @@ File: `asyncio_vs_threading_vs_multiprocessing.py`
 
 ---
 
+### Type Hints
+
+Type hints make Python code more explicit, easier to read, and better supported by IDE tooling and static analysis.
+
+Topics include:
+
+- Function annotations
+- Built-in generics like `list[int]` and `dict[str, int]`
+- `Optional[T]`
+- Return type annotations
+- Improved maintainability and editor help
+
+File: `type_hints.py`
+
+Type hints are especially useful in backend services when modeling inputs, outputs, and domain data.
+
+---
+
 # AsyncIO
 
 AsyncIO provides asynchronous programming capabilities for handling I/O-bound operations efficiently.

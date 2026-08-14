@@ -628,6 +628,47 @@ The primary objective is not just to study these topics, but to implement them w
 
 ---
 
+## ✅ Day 14
+
+### DSA
+- Shortest-path graph patterns
+- Dijkstra-style shortest path
+- BFS on grid-based shortest paths
+
+### Python
+- Type Hints
+- Function annotations
+- `Optional` and built-in generic types
+- Improving code readability and editor support
+
+### Backend
+- Testing Basics
+- Unit tests
+- Assertions
+- Python test structure
+- Task Manager logging and validation checks
+
+### Projects
+- Task Manager logging configuration
+- Basic automated tests for authorization rules
+
+### LeetCode
+- Network Delay Time
+- Shortest Path in a Binary Matrix
+
+### SQL
+- Index Design
+- Composite Indexes
+- Covering Indexes
+- Index Usage and Query Plans
+
+### System Design
+- API Gateway
+- Rate Limiting
+- API Gateway + Rate Limiting Architecture
+
+---
+
 # Repository Structure
 
 backend/

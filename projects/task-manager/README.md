@@ -258,6 +258,14 @@ Current focus:
 Applying authorization rules to task operations
 Separating authentication from authorization
 Enforcing role and permission checks
+Logging application events
+Adding automated tests for auth and authorization behavior
+
+Relevant files:
+
+- `logging_config.py`
+- `tests/test_task_manager.py`
+
 Future Improvements
 
 Planned improvements include:
@@ -266,8 +274,6 @@ Database persistence
 Better password hashing
 Token refresh mechanism
 More granular permissions
-Automated tests
-Logging
 Dockerization
 Production deployment
 Improved configuration management

@@ -113,6 +113,13 @@ Solutions are organized according to the DSA topics being studied in the roadmap
 - Binary Tree Level Order Traversal
 
 ---
+
+## Day 14 — Advanced Graph / Shortest Path
+
+- Network Delay Time
+- Shortest Path in a Binary Matrix
+
+---
 # Problem-Solving Approach
 
 For each LeetCode problem:
