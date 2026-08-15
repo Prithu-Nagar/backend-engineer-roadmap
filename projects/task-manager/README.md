@@ -266,6 +266,86 @@ Relevant files:
 - `logging_config.py`
 - `tests/test_task_manager.py`
 
+---
+
+## Testing (Day 15)
+
+Day 15 introduces comprehensive testing for the Task Manager API.
+
+Test Strategy
+
+The test suite covers:
+
+- Authentication and authorization flows
+- Task CRUD operations
+- Permission-based access control
+- Error handling and validation
+- Edge cases and invalid inputs
+
+Test Structure
+
+Tests are organized by functionality:
+
+- `conftest.py` — Pytest configuration and shared fixtures
+- `test_tasks.py` — Task operation tests (CRUD, filtering, permissions)
+- `test_auth.py` — Authentication and authorization tests
+
+Pytest Fixtures
+
+Fixtures provide reusable test data:
+
+- `app` — Flask test application
+- `client` — Test client for simulating requests
+- `runner` — CLI test runner
+- `auth_headers` — Mock authentication headers
+- `user_data` — Sample user data
+- `admin_data` — Sample admin user data
+- `task_data` — Sample task data
+- `multiple_tasks` — Multiple task samples
+
+Test Coverage
+
+Task Tests:
+
+- Creating tasks
+- Retrieving tasks
+- Updating tasks
+- Deleting tasks
+- Filtering and searching
+- Permission checks
+- Resource ownership validation
+
+Authentication Tests:
+
+- Login with valid credentials
+- Login with invalid credentials
+- Missing authentication headers
+- Invalid token formats
+- Expired tokens
+
+Authorization Tests:
+
+- User permissions for task operations
+- Admin access to admin operations
+- Permission denial for unauthorized users
+- Role-based access control
+
+Token Tests:
+
+- Token generation
+- Token validation
+- Token refresh
+- Token expiration
+- Logout
+
+Test Approach
+
+Tests follow the Arrange-Act-Assert pattern:
+
+1. Arrange — Set up test data and fixtures
+2. Act — Execute the operation being tested
+3. Assert — Verify the results
+
 Future Improvements
 
 Planned improvements include:

@@ -62,6 +62,8 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Threading
 - ✅ Multiprocessing
 - ✅ AsyncIO
+- ✅ Type Hints
+- ✅ Dataclasses
 
 ---
 
@@ -78,7 +80,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Authorization
 - ✅ JWT
 - ✅ Logging
-- ⏳ Testing
+- ✅ Testing
 - ⏳ Docker
 - ⏳ Deployment
 
@@ -96,6 +98,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Query Optimization
 - ✅ Transactions
 - ✅ Constraints
+- ✅ Database Normalization
 
 ---
 
@@ -669,6 +672,50 @@ The primary objective is not just to study these topics, but to implement them w
 
 ---
 
+## ✅ Day 15
+
+### DSA
+- Heap Advanced Patterns
+- K Closest Points to Origin
+- Merge K Sorted Lists
+- Find Median from Data Stream
+
+### Python
+- Dataclasses
+- Automatic `__init__`, `__repr__`, `__eq__` generation
+- Field defaults and `field(default_factory=...)`
+- Post-initialization with `__post_init__`
+- Immutable dataclasses with `frozen=True`
+
+### Backend
+- Flask Testing
+- pytest-flask integration
+- Test client for simulating HTTP requests
+- Fixtures for Flask applications
+- Testing request/response cycles
+- Mock testing patterns
+
+### SQL
+- Database Normalization
+- 1NF, 2NF, 3NF normalization forms
+- Atomic values and repeating groups
+- Partial and transitive dependencies
+- Schema design best practices
+
+### Projects
+- Task Manager Testing
+- Pytest fixtures and configuration
+- Testing authentication and authorization
+- Testing task CRUD operations
+- Permission and access control tests
+
+### LeetCode
+- K Closest Points to Origin
+- Merge K Sorted Lists
+- Find Median from Data Stream
+
+---
+
 # Repository Structure
 
 backend/
@@ -716,6 +763,5 @@ This approach ensures that concepts are not only understood but also applied in 
 - Kafka
 - AI Agents
 - Model Context Protocol (MCP)
-- Testing
 - Docker
 - Deployment

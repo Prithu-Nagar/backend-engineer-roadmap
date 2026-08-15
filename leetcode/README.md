@@ -120,6 +120,15 @@ Solutions are organized according to the DSA topics being studied in the roadmap
 - Shortest Path in a Binary Matrix
 
 ---
+
+## Day 15 — Heap (Advanced)
+
+- K Closest Points to Origin
+- Merge K Sorted Lists
+- Find Median from Data Stream
+
+---
+
 # Problem-Solving Approach
 
 For each LeetCode problem:

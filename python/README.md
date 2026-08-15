@@ -166,6 +166,35 @@ Type hints are especially useful in backend services when modeling inputs, outpu
 
 ---
 
+## Dataclasses
+
+Day 15 introduces dataclasses for defining simple classes with less boilerplate.
+
+Dataclasses automatically generate common methods like `__init__`, `__repr__`, and `__eq__`.
+
+Topics include:
+
+- `@dataclass` decorator
+- Field definitions
+- Automatic method generation (`__init__`, `__repr__`, `__eq__`)
+- Field defaults and `field(default_factory=...)`
+- Post-initialization with `__post_init__`
+- Immutable dataclasses with `frozen=True`
+- Comparison methods with `order=True`
+- Type hints integration
+
+File: `dataclasses.py`
+
+Dataclasses are particularly useful for:
+
+- Defining data structures
+- Request/response models in APIs
+- Configuration objects
+- Domain models in backend services
+- Reducing boilerplate code while maintaining readability
+
+---
+
 # AsyncIO
 
 AsyncIO provides asynchronous programming capabilities for handling I/O-bound operations efficiently.

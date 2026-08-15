@@ -102,6 +102,24 @@ Topics include:
 
 ---
 
+### Testing
+
+Day 15 focus: Testing Flask applications with pytest.
+
+Topics include:
+
+- pytest-based Flask testing
+- Flask test client
+- Fixtures for Flask applications
+- Testing request/response cycles
+- API integration tests
+- Status code assertions
+- JSON response validation
+
+**File:** `flask_testing.py`
+
+---
+
 # Authentication
 
 Authentication answers:
@@ -229,6 +247,38 @@ Testing is especially useful for:
 - Route behavior
 
 A project-level test suite is also being added to the Task Manager API to validate behavior as the roadmap advances.
+
+---
+
+# Flask Testing
+
+Day 15 introduces testing Flask applications specifically.
+
+Topics include:
+
+- pytest-flask integration
+- Test client for simulating requests
+- Fixtures for Flask apps and clients
+- Testing request/response cycles
+- Mock testing patterns
+- Status code assertions
+- JSON response validation
+- Error response handling
+- Authentication header testing
+
+File:
+
+`flask_testing.py`
+
+Flask testing allows you to:
+
+- Test routes without running the server
+- Simulate HTTP requests and responses
+- Test error handling
+- Validate response formats
+- Test authentication and authorization
+- Test edge cases and error conditions
+
 
 ---
 

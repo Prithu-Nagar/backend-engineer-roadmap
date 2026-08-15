@@ -123,6 +123,30 @@ Current authentication/authorization concepts:
 
 ---
 
+## Testing
+
+Day 15 introduces comprehensive testing for the Task Manager API.
+
+Testing implementation includes:
+
+- pytest-flask integration
+- Fixtures for Flask applications
+- Test client for simulating HTTP requests
+- Authentication and authorization tests
+- Task operation tests
+- Permission and access control tests
+- Test configuration with `conftest.py`
+
+Test files:
+
+- `tests/conftest.py` — Pytest fixtures and configuration
+- `tests/test_tasks.py` — Task CRUD operations and filtering tests
+- `tests/test_auth.py` — Authentication, authorization, and token tests
+
+The tests serve as both verification and documentation of API behavior.
+
+---
+
 ## Planned Enhancements
 
 - SQLite Integration

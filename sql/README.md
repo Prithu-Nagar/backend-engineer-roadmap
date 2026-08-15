@@ -21,6 +21,7 @@ The goal is to build strong SQL fundamentals required for backend development, d
 - Covering indexes
 - PostgreSQL `INCLUDE` columns
 - Index-only scan concept
+- Database Normalization
 
 ---
 
@@ -226,6 +227,37 @@ Parameterized queries should be used by application code rather than constructin
 
 ---
 
+## Database Normalization
+
+Day 15 introduces database normalization and schema design.
+
+Database normalization is the process of organizing database design to minimize redundancy and dependency anomalies while maintaining data integrity.
+
+Topics include:
+
+- Normalization forms (1NF, 2NF, 3NF, BCNF)
+- Atomic values
+- Repeating groups
+- Partial dependencies
+- Transitive dependencies
+- Normalization benefits
+- Trade-offs: normalization vs. denormalization
+- Schema design best practices
+- Foreign key relationships
+
+**File:** `normalization.sql`
+
+Normalization levels:
+
+- **1NF (First Normal Form):** Remove repeating groups, ensure atomic values
+- **2NF (Second Normal Form):** 1NF + No partial dependencies (depends only on primary key)
+- **3NF (Third Normal Form):** 2NF + No transitive dependencies (no non-key fields depend on other non-key fields)
+- **BCNF (Boyce-Codd Normal Form):** 3NF with additional constraints (every determinant is a candidate key)
+
+The examples include normalized schema designs for e-commerce systems and queries on those normalized schemas.
+
+---
+
 # Repository Files
 
 sql/
@@ -236,8 +268,10 @@ sql/
 ├── ctes.sql
 ├── indexes.sql
 ├── joins.sql
+├── normalization.sql
 ├── query_optimization.sql
 ├── subqueries.sql
+├── transactions.sql
 └── window_functions.sql
 
 ---
@@ -256,6 +290,7 @@ sql/
 | Query Optimization  | Completed |
 | Transactions        | Completed |
 | Constraints         | Completed |
+| Normalization       | Completed |
 
 ---
 

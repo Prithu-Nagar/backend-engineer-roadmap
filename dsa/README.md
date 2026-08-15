@@ -68,6 +68,14 @@ Topics include:
 - Heap insertion and removal
 - Maintaining top K elements
 - Priority queue concepts
+- Two-heap approach for median finding
+- Merging sorted sequences
+
+Day 15 adds advanced heap problems:
+
+- K Closest Points to Origin
+- Merge K Sorted Lists
+- Find Median from Data Stream
 
 Directory: `heap/`
 
