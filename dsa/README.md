@@ -155,7 +155,23 @@ dsa/
 │   ├── course_schedule.py
 │   ├── flood_fill.py
 │   └── rotting_oranges.py
-└── dynamic_programming/
+├── dynamic_programming/
+└── hashing/
+---
+
+### Hashing
+
+Covers hash-based problem solving using dictionaries and sets.
+
+Topics include:
+
+- Frequency maps
+- Set membership
+- Duplicate detection
+- Hash collision intuition
+- Prefix sum + hash map patterns
+
+Directory: `hashing/`
 
 ---
 
@@ -197,6 +213,7 @@ The goal is not only to produce a working solution but also to understand its pe
 - Heap
 - Graph
 - Dynamic Programming
+- Hashing
 
 ---
 

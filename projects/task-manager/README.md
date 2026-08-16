@@ -338,7 +338,35 @@ Token Tests:
 - Token expiration
 - Logout
 
-Test Approach
+---
+
+## API Validation and Schemas (Day 16)
+
+Day 16 introduces validation and schema boundaries for the Task Manager API.
+
+The project now includes:
+
+- Request validation
+- Required field validation
+- Type validation
+- String validation
+- Priority validation
+- Allowed request fields
+- Response field filtering
+- Input sanitization
+
+Relevant files:
+
+- `validation.py`
+- `schemas.py`
+
+Validation ensures that invalid or unexpected input is rejected before application logic processes it.
+
+Schemas define which fields are accepted for task creation, task updates, and API responses.
+
+---
+
+## Test Approach
 
 Tests follow the Arrange-Act-Assert pattern:
 
@@ -346,7 +374,9 @@ Tests follow the Arrange-Act-Assert pattern:
 2. Act — Execute the operation being tested
 3. Assert — Verify the results
 
-Future Improvements
+---
+
+## Future Improvements
 
 Planned improvements include:
 

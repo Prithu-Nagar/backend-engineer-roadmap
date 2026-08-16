@@ -129,6 +129,14 @@ Solutions are organized according to the DSA topics being studied in the roadmap
 
 ---
 
+## Day 16 — Hashing
+
+- Group Anagrams
+- Longest Consecutive Sequence
+- Subarray Sum Equals K
+
+---
+
 # Problem-Solving Approach
 
 For each LeetCode problem:

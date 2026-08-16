@@ -716,6 +716,61 @@ The primary objective is not just to study these topics, but to implement them w
 
 ---
 
+## ✅ Day 16
+
+### DSA
+
+- Hashing
+- Frequency Maps
+- Sets
+- Hash Collision Intuition
+
+### Python
+
+- Python Memory Model
+- Object References
+- Mutability
+- Identity vs Equality
+- Shallow Copy
+- Deep Copy
+
+### SQL
+
+- Views
+- Materialized View Concept
+- When to Use Views
+- Views vs Materialized Views
+
+### LeetCode
+
+- Group Anagrams
+- Longest Consecutive Sequence
+- Subarray Sum Equals K
+
+### Backend
+
+- API Validation
+- Schemas
+- Input Sanitization
+
+### System Design
+
+- Redis Data Structures
+- Caching Patterns
+
+### Generative AI
+
+- LangChain Retrievers
+- Prompt Pipelines
+
+### Projects
+
+- Task Manager API Validation
+- Request Schemas
+- Input Sanitization
+
+---
+
 # Repository Structure
 
 backend/

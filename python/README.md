@@ -349,6 +349,35 @@ Cancellation is useful when:
 
 ---
 
+## Python Memory Model
+
+Day 16 covers how Python variables reference objects in memory.
+
+Topics include:
+
+- Object references
+- Assignment and aliasing
+- Mutability
+- Identity vs equality
+- `is` vs `==`
+- Shallow copy
+- Deep copy
+- `copy.copy()`
+- `copy.deepcopy()`
+
+**File:** `memory_model.py`
+
+Understanding references and mutability is important when working with:
+
+- Lists
+- Dictionaries
+- Nested objects
+- Function arguments
+- Shared state
+- API data structures
+
+---
+
 # Learning Approach
 
 For Python topics:
