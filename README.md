@@ -771,6 +771,55 @@ The primary objective is not just to study these topics, but to implement them w
 
 ---
 
+## ✅ Day 17
+
+### DSA
+
+- Sliding Window
+- Fixed-size and variable-size windows
+- Two-pointer window movement
+
+### Python
+
+- Advanced iterator patterns
+- Advanced generator patterns
+- Lazy evaluation
+- Generator pipelines
+
+### SQL
+
+- Pagination
+- OFFSET pagination
+- Keyset/cursor pagination
+- Stable ordering
+
+### LeetCode
+
+- Longest Substring Without Repeating Characters
+- Minimum Size Subarray Sum
+- Permutation in String
+
+### Backend
+
+- Pagination
+- Filtering
+- Sorting
+- API query parameters
+
+### System Design
+
+- Pagination at scale
+- OFFSET vs keyset/cursor pagination
+
+### Projects
+
+- Task Manager pagination
+- Task filtering
+- Task sorting
+- Pagination metadata
+
+---
+
 # Repository Structure
 
 backend/

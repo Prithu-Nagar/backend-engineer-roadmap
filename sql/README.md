@@ -258,6 +258,15 @@ The examples include normalized schema designs for e-commerce systems and querie
 
 ---
 
+## Pagination
+
+Pagination
+OFFSET pagination
+Keyset/cursor pagination
+Stable ordering
+
+**File:** `pagination.sql`
+
 # Repository Files
 
 sql/

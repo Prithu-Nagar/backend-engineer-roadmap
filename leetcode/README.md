@@ -137,6 +137,14 @@ Solutions are organized according to the DSA topics being studied in the roadmap
 
 ---
 
+## Day 17 — Sliding Window
+
+- Longest Substring Without Repeating Characters
+- Minimum Size Subarray Sum
+- Permutation in String
+
+---
+
 # Problem-Solving Approach
 
 For each LeetCode problem:

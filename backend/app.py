@@ -7,6 +7,7 @@ Main Flask application entry point.
 from flask import Flask
 
 from flask_routing import task_bp
+from pagination import pagination_bp
 
 
 def create_app():
@@ -15,6 +16,7 @@ def create_app():
     app = Flask(__name__)
 
     app.register_blueprint(task_bp)
+    app.register_blueprint(pagination_bp)
 
     @app.route("/")
     def home():

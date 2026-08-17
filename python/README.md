@@ -367,6 +367,18 @@ Topics include:
 
 **File:** `memory_model.py`
 
+---
+## Iteraors and Generaors
+
+- Iterator patterns
+- Generator patterns
+- Lazy evaluation
+- Generator pipelines
+
+**File:** `iterator_generator_patterns.py`
+
+---
+
 Understanding references and mutability is important when working with:
 
 - Lists

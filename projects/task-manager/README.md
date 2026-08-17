@@ -366,6 +366,40 @@ Schemas define which fields are accepted for task creation, task updates, and AP
 
 ---
 
+## Pagination, Filtering and Sorting (Day 17)
+
+Day 17 extends the Task Manager with pagination, filtering, and sorting.
+
+The implementation supports:
+
+- Page-based pagination
+- Configurable page size
+- Completion filtering
+- Sorting by allowed fields
+- Ascending and descending ordering
+- Pagination metadata
+- Validation of pagination parameters
+- Validation of sort fields and sort order
+
+Relevant files:
+
+- `pagination.py`
+- `tests/test_pagination.py`
+
+Pagination metadata includes:
+
+- Current page
+- Page size
+- Total records
+- Total pages
+- Whether a next page exists
+- Whether a previous page exists
+
+The implementation keeps pagination, filtering, and sorting as separate
+operations so the behavior can later be moved into database-backed queries.
+
+---
+
 ## Test Approach
 
 Tests follow the Arrange-Act-Assert pattern:

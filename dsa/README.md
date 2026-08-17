@@ -187,6 +187,24 @@ The corresponding problem list is maintained in:
 
 ---
 
+### Sliding Window
+
+Covers fixed-size and variable-size sliding window techniques for
+efficient processing of contiguous subarrays and substrings.
+
+Topics include:
+
+- Fixed-size Sliding Window
+- Variable-size Sliding Window
+- Two-pointer window movement
+- Window expansion and shrinking
+- Sliding Window with Set
+- Sliding Window with HashMap
+
+Directory: `sliding_window/`
+
+---
+
 # Complexity Analysis
 
 Solutions should include consideration of:
@@ -214,6 +232,7 @@ The goal is not only to produce a working solution but also to understand its pe
 - Graph
 - Dynamic Programming
 - Hashing
+- Sliding Window
 
 ---
 
