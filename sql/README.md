@@ -267,6 +267,29 @@ Stable ordering
 
 **File:** `pagination.sql`
 
+---
+
+### Day 18 — SQL Interview Patterns
+
+Day 18 focuses on common interview query patterns:
+
+- Top-N records
+- Top-N per group
+- Latest row
+- Latest row per group
+- Duplicate detection
+- Duplicate rows
+
+Important techniques include:
+
+- ORDER BY + LIMIT
+- ROW_NUMBER()
+- PARTITION BY
+- GROUP BY
+- HAVING
+
+---
+
 # Repository Files
 
 sql/

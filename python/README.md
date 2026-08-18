@@ -379,6 +379,26 @@ Topics include:
 
 ---
 
+### Day 18 — Context Managers + Decorators Revision
+
+Day 18 revisits Context Managers and Decorators with emphasis on
+their practical use in backend applications.
+
+Context managers provide reliable setup and cleanup around resources.
+
+Decorators allow cross-cutting behavior such as:
+
+- Logging
+- Authorization
+- Validation
+- Timing
+- Error handling
+
+The Task Manager project applies these concepts alongside generator
+pipelines and standardized error handling.
+
+---
+
 Understanding references and mutability is important when working with:
 
 - Lists

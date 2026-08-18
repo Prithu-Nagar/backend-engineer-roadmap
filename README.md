@@ -833,6 +833,53 @@ system-design/
 
 ---
 
+## ✅ Day 18
+
+### DSA
+
+- Two Pointers
+
+### Python
+
+- Context Managers
+- Decorators
+
+### SQL
+
+- Top-N
+- Latest Row
+- Duplicate Detection
+- Top-N per Group
+- Latest Row per Group
+
+### LeetCode
+
+- Two Sum II
+- 3Sum
+- Container With Most Water
+
+### Backend
+
+- Error Response Standards
+- HTTP Status Codes
+- Consistent API Errors
+
+### System Design
+
+- Resilience
+- Retries
+- Timeouts
+- Exponential Backoff
+- Idempotency
+
+### Projects
+
+- Task Manager standardized error responses
+- Generator-based task processing
+- Lazy generator pipelines
+
+---
+
 ## Repository Organization
 
 | Directory       | Purpose                                            |

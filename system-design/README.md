@@ -341,6 +341,25 @@ API Gateway
 
 ---
 
+### Resilience
+
+Day 18 introduces resilience patterns for distributed backend systems.
+
+Topics include:
+
+- Timeouts
+- Retries
+- Exponential backoff
+- Retryable failures
+- Non-retryable failures
+- Idempotency
+- Idempotency keys
+
+The goal is to prevent slow or failing dependencies from causing
+cascading failures and unintended duplicate operations.
+
+---
+
 # System Design Approach
 
 For each system design topic:

@@ -145,6 +145,16 @@ Solutions are organized according to the DSA topics being studied in the roadmap
 
 ---
 
+## Day 18
+
+### Two Pointers
+
+- Two Sum II - Input Array Is Sorted
+- 3Sum
+- Container With Most Water
+
+---
+
 # Problem-Solving Approach
 
 For each LeetCode problem:

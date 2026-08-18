@@ -400,6 +400,62 @@ operations so the behavior can later be moved into database-backed queries.
 
 ---
 
+# Day 18 — Standardized Errors + Generators
+
+Day 18 extends the Task Manager with:
+
+- Consistent API error responses
+- Standard error codes
+- HTTP status-code conventions
+- Generator-based task processing
+- Lazy evaluation
+- Generator pipelines
+
+## Standard Error Format
+
+All application errors should follow a consistent structure:
+
+```json
+{
+    "error": {
+        "code": "TASK_NOT_FOUND",
+        "message": "The requested task was not found."
+    }
+}
+```
+
+Examples:
+
+BAD_REQUEST — 400
+UNAUTHORIZED — 401
+FORBIDDEN — 403
+TASK_NOT_FOUND — 404
+CONFLICT — 409
+Generator Pipeline
+
+Task processing can be performed lazily:
+
+Tasks
+  ↓
+Task Generator
+  ↓
+Completion Filter
+  ↓
+Priority Filter
+  ↓
+Result
+
+The generator pipeline avoids creating unnecessary intermediate lists
+and demonstrates lazy evaluation in the project.
+
+Day 18 Files
+error_handling.py
+generators.py
+tests/test_error_handling.py
+tests/test_generators.py
+
+---
+
 ## Test Approach
 
 Tests follow the Arrange-Act-Assert pattern:

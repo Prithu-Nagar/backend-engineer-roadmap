@@ -205,6 +205,29 @@ Directory: `sliding_window/`
 
 ---
 
+### Two Pointers
+
+Day 18 introduces the Two Pointers technique.
+
+Topics include:
+
+- Opposite-direction pointers
+- Same-direction pointers
+- Pair searching
+- Sorted-array techniques
+- In-place array processing
+- Pointer movement based on conditions
+
+Problems covered:
+
+- Two Sum II
+- 3Sum
+- Container With Most Water
+
+Directory: `two_pointers/`
+
+---
+
 # Complexity Analysis
 
 Solutions should include consideration of:
@@ -233,6 +256,7 @@ The goal is not only to produce a working solution but also to understand its pe
 - Dynamic Programming
 - Hashing
 - Sliding Window
+- Two Pointers
 
 ---
 

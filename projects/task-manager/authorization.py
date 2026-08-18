@@ -10,6 +10,12 @@ Authorization determines what the authenticated user is allowed to do.
 from functools import wraps
 from typing import Callable
 
+from error_handling import (
+    FORBIDDEN,
+    UNAUTHORIZED,
+    TaskManagerError,
+)
+
 
 ROLE_PERMISSIONS = {
     "admin": {
@@ -51,21 +57,18 @@ def requires_permission(permission: str) -> Callable:
         @wraps(function)
         def wrapper(user: dict, *args, **kwargs):
             if not user:
-                return {
-                    "error": "Authentication required"
-                }, 401
+                return UNAUTHORIZED.to_response()
 
             role = user.get("role")
 
-            if not role:
-                return {
-                    "error": "User role not found"
-                }, 403
+            return TaskManagerError(
+                code="ROLE_NOT_FOUND",
+                message="User role not found.",
+                status_code=403,
+            ).to_response()
 
             if not has_permission(role, permission):
-                return {
-                    "error": "You do not have permission to perform this action"
-                }, 403
+                return FORBIDDEN.to_response()
 
             return function(user, *args, **kwargs)
 
@@ -105,9 +108,11 @@ def read_task(user: dict, task: dict) -> dict:
     Read a task after checking resource ownership.
     """
     if not can_access_task(user, task):
-        return {
-            "error": "You are not allowed to access this task"
-        }, 403
+        return TaskManagerError(
+            code="TASK_ACCESS_FORBIDDEN",
+            message="You are not allowed to access this task.",
+            status_code=403,
+        ).to_response()
 
     return task
 

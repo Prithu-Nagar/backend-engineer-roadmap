@@ -279,6 +279,34 @@ Flask testing allows you to:
 - Test authentication and authorization
 - Test edge cases and error conditions
 
+---
+
+### Standardized API Errors — Day 18
+
+Day 18 extends error handling into a consistent API error-response format.
+
+The standard structure is:
+
+```json
+{
+    "error": {
+        "code": "TASK_NOT_FOUND",
+        "message": "The requested task was not found."
+    }
+}
+```
+
+The API uses appropriate HTTP status codes:
+
+400 — Bad Request
+401 — Unauthorized
+403 — Forbidden
+404 — Not Found
+409 — Conflict
+500 — Internal Server Error
+
+The goal is to avoid different endpoints returning inconsistent
+error formats.
 
 ---
 
