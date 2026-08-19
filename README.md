@@ -37,6 +37,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Dynamic Programming
     - ✅ 1D DP
     - ✅ 2D DP
+- ✅ Intervals
 
 ---
 
@@ -64,6 +65,9 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ AsyncIO
 - ✅ Type Hints
 - ✅ Dataclasses
+- ✅ OOP Design
+- ✅ Composition vs Inheritance
+- ✅ SOLID Principles
 
 ---
 
@@ -81,6 +85,8 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ JWT
 - ✅ Logging
 - ✅ Testing
+- ✅ API Documentation
+- ✅ OpenAPI / Swagger
 - ⏳ Docker
 - ⏳ Deployment
 
@@ -113,6 +119,9 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Authentication & Authorization
 - ✅ API Gateway
 - ✅ Rate Limiting
+- ✅ Idempotency
+- ✅ Idempotency Keys
+- ✅ Duplicate Request Handling
 - ⏳ Kafka
 
 ---
@@ -129,7 +138,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ RAG Evaluation
 - ✅ Tool Integration
 - ✅ LangChain
-- ⏳ AI Agents
+- ✅ AI Agents
 - ⏳ Model Context Protocol (MCP)
 
 ---
@@ -877,6 +886,68 @@ system-design/
 - Task Manager standardized error responses
 - Generator-based task processing
 - Lazy generator pipelines
+
+---
+
+## ✅ Day 19
+
+### DSA
+
+- Intervals
+- Sorting + Merging
+- Interval overlap detection
+- Greedy interval processing
+
+### Python
+
+- OOP Review
+- Composition vs Inheritance
+- SOLID-oriented design
+- Single Responsibility Principle
+- Open/Closed Principle
+- Liskov Substitution Principle
+- Interface Segregation Principle
+- Dependency Inversion Principle
+
+### SQL
+
+- Transactions
+- COMMIT
+- ROLLBACK
+- SAVEPOINT
+- Practical transaction scenarios
+- Transaction boundaries
+- Concurrent update considerations
+
+### LeetCode
+
+- Merge Intervals
+- Insert Interval
+- Non-overlapping Intervals
+
+### Backend
+
+- API Documentation
+- OpenAPI
+- Swagger concepts
+- API contracts
+- Request/response schemas
+
+### System Design
+
+- Idempotency
+- Idempotency Keys
+- Duplicate Request Handling
+- Retry-safe APIs
+
+### Generative AI
+
+- AI Agents
+- Tool Calling
+- Agent Loop
+- Agent State
+- Tool Validation
+- Guardrails
 
 ---
 

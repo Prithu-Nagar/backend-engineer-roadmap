@@ -226,6 +226,28 @@ Problems covered:
 
 Directory: `two_pointers/`
 
+### Intervals
+
+Day 19 introduces interval-based problem solving.
+
+Topics include:
+
+- Sorting intervals
+- Detecting overlap
+- Merging intervals
+- Inserting intervals
+- Greedy interval selection
+
+Problems covered:
+
+- Merge Intervals
+- Insert Interval
+- Non-overlapping Intervals
+
+Directory:
+
+`intervals/`
+
 ---
 
 # Complexity Analysis

@@ -17,6 +17,7 @@ The focus is on understanding how backend systems are structured, how components
 - Authentication & Authorization
 - API Gateway
 - Rate Limiting
+- Idempotency
 
 ---
 
@@ -357,6 +358,31 @@ Topics include:
 
 The goal is to prevent slow or failing dependencies from causing
 cascading failures and unintended duplicate operations.
+
+---
+
+## Idempotency — Day 19
+
+Day 19 introduces idempotency for reliable distributed APIs.
+
+Topics include:
+
+- Idempotency
+- Idempotency keys
+- Duplicate request handling
+- Request hashing
+- Retry-safe APIs
+- Idempotency storage
+- Concurrent duplicate requests
+- Payment/order retry scenarios
+
+File:
+
+`idempotency.md`
+
+Idempotency is particularly important for operations such as payments,
+orders, job creation, and other requests where repeating the operation
+could
 
 ---
 

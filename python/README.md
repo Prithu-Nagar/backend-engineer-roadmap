@@ -195,6 +195,32 @@ Dataclasses are particularly useful for:
 
 ---
 
+## OOP Design — Day 19
+
+Day 19 reviews object-oriented design with a backend-engineering focus.
+
+Topics include:
+
+- Composition vs inheritance
+- Encapsulation
+- Abstraction
+- Polymorphism
+- Single Responsibility Principle
+- Open/Closed Principle
+- Liskov Substitution Principle
+- Interface Segregation Principle
+- Dependency Inversion Principle
+- Dependency injection
+
+File:
+
+`oop_design.py`
+
+The examples emphasize composition and dependency inversion because
+these patterns make backend components easier to test, replace, and extend.
+
+---
+
 # AsyncIO
 
 AsyncIO provides asynchronous programming capabilities for handling I/O-bound operations efficiently.

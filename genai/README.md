@@ -18,6 +18,7 @@ The focus is on understanding how LLM-based systems work and how they can be int
 - RAG Evaluation
 - Tool Integration
 - LangChain Basics
+- AI Agents
 
 ---
 
@@ -188,10 +189,47 @@ Tool calling and RAG can also be combined when an application needs both retriev
 
 ---
 
+## AI Agents — Day 19
+
+Day 19 introduces AI agent fundamentals.
+
+Topics include:
+
+- AI agents
+- Agent architecture
+- Tool calling
+- Tool schemas
+- Agent loops
+- Agent state
+- Stopping conditions
+- Tool validation
+- Guardrails
+- Agent reliability
+- Agents vs RAG
+
+File:
+
+`agents.md`
+
+A key principle is that the LLM can select an action, but the
+application remains responsible for validating and executing that action.
+
+The backend should control:
+
+- Authorization
+- Tool validation
+- Tool execution
+- State
+- Rate limits
+- Error handling
+
+---
+
 ## Repository Structure
 
 genai/
 ├── README.md
+├── agents.md
 ├── embeddings.md
 ├── langchain_basics.md
 ├── prompt_chaining.md

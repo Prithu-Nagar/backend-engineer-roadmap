@@ -302,3 +302,221 @@ COMMIT;
 
 -- SELECT ... FOR UPDATE
 --     Locks selected rows for update until the transaction ends.
+
+-- ============================================================
+-- DAY 19 - PRACTICAL TRANSACTION SCENARIOS
+-- ============================================================
+
+-- ============================================================
+-- SCENARIO 1: BANK TRANSFER
+-- ============================================================
+-- A transfer should debit one account and credit another
+-- atomically.
+--
+-- If either operation fails, the entire transaction should
+-- be rolled back.
+
+BEGIN;
+
+UPDATE accounts
+SET balance = balance - 1000
+WHERE account_id = 101;
+
+UPDATE accounts
+SET balance = balance + 1000
+WHERE account_id = 202;
+
+COMMIT;
+
+
+-- ============================================================
+-- SCENARIO 2: BANK TRANSFER WITH ROLLBACK
+-- ============================================================
+-- If validation or another operation fails, rollback prevents
+-- a partial transfer.
+
+BEGIN;
+
+UPDATE accounts
+SET balance = balance - 1000
+WHERE account_id = 101;
+
+-- Example validation failure:
+-- The destination account does not exist.
+
+UPDATE accounts
+SET balance = balance + 1000
+WHERE account_id = 999999;
+
+-- Roll back the debit as well.
+ROLLBACK;
+
+
+-- ============================================================
+-- SCENARIO 3: SAVEPOINT
+-- ============================================================
+-- SAVEPOINT allows part of a transaction to be undone while
+-- preserving earlier successful operations.
+
+BEGIN;
+
+UPDATE orders
+SET status = 'PROCESSING'
+WHERE order_id = 1001;
+
+SAVEPOINT before_shipping_update;
+
+UPDATE orders
+SET shipping_address = 'Temporary Address'
+WHERE order_id = 1001;
+
+-- Suppose the address validation fails.
+ROLLBACK TO SAVEPOINT before_shipping_update;
+
+-- The order status update remains,
+-- but the shipping address change is undone.
+
+COMMIT;
+
+
+-- ============================================================
+-- SCENARIO 4: MULTI-STEP ORDER CREATION
+-- ============================================================
+-- Creating an order may involve multiple related operations.
+
+BEGIN;
+
+INSERT INTO orders (
+    order_id,
+    customer_id,
+    status
+)
+VALUES (
+    5001,
+    101,
+    'CREATED'
+);
+
+INSERT INTO order_items (
+    order_id,
+    product_id,
+    quantity
+)
+VALUES (
+    5001,
+    301,
+    2
+);
+
+UPDATE inventory
+SET quantity = quantity - 2
+WHERE product_id = 301;
+
+COMMIT;
+
+
+-- ============================================================
+-- SCENARIO 5: ORDER CREATION FAILURE
+-- ============================================================
+-- If inventory update fails, the order should not remain
+-- partially created.
+
+BEGIN;
+
+INSERT INTO orders (
+    order_id,
+    customer_id,
+    status
+)
+VALUES (
+    5002,
+    101,
+    'CREATED'
+);
+
+INSERT INTO order_items (
+    order_id,
+    product_id,
+    quantity
+)
+VALUES (
+    5002,
+    302,
+    5
+);
+
+-- Example:
+-- inventory constraint or business validation fails.
+
+UPDATE inventory
+SET quantity = quantity - 5
+WHERE product_id = 302;
+
+-- If the operation cannot be completed safely:
+ROLLBACK;
+
+
+-- ============================================================
+-- SCENARIO 6: SAFE CONCURRENT INVENTORY UPDATE
+-- ============================================================
+-- SELECT FOR UPDATE can prevent two concurrent transactions
+-- from modifying the same inventory row simultaneously.
+
+BEGIN;
+
+SELECT quantity
+FROM inventory
+WHERE product_id = 301
+FOR UPDATE;
+
+UPDATE inventory
+SET quantity = quantity - 1
+WHERE product_id = 301
+  AND quantity > 0;
+
+COMMIT;
+
+
+-- ============================================================
+-- SCENARIO 7: EXPLICIT TRANSACTION ISOLATION
+-- ============================================================
+-- Use a stronger isolation level when the business operation
+-- requires stronger consistency guarantees.
+
+BEGIN TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SELECT *
+FROM accounts
+WHERE account_id = 101;
+
+UPDATE accounts
+SET balance = balance - 500
+WHERE account_id = 101;
+
+COMMIT;
+
+
+-- ============================================================
+-- TRANSACTION DECISION GUIDE
+-- ============================================================
+
+-- COMMIT
+--   Persist all successful operations.
+
+-- ROLLBACK
+--   Undo all operations since BEGIN.
+
+-- SAVEPOINT
+--   Create a partial rollback point.
+
+-- SELECT ... FOR UPDATE
+--   Lock selected rows for modification within a transaction.
+
+-- SERIALIZABLE
+--   Provide the strongest standard isolation guarantee,
+--   potentially at the cost of reduced concurrency.
+
+-- Practical rule:
+--
+-- If multiple operations together represent one business action,
+-- they should generally belong to the same transaction boundary.

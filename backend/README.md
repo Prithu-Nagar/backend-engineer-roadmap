@@ -71,6 +71,41 @@ Organizing Flask applications into modular components using Blueprints.
 
 Blueprints help separate application functionality into logical modules and make larger Flask applications easier to maintain.
 
+## API Documentation — Day 19
+
+Day 19 introduces API documentation and OpenAPI concepts.
+
+Topics include:
+
+- API contracts
+- OpenAPI specification
+- Swagger
+- Endpoint documentation
+- Query parameters
+- Path parameters
+- Request bodies
+- Request/response schemas
+- HTTP status-code documentation
+
+File:
+
+`api_documentation.py`
+
+The OpenAPI specification describes the API contract independently of
+the implementation.
+
+This makes it easier for:
+
+- Backend developers to understand endpoints
+- Frontend developers to consume APIs
+- Testers to understand expected behavior
+- Teams to maintain consistent API contracts
+- Documentation tools such as Swagger UI to render interactive API documentation
+
+The repository currently uses a Python dictionary to model the OpenAPI
+document. It can later be exposed through an API endpoint and connected
+to Swagger UI.
+
 ---
 
 ### Request & Response Handling

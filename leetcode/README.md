@@ -155,6 +155,14 @@ Solutions are organized according to the DSA topics being studied in the roadmap
 
 ---
 
+## Day 19 — Intervals
+
+- Merge Intervals
+- Insert Interval
+- Non-overlapping Intervals
+
+---
+
 # Problem-Solving Approach
 
 For each LeetCode problem:
@@ -186,6 +194,7 @@ The problems solved so far cover:
 - Heaps
 - Graphs
 - Dynamic Programming
+- Intervals
 
 Dynamic Programming currently includes:
 

@@ -6,6 +6,31 @@ The goal is to build strong SQL fundamentals required for backend development, d
 
 ---
 
+## Day 19 — Practical Transactions
+
+Day 19 extends the existing transaction material with practical
+business scenarios.
+
+Scenarios include:
+
+- Bank transfers
+- Rollback after failure
+- SAVEPOINT usage
+- Multi-step order creation
+- Inventory updates
+- Concurrent inventory updates
+- SELECT ... FOR UPDATE
+- Explicit transaction isolation
+
+File:
+
+`transactions.sql`
+
+The focus is on identifying transaction boundaries around real
+business operations rather than treating transactions as isolated SQL syntax.
+
+---
+
 ## Completed Topics
 
 - SQL Basics
@@ -17,6 +42,7 @@ The goal is to build strong SQL fundamentals required for backend development, d
 - Common Table Expressions (CTEs)
 - Query Optimization
 - Transactions
+- Transaction control and isolation levels
 - Constraints
 - Covering indexes
 - PostgreSQL `INCLUDE` columns
