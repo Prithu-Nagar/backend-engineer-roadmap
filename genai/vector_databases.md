@@ -276,4 +276,3 @@ LLM
 Answer
 
 **Core idea:** Vector databases enable efficient similarity-based retrieval of information represented as embeddings.
-

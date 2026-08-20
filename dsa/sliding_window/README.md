@@ -13,7 +13,6 @@ Sliding Window is a technique for processing contiguous subarrays or substrings 
 Use when the window size is fixed at `k`.
 
 
-```text
 [ a b c ] d e
     ↓
  a [ b c d ] e

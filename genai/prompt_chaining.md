@@ -4,31 +4,21 @@ Prompt Chaining is the process of solving a complex task by breaking it into mul
 
 ## Workflow
 
+```text
 Prompt 1
-
-↓
-
+   ↓
 Generate Outline
-
-↓
-
+   ↓
 Prompt 2
-
-↓
-
+   ↓
 Expand Sections
-
-↓
-
+   ↓
 Prompt 3
-
-↓
-
+   ↓
 Review Output
-
-↓
-
+   ↓
 Final Response
+```
 
 ---
 

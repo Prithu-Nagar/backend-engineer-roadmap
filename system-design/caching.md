@@ -258,4 +258,3 @@ Cache Avalanche
 Redis
 
 **Core idea:** Caching improves application performance by serving frequently accessed data from a faster layer while carefully managing freshness and consistency.
-

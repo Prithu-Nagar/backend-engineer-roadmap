@@ -10,8 +10,8 @@ Important retrieval metrics include:
 
 - Precision
 - Recall
-- Precision@K
-- Recall@K
+- `Precision@K`
+- `Recall@K`
 - Mean Reciprocal Rank (MRR)
 - NDCG
 
@@ -19,44 +19,49 @@ Important retrieval metrics include:
 
 Measures how many of the retrieved results are relevant.
 
-Precision =
-Relevant Retrieved Results
---------------------------
-Total Retrieved Results
+```text
+            Relevant Retrieved Results
+Precision = --------------------------
+            Total Retrieved Results
+```
 
 ### Recall
 
 Measures how much of the relevant information was retrieved.
 
-Recall =
-Relevant Retrieved Results
---------------------------
-Total Relevant Results
+```text
+         Relevant Retrieved Results
+Recall = --------------------------
+         Total Relevant Results
+```
 
 ### Precision@K
 
-Measures the proportion of relevant results among the top K retrieved results.
+Measures the proportion of relevant results among the top `K` retrieved results.
 
-Precision@K =
-Relevant Results in Top K
--------------------------
-K
+```text
+               Relevant Results in Top K
+Precision@K = --------------------------
+                          K
+```
 
 ### Recall@K
 
-Measures the proportion of all relevant results that were retrieved within the top K results.
+Measures the proportion of all relevant results that were retrieved within the top `K` results.
 
-Recall@K =
-Relevant Results in Top K
--------------------------
-Total Relevant Results
+```text
+            Relevant Results in Top K
+Recall@K = --------------------------
+            Total Relevant Results
+```
 
 ### Mean Reciprocal Rank (MRR)
 
 Measures how highly the first relevant result appears in the ranked retrieval results.
 
-MRR =
-Average of 1 / Rank of First Relevant Result
+```text
+MRR = Average of (1 / Rank of First Relevant Result)
+```
 
 ### NDCG
 
@@ -98,20 +103,23 @@ The dataset can be used for:
 
 Example:
 
+```text
 Question
    ↓
 Expected Answer
    ↓
 Expected Source
+```
 
 The same evaluation dataset can be run against different versions of the RAG pipeline.
 
 ---
 
-## Retrieval vs Generation Failures
+## Retrieval vs. Generation Failures
 
 When a RAG answer is incorrect, determine which stage caused the problem.
 
+```text
 Question
    ↓
 Query Processing
@@ -123,6 +131,7 @@ Context Construction
 Generation
    ↓
 Final Answer
+```
 
 ### Retrieval Failure
 
@@ -138,14 +147,12 @@ These failures should be diagnosed separately.
 
 ## RAG Evaluation Dimensions
 
-A practical RAG evaluation should consider:
-
-| Stage      | Evaluation                                          |
-| ---------- | --------------------------------------------------- |
-| Retrieval  | Precision, Recall, Precision@K, Recall@K, MRR, NDCG |
-| Context    | Relevance and completeness                          |
-| Generation | Faithfulness, relevance, correctness                |
-| System     | Latency, cost, and reliability                      |
+| Stage | Evaluation |
+| --- | --- |
+| Retrieval | Precision, Recall, `Precision@K`, `Recall@K`, MRR, NDCG |
+| Context | Relevance and completeness |
+| Generation | Faithfulness, relevance, correctness |
+| System | Latency, cost, and reliability |
 
 ---
 
@@ -155,6 +162,7 @@ A RAG system should not be evaluated only by whether the final answer appears co
 
 Evaluation should cover:
 
+```text
 Retrieval Quality
         +
 Context Quality
@@ -162,3 +170,4 @@ Context Quality
 Generation Quality
         +
 System Performance
+```

@@ -91,8 +91,7 @@ File:
 
 `api_documentation.py`
 
-The OpenAPI specification describes the API contract independently of
-the implementation.
+The OpenAPI specification describes the API contract independently of the implementation.
 
 This makes it easier for:
 
@@ -102,9 +101,7 @@ This makes it easier for:
 - Teams to maintain consistent API contracts
 - Documentation tools such as Swagger UI to render interactive API documentation
 
-The repository currently uses a Python dictionary to model the OpenAPI
-document. It can later be exposed through an API endpoint and connected
-to Swagger UI.
+The repository currently uses a Python dictionary to model the OpenAPI document. It can later be exposed through an API endpoint and connected to Swagger UI.
 
 ---
 
@@ -159,7 +156,7 @@ Topics include:
 
 Authentication answers:
 
-"Who is the user?"
+> "Who is the user?"
 
 The application verifies the identity of a user before allowing access to protected resources.
 
@@ -181,10 +178,11 @@ Topics include:
 
 Authorization answers:
 
-"What is the authenticated user allowed to do?"
+> "What is the authenticated user allowed to do?"
 
 Authentication and authorization are separate concepts.
 
+```text
 Authentication
       ↓
 Who are you?
@@ -192,6 +190,7 @@ Who are you?
 Authorization
       ↓
 What are you allowed to do?
+```
 
 Topics include:
 
@@ -247,11 +246,11 @@ File:
 
 Common log levels include:
 
-- DEBUG
-- INFO
-- WARNING
-- ERROR
-- CRITICAL
+- `DEBUG`
+- `INFO`
+- `WARNING`
+- `ERROR`
+- `CRITICAL`
 
 Structured logs represent important event information in a consistent machine-readable format.
 
@@ -324,24 +323,48 @@ The standard structure is:
 
 ```json
 {
-    "error": {
-        "code": "TASK_NOT_FOUND",
-        "message": "The requested task was not found."
-    }
+  "error": {
+    "code": "TASK_NOT_FOUND",
+    "message": "The requested task was not found."
+  }
 }
 ```
 
 The API uses appropriate HTTP status codes:
 
-400 — Bad Request
-401 — Unauthorized
-403 — Forbidden
-404 — Not Found
-409 — Conflict
-500 — Internal Server Error
+| Status code | Meaning |
+|---|---|
+| `400` | Bad Request |
+| `401` | Unauthorized |
+| `403` | Forbidden |
+| `404` | Not Found |
+| `409` | Conflict |
+| `500` | Internal Server Error |
 
-The goal is to avoid different endpoints returning inconsistent
-error formats.
+The goal is to avoid different endpoints returning inconsistent error formats.
+
+---
+
+# Day 20 — Flask Application Refactor
+
+Day 20 introduces a production-oriented Flask application structure.
+
+The main goals are:
+
+- Application factory pattern
+- Configuration separation
+- Environment-specific configuration
+- Blueprint registration
+- Easier testing
+- Better application organization
+
+## Application Factory
+
+The application is created through:
+
+```python
+create_app()
+```
 
 ---
 
@@ -362,12 +385,12 @@ Completed:
 - Logging Fundamentals
 - Testing Basics
 
-Current focus:
+# Current focus:
 
 - Task Manager validation
 - Project-level automated testing
 
-Upcoming:
+# Upcoming:
 
 - Docker
 - Deployment

@@ -1,18 +1,18 @@
 # Load Balancer
 
-A Load Balancer distributes incoming client requests across multiple backend servers to improve availability, scalability, and fault tolerance.
+A **Load Balancer** distributes incoming client requests across multiple backend servers to improve availability, scalability, and fault tolerance.
 
 ---
 
-## Why do we need a Load Balancer?
+## Why Do We Need a Load Balancer?
 
-Without a Load Balancer:
+### Without a Load Balancer
 
 - A single server handles all traffic.
 - Server overload can cause slow responses or downtime.
 - Scaling the application becomes difficult.
 
-With a Load Balancer:
+### With a Load Balancer
 
 - Traffic is distributed across multiple servers.
 - Failed servers are automatically removed from rotation.
@@ -22,7 +22,7 @@ With a Load Balancer:
 
 ## Architecture
 
-
+```text
               Users
                  │
                  ▼
@@ -34,6 +34,7 @@ With a Load Balancer:
     Server1  Server2  Server3
           \      |      /
              Database
+```
 
 ---
 
@@ -51,9 +52,8 @@ With a Load Balancer:
 
 A Load Balancer periodically checks whether backend servers are healthy.
 
-Healthy servers continue receiving traffic.
-
-Unhealthy servers are temporarily removed until they recover.
+- **Healthy servers** continue receiving traffic.
+- **Unhealthy servers** are temporarily removed until they recover.
 
 ---
 
@@ -63,14 +63,12 @@ Unhealthy servers are temporarily removed until they recover.
 
 Requests are distributed sequentially.
 
-
+```text
 Request 1 → Server A
-
 Request 2 → Server B
-
 Request 3 → Server C
-
 Request 4 → Server A
+```
 
 ---
 
@@ -78,22 +76,22 @@ Request 4 → Server A
 
 The next request is routed to the server with the fewest active connections.
 
-Useful when requests have varying execution times.
+This is useful when requests have varying execution times.
 
 ---
 
 ### Weighted Round Robin
 
-Servers receive traffic proportional to assigned weights.
+Servers receive traffic proportional to their assigned weights.
 
 Example:
 
-
+```text
 Server A → Weight 3
-
 Server B → Weight 1
 
 Server A receives approximately three times more requests.
+```
 
 ---
 
@@ -101,14 +99,14 @@ Server A receives approximately three times more requests.
 
 The client IP determines which backend server handles the request.
 
-Useful for sticky sessions.
+This is useful for sticky sessions.
 
 ---
 
 ## Layer 4 vs Layer 7
 
 | Layer 4 | Layer 7 |
-|----------|----------|
+|---|---|
 | Transport Layer | Application Layer |
 | Uses IP and Port | Uses HTTP/HTTPS |
 | Faster | Smarter Routing |
@@ -127,7 +125,7 @@ Modern distributed applications typically avoid sticky sessions by storing sessi
 ## Load Balancer vs Reverse Proxy
 
 | Load Balancer | Reverse Proxy |
-|---------------|---------------|
+|---|---|
 | Distributes traffic | Forwards requests |
 | Improves scalability | Hides backend servers |
 | Performs health checks | Can cache responses |
@@ -147,13 +145,13 @@ Tools such as **Nginx** and **HAProxy** can perform both roles.
 
 ## Interview Questions
 
-- What is a Load Balancer?
-- Why do we need Load Balancing?
-- Explain Round Robin.
-- Explain Least Connections.
-- Difference between Layer 4 and Layer 7 Load Balancers?
-- What are Sticky Sessions?
-- Difference between Reverse Proxy and Load Balancer?
+1. What is a Load Balancer?
+2. Why do we need Load Balancing?
+3. Explain Round Robin.
+4. Explain Least Connections.
+5. What is the difference between Layer 4 and Layer 7 Load Balancers?
+6. What are Sticky Sessions?
+7. What is the difference between a Reverse Proxy and a Load Balancer?
 
 ---
 

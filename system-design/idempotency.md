@@ -26,7 +26,6 @@ where clients may retry requests because of:
 Consider:
 
 
-```text
 Client
   |
   | POST /payments

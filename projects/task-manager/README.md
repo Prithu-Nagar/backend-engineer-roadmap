@@ -400,7 +400,7 @@ operations so the behavior can later be moved into database-backed queries.
 
 ---
 
-# Day 18 — Standardized Errors + Generators
+## Day 18 — Standardized Errors + Generators
 
 Day 18 extends the Task Manager with:
 
@@ -411,18 +411,14 @@ Day 18 extends the Task Manager with:
 - Lazy evaluation
 - Generator pipelines
 
-## Standard Error Format
-
 All application errors should follow a consistent structure:
 
-```json
 {
     "error": {
         "code": "TASK_NOT_FOUND",
         "message": "The requested task was not found."
     }
 }
-```
 
 Examples:
 
@@ -453,6 +449,43 @@ error_handling.py
 generators.py
 tests/test_error_handling.py
 tests/test_generators.py
+
+---
+
+# Day 20 — Production-Style Refactor
+
+Day 20 begins the transition from the Task Manager learning project
+toward a more structured backend application.
+
+The architecture now emphasizes:
+
+- Application factory
+- Configuration separation
+- Service boundaries
+- Modular organization
+- Database design
+- Separation of responsibilities
+
+## Target Architecture
+
+```text
+Client
+  |
+  v
+Flask Application
+  |
+  +----------------------+
+  |                      |
+  v                      v
+Authentication       Task Module
+  |                      |
+  v                      v
+Authorization        Task Service
+                         |
+                         v
+                    Task Repository
+                         |
+                         v
 
 ---
 

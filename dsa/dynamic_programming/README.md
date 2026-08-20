@@ -31,9 +31,11 @@ Common examples:
 
 A common state representation is:
 
+```text
 dp[i]
+```
 
-where dp[i] represents the solution to the subproblem ending at position i.
+where `dp[i]` represents the solution to the subproblem ending at position `i`.
 
 ---
 
@@ -43,7 +45,9 @@ where dp[i] represents the solution to the subproblem ending at position i.
 
 A common representation is:
 
+```text
 dp[row][col]
+```
 
 where each cell represents the solution to a subproblem associated with a particular row and column.
 
@@ -68,15 +72,19 @@ The most important step in Dynamic Programming is identifying the state.
 
 For a grid problem:
 
+```text
 dp[row][col]
+```
 
 can represent the best or number of possible solutions for reaching or processing that particular cell.
 
 For sequence comparison:
 
+```text
 dp[i][j]
+```
 
-can represent the solution considering the first i elements of one sequence and the first j elements of another sequence.
+can represent the solution considering the first `i` elements of one sequence and the first `j` elements of another sequence.
 
 The state definition determines the recurrence relation.
 
@@ -88,7 +96,9 @@ A recurrence relation describes how the current state can be calculated from pre
 
 For example, Unique Paths can use:
 
+```text
 dp[row][col] = dp[row - 1][col] + dp[row][col - 1]
+```
 
 because a cell can be reached from:
 
@@ -97,21 +107,27 @@ because a cell can be reached from:
 
 For Minimum Path Sum:
 
+```text
 dp[row][col] = min(
     dp[row - 1][col],
     dp[row][col - 1]
 ) + grid[row][col]
+```
 
 For Longest Common Subsequence, when the current characters match:
 
+```text
 dp[i][j] = dp[i - 1][j - 1] + 1
+```
 
 Otherwise:
 
+```text
 dp[i][j] = max(
     dp[i - 1][j],
     dp[i][j - 1]
 )
+```
 
 ---
 
@@ -123,6 +139,7 @@ The solution is usually expressed recursively, while already-computed states are
 
 Example:
 
+```text
 Problem
    ↓
 Subproblem
@@ -134,6 +151,7 @@ Hit  Miss
 Return  Compute
         ↓
       Store
+```
 
 ---
 
@@ -145,6 +163,7 @@ The solution starts from known base cases and builds toward the final answer.
 
 Example:
 
+```text
 Base Cases
     ↓
 dp[1]
@@ -154,9 +173,11 @@ dp[2]
 dp[3]
     ↓
 Final Answer
+```
 
 For 2D DP, the same idea is extended to a table:
 
+```text
 Base States
     ↓
 First Row / Column
@@ -164,6 +185,7 @@ First Row / Column
 Remaining Cells
     ↓
 Final State
+```
 
 ---
 
@@ -188,20 +210,28 @@ For example, some 1D DP problems only require the previous one or two states.
 
 Instead of:
 
+```text
 dp = [0, 1, 1, 2, 3, ...]
+```
 
 we can maintain:
 
+```text
 previous
 current
+```
 
 This can reduce space from:
 
+```text
 O(n)
+```
 
 to:
 
+```text
 O(1)
+```
 
 Similarly, some 2D DP problems only require the previous row and the current row, allowing the space complexity to be reduced.
 
@@ -215,11 +245,13 @@ LeetCode 70
 
 File:
 
-climbing_stairs.py
+`climbing_stairs.py`
 
 Pattern:
 
+```text
 dp[i] = dp[i - 1] + dp[i - 2]
+```
 
 The number of ways to reach a step depends on the number of ways to reach the previous two steps.
 
@@ -231,14 +263,16 @@ LeetCode 198
 
 File:
 
-house_robber.py
+`house_robber.py`
 
 Pattern:
 
+```text
 dp[i] = max(
     dp[i - 1],
     dp[i - 2] + nums[i]
 )
+```
 
 At each house, choose between:
 
@@ -253,14 +287,16 @@ LeetCode 746
 
 File:
 
-min_cost_climbing_stairs.py
+`min_cost_climbing_stairs.py`
 
 Pattern:
 
+```text
 dp[i] = cost[i] + min(
     dp[i - 1],
     dp[i - 2]
 )
+```
 
 The solution builds the minimum cost required to reach each step.
 
@@ -272,11 +308,13 @@ LeetCode 62
 
 File:
 
-unique_paths.py
+`unique_paths.py`
 
 Pattern:
 
+```text
 dp[row][col] = dp[row - 1][col] + dp[row][col - 1]
+```
 
 A robot can move only right or down.
 
@@ -292,14 +330,16 @@ LeetCode 64
 
 File:
 
-min_path_sum.py
+`min_path_sum.py`
 
 Pattern:
 
+```text
 dp[row][col] = min(
     dp[row - 1][col],
     dp[row][col - 1]
 ) + grid[row][col]
+```
 
 The objective is to find the minimum possible sum along a path from the top-left cell to the bottom-right cell.
 
@@ -313,20 +353,24 @@ LeetCode 1143
 
 File:
 
-longest_common_subsequence.py
+`longest_common_subsequence.py`
 
 Pattern:
 
 If the current characters match:
 
+```text
 dp[i][j] = dp[i - 1][j - 1] + 1
+```
 
 Otherwise:
 
+```text
 dp[i][j] = max(
     dp[i - 1][j],
     dp[i][j - 1]
 )
+```
 
 The problem demonstrates how 2D DP can be used when the state depends on positions in two different sequences.
 
@@ -338,33 +382,45 @@ The implementation uses a 1D array to optimize space.
 
 A common 1D DP implementation has:
 
+```text
 Time: O(n)
+```
 
 Space can be:
 
+```text
 O(n)
+```
 
 with a DP array, or:
 
+```text
 O(1)
+```
 
 when only a fixed number of previous states are required.
 
 For common 2D DP problems:
 
+```text
 Time: O(m × n)
+```
 
-where m and n represent the dimensions of the state space.
+where `m` and `n` represent the dimensions of the state space.
 
 Space can be:
 
+```text
 O(m × n)
+```
 
 when the complete DP table is stored.
 
 Space can often be reduced to:
 
+```text
 O(n)
+```
 
 when only the previous row or a fixed number of previous states is required.
 

@@ -19,7 +19,6 @@ Redis is an in-memory data store commonly used for:
 
 Simple key-value data.
 
-```text
 user:1:name -> "Alex"
 
 Useful for:

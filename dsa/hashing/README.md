@@ -27,44 +27,59 @@ frequency = {
     2: 2,
     3: 3,
 }
+```
+
 Python dictionaries are commonly used to implement frequency maps.
 
 Typical operations:
 
+```python
 frequency[value] = frequency.get(value, 0) + 1
+```
 
 Average lookup and insertion:
 
+```text
 Time: O(1)
-Sets
+```
+
+### Sets
 
 A set stores unique values.
 
 Example:
 
+```python
 values = {1, 2, 3}
+```
 
 Sets are useful for:
 
-Duplicate detection
-Membership testing
-Removing duplicates
-Tracking visited values
-Detecting consecutive sequences
+- Duplicate detection
+- Membership testing
+- Removing duplicates
+- Tracking visited values
+- Detecting consecutive sequences
 
 Average membership lookup:
 
+```python
 value in values
+```
 
 Time:
 
+```text
 Average: O(1)
-Hash Collision Intuition
+```
+
+### Hash Collision Intuition
 
 A hash function maps a value to a hash value that is used to determine where the value should be stored.
 
 Conceptually:
 
+```text
 Value
   |
   v
@@ -75,6 +90,7 @@ Hash Value
   |
   v
 Storage Location
+```
 
 Different values can sometimes produce the same hash location.
 
@@ -82,8 +98,13 @@ This is called a hash collision.
 
 Hash-based data structures use internal mechanisms to handle collisions while maintaining efficient average-case operations.
 
-Common Hashing Patterns
-Frequency Counting
+---
+
+## Common Hashing Patterns
+
+### Frequency Counting
+
+```text
 Input
   |
   v
@@ -91,14 +112,18 @@ Dictionary
   |
   v
 Count occurrences
+```
 
 Useful for:
 
-Character frequencies
-Duplicate detection
-Counting numbers
-Anagram problems
-Membership Checking
+- Character frequencies
+- Duplicate detection
+- Counting numbers
+- Anagram problems
+
+### Membership Checking
+
+```text
 Input
   |
   v
@@ -106,52 +131,64 @@ Set
   |
   v
 O(1) average lookup
+```
 
 Useful for:
 
-Duplicate detection
-Visited elements
-Existence checks
-Prefix Sum + Hash Map
+- Duplicate detection
+- Visited elements
+- Existence checks
+
+### Prefix Sum + Hash Map
 
 A hash map can store previously seen prefix sums.
 
 For example:
 
+```text
 current_sum - previous_sum = target
+```
 
 Therefore:
 
+```text
 previous_sum = current_sum - target
+```
 
 This pattern is useful for problems such as:
 
-Subarray Sum Equals K
-Prefix-sum based counting problems
-LeetCode Problems
-Group Anagrams
+- Subarray Sum Equals K
+- Prefix-sum based counting problems
 
-File: group_anagrams.py
+---
 
-Pattern:
+## LeetCode Problems
 
-Frequency map
-Hashable representation of character counts
-Longest Consecutive Sequence
+### Group Anagrams
 
-File: longest_consecutive_sequence.py
+File: `group_anagrams.py`
 
 Pattern:
 
-Set membership
-Detect sequence starting points
-Avoid unnecessary repeated traversal
-Subarray Sum Equals K
+- Frequency map
+- Hashable representation of character counts
 
-File: subarray_sum_equals_k.py
+### Longest Consecutive Sequence
+
+File: `longest_consecutive_sequence.py`
 
 Pattern:
 
-Prefix sum
-Frequency map
-Count previously observed prefix sums
+- Set membership
+- Detect sequence starting points
+- Avoid unnecessary repeated traversal
+
+### Subarray Sum Equals K
+
+File: `subarray_sum_equals_k.py`
+
+Pattern:
+
+- Prefix sum
+- Frequency map
+- Count previously observed prefix sums

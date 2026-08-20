@@ -134,6 +134,7 @@ Directory: `dynamic_programming/`
 
 # Repository Structure
 
+```text
 dsa/
 ├── README.md
 ├── arrays/
@@ -157,6 +158,8 @@ dsa/
 │   └── rotting_oranges.py
 ├── dynamic_programming/
 └── hashing/
+```
+
 ---
 
 ### Hashing
@@ -189,8 +192,7 @@ The corresponding problem list is maintained in:
 
 ### Sliding Window
 
-Covers fixed-size and variable-size sliding window techniques for
-efficient processing of contiguous subarrays and substrings.
+Covers fixed-size and variable-size sliding window techniques for efficient processing of contiguous subarrays and substrings.
 
 Topics include:
 
@@ -244,9 +246,7 @@ Problems covered:
 - Insert Interval
 - Non-overlapping Intervals
 
-Directory:
-
-`intervals/`
+Directory: `intervals/`
 
 ---
 
@@ -274,7 +274,7 @@ The goal is not only to produce a working solution but also to understand its pe
 - Binary Trees
 - Binary Search Trees
 - Heap
-- Graph
+- Graphs
 - Dynamic Programming
 - Hashing
 - Sliding Window

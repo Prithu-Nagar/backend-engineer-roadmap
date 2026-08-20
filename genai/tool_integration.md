@@ -295,4 +295,3 @@ A reliable tool-integrated AI system should:
 10. Keep business logic outside the LLM.
 
 The LLM should decide **what it wants to accomplish**, while the application decides **whether and how that action is allowed to happen**.
-

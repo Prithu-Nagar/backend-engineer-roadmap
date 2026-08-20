@@ -4,6 +4,7 @@ Retrieval-Augmented Generation (RAG) combines information retrieval with languag
 
 ## Architecture
 
+```text
 Documents
     ↓
 Chunking
@@ -21,11 +22,13 @@ Relevant Context
 LLM
     ↓
 Answer
+```
 
 ## Indexing
 
 Documents are split into chunks and converted into embeddings.
 
+```text
 Document
    ↓
 Chunks
@@ -33,11 +36,13 @@ Chunks
 Embeddings
    ↓
 Vector Database
+```
 
 ## Retrieval
 
 The user query is converted into an embedding and compared against stored vectors.
 
+```text
 Query
   ↓
 Embedding
@@ -45,23 +50,26 @@ Embedding
 Similarity Search
   ↓
 Top-K Results
+```
 
 ## Generation
 
 Retrieved information is provided to the LLM as context.
 
+```text
 Question + Retrieved Context
               ↓
              LLM
               ↓
             Answer
+```
 
 ## RAG vs Fine-Tuning
 
-| RAG                                    | Fine-Tuning                     |
-| -------------------------------------- | ------------------------------- |
-| Retrieves external information         | Changes model behavior          |
-| Knowledge can be updated externally    | Requires model training         |
+| RAG | Fine-Tuning |
+| --- | --- |
+| Retrieves external information | Changes model behavior |
+| Knowledge can be updated externally | Requires model training |
 | Useful for document-based applications | Useful for specialized behavior |
 
 ## Production Considerations

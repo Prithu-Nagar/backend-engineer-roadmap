@@ -203,4 +203,3 @@ A scalable authentication architecture should:
 6. Follow least-privilege principles.
 7. Make authentication failures observable through appropriate logging and monitoring.
 8. Keep secrets outside source control.
-

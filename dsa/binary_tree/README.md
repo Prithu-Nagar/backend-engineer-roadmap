@@ -22,6 +22,7 @@ Where `n` is the number of nodes and `h` is the height of the tree.
 
 Many binary-tree problems can be solved recursively:
 
+```python
 if root is None:
     return base_case
 
@@ -29,6 +30,7 @@ left = solve(root.left)
 right = solve(root.right)
 
 return combine(left, right)
+```
 
 The key idea is to solve the problem for the left and right subtrees and combine their results.
 

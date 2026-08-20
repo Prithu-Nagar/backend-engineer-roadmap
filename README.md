@@ -1,10 +1,17 @@
 # Backend Engineer Roadmap
 
-A structured roadmap to become a Backend Engineer through consistent learning, hands-on coding, and project-based development.
+A structured roadmap to become a Backend Engineer through consistent
+learning, hands-on coding, and project-based development.
 
-This repository documents my journey towards becoming an interview-ready Backend Engineer. It combines Data Structures & Algorithms, Python, Backend Development, SQL, System Design, Generative AI, and practical projects into a single organized learning repository.
+This repository documents my journey towards becoming an interview-ready
+Backend Engineer. It combines Data Structures & Algorithms, Python,
+Backend Development, SQL, System Design, Generative AI, and practical
+projects into a single organized learning repository.
 
-The primary objective is not just to study these topics, but to implement them with clean, well-documented code while maintaining a repository that demonstrates continuous learning and practical problem-solving.
+The primary objective is not just to study these topics, but to
+implement them with clean, well-documented code while maintaining a
+repository that demonstrates continuous learning and practical
+problem-solving.
 
 ---
 
@@ -35,8 +42,8 @@ The primary objective is not just to study these topics, but to implement them w
 - ✅ Heap
 - ✅ Graph
 - ✅ Dynamic Programming
-    - ✅ 1D DP
-    - ✅ 2D DP
+- ✅ 1D DP
+- ✅ 2D DP
 - ✅ Intervals
 
 ---
@@ -44,12 +51,12 @@ The primary objective is not just to study these topics, but to implement them w
 ## Python
 
 - ✅ Iterables & Iterators
-- ✅ enumerate()
-- ✅ zip()
+- ✅ `enumerate()`
+- ✅ `zip()`
 - ✅ List Comprehensions
 - ✅ Dictionary Comprehensions
 - ✅ Functions
-- ✅ *args & **kwargs
+- ✅ `*args` & `**kwargs`
 - ✅ Variable Scope (LEGB)
 - ✅ Lambda Functions
 - ✅ First-Class Functions
@@ -164,8 +171,8 @@ The primary objective is not just to study these topics, but to implement them w
 ### Python
 
 - Iterables & Iterators
-- enumerate()
-- zip()
+- `enumerate()`
+- `zip()`
 - List Comprehensions
 - Dictionary Comprehensions
 
@@ -190,7 +197,7 @@ The primary objective is not just to study these topics, but to implement them w
 ### Python
 
 - Functions
-- *args & **kwargs
+- `*args` & `**kwargs`
 - Variable Scope (LEGB)
 - Lambda Functions
 
@@ -502,8 +509,8 @@ The primary objective is not just to study these topics, but to implement them w
 ### DSA
 
 - Dynamic Programming
-    - 1D DP
-    - 2D DP
+- 1D DP
+- 2D DP
 - DP State
 - Recurrence
 - Memoization vs Tabulation
@@ -515,7 +522,6 @@ The primary objective is not just to study these topics, but to implement them w
 - Event Loop
 - Coroutines
 - async / await
-
 
 ### Backend
 
@@ -529,6 +535,7 @@ The primary objective is not just to study these topics, but to implement them w
 - ACID
 - Isolation Levels
 - Locks
+
 ### System Design
 
 - API Gateway Fundamentals
@@ -549,13 +556,13 @@ The primary objective is not just to study these topics, but to implement them w
 
 ### DSA
 
-- Dynamic Programming — 2D DP
+- Dynamic Programming --- 2D DP
 - Grid / State Formulation
 
 ### Python
 
 - AsyncIO Tasks
-- asyncio.gather()
+- `asyncio.gather()`
 - Timeouts
 - Cancellation
 
@@ -595,15 +602,18 @@ The primary objective is not just to study these topics, but to implement them w
 ## ✅ Day 13
 
 ### DSA
+
 - Graph BFS/DFS Patterns
 - Multi-source BFS
 - Grid Traversal
 
 ### Python
+
 - AsyncIO vs Threading vs Multiprocessing
 - Choosing the right concurrency model
 
 ### Backend
+
 - Logging Fundamentals
 - Log Levels
 - Logger
@@ -613,6 +623,7 @@ The primary objective is not just to study these topics, but to implement them w
 - Structured Logging
 
 ### SQL
+
 - EXPLAIN
 - Query Plans
 - Selectivity
@@ -620,12 +631,14 @@ The primary objective is not just to study these topics, but to implement them w
 - Query Performance
 
 ### System Design
+
 - Fixed Window
 - Sliding Window
 - Token Bucket
 - Rate Limiting
 
 ### Generative AI
+
 - LangChain Fundamentals
 - Models
 - Prompts
@@ -634,6 +647,7 @@ The primary objective is not just to study these topics, but to implement them w
 - Basic Composition
 
 ### LeetCode
+
 - Flood Fill
 - Rotting Oranges
 - Binary Tree Level Order Traversal
@@ -643,17 +657,20 @@ The primary objective is not just to study these topics, but to implement them w
 ## ✅ Day 14
 
 ### DSA
+
 - Shortest-path graph patterns
 - Dijkstra-style shortest path
 - BFS on grid-based shortest paths
 
 ### Python
+
 - Type Hints
 - Function annotations
 - `Optional` and built-in generic types
 - Improving code readability and editor support
 
 ### Backend
+
 - Testing Basics
 - Unit tests
 - Assertions
@@ -661,20 +678,24 @@ The primary objective is not just to study these topics, but to implement them w
 - Task Manager logging and validation checks
 
 ### Projects
+
 - Task Manager logging configuration
 - Basic automated tests for authorization rules
 
 ### LeetCode
+
 - Network Delay Time
 - Shortest Path in a Binary Matrix
 
 ### SQL
+
 - Index Design
 - Composite Indexes
 - Covering Indexes
 - Index Usage and Query Plans
 
 ### System Design
+
 - API Gateway
 - Rate Limiting
 - API Gateway + Rate Limiting Architecture
@@ -684,12 +705,14 @@ The primary objective is not just to study these topics, but to implement them w
 ## ✅ Day 15
 
 ### DSA
+
 - Heap Advanced Patterns
 - K Closest Points to Origin
 - Merge K Sorted Lists
 - Find Median from Data Stream
 
 ### Python
+
 - Dataclasses
 - Automatic `__init__`, `__repr__`, `__eq__` generation
 - Field defaults and `field(default_factory=...)`
@@ -697,6 +720,7 @@ The primary objective is not just to study these topics, but to implement them w
 - Immutable dataclasses with `frozen=True`
 
 ### Backend
+
 - Flask Testing
 - pytest-flask integration
 - Test client for simulating HTTP requests
@@ -705,6 +729,7 @@ The primary objective is not just to study these topics, but to implement them w
 - Mock testing patterns
 
 ### SQL
+
 - Database Normalization
 - 1NF, 2NF, 3NF normalization forms
 - Atomic values and repeating groups
@@ -712,6 +737,7 @@ The primary objective is not just to study these topics, but to implement them w
 - Schema design best practices
 
 ### Projects
+
 - Task Manager Testing
 - Pytest fixtures and configuration
 - Testing authentication and authorization
@@ -719,6 +745,7 @@ The primary objective is not just to study these topics, but to implement them w
 - Permission and access control tests
 
 ### LeetCode
+
 - K Closest Points to Origin
 - Merge K Sorted Lists
 - Find Median from Data Stream
@@ -831,6 +858,7 @@ The primary objective is not just to study these topics, but to implement them w
 
 # Repository Structure
 
+``` text
 backend/
 dsa/
 genai/
@@ -839,6 +867,7 @@ projects/
 python/
 sql/
 system-design/
+```
 
 ---
 
@@ -948,6 +977,45 @@ system-design/
 - Agent State
 - Tool Validation
 - Guardrails
+
+---
+
+## ✅ Day 20
+
+### DSA
+
+- Recursion
+- Backtracking fundamentals
+
+### Python
+
+- OOP design exercise
+- Abstract interfaces
+- Dependency inversion
+
+### SQL
+
+- Task Manager database design
+
+### LeetCode
+
+- Subsets
+- Permutations
+- Combination Sum
+
+### Backend
+
+- Flask application factory
+- Configuration separation
+
+### System Design
+
+- Service boundaries
+- Modular monolith
+
+### Project
+
+- Task Manager production-style refactor
 
 ---
 

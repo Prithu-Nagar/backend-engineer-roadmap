@@ -25,7 +25,6 @@ Common patterns include:
 
 A common pattern starts one pointer at the beginning and another at the end.
 
-```python
 left = 0
 right = len(arr) - 1
 

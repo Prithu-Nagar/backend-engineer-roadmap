@@ -349,7 +349,9 @@ Timeouts are useful for preventing an application from waiting indefinitely for 
 
 An asyncio task can be cancelled using:
 
+```python
 task.cancel()
+```
 
 The coroutine can respond to cancellation through `asyncio.CancelledError`.
 
@@ -394,7 +396,7 @@ Topics include:
 **File:** `memory_model.py`
 
 ---
-## Iteraors and Generaors
+## Iterators and Generators
 
 - Iterator patterns
 - Generator patterns

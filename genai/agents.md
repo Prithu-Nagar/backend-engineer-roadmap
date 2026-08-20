@@ -1,21 +1,12 @@
-genai/agents.md
-
 # AI Agents
 
-
-AI agents are systems that use an LLM to reason about a task,
-select actions, call tools, observe results, and continue until
-the task is completed or a stopping condition is reached.
-
+AI agents are systems that use an LLM to reason about a task, select actions, call tools, observe results, and continue until the task is completed or a stopping condition is reached.
 
 ---
 
-
 ## LLM Application vs Agent
 
-
 A simple LLM application:
-
 
 ```text
 User
@@ -28,9 +19,11 @@ LLM
  |
  v
 Response
+```
 
 An agent:
 
+```text
 User
  |
  v
@@ -54,35 +47,39 @@ LLM
  |
  v
 Final response
+```
 
-The important difference is that an agent can use tools and
-iteratively decide what to do next.
+The important difference is that an agent can use tools and iteratively decide what to do next.
 
-Core Components
+### Core Components
 
 A basic agent consists of:
 
-Model
-Prompt/instructions
-Tools
-Tool execution layer
-State
-Agent loop
-Stopping conditions
-Guardrails
-Tool Calling
+- Model
+- Prompt/instructions
+- Tools
+- Tool execution layer
+- State
+- Agent loop
+- Stopping conditions
+- Guardrails
+
+## Tool Calling
 
 A tool is a controlled function that an agent can invoke.
 
 Example:
 
+```python
 def get_task(task_id: int) -> dict:
     ...
+```
 
 The model should not directly execute arbitrary code.
 
 Instead:
 
+```text
 LLM
  |
  | Tool request
@@ -98,25 +95,28 @@ Tool result
  |
  v
 LLM
-Example Tools
+```
+
+### Example Tools
 
 A backend agent might have:
 
-get_task()
-create_task()
-search_tasks()
-get_user()
-calculate_total()
+- `get_task()`
+- `create_task()`
+- `search_tasks()`
+- `get_user()`
+- `calculate_total()`
 
 Each tool should have:
 
-Name
-Description
-Input schema
-Output format
-Validation rules
-Permission requirements
-Agent Loop
+- Name
+- Description
+- Input schema
+- Output format
+- Validation rules
+- Permission requirements
+
+## Agent Loop
 
 A simplified agent loop:
 
@@ -129,104 +129,108 @@ A simplified agent loop:
 7. Model evaluates the result
 8. Repeat if another action is needed
 9. Return final response
-Pseudocode
+
+### Pseudocode
+
+```python
 while not finished:
-
-
     response = model(messages, tools)
-
 
     if response.is_final:
         return response.content
 
-
     tool_call = response.tool_call
-
 
     validate_tool_call(tool_call)
 
-
     result = execute_tool(tool_call)
-
 
     messages.append(tool_call)
     messages.append(result)
-Tool Validation
+```
+
+## Tool Validation
 
 Never blindly trust model-generated tool arguments.
 
 Validate:
 
-Tool name
-Input types
-Required fields
-Allowed values
-Authorization
-Resource ownership
-Rate limits
+- Tool name
+- Input types
+- Required fields
+- Allowed values
+- Authorization
+- Resource ownership
+- Rate limits
 
 For example:
 
+```python
 if not isinstance(task_id, int):
     raise ValueError("task_id must be an integer")
+```
 
 The model decides what it wants to do.
 
 The application decides whether it is allowed to do it.
 
-Agent State
+## Agent State
 
 Agents may need state containing:
 
-User request
-Previous model messages
-Tool calls
-Tool results
-Intermediate reasoning state
-Task progress
-Limits and counters
+- User request
+- Previous model messages
+- Tool calls
+- Tool results
+- Intermediate reasoning state
+- Task progress
+- Limits and counters
 
 State can be:
 
-In-memory
-Database-backed
-Redis-backed
-Workflow-engine backed
-Stopping Conditions
+- In-memory
+- Database-backed
+- Redis-backed
+- Workflow-engine backed
+
+## Stopping Conditions
 
 An agent should not run forever.
 
 Possible stopping conditions:
 
-Final answer produced
-Maximum iterations reached
-Tool failure
-Timeout
-Budget exceeded
-Invalid tool call
-Safety/authorization rejection
+- Final answer produced
+- Maximum iterations reached
+- Tool failure
+- Timeout
+- Budget exceeded
+- Invalid tool call
+- Safety/authorization rejection
 
 Example:
 
+```python
 MAX_ITERATIONS = 10
-
 
 for _ in range(MAX_ITERATIONS):
     ...
-Guardrails
+```
+
+## Guardrails
 
 Agents need boundaries around:
 
-Tool access
-Data access
-User permissions
-Sensitive operations
-Rate limits
-Token budgets
-Execution time
+- Tool access
+- Data access
+- User permissions
+- Sensitive operations
+- Rate limits
+- Token budgets
+- Execution time
 
 A useful architecture is:
 
+```text
 User
  |
  v
@@ -240,62 +244,4 @@ Tool Validation
  |
  v
 Tool Execution
-Agent vs RAG
-
-RAG primarily answers:
-
-What information should the model retrieve?
-
-Agents answer:
-
-What action should the system take next?
-
-They can be combined.
-
-Example:
-
-User question
-      |
-      v
-Agent
-      |
-      +----> Search knowledge base
-      |
-      +----> Retrieve task
-      |
-      +----> Call backend API
-      |
-      v
-Final answer
-Agent Reliability
-
-Important production concerns include:
-
-Tool failures
-Duplicate tool calls
-Infinite loops
-Incorrect arguments
-Permission failures
-Timeouts
-Rate limits
-Cost control
-Observability
-State recovery
-Key Principle
-
-The LLM should not be treated as the authority for executing
-backend operations.
-
-The application remains responsible for:
-
-Authorization
-Validation
-Tool execution
-State management
-Error handling
-Rate limiting
-Security
-
-The LLM provides reasoning and action selection.
-
-The backend controls execution.
+```

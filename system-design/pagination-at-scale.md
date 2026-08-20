@@ -20,12 +20,10 @@ A paginated API limits the amount of data returned per request.
 
 Example:
 
-```sql
 SELECT *
 FROM tasks
 ORDER BY created_at DESC, id DESC
 LIMIT 20 OFFSET 40;
-```
 
 ---
 
