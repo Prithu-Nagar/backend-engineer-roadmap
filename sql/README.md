@@ -178,6 +178,7 @@ CTEs allow complex queries to be broken into named temporary result sets.
 
 Example:
 
+```sql
 WITH high_value_orders AS (
     SELECT *
     FROM orders
@@ -185,6 +186,7 @@ WITH high_value_orders AS (
 )
 SELECT *
 FROM high_value_orders;
+```
 
 **File:** `ctes.sql`
 
@@ -318,6 +320,7 @@ Important techniques include:
 
 # Repository Files
 
+```text
 sql/
 ├── README.md
 ├── aggregate_functions.sql
@@ -331,6 +334,7 @@ sql/
 ├── subqueries.sql
 ├── transactions.sql
 └── window_functions.sql
+```
 
 ---
 

@@ -276,6 +276,7 @@ Concurrent execution schedules multiple coroutines so they can make progress whi
 
 Example:
 
+```text
 Sequential:
 
 Task 1
@@ -294,6 +295,7 @@ Task 1 ──────────────┐
                      ├── Complete
 Task 2 ────────┐     │
                └─────┘
+```
 
 ---
 
@@ -303,7 +305,9 @@ Task 2 ────────┐     │
 
 Example:
 
+```python
 task = asyncio.create_task(fetch_data())
+```
 
 The task can then be awaited later.
 
@@ -317,10 +321,12 @@ This is useful when multiple asynchronous operations should be scheduled before 
 
 Example:
 
+```python
 results = await asyncio.gather(
     task_1,
     task_2,
 )
+```
 
 The returned results preserve the order of the awaitables passed to `gather()`.
 
@@ -334,10 +340,12 @@ Long-running asynchronous operations can be limited using:
 
 Example:
 
+```python
 result = await asyncio.wait_for(
     fetch_data(),
     timeout=2,
 )
+```
 
 If the operation exceeds the timeout, `asyncio.TimeoutError` is raised.
 

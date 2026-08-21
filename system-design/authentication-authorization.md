@@ -11,6 +11,7 @@ Authentication and authorization are separate responsibilities in a backend syst
 
 A typical request flow can look like:
 
+```text
 Client
   |
   v
@@ -28,6 +29,7 @@ Application Services
   |
   v
 Database
+```
 
 Authentication should happen before protected application resources are accessed.
 

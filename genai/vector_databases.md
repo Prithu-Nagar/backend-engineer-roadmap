@@ -16,12 +16,14 @@ They are commonly used for:
 
 An embedding is a numerical representation of data such as text or documents.
 
+```text
 Text
   ↓
 Embedding Model
   ↓
 Vector
 [0.12, -0.45, 0.78, ...]
+```
 
 The embedding captures semantic information that can be used for similarity-based retrieval.
 
@@ -31,6 +33,7 @@ The embedding captures semantic information that can be used for similarity-base
 
 Instead of searching for exact keywords, vector search finds information that is semantically similar to a query.
 
+```text
 User Query
     ↓
 Embedding Model
@@ -42,6 +45,7 @@ Vector Database
 Similarity Search
     ↓
 Relevant Results
+```
 
 For example, a query about:
 
@@ -89,6 +93,7 @@ HNSW (Hierarchical Navigable Small World) is a graph-based ANN indexing techniqu
 
 Conceptually:
 
+```text
 Query
   ↓
 Upper-level graph
@@ -98,6 +103,7 @@ Narrow search
 Lower-level graph
   ↓
 Nearest vectors
+```
 
 It allows efficient navigation through a vector graph instead of exhaustively scanning every vector.
 
@@ -107,21 +113,25 @@ It allows efficient navigation through a vector graph instead of exhaustively sc
 
 Vectors are commonly stored with metadata.
 
+```json
 {
     "document_id": 101,
     "category": "backend",
     "language": "python"
 }
+```
 
 Metadata can be used to filter search results.
 
 Example:
 
+```text
 Semantic Search
       +
 category = "backend"
       ↓
 Filtered Results
+```
 
 ---
 
@@ -148,6 +158,7 @@ Choosing `K` involves a trade-off:
 
 Vector databases are commonly used as the retrieval layer in RAG systems.
 
+```text
 Documents
     ↓
 Chunking
@@ -163,6 +174,7 @@ Relevant Context
 LLM
     ↓
 Answer
+```
 
 The vector database retrieves relevant information that can be provided to the language model as context.
 
@@ -179,9 +191,11 @@ The vector database retrieves relevant information that can be provided to the l
 
 They can also work together:
 
+```text
 Application
     ├── PostgreSQL → Structured data
     └── Vector DB  → Semantic retrieval
+```
 
 ---
 
@@ -238,12 +252,14 @@ It could become useful later for features such as:
 Example:
 
 "Find tasks related to backend performance"
+```text
                 ↓
             Embedding
                 ↓
           Vector Search
                 ↓
           Relevant Tasks
+```
 
 This would be a future extension rather than part of the current CRUD implementation.
 
@@ -251,6 +267,7 @@ This would be a future extension rather than part of the current CRUD implementa
 
 ## Key Takeaways
 
+```text
 Embeddings
     ↓
 Vector Database
@@ -258,9 +275,11 @@ Vector Database
 Similarity Search
     ↓
 Relevant Results
+```
 
 For RAG:
 
+```text
 Documents
     ↓
 Embeddings
@@ -274,5 +293,6 @@ Context
 LLM
     ↓
 Answer
+```
 
 **Core idea:** Vector databases enable efficient similarity-based retrieval of information represented as embeddings.

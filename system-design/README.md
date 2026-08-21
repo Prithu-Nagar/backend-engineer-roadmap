@@ -164,12 +164,18 @@ Client
    v
 API Gateway
    |
+```text
    +----> User Service
+```
    |
+```text
    +----> Task Service
+```
    |
+```text
    +----> Order Service
 
+```
 The client does not need to know the internal topology of the backend services.
 
 API Gateway Responsibilities
@@ -266,11 +272,17 @@ API Gateway
    v
 Load Balancer
    |
+```text
    +----> Service 1
+```
    |
+```text
    +----> Service 2
+```
    |
+```text
    +----> Service 3
+```
 High Availability
 
 The API Gateway can become a critical component of the architecture.
@@ -298,39 +310,60 @@ Prefer:
 
 API Gateway
     |
+```text
     +----> Routing
+```
     |
+```text
     +----> Authentication
+```
     |
+```text
     +----> Rate Limiting
+```
     |
+```text
     +----> Observability
+```
     |
     v
 Backend Services
     |
+```text
     +----> Business Logic
+```
     |
+```text
     +----> Data Access
+```
 Revision Summary
 Client
     |
     v
 API Gateway
     |
+```text
     +----> Authentication
+```
     |
+```text
     +----> Rate Limiting
+```
     |
+```text
     +----> Routing
+```
     |
+```text
     +----> Observability
+```
     |
     v
 Backend Services
 
 Remember:
 
+```text
 Reverse Proxy
 → Forwards traffic
 
@@ -340,6 +373,7 @@ Load Balancer
 API Gateway
 → Central API entry point and API-level cross-cutting concerns
 
+```
 ---
 
 ### Resilience

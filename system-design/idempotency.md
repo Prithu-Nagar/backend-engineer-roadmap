@@ -1,13 +1,10 @@
 # Idempotency
 
-
 Idempotency means that performing the same operation multiple times
 produces the same intended final result as performing it once.
 
-
 Idempotency is especially important in distributed backend systems
 where clients may retry requests because of:
-
 
 - Network failures
 - Timeouts
@@ -16,15 +13,11 @@ where clients may retry requests because of:
 - Load balancer retries
 - Message redelivery
 
-
 ---
-
 
 ## The Duplicate Request Problem
 
-
 Consider:
-
 
 Client
   |
@@ -66,11 +59,9 @@ idempotency_key
 -------------------------
 8f5c2b7a-1234-4567
 
-
 status
 -------------------------
 COMPLETED
-
 
 response
 -------------------------
@@ -83,9 +74,13 @@ Same Idempotency-Key
         v
 Check stored result
         |
+```text
         +---- Found ----> Return previous response
+```
         |
+```text
         +---- Not found -> Process request
+```
 Basic Flow
 Client
    |
@@ -96,7 +91,9 @@ API Gateway / Backend
    v
 Idempotency Store
    |
+```text
    +---- Key exists ----> Return stored result
+```
    |
    +---- Key missing
             |
@@ -196,9 +193,13 @@ Retry
    v
 Idempotency check
    |
+```text
    +---- Existing result -> Return previous result
+```
    |
+```text
    +---- New request -> Process safely
+```
 HTTP Methods and Idempotency
 
 HTTP methods have different semantic expectations.

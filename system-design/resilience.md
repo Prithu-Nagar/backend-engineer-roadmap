@@ -2,8 +2,7 @@
 
 ## Overview
 
-Resilience allows a backend system to continue behaving correctly when
-dependencies fail, become slow, or return temporary errors.
+Resilience allows a backend system to continue behaving correctly when dependencies fail, become slow, or return temporary errors.
 
 The major concepts covered today are:
 
@@ -22,6 +21,7 @@ Every network call should have a reasonable timeout.
 
 Without a timeout:
 
+```text
 Client
   ↓
 Service A
@@ -31,6 +31,7 @@ Service B
 Service B hangs
   ↓
 Service A waits indefinitely
+```
 
 Timeouts prevent resources from being held indefinitely.
 
@@ -42,6 +43,7 @@ Retries can help recover from transient failures.
 
 Example:
 
+```text
 Request
   ↓
 Temporary failure
@@ -49,6 +51,7 @@ Temporary failure
 Retry
   ↓
 Success
+```
 
 Retries should generally be limited.
 
@@ -58,9 +61,11 @@ Retries should generally be limited.
 
 Instead of retrying immediately every time:
 
+```text
 Retry 1 → short delay
 Retry 2 → longer delay
 Retry 3 → even longer delay
+```
 
 This reduces pressure on an already struggling dependency.
 
@@ -95,8 +100,7 @@ Retrying these usually does not solve the underlying problem.
 
 ## 6. Idempotency
 
-An operation is idempotent when repeating the same logical request
-does not create additional unintended side effects.
+An operation is idempotent when repeating the same logical request does not create additional unintended side effects.
 
 This is especially important for:
 
@@ -112,13 +116,13 @@ This is especially important for:
 
 A client can send:
 
+```http
 Idempotency-Key: abc123
+```
 
 The server stores the result associated with that key.
 
-If the same request arrives again with the same key,
-the server can return the previous result instead of performing
-the operation again.
+If the same request arrives again with the same key, the server can return the previous result instead of performing the operation again.
 
 ---
 
@@ -128,8 +132,10 @@ Retries + non-idempotent operations can create duplicate side effects.
 
 Therefore:
 
+```text
 Retry
 +
 Idempotency
 =
 Safer distributed operations
+```

@@ -31,22 +31,38 @@ The project is being developed incrementally.
 
 The current authentication and authorization flow is:
 
+```text
 Client
    ↓
+```
 Login
+```text
    ↓
+```
 Authentication
+```text
    ↓
+```
 JWT Access Token
+```text
    ↓
+```
 Authenticated Request
+```text
    ↓
+```
 JWT Validation
+```text
    ↓
+```
 Authorization
+```text
    ↓
+```
 Role / Permission Check
+```text
    ↓
+```
 Task Resource
 
 Authentication determines who the user is.
@@ -81,15 +97,24 @@ JWT Authentication
 
 The authentication flow is:
 
+```text
 User
  ↓
+```
 Login Request
+```text
  ↓
+```
 Verify Credentials
+```text
  ↓
+```
 Create JWT
+```text
  ↓
+```
 Return Access Token
+```text
  ↓
 Client Stores Token
  ↓
@@ -97,6 +122,7 @@ Client Sends Token
  ↓
 Backend Validates JWT
  ↓
+```
 Authenticated User
 
 The JWT contains user-related claims such as:
@@ -122,17 +148,21 @@ Permissions are associated with roles.
 Example:
 
 Admin
+```text
  ├── create_task
  ├── read_task
  ├── update_task
  ├── delete_task
  └── manage_users
+```
 
 User
+```text
  ├── create_task
  ├── read_task
  ├── update_task
  └── delete_task
+```
 Role-Based Access Control
 
 RBAC allows permissions to be associated with roles rather than implementing separate authorization rules for every user.
@@ -140,13 +170,21 @@ RBAC allows permissions to be associated with roles rather than implementing sep
 The basic flow is:
 
 Authenticated User
+```text
         ↓
+```
       Role
+```text
         ↓
+```
    Permissions
+```text
         ↓
+```
 Permission Check
+```text
         ↓
+```
 Allow / Deny
 
 For example, an administrator can access user-management functionality while a normal user cannot.
@@ -157,10 +195,14 @@ Authorization can also depend on resource ownership.
 
 For example:
 
+```text
 User A
    ↓
+```
 Owns Task 1
+```text
    ↓
+```
 Can access Task 1
 
 A normal user should not automatically be allowed to modify another user's task.
@@ -186,15 +228,23 @@ Returned when the user is authenticated but does not have permission to perform 
 Example:
 
 No valid authentication
+```text
         ↓
+```
        401
 
 Authenticated
+```text
       ↓
+```
 Permission check
+```text
       ↓
+```
 Permission denied
+```text
       ↓
+```
        403
 Project Structure
 
@@ -203,9 +253,11 @@ The project is being expanded incrementally as new backend concepts are introduc
 Relevant authentication and authorization files include:
 
 projects/
+```text
 └── task-manager/
     ├── README.md
     └── jwt_authentication.py
+```
 
 Backend-level authentication and authorization implementations are maintained separately from the project-specific implementation.
 
@@ -218,23 +270,39 @@ Each major concept is first learned independently and then applied to the projec
 Example progression:
 
 Flask Basics
+```text
       ↓
+```
 Routing
+```text
       ↓
+```
 REST API
+```text
       ↓
+```
 CRUD
+```text
       ↓
 Request / Response Handling
       ↓
+```
 Error Handling
+```text
       ↓
+```
 Authentication
+```text
       ↓
+```
 JWT
+```text
       ↓
+```
 Authorization
+```text
       ↓
+```
 RBAC
 
 This keeps the project aligned with the concepts being studied.
@@ -413,12 +481,14 @@ Day 18 extends the Task Manager with:
 
 All application errors should follow a consistent structure:
 
+```json
 {
     "error": {
         "code": "TASK_NOT_FOUND",
         "message": "The requested task was not found."
     }
 }
+```
 
 Examples:
 
@@ -432,13 +502,21 @@ Generator Pipeline
 Task processing can be performed lazily:
 
 Tasks
+```text
   ↓
+```
 Task Generator
+```text
   ↓
+```
 Completion Filter
+```text
   ↓
+```
 Priority Filter
+```text
   ↓
+```
 Result
 
 The generator pipeline avoids creating unnecessary intermediate lists
@@ -486,6 +564,7 @@ Authorization        Task Service
                     Task Repository
                          |
                          v
+```
 
 ---
 

@@ -6,6 +6,7 @@ Caching stores frequently accessed data in a faster storage layer to reduce late
 
 ## Basic Flow
 
+```text
 Client
   ↓
 Application
@@ -14,32 +15,40 @@ Cache
   ↓
 Database
 
+```
 ### Cache Hit
 
 Data is found in the cache and can be returned immediately.
 
+```text
 Request → Cache → Data Found → Response
 
+```
 ### Cache Miss
 
 Data is not found in the cache, so the application retrieves it from the database.
 
+```text
 Request
   ↓
 Cache Miss
   ↓
 Database
   ↓
+```
 Store in Cache
+```text
   ↓
 Response
 
+```
 ---
 
 ## Cache-Aside
 
 The application manages the cache explicitly.
 
+```python
 data = cache.get(key)
 
 if data is not None:
@@ -49,6 +58,7 @@ data = database.get(key)
 cache.set(key, data)
 
 return data
+```
 
 This is a common caching pattern for backend applications.
 
@@ -58,10 +68,14 @@ This is a common caching pattern for backend applications.
 
 **Time To Live (TTL)** defines how long cached data remains valid.
 
+```text
 Cache Entry
     ↓
+```
 TTL = 300 seconds
+```text
     ↓
+```
 Entry expires
 
 TTL helps prevent stale data from remaining indefinitely.
@@ -72,8 +86,10 @@ TTL helps prevent stale data from remaining indefinitely.
 
 When underlying data changes, the corresponding cached data may become stale.
 
+```text
 Database Update
       ↓
+```
 Invalidate Cache
 
 Cache invalidation is one of the main challenges when designing cached systems.
@@ -100,12 +116,14 @@ Common strategies:
 
 Data is written to the cache and database during the write operation.
 
+```text
 Application
     ↓
 Cache
     ↓
 Database
 
+```
 ### Write-Back
 
 Data is initially written to the cache and persisted to the database later.
@@ -124,12 +142,16 @@ The cache retrieves missing data from the underlying data store.
 
 A popular entry expires and many requests simultaneously hit the database.
 
+```text
 Cache Expiry
      ↓
+```
 Many Requests
+```text
      ↓
 Database
      ↓
+```
 High Load
 
 Possible mitigations:
@@ -168,12 +190,16 @@ Redis is commonly used as an in-memory data store and caching layer.
 
 A typical backend architecture:
 
+```text
 Client
   ↓
+```
 Flask Application
+```text
   ↓
 Redis
   ↓
+```
 PostgreSQL
 
 Redis handles frequently accessed data while PostgreSQL remains the persistent source of truth.
@@ -186,6 +212,7 @@ Caching could be introduced for frequently requested task data.
 
 Example:
 
+```text
 GET /tasks
      ↓
 Check Cache
@@ -200,6 +227,7 @@ Return    Database
         Update Cache
             ↓
          Return
+```
 
 Example cache key:
 

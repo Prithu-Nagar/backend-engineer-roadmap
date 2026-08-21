@@ -12,55 +12,58 @@ Instead of writing a new prompt every time, we define a template once and replac
 
 - Reusability
 - Consistency
-- Easier Maintenance
-- Better Prompt Engineering
-- Dynamic Prompt Generation
+- Easier maintenance
+- Better prompt engineering
+- Dynamic prompt generation
 
 ---
 
 ## Basic Example
 
-Template
+### Template
 
-
+```text
 Summarize the following article:
 
 {article}
+```
 
-Runtime Input
+### Runtime Input
 
-
+```text
 article = "Python is a high-level programming language..."
+```
 
-Generated Prompt
+### Generated Prompt
 
-
+```text
 Summarize the following article:
 
 Python is a high-level programming language...
+```
 
 ---
 
 ## Multiple Variables
 
-Template
+### Template
 
-
+```text
 You are an expert {role}.
 
 Answer the following question for a {audience}.
 
 Question:
 {question}
+```
 
-Example
+### Example
 
-
+```text
 role = Backend Engineer
-
 audience = Beginner
-
 question = What is Docker?
+```
 
 ---
 
@@ -88,7 +91,7 @@ question = What is Docker?
 
 ## Real-world Frameworks
 
-- LangChain PromptTemplate
+- LangChain `PromptTemplate`
 - OpenAI API
 - LlamaIndex
 - Haystack

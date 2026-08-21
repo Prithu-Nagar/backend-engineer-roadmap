@@ -32,9 +32,11 @@ Hash
 Useful for object-like data.
 
 user:1
+```text
     name -> Alex
     role -> developer
     active -> true
+```
 
 Useful when multiple related fields belong to one entity.
 

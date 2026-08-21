@@ -1019,6 +1019,56 @@ system-design/
 
 ---
 
+## ✅ Day 21
+
+**Date:** 21 August 2026
+**Phase:** Backend Engineering
+
+Day 21 introduces the first Django fundamentals while continuing the roadmap's
+backtracking, asynchronous I/O, ORM trade-off, and modular-architecture work.
+
+### Blueprint Scope
+
+| Track | Day 21 focus |
+|---|---|
+| DSA | Backtracking — pruning; state restoration |
+| Python | Async Flask patterns; async I/O concepts |
+| SQL | ORM vs raw SQL trade-offs |
+| LeetCode | Letter Combinations of a Phone Number; Word Search |
+| Backend | Django fundamentals; project/app structure |
+| System Design | Monolith to modular monolith |
+| Project | Start URL Shortener — requirements + schema |
+
+The day is intentionally focused on these topics and does not introduce unrelated
+major concepts.
+
+### Deliverables
+
+- `dsa/recursion/letter_combinations.py`
+- `dsa/recursion/word_search.py`
+- `python/async_flask_patterns.py`
+- `sql/orm_vs_raw_sql.md`
+- `backend/django_fundamentals.md`
+- `system-design/monolith_to_modular_monolith.md`
+- `projects/url-shortener/README.md`
+- `projects/url-shortener/schema.sql`
+
+### Formatting Standard
+
+Markdown documentation uses:
+
+- Clear heading hierarchy
+- Fenced code blocks with language identifiers
+- Tables for structured comparisons
+- Short paragraphs and focused sections
+- ASCII diagrams fenced as `text`
+- Consistent terminology and file references
+
+Python and SQL files are formatted as executable examples rather than
+pseudo-code disguised as plain text.
+
+---
+
 ## Repository Organization
 
 | Directory       | Purpose                                            |

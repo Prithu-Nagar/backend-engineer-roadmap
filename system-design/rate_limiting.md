@@ -21,32 +21,43 @@ Example:
 Client
    |
    | 10,000 requests
+```text
    ↓
 API
+```
    |
+```text
    ↓
+```
 Database
 
 This can result in:
 
-High CPU usage
-High memory usage
-Database overload
-Increased latency
-Service instability
+- High CPU usage
+- High memory usage
+- Database overload
+- Increased latency
+- Service instability
 
 With rate limiting:
 
 Client
    |
    | Requests
+```text
    ↓
 Rate Limiter
+```
    |
+```text
    ├── Allowed → Backend
+```
    |
+```text
    └── Rejected → 429
-Basic Rate Limiting Model
+```
+
+## Basic Rate Limiting Model
 
 A rate limit can be expressed as:
 
@@ -58,15 +69,16 @@ A system can apply limits based on:
 
 IP address
 User ID
-API key
+- API key
 Access token
 Client application
 Endpoint
-HTTP 429
+
+## HTTP 429
 
 When a client exceeds its allowed request rate, the server can return:
 
-429 Too Many Requests
+- 429 Too Many Requests
 
 The response can also provide information about when the client can retry.
 
@@ -74,8 +86,10 @@ Example:
 
 HTTP/1.1 429 Too Many Requests
 Retry-After: 30
-Common Rate Limiting Algorithms
-1. Fixed Window
+
+## Common Rate Limiting Algorithms
+
+### 1. Fixed Window
 
 The fixed-window algorithm divides time into fixed intervals.
 
@@ -83,30 +97,38 @@ Example:
 
 Limit: 100 requests / minute
 
+```text
 12:00:00 ───────── 12:00:59
+```
           100 requests
 
+```text
 12:01:00 ───────── 12:01:59
+```
           100 requests
 
 Each client gets a new request allowance when the window changes.
 
-Advantages
-Simple
-Easy to implement
-Low memory usage
-Disadvantages
+**Advantages**
+
+- Simple
+- Easy to implement
+- Low memory usage
+
+**Disadvantages**
 
 Requests can cluster around a window boundary.
 
 Example:
 
+```text
 12:00:50 → 100 requests
 12:01:00 → 100 requests
+```
 
 The system may receive 200 requests within a very short period even though the configured limit is 100 requests per minute.
 
-2. Sliding Window
+### 2. Sliding Window
 
 A sliding-window algorithm considers a continuously moving time interval.
 
@@ -116,19 +138,24 @@ Last 60 seconds
 
 Instead of resetting at a fixed clock boundary, the system checks requests within the previous 60 seconds.
 
-Advantages
-More accurate than fixed windows
-Reduces boundary spikes
-Disadvantages
-More state may be required
-More computationally expensive
-3. Token Bucket
+**Advantages**
+
+- More accurate than fixed windows
+- Reduces boundary spikes
+
+**Disadvantages**
+
+- More state may be required
+- More computationally expensive
+
+### 3. Token Bucket
 
 The token bucket algorithm maintains a bucket containing tokens.
 
 Each request consumes a token.
 
         Tokens
+```text
       ┌─────────┐
       │ ● ● ● ● │
       │ ● ● ●   │
@@ -138,22 +165,28 @@ Each request consumes a token.
         Request
            │
            ↓
+```
        Consume 1
 
 Tokens are added to the bucket at a configured rate.
 
 If tokens are available:
 
+```text
 Request
    ↓
 Token available
    ↓
+```
 Consume token
+```text
    ↓
 Allow request
+```
 
 If no tokens are available:
 
+```text
 Request
    ↓
 No token
@@ -161,50 +194,65 @@ No token
 Reject
    ↓
 429
+```
 
 The bucket has a maximum capacity, which allows controlled bursts.
 
-4. Leaky Bucket
+### 4. Leaky Bucket
 
 The leaky-bucket algorithm processes requests at a controlled rate.
 
 Conceptually:
 
 Incoming Requests
+```text
        ↓
    ┌─────────┐
    │  Queue  │
    └────┬────┘
         ↓
+```
   Fixed Processing Rate
+```text
         ↓
      Backend
+```
 
 Requests accumulate in a queue and are processed at a controlled rate.
 
-Advantages
-Smooths traffic
-Controls processing rate
-Disadvantages
-Queues can grow
-Requests may experience additional latency
-Excess requests may need to be rejected
-Token Bucket vs Leaky Bucket
-Feature	Token Bucket	Leaky Bucket
-Allows bursts	Yes	Limited
-Controls average rate	Yes	Yes
-Queue required	No	Usually
-Common use	APIs	Traffic shaping
+**Advantages**
+
+- Smooths traffic
+- Controls processing rate
+
+**Disadvantages**
+
+- Queues can grow
+- Requests may experience additional latency
+- Excess requests may need to be rejected
+
+### Token Bucket vs Leaky Bucket
+
+| Feature | Token Bucket | Leaky Bucket |
+|---|---|---|
+| Allows bursts | Yes | Limited |
+| Controls average rate | Yes | Yes |
+| Queue required | No | Usually |
+| Common use | APIs | Traffic shaping |
+| Burst handling | Flexible | More controlled |
 Burst handling	Flexible	More controlled
-Distributed Rate Limiting
+
+## Distributed Rate Limiting
 
 In a distributed backend, multiple application servers may receive requests.
 
+```text
                     ┌─── Service 1
                     │
 Client → Gateway ───┼─── Service 2
                     │
                     └─── Service 3
+```
 
 If each server maintains its own rate-limit counter, the limit may not be globally accurate.
 
@@ -212,9 +260,11 @@ Example:
 
 Limit = 100 requests/minute
 
+```text
 Server 1 → 100
 Server 2 → 100
 Server 3 → 100
+```
 
 The client could effectively make 300 requests.
 
@@ -240,60 +290,75 @@ API gateway
    v
 Check rate-limit key in Redis
    |
+```text
    +-- within limit --> forward request
+```
    |
+```text
    +-- over limit ----> 429 Too Many Requests
 
+```
 This allows consistent enforcement even when multiple application instances are serving traffic.
 
-Centralized Rate Limiting
+## Centralized Rate Limiting
 
 A shared store can maintain rate-limit state.
 
 A common architecture is:
 
+```text
 Client
    ↓
-API Gateway
+```
+- API Gateway
+```text
    ↓
 Rate Limiter
    ↓
 Redis
    ↓
+```
 Backend Services
 
 Redis can store:
 
-Request counters
-Token counts
-Expiration information
-Per-user limits
-Per-IP limits
+- Request counters
+- Token counts
+- Expiration information
+- Per-user limits
+- Per-IP limits
 
 This allows multiple application servers to share the same rate-limit state.
 
-Rate Limiting at the API Gateway
+## Rate Limiting at the API Gateway
 
 Rate limiting is commonly implemented at an API Gateway.
 
+```text
 Client
    ↓
-API Gateway
+```
+- API Gateway
+```text
    ↓
 Rate Limiter
    ↓
+```
 Authentication
+```text
    ↓
+```
 Backend Services
 
 The gateway can reject excessive requests before they reach application services.
 
 This reduces unnecessary load on:
 
-Application servers
-Databases
-Internal services
-Different Rate Limits
+- Application servers
+- Databases
+- Internal services
+
+## Different Rate Limits
 
 Different endpoints may require different limits.
 
@@ -313,7 +378,7 @@ POST /password-reset
 
 Authentication-related endpoints often require stricter limits because they can be targeted for abuse.
 
-Rate Limiting by User
+## Rate Limiting by User
 
 Authenticated users can be limited using their user ID.
 
@@ -324,7 +389,7 @@ user:123
 
 The rate limiter maintains a separate state for each user.
 
-Rate Limiting by IP
+## Rate Limiting by IP
 
 Unauthenticated traffic can be limited using an IP address.
 
@@ -335,21 +400,24 @@ Example:
 
 However, IP-based limiting should be designed carefully because multiple legitimate users can sometimes share the same public IP.
 
-Rate Limiting by API Key
+## Rate Limiting by API Key
 
 For APIs used by external clients, an API key can be used as the rate-limit identity.
 
 Example:
 
+```text
 API Key A → 1,000 requests/hour
 API Key B → 10,000 requests/hour
+```
 
 This allows different clients or subscription levels to receive different limits.
 
-Rate Limiting Architecture
+## Rate Limiting Architecture
 
 A production-style architecture can look like:
 
+```text
                      ┌──────────────┐
                      │    Client    │
                      └──────┬───────┘
@@ -368,51 +436,59 @@ A production-style architecture can look like:
                             ↓
                   ┌─────────┴─────────┐
                   ↓                   ↓
+```
              Backend 1           Backend 2
-Important Design Considerations
+
+## Important Design Considerations
 
 When designing a rate limiter, consider:
 
-Identity
+**Identity**
 
 What defines a client?
 
-IP
-User
-API key
-Token
-Limit
+- IP
+- User
+- API key
+- Token
+
+**Limit**
 
 How many requests are allowed?
 
 100 requests/minute
-Window
+
+**Window**
 
 What time period is used?
 
-second
-minute
-hour
-day
-Burst Handling
+- second
+- minute
+- hour
+- day
+
+**Burst Handling**
 
 Should short bursts of requests be allowed?
 
-Storage
+**Storage**
 
 Where is rate-limit state stored?
 
-Memory
-Redis
-Distributed cache
-Response
+- Memory
+- Redis
+- Distributed cache
+
+**Response**
 
 What happens when the limit is exceeded?
 
 Usually:
 
-429 Too Many Requests
-Common Mistakes
+- 429 Too Many Requests
+
+## Common Mistakes
+
 1. Limiting only individual servers
 
 This can produce incorrect limits in a distributed system.
@@ -433,7 +509,8 @@ Different endpoints often have different resource costs and security requirement
 
 The rate limiter should reject excessive requests as early as practical.
 
-Interview Questions
+## Interview Questions
+
 What is rate limiting?
 
 Rate limiting restricts how frequently a client can access a service during a defined period.
@@ -458,28 +535,35 @@ Where should rate limiting be implemented?
 
 For many architectures, implementing it at the API Gateway provides an efficient early protection layer before traffic reaches backend services.
 
-Revision Summary
+## Revision Summary
+
+```text
 Client
    ↓
-API Gateway
+```
+- API Gateway
+```text
    ↓
 Rate Limiter
    ↓
+```
 Check Limit
+```text
    ├── Allowed → Backend
    │
    └── Exceeded → 429
+```
 
 Key concepts:
 
-Fixed Window
-Sliding Window
-Token Bucket
-Leaky Bucket
-Distributed Rate Limiting
-Redis
-API Gateway
-HTTP 429
-Burst Handling
-Per-user and per-IP limits
-API-key-based limits
+- Fixed Window
+- Sliding Window
+- Token Bucket
+- Leaky Bucket
+## Distributed Rate Limiting
+- Redis
+- API Gateway
+## HTTP 429
+**Burst Handling**
+- Per-user and per-IP limits
+- API-key-based limits

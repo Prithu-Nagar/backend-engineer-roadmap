@@ -4,6 +4,7 @@ An API Gateway is a centralized entry point through which clients communicate wi
 
 Instead of clients communicating directly with multiple services, requests can be routed through a single gateway.
 
+```text
 Client
    |
    v
@@ -14,6 +15,7 @@ API Gateway
    +----> Task Service
    |
    +----> Order Service
+```
 
 ---
 
@@ -144,6 +146,7 @@ A client may need information from multiple services.
 
 Without aggregation:
 
+```text
 Client
     |
     +----> User Service
@@ -152,8 +155,10 @@ Client
     |
     +----> Notification Service
 
+```
 With gateway aggregation:
 
+```text
 Client
     |
     v
@@ -170,6 +175,7 @@ Combined Response
     |
     v
 Client
+```
 
 This can reduce the number of network requests made by clients.
 
@@ -198,6 +204,7 @@ A load balancer primarily distributes traffic across backend instances.
 
 Example:
 
+```text
 Client
     |
     v
@@ -209,10 +216,12 @@ Load Balancer
     |
     +----> Server 3
 
+```
 An API Gateway focuses on API-level concerns.
 
 They can also be used together:
 
+```text
 Client
     |
     v
@@ -227,6 +236,7 @@ Load Balancer
     |
     +----> Service 3
 
+```
 ---
 
 ## Authentication vs Authorization
@@ -241,6 +251,7 @@ Authorization answers:
 
 Example:
 
+```text
 Client
     |
     v
@@ -262,6 +273,7 @@ Authorization
     |
     +----> Denied
 
+```
 The gateway can authenticate the user, while the backend service can enforce permissions for a specific resource.
 
 ---
@@ -296,6 +308,7 @@ API Gateway instances can be horizontally scaled as traffic increases.
 
 Example:
 
+```text
 Load Balancer
     |
     +----> Gateway 1
@@ -304,6 +317,7 @@ Load Balancer
     |
     +----> Gateway 3
 
+```
 The gateway should not become a throughput bottleneck.
 
 ---
@@ -320,6 +334,7 @@ The API Gateway is a useful place for collecting API-level information such as:
 
 A request can carry a trace ID through the system:
 
+```text
 Client
     |
     v
@@ -333,6 +348,7 @@ Backend Service
     |
     v
 Database
+```
 
 This helps trace requests across multiple services.
 
@@ -344,6 +360,7 @@ The API Gateway should generally not contain application business logic.
 
 Avoid:
 
+```text
 API Gateway
     |
     +----> Business Rules
@@ -354,8 +371,10 @@ API Gateway
     |
     +----> User Management
 
+```
 Prefer:
 
+```text
 API Gateway
     |
     +----> Routing
@@ -373,6 +392,7 @@ Backend Services
     |
     +----> Data Access
 
+```
 ---
 
 ## Common Interview Questions
@@ -417,6 +437,7 @@ Multiple gateway instances, load balancing, health checks, monitoring, and autom
 
 API Gateway:
 
+```text
 Client
     |
     v
@@ -432,9 +453,11 @@ API Gateway
     |
     v
 Backend Services
+```
 
 Remember:
 
+```text
 Reverse Proxy
 → Forwards traffic
 
@@ -443,3 +466,4 @@ Load Balancer
 
 API Gateway
 → Central API entry point and API-level cross-cutting concerns
+```

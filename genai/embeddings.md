@@ -95,9 +95,11 @@ Cosine Similarity =
 
 Values:
 
+```text
 - `1` → Highly similar
 - `0` → Unrelated
 - `-1` → Opposite
+```
 
 ---
 

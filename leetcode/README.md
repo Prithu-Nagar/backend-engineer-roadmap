@@ -213,6 +213,7 @@ LeetCode solutions are stored under the relevant DSA directories.
 For example:
 
 dsa/
+```text
 ├── arrays/
 ├── strings/
 ├── linked_list/
@@ -224,6 +225,7 @@ dsa/
 ├── heap/
 ├── graphs/
 └── dynamic_programming/
+```
 
 The leetcode/ directory serves as the progress tracker, while the actual implementations are maintained under dsa/.
 

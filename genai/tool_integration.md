@@ -16,6 +16,7 @@ The model decides which tool may be useful, while the application remains respon
 
 ## Basic Architecture
 
+```text
 User
  |
  v
@@ -42,6 +43,7 @@ LLM
  |
  v
 Final Response
+```
 
 The LLM should not receive unrestricted access to application infrastructure.
 
@@ -53,14 +55,17 @@ The application should control which tools are available and how they are execut
 
 A tool can be represented by:
 
+```text
 Tool Name
 Description
 Input Schema
 Execution Function
 Output Schema
+```
 
 Example:
 
+```json
 {
   "name": "get_task",
   "description": "Retrieve a task by its identifier",
@@ -74,6 +79,7 @@ Example:
     "required": ["task_id"]
   }
 }
+```
 
 The schema tells the model what the tool does and what arguments it expects.
 
@@ -83,6 +89,7 @@ The schema tells the model what the tool does and what arguments it expects.
 
 A typical flow is:
 
+```text
 1. User asks a question
         |
         v
@@ -105,6 +112,7 @@ A typical flow is:
         |
         v
 8. LLM generates the final response
+```
 
 The application should validate the tool call before execution.
 
@@ -125,6 +133,7 @@ They can also be combined.
 
 For example:
 
+```text
 User Question
      |
      v
@@ -142,6 +151,7 @@ LLM
      |
      v
 Final Answer
+```
 
 ---
 
@@ -149,6 +159,7 @@ Final Answer
 
 A backend application could expose a controlled function:
 
+```python
 def get_task(task_id: int) -> dict:
     task = database.get_task(task_id)
 
@@ -160,11 +171,13 @@ def get_task(task_id: int) -> dict:
         "title": task.title,
         "completed": task.completed,
     }
+```
 
 The LLM does not directly access the database.
 
 Instead:
 
+```text
 LLM
  |
  | get_task(task_id=10)
@@ -177,6 +190,7 @@ get_task()
  |
  v
 Database
+```
 
 ---
 
@@ -243,6 +257,7 @@ The LLM should receive a controlled error result rather than an internal excepti
 
 A production AI application can combine:
 
+```text
                     +----------------+
                     |      User      |
                     +-------+--------+
@@ -269,6 +284,7 @@ A production AI application can combine:
                     |   Final LLM   |
                     |    Response   |
                     +---------------+
+```
 
 This allows the application to combine:
 

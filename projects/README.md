@@ -88,6 +88,7 @@ The project is currently evolving from a simple Flask application toward a more 
 Current structure:
 
 backend/
+```text
 ├── app.py
 ├── flask_basics.py
 ├── flask_routing.py
@@ -96,19 +97,26 @@ backend/
 ├── error_handling.py
 ├── jwt_authentication.py
 └── request_response.py
+```
 
 The long-term direction is:
 
+```text
 Client
    ↓
+```
 Flask Application
+```text
    ↓
+```
 Routes / Blueprints
+```text
    ↓
 Service Layer
    ↓
 Database / Models
 
+```
 The service and database layers will be introduced as the project progresses through the roadmap.
 
 ---

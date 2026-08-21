@@ -10,6 +10,7 @@ Redis stores frequently accessed data in memory, allowing applications to retrie
 
 A common architecture is:
 
+```text
 Client
    ↓
 Backend
@@ -17,6 +18,7 @@ Backend
 Redis
    ↓
 Database
+```
 
 If the required data is already cached, the application can avoid a database query.
 
@@ -26,6 +28,7 @@ If the required data is already cached, the application can avoid a database que
 
 The application checks Redis before querying the database.
 
+```text
 Request
    ↓
 Redis
@@ -39,6 +42,7 @@ Cache Hit?
     Store in Redis
        ↓
     Return data
+```
 
 The application remains responsible for deciding when data should be read from or written to the cache.
 
@@ -50,9 +54,11 @@ A consistent cache-key strategy makes cached data easier to identify and invalid
 
 Examples:
 
+```text
 task:123
 user:123:tasks
 user:123:task_count
+```
 
 Keys should be predictable and specific enough to avoid collisions.
 
@@ -64,8 +70,10 @@ TTL (Time To Live) determines how long a cached value remains available.
 
 Example:
 
+```text
 task:123
 TTL = 300 seconds
+```
 
 After the TTL expires, the cached value is removed and the application can retrieve fresh data from the database.
 
@@ -79,11 +87,13 @@ When database data changes, related cached data may need to be invalidated.
 
 Example:
 
+```text
 Update Task
      ↓
 Update Database
      ↓
 Delete task:123 from Redis
+```
 
 The next request can retrieve the updated data from the database and populate the cache again.
 
@@ -95,6 +105,7 @@ Cache invalidation is one of the main challenges when introducing caching into a
 
 A cache hit occurs when the requested data is already present in Redis.
 
+```text
 Request
    ↓
 Redis
@@ -102,6 +113,7 @@ Redis
 Data Found
    ↓
 Return Response
+```
 
 This avoids the database query.
 
@@ -111,6 +123,7 @@ This avoids the database query.
 
 A cache miss occurs when the requested data is not available in Redis.
 
+```text
 Request
    ↓
 Redis
@@ -122,6 +135,7 @@ Database
 Store in Redis
    ↓
 Return Response
+```
 
 ---
 
@@ -131,6 +145,7 @@ Redis should not automatically replace the primary database.
 
 For an application such as the Task Manager:
 
+```text
 PostgreSQL
     ↓
 Source of Truth
@@ -138,6 +153,7 @@ Source of Truth
 Redis
     ↓
 Cache
+```
 
 The database provides durable persistence while Redis provides fast access to frequently requested data.
 
@@ -188,6 +204,7 @@ For the Task Manager project, Redis can eventually be used to cache frequently r
 
 A possible flow is:
 
+```text
 GET /api/tasks/123
         ↓
       Redis
@@ -201,6 +218,7 @@ Response    PostgreSQL
          Store in Redis
               ↓
            Response
+```
 
 When a task is updated or deleted, the corresponding cache entry should be invalidated.
 
