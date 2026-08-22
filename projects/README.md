@@ -168,6 +168,31 @@ The Task Manager now includes:
 
 ---
 
+## Day 22 — URL Shortener Django Model
+
+The URL Shortener project now moves from requirements/schema work into
+Django-backed domain modeling.
+
+Added:
+
+- `projects/url-shortener/models.py`
+- `projects/url-shortener/admin.py`
+- `projects/url-shortener/migrations/0001_initial.py`
+
+The `ShortURL` model contains:
+
+- `short_code`
+- `original_url`
+- `created_at`
+- `expires_at`
+- `is_active`
+
+The initial migration captures the database schema represented by the Django
+model, while the admin registration provides a basic administrative interface
+for inspecting and managing short URLs.
+
+---
+
 ## Planned Enhancements
 
 - SQLite Integration
@@ -210,3 +235,4 @@ This project grows alongside the roadmap.
 Each new backend concept is integrated into the existing application where appropriate instead of creating separate demo projects.
 
 The goal is to gradually transform the initial Flask application into a production-oriented backend service while maintaining clean code and clear separation of responsibilities.
+

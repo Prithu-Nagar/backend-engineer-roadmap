@@ -145,9 +145,7 @@ Solutions are organized according to the DSA topics being studied in the roadmap
 
 ---
 
-## Day 18
-
-### Two Pointers
+## Day 18 - Two Pointers
 
 - Two Sum II - Input Array Is Sorted
 - 3Sum
@@ -160,6 +158,29 @@ Solutions are organized according to the DSA topics being studied in the roadmap
 - Merge Intervals
 - Insert Interval
 - Non-overlapping Intervals
+
+---
+
+## Day 20 — Recursion & Backtracking
+
+- Subsets
+- Permutations
+- Combination Sum
+
+---
+
+## Day 21 — Backtracking
+
+- Letter Combinations of a Phone Number
+- Word Search
+
+---
+
+## Day 22 — Binary Trees / DFS
+
+- Diameter of Binary Tree
+- Balanced Binary Tree
+- Path Sum
 
 ---
 

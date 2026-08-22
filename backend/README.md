@@ -71,7 +71,7 @@ Organizing Flask applications into modular components using Blueprints.
 
 Blueprints help separate application functionality into logical modules and make larger Flask applications easier to maintain.
 
-## API Documentation — Day 19
+## Day 19 — API Documentation 
 
 Day 19 introduces API documentation and OpenAPI concepts.
 
@@ -315,7 +315,7 @@ Flask testing allows you to:
 
 ---
 
-### Standardized API Errors — Day 18
+### Day 18 — Standardized API Errors
 
 Day 18 extends error handling into a consistent API error-response format.
 
@@ -410,3 +410,49 @@ For each backend topic:
 7. Document the design and important decisions.
 
 The goal is to gradually transform the Task Manager project from a basic Flask API into a production-style backend application.
+
+---
+
+# Day 22 —  Django Models, Migrations & Admin
+
+Day 22 extends the Django fundamentals from Day 21 into database-backed
+application development.
+
+Topics include:
+
+- Django models
+- Model fields
+- Model metadata
+- Migrations
+- Django admin
+- Model registration
+- URL Shortener domain modeling
+
+File:
+
+`django_models.py`
+
+The repository's URL Shortener project also contains a Django model,
+migration, and admin registration:
+
+```text
+projects/url-shortener/
+├── admin.py
+├── models.py
+└── migrations/
+    ├── __init__.py
+    └── 0001_initial.py
+```
+
+The model represents a short URL and includes:
+
+- Unique short code
+- Original URL
+- Creation timestamp
+- Optional expiration timestamp
+- Active/inactive state
+
+Migrations provide version-controlled database schema changes derived from
+the model definition.
+
+---

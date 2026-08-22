@@ -336,7 +336,7 @@ Relevant files:
 
 ---
 
-## Testing (Day 15)
+## Testing
 
 Day 15 introduces comprehensive testing for the Task Manager API.
 
@@ -408,7 +408,7 @@ Token Tests:
 
 ---
 
-## API Validation and Schemas (Day 16)
+## API Validation and Schemas
 
 Day 16 introduces validation and schema boundaries for the Task Manager API.
 
@@ -434,7 +434,7 @@ Schemas define which fields are accepted for task creation, task updates, and AP
 
 ---
 
-## Pagination, Filtering and Sorting (Day 17)
+## Pagination, Filtering and Sorting
 
 Day 17 extends the Task Manager with pagination, filtering, and sorting.
 
@@ -468,7 +468,7 @@ operations so the behavior can later be moved into database-backed queries.
 
 ---
 
-## Day 18 — Standardized Errors + Generators
+## Standardized Errors + Generators
 
 Day 18 extends the Task Manager with:
 
@@ -530,7 +530,7 @@ tests/test_generators.py
 
 ---
 
-# Day 20 — Production-Style Refactor
+# Production-Style Refactor
 
 Day 20 begins the transition from the Task Manager learning project
 toward a more structured backend application.

@@ -1098,6 +1098,50 @@ This approach ensures that concepts are not only understood but also applied in 
 
 ---
 
+## ✅ Day 22
+
+### DSA
+
+- Binary Trees — DFS Patterns
+- Recursive State
+
+### Python
+
+- AsyncIO HTTP workloads
+- AsyncIO database workload concepts
+- Concurrent I/O orchestration
+
+### SQL
+
+- Django ORM Basics
+- Models
+- QuerySets
+- Querying and filtering
+
+### LeetCode
+
+- Diameter of Binary Tree
+- Balanced Binary Tree
+- Path Sum
+
+### Backend
+
+- Django Models
+- Django Migrations
+- Django Admin
+
+### System Design
+
+- Database-per-Service
+
+### Project
+
+- URL Shortener Django Model
+- Initial Django Migration
+- Django Admin Registration
+
+---
+
 ## Next Topics
 
 - Kafka

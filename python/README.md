@@ -195,7 +195,7 @@ Dataclasses are particularly useful for:
 
 ---
 
-## OOP Design — Day 19
+## Day 19 — OOP Design
 
 Day 19 reviews object-oriented design with a backend-engineering focus.
 
@@ -446,6 +446,46 @@ Understanding references and mutability is important when working with:
 
 ---
 
+# Day 22 — AsyncIO HTTP and Database Workloads
+
+Day 22 applies AsyncIO to backend-style I/O workloads.
+
+Topics include:
+
+- Async HTTP operations
+- Async database operations
+- Concurrent independent I/O
+- `asyncio.create_task()`
+- `asyncio.gather()`
+- Avoiding blocking synchronous work in async handlers
+- Choosing async-compatible clients and drivers
+
+File:
+
+`asyncio_http_database.py`
+
+A common backend pattern is:
+
+```text
+Request
+   |
+   +----> Async HTTP call
+   |
+   +----> Async database query
+   |
+   v
+Combine results
+   |
+   v
+Response
+```
+
+The important distinction is that AsyncIO improves concurrency for operations
+that spend time waiting on I/O. It does not make CPU-bound Python code
+automatically execute in parallel.
+
+---
+
 # Learning Approach
 
 For Python topics:
@@ -459,3 +499,5 @@ For Python topics:
 7. Review how the concept interacts with other Python features.
 
 The goal is to build Python knowledge that can be directly applied to production backend systems.
+
+---

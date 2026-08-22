@@ -78,3 +78,57 @@ Traverses the tree level by level using a queue-based breadth-first search.
 - Recursive space complexity depends on tree height.
 - A balanced tree has `O(log n)` height.
 - A skewed tree can have `O(n)` height.
+
+---
+
+## Day 22 — DFS Patterns
+
+Day 22 expands binary-tree problem solving using DFS with recursive state.
+
+| Problem | Pattern | Time | Space |
+|---|---|---:|---:|
+| Diameter of Binary Tree | DFS / Height + Global State | O(n) | O(h) |
+| Balanced Binary Tree | DFS / Height Validation | O(n) | O(h) |
+| Path Sum | DFS / Remaining Target | O(n) | O(h) |
+
+### Diameter of Binary Tree
+
+Computes the longest path between any two nodes by returning subtree height
+while updating the best diameter seen so far.
+
+**File:** `diameter_of_binary_tree.py`
+
+### Balanced Binary Tree
+
+Returns subtree height while using `-1` as a sentinel for an already-unbalanced
+subtree. This avoids repeatedly calculating heights.
+
+**File:** `balanced_binary_tree.py`
+
+### Path Sum
+
+Carries the remaining target sum down the recursive path and checks the target
+only at leaf nodes.
+
+**File:** `path_sum.py`
+
+### Recursive State Pattern
+
+Many DFS tree problems return information from a subtree while maintaining
+additional state:
+
+```text
+             node
+            /               /            left state  right state
+           \      /
+            combine
+               |
+               v
+          current state
+```
+
+The important interview question is:
+
+> What information must the recursive call return to make the parent decision?
+
+---

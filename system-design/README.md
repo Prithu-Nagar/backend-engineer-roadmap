@@ -420,6 +420,45 @@ could
 
 ---
 
+## Database-per-Service — Day 22
+
+Database-per-service is a microservice architecture pattern where each
+service owns its data store and controls access to its own schema.
+
+File:
+
+`database-per-service.md`
+
+Core principle:
+
+```text
+Service A ──> Database A
+Service B ──> Database B
+Service C ──> Database C
+```
+
+A service should not directly read or modify another service's database.
+
+### Benefits
+
+- Strong service ownership
+- Independent schema evolution
+- Reduced coupling between services
+- Independent scaling decisions
+- Clearer domain boundaries
+
+### Trade-offs
+
+- Cross-service queries become harder
+- Distributed transactions may be required
+- Data duplication can become necessary
+- Eventual consistency may need to be handled explicitly
+
+Database-per-service is most useful when service boundaries are sufficiently
+clear and independent ownership provides more value than a shared database.
+
+---
+
 # System Design Approach
 
 For each system design topic:
@@ -459,3 +498,5 @@ The goal is to understand why a particular architecture is appropriate rather th
 - Distributed Systems
 - Message Queues
 - Event-Driven Architecture
+
+---

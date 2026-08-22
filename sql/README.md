@@ -318,6 +318,32 @@ Important techniques include:
 
 ---
 
+## Day 22 — Django ORM Basics
+
+Day 22 introduces Django's ORM as the application-facing layer for relational
+database access.
+
+Topics include:
+
+- Django models
+- Model fields
+- QuerySets
+- Filtering
+- Creating records
+- Updating records
+- Deleting records
+- QuerySet laziness
+- ORM vs raw SQL trade-offs
+
+File:
+
+`django_orm_basics.md`
+
+The ORM maps Python model operations to SQL while keeping database access
+closely connected to application domain models.
+
+---
+
 # Repository Files
 
 ```text
@@ -369,3 +395,5 @@ For each SQL topic:
 7. Apply the concept to backend database operations.
 
 The goal is to understand not only how to write SQL queries, but also how those queries behave in real backend applications.
+
+---
