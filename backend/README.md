@@ -456,3 +456,27 @@ Migrations provide version-controlled database schema changes derived from
 the model definition.
 
 ---
+
+# Day 23 — Django REST Framework Fundamentals
+
+Day 23 introduces Django REST Framework (DRF) as the API layer on top of
+Django.
+
+Topics include:
+
+- DRF fundamentals
+- Serializers
+- Input validation
+- Representation of model-backed data
+- API endpoint boundaries
+
+File:
+
+`django_rest_framework.py`
+
+Serializers provide an explicit boundary between application data and API
+representations. They can validate incoming data and control which fields are
+returned to API clients.
+
+The URL Shortener project applies these concepts through DRF serializers and
+class-based API views.

@@ -300,3 +300,17 @@ For each DSA topic:
 4. Solve representative interview problems.
 5. Analyze time and space complexity.
 6. Review alternative approaches where appropriate.
+
+---
+
+## Day 23 — Binary Search Trees
+
+Day 23 extends BST problem solving using the ordering property and inorder
+traversal.
+
+Problems covered:
+
+- Lowest Common Ancestor of a BST
+- Kth Smallest Element in a BST
+
+Directory: `binary_search_tree/`

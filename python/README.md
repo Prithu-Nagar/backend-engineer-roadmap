@@ -501,3 +501,46 @@ For Python topics:
 The goal is to build Python knowledge that can be directly applied to production backend systems.
 
 ---
+
+# Day 23 — Packaging, Virtual Environments & Dependency Management
+
+Day 23 introduces the practical Python packaging workflow used to keep
+backend projects isolated and reproducible.
+
+Topics include:
+
+- Virtual environments with `venv`
+- Dependency installation with `pip`
+- Dependency snapshots with `requirements.txt`
+- Modern packaging configuration with `pyproject.toml`
+- Dependency isolation and reproducibility
+- Keeping development and runtime environments predictable
+
+File:
+
+`packaging_basics.py`
+
+Day 23 also includes a small dependency example:
+
+`requirements.txt`
+
+A typical workflow is:
+
+```text
+Create .venv
+    |
+    v
+Activate environment
+    |
+    v
+Install dependencies
+    |
+    v
+Record dependency versions
+    |
+    v
+Recreate environment elsewhere
+```
+
+The important goal is that the application should not depend on whatever
+packages happen to be installed globally on the developer's machine.

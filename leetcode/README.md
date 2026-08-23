@@ -260,3 +260,10 @@ Backtracking
 Advanced Trees
 Advanced Graph Algorithms
 More Dynamic Programming patterns
+
+---
+
+## Day 23 — Binary Search Trees
+
+- Lowest Common Ancestor of a BST
+- Kth Smallest Element in a BST

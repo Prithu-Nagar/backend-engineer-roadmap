@@ -167,3 +167,56 @@ This establishes the first Django persistence layer for the URL Shortener
 before API endpoints are added in later days.
 
 ---
+
+## Day 23 — Django REST Framework Endpoints
+
+Day 23 adds the first API layer to the Django-backed URL Shortener using
+Django REST Framework.
+
+### Serializer
+
+File:
+
+`serializers.py`
+
+The `ShortURLSerializer` controls the API representation and validation of
+`ShortURL` data.
+
+### Endpoints
+
+Files:
+
+- `views.py`
+- `urls.py`
+
+The project now defines:
+
+| Method | Endpoint | Purpose |
+|---|---|---|
+| GET | `/api/urls/` | List active short URLs |
+| POST | `/api/urls/` | Create a short URL |
+| GET | `/api/urls/<short_code>/` | Retrieve active URL metadata |
+
+The endpoint layer is intentionally small. Redirect handling remains a
+separate concern from the API metadata endpoints.
+
+### Day 23 Flow
+
+```text
+HTTP Request
+     |
+     v
+DRF URL pattern
+     |
+     v
+Generic API View
+     |
+     v
+Serializer <----> ShortURL Model
+     |
+     v
+HTTP Response
+```
+
+This keeps the API representation separate from the underlying Django model
+while building on the persistence layer introduced on Day 22.

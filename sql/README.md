@@ -397,3 +397,24 @@ For each SQL topic:
 The goal is to understand not only how to write SQL queries, but also how those queries behave in real backend applications.
 
 ---
+
+## Day 23 — Django ORM Querying
+
+Day 23 extends Django ORM fundamentals into related-object querying and
+query-count awareness.
+
+Topics include:
+
+- Related-object querying
+- `select_related()`
+- `prefetch_related()`
+- N+1 query patterns
+- Query composition
+- Choosing eager-loading strategies
+
+File:
+
+`django_orm_querying.md`
+
+The goal is to make ORM code convenient without accidentally turning one API
+request into a large number of database queries.

@@ -22,6 +22,8 @@ Instead of creating multiple small projects, the same application evolves over t
 
 - Python
 - Flask
+- Django
+- Django REST Framework
 - REST APIs
 
 ---
@@ -193,6 +195,22 @@ for inspecting and managing short URLs.
 
 ---
 
+## Day 23 — URL Shortener DRF API
+
+The URL Shortener now moves from Django persistence into its first API layer.
+
+Added:
+
+- `projects/url-shortener/serializers.py`
+- `projects/url-shortener/views.py`
+- `projects/url-shortener/urls.py`
+
+The DRF layer provides list/create and detail endpoints for active short URLs.
+Serializers define the API representation while generic DRF views handle the
+request/response flow.
+
+---
+
 ## Planned Enhancements
 
 - SQLite Integration
@@ -235,4 +253,3 @@ This project grows alongside the roadmap.
 Each new backend concept is integrated into the existing application where appropriate instead of creating separate demo projects.
 
 The goal is to gradually transform the initial Flask application into a production-oriented backend service while maintaining clean code and clear separation of responsibilities.
-

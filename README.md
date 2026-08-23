@@ -75,6 +75,8 @@ problem-solving.
 - ✅ OOP Design
 - ✅ Composition vs Inheritance
 - ✅ SOLID Principles
+- ✅ Packaging & Virtual Environments
+- ✅ Dependency Management
 
 ---
 
@@ -94,6 +96,8 @@ problem-solving.
 - ✅ Testing
 - ✅ API Documentation
 - ✅ OpenAPI / Swagger
+- ✅ Django
+- ✅ Django REST Framework
 - ⏳ Docker
 - ⏳ Deployment
 
@@ -129,6 +133,7 @@ problem-solving.
 - ✅ Idempotency
 - ✅ Idempotency Keys
 - ✅ Duplicate Request Handling
+- ✅ Service Communication
 - ⏳ Kafka
 
 ---
@@ -153,7 +158,7 @@ problem-solving.
 ## Projects
 
 - 🚧 Task Manager REST API
-- ⏳ URL Shortener
+- 🚧 URL Shortener
 - ⏳ Expense Tracker API
 - ⏳ Blog API
 - ⏳ Chat Application
@@ -1139,6 +1144,45 @@ This approach ensures that concepts are not only understood but also applied in 
 - URL Shortener Django Model
 - Initial Django Migration
 - Django Admin Registration
+
+---
+
+## ✅ Day 23
+
+### DSA
+
+- Binary Search Trees — successor/predecessor patterns
+
+### Python
+
+- Packaging
+- Virtual environments
+- Dependency management
+
+### SQL
+
+- Django ORM querying
+- `select_related()`
+- `prefetch_related()`
+
+### LeetCode
+
+- Lowest Common Ancestor of a BST
+- Kth Smallest Element in a BST
+
+### Backend
+
+- Django REST Framework fundamentals
+- Serializers
+
+### System Design
+
+- Service communication — REST vs async messaging
+
+### Project
+
+- URL Shortener DRF serializers
+- URL Shortener DRF endpoints
 
 ---
 

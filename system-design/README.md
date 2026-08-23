@@ -500,3 +500,18 @@ The goal is to understand why a particular architecture is appropriate rather th
 - Event-Driven Architecture
 
 ---
+
+## Service Communication — Day 23
+
+Day 23 compares synchronous REST communication with asynchronous messaging.
+
+File:
+
+`service-communication.md`
+
+The key decision is whether the caller needs an immediate response or whether
+the work can be decoupled and processed asynchronously.
+
+REST is useful for direct request/response interactions, while asynchronous
+messaging is useful for background work, event-driven workflows, and buffering
+traffic between services.
