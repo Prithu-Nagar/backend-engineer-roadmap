@@ -314,3 +314,22 @@ Problems covered:
 - Kth Smallest Element in a BST
 
 Directory: `binary_search_tree/`
+
+---
+
+## Day 24 — Graphs: Topological Sort
+
+Day 24 introduces topological sorting for dependency graphs.
+
+Topics include:
+
+- Directed graphs
+- Indegree
+- Kahn's algorithm
+- Cycle detection
+- Dependency ordering
+
+Problems:
+
+- Course Schedule II
+- Alien Dictionary

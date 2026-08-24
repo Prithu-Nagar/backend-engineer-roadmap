@@ -1,12 +1,12 @@
 """
-Day 23 — Django REST Framework Fundamentals
+Day 24 — DRF ViewSets, Routers & Permissions
 
-A small DRF example showing the role of serializers in an API boundary.
-The file is intentionally focused on the serializer layer rather than a
-complete Django project configuration.
+A compact example showing how Django REST Framework can move endpoint logic
+into a ViewSet and let a router generate URL patterns.
 """
 
-from rest_framework import serializers
+from rest_framework import permissions, serializers, viewsets
+from rest_framework.response import Response
 
 
 class ShortURLSerializer(serializers.Serializer):
@@ -16,18 +16,36 @@ class ShortURLSerializer(serializers.Serializer):
     is_active = serializers.BooleanField(default=True)
 
     def validate_original_url(self, value: str) -> str:
-        """Normalize the URL value before it reaches application logic."""
         return value.strip()
 
 
-class ShortURLSummarySerializer(serializers.Serializer):
-    short_code = serializers.CharField()
-    original_url = serializers.URLField()
-    is_active = serializers.BooleanField()
+class ExampleShortURLViewSet(viewsets.ViewSet):
+    """Illustrate ViewSet actions without requiring a project database."""
+
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+    def list(self, request):
+        return Response({"data": [], "meta": {"count": 0}})
+
+    def retrieve(self, request, pk=None):
+        return Response(
+            {
+                "data": {
+                    "short_code": pk,
+                }
+            }
+        )
+
+
+# In a Django project, the ViewSet is registered with a DRF router:
+#
+# router = DefaultRouter()
+# router.register("urls", ExampleShortURLViewSet, basename="url")
+# urlpatterns = router.urls
 
 
 def serializer_example() -> dict:
-    """Return a validated representation for documentation/demo purposes."""
+    """Return validated data for a small standalone serializer example."""
 
     serializer = ShortURLSerializer(
         data={

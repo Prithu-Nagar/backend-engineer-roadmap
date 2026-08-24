@@ -220,3 +220,65 @@ HTTP Response
 
 This keeps the API representation separate from the underlying Django model
 while building on the persistence layer introduced on Day 22.
+
+---
+
+## Day 24 — Validation + API Responses
+
+Day 24 strengthens the DRF API boundary introduced on Day 23.
+
+### Validation
+
+Files:
+
+- `serializers.py`
+- `validation.py`
+
+The API now validates and normalizes the original URL, checks expiration
+semantics, and generates a unique short code on creation rather than requiring
+clients to supply one.
+
+### ViewSet + Permissions
+
+File:
+
+`views.py`
+
+The project uses a router-friendly `ShortURLViewSet` with explicit DRF
+permission configuration. The current scope exposes list, create, and retrieve
+operations.
+
+### Router
+
+File:
+
+`urls.py`
+
+A `DefaultRouter` registers the ViewSet and keeps endpoint URL generation
+centralized.
+
+### Response Shape
+
+Successful responses use a small envelope:
+
+```json
+{
+  "data": {
+    "short_code": "aB91x"
+  }
+}
+```
+
+List responses also include lightweight metadata:
+
+```json
+{
+  "data": [],
+  "meta": {
+    "count": 0
+  }
+}
+```
+
+This establishes a consistent response contract before later roadmap days add
+authentication, administration, and broader API capabilities.

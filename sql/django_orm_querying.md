@@ -139,3 +139,47 @@ by the response or business operation.
 - What is the N+1 query problem?
 - How does `select_related()` differ from a Python-side join?
 - Why can eager loading itself become wasteful?
+
+---
+
+## Day 24 — ORM Performance & N+1 Queries
+
+ORM convenience does not remove the need to understand database query cost.
+
+### N+1 Query Problem
+
+An endpoint can accidentally issue one query to load a collection and then an
+additional query for each related object accessed inside a loop.
+
+```python
+urls = ShortURL.objects.all()
+
+for url in urls:
+    print(url.owner.username)
+```
+
+For a collection of `N` rows, this can become roughly `1 + N` queries.
+
+### Avoiding N+1
+
+Use relationship-aware loading when the response actually needs the related
+objects:
+
+```python
+urls = ShortURL.objects.select_related("owner")
+```
+
+For collection relationships, use `prefetch_related()`:
+
+```python
+users = User.objects.prefetch_related("short_urls")
+```
+
+### Performance Checklist
+
+- Inspect which relationships the endpoint reads.
+- Use `select_related()` for single-valued relationships.
+- Use `prefetch_related()` for collections.
+- Measure query counts rather than guessing.
+- Avoid loading relationships that the response does not need.
+- Inspect generated SQL when behavior is unclear.

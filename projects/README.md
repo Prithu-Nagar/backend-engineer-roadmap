@@ -253,3 +253,22 @@ This project grows alongside the roadmap.
 Each new backend concept is integrated into the existing application where appropriate instead of creating separate demo projects.
 
 The goal is to gradually transform the initial Flask application into a production-oriented backend service while maintaining clean code and clear separation of responsibilities.
+
+---
+
+## Day 24 — URL Shortener Validation + API Responses
+
+The URL Shortener now adds a stronger API boundary around the DRF layer.
+
+Added or updated:
+
+- Serializer validation for URLs and expiration timestamps
+- Server-generated unique short codes
+- DRF ViewSet structure
+- Router-based URL registration
+- Permission classes
+- Consistent success response envelopes
+
+The implementation remains limited to the roadmap's current list/create/detail
+API scope rather than pulling future authentication and administration work
+forward.

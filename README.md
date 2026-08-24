@@ -1186,6 +1186,45 @@ This approach ensures that concepts are not only understood but also applied in 
 
 ---
 
+## ✅ Day 24
+
+### DSA
+
+- Graphs — Topological Sort
+
+### Python
+
+- Configuration management
+- Environment variables
+- Secrets handling
+
+### SQL
+
+- ORM performance
+- N+1 query problem
+
+### LeetCode
+
+- Course Schedule II
+- Alien Dictionary
+
+### Backend
+
+- DRF ViewSets
+- Routers
+- Permissions
+
+### System Design
+
+- Synchronous vs asynchronous workflows
+
+### Project
+
+- URL Shortener validation
+- Consistent API responses
+
+---
+
 ## Next Topics
 
 - Kafka

@@ -418,3 +418,23 @@ File:
 
 The goal is to make ORM code convenient without accidentally turning one API
 request into a large number of database queries.
+
+---
+
+## Day 24 — ORM Performance
+
+Day 24 focuses on performance issues that can be hidden behind ORM
+abstractions.
+
+Topics include:
+
+- N+1 query detection
+- `select_related()`
+- `prefetch_related()`
+- Query-count awareness
+- Relationship loading trade-offs
+- Inspecting generated SQL
+
+Detailed notes:
+
+`django_orm_querying.md`

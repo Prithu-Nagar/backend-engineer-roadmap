@@ -267,3 +267,10 @@ More Dynamic Programming patterns
 
 - Lowest Common Ancestor of a BST
 - Kth Smallest Element in a BST
+
+---
+
+## Day 24 — Topological Sort
+
+- Course Schedule II
+- Alien Dictionary

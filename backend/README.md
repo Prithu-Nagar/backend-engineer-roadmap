@@ -480,3 +480,25 @@ returned to API clients.
 
 The URL Shortener project applies these concepts through DRF serializers and
 class-based API views.
+
+---
+
+# Day 24 — DRF ViewSets, Routers & Permissions
+
+Day 24 builds on the DRF serializer and endpoint work from Day 23.
+
+Topics include:
+
+- DRF ViewSets
+- Generic ViewSets and mixins
+- Routers
+- Permission classes
+- Validation boundaries
+- Consistent success response envelopes
+
+File:
+
+`django_rest_framework.py`
+
+The URL Shortener project applies the same concepts through a router-registered
+ViewSet with explicit read/write permission behavior.

@@ -544,3 +544,25 @@ Recreate environment elsewhere
 
 The important goal is that the application should not depend on whatever
 packages happen to be installed globally on the developer's machine.
+
+---
+
+## Day 24 — Configuration Management
+
+Day 24 introduces configuration management for backend services.
+
+Topics include:
+
+- Environment variables
+- Environment-specific configuration
+- Required settings
+- Secret handling
+- Avoiding hard-coded credentials
+- Configuration validation at application startup
+
+File:
+
+`configuration_management.py`
+
+The example keeps secrets outside source code and raises a clear configuration
+error when a required secret is missing.

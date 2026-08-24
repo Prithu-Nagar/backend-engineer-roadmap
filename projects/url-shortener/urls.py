@@ -1,17 +1,13 @@
 """
-Day 23 — URL Shortener DRF URL configuration.
+Day 24 — URL Shortener DRF router configuration.
 """
 
-from django.urls import path
+from rest_framework.routers import DefaultRouter
 
-from .views import ShortURLDetailView, ShortURLListCreateView
+from .views import ShortURLViewSet
 
 
-urlpatterns = [
-    path("api/urls/", ShortURLListCreateView.as_view(), name="url-list-create"),
-    path(
-        "api/urls/<str:short_code>/",
-        ShortURLDetailView.as_view(),
-        name="url-detail",
-    ),
-]
+router = DefaultRouter()
+router.register("api/urls", ShortURLViewSet, basename="url")
+
+urlpatterns = router.urls

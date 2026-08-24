@@ -515,3 +515,24 @@ the work can be decoupled and processed asynchronously.
 REST is useful for direct request/response interactions, while asynchronous
 messaging is useful for background work, event-driven workflows, and buffering
 traffic between services.
+
+---
+
+## Day 24 — Synchronous vs Asynchronous Workflows
+
+Day 24 focuses on choosing between work that completes inside the request path
+and work that continues asynchronously.
+
+File:
+
+`synchronous-vs-asynchronous-workflows.md`
+
+Topics include:
+
+- Request/response latency
+- Background processing
+- Queues and workers
+- Failure isolation
+- Eventual consistency
+- Retry and idempotency considerations
+- Choosing the simplest workflow that satisfies the requirement

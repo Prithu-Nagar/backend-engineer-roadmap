@@ -33,3 +33,30 @@ This directory contains graph-related LeetCode problems and solutions.
 ## Directory
 
 `graphs/`
+
+---
+
+## Day 24 — Topological Sort
+
+Day 24 extends graph traversal into dependency ordering with topological sort.
+
+Topics include:
+
+- Directed acyclic graphs (DAGs)
+- Indegree tracking
+- Kahn's algorithm
+- Dependency ordering
+- Cycle detection through incomplete topological ordering
+- Invalid prefix detection in lexicographically ordered word lists
+
+Problems solved:
+
+- Course Schedule
+- Course Schedule II
+- Alien Dictionary
+
+Files:
+
+- `course_schedule.py`
+- `course_schedule_ii.py`
+- `alien_dictionary.py`
