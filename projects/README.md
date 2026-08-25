@@ -272,3 +272,19 @@ Added or updated:
 The implementation remains limited to the roadmap's current list/create/detail
 API scope rather than pulling future authentication and administration work
 forward.
+
+
+## Day 25 — URL Shortener Authentication & Admin
+
+The URL Shortener now introduces authenticated ownership.
+
+Added or updated:
+
+- `projects/url-shortener/permissions.py`
+- `projects/url-shortener/migrations/0002_shorturl_owner.py`
+- Owner field on `ShortURL`
+- Authenticated DRF access
+- Owner-scoped URL listing and retrieval
+- Django admin ownership visibility
+
+New short URLs are associated with the authenticated Django user. 

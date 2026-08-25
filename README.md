@@ -1232,3 +1232,42 @@ This approach ensures that concepts are not only understood but also applied in 
 - Model Context Protocol (MCP)
 - Docker
 - Deployment
+
+---
+
+## ✅ Day 25
+
+### DSA
+
+- Graphs — Union-Find / Disjoint Set Union (DSU)
+
+### Python
+
+- Debugging
+- Profiling basics
+- Reading tracebacks effectively
+
+### SQL
+
+- Transactions through Django ORM
+
+### LeetCode
+
+- Number of Provinces
+- Redundant Connection
+- Accounts Merge
+
+### Backend
+
+- Django authentication
+- Sessions
+- Permissions
+
+### System Design
+
+- Message queues — why and when
+
+### Project
+
+- URL Shortener authentication
+- URL Shortener admin/ownership

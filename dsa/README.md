@@ -333,3 +333,26 @@ Problems:
 
 - Course Schedule II
 - Alien Dictionary
+
+---
+
+## Day 25 — Graphs: Union-Find / DSU
+
+Day 25 introduces Disjoint Set Union for connectivity and cycle-detection
+problems.
+
+Topics:
+
+- Parent arrays
+- Path compression
+- Union by size
+- Connected components
+- Cycle detection
+
+Problems:
+
+- Number of Provinces
+- Redundant Connection
+- Accounts Merge
+
+Directory: `graphs/`

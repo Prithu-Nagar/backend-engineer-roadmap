@@ -60,3 +60,31 @@ Files:
 - `course_schedule.py`
 - `course_schedule_ii.py`
 - `alien_dictionary.py`
+
+
+## Day 25 — Union-Find / DSU
+
+Day 25 adds Disjoint Set Union as an efficient way to maintain connected
+components while edges are merged.
+
+Topics include:
+
+- Parent representation
+- `find()`
+- Path compression
+- Union by size
+- Connectivity queries
+- Cycle detection
+
+Problems solved:
+
+- Number of Provinces
+- Redundant Connection
+- Accounts Merge
+
+Files:
+
+- `union_find.py`
+- `number_of_provinces.py`
+- `redundant_connection.py`
+- `accounts_merge.py`

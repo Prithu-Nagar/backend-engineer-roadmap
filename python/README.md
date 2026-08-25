@@ -566,3 +566,24 @@ File:
 
 The example keeps secrets outside source code and raises a clear configuration
 error when a required secret is missing.
+
+
+## Day 25 — Debugging & Profiling Basics
+
+Day 25 focuses on a practical debugging workflow for backend Python code.
+
+Topics include:
+
+- Reading tracebacks from the bottom up
+- Identifying the exception type and failing line
+- Reproducing failures with small inputs
+- Using `timeit` for focused timing measurements
+- Using `cProfile` and `pstats` to locate expensive functions
+- Measuring before optimizing
+
+File:
+
+`debugging_and_profiling.py`
+
+The goal is to separate correctness debugging from performance profiling and
+to use measurements rather than assumptions when investigating slow code.

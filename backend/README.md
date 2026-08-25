@@ -502,3 +502,24 @@ File:
 
 The URL Shortener project applies the same concepts through a router-registered
 ViewSet with explicit read/write permission behavior.
+
+---
+
+# Day 25 — Django Authentication, Sessions & Permissions
+
+Day 25 adds Django's built-in authentication model to the backend roadmap.
+
+Topics include:
+
+- Credential authentication
+- Session-based login/logout
+- `login_required` boundaries
+- Permission checks
+- Authenticated ownership of project resources
+
+File:
+
+`django_authentication.py`
+
+The URL Shortener project uses the authenticated Django user as the owner of
+new short URLs and restricts API access to authenticated users.

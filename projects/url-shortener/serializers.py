@@ -1,5 +1,6 @@
 """
 Day 24 — URL Shortener DRF validation and API representation.
+Day 25 adds authenticated ownership to the API representation.
 """
 
 import secrets
@@ -20,6 +21,7 @@ MAX_URL_LENGTH = 2048
 
 class ShortURLSerializer(serializers.ModelSerializer):
     short_url = serializers.SerializerMethodField()
+    owner = serializers.PrimaryKeyRelatedField(read_only=True)
 
     class Meta:
         model = ShortURL
@@ -30,8 +32,14 @@ class ShortURLSerializer(serializers.ModelSerializer):
             "created_at",
             "expires_at",
             "is_active",
+            "owner",
         )
-        read_only_fields = ("short_code", "created_at", "short_url")
+        read_only_fields = (
+            "short_code",
+            "created_at",
+            "short_url",
+            "owner",
+        )
 
     def validate_original_url(self, value: str) -> str:
         value = value.strip()

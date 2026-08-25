@@ -536,3 +536,20 @@ Topics include:
 - Eventual consistency
 - Retry and idempotency considerations
 - Choosing the simplest workflow that satisfies the requirement
+
+
+## Message Queues
+
+Day 25 introduces message queues and the reasons backend systems use them.
+
+Topics include:
+
+- Synchronous vs asynchronous workflows
+- Producer/consumer architecture
+- At-least-once delivery
+- Retries and dead-letter queues
+- Idempotent consumers
+- Ordering and operational trade-offs
+- Queue monitoring
+
+File: `message_queues.md`

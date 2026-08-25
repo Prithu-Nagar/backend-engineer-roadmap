@@ -438,3 +438,24 @@ Topics include:
 Detailed notes:
 
 `django_orm_querying.md`
+
+
+## Day 25 — Django ORM Transactions
+
+Day 25 applies transaction concepts through Django's ORM.
+
+Topics include:
+
+- `transaction.atomic()`
+- Commit and rollback behavior
+- Nested atomic blocks and savepoints
+- `select_for_update()`
+- Short transaction boundaries
+- Concurrency and lock considerations
+
+Detailed notes:
+
+`django_orm_transactions.md`
+
+The focus is on keeping related database writes consistent while avoiding
+unnecessarily long transactions.

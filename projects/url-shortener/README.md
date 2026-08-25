@@ -282,3 +282,47 @@ List responses also include lightweight metadata:
 
 This establishes a consistent response contract before later roadmap days add
 authentication, administration, and broader API capabilities.
+
+
+## Day 25 — Authentication + Admin
+
+Day 25 adds authenticated ownership to the URL Shortener while preserving the
+Day 24 validation and API response behavior.
+
+### Ownership
+
+The `ShortURL` model now has an optional Django user relationship so existing
+records can migrate safely. New API-created records are assigned to the
+authenticated user.
+
+### Authentication
+
+The DRF ViewSet now requires authentication. List and retrieve operations are
+scoped to the current user's active URLs, preventing users from seeing another
+user's resources.
+
+### Permissions
+
+File:
+
+`permissions.py`
+
+`IsShortURLOwner` provides an explicit object-level ownership check.
+
+### Admin
+
+The Django admin now exposes the owner in list, filter/search, and ownership
+selection fields.
+
+### Files
+
+- `models.py`
+- `serializers.py`
+- `views.py`
+- `urls.py`
+- `admin.py`
+- `permissions.py`
+- `migrations/0002_shorturl_owner.py`
+
+The Day 24 serializer validation, generated short codes, router, and consistent
+`data`/`meta` response envelopes are retained.
