@@ -523,3 +523,27 @@ File:
 
 The URL Shortener project uses the authenticated Django user as the owner of
 new short URLs and restricts API access to authenticated users.
+
+---
+
+## Day 26 — FastAPI Fundamentals
+
+Day 26 introduces FastAPI as the next backend framework in the roadmap and
+compares its request handling model with the Django/DRF work from Days 21–25.
+
+Topics include:
+
+- FastAPI application setup
+- Route declarations
+- Path and query parameters
+- Dependency injection with `Depends`
+- Automatic API schema generation
+- Lightweight, function-oriented endpoint definitions
+
+File:
+
+`fastapi_fundamentals.py`
+
+The URL Shortener project also contains a small FastAPI implementation so the
+framework can be compared against the existing Django/DRF version without
+removing the earlier work.

@@ -79,6 +79,19 @@ Day 15 adds advanced heap problems:
 
 Directory: `heap/`
 
+### Sorting
+
+Covers comparison-based sorting algorithms and sorting-oriented interview problems.
+
+Topics include:
+
+- Merge sort
+- Quicksort
+- Partitioning
+- Stable vs unstable sorting
+
+Directory: `sorting/`
+
 ### Graphs
 
 Covers graph traversal, connected components, cloning, and cycle detection.
@@ -356,3 +369,24 @@ Problems:
 - Accounts Merge
 
 Directory: `graphs/`
+
+---
+
+## Day 26 — Sorting
+
+Day 26 introduces comparison-based sorting through merge sort and quicksort.
+
+Topics:
+
+- Divide-and-conquer sorting
+- Merge sort
+- Quicksort
+- Partitioning
+- Stable vs unstable sorting
+- Best, average, and worst-case complexity
+
+Implementations:
+
+- `sorting/merge_sort.py`
+- `sorting/quick_sort.py`
+- `sorting/sort_array.py` — LeetCode: Sort an Array

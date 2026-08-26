@@ -18,6 +18,7 @@ The focus is on understanding how backend systems are structured, how components
 - API Gateway
 - Rate Limiting
 - Idempotency
+- Message Queues
 
 ---
 
@@ -489,6 +490,7 @@ The goal is to understand why a particular architecture is appropriate rather th
 | Authentication & Authorization | Completed |
 | API Gateway                    | Completed |
 | Rate Limiting                  | Completed |
+| Message Queues                 | Completed |
 
 ---
 
@@ -553,3 +555,27 @@ Topics include:
 - Queue monitoring
 
 File: `message_queues.md`
+
+---
+
+## Day 26 — Queue Semantics & At-Least-Once Delivery
+
+Day 26 extends the message-queue concepts introduced on Day 25 by focusing on
+delivery semantics and the implications for backend consumers.
+
+Topics include:
+
+- At-least-once delivery
+- Duplicate message handling
+- Idempotent consumers
+- Retry behavior
+- Dead-letter queues
+- Ordering boundaries
+- Queue depth and processing-latency monitoring
+
+File:
+
+`message_queues.md`
+
+The existing Day 25 queue material is retained and expanded with the Day 26
+semantics focus.

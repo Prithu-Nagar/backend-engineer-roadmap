@@ -24,6 +24,7 @@ Instead of creating multiple small projects, the same application evolves over t
 - Flask
 - Django
 - Django REST Framework
+- FastAPI
 - REST APIs
 
 ---
@@ -288,3 +289,28 @@ Added or updated:
 - Django admin ownership visibility
 
 New short URLs are associated with the authenticated Django user. 
+
+---
+
+## Day 26 — URL Shortener FastAPI Comparison
+
+Day 26 adds a small FastAPI implementation of the URL Shortener alongside the
+existing Django/DRF version. The goal is framework comparison, not replacement
+of the existing project implementation.
+
+Added:
+
+- `projects/url-shortener/fastapi_app.py`
+
+The comparison implementation demonstrates:
+
+- FastAPI application and route declarations
+- Request validation with Pydantic models
+- Response models
+- Dependency injection
+- Create, list, and retrieve URL endpoints
+- Explicit HTTP error responses
+
+The FastAPI version uses an in-memory store intentionally. The existing Django
+model, migrations, authentication, ownership, and DRF implementation remain the
+source of truth for the project's persistent implementation at this stage.

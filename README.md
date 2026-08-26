@@ -19,7 +19,7 @@ problem-solving.
 
 - Strengthen problem-solving using Data Structures & Algorithms.
 - Master Python for backend development.
-- Learn backend development with Flask.
+- Learn backend development with Flask, Django/DRF, and FastAPI.
 - Build strong SQL fundamentals.
 - Understand core System Design concepts.
 - Explore Generative AI fundamentals.
@@ -98,6 +98,7 @@ problem-solving.
 - ✅ OpenAPI / Swagger
 - ✅ Django
 - ✅ Django REST Framework
+- ✅ FastAPI
 - ⏳ Docker
 - ⏳ Deployment
 
@@ -113,6 +114,7 @@ problem-solving.
 - ✅ Window Functions
 - ✅ Indexes
 - ✅ Query Optimization
+- ✅ Django/relational database indexing
 - ✅ Transactions
 - ✅ Constraints
 - ✅ Database Normalization
@@ -134,6 +136,7 @@ problem-solving.
 - ✅ Idempotency Keys
 - ✅ Duplicate Request Handling
 - ✅ Service Communication
+- ✅ Message Queue Semantics
 - ⏳ Kafka
 
 ---
@@ -1271,3 +1274,43 @@ This approach ensures that concepts are not only understood but also applied in 
 
 - URL Shortener authentication
 - URL Shortener admin/ownership
+
+---
+
+## ✅ Day 26
+
+### DSA
+
+- Sorting — merge sort
+- Sorting — quicksort
+- Sorting stability
+
+### Python
+
+- Performance profiling
+- `timeit`
+- `cProfile` concepts
+
+### SQL
+
+- Indexing in Django and relational databases
+
+### LeetCode
+
+- Sort an Array
+- Kth Largest Element in an Array — revision
+
+### Backend
+
+- FastAPI fundamentals
+- Routing
+- Dependency injection
+
+### System Design
+
+- Queue semantics
+- At-least-once delivery
+
+### Project
+
+- URL Shortener FastAPI comparison implementation

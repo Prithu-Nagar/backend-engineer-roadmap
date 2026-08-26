@@ -326,3 +326,37 @@ selection fields.
 
 The Day 24 serializer validation, generated short codes, router, and consistent
 `data`/`meta` response envelopes are retained.
+
+---
+
+## Day 26 — FastAPI Comparison Implementation
+
+Day 26 adds a FastAPI version of the core URL Shortener API for framework
+comparison while preserving the existing Django/DRF implementation.
+
+### FastAPI Implementation
+
+File:
+
+`fastapi_app.py`
+
+The example demonstrates:
+
+- FastAPI route declarations
+- Pydantic request and response models
+- Dependency injection with `Depends`
+- HTTP status codes and error responses
+- Create, list, and retrieve operations
+
+### Comparison
+
+| Area | Django + DRF | FastAPI |
+|---|---|---|
+| Routing | Django URL configuration + DRF router | Decorator-based route declarations |
+| Validation | DRF serializers | Pydantic models |
+| Dependency handling | Django/DRF application patterns | FastAPI dependency injection |
+| API schema | DRF/OpenAPI tooling | Automatic OpenAPI generation |
+| Current project storage | Django ORM | In-memory comparison store |
+
+The FastAPI implementation is deliberately small. It is a comparison artifact,
+not a replacement for the authenticated Django/DRF URL Shortener.

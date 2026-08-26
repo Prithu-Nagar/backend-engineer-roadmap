@@ -106,3 +106,45 @@ Before introducing a queue, define:
 5. What happens to permanently failing messages?
 6. Does ordering matter?
 7. How are queue depth and processing latency monitored?
+
+---
+
+## Day 26 — Queue Semantics
+
+Day 26 focuses on the delivery guarantees that determine how consumers should
+be implemented.
+
+### At-Least-Once Delivery
+
+At-least-once delivery prioritizes not losing a message, which means a consumer
+may receive the same message more than once. The consumer should therefore use
+an idempotency key or another deduplication strategy when processing has side
+effects.
+
+```text
+Message
+   |
+   v
+Consumer
+   |
+   +---- success ----> acknowledge
+   |
+   +---- failure ----> retry
+                         |
+                         v
+                    dead-letter queue
+```
+
+### Consumer Design
+
+A robust consumer should define:
+
+1. How a message is identified uniquely.
+2. Which operations are safe to repeat.
+3. When acknowledgement occurs.
+4. How retries are bounded.
+5. When a failed message moves to a dead-letter queue.
+
+The practical lesson is that queue reliability is not only a property of the
+broker. Consumer-side idempotency and failure handling are part of the overall
+design.

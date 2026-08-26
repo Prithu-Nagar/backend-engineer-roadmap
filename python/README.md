@@ -587,3 +587,26 @@ File:
 
 The goal is to separate correctness debugging from performance profiling and
 to use measurements rather than assumptions when investigating slow code.
+
+---
+
+## Day 26 — Performance Profiling
+
+Day 26 focuses on measuring Python performance before making optimization
+decisions.
+
+Topics include:
+
+- Performance profiling
+- `timeit` for focused timing
+- `cProfile` for function-level profiling
+- `pstats` for reading profiler output
+- Measuring representative workloads
+- Avoiding premature optimization
+
+File:
+
+`debugging_and_profiling.py`
+
+The profiling workflow complements Day 25 debugging work: first establish
+correctness, then measure the actual performance bottleneck.

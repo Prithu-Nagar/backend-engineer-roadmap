@@ -281,3 +281,14 @@ More Dynamic Programming patterns
 - Number of Provinces
 - Redundant Connection
 - Accounts Merge
+
+---
+
+## Day 26 — Sorting
+
+- Sort an Array
+- Kth Largest Element in an Array — revision
+
+The Sort an Array implementation is stored in `dsa/sorting/sort_array.py`. The
+Kth Largest problem is revisited using the existing heap implementation in
+`dsa/heap/kth_largest_element.py`.

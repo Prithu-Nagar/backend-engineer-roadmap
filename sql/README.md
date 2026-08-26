@@ -459,3 +459,23 @@ Detailed notes:
 
 The focus is on keeping related database writes consistent while avoiding
 unnecessarily long transactions.
+
+---
+
+## Day 26 — Indexing in Django & Relational Databases
+
+Day 26 connects relational-database indexing with Django model configuration.
+
+Topics include:
+
+- `db_index=True`
+- Django `Meta.indexes`
+- Composite indexes
+- Index column order
+- Query planner inspection with `EXPLAIN`
+- Django `QuerySet.explain()`
+- Read-performance vs write/storage trade-offs
+
+Detailed notes:
+
+`django_indexes.md`
