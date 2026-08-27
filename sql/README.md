@@ -479,3 +479,27 @@ Topics include:
 Detailed notes:
 
 `django_indexes.md`
+
+---
+
+## Day 27 — PostgreSQL JSON Fields
+
+Day 27 introduces PostgreSQL-oriented features, with a focus on JSON and JSONB
+for structured but flexible attributes.
+
+Topics include:
+
+- `JSONB`
+- JSON field extraction
+- JSON containment with `@>`
+- JSON array membership
+- `jsonb_set()` updates
+- GIN indexing for JSONB
+- Relational columns vs flexible JSON attributes
+
+Detailed examples:
+
+`postgresql_json_fields.sql`
+
+JSONB should complement relational modeling rather than replace strongly typed
+columns that require frequent joins, constraints, or conventional indexes.

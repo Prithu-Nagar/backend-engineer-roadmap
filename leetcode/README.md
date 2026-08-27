@@ -292,3 +292,13 @@ More Dynamic Programming patterns
 The Sort an Array implementation is stored in `dsa/sorting/sort_array.py`. The
 Kth Largest problem is revisited using the existing heap implementation in
 `dsa/heap/kth_largest_element.py`.
+
+---
+
+## Day 27 — Greedy Algorithms
+
+- Best Time to Buy and Sell Stock
+- Jump Game
+- Gas Station
+
+The implementations are stored in `dsa/greedy/`.

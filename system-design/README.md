@@ -579,3 +579,31 @@ File:
 
 The existing Day 25 queue material is retained and expanded with the Day 26
 semantics focus.
+
+---
+
+## Day 27 — Event-Driven Architecture
+
+Day 27 introduces event-driven architecture and the use of events to decouple
+producers from consumers.
+
+Topics include:
+
+- Events vs commands
+- Producers and consumers
+- Event brokers/topics
+- Fan-out
+- Asynchronous processing
+- Eventual consistency
+- Idempotent consumers
+- Event schema versioning
+- Retry and dead-letter handling
+- Ordering and observability
+
+File:
+
+`event-driven-architecture.md`
+
+Event-driven architecture is useful when multiple components react to business
+events or when asynchronous processing reduces coupling, but it introduces
+additional distributed-system complexity.

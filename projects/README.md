@@ -314,3 +314,27 @@ The comparison implementation demonstrates:
 The FastAPI version uses an in-memory store intentionally. The existing Django
 model, migrations, authentication, ownership, and DRF implementation remain the
 source of truth for the project's persistent implementation at this stage.
+
+---
+
+## Day 27 — URL Shortener FastAPI Validation & Dependency Injection
+
+Day 27 extends the FastAPI comparison implementation with stronger request and
+response contracts and reusable dependencies.
+
+Updated:
+
+- `projects/url-shortener/fastapi_app.py`
+
+The implementation demonstrates:
+
+- Pydantic request validation
+- Response models
+- Header-based request context
+- Dependency injection with `Depends`
+- Injected storage access
+- Explicit HTTP error responses
+
+The Django/DRF implementation remains the persistent project source of truth;
+the FastAPI implementation continues to serve as a framework comparison and
+learning artifact.

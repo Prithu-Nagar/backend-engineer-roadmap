@@ -488,3 +488,26 @@ Completed:
 Upcoming:
 
 - Model Context Protocol (MCP)
+
+---
+
+## Day 27 — LangChain + FastAPI Integration
+
+Day 27 connects a LangChain application pipeline with a FastAPI HTTP layer.
+
+Topics include:
+
+- Separating prompt/model logic from HTTP routes
+- Pydantic request validation
+- Typed API responses
+- LangChain runnable composition
+- Exposing an AI pipeline through an API boundary
+- Dependency and configuration separation
+
+File:
+
+`langchain_fastapi_integration.py`
+
+The integration example keeps model configuration outside the route itself.
+This makes the HTTP layer easier to test and allows the model or chain to be
+replaced without changing the API contract.

@@ -390,3 +390,24 @@ Implementations:
 - `sorting/merge_sort.py`
 - `sorting/quick_sort.py`
 - `sorting/sort_array.py` — LeetCode: Sort an Array
+
+---
+
+## Day 27 — Greedy Algorithms
+
+Day 27 introduces greedy problem solving and focuses on identifying situations
+where a locally optimal choice can lead to a globally optimal result.
+
+Topics:
+
+- Greedy-choice reasoning
+- Running best-so-far state
+- Reachability tracking
+- Running balance
+- Proving or validating a greedy strategy
+
+Implementations:
+
+- `greedy/best_time_to_buy_sell_stock.py`
+- `greedy/jump_game.py`
+- `greedy/gas_station.py`

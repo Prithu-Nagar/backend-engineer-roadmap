@@ -547,3 +547,28 @@ File:
 The URL Shortener project also contains a small FastAPI implementation so the
 framework can be compared against the existing Django/DRF version without
 removing the earlier work.
+
+---
+
+## Day 27 — FastAPI Validation & Response Models
+
+Day 27 extends the FastAPI foundation with explicit validation, response
+contracts, and reusable dependencies.
+
+Topics include:
+
+- Pydantic request models
+- Field constraints
+- Path and query parameter validation
+- Response models
+- `Depends`
+- Dependency-injected request context and storage
+- Automatic API schema generation
+
+Files:
+
+- `fastapi_validation_response_models.py`
+- `fastapi_fundamentals.py`
+
+The URL Shortener FastAPI comparison implementation also applies these patterns
+to a small project-level API.

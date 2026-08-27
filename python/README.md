@@ -610,3 +610,27 @@ File:
 
 The profiling workflow complements Day 25 debugging work: first establish
 correctness, then measure the actual performance bottleneck.
+
+---
+
+## Day 27 — FastAPI Typing & Pydantic Models
+
+Day 27 connects Python type hints with FastAPI request and response contracts.
+
+Topics include:
+
+- Type annotations in FastAPI endpoints
+- `Annotated`
+- Pydantic `BaseModel`
+- `Field` constraints
+- Typed request bodies
+- Typed response models
+- Query-parameter validation
+
+File:
+
+`fastapi_typing_pydantic.py`
+
+The goal is to make API contracts explicit so invalid input is rejected before
+business logic runs and generated API documentation reflects the declared
+schema.

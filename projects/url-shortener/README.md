@@ -360,3 +360,36 @@ The example demonstrates:
 
 The FastAPI implementation is deliberately small. It is a comparison artifact,
 not a replacement for the authenticated Django/DRF URL Shortener.
+
+---
+
+## Day 27 — FastAPI Validation & Dependency Injection
+
+Day 27 extends the FastAPI comparison implementation with explicit validation,
+response contracts, and reusable dependencies.
+
+### Validation
+
+`CreateURLRequest` uses a Pydantic model to define the request contract. FastAPI
+uses that model to validate the request body and expose the schema in generated
+API documentation.
+
+### Response Models
+
+`ShortURLResponse` defines the fields returned by the API. Declaring
+`response_model` keeps the response contract explicit and prevents accidental
+exposure of unrelated internal values.
+
+### Dependency Injection
+
+The FastAPI implementation now injects:
+
+- Request context from the `X-Request-Id` header.
+- The URL store through a separate dependency.
+
+This keeps endpoint functions focused on HTTP behavior while making supporting
+components easier to replace in tests or future implementations.
+
+The project still uses an in-memory FastAPI comparison store. The existing
+Django/DRF models, migrations, authentication, ownership, and persistence remain
+unchanged.

@@ -45,6 +45,7 @@ problem-solving.
 - ✅ 1D DP
 - ✅ 2D DP
 - ✅ Intervals
+- ✅ Greedy Algorithms
 
 ---
 
@@ -77,6 +78,7 @@ problem-solving.
 - ✅ SOLID Principles
 - ✅ Packaging & Virtual Environments
 - ✅ Dependency Management
+- ✅ FastAPI Typing & Pydantic Models
 
 ---
 
@@ -118,6 +120,7 @@ problem-solving.
 - ✅ Transactions
 - ✅ Constraints
 - ✅ Database Normalization
+- ✅ PostgreSQL JSON / JSONB
 
 ---
 
@@ -137,6 +140,7 @@ problem-solving.
 - ✅ Duplicate Request Handling
 - ✅ Service Communication
 - ✅ Message Queue Semantics
+- ✅ Event-Driven Architecture
 - ⏳ Kafka
 
 ---
@@ -154,6 +158,7 @@ problem-solving.
 - ✅ Tool Integration
 - ✅ LangChain
 - ✅ AI Agents
+- ✅ LangChain + FastAPI Integration
 - ⏳ Model Context Protocol (MCP)
 
 ---
@@ -1314,3 +1319,45 @@ This approach ensures that concepts are not only understood but also applied in 
 ### Project
 
 - URL Shortener FastAPI comparison implementation
+
+---
+
+## ✅ Day 27
+
+### DSA
+
+- Greedy algorithms
+
+### Python
+
+- FastAPI typing
+- Pydantic models
+
+### SQL
+
+- PostgreSQL-oriented features
+- JSON and JSONB fields
+
+### LeetCode
+
+- Best Time to Buy and Sell Stock
+- Jump Game
+- Gas Station
+
+### Backend
+
+- FastAPI validation
+- Response models
+- Dependency injection
+
+### System Design
+
+- Event-driven architecture
+
+### GenAI
+
+- LangChain + FastAPI integration
+
+### Project
+
+- URL Shortener FastAPI validation, response models, and dependency injection
