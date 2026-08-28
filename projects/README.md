@@ -338,3 +338,18 @@ The implementation demonstrates:
 The Django/DRF implementation remains the persistent project source of truth;
 the FastAPI implementation continues to serve as a framework comparison and
 learning artifact.
+
+---
+
+## Day 28 — URL Shortener Async Endpoint
+
+The URL Shortener FastAPI comparison now includes an asynchronous endpoint.
+
+Updated:
+
+- `projects/url-shortener/fastapi_app.py`
+
+The FastAPI list endpoint is now declared with `async def` and yields to the
+event loop before returning the in-memory collection. This keeps the project
+aligned with the day's async FastAPI focus without replacing the existing
+Django/DRF implementation.

@@ -121,3 +121,70 @@ would make the system harder to evolve.
 It is not automatically better than a synchronous request. For a simple
 operation that needs an immediate result, direct request/response communication
 may be easier to understand and operate.
+
+---
+
+## Day 28 — Event-Driven Architecture Trade-Offs
+
+Day 28 revisits event-driven architecture from an architecture-decision
+perspective. The goal is to decide when asynchronous events are worth the
+additional operational complexity.
+
+### Synchronous vs Event-Driven
+
+Use synchronous communication when the caller needs an immediate result or
+when the workflow is small and tightly coupled.
+
+Use events when work can happen asynchronously, multiple consumers need the
+same business fact, or downstream processing should be decoupled from the
+request path.
+
+```text
+Synchronous
+Client -> API -> Service -> Database -> Response
+
+Event-driven
+Client -> API -> Service -> Event Broker
+                              |
+                              +--> Consumer A
+                              +--> Consumer B
+                              +--> Consumer C
+```
+
+### Key Trade-Offs
+
+| Decision | Event-Driven Benefit | Cost / Risk |
+|---|---|---|
+| Latency | Removes slow work from request path | Result may not be immediate |
+| Coupling | Producers do not call every consumer | Event contracts become dependencies |
+| Scaling | Consumers scale independently | More services to operate |
+| Reliability | Failures can be isolated and retried | Duplicate delivery must be handled |
+| Consistency | Supports asynchronous workflows | Eventual consistency becomes visible |
+| Evolution | New consumers can subscribe later | Schema compatibility must be managed |
+| Debugging | Durable events can aid reconstruction | Distributed tracing is harder |
+
+### Queue vs Event Stream
+
+A work queue is usually centered on distributing work so that a message is
+processed by one consumer or consumer group. An event stream is commonly used
+when multiple independent consumers need to observe the same event history.
+
+The choice should follow the delivery and replay requirements rather than the
+technology name alone.
+
+### Decision Checklist
+
+Before introducing event-driven communication, ask:
+
+1. Does the caller really need a synchronous result?
+2. Can the operation tolerate eventual consistency?
+3. Will more than one consumer need the business event?
+4. What happens if the event is delivered more than once?
+5. How will failed events be retried or moved to a dead-letter destination?
+6. How will event schemas evolve without breaking consumers?
+7. What observability is required to trace a request across consumers?
+
+Event-driven architecture is a useful tool, not a default architecture. The
+simplest communication model that satisfies the reliability, latency, and
+coupling requirements is usually the best starting point.
+

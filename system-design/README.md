@@ -607,3 +607,28 @@ File:
 Event-driven architecture is useful when multiple components react to business
 events or when asynchronous processing reduces coupling, but it introduces
 additional distributed-system complexity.
+
+---
+
+## Day 28 — Event-Driven Architecture Trade-Offs
+
+Day 28 revisits event-driven architecture as an architecture decision rather
+than treating asynchronous events as a default.
+
+Topics include:
+
+- Synchronous vs event-driven communication
+- Latency and eventual consistency trade-offs
+- Queue vs event-stream considerations
+- Independent consumer scaling
+- Event schema evolution
+- Duplicate delivery and idempotency
+- Observability and distributed debugging
+- Decision checklist for introducing events
+
+File:
+
+`event-driven-architecture.md`
+
+The goal is to choose event-driven communication when its decoupling and
+asynchronous benefits justify the additional distributed-system complexity.

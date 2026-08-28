@@ -503,3 +503,28 @@ Detailed examples:
 
 JSONB should complement relational modeling rather than replace strongly typed
 columns that require frequent joins, constraints, or conventional indexes.
+
+---
+
+## Day 28 — Advanced Pagination & Query Patterns
+
+Day 28 extends pagination from the earlier API work into database-oriented
+query design.
+
+Topics include:
+
+- Stable ordering
+- Composite cursors
+- Keyset/cursor pagination
+- Filtering before pagination
+- Count-query trade-offs
+- Parameterized query values
+- Allowlisting sort fields
+- Indexing for common pagination patterns
+
+Detailed examples:
+
+`pagination.sql`
+
+The goal is to keep pagination predictable and efficient as datasets grow,
+while avoiding unsafe dynamic SQL construction.

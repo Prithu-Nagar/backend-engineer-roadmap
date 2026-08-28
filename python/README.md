@@ -634,3 +634,25 @@ File:
 The goal is to make API contracts explicit so invalid input is rejected before
 business logic runs and generated API documentation reflects the declared
 schema.
+
+---
+
+## Day 28 — Async FastAPI
+
+Day 28 connects Python `async`/`await` and concurrency concepts to FastAPI
+request handling.
+
+Topics include:
+
+- `async def` FastAPI endpoints
+- Awaiting I/O-bound operations
+- `asyncio.gather()` for independent work
+- Avoiding blocking operations in the async request path
+- When synchronous endpoints are still appropriate
+
+File:
+
+`async_fastapi.py`
+
+The example uses simulated I/O so the async control flow can be studied
+without requiring an external service.

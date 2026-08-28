@@ -9,10 +9,18 @@ Day 27 — URL Shortener FastAPI Validation and Dependency Injection
 
 The FastAPI comparison implementation is extended with explicit request and
 response models and small dependencies for request context and storage.
+
+Day 28 — URL Shortener Async Endpoint
+
+The FastAPI comparison implementation now includes an async list endpoint.
+The endpoint yields to the event loop so the example demonstrates the async
+request model without introducing an external service dependency.
+
 The existing Django/DRF implementation remains the persistent project source
 of truth.
 """
 
+import asyncio
 import secrets
 import string
 from typing import Annotated
@@ -95,10 +103,11 @@ def create_short_url(
 
 
 @app.get("/api/urls", response_model=list[ShortURLResponse])
-def list_short_urls(
+async def list_short_urls(
     store: dict[str, ShortURLResponse] = Depends(get_url_store),
 ) -> list[ShortURLResponse]:
-    """Return the in-memory URL collection through a response model."""
+    """Return the URL collection from an async FastAPI endpoint."""
+    await asyncio.sleep(0)
     return list(store.values())
 
 

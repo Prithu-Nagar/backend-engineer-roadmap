@@ -393,3 +393,26 @@ components easier to replace in tests or future implementations.
 The project still uses an in-memory FastAPI comparison store. The existing
 Django/DRF models, migrations, authentication, ownership, and persistence remain
 unchanged.
+
+---
+
+## Day 28 — Async FastAPI Endpoint
+
+Day 28 extends the FastAPI comparison implementation with asynchronous request
+handling.
+
+### Async Endpoint
+
+File:
+
+`fastapi_app.py`
+
+The URL listing endpoint now uses `async def` and yields to the event loop
+before returning the in-memory collection.
+
+This demonstrates the FastAPI async endpoint model while keeping the example
+self-contained. In a real service, the awaited work would normally be an
+async-compatible database or HTTP operation.
+
+The existing Django/DRF implementation remains the persistent project source
+of truth.

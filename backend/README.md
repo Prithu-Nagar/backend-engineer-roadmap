@@ -572,3 +572,26 @@ Files:
 
 The URL Shortener FastAPI comparison implementation also applies these patterns
 to a small project-level API.
+
+---
+
+## Day 28 — FastAPI Authentication with OAuth2 & JWT
+
+Day 28 introduces authentication patterns for FastAPI applications.
+
+Topics include:
+
+- OAuth2 bearer-token concepts
+- `OAuth2PasswordBearer`
+- JWT access tokens
+- Token expiration and validation
+- Authentication vs authorization
+- Protecting endpoints with FastAPI dependencies
+- `401 Unauthorized` responses and the `WWW-Authenticate` header
+
+File:
+
+`fastapi_authentication.py`
+
+The example focuses on the authentication boundary. Authorization decisions
+such as roles and permissions remain a separate concern.

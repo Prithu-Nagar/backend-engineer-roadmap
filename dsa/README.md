@@ -411,3 +411,24 @@ Implementations:
 - `greedy/best_time_to_buy_sell_stock.py`
 - `greedy/jump_game.py`
 - `greedy/gas_station.py`
+
+---
+
+## Day 28 — Binary Search on Answer
+
+Day 28 applies binary search to a monotonic answer space rather than directly
+searching for a value in a sorted array.
+
+Topics:
+
+- Defining a feasible answer range
+- Monotonic feasibility checks
+- Minimum feasible answer
+- Binary search on answer
+
+Problems:
+
+- Koko Eating Bananas
+- Capacity To Ship Packages Within D Days
+
+Implementations are stored in `binary_search/`.

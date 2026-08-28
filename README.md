@@ -1361,3 +1361,46 @@ This approach ensures that concepts are not only understood but also applied in 
 ### Project
 
 - URL Shortener FastAPI validation, response models, and dependency injection
+
+---
+
+## ✅ Day 28
+
+### DSA
+
+- Binary Search on Answer
+
+### Python
+
+- Async FastAPI
+- Async endpoints
+- Async concurrency
+- Avoiding blocking work in async request handlers
+
+### SQL
+
+- Advanced pagination
+- Keyset/cursor pagination
+- Stable ordering
+- Query and filtering patterns
+
+### LeetCode
+
+- Koko Eating Bananas
+- Capacity To Ship Packages Within D Days
+
+### Backend
+
+- FastAPI authentication
+- OAuth2 bearer-token concepts
+- JWT concepts
+
+### System Design
+
+- Event-driven architecture trade-offs
+- Synchronous vs event-driven communication
+- Queue vs event-stream considerations
+
+### Project
+
+- URL Shortener async FastAPI endpoint

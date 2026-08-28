@@ -302,3 +302,12 @@ Kth Largest problem is revisited using the existing heap implementation in
 - Gas Station
 
 The implementations are stored in `dsa/greedy/`.
+
+---
+
+## Day 28 — Binary Search on Answer
+
+- Koko Eating Bananas
+- Capacity To Ship Packages Within D Days
+
+The implementations are stored in `dsa/binary_search/`.
