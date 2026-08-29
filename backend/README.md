@@ -595,3 +595,27 @@ File:
 
 The example focuses on the authentication boundary. Authorization decisions
 such as roles and permissions remain a separate concern.
+
+---
+
+## Day 29 — FastAPI API Testing
+
+Day 29 focuses on testing FastAPI endpoints as an HTTP API rather than testing
+only individual functions.
+
+Topics include:
+
+- FastAPI `TestClient`
+- Request and response assertions
+- Request validation testing
+- HTTP error response testing
+- Dependency overrides
+- Isolated test state
+- Testing async endpoints through the API boundary
+
+File:
+
+`fastapi_testing.py`
+
+The URL Shortener project contains the complete project-level API test suite
+under `projects/url-shortener/tests/`.

@@ -353,3 +353,29 @@ The FastAPI list endpoint is now declared with `async def` and yields to the
 event loop before returning the in-memory collection. This keeps the project
 aligned with the day's async FastAPI focus without replacing the existing
 Django/DRF implementation.
+
+---
+
+## Day 29 — URL Shortener Complete Test Suite
+
+Day 29 completes the FastAPI comparison testing layer for the URL Shortener.
+
+Added:
+
+- `projects/url-shortener/tests/conftest.py`
+- `projects/url-shortener/tests/test_fastapi_app.py`
+- `projects/url-shortener/tests/__init__.py`
+
+The test suite covers:
+
+- FastAPI `TestClient`
+- Dependency overrides
+- Isolated in-memory stores
+- Successful URL creation
+- Request validation
+- URL listing
+- URL retrieval
+- `404 Not Found` behavior
+
+The existing Django/DRF implementation and all earlier project work remain
+unchanged.

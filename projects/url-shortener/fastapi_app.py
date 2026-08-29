@@ -16,6 +16,12 @@ The FastAPI comparison implementation now includes an async list endpoint.
 The endpoint yields to the event loop so the example demonstrates the async
 request model without introducing an external service dependency.
 
+Day 29 — URL Shortener Complete Test Suite
+
+The project adds a FastAPI-focused pytest suite covering request validation,
+successful create/list/retrieve flows, error responses, and dependency
+overrides for isolated test state.
+
 The existing Django/DRF implementation remains the persistent project source
 of truth.
 """

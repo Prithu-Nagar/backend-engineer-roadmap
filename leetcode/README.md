@@ -311,3 +311,12 @@ The implementations are stored in `dsa/greedy/`.
 - Capacity To Ship Packages Within D Days
 
 The implementations are stored in `dsa/binary_search/`.
+
+---
+
+## Day 29 — Prefix Sums / Prefix-Suffix Pattern
+
+- Product of Array Except Self
+- Range Sum Query - Immutable
+
+The implementations are stored in `dsa/prefix_sums/`.

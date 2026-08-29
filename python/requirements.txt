@@ -3,3 +3,5 @@ djangorestframework
 fastapi
 uvicorn
 PyJWT
+pytest
+httpx

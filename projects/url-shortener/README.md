@@ -416,3 +416,42 @@ async-compatible database or HTTP operation.
 
 The existing Django/DRF implementation remains the persistent project source
 of truth.
+
+---
+
+## Day 29 — Complete FastAPI Test Suite
+
+Day 29 adds a complete API test suite for the FastAPI comparison
+implementation.
+
+### Test Fixtures
+
+Files:
+
+- `tests/conftest.py`
+- `tests/__init__.py`
+
+The test fixture overrides the URL-store dependency so each test receives an
+isolated in-memory store.
+
+### API Tests
+
+File:
+
+`tests/test_fastapi_app.py`
+
+The suite covers:
+
+- Successful URL creation
+- Invalid URL validation
+- Listing URLs
+- Retrieving an existing short URL
+- `404 Not Found` for missing URLs
+- Dependency override behavior
+
+The tests use FastAPI's `TestClient` so the endpoints are exercised through the
+HTTP API boundary.
+
+The existing Django/DRF implementation remains the persistent project source of
+truth, while the FastAPI comparison implementation now has a repeatable test
+suite.

@@ -46,6 +46,7 @@ problem-solving.
 - ✅ 2D DP
 - ✅ Intervals
 - ✅ Greedy Algorithms
+- ✅ Prefix Sums / Difference Arrays
 
 ---
 
@@ -79,6 +80,7 @@ problem-solving.
 - ✅ Packaging & Virtual Environments
 - ✅ Dependency Management
 - ✅ FastAPI Typing & Pydantic Models
+- ✅ Async Testing & Mocks
 
 ---
 
@@ -101,6 +103,7 @@ problem-solving.
 - ✅ Django
 - ✅ Django REST Framework
 - ✅ FastAPI
+- ✅ FastAPI API Testing
 - ⏳ Docker
 - ⏳ Deployment
 
@@ -121,6 +124,7 @@ problem-solving.
 - ✅ Constraints
 - ✅ Database Normalization
 - ✅ PostgreSQL JSON / JSONB
+- ✅ Database Migration Strategy
 
 ---
 
@@ -141,6 +145,7 @@ problem-solving.
 - ✅ Service Communication
 - ✅ Message Queue Semantics
 - ✅ Event-Driven Architecture
+- ✅ Schema Evolution & Backward Compatibility
 - ⏳ Kafka
 
 ---
@@ -1404,3 +1409,52 @@ This approach ensures that concepts are not only understood but also applied in 
 ### Project
 
 - URL Shortener async FastAPI endpoint
+
+---
+
+## ✅ Day 29
+
+### DSA
+
+- Prefix sums
+- Difference arrays
+- Prefix/suffix product pattern
+
+### Python
+
+- Testing async code
+- `AsyncMock`
+- Await assertions
+- Mocking asynchronous dependencies
+
+### SQL
+
+- Database migration strategy
+- Expand-and-contract migrations
+- Backward-compatible schema changes
+- Safe backfills and constraint rollout
+
+### LeetCode
+
+- Product of Array Except Self
+- Range Sum Query - Immutable
+
+### Backend
+
+- FastAPI API testing
+- `TestClient`
+- Dependency overrides
+- Request validation and error-response testing
+
+### System Design
+
+- Schema evolution
+- Backward compatibility
+- Expand-and-contract design
+- Rolling-deployment compatibility
+
+### Project
+
+- URL Shortener complete FastAPI test suite
+- Isolated dependency overrides
+- Create, list, retrieve, validation, and 404 API tests

@@ -432,3 +432,26 @@ Problems:
 - Capacity To Ship Packages Within D Days
 
 Implementations are stored in `binary_search/`.
+
+---
+
+## Day 29 — Prefix Sums / Difference Arrays
+
+Day 29 introduces prefix sums and difference arrays for efficient repeated
+queries and range updates.
+
+Topics:
+
+- Prefix sums
+- Range-sum queries
+- Prefix/suffix products
+- Difference arrays
+- Boundary updates
+- Efficient preprocessing
+
+Problems:
+
+- Product of Array Except Self
+- Range Sum Query - Immutable
+
+Implementations are stored in `prefix_sums/`.

@@ -632,3 +632,27 @@ File:
 
 The goal is to choose event-driven communication when its decoupling and
 asynchronous benefits justify the additional distributed-system complexity.
+
+---
+
+## Day 29 — Schema Evolution
+
+Day 29 focuses on evolving database and API schemas without breaking existing
+consumers or older application instances during deployment.
+
+Topics include:
+
+- Expand-and-contract migrations
+- Backward compatibility
+- Rolling deployments
+- Additive API changes
+- Safe data backfills
+- Deprecation and contract phases
+- Schema compatibility testing
+
+File:
+
+`schema_evolution.md`
+
+The goal is to make schema changes incremental so deployment timing does not
+become a correctness dependency.

@@ -528,3 +528,27 @@ Detailed examples:
 
 The goal is to keep pagination predictable and efficient as datasets grow,
 while avoiding unsafe dynamic SQL construction.
+
+---
+
+## Day 29 — Database Migration Strategy & Backward-Compatible Schema Changes
+
+Day 29 focuses on evolving relational schemas safely while multiple application
+versions may coexist.
+
+Topics include:
+
+- Version-controlled migrations
+- Expand-and-contract strategy
+- Backward-compatible schema changes
+- Safe column additions and removals
+- Data backfills
+- Constraint rollout
+- Rolling-deployment compatibility
+
+Detailed notes:
+
+`migrations.md`
+
+The goal is to make schema changes incrementally without breaking existing
+application instances or consumers.

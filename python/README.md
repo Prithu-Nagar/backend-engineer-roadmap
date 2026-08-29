@@ -656,3 +656,26 @@ File:
 
 The example uses simulated I/O so the async control flow can be studied
 without requiring an external service.
+
+---
+
+## Day 29 — Testing Async Code, Mocks & Dependency Overrides
+
+Day 29 focuses on testing asynchronous Python code and isolating dependencies
+during backend tests.
+
+Topics include:
+
+- Async test execution
+- `AsyncMock`
+- Await assertions
+- Mocking asynchronous I/O
+- Deterministic dependency behavior
+- FastAPI dependency overrides
+
+File:
+
+`async_testing.py`
+
+The example uses `AsyncMock` to test an async dependency without performing
+real network I/O.
