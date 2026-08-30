@@ -379,3 +379,25 @@ The test suite covers:
 
 The existing Django/DRF implementation and all earlier project work remain
 unchanged.
+
+---
+
+## Day 30 — URL Shortener Milestone + README
+
+Day 30 consolidates the URL Shortener work completed during Days 21–29.
+
+Milestone review:
+
+- Django/DRF project structure
+- URL model and migrations
+- Serializer validation and API responses
+- ViewSets, routers, and permissions
+- Authentication and ownership
+- FastAPI comparison implementation
+- Async FastAPI endpoint
+- API testing with dependency overrides
+- Backward-compatible migration practices
+
+The project README is updated as the phase checkpoint. No new application
+feature is introduced on Day 30; the milestone focuses on consolidation,
+documentation, and readiness for the database/distributed-systems phase.

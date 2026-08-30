@@ -447,7 +447,7 @@ For each Dynamic Programming problem:
 
 When approaching a new Dynamic Programming problem, ask:
 
-### What is the state?
+## What is the state?
 
 What information is required to describe a subproblem?
 

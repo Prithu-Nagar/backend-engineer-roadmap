@@ -656,3 +656,30 @@ File:
 
 The goal is to make schema changes incremental so deployment timing does not
 become a correctness dependency.
+
+---
+
+## Day 30 — Backend Architecture Review
+
+Day 30 consolidates the backend architecture concepts introduced during the
+Backend Engineering phase.
+
+Review areas:
+
+- Layered backend architecture
+- API and service boundaries
+- Synchronous vs asynchronous communication
+- Message queues and delivery semantics
+- Event-driven architecture
+- Schema evolution and backward compatibility
+- Authentication and authorization boundaries
+- Caching and database interaction
+- Testing and observability boundaries
+
+Detailed review:
+
+`backend-architecture-review.md`
+
+The objective is to select the simplest architecture that satisfies the
+requirements while making reliability, scalability, and operational trade-offs
+explicit.

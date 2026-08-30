@@ -61,11 +61,12 @@ def requires_permission(permission: str) -> Callable:
 
             role = user.get("role")
 
-            return TaskManagerError(
-                code="ROLE_NOT_FOUND",
-                message="User role not found.",
-                status_code=403,
-            ).to_response()
+            if not role:
+                return TaskManagerError(
+                    code="ROLE_NOT_FOUND",
+                    message="User role not found.",
+                    status_code=403,
+                ).to_response()
 
             if not has_permission(role, permission):
                 return FORBIDDEN.to_response()
@@ -123,9 +124,11 @@ def update_task(user: dict, task: dict, title: str) -> dict:
     Update a task after checking resource ownership.
     """
     if not can_access_task(user, task):
-        return {
-            "error": "You are not allowed to update this task"
-        }, 403
+        return TaskManagerError(
+            code="TASK_ACCESS_FORBIDDEN",
+            message="You are not allowed to update this task.",
+            status_code=403,
+        ).to_response()
 
     task["title"] = title
 
@@ -138,9 +141,11 @@ def delete_task(user: dict, task: dict) -> dict:
     Delete a task after checking resource ownership.
     """
     if not can_access_task(user, task):
-        return {
-            "error": "You are not allowed to delete this task"
-        }, 403
+        return TaskManagerError(
+            code="TASK_ACCESS_FORBIDDEN",
+            message="You are not allowed to delete this task.",
+            status_code=403,
+        ).to_response()
 
     return {
         "message": "Task deleted",

@@ -679,3 +679,25 @@ File:
 
 The example uses `AsyncMock` to test an async dependency without performing
 real network I/O.
+
+---
+
+## Day 30 — Python Review
+
+Day 30 consolidates the Python concepts introduced during the Backend
+Engineering phase.
+
+Review areas:
+
+- AsyncIO and asynchronous execution
+- Async FastAPI endpoint patterns
+- Type hints and Pydantic-oriented typing
+- Packaging and virtual environments
+- Dependency management
+- Async testing
+- Mocks and dependency overrides
+- Testing boundaries and reusable fixtures
+
+The review emphasizes choosing the appropriate Python feature for backend
+code rather than treating asynchronous execution, typing, packaging, or
+testing patterns as isolated topics.

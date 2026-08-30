@@ -8,7 +8,7 @@ import os
 import jwt
 
 
-JWT_SECRET = os.getenv("JWT_SECRET", "development-secret")
+JWT_SECRET = os.getenv("JWT_SECRET", "development-only-secret-change-me-32-chars")
 JWT_ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRES_MINUTES = 30
 

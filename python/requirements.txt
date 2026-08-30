@@ -1,3 +1,6 @@
+# Backend Engineer Roadmap dependencies
+# Install with: python -m pip install -r python/requirements.txt
+Flask
 Django
 djangorestframework
 fastapi

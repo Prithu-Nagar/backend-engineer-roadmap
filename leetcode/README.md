@@ -320,3 +320,21 @@ The implementations are stored in `dsa/binary_search/`.
 - Range Sum Query - Immutable
 
 The implementations are stored in `dsa/prefix_sums/`.
+
+---
+
+## Day 30 — Mixed Timed Set
+
+Day 30 uses a mixed timed set to review patterns from Days 11–29.
+
+Recommended timed set:
+
+1. **House Robber** — Dynamic Programming
+2. **Course Schedule II** — Graphs / Topological Sort
+3. **Kth Largest Element in an Array** — Heap
+4. **Koko Eating Bananas** — Binary Search on Answer
+5. **Product of Array Except Self** — Prefix/Suffix
+
+The set intentionally mixes previously covered patterns rather than introducing
+new problem types. Use the existing implementations under `dsa/` after the
+timed attempt for review and comparison.

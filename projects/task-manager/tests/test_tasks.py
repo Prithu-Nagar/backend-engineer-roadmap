@@ -65,7 +65,8 @@ def test_cannot_read_another_users_task(
     )
 
     assert result[1] == 403
-    assert "not allowed" in result[0]["error"].lower()
+    assert result[0]["error"]["code"] == "TASK_ACCESS_FORBIDDEN"
+    assert "not allowed" in result[0]["error"]["message"].lower()
 
 
 def test_update_own_task(user_data, task_data):

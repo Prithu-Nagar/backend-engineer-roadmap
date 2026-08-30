@@ -175,7 +175,7 @@ dsa/
 
 ---
 
-### Hashing
+## Hashing
 
 Covers hash-based problem solving using dictionaries and sets.
 
@@ -203,7 +203,7 @@ The corresponding problem list is maintained in:
 
 ---
 
-### Sliding Window
+## Sliding Window
 
 Covers fixed-size and variable-size sliding window techniques for efficient processing of contiguous subarrays and substrings.
 
@@ -455,3 +455,31 @@ Problems:
 - Range Sum Query - Immutable
 
 Implementations are stored in `prefix_sums/`.
+
+---
+
+## Day 30 — Review: Patterns from Days 11–29
+
+Day 30 is a review checkpoint rather than a new DSA topic.
+
+Patterns reviewed:
+
+- Dynamic Programming
+- Graph traversal and topological sort
+- Union-Find / DSU
+- Sorting
+- Greedy algorithms
+- Binary Search on Answer
+- Prefix Sums / Difference Arrays
+- Binary Trees and BSTs
+- Heaps
+- Sliding Window
+- Two Pointers
+- Intervals
+- Hashing
+
+The goal is to identify the correct pattern from a problem statement before
+starting implementation and to compare alternative approaches where useful.
+
+No duplicate solution files are added for Day 30; existing implementations are
+used for the review and timed practice.

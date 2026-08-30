@@ -85,7 +85,8 @@ def test_manage_users_requires_admin(user_data):
     result = authorization.manage_users(user_data)
 
     assert result[1] == 403
-    assert "permission" in result[0]["error"].lower()
+    assert result[0]["error"]["code"] == "FORBIDDEN"
+    assert "permission" in result[0]["error"]["message"].lower()
 
 
 def test_manage_users_allows_admin(admin_data):
@@ -106,7 +107,8 @@ def test_missing_user_requires_authentication():
     )
 
     assert result[1] == 401
-    assert "authentication" in result[0]["error"].lower()
+    assert result[0]["error"]["code"] == "UNAUTHORIZED"
+    assert "authentication" in result[0]["error"]["message"].lower()
 
 
 def test_missing_role_returns_forbidden():
@@ -123,7 +125,8 @@ def test_missing_role_returns_forbidden():
     )
 
     assert result[1] == 403
-    assert "role" in result[0]["error"].lower()
+    assert result[0]["error"]["code"] == "ROLE_NOT_FOUND"
+    assert "role" in result[0]["error"]["message"].lower()
 
 
 def test_create_access_token(user_data):

@@ -552,3 +552,23 @@ Detailed notes:
 
 The goal is to make schema changes incrementally without breaking existing
 application instances or consumers.
+
+---
+
+## Day 30 — SQL Review
+
+Day 30 reviews the database concepts covered during Days 11–29.
+
+Review areas:
+
+- Transactions and atomicity
+- Isolation and concurrency considerations
+- Indexes and query-planner awareness
+- Normalization and relational modeling
+- Query optimization
+- ORM vs raw SQL trade-offs
+- Pagination and query patterns
+- Migration-safe schema changes
+
+The review connects individual SQL techniques to backend application behavior:
+correctness, performance, maintainability, and safe schema evolution.

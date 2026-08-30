@@ -64,4 +64,5 @@ def test_read_task_for_another_user_is_forbidden(user):
     result = read_task(user, task)
 
     assert result[1] == 403
-    assert "not allowed" in result[0]["error"].lower()
+    assert result[0]["error"]["code"] == "TASK_ACCESS_FORBIDDEN"
+    assert "not allowed" in result[0]["error"]["message"].lower()

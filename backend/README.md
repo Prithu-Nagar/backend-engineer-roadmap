@@ -315,7 +315,7 @@ Flask testing allows you to:
 
 ---
 
-### Day 18 — Standardized API Errors
+## Day 18 — Standardized API Errors
 
 Day 18 extends error handling into a consistent API error-response format.
 
@@ -619,3 +619,39 @@ File:
 
 The URL Shortener project contains the complete project-level API test suite
 under `projects/url-shortener/tests/`.
+
+---
+
+## Day 30 — Flask vs Django vs FastAPI
+
+Day 30 reviews the backend frameworks used throughout the roadmap and focuses
+on choosing the right tool for a given service.
+
+### Framework Comparison
+
+| Area | Flask | Django / DRF | FastAPI |
+|---|---|---|---|
+| Core approach | Lightweight WSGI framework | Full-stack framework + REST toolkit | API-focused ASGI framework |
+| Best fit | Small services and custom applications | Feature-rich applications with ORM/admin/auth needs | Typed APIs and async-friendly services |
+| ORM | External choice | Django ORM | External choice |
+| Validation | Extension/application layer | DRF serializers | Pydantic / FastAPI validation |
+| API schema | Extension/tooling | DRF/OpenAPI tooling | Automatic OpenAPI support |
+| Async model | Possible with supporting stack | Django supports async patterns | First-class async endpoint model |
+| Batteries included | Low | High | Focused on APIs |
+| Main trade-off | More components are chosen separately | Larger framework surface | API-centric rather than full-stack |
+
+### Selection Checklist
+
+Choose based on:
+
+1. Application scope and complexity.
+2. Existing team and project conventions.
+3. ORM, admin, and authentication requirements.
+4. Async I/O requirements.
+5. Validation and type-safety needs.
+6. Deployment and operational constraints.
+7. Long-term maintainability.
+
+File:
+
+`framework_comparison.py`

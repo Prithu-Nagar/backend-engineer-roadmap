@@ -25,7 +25,7 @@ COMMIT;
 -- Consistency
 -- A transaction should move the database from one valid state
 -- to another valid state while respecting database constraints.
-----------------------------------------------------------------
+-- ----------------------------------------------------------------
 
 -- Example:
 -- An UPDATE that violates a database constraint should fail
@@ -34,9 +34,9 @@ COMMIT;
 -- Isolation
 -- Concurrent transactions should not incorrectly interfere
 -- with one another.
---------------------
+-- --------------------
 
-## -- PostgreSQL provides multiple transaction isolation levels:
+-- PostgreSQL provides multiple transaction isolation levels:
 
 -- READ UNCOMMITTED
 -- READ COMMITTED
@@ -117,13 +117,13 @@ COMMIT;
 -- TRANSACTION ISOLATION LEVELS
 -- ============================================================
 
-## -- PostgreSQL supports the following isolation levels:
+-- PostgreSQL supports the following isolation levels:
 
 -- READ UNCOMMITTED
 -- READ COMMITTED
 -- REPEATABLE READ
 -- SERIALIZABLE
----------------
+-- ---------------
 
 -- READ COMMITTED is PostgreSQL's default isolation level.
 
@@ -157,9 +157,9 @@ WHERE employee_id = 101;
 
 COMMIT;
 
-## -- READ UNCOMMITTED
+-- READ UNCOMMITTED
 
-## -- PostgreSQL treats READ UNCOMMITTED as READ COMMITTED.
+-- PostgreSQL treats READ UNCOMMITTED as READ COMMITTED.
 
 -- The following syntax is valid PostgreSQL syntax, but it
 -- provides READ COMMITTED behavior.
@@ -178,14 +178,14 @@ COMMIT;
 
 -- Isolation levels control how concurrent transactions can
 -- observe changes made by other transactions.
-----------------------------------------------
+-- ----------------------------------------------
 
-## -- Important concurrency problems include:
+-- Important concurrency problems include:
 
 -- Dirty Read
 -- Non-repeatable Read
 -- Phantom Read
----------------
+-- ---------------
 
 -- Higher isolation generally provides stronger consistency
 -- guarantees but can reduce concurrency.
@@ -194,7 +194,7 @@ COMMIT;
 -- ROW-LEVEL LOCKING
 -- ============================================================
 
-## -- SELECT ... FOR UPDATE obtains a row-level lock.
+-- SELECT ... FOR UPDATE obtains a row-level lock.
 
 -- This is useful when a transaction needs to read a row and
 -- then safely modify it without another transaction modifying
@@ -217,7 +217,7 @@ COMMIT;
 -- SELECT FOR UPDATE
 -- ============================================================
 
-## -- The selected rows remain locked until the transaction ends.
+-- The selected rows remain locked until the transaction ends.
 
 -- Another transaction attempting to update the same locked row
 -- may have to wait until the first transaction commits or rolls
@@ -240,24 +240,24 @@ COMMIT;
 -- LOCKING AND CONCURRENT UPDATES
 -- ============================================================
 
-## -- Example scenario:
+-- Example scenario:
 
-## -- Transaction A:
+-- Transaction A:
 
 -- BEGIN;
 -- SELECT *
 -- FROM employees
 -- WHERE employee_id = 103
 -- FOR UPDATE;
---------------
+-- --------------
 
 -- Transaction B attempting to update employee 103 may need
 -- to wait until Transaction A finishes.
-----------------------------------------
+-- ----------------------------------------
 
-## -- Transaction A:
+-- Transaction A:
 
-## -- COMMIT;
+-- COMMIT;
 
 -- The lock is then released.
 
@@ -267,38 +267,38 @@ COMMIT;
 
 -- BEGIN
 --     Starts a transaction.
-----------------------------
+-- ----------------------------
 
 -- COMMIT
 --     Permanently saves the transaction's changes.
----------------------------------------------------
+-- ---------------------------------------------------
 
 -- ROLLBACK
 --     Discards changes made during the transaction.
-----------------------------------------------------
+-- ----------------------------------------------------
 
 -- SAVEPOINT
 --     Creates a point to which the transaction can partially
 --     roll back.
------------------
+-- -----------------
 
 -- ACID
 --     Atomicity
 --     Consistency
 --     Isolation
 --     Durability
------------------
+-- -----------------
 
 -- Isolation Levels
 --     READ UNCOMMITTED
 --     READ COMMITTED
 --     REPEATABLE READ
 --     SERIALIZABLE
--------------------
+-- -------------------
 
 -- Locks
 --     Protect rows from conflicting concurrent modifications.
---------------------------------------------------------------
+-- --------------------------------------------------------------
 
 -- SELECT ... FOR UPDATE
 --     Locks selected rows for update until the transaction ends.

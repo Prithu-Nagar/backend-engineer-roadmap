@@ -1,6 +1,13 @@
 # URL Shortener
 
-Day 21 starts a new backend project: a production-oriented URL shortener.
+Day 21 starts a backend URL shortener project that is developed incrementally
+through the Django/DRF and FastAPI learning milestones in this repository.
+
+> **Current status (Day 30):** The repository contains the planned learning
+> artifacts and framework implementations through Day 30. The Django/DRF
+> portion is intentionally a learning-stage implementation rather than a
+> standalone deployment-ready Django project. The FastAPI implementation has
+> an executable test suite.
 
 ## Goal
 
@@ -455,3 +462,35 @@ HTTP API boundary.
 The existing Django/DRF implementation remains the persistent project source of
 truth, while the FastAPI comparison implementation now has a repeatable test
 suite.
+
+---
+
+## Day 30 — Phase Milestone
+
+Day 30 is the Backend Engineering phase checkpoint for the URL Shortener.
+
+The project now contains the planned Day 21–29 progression:
+
+- Django model and migration foundation
+- DRF endpoints
+- Validation and response contracts
+- Authentication, permissions, and ownership
+- FastAPI comparison implementation
+- Async FastAPI endpoint
+- Complete FastAPI API test suite
+- Schema migration and backward-compatibility learning artifacts
+
+### Milestone Review
+
+The goal is to confirm that the project can be explained from both the
+implementation and architecture perspectives:
+
+- Why Django/DRF is the persistent project implementation
+- Why FastAPI is retained as a comparison artifact
+- How authentication and ownership boundaries work
+- How dependencies are overridden during API tests
+- How schema changes can be introduced safely
+
+Day 30 does not replace or remove any earlier project implementation. It
+documents the completed Backend Engineering milestone before the roadmap moves
+to database and distributed-systems topics.

@@ -1458,3 +1458,27 @@ This approach ensures that concepts are not only understood but also applied in 
 - URL Shortener complete FastAPI test suite
 - Isolated dependency overrides
 - Create, list, retrieve, validation, and 404 API tests
+
+---
+
+## Day 30 — Backend Engineering Review
+
+Day 30 consolidates the Backend Engineering phase through a cross-track review
+of the patterns introduced from Days 11–29.
+
+### Review Focus
+
+- DSA pattern review from Days 11–29
+- Python review: AsyncIO, typing, packaging, and testing
+- SQL review: transactions, indexes, normalization, and optimization
+- Mixed timed LeetCode practice
+- Flask vs Django vs FastAPI framework selection
+- Backend architecture review
+- URL Shortener milestone and README consolidation
+
+The URL Shortener project now has the complete Day 21–29 learning sequence
+represented in the repository, including Django/DRF, FastAPI, authentication,
+async endpoints, migrations, and API tests.
+
+Day 30 serves as the consolidation checkpoint before the roadmap moves into
+Databases & Distributed Systems on Day 31.
