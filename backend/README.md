@@ -655,3 +655,25 @@ Choose based on:
 File:
 
 `framework_comparison.py`
+
+## Day 31 — Database Connection Pooling
+
+Day 31 introduces database connection pooling as a backend resource-management
+concern.
+
+Topics include:
+
+- Reusing database connections
+- Bounded connection pools
+- Borrowing and returning connections
+- Pool exhaustion
+- Connection leaks
+- Long-running transactions
+- Pool sizing across multiple application instances
+
+File:
+
+`connection_pooling.py`
+
+The example uses a small standard-library pool abstraction so the lifecycle can
+be studied without requiring a specific database driver.

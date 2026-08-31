@@ -472,3 +472,27 @@ Should the table be built:
 Do we actually need the complete DP table, or only the previous row/state?
 
 These questions form the foundation for recognizing and solving Dynamic Programming problems.
+
+## Day 31 — Advanced DP: Knapsack Pattern
+
+Day 31 introduces the 0/1 Knapsack pattern and connects it to subset-sum
+problems.
+
+Topics include:
+
+- Choosing an item at most once
+- Capacity-based DP state
+- Include vs exclude transitions
+- Reverse iteration for 0/1 knapsack
+- Subset-sum transformation
+- Space optimization from 2D to 1D DP
+
+Files:
+
+- `knapsack_01.py`
+- `partition_equal_subset_sum.py`
+- `coin_change.py`
+
+The key distinction is that 0/1 decisions require reverse iteration when a
+1D state array is reused; forward iteration can accidentally reuse the same
+item multiple times in one pass.

@@ -683,3 +683,27 @@ Detailed review:
 The objective is to select the simplest architecture that satisfies the
 requirements while making reliability, scalability, and operational trade-offs
 explicit.
+
+## Day 31 — Database Connection Pooling & Saturation
+
+Day 31 introduces connection pooling as a capacity-management problem between
+application instances and a relational database.
+
+Topics include:
+
+- Connection reuse
+- Bounded pool capacity
+- Pool saturation
+- Connection acquisition and release
+- Pool sizing with horizontal scaling
+- Connection leaks
+- Long-running transactions
+- Database capacity limits
+- Pool health metrics
+
+Detailed notes:
+
+`database-connection-pooling.md`
+
+The focus is on understanding that increasing pool size is not equivalent to
+increasing database throughput.

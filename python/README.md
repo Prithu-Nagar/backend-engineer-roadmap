@@ -701,3 +701,25 @@ Review areas:
 The review emphasizes choosing the appropriate Python feature for backend
 code rather than treating asynchronous execution, typing, packaging, or
 testing patterns as isolated topics.
+
+## Day 31 — Concurrency Review
+
+Day 31 reviews thread safety and shared-state coordination.
+
+Topics include:
+
+- Race conditions
+- Shared mutable state
+- `threading.Lock`
+- `threading.RLock`
+- `threading.Condition`
+- Critical sections
+- Coordination between producer and consumer threads
+
+File:
+
+`concurrency_review.py`
+
+The examples emphasize identifying the smallest critical section that must be
+protected and using condition variables for coordination rather than relying
+on timing assumptions.

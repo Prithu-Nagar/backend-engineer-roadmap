@@ -1482,3 +1482,59 @@ async endpoints, migrations, and API tests.
 
 Day 30 serves as the consolidation checkpoint before the roadmap moves into
 Databases & Distributed Systems on Day 31.
+
+## Day 31 — Databases & Distributed Systems
+
+Day 31 begins the Databases & Distributed Systems phase.
+
+### DSA
+
+- Advanced Dynamic Programming
+- 0/1 Knapsack pattern
+- Subset-sum transformation
+- 1D DP space optimization
+
+### Python
+
+- Concurrency review
+- Race conditions
+- Thread safety
+- `Lock`
+- `RLock`
+- `Condition`
+
+### SQL
+
+- Transaction isolation levels
+- Dirty reads
+- Non-repeatable reads
+- Phantom reads
+- PostgreSQL isolation behavior
+
+### LeetCode
+
+- Partition Equal Subset Sum
+- Coin Change
+
+### Backend
+
+- Database connection pooling
+- Pool lifecycle
+- Pool exhaustion and saturation
+- Connection reuse
+
+### System Design
+
+- Database connection pooling
+- Pool sizing
+- Saturation
+- Application/database capacity relationship
+
+### Project
+
+- Expense Tracker API requirements
+- Expense data and API boundaries
+- Planned database and CRUD milestone for Day 32
+
+Day 31 marks the transition from the Backend Engineering phase into the
+Databases & Distributed Systems phase.

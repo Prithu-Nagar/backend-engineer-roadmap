@@ -401,3 +401,27 @@ Milestone review:
 The project README is updated as the phase checkpoint. No new application
 feature is introduced on Day 30; the milestone focuses on consolidation,
 documentation, and readiness for the database/distributed-systems phase.
+
+## Day 31 — Expense Tracker Requirements
+
+Day 31 starts the Expense Tracker project for the Databases & Distributed
+Systems phase.
+
+Added:
+
+- `projects/expense-tracker/README.md`
+
+The requirements define:
+
+- Expense creation
+- Expense listing and filtering
+- Date-range queries
+- Pagination
+- Expense retrieval, update, and deletion
+- Relational data requirements
+- Validation and HTTP expectations
+- Transaction and connection-pooling considerations
+
+Day 31 intentionally defines the project boundary without implementing the
+database schema or CRUD layer. Those implementation steps are scheduled for
+Day 32.

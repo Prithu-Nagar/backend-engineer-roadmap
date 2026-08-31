@@ -572,3 +572,26 @@ Review areas:
 
 The review connects individual SQL techniques to backend application behavior:
 correctness, performance, maintainability, and safe schema evolution.
+
+## Day 31 — Transaction Isolation Levels
+
+Day 31 focuses on how transaction isolation affects concurrent database work.
+
+Topics include:
+
+- `READ UNCOMMITTED`
+- `READ COMMITTED`
+- `REPEATABLE READ`
+- `SERIALIZABLE`
+- Dirty reads
+- Non-repeatable reads
+- Phantom reads
+- Stable transaction snapshots
+- Isolation vs concurrency trade-offs
+
+Detailed examples:
+
+`isolation_levels.sql`
+
+The examples are PostgreSQL-oriented. In PostgreSQL, `READ UNCOMMITTED`
+behaves like `READ COMMITTED`, so dirty reads are not exposed.

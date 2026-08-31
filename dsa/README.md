@@ -483,3 +483,18 @@ starting implementation and to compare alternative approaches where useful.
 
 No duplicate solution files are added for Day 30; existing implementations are
 used for the review and timed practice.
+
+## Day 31 — Advanced Dynamic Programming
+
+Day 31 introduces the knapsack family of Dynamic Programming problems.
+
+Topics:
+
+- 0/1 Knapsack
+- Capacity-based state
+- Include/exclude transitions
+- Subset-sum transformation
+- Unbounded knapsack intuition through Coin Change
+- 1D space optimization
+
+Implementations are stored in `dynamic_programming/`.
