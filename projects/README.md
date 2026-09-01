@@ -288,7 +288,7 @@ Added or updated:
 - Owner-scoped URL listing and retrieval
 - Django admin ownership visibility
 
-New short URLs are associated with the authenticated Django user. 
+New short URLs are associated with the authenticated Django user.
 
 ---
 
@@ -402,6 +402,8 @@ The project README is updated as the phase checkpoint. No new application
 feature is introduced on Day 30; the milestone focuses on consolidation,
 documentation, and readiness for the database/distributed-systems phase.
 
+---
+
 ## Day 31 — Expense Tracker Requirements
 
 Day 31 starts the Expense Tracker project for the Databases & Distributed
@@ -425,3 +427,29 @@ The requirements define:
 Day 31 intentionally defines the project boundary without implementing the
 database schema or CRUD layer. Those implementation steps are scheduled for
 Day 32.
+
+---
+
+## Day 32 — Expense Tracker Schema + CRUD
+
+Day 32 moves the Expense Tracker from requirements into its first database
+implementation layer.
+
+Added:
+
+- `projects/expense-tracker/schema.sql`
+- `projects/expense-tracker/crud.py`
+
+The implementation includes:
+
+- Relational `expenses` table
+- Positive monetary amount constraint
+- Category and date indexes
+- Create, retrieve, list, update, and delete operations
+- Category and date-range filtering
+- Stable pagination ordering
+- SQLAlchemy 2.x `Session` usage
+- Explicit transaction ownership at the service boundary
+
+Day 32 builds on the requirements defined on Day 31 without replacing earlier
+project work.

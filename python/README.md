@@ -702,6 +702,8 @@ The review emphasizes choosing the appropriate Python feature for backend
 code rather than treating asynchronous execution, typing, packaging, or
 testing patterns as isolated topics.
 
+---
+
 ## Day 31 — Concurrency Review
 
 Day 31 reviews thread safety and shared-state coordination.
@@ -723,3 +725,26 @@ File:
 The examples emphasize identifying the smallest critical section that must be
 protected and using condition variables for coordination rather than relying
 on timing assumptions.
+
+---
+
+## Day 32 — Thread Safety
+
+Day 32 focuses on safe shared-state access across Python threads.
+
+Topics include:
+
+- Thread-safe shared state
+- `threading.Lock`
+- `threading.RLock`
+- `threading.Condition`
+- Critical-section boundaries
+- Producer/consumer coordination
+- Waiting with a condition instead of timing assumptions
+
+File:
+
+`thread_safety.py`
+
+The examples complement the Day 31 concurrency review by isolating the
+synchronization primitives used to protect and coordinate threaded work.

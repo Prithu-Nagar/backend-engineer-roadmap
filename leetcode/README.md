@@ -339,6 +339,8 @@ The set intentionally mixes previously covered patterns rather than introducing
 new problem types. Use the existing implementations under `dsa/` after the
 timed attempt for review and comparison.
 
+---
+
 ## Day 31 — Advanced Dynamic Programming
 
 - Partition Equal Subset Sum
@@ -346,3 +348,12 @@ timed attempt for review and comparison.
 
 Both problems are implemented under `dsa/dynamic_programming/` and reinforce
 the knapsack/subset-sum family of Dynamic Programming patterns.
+
+---
+
+## Day 32 — Advanced Dynamic Programming
+
+- Longest Increasing Subsequence
+- Decode Ways
+
+Both problems are implemented under `dsa/dynamic_programming/`.

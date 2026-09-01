@@ -684,6 +684,8 @@ The objective is to select the simplest architecture that satisfies the
 requirements while making reliability, scalability, and operational trade-offs
 explicit.
 
+---
+
 ## Day 31 — Database Connection Pooling & Saturation
 
 Day 31 introduces connection pooling as a capacity-management problem between
@@ -707,3 +709,27 @@ Detailed notes:
 
 The focus is on understanding that increasing pool size is not equivalent to
 increasing database throughput.
+
+---
+
+## Day 32 — Distributed Locks
+
+Day 32 introduces distributed locks as a coordination mechanism for work that
+can be executed by multiple application instances.
+
+Topics include:
+
+- Distributed lock scope
+- Local locks vs distributed locks
+- Lock ownership
+- Lease / TTL concepts
+- Worker failure scenarios
+- Database locks vs distributed locks
+- Idempotency and failure handling
+
+Detailed notes:
+
+`distributed-locks.md`
+
+The focus is on defining the critical section and failure model before choosing
+a coordination mechanism.

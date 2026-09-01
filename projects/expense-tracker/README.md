@@ -89,6 +89,8 @@ The project should evolve toward:
 - Observability
 - Production-oriented configuration
 
+---
+
 ## Day 31 Scope
 
 Day 31 focuses only on requirements and project boundaries.
@@ -99,3 +101,67 @@ Planned next step:
 
 The project should grow incrementally without replacing or removing earlier
 roadmap projects.
+
+---
+
+## Day 32 — Database Schema + CRUD
+
+Day 32 implements the first database layer for the Expense Tracker.
+
+Added:
+
+- `schema.sql`
+- `crud.py`
+
+### Database Schema
+
+The schema defines an `expenses` table with:
+
+- Auto-generated expense ID
+- Positive monetary amount
+- Category
+- Optional description
+- Expense date
+- Creation and update timestamps
+- Category/date index
+- Expense-date index
+
+### CRUD Layer
+
+`crud.py` uses SQLAlchemy 2.x ORM models and an injected `Session`.
+
+Supported operations:
+
+- Create an expense
+- Retrieve an expense by ID
+- List expenses with category/date filters
+- Apply stable limit/offset pagination
+- Update supported fields
+- Delete an expense
+
+The CRUD functions call `flush()` rather than committing internally. This keeps
+transaction ownership at the request/service boundary and allows multiple
+operations to participate in one transaction.
+
+### Transaction Boundary
+
+The application layer should own the transaction lifecycle:
+
+```text
+Request
+   |
+   v
+Open Session / transaction
+   |
+   +--> CRUD operation(s)
+   |
+   +--> commit on success
+   |
+   +--> rollback on failure
+   |
+   v
+Close Session
+```
+
+This design keeps database work composable and prepares the project for the
+transaction, concurrency, and reliability topics covered later in the roadmap.

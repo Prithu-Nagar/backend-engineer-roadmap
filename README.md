@@ -1483,6 +1483,8 @@ async endpoints, migrations, and API tests.
 Day 30 serves as the consolidation checkpoint before the roadmap moves into
 Databases & Distributed Systems on Day 31.
 
+---
+
 ## Day 31 — Databases & Distributed Systems
 
 Day 31 begins the Databases & Distributed Systems phase.
@@ -1538,3 +1540,66 @@ Day 31 begins the Databases & Distributed Systems phase.
 
 Day 31 marks the transition from the Backend Engineering phase into the
 Databases & Distributed Systems phase.
+
+---
+
+## Day 32 — Databases & Distributed Systems
+
+Day 32 continues the Databases & Distributed Systems phase with concurrency,
+deadlocks, ORM sessions, distributed coordination, and the first Expense
+Tracker database implementation.
+
+### DSA
+
+- Advanced Dynamic Programming
+- Subsequence/state DP
+- Longest Increasing Subsequence
+- Decode Ways
+
+### Python
+
+- Thread safety
+- `Lock`
+- `RLock`
+- `Condition`
+- Shared-state synchronization
+
+### SQL
+
+- Deadlocks
+- Deadlock detection
+- Consistent lock ordering
+- Deadlock avoidance
+
+### LeetCode
+
+- Longest Increasing Subsequence
+- Decode Ways
+
+### Backend
+
+- SQLAlchemy 2.x ORM
+- Session lifecycle
+- Commit and rollback
+- Flush and refresh
+- Explicit transaction boundaries
+
+### System Design
+
+- Distributed locks
+- Lock ownership
+- Lease / TTL
+- Failure handling
+- Database locks vs distributed locks
+
+### Project
+
+- Expense Tracker relational schema
+- SQLAlchemy CRUD layer
+- Category/date filtering
+- Stable pagination
+- Explicit transaction ownership
+
+Day 32 extends the Expense Tracker from requirements into a working database
+schema and CRUD foundation while continuing the concurrency and distributed
+systems track.

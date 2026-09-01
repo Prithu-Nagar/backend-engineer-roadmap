@@ -473,6 +473,8 @@ Do we actually need the complete DP table, or only the previous row/state?
 
 These questions form the foundation for recognizing and solving Dynamic Programming problems.
 
+---
+
 ## Day 31 — Advanced DP: Knapsack Pattern
 
 Day 31 introduces the 0/1 Knapsack pattern and connects it to subset-sum
@@ -496,3 +498,22 @@ Files:
 The key distinction is that 0/1 decisions require reverse iteration when a
 1D state array is reused; forward iteration can accidentally reuse the same
 item multiple times in one pass.
+
+---
+
+## Day 32 — Subsequence / State DP
+
+Day 32 extends Dynamic Programming into subsequence and state-based problems.
+
+Topics:
+
+- Longest Increasing Subsequence
+- State transitions over sequence positions
+- `O(n log n)` LIS optimization with a tails array
+- Decode Ways state transitions
+- Constant-space DP for linear state problems
+
+Implementations:
+
+- `longest_increasing_subsequence.py`
+- `decode_ways.py`

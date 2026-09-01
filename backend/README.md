@@ -71,7 +71,7 @@ Organizing Flask applications into modular components using Blueprints.
 
 Blueprints help separate application functionality into logical modules and make larger Flask applications easier to maintain.
 
-## Day 19 — API Documentation 
+## Day 19 — API Documentation
 
 Day 19 introduces API documentation and OpenAPI concepts.
 
@@ -656,6 +656,8 @@ File:
 
 `framework_comparison.py`
 
+---
+
 ## Day 31 — Database Connection Pooling
 
 Day 31 introduces database connection pooling as a backend resource-management
@@ -677,3 +679,26 @@ File:
 
 The example uses a small standard-library pool abstraction so the lifecycle can
 be studied without requiring a specific database driver.
+
+---
+
+## Day 32 — SQLAlchemy / ORM Session Concepts
+
+Day 32 introduces SQLAlchemy 2.x ORM session patterns for database-backed
+backend services.
+
+Topics include:
+
+- Declarative ORM models
+- `Session` lifecycle
+- Adding and querying ORM entities
+- Explicit commit and rollback
+- Flush and refresh behavior
+- Keeping transaction ownership explicit
+
+File:
+
+`sqlalchemy_session.py`
+
+The example uses a small Expense model and a local SQLite database so the ORM
+session lifecycle can be studied without requiring an external database.

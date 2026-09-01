@@ -573,6 +573,8 @@ Review areas:
 The review connects individual SQL techniques to backend application behavior:
 correctness, performance, maintainability, and safe schema evolution.
 
+---
+
 ## Day 31 — Transaction Isolation Levels
 
 Day 31 focuses on how transaction isolation affects concurrent database work.
@@ -595,3 +597,26 @@ Detailed examples:
 
 The examples are PostgreSQL-oriented. In PostgreSQL, `READ UNCOMMITTED`
 behaves like `READ COMMITTED`, so dirty reads are not exposed.
+
+---
+
+## Day 32 — Deadlocks: Detection & Avoidance
+
+Day 32 focuses on deadlocks that can occur when concurrent transactions hold
+resources while waiting for resources held by each other.
+
+Topics include:
+
+- Deadlock cycles
+- Consistent lock ordering
+- Transaction scope
+- PostgreSQL lock inspection
+- Lock and statement timeouts
+- Retry handling for safe operations
+
+Detailed examples:
+
+`deadlocks.sql`
+
+The examples are PostgreSQL-oriented and include two-session deadlock
+scenarios plus practical avoidance and observability queries.
