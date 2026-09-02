@@ -357,3 +357,13 @@ the knapsack/subset-sum family of Dynamic Programming patterns.
 - Decode Ways
 
 Both problems are implemented under `dsa/dynamic_programming/`.
+
+---
+
+## Day 33 — Dynamic Programming: State Reduction
+
+- Unique Paths II
+- House Robber II
+
+Both problems are implemented under `dsa/dynamic_programming/` and reinforce
+state compression and the reduction of circular constraints to linear DP cases.

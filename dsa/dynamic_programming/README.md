@@ -517,3 +517,27 @@ Implementations:
 
 - `longest_increasing_subsequence.py`
 - `decode_ways.py`
+
+---
+
+## Day 33 — DP State Reduction
+
+Day 33 focuses on recognizing when a Dynamic Programming table can be reduced
+to a smaller state representation.
+
+Topics:
+
+- Unique Paths II with a 1D DP array
+- Resetting blocked-cell states
+- Preserving left and previous-row state during traversal
+- House Robber II and circular constraints
+- Reducing a circular problem to two linear cases
+- Constant-space rolling states
+
+Implementations:
+
+- `unique_paths_ii.py`
+- `house_robber_ii.py`
+
+The key idea is to keep only the state that the next transition actually needs
+rather than storing the complete DP table.

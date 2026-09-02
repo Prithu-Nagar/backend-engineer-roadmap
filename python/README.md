@@ -748,3 +748,27 @@ File:
 
 The examples complement the Day 31 concurrency review by isolating the
 synchronization primitives used to protect and coordinate threaded work.
+
+---
+
+## Day 33 — Multiprocessing Pools, Queues & Process Boundaries
+
+Day 33 focuses on using multiple processes for independent work and on
+understanding how data crosses a process boundary.
+
+Topics include:
+
+- `multiprocessing.Pool`
+- Pool-based task distribution
+- `multiprocessing.Queue`
+- Producer/consumer communication
+- Process lifecycle and `join()`
+- Serialization when data crosses process boundaries
+- Choosing processes for CPU-bound work
+
+File:
+
+`multiprocessing_pools.py`
+
+The example separates independent CPU-bound work from explicit inter-process
+communication and keeps process creation behind the `__main__` guard.

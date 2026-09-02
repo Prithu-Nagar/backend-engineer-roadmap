@@ -702,3 +702,27 @@ File:
 
 The example uses a small Expense model and a local SQLite database so the ORM
 session lifecycle can be studied without requiring an external database.
+
+---
+
+## Day 33 — Background Jobs
+
+Day 33 introduces background jobs as a way to move work that does not need to
+complete in the request path into asynchronous processing.
+
+Topics include:
+
+- Background job boundaries
+- Producer and worker responsibilities
+- In-process job queues
+- Job lifecycle
+- Waiting for completion during controlled shutdown
+- Separating request latency from background work
+- When a durable external queue is preferable
+
+File:
+
+`background_jobs.py`
+
+The example uses the standard library to demonstrate the application-side
+producer/worker boundary without introducing a third-party task framework.

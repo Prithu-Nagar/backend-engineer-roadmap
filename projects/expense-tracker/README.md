@@ -165,3 +165,24 @@ Close Session
 
 This design keeps database work composable and prepares the project for the
 transaction, concurrency, and reliability topics covered later in the roadmap.
+
+---
+
+## Day 33 — Background Aggregation
+
+Day 33 adds an aggregation workload that can be executed as background work.
+
+Added:
+
+- `background_aggregation.py`
+
+The aggregation function supports:
+
+- Start and end date filtering
+- Grouping by expense category
+- `SUM` aggregation of expense amounts
+- Stable category ordering
+- Injected SQLAlchemy `Session` usage
+
+The function does not commit or close the session. Transaction and session
+lifecycle remain owned by the surrounding application or worker boundary.

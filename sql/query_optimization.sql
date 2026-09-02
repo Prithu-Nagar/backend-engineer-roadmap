@@ -257,3 +257,74 @@ ORDER BY name;
 -- 8. Filter data as early as practical.
 -- 9. Avoid unnecessary functions on indexed columns.
 -- 10. Review joins, sorting, and aggregation operations.
+-- ============================================================
+-- Day 33: Query Plans, Joins and Index Usage
+-- ============================================================
+
+-- Read the plan before deciding whether an index or query rewrite
+-- is justified. The optimizer chooses a plan from statistics,
+-- available indexes, estimated cardinality, and cost.
+
+EXPLAIN
+SELECT e.id, e.name, d.name AS department_name
+FROM employees AS e
+JOIN departments AS d
+    ON d.id = e.department_id
+WHERE e.status = 'active';
+
+
+-- Index the join/filter columns when the workload and data
+-- distribution justify it.
+
+CREATE INDEX idx_employees_status_department
+ON employees(status, department_id);
+
+EXPLAIN
+SELECT e.id, e.name, d.name AS department_name
+FROM employees AS e
+JOIN departments AS d
+    ON d.id = e.department_id
+WHERE e.status = 'active';
+
+
+-- A join-column index can help the database locate matching
+-- rows efficiently, depending on the chosen join strategy.
+
+CREATE INDEX idx_employees_department_id
+ON employees(department_id);
+
+EXPLAIN
+SELECT e.id, e.name, d.name AS department_name
+FROM departments AS d
+JOIN employees AS e
+    ON e.department_id = d.id
+WHERE d.id = 10;
+
+
+-- Compare estimated and actual row counts when diagnosing a
+-- slow query. Large differences can indicate stale statistics
+-- or data-distribution assumptions that need investigation.
+
+EXPLAIN ANALYZE
+SELECT e.id, e.name, d.name AS department_name
+FROM employees AS e
+JOIN departments AS d
+    ON d.id = e.department_id
+WHERE e.status = 'active';
+
+
+-- Common join operations visible in PostgreSQL plans include:
+-- - Nested Loop
+-- - Hash Join
+-- - Merge Join
+--
+-- The fastest join strategy depends on table size, selectivity,
+-- available indexes, sort order, and estimated row counts.
+
+-- Day 33 checklist:
+-- 1. Read the plan before changing the query.
+-- 2. Check estimated versus actual rows.
+-- 3. Inspect join strategy and join conditions.
+-- 4. Verify indexes on selective filter and join columns.
+-- 5. Avoid adding indexes without considering write overhead.
+-- 6. Re-measure after each meaningful query or index change.

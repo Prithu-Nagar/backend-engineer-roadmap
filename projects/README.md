@@ -453,3 +453,25 @@ The implementation includes:
 
 Day 32 builds on the requirements defined on Day 31 without replacing earlier
 project work.
+
+---
+
+## Day 33 — Expense Tracker Background Aggregation
+
+Day 33 extends the Expense Tracker with an aggregation workload suitable for
+background processing.
+
+Added:
+
+- `projects/expense-tracker/background_aggregation.py`
+
+The aggregation layer includes:
+
+- Date-range filtering
+- Grouping expenses by category
+- Summing monetary amounts with SQL aggregation
+- Stable category ordering
+- A session-injected design suitable for a background worker
+
+The aggregation is kept separate from the HTTP request path so it can later be
+submitted to the worker-queue architecture introduced on Day 33.

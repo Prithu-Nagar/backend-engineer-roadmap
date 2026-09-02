@@ -240,7 +240,6 @@ Requests accumulate in a queue and are processed at a controlled rate.
 | Queue required | No | Usually |
 | Common use | APIs | Traffic shaping |
 | Burst handling | Flexible | More controlled |
-Burst handling	Flexible	More controlled
 
 ## Distributed Rate Limiting
 

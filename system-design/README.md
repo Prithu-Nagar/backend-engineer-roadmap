@@ -733,3 +733,27 @@ Detailed notes:
 
 The focus is on defining the critical section and failure model before choosing
 a coordination mechanism.
+
+---
+
+## Day 33 — Worker Queues
+
+Day 33 introduces worker queues for asynchronous backend processing.
+
+Topics include:
+
+- Producer/consumer architecture
+- Moving work out of the request path
+- At-least-once delivery considerations
+- Retries and dead-letter handling
+- Ordering requirements
+- Worker scaling
+- Queue depth and job-age monitoring
+- In-process tasks vs durable external queues
+
+Detailed notes:
+
+`worker-queues.md`
+
+The focus is on defining delivery, failure, idempotency, and capacity
+requirements before choosing a queue implementation.

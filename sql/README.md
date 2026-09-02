@@ -620,3 +620,28 @@ Detailed examples:
 
 The examples are PostgreSQL-oriented and include two-session deadlock
 scenarios plus practical avoidance and observability queries.
+
+---
+
+## Day 33 — Query Plans, Joins & Index Usage
+
+Day 33 applies query-plan reading to joins and index selection.
+
+Topics include:
+
+- `EXPLAIN`
+- Estimated rows and cost
+- Join strategies
+- Index scans
+- Composite indexes
+- Join-column indexes
+- Filtering before expensive operations
+- Comparing plans rather than assuming an index is always beneficial
+
+Detailed examples:
+
+`query_optimization.sql`
+
+The examples are PostgreSQL-oriented. Query plans should be measured with the
+actual schema and data distribution because the optimizer may choose different
+strategies as cardinality and statistics change.

@@ -1603,3 +1603,61 @@ Tracker database implementation.
 Day 32 extends the Expense Tracker from requirements into a working database
 schema and CRUD foundation while continuing the concurrency and distributed
 systems track.
+
+---
+
+## Day 33 — Databases & Distributed Systems
+
+Day 33 continues the Databases & Distributed Systems phase with Dynamic
+Programming state reduction, multiprocessing, query-plan analysis, background
+jobs, worker queues, and Expense Tracker aggregation.
+
+### DSA
+
+- Dynamic Programming state reduction
+- Unique Paths II
+- House Robber II
+
+### Python
+
+- Multiprocessing pools
+- Inter-process queues
+- Process boundaries
+- Process lifecycle
+
+### SQL
+
+- Query-plan reading
+- Join strategies
+- Index usage
+- Composite and join-column indexes
+
+### LeetCode
+
+- Unique Paths II
+- House Robber II
+
+### Backend
+
+- Background jobs
+- Producer/worker boundaries
+- In-process job queues
+- Background processing lifecycle
+
+### System Design
+
+- Worker queues
+- Producer/consumer architecture
+- Retries and dead-letter handling
+- Worker scaling and queue monitoring
+
+### Project
+
+- Expense Tracker background aggregation
+- Date-range aggregation
+- Category-level totals
+- Worker-oriented separation of aggregation work
+
+Day 33 extends the Expense Tracker database foundation with an asynchronous
+aggregation workload while continuing the distributed-systems focus on worker
+capacity, queue semantics, and reliable background processing.

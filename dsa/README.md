@@ -514,3 +514,25 @@ Problems:
 - Decode Ways
 
 Implementations are stored in `dynamic_programming/`.
+
+---
+
+## Day 33 — Dynamic Programming: State Reduction
+
+Day 33 focuses on reducing Dynamic Programming state while preserving the
+transitions required by the problem.
+
+Problems:
+
+- Unique Paths II
+- House Robber II
+
+Topics:
+
+- Obstacle-aware grid DP
+- 1D state compression
+- Circular Dynamic Programming
+- Splitting circular problems into linear cases
+- Reusing a constant-size state
+
+Implementations are stored in `dynamic_programming/`.
