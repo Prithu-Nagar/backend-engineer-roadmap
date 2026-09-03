@@ -290,7 +290,6 @@ List responses also include lightweight metadata:
 This establishes a consistent response contract before later roadmap days add
 authentication, administration, and broader API capabilities.
 
-
 ## Day 25 — Authentication + Admin
 
 Day 25 adds authenticated ownership to the URL Shortener while preserving the

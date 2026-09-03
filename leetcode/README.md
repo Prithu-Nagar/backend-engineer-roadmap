@@ -275,7 +275,6 @@ More Dynamic Programming patterns
 - Course Schedule II
 - Alien Dictionary
 
-
 ## Day 25 — Union-Find / DSU
 
 - Number of Provinces
@@ -367,3 +366,15 @@ Both problems are implemented under `dsa/dynamic_programming/`.
 
 Both problems are implemented under `dsa/dynamic_programming/` and reinforce
 state compression and the reduction of circular constraints to linear DP cases.
+
+---
+
+## Day 34 — Graph Shortest Paths
+
+- Network Delay Time
+- Cheapest Flights Within K Stops
+
+The problems reinforce Dijkstra-style shortest-path reasoning and the use of
+an explicit stop-count state when the path length is bounded.
+
+Implementations are stored in `dsa/graphs/`.

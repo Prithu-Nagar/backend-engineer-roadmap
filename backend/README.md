@@ -726,3 +726,26 @@ File:
 
 The example uses the standard library to demonstrate the application-side
 producer/worker boundary without introducing a third-party task framework.
+
+---
+
+## Day 34 — Job Scheduling
+
+Day 34 introduces application-level job scheduling concepts for work that
+should run at a later time or according to priority.
+
+Topics include:
+
+- Scheduled job representation
+- Delayed execution
+- Priority ordering
+- Queue-based scheduling
+- Job lifecycle and completion handling
+- Separating scheduling from job execution
+
+File:
+
+`job_scheduling.py`
+
+The example uses a heap-based priority queue from the standard library so the
+scheduling mechanics can be studied without introducing a task-queue framework.

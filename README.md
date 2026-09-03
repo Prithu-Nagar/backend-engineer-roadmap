@@ -41,6 +41,7 @@ problem-solving.
 - ✅ Binary Search Trees
 - ✅ Heap
 - ✅ Graph
+- ✅ Shortest Path / Dijkstra
 - ✅ Dynamic Programming
 - ✅ 1D DP
 - ✅ 2D DP
@@ -104,6 +105,7 @@ problem-solving.
 - ✅ Django REST Framework
 - ✅ FastAPI
 - ✅ FastAPI API Testing
+- ✅ Job Scheduling
 - ⏳ Docker
 - ⏳ Deployment
 
@@ -125,6 +127,7 @@ problem-solving.
 - ✅ Database Normalization
 - ✅ PostgreSQL JSON / JSONB
 - ✅ Database Migration Strategy
+- ✅ Database Partitioning
 
 ---
 
@@ -146,6 +149,7 @@ problem-solving.
 - ✅ Message Queue Semantics
 - ✅ Event-Driven Architecture
 - ✅ Schema Evolution & Backward Compatibility
+- ✅ Database Partitioning / Sharding
 - ⏳ Kafka
 
 ---
@@ -172,7 +176,7 @@ problem-solving.
 
 - 🚧 Task Manager REST API
 - 🚧 URL Shortener
-- ⏳ Expense Tracker API
+- 🚧 Expense Tracker API
 - ⏳ Blog API
 - ⏳ Chat Application
 
@@ -1661,3 +1665,61 @@ jobs, worker queues, and Expense Tracker aggregation.
 Day 33 extends the Expense Tracker database foundation with an asynchronous
 aggregation workload while continuing the distributed-systems focus on worker
 capacity, queue semantics, and reliable background processing.
+
+---
+
+## Day 34 — Databases & Distributed Systems
+
+Day 34 continues the Databases & Distributed Systems phase with graph
+shortest paths, asynchronous queues, database partitioning, job scheduling,
+and asynchronous Expense Tracker processing.
+
+### DSA
+
+- Graph shortest paths
+- Dijkstra
+- Bounded-stop shortest-path state
+
+### Python
+
+- `asyncio.Queue`
+- Async producer/consumer pattern
+- Queue backpressure through bounded queues
+- Sentinel-based worker shutdown
+
+### SQL
+
+- Database partitioning
+- Range partitioning
+- Partition pruning
+- Partition-local indexes
+
+### LeetCode
+
+- Network Delay Time
+- Cheapest Flights Within K Stops
+
+### Backend
+
+- Job scheduling
+- Delayed execution
+- Priority ordering
+- Scheduled-job lifecycle
+
+### System Design
+
+- Database partitioning
+- Sharding vs partitioning
+- Partition/shard key selection
+- Hot partitions and hot shards
+- Cross-partition and cross-shard queries
+
+### Project
+
+- Expense Tracker asynchronous processing
+- Async producer/consumer boundary
+- Background aggregation job submission
+- Keeping blocking handlers out of the event loop
+
+Day 34 extends the Expense Tracker toward asynchronous processing while adding
+partitioning and sharding concepts for database scale.

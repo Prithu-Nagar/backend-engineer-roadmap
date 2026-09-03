@@ -404,6 +404,7 @@ Topics include:
 **File:** `memory_model.py`
 
 ---
+
 ## Iterators and Generators
 
 - Iterator patterns
@@ -566,7 +567,6 @@ File:
 
 The example keeps secrets outside source code and raises a clear configuration
 error when a required secret is missing.
-
 
 ## Day 25 — Debugging & Profiling Basics
 
@@ -772,3 +772,27 @@ File:
 
 The example separates independent CPU-bound work from explicit inter-process
 communication and keeps process creation behind the `__main__` guard.
+
+---
+
+## Day 34 — AsyncIO Queues
+
+Day 34 focuses on using `asyncio.Queue` to coordinate asynchronous producers
+and consumers.
+
+Topics include:
+
+- `asyncio.Queue`
+- Async producer/consumer coordination
+- Bounded queues and backpressure
+- `await queue.put()` and `await queue.get()`
+- `queue.join()` and `task_done()`
+- Sentinel-based worker shutdown
+- Keeping blocking work out of the event loop
+
+File:
+
+`async_queues.py`
+
+The example uses a bounded queue and a sentinel value to demonstrate controlled
+work submission and clean consumer shutdown.

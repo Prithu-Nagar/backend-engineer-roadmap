@@ -16,6 +16,7 @@ Cache
 Database
 
 ```
+
 ### Cache Hit
 
 Data is found in the cache and can be returned immediately.
@@ -24,6 +25,7 @@ Data is found in the cache and can be returned immediately.
 Request → Cache → Data Found → Response
 
 ```
+
 ### Cache Miss
 
 Data is not found in the cache, so the application retrieves it from the database.
@@ -124,6 +126,7 @@ Cache
 Database
 
 ```
+
 ### Write-Back
 
 Data is initially written to the cache and persisted to the database later.

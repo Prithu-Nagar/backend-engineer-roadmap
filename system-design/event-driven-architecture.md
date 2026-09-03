@@ -187,4 +187,3 @@ Before introducing event-driven communication, ask:
 Event-driven architecture is a useful tool, not a default architecture. The
 simplest communication model that satisfies the reliability, latency, and
 coupling requirements is usually the best starting point.
-

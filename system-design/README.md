@@ -539,7 +539,6 @@ Topics include:
 - Retry and idempotency considerations
 - Choosing the simplest workflow that satisfies the requirement
 
-
 ## Message Queues
 
 Day 25 introduces message queues and the reasons backend systems use them.
@@ -757,3 +756,27 @@ Detailed notes:
 
 The focus is on defining delivery, failure, idempotency, and capacity
 requirements before choosing a queue implementation.
+
+---
+
+## Day 34 — Database Partitioning & Sharding
+
+Day 34 focuses on partitioning and sharding as database scaling techniques.
+
+Topics include:
+
+- Partitioning vs sharding
+- Range, list, and hash partitioning
+- Partition-key selection
+- Partition pruning
+- Shard routing
+- Hot partitions and hot shards
+- Cross-partition and cross-shard queries
+- Rebalancing and operational considerations
+
+Detailed notes:
+
+`database-partitioning.md`
+
+The focus is on introducing partitioning or sharding only when measured data
+volume, query patterns, or capacity requirements justify the added complexity.

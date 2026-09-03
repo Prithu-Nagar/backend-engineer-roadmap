@@ -23,7 +23,6 @@ The reverse proxy then forwards the request to the appropriate backend server.
 
 ## Request Flow
 
-
 Client
    │
    ▼

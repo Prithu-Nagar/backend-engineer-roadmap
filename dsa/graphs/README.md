@@ -13,6 +13,7 @@ This directory contains graph-related LeetCode problems and solutions.
 - Rotting Oranges
 - Network Delay Time
 - Shortest Path in a Binary Matrix
+- Cheapest Flights Within K Stops
 
 ---
 
@@ -61,7 +62,6 @@ Files:
 - `course_schedule_ii.py`
 - `alien_dictionary.py`
 
-
 ## Day 25 — Union-Find / DSU
 
 Day 25 adds Disjoint Set Union as an efficient way to maintain connected
@@ -88,3 +88,27 @@ Files:
 - `number_of_provinces.py`
 - `redundant_connection.py`
 - `accounts_merge.py`
+
+---
+
+## Day 34 — Graph Shortest Paths
+
+Day 34 focuses on shortest-path problems in weighted graphs.
+
+Topics include:
+
+- Weighted directed graphs
+- Dijkstra's algorithm
+- Priority queues for shortest paths
+- Relaxation of edges
+- Bounded-stop shortest-path state
+
+Problems solved:
+
+- Network Delay Time
+- Cheapest Flights Within K Stops
+
+Files:
+
+- `network_delay_time.py`
+- `cheapest_flights_within_k_stops.py`

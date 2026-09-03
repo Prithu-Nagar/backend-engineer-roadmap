@@ -76,4 +76,3 @@ If the answer range is `M` and each feasibility check scans `N` items:
 
 Binary search on answer is especially useful when the problem asks for a
 minimum or maximum value subject to a monotonic feasibility condition.
-

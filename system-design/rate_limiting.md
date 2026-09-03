@@ -559,9 +559,11 @@ Key concepts:
 - Sliding Window
 - Token Bucket
 - Leaky Bucket
+
 ## Distributed Rate Limiting
 - Redis
 - API Gateway
+
 ## HTTP 429
 **Burst Handling**
 - Per-user and per-IP limits

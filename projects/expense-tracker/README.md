@@ -186,3 +186,27 @@ The aggregation function supports:
 
 The function does not commit or close the session. Transaction and session
 lifecycle remain owned by the surrounding application or worker boundary.
+
+---
+
+## Day 34 — Async Processing
+
+Day 34 adds an asynchronous processing boundary for Expense Tracker
+aggregation work.
+
+Added:
+
+- `async_processing.py`
+
+The worker provides:
+
+- An `asyncio.Queue` for aggregation jobs
+- Async producer/consumer coordination
+- Explicit queue completion tracking
+- Clean worker shutdown
+- `asyncio.to_thread()` for blocking handlers
+
+The existing `background_aggregation.py` remains responsible for the database
+aggregation logic. The new processing layer keeps synchronous database work
+out of the event loop and provides a clear path for later integration with a
+durable worker system.

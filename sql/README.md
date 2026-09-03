@@ -439,7 +439,6 @@ Detailed notes:
 
 `django_orm_querying.md`
 
-
 ## Day 25 — Django ORM Transactions
 
 Day 25 applies transaction concepts through Django's ORM.
@@ -645,3 +644,27 @@ Detailed examples:
 The examples are PostgreSQL-oriented. Query plans should be measured with the
 actual schema and data distribution because the optimizer may choose different
 strategies as cardinality and statistics change.
+
+---
+
+## Day 34 — Database Partitioning
+
+Day 34 introduces database partitioning as a way to divide a large logical
+table into smaller physical partitions.
+
+Topics include:
+
+- Range partitioning
+- List and hash partitioning concepts
+- Partition pruning
+- Partition-local indexes
+- Default partitions
+- Partition lifecycle management
+- Partitioning vs sharding
+
+Detailed examples:
+
+`partitioning.sql`
+
+The examples are PostgreSQL-oriented and use time-based range partitioning to
+illustrate how date-filtered queries can avoid irrelevant partitions.

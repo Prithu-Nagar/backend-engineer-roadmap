@@ -274,7 +274,6 @@ The implementation remains limited to the roadmap's current list/create/detail
 API scope rather than pulling future authentication and administration work
 forward.
 
-
 ## Day 25 — URL Shortener Authentication & Admin
 
 The URL Shortener now introduces authenticated ownership.
@@ -475,3 +474,25 @@ The aggregation layer includes:
 
 The aggregation is kept separate from the HTTP request path so it can later be
 submitted to the worker-queue architecture introduced on Day 33.
+
+---
+
+## Day 34 — Expense Tracker Async Processing
+
+Day 34 extends the Expense Tracker with an asynchronous producer/consumer
+boundary for aggregation work.
+
+Added:
+
+- `projects/expense-tracker/async_processing.py`
+
+The processing layer demonstrates:
+
+- Async job submission
+- `asyncio.Queue` coordination
+- Background consumer tasks
+- Queue completion tracking
+- Running blocking handlers outside the event loop
+
+The project continues to separate HTTP request handling from slower background
+work without replacing the existing CRUD and aggregation layers.
