@@ -780,3 +780,26 @@ Detailed notes:
 
 The focus is on introducing partitioning or sharding only when measured data
 volume, query patterns, or capacity requirements justify the added complexity.
+
+---
+
+## Day 35 — Read Replicas & Replication Lag
+
+Day 35 focuses on scaling read-heavy workloads with database read replicas.
+
+Topics include:
+
+- Primary and replica roles
+- Read/write splitting
+- Replication lag
+- Read-after-write consistency
+- Replica health and routing
+- Fallback to the primary
+- Replica capacity and monitoring
+
+Detailed notes:
+
+`read-replicas.md`
+
+The focus is on making consistency requirements explicit before routing traffic
+to replicas and on treating replication lag as an operational signal.

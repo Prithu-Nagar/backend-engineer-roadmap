@@ -210,3 +210,25 @@ The existing `background_aggregation.py` remains responsible for the database
 aggregation logic. The new processing layer keeps synchronous database work
 out of the event loop and provides a clear path for later integration with a
 durable worker system.
+
+---
+
+## Day 35 — Caching Layer
+
+Day 35 adds an application-level cache boundary around Expense Tracker
+lookups.
+
+Added:
+
+- `caching_layer.py`
+
+The service demonstrates:
+
+- Cache-aside reads
+- Repository and cache protocols
+- Cache population on misses
+- Stable `expense:<id>` cache keys
+- Explicit invalidation
+- Dependency injection for future Redis integration
+
+The existing CRUD, aggregation, and async-processing layers remain unchanged.

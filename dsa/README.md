@@ -536,3 +536,37 @@ Topics:
 - Reusing a constant-size state
 
 Implementations are stored in `dynamic_programming/`.
+
+---
+
+## Day 34 — Graph Shortest Paths
+
+Day 34 focuses on shortest paths in weighted graphs.
+
+Problems:
+
+- Network Delay Time
+- Cheapest Flights Within K Stops
+
+Implementations are stored in `graphs/`.
+
+---
+
+## Day 35 — Minimum Spanning Tree
+
+Day 35 introduces minimum spanning trees using Kruskal's algorithm and
+Union-Find.
+
+Topics:
+
+- Minimum spanning tree
+- Kruskal's algorithm
+- Edge sorting
+- Union-Find / DSU
+- Cycle detection during edge selection
+
+Problems:
+
+- Min Cost to Connect All Points
+
+Implementations are stored in `graphs/`.

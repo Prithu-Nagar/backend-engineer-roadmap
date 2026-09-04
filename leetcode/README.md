@@ -378,3 +378,13 @@ The problems reinforce Dijkstra-style shortest-path reasoning and the use of
 an explicit stop-count state when the path length is bounded.
 
 Implementations are stored in `dsa/graphs/`.
+
+---
+
+## Day 35 — Minimum Spanning Tree
+
+- Min Cost to Connect All Points
+
+The problem reinforces Kruskal's algorithm, Union-Find, edge sorting, and
+minimum spanning tree construction. The implementation is stored in
+`dsa/graphs/`.

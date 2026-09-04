@@ -1723,3 +1723,64 @@ and asynchronous Expense Tracker processing.
 
 Day 34 extends the Expense Tracker toward asynchronous processing while adding
 partitioning and sharding concepts for database scale.
+
+---
+
+## Day 35 — Databases & Distributed Systems
+
+Day 35 continues the Databases & Distributed Systems phase with minimum
+spanning trees, concurrency testing, read replicas, application caching, and
+an Expense Tracker caching layer.
+
+### DSA
+
+- Minimum spanning tree
+- Kruskal's algorithm
+- Union-Find / DSU
+- Cycle detection during MST construction
+
+### Python
+
+- Concurrency pitfalls
+- Synchronization boundaries
+- Deterministic concurrency testing
+- `threading.Event`
+- Mocking concurrent collaborators
+
+### SQL
+
+- Read replicas
+- Read/write splitting
+- Replication lag
+- Read-after-write consistency
+- Replica health and routing
+
+### LeetCode
+
+- Min Cost to Connect All Points
+
+### Backend
+
+- Application-level caching
+- Cache-aside pattern
+- TTL expiration
+- Cache invalidation
+- In-process vs shared caching
+
+### System Design
+
+- Read replicas
+- Replication lag
+- Consistency requirements
+- Replica routing and fallback
+- Replica monitoring
+
+### Project
+
+- Expense Tracker caching layer
+- Cache-aside expense lookup
+- Explicit cache invalidation
+- Injectable cache boundary for future Redis integration
+
+Day 35 extends the Expense Tracker with caching while connecting database
+replication and application-level cache design to read scalability.

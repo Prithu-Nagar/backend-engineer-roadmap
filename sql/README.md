@@ -668,3 +668,27 @@ Detailed examples:
 
 The examples are PostgreSQL-oriented and use time-based range partitioning to
 illustrate how date-filtered queries can avoid irrelevant partitions.
+
+---
+
+## Day 35 — Read Replicas & Replication Lag
+
+Day 35 introduces read replicas as a way to scale read-heavy database
+workloads while accounting for asynchronous replication lag.
+
+Topics include:
+
+- Primary and read-replica roles
+- Read/write splitting
+- Eventual consistency
+- Read-after-write consistency
+- Replication/replay lag
+- Replica health and routing
+- Fallback to the primary when consistency requirements demand it
+
+Detailed examples:
+
+`read_replicas.sql`
+
+The examples are PostgreSQL-oriented and focus on the application-level
+trade-off between read scalability and replica freshness.

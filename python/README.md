@@ -796,3 +796,27 @@ File:
 
 The example uses a bounded queue and a sentinel value to demonstrate controlled
 work submission and clean consumer shutdown.
+
+---
+
+## Day 35 — Concurrency Pitfalls & Testing
+
+Day 35 focuses on the failure modes that make concurrent code difficult to
+reason about and on deterministic testing techniques.
+
+Topics include:
+
+- Shared mutable state
+- Synchronization boundaries
+- Race-condition risks
+- Avoiding timing-based test assertions
+- `threading.Event` for coordination
+- `unittest.mock.Mock` for collaborator verification
+- Joining worker threads during test cleanup
+
+File:
+
+`concurrency_pitfalls.py`
+
+The example emphasizes synchronization and explicit completion signals instead
+of relying on `sleep()` to make concurrent tests pass.

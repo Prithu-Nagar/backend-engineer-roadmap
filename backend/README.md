@@ -749,3 +749,25 @@ File:
 
 The example uses a heap-based priority queue from the standard library so the
 scheduling mechanics can be studied without introducing a task-queue framework.
+
+---
+
+## Day 35 — Application-Level Caching
+
+Day 35 introduces caching inside application code using a cache-aside pattern.
+
+Topics include:
+
+- Cache lookup before database access
+- Cache misses and population
+- TTL-based expiration
+- Explicit invalidation
+- In-process cache limitations
+- Shared cache considerations for multiple application instances
+
+File:
+
+`caching.py`
+
+The example keeps the cache boundary small and injectable so the same service
+pattern can later be backed by a shared cache such as Redis.

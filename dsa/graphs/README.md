@@ -112,3 +112,29 @@ Files:
 
 - `network_delay_time.py`
 - `cheapest_flights_within_k_stops.py`
+
+---
+
+## Day 35 — Minimum Spanning Tree
+
+Day 35 introduces minimum spanning trees using Kruskal's algorithm and
+Union-Find to connect all vertices with minimum total edge weight.
+
+Topics include:
+
+- Minimum spanning tree (MST)
+- Kruskal's algorithm
+- Edge sorting
+- Union-Find / DSU
+- Path compression
+- Union by rank
+- Detecting cycles while building an MST
+
+Problems solved:
+
+- Min Cost to Connect All Points
+
+Files:
+
+- `kruskal_mst.py`
+- `min_cost_to_connect_all_points.py`

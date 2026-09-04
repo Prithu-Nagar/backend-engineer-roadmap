@@ -496,3 +496,26 @@ The processing layer demonstrates:
 
 The project continues to separate HTTP request handling from slower background
 work without replacing the existing CRUD and aggregation layers.
+
+---
+
+## Day 35 — Expense Tracker Caching Layer
+
+Day 35 extends the Expense Tracker with an application-level cache boundary
+for expense lookups.
+
+Added:
+
+- `projects/expense-tracker/caching_layer.py`
+
+The caching layer includes:
+
+- Cache-aside lookup
+- Repository/cache separation through protocols
+- Stable cache-key generation
+- Cache population on misses
+- Explicit invalidation after writes
+- An injectable design that can later use Redis
+
+The cache is kept separate from the existing CRUD and asynchronous processing
+layers so caching can evolve independently of the database access code.
