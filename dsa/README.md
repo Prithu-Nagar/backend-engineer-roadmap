@@ -170,6 +170,7 @@ dsa/
 │   ├── flood_fill.py
 │   └── rotting_oranges.py
 ├── dynamic_programming/
+└── trie/
 └── hashing/
 ```
 
@@ -476,6 +477,7 @@ Patterns reviewed:
 - Sliding Window
 - Two Pointers
 - Intervals
+- Trie
 - Hashing
 
 The goal is to identify the correct pattern from a problem statement before
@@ -570,3 +572,34 @@ Problems:
 - Min Cost to Connect All Points
 
 Implementations are stored in `graphs/`.
+
+---
+
+## Trie
+
+Covers prefix-tree data structures for efficient string and prefix operations.
+
+Topics include:
+
+- Trie nodes
+- Character transitions
+- Exact word lookup
+- Prefix lookup
+- Wildcard matching
+- DFS over trie branches
+
+Directory: `trie/`
+
+---
+
+## Day 36 — Trie
+
+Day 36 introduces the Trie data structure and applies it to common
+prefix-search interview problems.
+
+Problems covered:
+
+- Implement Trie (Prefix Tree)
+- Design Add and Search Words Data Structure
+
+Directory: `trie/`

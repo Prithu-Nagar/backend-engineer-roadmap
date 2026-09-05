@@ -771,3 +771,26 @@ File:
 
 The example keeps the cache boundary small and injectable so the same service
 pattern can later be backed by a shared cache such as Redis.
+
+---
+
+## Day 36 — Redis Caching
+
+Day 36 extends application-level caching into a shared Redis-backed cache.
+
+Topics include:
+
+- Redis cache adapters
+- Cache-aside reads
+- TTL configuration
+- Key namespacing
+- Explicit invalidation
+- JSON serialization for cached values
+- Shared cache behavior across application instances
+
+File:
+
+`redis_caching.py`
+
+The example keeps Redis behind a small cache interface so application code can
+remain decoupled from the cache client.

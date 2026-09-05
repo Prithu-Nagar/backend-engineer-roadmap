@@ -519,3 +519,27 @@ The caching layer includes:
 
 The cache is kept separate from the existing CRUD and asynchronous processing
 layers so caching can evolve independently of the database access code.
+
+---
+
+## Day 36 — Expense Tracker Redis Caching
+
+Day 36 extends the Expense Tracker caching layer with Redis-backed shared
+caching.
+
+Added:
+
+- `projects/expense-tracker/redis_caching.py`
+
+The implementation includes:
+
+- Redis-backed expense caching
+- JSON serialization
+- TTL configuration
+- Cache-aside reads
+- Explicit invalidation
+- Shared cache behavior across application instances
+- A repository boundary that keeps Redis concerns isolated
+
+The existing CRUD, aggregation, asynchronous processing, and application-level
+caching layers remain intact.

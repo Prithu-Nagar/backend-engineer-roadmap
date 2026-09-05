@@ -232,3 +232,27 @@ The service demonstrates:
 - Dependency injection for future Redis integration
 
 The existing CRUD, aggregation, and async-processing layers remain unchanged.
+
+---
+
+## Day 36 — Redis Caching
+
+Day 36 extends the Expense Tracker with a Redis-backed cache.
+
+Added:
+
+- `redis_caching.py`
+
+The Redis integration includes:
+
+- Redis cache adapter
+- JSON serialization of `Expense` values
+- Configurable TTL
+- Cache-aside lookup
+- Cache population on misses
+- Explicit invalidation
+- Stable cache-key handling
+- Shared caching across application instances
+
+The Redis layer builds on the cache contract introduced on Day 35 rather than
+replacing the existing CRUD, aggregation, or asynchronous processing code.

@@ -1784,3 +1784,71 @@ an Expense Tracker caching layer.
 
 Day 35 extends the Expense Tracker with caching while connecting database
 replication and application-level cache design to read scalability.
+
+---
+
+## Day 36 — Databases & Distributed Systems
+
+Day 36 continues the Databases & Distributed Systems phase with tries,
+serialization, full-text search, Redis caching, cache invalidation, and Redis
+integration in the Expense Tracker.
+
+### DSA
+
+- Trie / prefix tree
+- Trie node design
+- Exact word lookup
+- Prefix lookup
+- Wildcard search with DFS
+
+### Python
+
+- JSON serialization
+- `json.dumps()` and `json.loads()`
+- Pickle serialization concepts
+- Schema-oriented deserialization
+- Security risks of untrusted pickle data
+
+### SQL
+
+- PostgreSQL full-text search
+- `tsvector`
+- `tsquery`
+- GIN indexes
+- Relevance ranking with `ts_rank()`
+
+### LeetCode
+
+- Implement Trie (Prefix Tree)
+- Design Add and Search Words Data Structure
+
+### Backend
+
+- Redis caching
+- Cache-aside pattern
+- TTL-based expiration
+- Shared cache across application instances
+- Cache key namespacing
+- Cache invalidation
+
+### System Design
+
+- Cache invalidation
+- TTL
+- Cache stampede
+- Request coalescing
+- Stale-while-revalidate
+- Cache failure and database fallback
+
+### Project
+
+- Expense Tracker Redis caching
+- Redis-backed cache adapter
+- JSON serialization of cached expenses
+- TTL configuration
+- Cache-aside reads
+- Explicit cache invalidation
+
+Day 36 extends the Expense Tracker from an application-level cache boundary
+to a shared Redis-backed cache while introducing trie-based search and
+production-oriented cache consistency patterns.

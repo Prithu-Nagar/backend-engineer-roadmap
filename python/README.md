@@ -820,3 +820,27 @@ File:
 
 The example emphasizes synchronization and explicit completion signals instead
 of relying on `sleep()` to make concurrent tests pass.
+
+---
+
+## Day 36 — Serialization
+
+Day 36 focuses on serialization formats and the security implications of
+Python-specific object serialization.
+
+Topics include:
+
+- JSON serialization and deserialization
+- Explicit schema mapping
+- `json.dumps()` and `json.loads()`
+- Pickle serialization concepts
+- Python-specific object persistence
+- Risks of untrusted pickle data
+
+File:
+
+`serialization.py`
+
+JSON is preferred for interoperable application data. Pickle is suitable only
+for trusted Python-to-Python data because unpickling untrusted input can execute
+arbitrary code.

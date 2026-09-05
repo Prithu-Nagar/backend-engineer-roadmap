@@ -9,3 +9,5 @@ PyJWT
 pytest
 httpx
 SQLAlchemy
+
+redis

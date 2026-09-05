@@ -803,3 +803,29 @@ Detailed notes:
 
 The focus is on making consistency requirements explicit before routing traffic
 to replicas and on treating replication lag as an operational signal.
+
+---
+
+## Day 36 — Cache Invalidation, TTL & Cache Stampede
+
+Day 36 focuses on the consistency and reliability concerns introduced by
+shared caching.
+
+Topics include:
+
+- Cache-aside
+- Cache invalidation
+- TTL
+- Redis key design
+- Cache stampede
+- Request coalescing
+- TTL jitter
+- Stale-while-revalidate
+- Cache failure and database fallback
+
+Detailed notes:
+
+`cache-invalidation.md`
+
+The focus is on treating caching as an optimization while explicitly designing
+for stale data, expiration bursts, cache outages, and database load.

@@ -692,3 +692,28 @@ Detailed examples:
 
 The examples are PostgreSQL-oriented and focus on the application-level
 trade-off between read scalability and replica freshness.
+
+---
+
+## Day 36 — Full-Text Search
+
+Day 36 introduces PostgreSQL full-text search for linguistic search over text
+such as expense descriptions.
+
+Topics include:
+
+- `tsvector`
+- `tsquery`
+- `to_tsvector()`
+- `plainto_tsquery()`
+- `to_tsquery()`
+- GIN indexes
+- `ts_rank()`
+- Search configuration and indexing trade-offs
+
+Detailed examples:
+
+`full_text_search.sql`
+
+The examples use the existing Expense Tracker `category` and `description`
+fields and demonstrate both search and relevance ranking.

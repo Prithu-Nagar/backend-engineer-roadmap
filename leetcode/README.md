@@ -388,3 +388,12 @@ Implementations are stored in `dsa/graphs/`.
 The problem reinforces Kruskal's algorithm, Union-Find, edge sorting, and
 minimum spanning tree construction. The implementation is stored in
 `dsa/graphs/`.
+
+---
+
+## Day 36 — Trie
+
+- Implement Trie (Prefix Tree)
+- Design Add and Search Words Data Structure
+
+The implementations are stored in `dsa/trie/`.
