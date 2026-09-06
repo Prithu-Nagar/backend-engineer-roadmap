@@ -794,3 +794,27 @@ File:
 
 The example keeps Redis behind a small cache interface so application code can
 remain decoupled from the cache client.
+
+---
+
+## Day 37 — Structured Logging & Correlation IDs
+
+Day 37 focuses on structured application logging for distributed backend
+services.
+
+Topics include:
+
+- JSON log records
+- Correlation/request IDs
+- Request lifecycle logging
+- Flask request hooks
+- Correlation ID response headers
+- Safe request metadata
+- Connecting application logs with distributed tracing
+
+File:
+
+`structured_logging.py`
+
+The example uses a small Flask application to show how a correlation ID can
+follow a request from ingress through application log events.

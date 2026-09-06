@@ -256,3 +256,25 @@ The Redis integration includes:
 
 The Redis layer builds on the cache contract introduced on Day 35 rather than
 replacing the existing CRUD, aggregation, or asynchronous processing code.
+
+---
+
+## Day 37 — Observability
+
+Day 37 adds structured observability to the Expense Tracker.
+
+Added:
+
+- `observability.py`
+
+The observability layer includes:
+
+- Correlation ID context
+- Structured JSON logs
+- Request timing
+- HTTP method/path/status metadata
+- Bounded request event fields
+- A clear boundary for later tracing integration
+
+The existing CRUD, aggregation, async-processing, caching, and Redis layers
+remain unchanged.

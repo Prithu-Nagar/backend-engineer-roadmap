@@ -717,3 +717,27 @@ Detailed examples:
 
 The examples use the existing Expense Tracker `category` and `description`
 fields and demonstrate both search and relevance ranking.
+
+---
+
+## Day 37 — Database Observability & Slow Query Logs
+
+Day 37 introduces PostgreSQL observability techniques for identifying slow,
+frequent, and resource-heavy queries.
+
+Topics include:
+
+- `pg_stat_statements`
+- Total execution time
+- Mean execution time
+- Rows per call
+- Slow-query logging configuration
+- Observation windows and statistics reset
+- Correlating database activity with application logs
+
+Detailed examples:
+
+`observability.sql`
+
+The examples are PostgreSQL-oriented and focus on measuring query behavior
+before making optimization decisions.

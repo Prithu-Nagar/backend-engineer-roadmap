@@ -844,3 +844,25 @@ File:
 JSON is preferred for interoperable application data. Pickle is suitable only
 for trusted Python-to-Python data because unpickling untrusted input can execute
 arbitrary code.
+
+---
+
+## Day 37 — Distributed Logging
+
+Day 37 focuses on logging practices for distributed Python applications.
+
+Topics include:
+
+- JSON log formatting
+- Correlation IDs
+- `ContextVar` request context
+- Consistent event fields
+- Exception context
+- Avoiding secrets and large payloads in logs
+
+File:
+
+`distributed_logging.py`
+
+The example shows how one correlation ID can follow a request through multiple
+log events while keeping the implementation on the Python standard library.

@@ -397,3 +397,13 @@ minimum spanning tree construction. The implementation is stored in
 - Design Add and Search Words Data Structure
 
 The implementations are stored in `dsa/trie/`.
+
+---
+
+## Day 37 — Monotonic Stack
+
+- Daily Temperatures
+- Next Greater Element I
+
+Both problems are implemented under `dsa/stack/` and reinforce the monotonic
+stack pattern for resolving next-greater relationships in linear time.

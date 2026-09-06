@@ -1852,3 +1852,69 @@ integration in the Expense Tracker.
 Day 36 extends the Expense Tracker from an application-level cache boundary
 to a shared Redis-backed cache while introducing trie-based search and
 production-oriented cache consistency patterns.
+
+---
+
+## Day 37 — Databases & Distributed Systems
+
+Day 37 continues the Databases & Distributed Systems phase with monotonic
+stacks, distributed logging, database observability, structured request
+logging, distributed tracing, and Expense Tracker observability.
+
+### DSA
+
+- Monotonic stack
+- Next-greater-element pattern
+- Decreasing stack of indexes
+- O(N) stack-based scans
+
+### Python
+
+- Logging for distributed applications
+- JSON log formatting
+- Correlation IDs
+- `ContextVar` request context
+- Exception context in logs
+- Avoiding sensitive data in log records
+
+### SQL
+
+- PostgreSQL database observability
+- `pg_stat_statements`
+- Mean and total query execution time
+- Rows-per-call analysis
+- Slow-query logging concepts
+- Observability windows and statistics reset
+
+### LeetCode
+
+- Daily Temperatures
+- Next Greater Element I
+
+### Backend
+
+- Structured JSON logging
+- Correlation ID propagation
+- Request lifecycle logging
+- Safe request metadata
+- Connecting application logs to database and tracing signals
+
+### System Design
+
+- Distributed tracing
+- Trace IDs and span IDs
+- Parent/child spans
+- Trace-context propagation
+- Sampling
+- Logs, metrics, and traces as complementary signals
+
+### Project
+
+- Expense Tracker structured observability
+- Correlation IDs
+- Request timing
+- JSON log events
+- Safe bounded request metadata
+
+Day 37 adds the observability layer needed to connect application behavior,
+database performance, and distributed request paths.

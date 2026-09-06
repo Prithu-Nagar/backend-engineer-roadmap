@@ -603,3 +603,23 @@ Problems covered:
 - Design Add and Search Words Data Structure
 
 Directory: `trie/`
+
+---
+
+## Day 37 — Monotonic Stack
+
+Day 37 applies the monotonic-stack pattern to next-greater-element problems.
+
+Topics:
+
+- Monotonic decreasing stack
+- Stack of indexes
+- Resolving pending next-greater relationships
+- Linear-time array scans
+
+Problems:
+
+- Daily Temperatures
+- Next Greater Element I
+
+Implementations are stored in `stack/`.

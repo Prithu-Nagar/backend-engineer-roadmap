@@ -829,3 +829,28 @@ Detailed notes:
 
 The focus is on treating caching as an optimization while explicitly designing
 for stale data, expiration bursts, cache outages, and database load.
+
+---
+
+## Day 37 — Distributed Tracing
+
+Day 37 introduces distributed tracing as an observability mechanism for
+following requests across service boundaries.
+
+Topics include:
+
+- Traces and spans
+- Trace IDs and span IDs
+- Parent/child relationships
+- Trace-context propagation
+- Sampling
+- Instrumentation boundaries
+- Logs, metrics, and traces
+
+Detailed notes:
+
+`distributed-tracing.md`
+
+The focus is on connecting application logs, database activity, and
+distributed request paths so latency and failures can be investigated
+end-to-end.

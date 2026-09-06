@@ -543,3 +543,24 @@ The implementation includes:
 
 The existing CRUD, aggregation, asynchronous processing, and application-level
 caching layers remain intact.
+
+---
+
+## Day 37 — Expense Tracker Observability
+
+Day 37 adds a lightweight observability layer to the Expense Tracker.
+
+Added:
+
+- `projects/expense-tracker/observability.py`
+
+The observability layer includes:
+
+- Correlation IDs
+- Structured JSON request events
+- Request duration measurement
+- HTTP method/path/status metadata
+- Bounded log fields
+
+The existing CRUD, aggregation, asynchronous processing, application caching,
+Redis caching, and reliability layers remain intact.
