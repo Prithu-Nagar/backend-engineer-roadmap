@@ -818,3 +818,26 @@ File:
 
 The example uses a small Flask application to show how a correlation ID can
 follow a request from ingress through application log events.
+
+---
+
+## Day 38 — Robust Error Handling Across Services
+
+Day 38 focuses on keeping service failures consistent and safe across backend
+boundaries.
+
+Topics include:
+
+- Service-level error contracts
+- Dependency failure translation
+- Retryable vs non-retryable errors
+- Safe client-facing messages
+- Internal exception logging
+- Avoiding leakage of implementation details
+
+File:
+
+`service_error_handling.py`
+
+The example uses Flask handlers to translate known service failures into stable
+responses while keeping unexpected exception details in server-side logs.

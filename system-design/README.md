@@ -854,3 +854,28 @@ Detailed notes:
 The focus is on connecting application logs, database activity, and
 distributed request paths so latency and failures can be investigated
 end-to-end.
+
+---
+
+## Day 38 — Retries, Exponential Backoff & Jitter
+
+Day 38 focuses on controlled recovery from transient failures in distributed
+systems.
+
+Topics include:
+
+- Retryable vs non-retryable failures
+- Exponential backoff
+- Jitter
+- Retry budgets
+- Deadlines
+- Idempotency
+- Retry storms
+- `Retry-After`
+
+Detailed notes:
+
+`retries.md`
+
+The focus is on making retries bounded and deliberate so recovery mechanisms do
+not amplify an outage.

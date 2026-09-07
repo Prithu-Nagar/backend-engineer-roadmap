@@ -623,3 +623,25 @@ Problems:
 - Next Greater Element I
 
 Implementations are stored in `stack/`.
+
+---
+
+## Day 38 — Heap + Greedy
+
+Day 38 combines heap-based priority selection with greedy scheduling and
+placement strategies.
+
+Topics:
+
+- Max-heap simulation with Python `heapq`
+- Greedy task scheduling
+- Cooldown-aware scheduling
+- Greedy placement of high-frequency elements
+- Heap + greedy complexity analysis
+
+Problems:
+
+- Task Scheduler
+- Reorganize String
+
+Implementations are stored in `heap/`.

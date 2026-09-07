@@ -741,3 +741,27 @@ Detailed examples:
 
 The examples are PostgreSQL-oriented and focus on measuring query behavior
 before making optimization decisions.
+
+---
+
+## Day 38 — Concurrent Writes & Data Integrity
+
+Day 38 focuses on protecting database invariants when multiple transactions
+write concurrently.
+
+Topics include:
+
+- Unique constraints and idempotency keys
+- Row-level locking with `FOR UPDATE`
+- Atomic conditional updates
+- Optimistic concurrency with version columns
+- Serializable transactions
+- Handling serialization and constraint failures
+
+Detailed examples:
+
+`concurrent_writes.sql`
+
+The examples are PostgreSQL-oriented and emphasize keeping transactions short
+and making concurrency conflicts explicit rather than silently overwriting
+state.

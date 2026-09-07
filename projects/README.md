@@ -564,3 +564,24 @@ The observability layer includes:
 
 The existing CRUD, aggregation, asynchronous processing, application caching,
 Redis caching, and reliability layers remain intact.
+
+---
+
+## Day 38 — Expense Tracker Reliability
+
+Day 38 adds a bounded reliability layer to the Expense Tracker.
+
+Added:
+
+- `projects/expense-tracker/reliability.py`
+
+The reliability layer includes:
+
+- Transient dependency errors
+- Bounded retry attempts
+- Exponential backoff
+- Jitter
+- Injectable sleep and randomness for deterministic testing
+
+The existing CRUD, aggregation, asynchronous processing, caching, Redis
+caching, and observability layers remain intact.

@@ -43,3 +43,18 @@ Repeat until the problem is solved
 
 A greedy solution should not be accepted merely because the local choice looks
 reasonable. The choice must be justified by the problem's structure.
+
+---
+
+## Day 38 — Heap + Greedy
+
+Day 38 applies greedy choices with a max-heap to repeatedly select the most
+useful remaining option.
+
+Problems:
+
+- Task Scheduler
+- Reorganize String
+
+The implementations are stored in `dsa/heap/` because the heap is the primary
+supporting data structure for both solutions.

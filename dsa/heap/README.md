@@ -62,3 +62,27 @@ Maintaining K elements:
 - `k_closest_points_to_origin.py`
 - `merge_k_sorted_lists.py`
 - `find_median_from_data_stream.py`
+
+---
+
+## Day 38 — Heap + Greedy
+
+Day 38 combines heap-based priority selection with greedy decisions.
+
+Problems:
+
+- Task Scheduler
+- Reorganize String
+
+Concepts:
+
+- Max-heap simulation with `heapq`
+- Frequency counting
+- Cooldown scheduling
+- Greedy placement
+- Priority-based selection
+
+Repository files:
+
+- `task_scheduler.py`
+- `reorganize_string.py`

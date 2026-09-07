@@ -278,3 +278,24 @@ The observability layer includes:
 
 The existing CRUD, aggregation, async-processing, caching, and Redis layers
 remain unchanged.
+
+---
+
+## Day 38 — Reliability
+
+Day 38 adds a reliability boundary for transient dependency failures.
+
+Added:
+
+- `reliability.py`
+
+The reliability layer includes:
+
+- Explicit transient dependency errors
+- Bounded retries
+- Exponential backoff
+- Jitter
+- Injectable timing/randomness for deterministic tests
+
+The existing CRUD, aggregation, asynchronous processing, application caching,
+Redis caching, and observability layers remain intact.

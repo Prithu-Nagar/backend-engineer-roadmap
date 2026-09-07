@@ -250,16 +250,16 @@ dsa/
 
 The leetcode/ directory serves as the progress tracker, while the actual implementations are maintained under dsa/.
 
-Future Problems
+## Future Problems
 
 Future LeetCode problems will be added as new DSA topics are introduced in the roadmap.
 
 Upcoming areas include:
 
-Backtracking
-Advanced Trees
-Advanced Graph Algorithms
-More Dynamic Programming patterns
+- Backtracking
+- Advanced Trees
+- Advanced Graph Algorithms
+- More Dynamic Programming patterns
 
 ---
 
@@ -407,3 +407,13 @@ The implementations are stored in `dsa/trie/`.
 
 Both problems are implemented under `dsa/stack/` and reinforce the monotonic
 stack pattern for resolving next-greater relationships in linear time.
+
+---
+
+## Day 38 — Heap + Greedy
+
+- Task Scheduler
+- Reorganize String
+
+Both problems combine heap-based priority selection with greedy decisions and
+are implemented under `dsa/heap/`.

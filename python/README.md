@@ -866,3 +866,26 @@ File:
 
 The example shows how one correlation ID can follow a request through multiple
 log events while keeping the implementation on the Python standard library.
+
+---
+
+## Day 38 — Error Taxonomy & Custom Exceptions
+
+Day 38 focuses on explicit exception taxonomies for backend services.
+
+Topics include:
+
+- Application/service exceptions
+- Validation errors
+- Not-found errors
+- Conflict errors
+- Dependency failures
+- Retryable vs non-retryable errors
+- Safe error payloads
+
+File:
+
+`custom_exceptions.py`
+
+The example separates domain/client failures from transient dependency failures
+so the service boundary can make consistent handling and retry decisions.

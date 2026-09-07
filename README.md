@@ -1918,3 +1918,68 @@ logging, distributed tracing, and Expense Tracker observability.
 
 Day 37 adds the observability layer needed to connect application behavior,
 database performance, and distributed request paths.
+
+---
+
+## Day 38 — Databases & Distributed Systems
+
+Day 38 continues the Databases & Distributed Systems phase with heap/greedy
+problem solving, custom exception taxonomy, concurrent-write integrity,
+service-level error handling, retry strategies, and Expense Tracker
+reliability.
+
+### DSA
+
+- Heap + greedy combined
+- Max-heap scheduling
+- Greedy cooldown scheduling
+- Greedy character placement
+
+### Python
+
+- Error taxonomy
+- Custom exception hierarchies
+- Domain vs dependency failures
+- Retryable vs non-retryable errors
+- Safe error payloads
+
+### SQL
+
+- Data integrity under concurrent writes
+- Unique constraints and idempotency keys
+- Row-level locking with `FOR UPDATE`
+- Optimistic concurrency with version checks
+- Serializable transactions
+
+### LeetCode
+
+- Task Scheduler
+- Reorganize String
+
+### Backend
+
+- Robust error handling across services
+- Stable service-level error contracts
+- Dependency failure translation
+- Safe client-facing errors
+- Internal exception logging without leaking implementation details
+
+### System Design
+
+- Retryable vs non-retryable failures
+- Exponential backoff
+- Jitter
+- Retry budgets and deadlines
+- Idempotency
+- Retry storms
+
+### Project
+
+- Expense Tracker reliability layer
+- Bounded retries
+- Exponential backoff with jitter
+- Explicit transient dependency errors
+- Injectable sleep/randomness for deterministic testing
+
+Day 38 adds reliability boundaries that connect concurrent database integrity,
+service error contracts, and controlled recovery from transient failures.
