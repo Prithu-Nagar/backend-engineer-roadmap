@@ -879,3 +879,28 @@ Detailed notes:
 
 The focus is on making retries bounded and deliberate so recovery mechanisms do
 not amplify an outage.
+
+---
+
+## Day 39 — Circuit Breakers & Bulkheads
+
+Day 39 focuses on containing dependency failures and protecting service
+capacity during partial outages.
+
+Topics include:
+
+- Circuit breaker pattern
+- Closed, open, and half-open states
+- Fail-fast behavior
+- Bulkheads
+- Worker and connection-pool isolation
+- Concurrency limits
+- Retry and circuit-breaker interaction
+- Capacity and resilience metrics
+
+Detailed notes:
+
+`circuit-breakers-bulkheads.md`
+
+The focus is on preventing cascading failures by limiting both dependency calls
+and resource consumption.

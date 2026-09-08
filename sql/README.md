@@ -765,3 +765,27 @@ Detailed examples:
 The examples are PostgreSQL-oriented and emphasize keeping transactions short
 and making concurrency conflicts explicit rather than silently overwriting
 state.
+
+---
+
+## Day 39 — Database Design Review
+
+Day 39 reviews database design decisions using the Expense Tracker schema as a
+reference workload.
+
+Topics include:
+
+- Primary keys
+- `NOT NULL`, `CHECK`, and uniqueness constraints
+- Index selection
+- Composite index column order
+- Query-plan inspection with `EXPLAIN (ANALYZE, BUFFERS)`
+- Transaction boundaries
+- Backward-compatible schema evolution
+
+Detailed examples:
+
+`database_design_review.sql`
+
+The examples emphasize designing around measured access patterns and explicit
+data invariants rather than adding indexes or constraints indiscriminately.

@@ -585,3 +585,25 @@ The reliability layer includes:
 
 The existing CRUD, aggregation, asynchronous processing, caching, Redis
 caching, and observability layers remain intact.
+
+---
+
+## Day 39 — Expense Tracker Architecture Refactor
+
+Day 39 refactors the Expense Tracker around explicit application boundaries.
+
+Added:
+
+- `projects/expense-tracker/architecture_refactor.py`
+
+The refactor includes:
+
+- Domain entity separation
+- Service-layer application rules
+- Repository protocol
+- Dependency injection
+- Storage adapter isolation
+- Transport-independent validation
+
+The existing CRUD, aggregation, asynchronous processing, caching, Redis
+caching, observability, and reliability layers remain intact.

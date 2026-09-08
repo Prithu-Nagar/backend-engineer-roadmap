@@ -645,3 +645,19 @@ Problems:
 - Reorganize String
 
 Implementations are stored in `heap/`.
+
+---
+
+## Day 39 — Mixed Medium Review
+
+Day 39 uses a mixed medium set across trees, graphs, and Dynamic Programming.
+
+Problems reviewed:
+
+- Binary Tree Level Order Traversal
+- Number of Islands
+- Coin Change
+
+The existing implementations are reused so the session emphasizes timed
+problem solving, pattern recognition, and complexity analysis rather than
+creating duplicate solutions.

@@ -889,3 +889,27 @@ File:
 
 The example separates domain/client failures from transient dependency failures
 so the service boundary can make consistent handling and retry decisions.
+
+---
+
+## Day 39 — Clean Architecture Boundaries
+
+Day 39 focuses on keeping Python application rules independent from framework
+and persistence details.
+
+Topics include:
+
+- Domain entities
+- Application use cases
+- Infrastructure adapters
+- Dependency inversion
+- Protocol-based ports
+- Dependency injection
+- Direction of dependencies
+
+File:
+
+`clean_architecture.py`
+
+The example uses a small Expense entity and an injected store interface to show
+how application logic can remain independent of a concrete storage adapter.

@@ -841,3 +841,25 @@ File:
 
 The example uses Flask handlers to translate known service failures into stable
 responses while keeping unexpected exception details in server-side logs.
+
+---
+
+## Day 39 — Service / Repository Layer Patterns
+
+Day 39 introduces service and repository boundaries for backend applications.
+
+Topics include:
+
+- Service layer responsibilities
+- Repository layer responsibilities
+- Protocol-based repository contracts
+- Dependency injection
+- Keeping persistence details out of application rules
+- Separating domain validation from transport concerns
+
+File:
+
+`service_repository.py`
+
+The example uses an in-memory repository so the separation can be studied
+without coupling the example to a database or framework.

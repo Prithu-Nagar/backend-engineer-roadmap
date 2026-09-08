@@ -1983,3 +1983,65 @@ reliability.
 
 Day 38 adds reliability boundaries that connect concurrent database integrity,
 service error contracts, and controlled recovery from transient failures.
+
+---
+
+## Day 39 — Databases & Distributed Systems
+
+Day 39 continues the Databases & Distributed Systems phase with mixed DSA
+review, clean architecture boundaries, database design review, service and
+repository separation, resilience patterns, and an Expense Tracker architecture
+refactor.
+
+### DSA
+
+- Mixed medium set across trees, graphs, and Dynamic Programming
+- Binary tree traversal review
+- Graph traversal review
+- Dynamic Programming state-transition review
+
+### Python
+
+- Clean architecture boundaries
+- Domain/application/infrastructure separation
+- Dependency inversion through protocols
+- Dependency injection at application boundaries
+
+### SQL
+
+- Database design review
+- Keys and constraints
+- Index selection and composite index order
+- Query-plan review with `EXPLAIN (ANALYZE, BUFFERS)`
+- Transaction-boundary review
+
+### LeetCode
+
+- Binary Tree Level Order Traversal
+- Number of Islands
+- Coin Change
+
+### Backend
+
+- Service layer responsibilities
+- Repository layer responsibilities
+- Repository interfaces and dependency injection
+- Keeping persistence details outside application rules
+
+### System Design
+
+- Circuit breakers
+- Closed, open, and half-open states
+- Bulkheads and resource isolation
+- Interaction between retries, deadlines, and circuit breakers
+
+### Project
+
+- Expense Tracker architecture refactor
+- Explicit domain/service/repository boundaries
+- Dependency injection for persistence
+- Keeping application rules independent of the storage adapter
+
+Day 39 refactors the Expense Tracker toward clearer architectural boundaries
+while reviewing the database and distributed-systems decisions that support a
+reliable backend.

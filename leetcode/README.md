@@ -417,3 +417,15 @@ stack pattern for resolving next-greater relationships in linear time.
 
 Both problems combine heap-based priority selection with greedy decisions and
 are implemented under `dsa/heap/`.
+
+---
+
+## Day 39 — Mixed Medium Review
+
+- Binary Tree Level Order Traversal
+- Number of Islands
+- Coin Change
+
+The set intentionally mixes tree, graph, and Dynamic Programming patterns. The
+existing implementations under `dsa/binary_tree/`, `dsa/graphs/`, and
+`dsa/dynamic_programming/` are used for review after the timed attempt.
