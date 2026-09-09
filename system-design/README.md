@@ -904,3 +904,26 @@ Detailed notes:
 
 The focus is on preventing cascading failures by limiting both dependency calls
 and resource consumption.
+
+---
+
+## Day 40 — Distributed Systems Review
+
+Day 40 consolidates the distributed-systems concepts introduced during Days
+31–39 before the roadmap moves into Production Engineering.
+
+Review areas:
+
+- Database scaling, partitioning, and replication
+- Read replicas and replication lag
+- Connection pooling
+- Background workers and queues
+- Caching and cache invalidation
+- Retries, backoff, and jitter
+- Circuit breakers and bulkheads
+- Distributed tracing and observability
+- Reliability, failure isolation, and capacity trade-offs
+
+The review emphasizes identifying bottlenecks and failure modes, then selecting
+an appropriate distributed-systems pattern rather than applying patterns in
+isolation.

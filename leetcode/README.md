@@ -429,3 +429,21 @@ are implemented under `dsa/heap/`.
 The set intentionally mixes tree, graph, and Dynamic Programming patterns. The
 existing implementations under `dsa/binary_tree/`, `dsa/graphs/`, and
 `dsa/dynamic_programming/` are used for review after the timed attempt.
+
+---
+
+## Day 40 — Timed Mixed Set
+
+Day 40 uses a timed mixed set to consolidate patterns covered during the
+Databases & Distributed Systems phase and earlier DSA foundations.
+
+Recommended assessment set:
+
+1. **Binary Tree Level Order Traversal** — Trees / BFS
+2. **Number of Islands** — Graphs / BFS-DFS
+3. **Coin Change** — Dynamic Programming
+4. **Task Scheduler** — Heap / Greedy
+5. **Daily Temperatures** — Monotonic Stack
+
+Use the existing implementations under `dsa/` only after the timed attempt for
+comparison, complexity analysis, and targeted revision.

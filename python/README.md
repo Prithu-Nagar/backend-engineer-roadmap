@@ -913,3 +913,24 @@ File:
 
 The example uses a small Expense entity and an injected store interface to show
 how application logic can remain independent of a concrete storage adapter.
+
+---
+
+## Day 40 — Monthly Review + Timed Assessment
+
+Day 40 consolidates the Python concepts covered during the first month of the
+roadmap, with emphasis on backend-oriented usage and production reasoning.
+
+Review areas:
+
+- Core Python and data-model fundamentals
+- Functions, closures, decorators, and generators
+- Iterators and context managers
+- Exception handling and custom exceptions
+- Type hints and serialization
+- AsyncIO, threading, and multiprocessing
+- Concurrency pitfalls and testing
+- Clean architecture, dependency injection, and maintainability
+
+The timed assessment is intended to reveal weak areas before the roadmap moves
+into Production Engineering on Day 41.

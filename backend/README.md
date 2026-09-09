@@ -863,3 +863,25 @@ File:
 
 The example uses an in-memory repository so the separation can be studied
 without coupling the example to a database or framework.
+
+---
+
+## Day 40 — API + Database Integration Review
+
+Day 40 reviews the boundary between backend APIs and the database systems that
+support them.
+
+Review areas:
+
+- Request validation and service-layer boundaries
+- Transaction boundaries around API operations
+- Repository and persistence abstractions
+- Connection management and pooling
+- Concurrency and integrity failures
+- Error translation between database and API layers
+- Caching and consistency considerations
+- Observability across API and database operations
+- Reliable handling of partial dependency failures
+
+The review focuses on reasoning across the full request path rather than
+studying the API and database layers in isolation.

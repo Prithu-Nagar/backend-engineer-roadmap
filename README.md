@@ -2045,3 +2045,28 @@ refactor.
 Day 39 refactors the Expense Tracker toward clearer architectural boundaries
 while reviewing the database and distributed-systems decisions that support a
 reliable backend.
+
+---
+
+## Day 40 — Databases & Distributed Systems Review
+
+Day 40 is the monthly consolidation checkpoint for the Databases & Distributed
+Systems phase.
+
+### Review Focus
+
+- DSA monthly review and timed assessment
+- Python monthly review and timed assessment
+- SQL monthly review and timed assessment
+- Timed mixed LeetCode practice
+- API and database integration review
+- Distributed-systems review across scaling, reliability, caching, queues, and observability
+- Expense Tracker milestone review
+
+Day 40 intentionally adds no new major topic. The goal is to measure retention,
+identify weak areas, and verify that the Expense Tracker integrates the backend,
+database, caching, reliability, and observability patterns developed during
+Days 31–39.
+
+Day 40 closes the Databases & Distributed Systems phase before the roadmap moves
+into Production Engineering on Day 41.

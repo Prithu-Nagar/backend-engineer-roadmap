@@ -607,3 +607,26 @@ The refactor includes:
 
 The existing CRUD, aggregation, asynchronous processing, caching, Redis
 caching, observability, and reliability layers remain intact.
+
+---
+
+## Day 40 — Expense Tracker Milestone
+
+Day 40 consolidates the Expense Tracker work completed during the Databases &
+Distributed Systems phase.
+
+Milestone review:
+
+- CRUD and domain validation
+- Aggregation and asynchronous processing
+- Database design and concurrency handling
+- Application caching and Redis caching
+- Structured logging and observability
+- Retry and reliability patterns
+- Service and repository boundaries
+- Clean architecture and dependency injection
+- Circuit-breaker and bulkhead considerations
+
+No new feature is introduced on Day 40. The milestone confirms that the
+Expense Tracker reflects the distributed-systems and backend-engineering
+patterns covered through Day 39 while preserving all earlier functionality.

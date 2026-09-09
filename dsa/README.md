@@ -661,3 +661,23 @@ Problems reviewed:
 The existing implementations are reused so the session emphasizes timed
 problem solving, pattern recognition, and complexity analysis rather than
 creating duplicate solutions.
+
+---
+
+## Day 40 — Monthly Review + Timed Assessment
+
+Day 40 is a monthly DSA consolidation checkpoint covering the major patterns
+introduced during Days 31–39 and earlier foundations.
+
+Review focus:
+
+- Trees and graph traversal
+- Dynamic Programming
+- Heaps and greedy algorithms
+- Monotonic stacks
+- Tries
+- Mixed medium problem solving
+- Pattern recognition and complexity analysis
+
+No duplicate solution files are added for Day 40. Existing implementations are
+used after the timed assessment to identify weak patterns and revise them.

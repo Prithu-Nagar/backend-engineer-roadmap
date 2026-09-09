@@ -789,3 +789,25 @@ Detailed examples:
 
 The examples emphasize designing around measured access patterns and explicit
 data invariants rather than adding indexes or constraints indiscriminately.
+
+---
+
+## Day 40 — Monthly Review + Timed Assessment
+
+Day 40 reviews the database concepts developed during the Databases &
+Distributed Systems phase.
+
+Review areas:
+
+- Transactions and isolation levels
+- Concurrent writes and deadlocks
+- Indexes and query optimization
+- Normalization and schema design
+- CTEs, joins, subqueries, and window functions
+- Partitioning and replication
+- Connection pooling and read replicas
+- PostgreSQL JSON and full-text search considerations
+- Database observability and production integrity
+
+The assessment connects query correctness, performance, concurrency, and
+operational database decisions to backend application behavior.
