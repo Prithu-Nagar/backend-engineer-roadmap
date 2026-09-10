@@ -681,3 +681,17 @@ Review focus:
 
 No duplicate solution files are added for Day 40. Existing implementations are
 used after the timed assessment to identify weak patterns and revise them.
+
+---
+
+## Day 41 — Advanced Weighted Graphs
+
+Day 41 revisits weighted graph problems with Dijkstra-style reasoning on grid
+graphs.
+
+Problems:
+
+- Path With Minimum Effort
+- Swim in Rising Water
+
+Implementations are stored in `graphs/`.

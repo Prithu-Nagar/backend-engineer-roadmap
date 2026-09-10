@@ -630,3 +630,25 @@ Milestone review:
 No new feature is introduced on Day 40. The milestone confirms that the
 Expense Tracker reflects the distributed-systems and backend-engineering
 patterns covered through Day 39 while preserving all earlier functionality.
+
+---
+
+## Day 41 — Task Manager Dockerization
+
+Day 41 moves the Task Manager toward a containerized runtime.
+
+Added:
+
+- `projects/task-manager/Dockerfile`
+- Root `.dockerignore`
+
+The Dockerization:
+
+- Uses a Python slim base image
+- Installs the repository's Python dependencies
+- Copies the existing backend and Task Manager project code
+- Exposes port `5000`
+- Starts the Flask application on `0.0.0.0`
+
+No application logic is replaced. Docker Compose and the multi-container
+application stack are introduced on Day 42.

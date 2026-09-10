@@ -592,3 +592,30 @@ Improved configuration management
 API documentation
 
 The project will continue evolving as new backend, system-design, SQL, and Python concepts are introduced throughout the roadmap.
+
+---
+
+## Dockerization
+
+Day 41 packages the Task Manager backend as a Docker image.
+
+Dockerfile:
+
+`projects/task-manager/Dockerfile`
+
+Build from the repository root:
+
+```bash
+docker build -f projects/task-manager/Dockerfile -t task-manager-api .
+```
+
+Run the container:
+
+```bash
+docker run --rm -p 5000:5000 task-manager-api
+```
+
+The container listens on port `5000` and runs the existing Flask application.
+Application and database state are not stored in the container filesystem.
+
+Docker Compose is intentionally deferred to Day 42.

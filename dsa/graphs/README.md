@@ -138,3 +138,30 @@ Files:
 
 - `kruskal_mst.py`
 - `min_cost_to_connect_all_points.py`
+
+---
+
+## Day 41 — Advanced Weighted Graphs
+
+Day 41 reviews weighted-graph reasoning through minimax paths and Dijkstra's
+algorithm on grids.
+
+Topics include:
+
+- Weighted graph modeling
+- Dijkstra's algorithm
+- Priority queues
+- Minimax path cost
+- Relaxation of weighted states
+- Visited-state handling
+- Grid graphs as weighted graphs
+
+Problems solved:
+
+- Path With Minimum Effort
+- Swim in Rising Water
+
+Files:
+
+- `path_with_minimum_effort.py`
+- `swim_in_rising_water.py`

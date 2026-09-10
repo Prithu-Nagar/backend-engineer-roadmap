@@ -811,3 +811,27 @@ Review areas:
 
 The assessment connects query correctness, performance, concurrency, and
 operational database decisions to backend application behavior.
+
+---
+
+## Day 41 — Database Containers & Initialization
+
+Day 41 introduces database containers as an isolated runtime for local
+development and repeatable database bootstrapping.
+
+Topics include:
+
+- PostgreSQL containers
+- Initialization scripts
+- Schema creation during first database initialization
+- Seed data
+- Idempotent bootstrap statements
+- Keeping database state outside the application image
+
+File:
+
+`database_container_init.sql`
+
+The initialization script is designed to be placed in PostgreSQL's
+`/docker-entrypoint-initdb.d/` directory when creating a fresh database
+container.

@@ -927,3 +927,28 @@ Review areas:
 The review emphasizes identifying bottlenecks and failure modes, then selecting
 an appropriate distributed-systems pattern rather than applying patterns in
 isolation.
+
+---
+
+## Day 41 — Containerized Service Architecture
+
+Day 41 introduces containerization as a deployment and scaling boundary for
+backend services.
+
+Topics include:
+
+- Images vs containers
+- Stateless application containers
+- Containerized service architecture
+- Externalizing durable state
+- Resource boundaries
+- Container failure models
+- Dockerfile responsibilities
+- Production containerization checklist
+
+Detailed notes:
+
+`containerized-service-architecture.md`
+
+Docker Compose and multi-container local orchestration are intentionally
+covered on Day 42.

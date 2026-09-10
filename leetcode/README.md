@@ -447,3 +447,13 @@ Recommended assessment set:
 
 Use the existing implementations under `dsa/` only after the timed attempt for
 comparison, complexity analysis, and targeted revision.
+
+---
+
+## Day 41 — Advanced Weighted Graphs
+
+- Path With Minimum Effort
+- Swim in Rising Water
+
+Both problems reinforce Dijkstra-style reasoning where the path cost is the
+maximum edge or cell cost encountered along the route.

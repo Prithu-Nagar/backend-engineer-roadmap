@@ -934,3 +934,23 @@ Review areas:
 
 The timed assessment is intended to reveal weak areas before the roadmap moves
 into Production Engineering on Day 41.
+
+---
+
+## Day 41 — Dockerizing Python Applications
+
+Day 41 introduces the application-level considerations involved in packaging a
+Python backend into a Docker image.
+
+Topics include:
+
+- Python runtime images
+- Dependency installation inside an image
+- Working directories
+- Environment variables and runtime defaults
+- Container startup commands
+- Standard output/error logging
+- Keeping application containers replaceable
+
+The Task Manager Dockerfile in `projects/task-manager/Dockerfile` provides the
+practical Dockerization example for the roadmap.

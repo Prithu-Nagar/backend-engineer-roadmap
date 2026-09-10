@@ -106,7 +106,8 @@ problem-solving.
 - ✅ FastAPI
 - ✅ FastAPI API Testing
 - ✅ Job Scheduling
-- ⏳ Docker
+- ✅ Docker
+- ⏳ Docker Compose
 - ⏳ Deployment
 
 ---
@@ -2070,3 +2071,63 @@ Days 31–39.
 
 Day 40 closes the Databases & Distributed Systems phase before the roadmap moves
 into Production Engineering on Day 41.
+
+---
+
+## Day 41 — Production Engineering
+
+Day 41 begins the Production Engineering phase with containerization and
+advanced weighted-graph review.
+
+### DSA
+
+- Weighted graph review
+- Dijkstra's algorithm
+- Minimax path cost
+- Path With Minimum Effort
+- Swim in Rising Water
+
+### Python
+
+- Dockerizing Python applications
+- Python runtime images
+- Dependency installation in containers
+- Container startup behavior
+
+### SQL
+
+- PostgreSQL database containers
+- Database initialization scripts
+- Schema bootstrap
+- Seed data
+
+### LeetCode
+
+- Path With Minimum Effort
+- Swim in Rising Water
+
+### Backend
+
+- Docker fundamentals
+- Images vs containers
+- Dockerfile structure
+- Container startup
+- Port exposure
+
+### System Design
+
+- Containerized service architecture
+- Stateless containers
+- Externalized durable state
+- Container failure model
+- Resource boundaries
+
+### Projects
+
+- Dockerized Task Manager
+- Added `projects/task-manager/Dockerfile`
+- Added root `.dockerignore`
+
+Day 41 starts the Production Engineering phase. Docker Compose, CI/CD,
+deployment, monitoring, security, and incident handling are intentionally
+covered in later days.

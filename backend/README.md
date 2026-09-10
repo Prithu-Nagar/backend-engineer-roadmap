@@ -885,3 +885,27 @@ Review areas:
 
 The review focuses on reasoning across the full request path rather than
 studying the API and database layers in isolation.
+
+---
+
+## Day 41 — Docker Fundamentals
+
+Day 41 introduces Docker as the runtime boundary for a Python backend.
+
+Topics include:
+
+- Docker images vs containers
+- Base images
+- Dependency installation
+- Working directories
+- Port exposure
+- Container startup commands
+- Reproducible application packaging
+- Stateless application-container principles
+
+Practical implementation:
+
+`projects/task-manager/Dockerfile`
+
+The Dockerfile packages the existing Task Manager backend without replacing its
+application code. Docker Compose is intentionally deferred to Day 42.
