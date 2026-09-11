@@ -695,3 +695,20 @@ Problems:
 - Swim in Rising Water
 
 Implementations are stored in `graphs/`.
+
+---
+
+## Day 42 — Dynamic Programming Mixed Review
+
+Day 42 revisits dynamic programming through two implementation problems.
+
+Problems:
+
+- Word Break
+- Coin Change II
+
+Implementations are stored in `dynamic_programming/`.
+
+The review emphasizes state definition, transition logic, iteration order,
+base cases, and reducing space from a two-dimensional formulation to a
+one-dimensional DP array where appropriate.

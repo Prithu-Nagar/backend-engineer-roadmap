@@ -909,3 +909,29 @@ Practical implementation:
 
 The Dockerfile packages the existing Task Manager backend without replacing its
 application code. Docker Compose is intentionally deferred to Day 42.
+
+---
+
+## Day 42 — Docker Compose for Flask + DB + Redis
+
+Day 42 expands Docker fundamentals into a multi-container Flask backend
+environment.
+
+Topics include:
+
+- Docker Compose
+- Flask application containers
+- PostgreSQL service configuration
+- Redis service configuration
+- Environment variables
+- Service-name based networking
+- Health checks
+- Persistent database volumes
+- Dependency startup conditions
+
+Practical implementation:
+
+`docker-compose.yml`
+
+The Compose stack builds the existing Task Manager image and runs it alongside
+PostgreSQL and Redis. Application logic remains unchanged.

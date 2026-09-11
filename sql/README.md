@@ -835,3 +835,28 @@ File:
 The initialization script is designed to be placed in PostgreSQL's
 `/docker-entrypoint-initdb.d/` directory when creating a fresh database
 container.
+
+---
+
+## Day 42 — Database Migrations in Containers
+
+Day 42 introduces the relationship between database initialization,
+migration steps, and container startup.
+
+Topics include:
+
+- Baseline schema initialization
+- Idempotent migration statements
+- Migration version tracking
+- PostgreSQL initialization mounts
+- Ordering initialization and migration scripts
+- Persistent database volumes
+- Production migration-tool considerations
+
+File:
+
+`container_migrations.sql`
+
+The example records a migration version in `schema_migrations` and adds an
+Expense Tracker category index. The migration is intentionally idempotent for
+local container practice.

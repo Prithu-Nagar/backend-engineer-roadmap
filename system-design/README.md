@@ -952,3 +952,27 @@ Detailed notes:
 
 Docker Compose and multi-container local orchestration are intentionally
 covered on Day 42.
+
+---
+
+## Day 42 — Local Distributed Environment
+
+Day 42 models a local distributed environment with independently running
+application, database, and cache containers.
+
+Topics include:
+
+- Multi-container architecture
+- Service discovery through Compose service names
+- Health checks
+- Persistent state
+- Independent container failure
+- Dependency boundaries
+- Local orchestration vs production orchestration
+
+Detailed notes:
+
+`local-distributed-environment.md`
+
+The repository root `docker-compose.yml` provides the concrete local
+environment.

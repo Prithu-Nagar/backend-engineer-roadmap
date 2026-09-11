@@ -652,3 +652,32 @@ The Dockerization:
 
 No application logic is replaced. Docker Compose and the multi-container
 application stack are introduced on Day 42.
+
+---
+
+## Day 42 — Expense Tracker Container Stack
+
+Day 42 extends the repository's containerization work into a local
+multi-service stack.
+
+Added:
+
+- `docker-compose.yml`
+- `sql/container_migrations.sql`
+- `system-design/local-distributed-environment.md`
+- `dsa/dynamic_programming/word_break.py`
+- `dsa/dynamic_programming/coin_change_ii.py`
+
+The Compose stack provides:
+
+- Flask application container
+- PostgreSQL database container
+- Redis cache container
+- Persistent PostgreSQL volume
+- Database health checks
+- Redis health checks
+- Containerized initialization and migration scripts
+
+The existing application and Expense Tracker database layers remain intact.
+The stack establishes the local infrastructure boundary needed for later
+production-engineering work.

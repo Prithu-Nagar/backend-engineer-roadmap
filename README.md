@@ -2131,3 +2131,64 @@ advanced weighted-graph review.
 Day 41 starts the Production Engineering phase. Docker Compose, CI/CD,
 deployment, monitoring, security, and incident handling are intentionally
 covered in later days.
+
+---
+
+## Day 42 — Production Engineering
+
+Day 42 expands containerization into a reproducible multi-container local
+environment.
+
+### DSA
+
+- Dynamic Programming mixed review
+- Word Break
+- Coin Change II
+
+### Python
+
+- Docker Compose
+- Service dependencies
+- Environment-based configuration
+- Container networking
+- Health checks
+
+### SQL
+
+- Database migrations in containers
+- Migration version tracking
+- Idempotent migration steps
+- Initialization and migration ordering
+
+### LeetCode
+
+- Word Break
+- Coin Change II
+
+### Backend
+
+- Docker Compose for Flask + PostgreSQL + Redis
+- Service-name based networking
+- Health checks
+- Persistent database volumes
+
+### System Design
+
+- Local distributed environment
+- Application/database/cache boundaries
+- Independent container failure
+- Local orchestration considerations
+
+### Projects
+
+- Extended the containerized stack with Docker Compose
+- Added PostgreSQL and Redis services
+- Added container migration example
+- Preserved the existing Task Manager Docker image and application logic
+
+Practical implementation:
+
+`docker-compose.yml`
+
+Day 42 builds on Day 41 containerization and prepares the repository for the
+CI/CD and deployment topics that follow.

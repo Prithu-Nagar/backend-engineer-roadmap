@@ -1,0 +1,57 @@
+# Day 42 — Local Flask + PostgreSQL + Redis stack
+#
+# Start:
+# docker compose up --build
+#
+# Stop and remove containers:
+# docker compose down
+#
+# Remove the PostgreSQL volume as well:
+# docker compose down -v
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: projects/task-manager/Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      DATABASE_URL: postgresql://roadmap:roadmap@db:5432/roadmap
+      REDIS_URL: redis://redis:6379/0
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: roadmap
+      POSTGRES_USER: roadmap
+      POSTGRES_PASSWORD: roadmap
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./sql/database_container_init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+      - ./sql/container_migrations.sql:/docker-entrypoint-initdb.d/02-migrations.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U roadmap -d roadmap"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  postgres_data:

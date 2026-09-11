@@ -954,3 +954,23 @@ Topics include:
 
 The Task Manager Dockerfile in `projects/task-manager/Dockerfile` provides the
 practical Dockerization example for the roadmap.
+
+---
+
+## Day 42 — Docker Compose & Service Dependencies
+
+Day 42 extends Python containerization into a multi-container local
+environment.
+
+Topics include:
+
+- Docker Compose service definitions
+- Environment variables for service configuration
+- Container-to-container networking
+- Database and Redis service dependencies
+- Health checks
+- Reproducible local development environments
+- Separating application configuration from container infrastructure
+
+The repository root `docker-compose.yml` provides the practical Compose
+configuration.

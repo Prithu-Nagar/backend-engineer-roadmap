@@ -619,3 +619,27 @@ The container listens on port `5000` and runs the existing Flask application.
 Application and database state are not stored in the container filesystem.
 
 Docker Compose is intentionally deferred to Day 42.
+
+---
+
+## Docker Compose
+
+Day 42 adds a multi-container local environment around the existing
+Dockerized Task Manager.
+
+The repository root `docker-compose.yml` runs:
+
+- Flask application
+- PostgreSQL
+- Redis
+
+The application receives dependency locations through:
+
+- `DATABASE_URL`
+- `REDIS_URL`
+
+The database and Redis services include health checks, and PostgreSQL data is
+stored in a named Docker volume.
+
+The application code is not replaced. Docker Compose adds orchestration around
+the existing Day 41 image.
