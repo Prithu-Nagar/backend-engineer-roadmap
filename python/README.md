@@ -974,3 +974,21 @@ Topics include:
 
 The repository root `docker-compose.yml` provides the practical Compose
 configuration.
+
+---
+
+## Day 43 — Production Engineering
+
+Day 43 focuses on separating runtime configuration from application code.
+
+Topics include:
+
+- Environment variables
+- Configuration defaults
+- Immutable settings
+- Environment-specific runtime values
+- Keeping deployment configuration outside source code
+
+File:
+
+`environment_config.py`

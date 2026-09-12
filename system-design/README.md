@@ -976,3 +976,21 @@ Detailed notes:
 
 The repository root `docker-compose.yml` provides the concrete local
 environment.
+
+---
+
+## Day 43 — Production Engineering
+
+Day 43 introduces CI/CD as an automated architecture boundary.
+
+Topics include:
+
+- CI vs CD
+- Pipeline stages
+- Quality gates
+- Artifact flow
+- Deployment and health-check boundaries
+
+Detailed notes:
+
+`cicd-pipeline.md`

@@ -935,3 +935,25 @@ Practical implementation:
 
 The Compose stack builds the existing Task Manager image and runs it alongside
 PostgreSQL and Redis. Application logic remains unchanged.
+
+---
+
+## Day 43 — Production Engineering
+
+Day 43 introduces the first continuous-integration quality gate.
+
+Topics include:
+
+- CI workflow structure
+- Python linting with Ruff
+- Automated pytest execution
+- Docker build validation
+- GitHub Actions basics
+
+Detailed notes:
+
+`ci-basics.md`
+
+Workflow:
+
+`.github/workflows/ci.yml`

@@ -2192,3 +2192,68 @@ Practical implementation:
 
 Day 42 builds on Day 41 containerization and prepares the repository for the
 CI/CD and deployment topics that follow.
+
+---
+
+## Day 43 — Production Engineering
+
+Day 43 introduces continuous integration and production-oriented configuration
+separation while reviewing sliding-window and two-pointer interview patterns.
+
+### DSA
+
+- Sliding window review
+- Two pointers review
+- Longest Substring Without Repeating Characters
+- Minimum Size Subarray Sum
+- 3Sum
+
+### Python
+
+- Environment/configuration separation
+- Environment variables
+- Immutable settings objects
+- Keeping runtime configuration outside source code
+
+### SQL
+
+- Production schema migration practices
+- Migration version tracking
+- Idempotent additive migrations
+- Transactional migration boundaries
+- Expand-and-contract migration thinking
+
+### LeetCode
+
+- Longest Substring Without Repeating Characters
+- Minimum Size Subarray Sum
+- 3Sum
+
+### Backend
+
+- CI basics
+- Python linting
+- Automated tests
+- Docker build validation
+- GitHub Actions workflow basics
+
+### System Design
+
+- CI/CD pipeline architecture
+- CI vs CD
+- Pipeline stages and artifact flow
+- Deployment and health-check boundaries
+
+### Projects
+
+- Added repository CI checks
+- Added Ruff linting
+- Added automated pytest execution
+- Added Docker image build validation
+
+Practical implementation:
+
+`.github/workflows/ci.yml`
+
+Day 43 establishes the automated quality gate that later deployment and production
+readiness work can build upon.

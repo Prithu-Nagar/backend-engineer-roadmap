@@ -712,3 +712,22 @@ Implementations are stored in `dynamic_programming/`.
 The review emphasizes state definition, transition logic, iteration order,
 base cases, and reducing space from a two-dimensional formulation to a
 one-dimensional DP array where appropriate.
+
+---
+
+## Day 43 — Production Engineering
+
+---
+
+## Day 43 — Sliding Window & Two Pointers Review
+
+Day 43 revisits two high-frequency interview patterns.
+
+Added:
+
+- `sliding_window/longest_substring_without_repeating_characters.py`
+- `sliding_window/minimum_size_subarray_sum.py`
+- `two_pointers/three_sum.py`
+
+The solutions reinforce moving-window invariants, pointer movement, duplicate
+handling, and the transition from brute force to linear or quadratic solutions.

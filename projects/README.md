@@ -681,3 +681,21 @@ The Compose stack provides:
 The existing application and Expense Tracker database layers remain intact.
 The stack establishes the local infrastructure boundary needed for later
 production-engineering work.
+
+---
+
+## Day 43 — Repository CI Checks
+
+Day 43 adds the repository's first continuous-integration workflow.
+
+Added:
+
+- `.github/workflows/ci.yml`
+- `backend/ci-basics.md`
+- `system-design/cicd-pipeline.md`
+- Python environment/configuration example
+- Production migration example
+- Sliding-window and two-pointer review problems
+
+The CI workflow validates Python linting, automated tests, and Docker image
+construction on pushes and pull requests.

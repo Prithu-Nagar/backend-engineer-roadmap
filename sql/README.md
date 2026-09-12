@@ -860,3 +860,21 @@ File:
 The example records a migration version in `schema_migrations` and adds an
 Expense Tracker category index. The migration is intentionally idempotent for
 local container practice.
+
+---
+
+## Day 43 — Production Engineering
+
+Day 43 introduces production-oriented schema migration practices.
+
+Topics include:
+
+- Migration version tracking
+- Idempotent additive changes
+- Transactional migration boundaries
+- Expand-and-contract thinking
+- Migration testing and operational safety
+
+File:
+
+`production_migrations.sql`
