@@ -699,3 +699,20 @@ Added:
 
 The CI workflow validates Python linting, automated tests, and Docker image
 construction on pushes and pull requests.
+
+---
+
+## Day 44 — CI Pipeline & Test Coverage
+
+Day 44 extends repository CI from basic validation toward a production-ready
+quality gate.
+
+Added:
+
+- Automated test coverage reporting with `pytest-cov`
+- Coverage execution in GitHub Actions
+- CI documentation for the test/coverage stage
+- Clear separation between validation and future deployment stages
+
+The CI pipeline now validates linting, tests, coverage, and Docker image
+construction before a change is considered ready for delivery.

@@ -2257,3 +2257,67 @@ Practical implementation:
 
 Day 43 establishes the automated quality gate that later deployment and production
 readiness work can build upon.
+
+---
+
+## Day 44 — Production Engineering
+
+Day 44 extends the production-engineering phase into packaging, recovery,
+GitHub Actions, and deployment strategy.
+
+### DSA
+
+- Binary search review
+- Rotated sorted arrays
+- Binary-search boundary finding
+- Interval intersections
+
+### Python
+
+- Packaging and reproducible builds
+- Project metadata
+- Dependency pinning
+- Build artifacts
+- Clean-environment verification
+
+### SQL
+
+- Backup and restore concepts
+- RPO and RTO
+- Point-in-time recovery
+- Restore testing
+- Backup retention and security
+
+### LeetCode
+
+- Search in Rotated Sorted Array
+- Find First and Last Position of Element in Sorted Array
+- Interval List Intersections
+
+### Backend
+
+- GitHub Actions CI/CD
+- Test coverage in CI
+- Workflow/job/step structure
+- Artifact and secret management
+- Deployment guardrails
+
+### System Design
+
+- Rolling deployments
+- Blue/green deployments
+- Canary deployments
+- Rollback and compatibility considerations
+
+### Projects
+
+- Extended CI with test coverage
+- Added `pytest-cov`
+- Documented the CI/CD delivery path
+
+Practical implementation:
+
+`.github/workflows/ci.yml`
+
+Day 44 builds on Day 43's CI quality gate and prepares the repository for later
+deployment, monitoring, and production-readiness work.

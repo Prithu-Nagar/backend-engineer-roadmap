@@ -457,3 +457,16 @@ comparison, complexity analysis, and targeted revision.
 
 Both problems reinforce Dijkstra-style reasoning where the path cost is the
 maximum edge or cell cost encountered along the route.
+
+---
+
+## Day 44 — Binary Search & Intervals Review
+
+Recommended pattern set:
+
+- Search in Rotated Sorted Array
+- Find First and Last Position of Element in Sorted Array
+- Interval List Intersections
+
+Use the corresponding implementations under `dsa/binary_search/` and
+`dsa/intervals/` after attempting the problems without looking at the solution.

@@ -26,11 +26,11 @@ jobs:
       - name: Lint Python files
         run: ruff check . --exclude .git --exclude .pytest_cache
 
-      - name: Run Task Manager tests
-        run: pytest -q projects/task-manager/tests
+      - name: Run Task Manager tests with coverage
+        run: pytest --cov=projects/task-manager --cov-report=term-missing --cov-report=xml:coverage-task-manager.xml -q projects/task-manager/tests
 
-      - name: Run URL Shortener tests
-        run: pytest -q projects/url-shortener/tests
+      - name: Run URL Shortener tests with coverage
+        run: pytest --cov=projects/url-shortener --cov-report=term-missing --cov-report=xml:coverage-url-shortener.xml -q projects/url-shortener/tests
 
   docker-build:
     name: Build Docker image

@@ -11,3 +11,4 @@ httpx
 SQLAlchemy
 
 redis
+pytest-cov

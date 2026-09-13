@@ -957,3 +957,22 @@ Detailed notes:
 Workflow:
 
 `.github/workflows/ci.yml`
+
+---
+
+## Day 44 — GitHub Actions CI/CD
+
+Day 44 extends the CI quality gate into GitHub Actions-based CI/CD concepts.
+
+Topics include:
+
+- Workflows, jobs, steps, and runners
+- CI validation on pushes and pull requests
+- Test coverage in CI
+- Artifact flow
+- Secrets and protected environments
+- Deployment guardrails
+
+Detailed notes:
+
+`github_actions_cicd.md`

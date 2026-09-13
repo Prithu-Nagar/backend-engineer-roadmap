@@ -992,3 +992,23 @@ Topics include:
 File:
 
 `environment_config.py`
+
+---
+
+## Day 44 — Packaging & Reproducible Builds
+
+Day 44 focuses on making Python builds repeatable across development and CI
+environments.
+
+Topics include:
+
+- `pyproject.toml` as modern project metadata
+- Dependency pinning and constraints
+- Isolated build environments
+- Wheel and source-distribution artifacts
+- Clean-environment verification
+- Testing the built artifact before release
+
+File:
+
+`packaging_reproducible_builds.py`

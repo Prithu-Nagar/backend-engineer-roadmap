@@ -878,3 +878,23 @@ Topics include:
 File:
 
 `production_migrations.sql`
+
+---
+
+## Day 44 — Backup & Restore
+
+Day 44 introduces production database recovery concepts.
+
+Topics include:
+
+- Logical vs physical backups
+- Full and incremental backup concepts
+- Point-in-time recovery
+- Recovery Point Objective (RPO)
+- Recovery Time Objective (RTO)
+- Restore testing and backup validation
+- Backup security and retention
+
+File:
+
+`backup_restore.sql`

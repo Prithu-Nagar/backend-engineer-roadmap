@@ -731,3 +731,18 @@ Added:
 
 The solutions reinforce moving-window invariants, pointer movement, duplicate
 handling, and the transition from brute force to linear or quadratic solutions.
+
+---
+
+## Day 44 — Binary Search & Intervals Review
+
+Day 44 reviews boundary-based binary search and interval processing patterns.
+
+Added:
+
+- `binary_search/search_in_rotated_sorted_array.py`
+- `binary_search/find_first_and_last_position.py`
+- `intervals/interval_list_intersections.py`
+
+The review emphasizes identifying sorted regions, searching for left/right
+boundaries, and advancing interval pointers based on the earlier ending interval.

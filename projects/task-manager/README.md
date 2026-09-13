@@ -643,3 +643,16 @@ stored in a named Docker volume.
 
 The application code is not replaced. Docker Compose adds orchestration around
 the existing Day 41 image.
+
+---
+
+## Day 44 — CI Pipeline & Test Coverage
+
+Day 44 extends the Task Manager project's automated quality checks with test
+coverage reporting through the repository GitHub Actions workflow.
+
+Coverage is used as a feedback signal alongside functional tests. It does not
+replace meaningful test cases or review of untested behavior.
+
+The repository workflow runs the Task Manager test suite with `pytest-cov` and
+prints a missing-lines report for CI review.

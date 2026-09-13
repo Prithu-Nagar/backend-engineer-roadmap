@@ -994,3 +994,22 @@ Topics include:
 Detailed notes:
 
 `cicd-pipeline.md`
+
+---
+
+## Day 44 — Deployment Strategies
+
+Day 44 reviews deployment approaches for introducing new backend versions safely.
+
+Topics include:
+
+- Rolling deployments
+- Blue/green deployments
+- Canary deployments
+- Rollback considerations
+- Version compatibility
+- Expand-and-contract database changes
+
+Detailed notes:
+
+`deployment-strategies.md`
