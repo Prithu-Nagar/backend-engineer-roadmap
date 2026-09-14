@@ -470,3 +470,16 @@ Recommended pattern set:
 
 Use the corresponding implementations under `dsa/binary_search/` and
 `dsa/intervals/` after attempting the problems without looking at the solution.
+
+---
+
+## Day 45 — Hashing & Prefix Sums Review
+
+Recommended pattern set:
+
+- Subarray Sum Equals K
+- Contiguous Array
+- Subarray Sums Divisible by K
+
+The set reinforces prefix-state counting, balance tracking, remainder
+normalization, and O(n) hash-map based subarray counting.

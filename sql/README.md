@@ -898,3 +898,23 @@ Topics include:
 File:
 
 `backup_restore.sql`
+
+---
+
+## Day 45 — Connection Pooling & Production DB Settings
+
+Day 45 connects database connection pooling with production database capacity
+and operational settings.
+
+Topics include:
+
+- PostgreSQL connection limits
+- Active connection monitoring
+- Bounded application-side pools
+- Reserving connection capacity
+- Connection and statement timeouts
+- Keeping database credentials outside source control
+
+File:
+
+`production_connection_pooling.sql`

@@ -192,3 +192,19 @@ Pattern:
 - Prefix sum
 - Frequency map
 - Count previously observed prefix sums
+
+---
+
+## Day 45 — Review
+
+Day 45 revisits hash maps as prefix-state storage.
+
+Reviewed:
+
+- `subarray_sum_equals_k.py` — count prior prefix sums that complete a target
+  sum.
+- `contiguous_array.py` — map the balance between 0s and 1s to the earliest
+  index where that balance occurred.
+
+The key interview idea is that equal prefix state at two indices identifies a
+valid subarray between them.

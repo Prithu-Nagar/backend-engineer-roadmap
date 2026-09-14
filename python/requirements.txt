@@ -12,3 +12,4 @@ SQLAlchemy
 
 redis
 pytest-cov
+gunicorn

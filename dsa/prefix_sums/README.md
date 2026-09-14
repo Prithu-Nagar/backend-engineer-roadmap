@@ -67,3 +67,18 @@ For `n` input values:
 
 The pattern is especially useful when many range queries or range updates must
 be processed efficiently.
+
+---
+
+## Day 45 — Prefix Sum + Hashing Review
+
+Day 45 extends the prefix-sum pattern from direct range queries to counting
+subarrays by prefix state.
+
+Implementation:
+
+- `subarray_sums_divisible_by_k.py` — counts pairs of equal prefix remainders
+  modulo `k`.
+
+The remainder map allows each new prefix sum to find compatible earlier prefix
+sums in O(1) average time, producing an O(n) solution.

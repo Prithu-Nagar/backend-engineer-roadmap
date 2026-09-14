@@ -716,3 +716,21 @@ Added:
 
 The CI pipeline now validates linting, tests, coverage, and Docker image
 construction before a change is considered ready for delivery.
+
+---
+
+## Day 45 — Deployment-ready Task Manager
+
+Day 45 prepares the Task Manager for production-style serving.
+
+Added/updated:
+
+- Environment-driven application configuration
+- WSGI entry point
+- Gunicorn production server
+- Deployment-oriented Docker startup command
+- Runtime configuration documentation
+
+The Task Manager can now be served by Gunicorn inside the existing Docker image,
+with a reverse proxy positioned in front of the application server in a
+production architecture.

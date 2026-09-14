@@ -656,3 +656,46 @@ replace meaningful test cases or review of untested behavior.
 
 The repository workflow runs the Task Manager test suite with `pytest-cov` and
 prints a missing-lines report for CI review.
+
+---
+
+## Day 45 — Deployment Readiness
+
+Day 45 prepares the Task Manager for production-style serving behind a reverse
+proxy and application server.
+
+Added/updated:
+
+- Environment-driven application configuration
+- WSGI entry point at `backend/wsgi.py`
+- Gunicorn as the production WSGI server
+- Deployment-ready Docker startup command
+- Runtime configuration documentation
+
+Production request flow:
+
+```text
+Client
+  |
+  v
+Reverse Proxy
+  |
+  v
+Gunicorn
+  |
+  v
+Flask Task Manager
+  |
+  +-------> Database
+  |
+  +-------> Redis
+```
+
+Build the image from the repository root:
+
+```bash
+docker build -f projects/task-manager/Dockerfile -t task-manager-api .
+```
+
+Production secrets should be supplied through the deployment platform's secret
+management mechanism rather than committed to the repository.

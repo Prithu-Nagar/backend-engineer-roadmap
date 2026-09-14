@@ -746,3 +746,18 @@ Added:
 
 The review emphasizes identifying sorted regions, searching for left/right
 boundaries, and advancing interval pointers based on the earlier ending interval.
+
+---
+
+## Day 45 — Hashing & Prefix Sums Review
+
+Day 45 revisits prefix-sum state combined with hash-map lookups.
+
+Added/reviewed:
+
+- `hashing/subarray_sum_equals_k.py`
+- `hashing/contiguous_array.py`
+- `prefix_sums/subarray_sums_divisible_by_k.py`
+
+The review emphasizes storing the earliest or most useful prefix state,
+normalizing prefix values, and reducing nested subarray enumeration to O(n).

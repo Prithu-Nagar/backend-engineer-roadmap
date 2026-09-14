@@ -1012,3 +1012,23 @@ Topics include:
 File:
 
 `packaging_reproducible_builds.py`
+
+---
+
+## Day 45 — Application Configuration for Deployment
+
+Day 45 focuses on keeping deployment-specific runtime configuration outside
+application source code.
+
+Topics include:
+
+- Environment-driven configuration
+- Immutable runtime settings with `dataclass`
+- Boolean and integer environment parsing
+- Production safeguards such as disabling debug mode
+- Database and Redis connection URLs
+- Separating development and production values
+
+File:
+
+`application_configuration_for_deployment.py`

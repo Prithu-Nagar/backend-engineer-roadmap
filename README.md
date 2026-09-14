@@ -2321,3 +2321,53 @@ Practical implementation:
 
 Day 44 builds on Day 43's CI quality gate and prepares the repository for later
 deployment, monitoring, and production-readiness work.
+
+---
+
+## Day 45 — Production Deployment Fundamentals
+
+Day 45 moves the repository from CI/CD preparation into deployment-ready
+application serving.
+
+### DSA
+
+- Hashing + prefix sums review
+- Prefix-state frequency maps
+- Balance and remainder normalization
+
+### Python
+
+- Application configuration for deployment
+- Environment-driven runtime settings
+- Production debug safeguards
+
+### SQL
+
+- Connection pooling
+- Production database connection budgets
+- Active connection monitoring
+
+### LeetCode
+
+- Subarray Sum Equals K
+- Contiguous Array
+- Subarray Sums Divisible by K
+
+### Backend
+
+- Deployment fundamentals
+- WSGI and ASGI
+- Gunicorn production serving
+
+### System Design
+
+- Reverse proxy + application servers
+- Upstream routing and timeouts
+- Graceful shutdown
+
+### Projects
+
+- Made the Task Manager Docker image deployment-ready
+- Added a WSGI entry point
+- Added Gunicorn production startup
+- Documented runtime deployment configuration

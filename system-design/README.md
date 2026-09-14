@@ -1013,3 +1013,22 @@ Topics include:
 Detailed notes:
 
 `deployment-strategies.md`
+
+---
+
+## Day 45 — Reverse Proxy + Application Servers
+
+Day 45 connects deployment fundamentals with the production request path.
+
+Topics include:
+
+- Reverse proxy responsibilities
+- WSGI application servers
+- ASGI application servers
+- TLS termination
+- Upstream routing and timeouts
+- Graceful shutdown and stateless application instances
+
+Detailed notes:
+
+`reverse-proxy-app-server.md`

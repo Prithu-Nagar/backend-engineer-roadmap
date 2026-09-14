@@ -976,3 +976,24 @@ Topics include:
 Detailed notes:
 
 `github_actions_cicd.md`
+
+---
+
+## Day 45 — Deployment Fundamentals
+
+Day 45 prepares the Flask application for production serving.
+
+Topics include:
+
+- Production WSGI serving
+- Gunicorn process management
+- WSGI entry points
+- ASGI entry points for FastAPI applications
+- Environment-driven deployment configuration
+- Separating development servers from production servers
+
+Files:
+
+- `wsgi.py`
+- `asgi.py`
+- `config.py`
