@@ -734,3 +734,21 @@ Added/updated:
 The Task Manager can now be served by Gunicorn inside the existing Docker image,
 with a reverse proxy positioned in front of the application server in a
 production architecture.
+
+---
+
+## Day 46 — Task Manager Health Checks + Structured Logs
+
+Day 46 adds production monitoring hooks to the Task Manager project.
+
+Added:
+
+- `projects/task-manager/health_checks.py`
+- `projects/task-manager/structured_logging.py`
+- `projects/task-manager/tests/test_health_checks.py`
+- Flask registration of `/health/live` and `/health/ready` through
+  `backend/monitoring_health_checks.py`
+
+The project now distinguishes process liveness from dependency-aware
+readiness and emits structured JSON log records suitable for centralized
+collection.

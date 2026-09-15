@@ -483,3 +483,16 @@ Recommended pattern set:
 
 The set reinforces prefix-state counting, balance tracking, remainder
 normalization, and O(n) hash-map based subarray counting.
+
+---
+
+## Day 46 — Tree / Graph Interview Patterns
+
+Recommended medium-level pattern set:
+
+- Lowest Common Ancestor of a Binary Tree
+- Binary Tree Right Side View
+- Word Ladder
+
+Attempt each problem independently before comparing against the implementations
+under `dsa/binary_tree/` and `dsa/graphs/`.

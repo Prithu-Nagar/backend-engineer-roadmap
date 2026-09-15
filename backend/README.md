@@ -997,3 +997,24 @@ Files:
 - `wsgi.py`
 - `asgi.py`
 - `config.py`
+
+---
+
+## Day 46 — Monitoring & Health Checks
+
+Day 46 introduces operational endpoints for production monitoring.
+
+Topics include:
+
+- Liveness checks
+- Readiness checks
+- Dependency-aware readiness
+- HTTP 503 for instances that are not ready
+- Keeping liveness checks lightweight
+- Registering health endpoints in the Flask application
+
+File:
+
+`monitoring_health_checks.py`
+
+The application now exposes `/health/live` and `/health/ready`.

@@ -132,3 +132,22 @@ The important interview question is:
 > What information must the recursive call return to make the parent decision?
 
 ---
+
+---
+
+## Day 46 — Binary Tree Interview Patterns
+
+Day 46 adds two common medium-level binary-tree interview patterns.
+
+Problems solved:
+
+- Lowest Common Ancestor of a Binary Tree
+- Binary Tree Right Side View
+
+Files:
+
+- `lowest_common_ancestor.py`
+- `binary_tree_right_side_view.py`
+
+The solutions reinforce recursive post-order state aggregation and
+level-order traversal with per-level selection.

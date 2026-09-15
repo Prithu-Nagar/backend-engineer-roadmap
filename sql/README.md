@@ -918,3 +918,24 @@ Topics include:
 File:
 
 `production_connection_pooling.sql`
+
+---
+
+## Day 46 — Query Monitoring
+
+Day 46 focuses on identifying expensive and high-frequency SQL workloads in
+production.
+
+Topics include:
+
+- `pg_stat_statements`
+- Total execution time
+- Mean query latency
+- Query frequency
+- Rows returned per call
+- Slow-query and lock-wait logging controls
+- Resetting statement statistics only after an observation window
+
+File:
+
+`query_monitoring.sql`

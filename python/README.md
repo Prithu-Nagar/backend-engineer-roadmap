@@ -1032,3 +1032,22 @@ Topics include:
 File:
 
 `application_configuration_for_deployment.py`
+
+---
+
+## Day 46 — Production Logging and Metrics
+
+Day 46 focuses on production-friendly observability primitives in Python.
+
+Topics include:
+
+- Structured JSON logging
+- Request-level context fields
+- Request latency measurement
+- Error counters and status-code counts
+- Snapshotting in-process metrics for later export
+- Keeping logs useful without recording sensitive request data
+
+File:
+
+`production_logging_metrics.py`

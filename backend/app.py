@@ -9,6 +9,7 @@ from flask import Flask
 from config import Config
 from flask_routing import task_bp
 from pagination import pagination_bp
+from monitoring_health_checks import health_bp
 
 
 def create_app():
@@ -20,6 +21,7 @@ def create_app():
 
     app.register_blueprint(task_bp)
     app.register_blueprint(pagination_bp)
+    app.register_blueprint(health_bp)
 
     @app.route("/")
     def home():

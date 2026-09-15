@@ -165,3 +165,21 @@ Files:
 
 - `path_with_minimum_effort.py`
 - `swim_in_rising_water.py`
+
+---
+
+## Day 46 — BFS on an Implicit Graph
+
+Day 46 adds a shortest-path interview problem where graph edges are generated
+from one-character transformations.
+
+Problem solved:
+
+- Word Ladder
+
+File:
+
+- `word_ladder.py`
+
+The solution uses BFS because every valid transformation has equal cost and
+precomputes wildcard patterns to avoid comparing every pair of words.

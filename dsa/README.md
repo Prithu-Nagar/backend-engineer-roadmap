@@ -761,3 +761,19 @@ Added/reviewed:
 
 The review emphasizes storing the earliest or most useful prefix state,
 normalizing prefix values, and reducing nested subarray enumeration to O(n).
+
+---
+
+## Day 46 — Tree / Graph Interview Patterns
+
+Day 46 focuses on recurring tree and graph patterns that appear frequently in
+medium-level backend engineering interviews.
+
+Added:
+
+- `binary_tree/lowest_common_ancestor.py`
+- `binary_tree/binary_tree_right_side_view.py`
+- `graphs/word_ladder.py`
+
+The set reinforces recursive post-order reasoning, level-order BFS, and BFS on
+an implicit graph of state transformations.

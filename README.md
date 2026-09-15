@@ -2371,3 +2371,53 @@ application serving.
 - Added a WSGI entry point
 - Added Gunicorn production startup
 - Documented runtime deployment configuration
+
+---
+
+## Day 46 — Production Observability
+
+Day 46 adds the monitoring layer needed to operate the deployment-ready Task
+Manager reliably.
+
+### DSA
+
+- Lowest Common Ancestor of a Binary Tree
+- Binary Tree Right Side View
+- Word Ladder
+
+### Python
+
+- Structured JSON logging
+- Request latency metrics
+- Error and status-code counters
+
+### SQL
+
+- Query monitoring with `pg_stat_statements`
+- Slow-query investigation
+- Query frequency and result-size monitoring
+
+### LeetCode
+
+- Lowest Common Ancestor of a Binary Tree
+- Binary Tree Right Side View
+- Word Ladder
+
+### Backend
+
+- Monitoring
+- Liveness checks
+- Readiness checks
+- Dependency-aware health status
+
+### System Design
+
+- Observability through logs, metrics, and traces
+- Correlation across service boundaries
+- Actionable monitoring and alerting
+
+### Projects
+
+- Added Task Manager liveness and readiness checks
+- Added structured JSON logging support
+- Added health-check tests

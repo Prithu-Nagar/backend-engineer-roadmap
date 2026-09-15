@@ -1032,3 +1032,23 @@ Topics include:
 Detailed notes:
 
 `reverse-proxy-app-server.md`
+
+---
+
+## Day 46 — Observability
+
+Day 46 covers observability as a production system capability.
+
+Topics include:
+
+- Structured logs
+- Metrics and latency percentiles
+- Distributed traces
+- Correlation IDs
+- Liveness versus readiness
+- Dashboards and actionable alerts
+- Connecting logs, metrics, and traces during incidents
+
+Detailed notes:
+
+`observability.md`

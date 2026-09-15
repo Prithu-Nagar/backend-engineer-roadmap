@@ -699,3 +699,30 @@ docker build -f projects/task-manager/Dockerfile -t task-manager-api .
 
 Production secrets should be supplied through the deployment platform's secret
 management mechanism rather than committed to the repository.
+
+---
+
+## Day 46 — Health Checks + Structured Logging
+
+Day 46 adds production-oriented health checks and structured logging support.
+
+Added:
+
+- `health_checks.py` for liveness and readiness logic
+- `structured_logging.py` for JSON log formatting
+- `tests/test_health_checks.py` for readiness and failure-path coverage
+
+Health semantics:
+
+- **Liveness** answers whether the process is alive and able to serve requests.
+- **Readiness** answers whether the instance should receive traffic.
+- A failed required dependency returns HTTP `503` from readiness.
+
+The backend Flask application registers:
+
+- `GET /health/live`
+- `GET /health/ready`
+
+Structured logs include stable operational fields such as request ID, method,
+path, status code, and duration when those fields are available. Sensitive
+request values should not be written to logs.
