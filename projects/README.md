@@ -752,3 +752,25 @@ Added:
 The project now distinguishes process liveness from dependency-aware
 readiness and emits structured JSON log records suitable for centralized
 collection.
+
+---
+
+## Day 47 — Task Manager Security Hardening
+
+Day 47 applies a security hardening pass to the Task Manager project.
+
+Added:
+
+- `projects/task-manager/security_hardening.py`
+- `projects/task-manager/tests/test_security_hardening.py`
+
+The hardening pass covers:
+
+- Explicit CORS allow-list handling
+- CSRF requirements for cookie-authenticated state-changing requests
+- CSRF token comparison
+- Production secret validation
+- Baseline browser security headers
+
+The implementation keeps secrets outside source control and avoids logging
+security-sensitive token values.

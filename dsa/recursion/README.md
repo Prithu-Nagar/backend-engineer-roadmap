@@ -235,3 +235,47 @@ When solving a recursion/backtracking problem, ask:
 - Remaining target
 - Candidate reuse
 - Pruning
+
+---
+
+## Day 47 — Backtracking Review
+
+Day 47 revisits backtracking with constraint tracking, duplicate avoidance,
+and state restoration.
+
+### N-Queens
+
+**File:** `n_queens.py`
+
+The solution places one queen per row and tracks:
+
+- Occupied columns
+- `row - column` diagonals
+- `row + column` anti-diagonals
+- Board state restoration after each recursive branch
+
+### Combination Sum II
+
+**File:** `combination_sum_ii.py`
+
+The solution sorts candidates so it can:
+
+- Prune when the current value exceeds the remaining target
+- Skip duplicate values at the same recursion depth
+- Advance the next index so each array element is used at most once
+
+### Palindrome Partitioning
+
+**File:** `palindrome_partitioning.py`
+
+The solution explores every possible next substring and continues only when
+that substring is a palindrome.
+
+### Backtracking Review Checklist
+
+- Define the recursive state before writing the loop.
+- Identify exactly which choices are legal at each level.
+- Prune branches as soon as a constraint is violated.
+- Copy result state before later recursive calls mutate it.
+- Undo every mutable state change before returning from a branch.
+- Handle duplicate choices deliberately rather than deduplicating blindly at the end.

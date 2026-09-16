@@ -1051,3 +1051,21 @@ Topics include:
 File:
 
 `production_logging_metrics.py`
+
+---
+
+## Day 47 — Security Fundamentals
+
+Day 47 introduces security practices for Python services.
+
+Topics include:
+
+- Cryptographically secure token generation with `secrets`
+- One-way hashing for non-secret identifiers
+- Constant-time comparison with `hmac.compare_digest`
+- Requiring deployment secrets instead of silently relying on defaults
+- Keeping secrets out of source code, logs, and error responses
+
+File:
+
+`security_fundamentals.py`

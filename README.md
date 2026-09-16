@@ -2421,3 +2421,61 @@ Manager reliably.
 - Added Task Manager liveness and readiness checks
 - Added structured JSON logging support
 - Added health-check tests
+
+---
+
+## Day 47 — Production Security
+
+Day 47 adds security controls across the Python service, API boundary, database
+access layer, system-design model, and Task Manager project.
+
+### DSA
+
+- Backtracking review
+- Constraint tracking
+- Pruning
+- State restoration
+
+### Python
+
+- Cryptographically secure token generation
+- One-way hashing for non-secret identifiers
+- Constant-time comparison
+- Production secret validation
+
+### SQL
+
+- Least-privilege database roles
+- Schema and table grants
+- Sequence privileges
+- Default privileges for future objects
+
+### LeetCode
+
+- N-Queens
+- Combination Sum II
+- Palindrome Partitioning
+
+### Backend
+
+- API input validation
+- Explicit CORS allow-lists
+- CSRF concepts
+- Security response headers
+- Secret-handling boundaries
+
+### System Design
+
+- Security boundaries
+- Trust boundaries
+- Threat modeling
+- Spoofing, tampering, information disclosure, and denial-of-service controls
+
+### Projects
+
+- Added a Task Manager security hardening layer
+- Added CORS allow-list handling
+- Added CSRF checks for cookie-authenticated state-changing requests
+- Added production secret validation
+- Added baseline browser security headers
+- Added security-focused tests

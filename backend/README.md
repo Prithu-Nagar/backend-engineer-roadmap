@@ -1018,3 +1018,25 @@ File:
 `monitoring_health_checks.py`
 
 The application now exposes `/health/live` and `/health/ready`.
+
+---
+
+## Day 47 — API Security
+
+Day 47 introduces application-layer API security controls.
+
+Topics include:
+
+- Input validation as a trust-boundary control
+- Explicit CORS origin allow-lists
+- CSRF protection for cookie-authenticated state-changing requests
+- Security response headers
+- Keeping secrets in deployment configuration
+- Avoiding sensitive values in logs and client-facing errors
+
+File:
+
+`api_security.py`
+
+The helpers are intentionally dependency-light so the security concepts remain
+visible without adding a third-party CORS or CSRF package to the example.

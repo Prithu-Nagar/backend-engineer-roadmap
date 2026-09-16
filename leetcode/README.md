@@ -496,3 +496,14 @@ Recommended medium-level pattern set:
 
 Attempt each problem independently before comparing against the implementations
 under `dsa/binary_tree/` and `dsa/graphs/`.
+
+---
+
+## Day 47 — Backtracking Review
+
+- N-Queens
+- Combination Sum II
+- Palindrome Partitioning
+
+The implementations are stored under `dsa/recursion/` and reinforce constraint
+tracking, duplicate pruning, recursive state, and state restoration.

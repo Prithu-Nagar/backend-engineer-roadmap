@@ -726,3 +726,26 @@ The backend Flask application registers:
 Structured logs include stable operational fields such as request ID, method,
 path, status code, and duration when those fields are available. Sensitive
 request values should not be written to logs.
+
+---
+
+## Day 47 — Security Hardening
+
+Day 47 adds a security hardening pass to the Task Manager project.
+
+Added:
+
+- `security_hardening.py`
+- `tests/test_security_hardening.py`
+
+The hardening layer demonstrates:
+
+- Explicit CORS origin allow-listing
+- CSRF requirements for cookie-authenticated state-changing requests
+- Constant-time CSRF token comparison
+- Production secret validation
+- Baseline browser-facing security headers
+
+Security-sensitive values are treated as secrets and should be supplied through
+the deployment environment or secret-management system rather than committed
+to source control or written to logs.

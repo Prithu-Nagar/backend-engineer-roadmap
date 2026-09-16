@@ -939,3 +939,26 @@ Topics include:
 File:
 
 `query_monitoring.sql`
+
+---
+
+## Day 47 — Least-Privilege Database Access
+
+Day 47 applies the principle of least privilege to database access.
+
+Topics include:
+
+- Separate runtime and read-only database roles
+- Schema-level permissions
+- Table-level `SELECT`, `INSERT`, `UPDATE`, and `DELETE` grants
+- Sequence permissions required by inserts
+- Default privileges for future objects
+- Avoiding administrative capabilities for application runtime roles
+- Reviewing effective grants during deployment
+
+File:
+
+`least_privilege.sql`
+
+Database passwords in the example are placeholders and should be supplied by a
+secret-management mechanism rather than committed credentials.

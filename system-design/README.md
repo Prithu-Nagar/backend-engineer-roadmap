@@ -1052,3 +1052,26 @@ Topics include:
 Detailed notes:
 
 `observability.md`
+
+---
+
+## Day 47 — Security Boundaries & Threat Modeling
+
+Day 47 models security as a system-design concern rather than only an
+application-code concern.
+
+Topics include:
+
+- Trust and security boundaries
+- Threat-modeling questions
+- Spoofing
+- Tampering
+- Information disclosure
+- Denial of service
+- Authentication and authorization boundaries
+- Least privilege
+- Secret management and safe logging
+
+Detailed notes:
+
+`security-boundaries-threat-modeling.md`
