@@ -2479,3 +2479,50 @@ access layer, system-design model, and Task Manager project.
 - Added production secret validation
 - Added baseline browser security headers
 - Added security-focused tests
+
+---
+
+## Day 48 — Dependency and Query Security
+
+Day 48 extends production security into dependency supply-chain controls,
+secure database query construction, and runtime secrets management.
+
+### DSA
+
+- Greedy + heap review
+- Heap-based candidate selection
+- Greedy replacement strategies
+
+### Python
+
+- Dependency version pinning
+- Reproducible dependency installation
+- Unpinned dependency detection
+- Vulnerability scanning with `pip-audit`
+
+### SQL
+
+- Secure query patterns
+- Parameterized values
+- Safe pagination parameters
+- Dynamic identifier allow-lists
+
+### LeetCode
+
+- IPO
+- Furthest Building You Can Reach
+- Maximum Performance of a Team
+
+### Backend
+
+- Dependency pinning
+- Dependency vulnerability scanning
+- CI enforcement of the pinned dependency set
+
+### System Design
+
+- Runtime secret injection
+- Managed secret stores
+- Service-specific access
+- Secret rotation and revocation
+- Secret access auditing

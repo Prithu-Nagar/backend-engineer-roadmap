@@ -1075,3 +1075,23 @@ Topics include:
 Detailed notes:
 
 `security-boundaries-threat-modeling.md`
+
+---
+
+## Day 48 — Secrets Management
+
+Day 48 models secrets as an operational system-design concern.
+
+Topics include:
+
+- Runtime secret injection
+- Environment variables versus managed secret stores
+- Service-specific secret access
+- Secret rotation
+- Secret revocation
+- Auditing access without logging secret values
+- Keeping credentials outside source control and container images
+
+Detailed notes:
+
+`secrets-management.md`

@@ -1040,3 +1040,24 @@ File:
 
 The helpers are intentionally dependency-light so the security concepts remain
 visible without adding a third-party CORS or CSRF package to the example.
+
+---
+
+## Day 48 — Dependency Pinning & Security Scanning
+
+Day 48 adds dependency supply-chain controls to the backend workflow.
+
+Topics include:
+
+- Exact dependency version pinning
+- Reproducible installation from `python/requirements.txt`
+- Dependency vulnerability scanning with `pip-audit`
+- Treating dependency updates as security-sensitive changes
+- Failing CI when the pinned dependency set contains an audit finding
+
+File:
+
+`dependency_security.py`
+
+The CI workflow installs the pinned dependency set and runs `pip-audit`
+against the same requirements file.

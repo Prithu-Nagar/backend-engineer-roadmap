@@ -1069,3 +1069,25 @@ Topics include:
 File:
 
 `security_fundamentals.py`
+
+---
+
+## Day 48 — Dependency and Vulnerability Management
+
+Day 48 focuses on making Python dependency usage reproducible and auditable.
+
+Topics include:
+
+- Exact dependency version pinning with `==`
+- Deterministic installation from `python/requirements.txt`
+- Detecting unpinned requirements
+- Running `pip-audit` against the pinned dependency set
+- Reviewing dependency updates as security-sensitive changes
+- Keeping application and CI dependency changes explicit
+
+Files:
+
+- `dependency_management.py`
+- `requirements.txt`
+
+The CI workflow now scans the pinned requirement set with `pip-audit`.

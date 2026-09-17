@@ -86,3 +86,25 @@ Repository files:
 
 - `task_scheduler.py`
 - `reorganize_string.py`
+
+---
+
+## Day 48 — Greedy + Heap Review
+
+Day 48 revisits greedy decision-making supported by heaps.
+
+Problems:
+
+- IPO
+- Furthest Building You Can Reach
+- Maximum Performance of a Team
+
+The review emphasizes sorting by the constraint that becomes active, using a
+heap to keep the best currently available choices, and proving why replacing
+the weakest selected option preserves the optimal candidate set.
+
+Repository files:
+
+- `ipo.py`
+- `furthest_building_you_can_reach.py`
+- `maximum_performance_of_a_team.py`

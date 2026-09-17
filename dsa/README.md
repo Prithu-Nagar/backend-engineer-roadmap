@@ -777,3 +777,20 @@ Added:
 
 The set reinforces recursive post-order reasoning, level-order BFS, and BFS on
 an implicit graph of state transformations.
+
+---
+
+## Day 48 — Greedy + Heap Review
+
+Day 48 revisits greedy strategies where a heap maintains the most useful
+available choices.
+
+Added:
+
+- `heap/ipo.py`
+- `heap/furthest_building_you_can_reach.py`
+- `heap/maximum_performance_of_a_team.py`
+
+The review focuses on sorting by the active constraint, maintaining candidate
+choices with a heap, and exchanging the weakest selected item when the limit
+is exceeded.

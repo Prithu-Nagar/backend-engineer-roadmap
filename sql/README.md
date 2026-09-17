@@ -962,3 +962,25 @@ File:
 
 Database passwords in the example are placeholders and should be supplied by a
 secret-management mechanism rather than committed credentials.
+
+---
+
+## Day 48 — Secure Query Patterns & Parameterization
+
+Day 48 focuses on preventing SQL injection and keeping query construction
+safe.
+
+Topics include:
+
+- Bound parameters
+- Parameterized `WHERE` clauses
+- Safe pagination parameters
+- Parameterized pattern matching
+- Allow-list validation for dynamic identifiers
+- Keeping authorization constraints separate from injection protection
+
+File:
+
+`secure_query_patterns.sql`
+
+The examples use PostgreSQL-style positional parameters such as `$1` and `$2`.

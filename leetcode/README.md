@@ -507,3 +507,19 @@ under `dsa/binary_tree/` and `dsa/graphs/`.
 
 The implementations are stored under `dsa/recursion/` and reinforce constraint
 tracking, duplicate pruning, recursive state, and state restoration.
+
+---
+
+## Day 48 — Heap / Greedy Review
+
+Recommended pattern set:
+
+- IPO
+- Furthest Building You Can Reach
+- Maximum Performance of a Team
+
+Attempt each problem independently before comparing against the implementations
+under `dsa/heap/`.
+
+The set reinforces heap-based candidate selection, greedy exchanges, sorting by
+the active constraint, and maintaining an optimal bounded set of choices.
