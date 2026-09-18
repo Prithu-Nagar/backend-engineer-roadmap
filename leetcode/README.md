@@ -523,3 +523,17 @@ under `dsa/heap/`.
 
 The set reinforces heap-based candidate selection, greedy exchanges, sorting by
 the active constraint, and maintaining an optimal bounded set of choices.
+
+---
+
+## Day 49 — Full Mixed Timed Set
+
+Recommended four-problem mixed set:
+
+1. **Maximum Subarray** — Arrays / Dynamic Programming
+2. **Longest Palindromic Substring** — Strings / Two-ended expansion
+3. **Binary Tree Zigzag Level Order Traversal** — Trees / BFS
+4. **LRU Cache** — Hash Map + Linked List / Design
+
+Attempt the problems under timed conditions before comparing against the
+implementations under `dsa/`.

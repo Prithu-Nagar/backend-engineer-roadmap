@@ -1061,3 +1061,25 @@ File:
 
 The CI workflow installs the pinned dependency set and runs `pip-audit`
 against the same requirements file.
+
+---
+
+## Day 49 — Incident Handling
+
+Day 49 introduces a structured incident lifecycle for backend services.
+
+Topics include:
+
+- Incident detection
+- Severity classification
+- Assessment and evidence collection
+- Mitigation and rollback
+- Recovery verification
+- Incident runbook structure
+
+File:
+
+`incident_handling.py`
+
+The example keeps incident state and operational actions explicit so the
+response process can be tested and reviewed.

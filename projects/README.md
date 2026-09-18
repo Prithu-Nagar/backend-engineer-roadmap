@@ -774,3 +774,18 @@ The hardening pass covers:
 
 The implementation keeps secrets outside source control and avoids logging
 security-sensitive token values.
+
+---
+
+## Day 49 — Expense Tracker Failure Simulation
+
+Day 49 adds controlled incident simulation to the Expense Tracker.
+
+Added:
+
+- `projects/expense-tracker/failure_simulation.py`
+- Production failure and recovery runbook
+
+The simulation exercises dependency failure, rollback decision recording,
+recovery-mode transitions, restoration, and incident evidence without requiring
+a real production outage.

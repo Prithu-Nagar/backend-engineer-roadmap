@@ -1091,3 +1091,25 @@ Files:
 - `requirements.txt`
 
 The CI workflow now scans the pinned requirement set with `pip-audit`.
+
+---
+
+## Day 49 — Production Debugging
+
+Day 49 focuses on debugging backend failures in a production context.
+
+Topics include:
+
+- Capturing symptoms and hypotheses
+- Recording evidence
+- Measuring operation latency
+- Logging internal exceptions
+- Producing safe exception summaries
+- Capturing tracebacks for internal diagnostics
+
+File:
+
+`production_debugging.py`
+
+The workflow separates evidence collection from mitigation so production
+debugging remains systematic and auditable.

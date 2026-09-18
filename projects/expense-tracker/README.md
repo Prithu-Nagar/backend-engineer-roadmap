@@ -344,3 +344,21 @@ Milestone review:
 No new application feature is introduced. The milestone is a review checkpoint
 that verifies the project layers work together without removing or replacing
 earlier implementations.
+
+---
+
+## Day 49 — Failure Simulation & Recovery
+
+Day 49 adds a controlled failure scenario to exercise the production incident
+workflow.
+
+Added:
+
+- `failure_simulation.py`
+- Failure and recovery runbook coverage
+
+The simulation models a PostgreSQL dependency failure, records a rollback
+decision, enters a controlled recovery mode, and verifies restoration to normal
+operation.
+
+The scenario is deterministic and does not require a real external failure.

@@ -984,3 +984,25 @@ File:
 `secure_query_patterns.sql`
 
 The examples use PostgreSQL-style positional parameters such as `$1` and `$2`.
+
+---
+
+## Day 49 — Production Troubleshooting
+
+Day 49 focuses on read-only SQL diagnostics used during production incidents.
+
+Topics include:
+
+- Active-session inspection
+- Long-running query identification
+- `pg_stat_statements` analysis
+- Wait-event inspection
+- Lock blocker identification
+- Long-running transaction detection
+
+File:
+
+`production_troubleshooting.sql`
+
+The examples are PostgreSQL-oriented and are intended for an appropriately
+restricted operational role.

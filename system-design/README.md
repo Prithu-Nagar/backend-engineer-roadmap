@@ -1095,3 +1095,21 @@ Topics include:
 Detailed notes:
 
 `secrets-management.md`
+
+---
+
+## Day 49 — Failure Scenarios & Recovery
+
+Day 49 models production failure handling as a system-design workflow.
+
+Topics include:
+
+- Application, database, and dependency failure scenarios
+- Rollback decision criteria
+- Recovery/degraded modes
+- Failure containment
+- Incident detection, assessment, mitigation, recovery, and review
+
+Detailed notes:
+
+`failure-scenarios-and-runbook.md`
