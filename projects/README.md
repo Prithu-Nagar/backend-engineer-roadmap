@@ -789,3 +789,24 @@ Added:
 The simulation exercises dependency failure, rollback decision recording,
 recovery-mode transitions, restoration, and incident evidence without requiring
 a real production outage.
+
+---
+
+## Day 50 — Expense Tracker Production Milestone
+
+Day 50 is the Production Engineering milestone for the Expense Tracker.
+
+Milestone review:
+
+- Deployment and configuration readiness
+- Health checks and observability
+- Security hardening and dependency controls
+- Database reliability and troubleshooting
+- Failure simulation and recovery
+- Incident handling and rollback decisions
+- Testing and operational error handling
+- Documentation of the production-readiness state
+
+No new application feature is required on Day 50. The milestone verifies that
+the Expense Tracker documents the production-engineering practices developed
+during Days 41–49 while preserving all earlier functionality.

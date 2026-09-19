@@ -537,3 +537,22 @@ Recommended four-problem mixed set:
 
 Attempt the problems under timed conditions before comparing against the
 implementations under `dsa/`.
+
+---
+
+## Day 50 — Timed Assessment
+
+Day 50 uses a timed LeetCode assessment to consolidate the DSA patterns covered
+through the first 49 days.
+
+Assessment focus:
+
+- Mixed pattern recognition
+- Time and space complexity analysis
+- Choosing an approach without a pattern label
+- Identifying weak areas from incorrect or incomplete attempts
+- Re-attempting weak patterns after the timed session
+
+No new fixed problem list is required for Day 50. Use the assessment to select
+problems that reflect the user's weakest patterns and compare against the
+existing implementations under `dsa/` only after the timed attempt.
