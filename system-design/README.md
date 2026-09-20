@@ -1135,3 +1135,28 @@ Review areas:
 
 The review emphasizes connecting reliability, security, deployment, observability,
 and recovery decisions into one production-readiness perspective.
+
+---
+
+## Day 51 — AI-Enabled Backend Architecture
+
+Day 51 introduces system-design boundaries for adding LLM capabilities to an
+existing backend.
+
+Topics include:
+
+- API and authentication boundaries
+- Application-service orchestration
+- Prompt/model/parser separation
+- External LLM dependency handling
+- Timeouts, retries, rate limits, and failure modes
+- Output validation
+- AI-specific observability and cost tracking
+
+Detailed notes:
+
+`ai-enabled-backend-architecture.md`
+
+The design keeps AI orchestration inside explicit service boundaries while
+leaving authentication, business rules, reliability, and operational controls
+with the backend.

@@ -484,6 +484,7 @@ Completed:
 - Tool Integration
 - LangChain
 - AI Agents
+- LangChain Architecture
 
 Upcoming:
 
@@ -511,3 +512,27 @@ File:
 The integration example keeps model configuration outside the route itself.
 This makes the HTTP layer easier to test and allows the model or chain to be
 replaced without changing the API contract.
+
+---
+
+## Day 51 — LangChain Architecture
+
+Day 51 begins the GenAI Engineering phase with LangChain architecture.
+
+Topics include:
+
+- LangChain model abstractions
+- Prompt templates
+- Runnable composition
+- Output parsers
+- Provider abstraction
+- Backend integration boundaries
+- Testing LangChain workflows
+
+Files:
+
+- `langchain_architecture.md`
+- `langchain_architecture.py`
+
+The example keeps model configuration outside the reusable workflow and
+demonstrates a Prompt → Model → Parser pipeline.

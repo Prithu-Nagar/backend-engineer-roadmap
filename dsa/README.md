@@ -833,3 +833,20 @@ Review focus:
 No new solution files are added for Day 50. Existing implementations are reused
 for targeted revision so the session focuses on pattern recognition, complexity
 analysis, and correcting weak problem-solving approaches.
+
+---
+
+## Day 51 — Mixed Interview Set
+
+Day 51 begins the GenAI Engineering phase with a mixed interview-oriented DSA
+set. The problems intentionally span different patterns so the focus remains
+on recognizing the right approach rather than following a topic label.
+
+Added:
+
+- `arrays/product_of_array_except_self.py`
+- `binary_search/search_a_2d_matrix.py`
+- `dynamic_programming/longest_palindromic_subsequence.py`
+
+The set reinforces prefix/suffix state, binary search over a virtual index
+space, and interval-style dynamic programming.

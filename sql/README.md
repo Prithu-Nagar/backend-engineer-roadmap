@@ -1028,3 +1028,25 @@ Review areas:
 
 The session focuses on repairing weak areas and connecting SQL correctness,
 performance, security, and operational troubleshooting to backend behavior.
+
+---
+
+## Day 51 — RAG Metadata / Query Patterns
+
+Day 51 introduces relational query patterns for RAG metadata.
+
+Topics include:
+
+- Tenant-aware document metadata
+- Document and chunk modeling
+- PostgreSQL JSONB metadata
+- GIN indexing for metadata filters
+- Parameterized retrieval filters
+- Source-level ingestion quality checks
+
+File:
+
+`rag_metadata_query_patterns.sql`
+
+The examples focus on filtering and organizing retrieval candidates before a
+vector-similarity or reranking stage.

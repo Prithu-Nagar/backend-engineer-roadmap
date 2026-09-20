@@ -1134,3 +1134,26 @@ Review areas:
 The session is focused on repairing weak areas rather than introducing a new
 major Python topic. Existing examples are used to revisit concepts that need
 additional practice before moving into GenAI Engineering.
+
+---
+
+## Day 51 — Async + API Integration Review
+
+Day 51 reviews asynchronous API integration patterns that are useful when a
+backend calls external AI or service APIs.
+
+Topics include:
+
+- Non-blocking HTTP requests with `async` / `await`
+- Explicit client timeouts
+- HTTP error propagation
+- JSON response validation
+- Keeping external API calls behind small integration boundaries
+- Avoiding credentials in source code
+
+File:
+
+`async_api_integration.py`
+
+The example uses `httpx` as an optional dependency and keeps the integration
+boundary provider-neutral.

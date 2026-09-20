@@ -556,3 +556,16 @@ Assessment focus:
 No new fixed problem list is required for Day 50. Use the assessment to select
 problems that reflect the user's weakest patterns and compare against the
 existing implementations under `dsa/` only after the timed attempt.
+
+---
+
+## Day 51 — Mixed Interview Set
+
+Recommended three-problem set:
+
+1. **Product of Array Except Self** — Arrays / Prefix-Suffix
+2. **Search a 2D Matrix** — Binary Search
+3. **Longest Palindromic Subsequence** — Dynamic Programming
+
+Attempt each problem under interview-style conditions before comparing against
+the implementations under `dsa/`.
