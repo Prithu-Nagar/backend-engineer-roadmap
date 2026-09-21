@@ -1128,3 +1128,27 @@ File:
 
 The example uses Python's standard-library HTTP client so the integration
 boundary remains visible without requiring a specific LLM provider SDK.
+
+---
+
+## Day 52 — Streaming API Responses
+
+Day 52 introduces incremental HTTP responses for long-running backend and AI
+operations.
+
+Topics include:
+
+- Async generators as response producers
+- `StreamingResponse` in FastAPI
+- Server-Sent Events (SSE)
+- Chunked text delivery
+- Avoiding full-response buffering
+- Streaming-friendly connection and timeout considerations
+
+File:
+
+`streaming_responses.py`
+
+The example keeps the producer separate from the HTTP response boundary so the
+same streaming pattern can be reused for LLM output, progress events, or other
+incremental workloads.

@@ -1050,3 +1050,26 @@ File:
 
 The examples focus on filtering and organizing retrieval candidates before a
 vector-similarity or reranking stage.
+
+---
+
+## Day 52 — Vector Search Data Modeling
+
+Day 52 introduces relational modeling for vector-search workloads.
+
+Topics include:
+
+- Documents and document chunks
+- Tenant-aware metadata
+- Embedding vectors
+- JSONB metadata filters
+- `pgvector` similarity search
+- HNSW indexing
+- Parameterized tenant-aware retrieval
+
+File:
+
+`vector_search_data_modeling.sql`
+
+The schema keeps structured document metadata in PostgreSQL while adding a
+vector representation for semantic retrieval.

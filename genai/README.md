@@ -536,3 +536,28 @@ Files:
 
 The example keeps model configuration outside the reusable workflow and
 demonstrates a Prompt → Model → Parser pipeline.
+
+---
+
+## Day 52 — Embeddings + Vector Retrieval Pipeline
+
+Day 52 connects embedding generation with vector-database retrieval.
+
+Topics include:
+
+- Document chunk embeddings
+- Query embeddings
+- Vector similarity search
+- Metadata filtering
+- Tenant-aware retrieval
+- Top-K candidate retrieval
+- Embedding-model/version considerations
+
+Files:
+
+- `embeddings_vector_retrieval_pipeline.md`
+- `embedding_retrieval_pipeline.py`
+
+The example keeps embedding generation and vector storage behind small
+interfaces so the provider and retrieval implementation can evolve
+independently.

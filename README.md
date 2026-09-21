@@ -2652,3 +2652,53 @@ Day 51 starts the GenAI Engineering phase.
 Day 51 marks the transition from Production Engineering into GenAI Engineering
 while keeping the backend, SQL, and system-design work aligned with AI-enabled
 service development.
+
+---
+
+## Day 52 — Embeddings, Vector Retrieval & Streaming
+
+Day 52 continues the GenAI Engineering phase by connecting embeddings and vector
+retrieval with streaming backend responses.
+
+### DSA
+
+- Added `sliding_window/minimum_window_substring.py`
+- Added `sliding_window/longest_repeating_character_replacement.py`
+- Added `hashing/subarrays_with_k_different_integers.py`
+
+### Python
+
+- Added synchronous and asynchronous streaming response patterns
+- Added Server-Sent Events formatting example
+
+### SQL
+
+- Added document/chunk/embedding data model for vector search
+- Added JSONB metadata filtering and tenant-aware retrieval patterns
+- Added pgvector HNSW index example
+
+### LeetCode
+
+- Minimum Window Substring
+- Longest Repeating Character Replacement
+- Subarrays with K Different Integers
+
+### Backend
+
+- Added FastAPI streaming responses
+- Added Server-Sent Events example
+- Added incremental response producer patterns
+
+### System Design
+
+- Added streaming architecture
+- Covered SSE, HTTP streaming, WebSockets, backpressure, disconnects, and scaling
+
+### GenAI
+
+- Added embeddings + vector retrieval pipeline notes
+- Added provider/storage boundaries for embedding and vector-search components
+
+Day 52 keeps the GenAI work aligned with backend engineering by treating
+embeddings, retrieval, and streaming as explicit service boundaries rather than
+tightly coupled implementation details.

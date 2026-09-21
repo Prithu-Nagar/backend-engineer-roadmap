@@ -850,3 +850,20 @@ Added:
 
 The set reinforces prefix/suffix state, binary search over a virtual index
 space, and interval-style dynamic programming.
+
+---
+
+## Day 52 — Hashing / Sliding Window
+
+Day 52 returns to hashing and sliding-window patterns with frequency maps and
+window invariants that support linear-time interview solutions.
+
+Added:
+
+- `sliding_window/minimum_window_substring.py`
+- `sliding_window/longest_repeating_character_replacement.py`
+- `hashing/subarrays_with_k_different_integers.py`
+
+The set reinforces maintaining counts inside a moving window, shrinking only
+when the invariant is violated, and converting an exactly-`k` counting problem
+into two at-most-`k` sliding-window calculations.

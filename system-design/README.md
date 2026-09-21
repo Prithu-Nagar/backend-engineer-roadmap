@@ -1160,3 +1160,24 @@ Detailed notes:
 The design keeps AI orchestration inside explicit service boundaries while
 leaving authentication, business rules, reliability, and operational controls
 with the backend.
+
+---
+
+## Day 52 — Streaming Architecture
+
+Day 52 introduces architecture patterns for incrementally delivering backend
+and AI responses.
+
+Topics include:
+
+- HTTP streaming
+- Server-Sent Events (SSE)
+- WebSockets and when bidirectional communication is required
+- Backpressure and bounded buffering
+- Client disconnects and cancellation
+- Long-lived connection scaling
+- Streaming observability
+
+Detailed notes:
+
+`streaming-architecture.md`

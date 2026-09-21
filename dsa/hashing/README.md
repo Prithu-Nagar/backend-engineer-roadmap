@@ -208,3 +208,24 @@ Reviewed:
 
 The key interview idea is that equal prefix state at two indices identifies a
 valid subarray between them.
+
+---
+
+## Day 52 — Hashing + Sliding Window
+
+Day 52 combines frequency maps with a moving window to keep track of the state
+needed for substring and subarray constraints.
+
+Added:
+
+- `subarrays_with_k_different_integers.py` — count exactly-`k` distinct values
+  using `atMost(k) - atMost(k - 1)`
+
+Key interview idea:
+
+```text
+exactly K = atMost(K) - atMost(K - 1)
+```
+
+The hash map stores frequencies so the left edge can move without rescanning
+the entire window.

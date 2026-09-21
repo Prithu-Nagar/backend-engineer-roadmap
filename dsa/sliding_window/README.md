@@ -33,3 +33,24 @@ right → expand
 |---|---|
 | Time | `O(n)` when both pointers move only forward |
 | Space | `O(1)` for simple numeric windows, or `O(k)` when using a Set/HashMap |
+
+---
+
+## Day 52 — Hashing + Sliding Window
+
+Day 52 expands variable-window patterns with frequency maps and explicit
+window invariants.
+
+Added:
+
+- `minimum_window_substring.py` — maintain required character counts
+- `longest_repeating_character_replacement.py` — track the dominant frequency
+  while allowing at most `k` replacements
+
+The common workflow is:
+
+1. Expand the right pointer.
+2. Update frequency state.
+3. Check whether the window violates the constraint.
+4. Shrink from the left until the invariant is restored.
+5. Update the best answer.

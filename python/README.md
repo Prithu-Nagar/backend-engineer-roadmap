@@ -1157,3 +1157,22 @@ File:
 
 The example uses `httpx` as an optional dependency and keeps the integration
 boundary provider-neutral.
+
+---
+
+## Day 52 — Streaming Responses
+
+Day 52 applies Python generators and async generators to incremental response
+production.
+
+Topics include:
+
+- Synchronous generators for chunked output
+- Async generators for I/O-backed streams
+- Server-Sent Events formatting
+- Avoiding unnecessary response buffering
+- Clean separation between producers and transport layers
+
+File:
+
+`streaming_responses.py`

@@ -567,5 +567,13 @@ Recommended three-problem set:
 2. **Search a 2D Matrix** — Binary Search
 3. **Longest Palindromic Subsequence** — Dynamic Programming
 
-Attempt each problem under interview-style conditions before comparing against
-the implementations under `dsa/`.
+
+---
+
+## Day 52 — Hashing / Sliding Window Pattern Set
+
+Recommended three-problem set:
+
+1. **Minimum Window Substring** — Sliding Window + Frequency Map
+2. **Longest Repeating Character Replacement** — Sliding Window + Frequency Map
+3. **Subarrays with K Different Integers** — Hashing + Sliding Window
