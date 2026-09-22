@@ -1073,3 +1073,25 @@ File:
 
 The schema keeps structured document metadata in PostgreSQL while adding a
 vector representation for semantic retrieval.
+
+---
+
+## Day 53 — Metadata Filtering for Retrieval
+
+Day 53 focuses on filtering retrieval candidates before ranking.
+
+Topics include:
+
+- Tenant-aware filtering
+- Document-type and language filters
+- JSONB metadata containment
+- Nested JSONB attribute filtering
+- Candidate filtering before vector similarity
+- Parameterized retrieval queries
+
+File:
+
+`retrieval_metadata_filtering.sql`
+
+The examples keep authorization and tenant boundaries in the retrieval query
+while leaving vector ranking to a later stage.

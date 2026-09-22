@@ -151,3 +151,14 @@ Files:
 
 The solutions reinforce recursive post-order state aggregation and
 level-order traversal with per-level selection.
+
+---
+
+## Day 53 — Level Order Traversal
+
+Reused:
+
+- `binary_tree_level_order_traversal.py`
+
+The solution uses breadth-first traversal with a queue and groups values by
+tree depth.

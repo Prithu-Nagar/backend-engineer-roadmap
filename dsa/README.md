@@ -867,3 +867,19 @@ Added:
 The set reinforces maintaining counts inside a moving window, shrinking only
 when the invariant is violated, and converting an exactly-`k` counting problem
 into two at-most-`k` sliding-window calculations.
+
+---
+
+## Day 53 — Trees / Graphs
+
+Day 53 uses tree and graph problems to reinforce traversal and dependency
+reasoning.
+
+Reused existing implementations:
+
+- `binary_tree/binary_tree_level_order_traversal.py`
+- `graphs/number_of_islands.py`
+- `graphs/course_schedule.py`
+
+The set covers level-order tree traversal, connected-component discovery, and
+cycle detection through topological sorting.

@@ -1176,3 +1176,24 @@ Topics include:
 File:
 
 `streaming_responses.py`
+
+---
+
+## Day 53 — Async Streaming Concepts
+
+Day 53 extends the previous streaming work into asynchronous control flow.
+
+Topics include:
+
+- Async generators
+- Cooperative stream cancellation
+- Bounded `asyncio.Queue` producer/consumer flow
+- Backpressure through bounded buffering
+- Keeping blocking work out of the event loop
+
+File:
+
+`async_streaming_concepts.py`
+
+The example treats streaming as an asynchronous producer/consumer boundary and
+makes cancellation and bounded buffering explicit.

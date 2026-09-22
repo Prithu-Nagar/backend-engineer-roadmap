@@ -1181,3 +1181,25 @@ Topics include:
 Detailed notes:
 
 `streaming-architecture.md`
+
+---
+
+## Day 53 — RAG System Architecture
+
+Day 53 covers the online architecture of a Retrieval-Augmented Generation
+system.
+
+Topics include:
+
+- Query validation and normalization
+- Metadata and tenant filtering
+- Vector and keyword retrieval
+- Candidate reranking
+- Context construction
+- LLM integration boundaries
+- Reliability, scaling, and observability
+- Retrieval and answer-quality evaluation signals
+
+Detailed notes:
+
+`rag-system-architecture.md`

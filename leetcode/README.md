@@ -577,3 +577,16 @@ Recommended three-problem set:
 1. **Minimum Window Substring** — Sliding Window + Frequency Map
 2. **Longest Repeating Character Replacement** — Sliding Window + Frequency Map
 3. **Subarrays with K Different Integers** — Hashing + Sliding Window
+
+---
+
+## Day 53 — Trees / Graphs
+
+Recommended three-problem set:
+
+1. **Binary Tree Level Order Traversal** — Tree BFS
+2. **Number of Islands** — Graph Traversal / DFS
+3. **Course Schedule** — Graph / Topological Sort
+
+Attempt the problems under timed conditions before comparing against the
+implementations under `dsa/`.

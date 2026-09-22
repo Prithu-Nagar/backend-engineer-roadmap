@@ -1152,3 +1152,25 @@ File:
 The example keeps the producer separate from the HTTP response boundary so the
 same streaming pattern can be reused for LLM output, progress events, or other
 incremental workloads.
+
+---
+
+## Day 53 — RAG API Design
+
+Day 53 introduces a backend API boundary for Retrieval-Augmented Generation.
+
+Topics include:
+
+- Typed RAG request and response models
+- Tenant-aware query parameters
+- Explicit service boundaries for retrieval and generation
+- Keeping provider-specific logic outside the HTTP route
+- Async orchestration for network-bound RAG stages
+
+File:
+
+`rag_api.py`
+
+The example keeps the route focused on HTTP validation and delegates the RAG
+workflow to a service boundary that can later connect to retrieval, reranking,
+and LLM providers.

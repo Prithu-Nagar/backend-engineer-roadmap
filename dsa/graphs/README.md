@@ -183,3 +183,14 @@ File:
 
 The solution uses BFS because every valid transformation has equal cost and
 precomputes wildcard patterns to avoid comparing every pair of words.
+
+---
+
+## Day 53 — Graph Traversal and Topological Sort
+
+Reused:
+
+- `number_of_islands.py` — DFS connected-component traversal
+- `course_schedule.py` — Kahn's algorithm for topological sorting
+
+The set reinforces graph traversal, cycle detection, and dependency ordering.

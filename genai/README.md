@@ -561,3 +561,27 @@ Files:
 The example keeps embedding generation and vector storage behind small
 interfaces so the provider and retrieval implementation can evolve
 independently.
+
+---
+
+## Day 53 — RAG Retrieval Pipeline
+
+Day 53 expands the vector-retrieval work into a complete RAG retrieval flow.
+
+Topics include:
+
+- Document chunking
+- Candidate retrieval
+- Reranking
+- Context construction
+- Source and metadata preservation
+- Context-size limits
+- Retrieval failure cases
+
+Files:
+
+- `rag-retrieval-pipeline.md`
+- `rag_retrieval_pipeline.py`
+
+The example keeps chunking, retrieval, reranking, and context construction as
+separate stages so each boundary can be evaluated and replaced independently.
