@@ -590,3 +590,16 @@ Recommended three-problem set:
 
 Attempt the problems under timed conditions before comparing against the
 implementations under `dsa/`.
+
+---
+
+## Day 54 — Dynamic Programming
+
+Recommended three-problem set:
+
+1. **Coin Change** — 1D Dynamic Programming
+2. **Decode Ways** — 1D Dynamic Programming / State Transitions
+3. **Word Break** — Dynamic Programming / Prefix State
+
+Attempt the problems under timed conditions before comparing against the
+existing implementations under `dsa/`.

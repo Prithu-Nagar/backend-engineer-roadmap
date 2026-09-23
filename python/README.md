@@ -1197,3 +1197,27 @@ File:
 
 The example treats streaming as an asynchronous producer/consumer boundary and
 makes cancellation and bounded buffering explicit.
+
+---
+
+## Day 54 — Background Tasks for AI Workloads
+
+Day 54 applies Python background-task patterns to work that should not block a
+latency-sensitive request path.
+
+Topics include:
+
+- Queue-backed background jobs
+- Separating request handling from asynchronous work
+- Job payloads and stable identifiers
+- Retry-friendly task boundaries
+- Keeping long-running AI ingestion work outside the request path
+- Worker lifecycle and graceful shutdown
+
+File:
+
+`background_tasks_ai.py`
+
+The example uses an `asyncio.Queue` to keep document embedding and index-refresh
+work outside the latency-sensitive request path while preserving an explicit
+worker lifecycle.

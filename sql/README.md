@@ -1095,3 +1095,27 @@ File:
 
 The examples keep authorization and tenant boundaries in the retrieval query
 while leaving vector ranking to a later stage.
+
+---
+
+## Day 54 — Evaluation Dataset Storage
+
+Day 54 introduces relational storage for reproducible RAG evaluation datasets
+and evaluation runs.
+
+Topics include:
+
+- Evaluation cases and dataset versions
+- Expected answers and relevant source chunks
+- Evaluation run and pipeline version tracking
+- Retrieval and answer-quality metrics
+- Latency and token-usage measurements
+- Indexes for repeatable test-set selection and result lookup
+
+File:
+
+`evaluation_dataset_storage.sql`
+
+The schema separates stable test cases from individual evaluation runs so the
+same dataset can be compared across retrieval, prompt, model, or pipeline
+versions.

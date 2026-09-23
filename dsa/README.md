@@ -883,3 +883,20 @@ Reused existing implementations:
 
 The set covers level-order tree traversal, connected-component discovery, and
 cycle detection through topological sorting.
+
+---
+
+## Day 54 — Dynamic Programming
+
+Day 54 returns to Dynamic Programming with three problems that reinforce
+state definition, transition design, and space optimization.
+
+Reused existing implementations:
+
+- `dynamic_programming/coin_change.py`
+- `dynamic_programming/decode_ways.py`
+- `dynamic_programming/word_break.py`
+
+The set reinforces identifying a state, writing a recurrence, choosing the
+correct iteration order, and reducing a two-dimensional DP formulation when
+the transition permits it.

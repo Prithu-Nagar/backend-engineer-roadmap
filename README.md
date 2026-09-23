@@ -2702,3 +2702,51 @@ retrieval with streaming backend responses.
 Day 52 keeps the GenAI work aligned with backend engineering by treating
 embeddings, retrieval, and streaming as explicit service boundaries rather than
 tightly coupled implementation details.
+
+---
+
+## Day 54 — RAG Evaluation + Offline Ingestion
+
+Day 54 continues the GenAI Engineering phase by evaluating RAG quality and
+separating offline ingestion work from online serving.
+
+### DSA
+
+- Reused `dynamic_programming/coin_change.py`
+- Reused `dynamic_programming/decode_ways.py`
+- Reused `dynamic_programming/word_break.py`
+
+### Python
+
+- Extended background-task patterns for AI workloads
+- Kept long-running ingestion work outside the request path
+
+### SQL
+
+- Added versioned RAG evaluation dataset storage
+- Added expected-source and evaluation-result tables
+- Added retrieval, answer-quality, latency, and token-usage fields
+
+### LeetCode
+
+- Coin Change
+- Decode Ways
+- Word Break
+
+### Backend
+
+- Added a provider-neutral RAG ingestion service
+- Added chunking, embedding, and persistence boundaries
+
+### System Design
+
+- Added offline ingestion vs online serving architecture
+- Covered queues, versioning, independent scaling, and failure isolation
+
+### GenAI
+
+- Expanded RAG evaluation notes
+- Covered retrieval metrics, answer quality, test sets, and regression analysis
+
+Day 54 keeps evaluation reproducible while ensuring expensive ingestion work is
+handled asynchronously rather than inside the online query path.

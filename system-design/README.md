@@ -1203,3 +1203,27 @@ Topics include:
 Detailed notes:
 
 `rag-system-architecture.md`
+
+---
+
+## Day 54 — Offline Ingestion vs Online Serving
+
+Day 54 separates the asynchronous RAG ingestion workload from the
+latency-sensitive online serving path.
+
+Topics include:
+
+- Offline parsing, chunking, embedding, and indexing
+- Online query, retrieval, reranking, and generation
+- Queue-backed ingestion workers
+- Idempotency and job metadata
+- Document and embedding versioning
+- Independent scaling and failure handling
+- Last-known-good index serving during ingestion failures
+
+Detailed notes:
+
+`offline-ingestion-online-serving.md`
+
+The architecture gives ingestion and serving different scaling, reliability,
+and latency boundaries while keeping their data contracts explicit.

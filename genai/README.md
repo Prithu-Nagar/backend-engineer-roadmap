@@ -585,3 +585,29 @@ Files:
 
 The example keeps chunking, retrieval, reranking, and context construction as
 separate stages so each boundary can be evaluated and replaced independently.
+
+---
+
+## Day 54 — RAG Evaluation
+
+Day 54 adds a structured evaluation approach for RAG retrieval and answer
+quality.
+
+Topics include:
+
+- Retrieval precision and recall
+- Precision@K and Recall@K
+- MRR and NDCG
+- Context quality
+- Faithfulness, relevance, and correctness
+- Evaluation datasets and regression test sets
+- Separating retrieval failures from generation failures
+- Comparing pipeline versions with repeatable test cases
+
+File:
+
+`rag_evaluation.md`
+
+The evaluation workflow treats retrieval quality, context quality, generation
+quality, and system performance as separate signals rather than relying on a
+single end-to-end answer score.

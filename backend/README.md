@@ -1174,3 +1174,26 @@ File:
 The example keeps the route focused on HTTP validation and delegates the RAG
 workflow to a service boundary that can later connect to retrieval, reranking,
 and LLM providers.
+
+---
+
+## Day 54 — RAG Ingestion Service
+
+Day 54 adds a backend service boundary for offline RAG ingestion.
+
+Topics include:
+
+- Source-document ingestion
+- Chunking and metadata preservation
+- Embedding generation behind a provider interface
+- Persistence behind a repository interface
+- Async ingestion orchestration
+- Keeping ingestion separate from online RAG serving
+
+File:
+
+`rag_ingestion_service.py`
+
+The service keeps parsing/chunking, embedding, and persistence behind explicit
+interfaces so the ingestion workflow can run as a background job without
+expanding the online RAG API route.
