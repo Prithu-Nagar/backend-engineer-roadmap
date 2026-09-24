@@ -1221,3 +1221,22 @@ File:
 The example uses an `asyncio.Queue` to keep document embedding and index-refresh
 work outside the latency-sensitive request path while preserving an explicit
 worker lifecycle.
+
+---
+
+## Day 55 — Tool Execution Patterns
+
+Day 55 introduces provider-neutral patterns for executing tools requested by an
+agent.
+
+Topics include:
+
+- Tool registration
+- Tool definitions
+- Tool allowlists
+- Argument validation
+- Application-owned execution
+- Permission checks
+- Stable tool-result envelopes
+
+File: `tool_execution_patterns.py`

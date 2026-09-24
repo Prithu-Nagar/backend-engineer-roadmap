@@ -279,3 +279,24 @@ that substring is a palindrome.
 - Copy result state before later recursive calls mutate it.
 - Undo every mutable state change before returning from a branch.
 - Handle duplicate choices deliberately rather than deduplicating blindly at the end.
+
+---
+
+## Day 55 — Backtracking Problems
+
+Day 55 applies the backtracking pattern to problems where a solution is
+constructed incrementally and invalid branches can be pruned early.
+
+Problems added:
+
+- Restore IP Addresses
+- Generate Parentheses
+- Combination Sum III
+
+These problems reinforce:
+
+- Choice exploration
+- Constraint validation
+- Branch pruning
+- State restoration
+- Building results from a recursion path

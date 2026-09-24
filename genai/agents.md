@@ -245,3 +245,70 @@ Tool Validation
  v
 Tool Execution
 ```
+
+---
+
+## Day 55 — Planning, Tools, State, and Guardrails
+
+Day 55 expands the agent model from basic tool calling into a bounded
+agent architecture.
+
+### Planning
+
+Agents can select actions incrementally or create an explicit bounded plan.
+
+Planning should remain observable and subject to application limits.
+
+### Tools
+
+Tools should be exposed through a controlled registry with:
+
+- Name
+- Description
+- Input schema
+- Output contract
+- Authorization requirements
+- Timeout policy
+- Audit requirements
+
+The model proposes a tool call; the application validates and executes it.
+
+### State
+
+Agent state may contain:
+
+- User request
+- Conversation messages
+- Tool calls
+- Tool results
+- Task progress
+- Iteration counters
+
+State can be stored in memory, Redis, PostgreSQL, or another durable workflow
+store depending on the workload.
+
+### Guardrails
+
+Important controls include:
+
+- Tool allowlists
+- Authentication and authorization
+- Argument validation
+- Resource ownership checks
+- Rate limits
+- Timeouts
+- Maximum iterations
+- Payload limits
+- Sensitive-data filtering
+- Audit logging
+
+Guardrails should be enforced by the application rather than relying only on
+model instructions.
+
+### Agent Reliability
+
+Common failure modes include invalid tool calls, tool timeouts, authorization
+rejections, model loops, and state-store failures.
+
+The agent should have explicit stopping conditions and should retry only when
+the operation is safe to retry.

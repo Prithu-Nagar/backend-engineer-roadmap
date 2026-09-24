@@ -1119,3 +1119,24 @@ File:
 The schema separates stable test cases from individual evaluation runs so the
 same dataset can be compared across retrieval, prompt, model, or pipeline
 versions.
+
+---
+
+## Day 55 — Agent / Tool Execution Logs
+
+Day 55 adds database structures for observing and auditing agent runs and tool
+execution.
+
+Topics include:
+
+- Agent runs
+- Tool-call requests
+- Tool-call status
+- Tool results
+- Error codes
+- Session-level lookup
+- Tool execution indexes
+
+File:
+
+`agent_tool_execution_logs.sql`

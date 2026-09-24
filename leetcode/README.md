@@ -603,3 +603,11 @@ Recommended three-problem set:
 
 Attempt the problems under timed conditions before comparing against the
 existing implementations under `dsa/`.
+
+---
+
+## Day 55 — Backtracking
+
+- Restore IP Addresses
+- Generate Parentheses
+- Combination Sum III

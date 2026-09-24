@@ -1227,3 +1227,23 @@ Detailed notes:
 
 The architecture gives ingestion and serving different scaling, reliability,
 and latency boundaries while keeping their data contracts explicit.
+
+---
+
+## Day 55 — Agent Architecture
+
+Covers the architecture of AI agents that plan work, call bounded tools,
+maintain state, and enforce application-level guardrails.
+
+Topics include:
+
+- Agent orchestration
+- Tool registries
+- Agent state
+- Planning
+- Guardrails
+- Failure handling
+- Stateful vs stateless agent services
+- Agent observability
+
+File: `agent-architecture.md`

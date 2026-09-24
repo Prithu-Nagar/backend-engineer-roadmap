@@ -2750,3 +2750,54 @@ separating offline ingestion work from online serving.
 
 Day 54 keeps evaluation reproducible while ensuring expensive ingestion work is
 handled asynchronously rather than inside the online query path.
+
+---
+
+## Day 55 — AI Agents + Tool Calling
+
+Day 55 continues the GenAI Engineering phase by introducing bounded agent
+execution, tool-calling API patterns, and agent architecture.
+
+### DSA
+
+- Added Restore IP Addresses
+- Added Generate Parentheses
+- Added Combination Sum III
+- Reinforced backtracking, pruning, and state restoration
+
+### Python
+
+- Added provider-neutral tool execution patterns
+- Added tool registration, allowlists, validation, and application-owned execution
+
+### SQL
+
+- Added agent run tracking
+- Added tool-call and tool-result audit tables
+- Added indexes for session, run, and tool-status lookups
+
+### LeetCode
+
+- Restore IP Addresses
+- Generate Parentheses
+- Combination Sum III
+
+### Backend
+
+- Added structured tool-calling API boundaries
+- Added tool request validation and allowlist checks
+- Added stable tool-result response envelopes
+
+### System Design
+
+- Added AI agent architecture
+- Covered orchestration, planning, state, guardrails, failure handling, and
+  stateless scaling
+
+### GenAI
+
+- Expanded AI agent notes
+- Covered planning, tools, state, guardrails, and stopping conditions
+
+Day 55 keeps agentic workflows bounded by making the application responsible
+for tool validation, authorization, execution, and observability.

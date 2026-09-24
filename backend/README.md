@@ -1197,3 +1197,21 @@ File:
 The service keeps parsing/chunking, embedding, and persistence behind explicit
 interfaces so the ingestion workflow can run as a background job without
 expanding the online RAG API route.
+
+---
+
+## Day 55 — Tool-Calling API Patterns
+
+Day 55 introduces backend boundaries for safely exposing application tools to
+an agent.
+
+Topics include:
+
+- Structured tool-call requests
+- Tool request validation
+- Tool allowlists
+- Application-owned execution
+- Permission checks
+- Stable API response envelopes
+
+File: `tool_calling_api.py`

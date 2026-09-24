@@ -611,3 +611,22 @@ File:
 The evaluation workflow treats retrieval quality, context quality, generation
 quality, and system performance as separate signals rather than relying on a
 single end-to-end answer score.
+
+---
+
+## Day 55 — AI Agents
+
+AI agents combine an LLM with tools, state, and an execution loop to complete
+multi-step tasks.
+
+Day 55 focuses on:
+
+- Planning
+- Tool selection
+- Tool execution
+- Agent state
+- Guardrails
+- Stopping conditions
+- Failure handling
+
+File: `agents.md`

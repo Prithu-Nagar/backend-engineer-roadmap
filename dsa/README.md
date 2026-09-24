@@ -900,3 +900,19 @@ Reused existing implementations:
 The set reinforces identifying a state, writing a recurrence, choosing the
 correct iteration order, and reducing a two-dimensional DP formulation when
 the transition permits it.
+
+---
+
+## Day 55 — Recursion & Backtracking
+
+Covers recursive search and constraint-exploration techniques.
+
+Topics include:
+
+- Backtracking
+- Decision trees
+- State restoration
+- Branch pruning
+- Constraint-based search
+
+Directory: `recursion/`
