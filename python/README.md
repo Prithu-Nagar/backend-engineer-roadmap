@@ -1240,3 +1240,26 @@ Topics include:
 - Stable tool-result envelopes
 
 File: `tool_execution_patterns.py`
+
+---
+
+## Day 56 — Async Agent / Tool Orchestration
+
+Day 56 applies Python `asyncio` to agent workflows that execute tools without
+blocking the event loop.
+
+Topics include:
+
+- Async tool handlers
+- Tool registries
+- Concurrent tool execution with `asyncio.gather`
+- Per-tool failure capture
+- Bounded agent iterations
+- Separating orchestration from tool implementations
+
+File:
+
+`async_agent_tool_orchestration.py`
+
+The example keeps tool registration and execution behind a small asynchronous
+registry so the agent workflow does not depend on a specific tool provider.

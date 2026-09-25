@@ -1215,3 +1215,26 @@ Topics include:
 - Stable API response envelopes
 
 File: `tool_calling_api.py`
+
+---
+
+## Day 56 — Agent Backend Service
+
+Day 56 adds a provider-neutral backend service boundary for AI agents.
+
+Topics include:
+
+- Agent request and response contracts
+- Session persistence
+- Agent runtime abstraction
+- Conversation history loading
+- Assistant response persistence
+- Tool-result boundaries
+- Separation of HTTP/service concerns from model-provider logic
+
+File:
+
+`agent_backend_service.py`
+
+The service keeps session storage and agent execution behind protocols so the
+API layer can remain independent of a specific database or LLM provider.

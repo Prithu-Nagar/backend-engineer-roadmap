@@ -108,3 +108,30 @@ Repository files:
 - `ipo.py`
 - `furthest_building_you_can_reach.py`
 - `maximum_performance_of_a_team.py`
+
+---
+
+## Day 56 — Heap + Greedy
+
+Day 56 extends heap usage into greedy decision-making and priority-based
+selection.
+
+Problems:
+
+- Kth Smallest Element in a Sorted Matrix
+- Meeting Rooms II
+- Minimum Number of Refueling Stops
+
+Concepts:
+
+- Min-heap over sorted row candidates
+- Greedy interval allocation
+- Tracking active meeting end times
+- Max-heap selection of previously reachable fuel
+- Delaying a greedy commitment until additional information is available
+
+Repository files:
+
+- `kth_smallest_element_in_sorted_matrix.py`
+- `meeting_rooms_ii.py`
+- `minimum_number_of_refueling_stops.py`

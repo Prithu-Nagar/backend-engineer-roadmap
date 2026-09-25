@@ -916,3 +916,19 @@ Topics include:
 - Constraint-based search
 
 Directory: `recursion/`
+
+---
+
+## Day 56 — Heap + Greedy
+
+Day 56 focuses on combining priority queues with greedy decision-making.
+
+Topics include:
+
+- Min-heaps and max-heaps
+- Greedy interval processing
+- Maintaining the best available candidate
+- Delayed greedy selection
+- Heap-backed optimization
+
+LeetCode implementations are stored under `dsa/heap/`.

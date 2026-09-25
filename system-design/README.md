@@ -1247,3 +1247,29 @@ Topics include:
 - Agent observability
 
 File: `agent-architecture.md`
+
+---
+
+## Day 56 — Stateful vs Stateless AI Services
+
+Day 56 compares service architectures for AI applications that maintain
+conversation and workflow state.
+
+Topics include:
+
+- Stateless API tiers
+- Stateful workers
+- Shared session stores
+- Context loading
+- Long-running agent execution
+- Horizontal scaling
+- Failure recovery
+- Session consistency
+
+File:
+
+`stateful-stateless-ai-services.md`
+
+The design emphasizes keeping durable state outside horizontally scaled API
+instances when stateless request handling is preferred, while using stateful
+workers selectively for long-running workflows.

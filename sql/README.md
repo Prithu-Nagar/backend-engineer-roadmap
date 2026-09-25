@@ -1140,3 +1140,28 @@ Topics include:
 File:
 
 `agent_tool_execution_logs.sql`
+
+---
+
+## Day 56 — Conversation / Session Persistence
+
+Day 56 adds relational persistence patterns for AI conversations and agent
+sessions.
+
+Topics include:
+
+- Agent session records
+- Ordered conversation messages
+- Context snapshots
+- Session status and lifecycle
+- JSONB metadata
+- Tenant-aware indexes
+- Context-version tracking
+
+File:
+
+`conversation_session_persistence.sql`
+
+The schema separates durable conversation history from summarized context so
+the application can reconstruct recent messages while retaining versioned
+context snapshots.

@@ -611,3 +611,18 @@ existing implementations under `dsa/`.
 - Restore IP Addresses
 - Generate Parentheses
 - Combination Sum III
+
+---
+
+## Day 56 — Heap + Greedy
+
+Recommended three-problem set:
+
+1. **Kth Smallest Element in a Sorted Matrix** — Heap / K-way merge
+2. **Meeting Rooms II** — Greedy / Min-Heap
+3. **Minimum Number of Refueling Stops** — Greedy / Max-Heap
+
+The implementations are stored under `dsa/heap/`.
+
+Attempt the problems independently before comparing against the implementations
+and reviewing why the heap maintains the currently useful candidates.

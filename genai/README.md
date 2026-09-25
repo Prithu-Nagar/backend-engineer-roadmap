@@ -630,3 +630,29 @@ Day 55 focuses on:
 - Failure handling
 
 File: `agents.md`
+
+---
+
+## Day 56 — Agent Memory and Context Management
+
+Day 56 focuses on how agents retain and selectively use conversation and
+workflow context.
+
+Topics include:
+
+- Conversation history
+- Context-window management
+- Conversation summarization
+- Long-term memory
+- Tool and workflow state
+- Context budgeting
+- Memory retrieval
+- Memory lifecycle
+- Context filtering and authorization
+
+File:
+
+`agent-memory-context-management.md`
+
+The notes treat memory as an explicit application capability and emphasize
+constructing relevant, bounded, and authorized context before each model call.
