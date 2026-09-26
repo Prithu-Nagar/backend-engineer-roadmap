@@ -932,3 +932,22 @@ Topics include:
 - Heap-backed optimization
 
 LeetCode implementations are stored under `dsa/heap/`.
+
+---
+
+## Day 57 — Binary Search + Intervals
+
+Day 57 revisits binary search patterns while reinforcing interval reasoning and
+boundary-based problem solving.
+
+Topics include:
+
+- Searching rotated sorted data
+- Binary search for the minimum boundary
+- Timestamp-based binary search
+- Matrix search using sorted row/column boundaries
+- Interval overlap and boundary conditions
+- Choosing a monotonic search space
+
+LeetCode implementations are stored under `dsa/binary_search/`.
+Interval patterns remain documented under `dsa/intervals/`.

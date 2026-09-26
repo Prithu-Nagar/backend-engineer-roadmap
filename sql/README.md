@@ -1165,3 +1165,27 @@ File:
 The schema separates durable conversation history from summarized context so
 the application can reconstruct recent messages while retaining versioned
 context snapshots.
+
+---
+
+## Day 57 — Tool / Resource Metadata Modeling
+
+Day 57 models metadata for MCP-style servers, tools, and resources.
+
+Topics include:
+
+- MCP server registration
+- Tool names and descriptions
+- JSON input schemas
+- Resource URIs
+- Resource metadata
+- Tenant-aware discovery
+- Enabled/disabled capability states
+- Discovery indexes
+
+File:
+
+`tool_resource_metadata_modeling.sql`
+
+The schema keeps capability metadata separate from execution data so discovery,
+authorization, and operational state can evolve independently.

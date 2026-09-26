@@ -1238,3 +1238,27 @@ File:
 
 The service keeps session storage and agent execution behind protocols so the
 API layer can remain independent of a specific database or LLM provider.
+
+---
+
+## Day 57 — MCP-Enabled Backend Concept
+
+Day 57 introduces an application-owned adapter for exposing approved tools and
+resources through an MCP-style boundary.
+
+Topics include:
+
+- Tool request contracts
+- Resource request contracts
+- Tool registries
+- Resource registries
+- Argument validation
+- Application-service boundaries
+- Keeping protocol concerns separate from business logic
+
+File:
+
+`mcp_enabled_backend_concept.py`
+
+The example keeps the MCP-style adapter provider-neutral and makes the
+application capability boundary explicit.

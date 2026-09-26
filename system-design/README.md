@@ -1273,3 +1273,28 @@ File:
 The design emphasizes keeping durable state outside horizontally scaled API
 instances when stateless request handling is preferred, while using stateful
 workers selectively for long-running workflows.
+
+---
+
+## Day 57 — Tool / Resource Boundary Design
+
+Day 57 defines how an MCP-style protocol boundary can expose application
+capabilities without granting unrestricted access to internal systems.
+
+Topics include:
+
+- Tool boundaries
+- Resource boundaries
+- Authorization
+- Tenant isolation
+- Reliability controls
+- Observability
+- Stateless scaling
+- Long-running tool execution
+
+File:
+
+`tool-resource-boundary-design.md`
+
+The design treats tools and resources as explicit application capabilities with
+clear schemas, permissions, and operational boundaries.

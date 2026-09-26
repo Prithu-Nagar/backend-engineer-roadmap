@@ -2858,3 +2858,60 @@ execution with durable conversation state and explicit context management.
 Day 56 treats agent memory as an explicit backend capability: durable state is
 persisted outside the model, while each model invocation receives bounded,
 relevant, and authorized context.
+
+---
+
+## Day 57 — MCP Fundamentals, Search Patterns & Tool Boundaries
+
+Day 57 continues the GenAI Engineering phase by introducing Model Context
+Protocol (MCP) fundamentals and connecting protocol capabilities to backend
+service boundaries.
+
+### DSA
+
+- Added Find Minimum in Rotated Sorted Array
+- Added Time Based Key-Value Store
+- Added Search a 2D Matrix II
+- Reinforced binary-search boundaries and interval reasoning
+
+### Python
+
+- Added MCP-style client/server concepts
+- Added tool and resource definitions
+- Added capability discovery
+- Added structured tool and resource operations
+
+### SQL
+
+- Added MCP server metadata
+- Added tool metadata and input schemas
+- Added resource metadata and URIs
+- Added tenant-aware capability discovery indexes
+
+### LeetCode
+
+- Find Minimum in Rotated Sorted Array
+- Time Based Key-Value Store
+- Search a 2D Matrix II
+
+### Backend
+
+- Added MCP-enabled backend adapter concept
+- Added explicit tool and resource registries
+- Added application-owned validation and execution boundaries
+
+### System Design
+
+- Added tool/resource boundary architecture
+- Covered authorization, tenant isolation, reliability, observability, and
+  horizontal scaling
+
+### GenAI
+
+- Added Model Context Protocol fundamentals
+- Covered client/server flow, discovery, tools, resources, and security
+- Compared MCP-style integration with direct API integration
+
+Day 57 treats MCP as a protocol boundary around explicit application
+capabilities rather than as a replacement for backend authentication,
+authorization, service design, or reliability controls.

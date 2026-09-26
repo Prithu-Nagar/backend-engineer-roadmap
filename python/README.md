@@ -1263,3 +1263,27 @@ File:
 
 The example keeps tool registration and execution behind a small asynchronous
 registry so the agent workflow does not depend on a specific tool provider.
+
+---
+
+## Day 57 — MCP Concepts and Client / Server Flow
+
+Day 57 introduces a provider-neutral Python model of an MCP-style client and
+server boundary.
+
+Topics include:
+
+- Tool definitions
+- Resource definitions
+- Capability discovery
+- Client/server separation
+- Structured tool invocation
+- Resource reads
+- Keeping protocol concerns separate from application services
+
+File:
+
+`mcp_concepts_client_server_flow.py`
+
+The example models the client/server flow without coupling the learning example
+to a particular MCP SDK.

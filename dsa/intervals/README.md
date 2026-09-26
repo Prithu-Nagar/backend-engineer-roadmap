@@ -115,3 +115,28 @@ Space: O(n)
 ```
 
 The additional space may be considered `O(1)` apart from the output depending on the problem's space-complexity convention.
+
+---
+
+## Day 57 — Interval Boundary Reasoning
+
+Day 57 reinforces interval reasoning alongside binary-search boundary problems.
+
+Important interval questions include:
+
+- Do two ranges overlap?
+- Is an endpoint inclusive or exclusive?
+- Should adjacent ranges merge?
+- Which interval boundary controls the next decision?
+- Can sorting reduce the problem to a linear scan?
+
+A reliable workflow is:
+
+1. Normalize the interval representation.
+2. Confirm endpoint semantics.
+3. Sort when ordering simplifies comparisons.
+4. Track the active interval or boundary.
+5. Handle empty input and touching endpoints explicitly.
+
+The interval implementations already in this directory provide reusable patterns
+for merging, insertion, intersection, and conflict detection.

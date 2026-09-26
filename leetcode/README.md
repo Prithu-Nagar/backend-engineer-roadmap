@@ -626,3 +626,11 @@ The implementations are stored under `dsa/heap/`.
 
 Attempt the problems independently before comparing against the implementations
 and reviewing why the heap maintains the currently useful candidates.
+
+---
+
+## Day 57 — Binary Search / Search
+
+- Find Minimum in Rotated Sorted Array
+- Time Based Key-Value Store
+- Search a 2D Matrix II

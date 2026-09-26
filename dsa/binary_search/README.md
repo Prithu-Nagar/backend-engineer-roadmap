@@ -76,3 +76,45 @@ If the answer range is `M` and each feasibility check scans `N` items:
 
 Binary search on answer is especially useful when the problem asks for a
 minimum or maximum value subject to a monotonic feasibility condition.
+
+---
+
+## Day 57 — Advanced Search Boundaries
+
+Day 57 extends binary search beyond a simple sorted-array lookup.
+
+### Problems
+
+- Find Minimum in Rotated Sorted Array
+- Time Based Key-Value Store
+- Search a 2D Matrix II
+
+### Implementations
+
+- `find_minimum_in_rotated_sorted_array.py`
+- `time_based_key_value_store.py`
+- `search_a_2d_matrix_ii.py`
+
+### Patterns
+
+- Compare the middle element with the right boundary.
+- Search for the first or last valid timestamp.
+- Use monotonic row and column boundaries to eliminate matrix regions.
+
+### Complexity
+
+For rotated-array minimum:
+
+- Time: `O(log n)`
+- Space: `O(1)`
+
+For timestamp lookup with `n` stored versions:
+
+- `set`: `O(1)` amortized when timestamps are appended in order
+- `get`: `O(log n)`
+- Space: `O(n)`
+
+For an `m x n` sorted matrix using the top-right search:
+
+- Time: `O(m + n)`
+- Space: `O(1)`

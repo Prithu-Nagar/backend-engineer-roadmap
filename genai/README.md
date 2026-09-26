@@ -656,3 +656,29 @@ File:
 
 The notes treat memory as an explicit application capability and emphasize
 constructing relevant, bounded, and authorized context before each model call.
+
+---
+
+## Day 57 — Model Context Protocol (MCP) Fundamentals
+
+Day 57 introduces Model Context Protocol fundamentals and the client/server
+capability model.
+
+Topics include:
+
+- MCP participants
+- Client/server flow
+- Capability discovery
+- Tools
+- Resources
+- Security boundaries
+- MCP-enabled backend architecture
+- MCP versus direct API integration
+
+File:
+
+`model_context_protocol_fundamentals.md`
+
+The notes focus on the protocol and architectural concepts while keeping
+authentication, authorization, validation, and reliability as application
+responsibilities.
