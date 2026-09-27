@@ -1287,3 +1287,25 @@ File:
 
 The example models the client/server flow without coupling the learning example
 to a particular MCP SDK.
+
+---
+
+## Day 58 — Testing LLM Integrations
+
+Day 58 introduces provider-neutral testing patterns for LLM-backed services.
+
+Topics include:
+
+- Dependency injection for LLM clients
+- Deterministic fake clients
+- Request validation
+- Response validation
+- Capturing provider calls
+- Testing provider boundaries without real API calls
+
+File:
+
+`testing_llm_integrations.py`
+
+The example keeps external model behavior behind a small protocol so service
+tests remain deterministic and do not require network access.

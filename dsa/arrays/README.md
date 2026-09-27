@@ -40,3 +40,16 @@ This directory contains LeetCode problems focused on array manipulation, hashing
 - Top K Frequent Elements
 - Encode and Decode Strings
 - Longest Consecutive Sequence
+
+---
+
+## Day 58 — 3Sum
+
+Added `three_sum.py`.
+
+Topics:
+
+- Sorting before two-pointer traversal
+- Duplicate skipping
+- Fixed-index + two-pointer search
+- O(n²) time and O(1) auxiliary space excluding the output

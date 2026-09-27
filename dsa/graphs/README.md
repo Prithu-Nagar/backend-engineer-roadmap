@@ -194,3 +194,17 @@ Reused:
 - `course_schedule.py` — Kahn's algorithm for topological sorting
 
 The set reinforces graph traversal, cycle detection, and dependency ordering.
+
+---
+
+## Day 58 — Pacific Atlantic Water Flow
+
+Added `pacific_atlantic_water_flow.py`.
+
+Topics:
+
+- Reverse reachability from ocean boundaries
+- DFS/stack traversal
+- Height constraints
+- Set intersection for cells reaching both oceans
+- O(m × n) time and O(m × n) auxiliary space

@@ -634,3 +634,16 @@ and reviewing why the heap maintains the currently useful candidates.
 - Find Minimum in Rotated Sorted Array
 - Time Based Key-Value Store
 - Search a 2D Matrix II
+
+---
+
+## Day 58 — Mixed Medium Set
+
+Recommended three-problem set:
+
+1. **3Sum** — Arrays / Sorting + Two Pointers
+2. **Validate Binary Search Tree** — Trees / Recursive Bounds
+3. **Pacific Atlantic Water Flow** — Graphs / Reverse Reachability
+
+Attempt the problems without relying on the category labels first, then compare
+against the implementations under `dsa/`.

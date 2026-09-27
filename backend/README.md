@@ -1262,3 +1262,25 @@ File:
 
 The example keeps the MCP-style adapter provider-neutral and makes the
 application capability boundary explicit.
+
+---
+
+## Day 58 — AI Service Testing
+
+Day 58 adds provider-neutral testing patterns for AI-backed backend services.
+
+Topics include:
+
+- Dependency injection for AI providers
+- Deterministic provider doubles
+- Input validation
+- Provider failure propagation
+- Response validation
+- Testing the service boundary independently from the model provider
+
+File:
+
+`ai_service_testing.py`
+
+The example keeps provider behavior behind a small protocol so service tests
+can cover success and failure paths without calling an external AI API.

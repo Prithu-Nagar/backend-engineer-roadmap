@@ -58,3 +58,16 @@ visited node is therefore the kth smallest value.
 - The inorder traversal of a BST is sorted.
 - LCA can be found without exploring unrelated subtrees.
 - Iterative inorder traversal can avoid storing the full sorted list.
+
+---
+
+## Day 58 — Validate Binary Search Tree
+
+Added `validate_binary_search_tree.py`.
+
+Topics:
+
+- BST ordering invariant
+- Recursive lower and upper bounds
+- Rejecting duplicate values under strict BST ordering
+- O(n) time and O(h) recursion space

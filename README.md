@@ -2915,3 +2915,57 @@ service boundaries.
 Day 57 treats MCP as a protocol boundary around explicit application
 capabilities rather than as a replacement for backend authentication,
 authorization, service design, or reliability controls.
+
+---
+
+## Day 58 — AI Reliability, Testing & Safe Tool Use
+
+Day 58 continues the GenAI Engineering phase by connecting testing, evaluation
+storage, AI-service reliability, and safe model/tool boundaries.
+
+### DSA
+
+- Added 3Sum
+- Added Validate Binary Search Tree
+- Added Pacific Atlantic Water Flow
+- Reinforced mixed-pattern recognition across arrays, trees, and graphs
+
+### Python
+
+- Added provider-neutral testing patterns for LLM integrations
+- Added deterministic fake clients
+- Added request and response validation
+
+### SQL
+
+- Added evaluation dataset and case storage
+- Added evaluation run and per-case result storage
+- Added model, pipeline, latency, token, and pass/fail tracking
+
+### LeetCode
+
+- 3Sum
+- Validate Binary Search Tree
+- Pacific Atlantic Water Flow
+
+### Backend
+
+- Added AI service testing boundaries
+- Added deterministic provider doubles
+- Added explicit success and provider-failure test paths
+
+### System Design
+
+- Added AI reliability and fallback strategies
+- Covered timeouts, retries, circuit breakers, graceful degradation, and
+  stable error categories
+
+### GenAI
+
+- Added prompt-injection and safe-tool-use notes
+- Covered data boundaries, authorization, tool allowlists, validation, and
+  output handling
+
+Day 58 keeps AI capabilities testable and reliable while treating model output
+and external content as untrusted inputs that must remain behind application-owned
+security and authorization boundaries.

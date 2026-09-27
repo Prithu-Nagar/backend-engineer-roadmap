@@ -1298,3 +1298,27 @@ File:
 
 The design treats tools and resources as explicit application capabilities with
 clear schemas, permissions, and operational boundaries.
+
+---
+
+## Day 58 — AI Reliability and Fallback Strategies
+
+Day 58 covers reliability patterns for AI-backed services.
+
+Topics include:
+
+- Dependency timeouts
+- Bounded retries and backoff
+- Circuit breakers
+- Model and dependency fallbacks
+- Graceful degradation
+- Latency budgets
+- Stable client-facing error categories
+- Preserving authorization and tenant boundaries during fallback
+
+File:
+
+`ai-reliability-fallbacks.md`
+
+The design treats fallback behavior as an explicit reliability policy rather
+than silently hiding dependency failures.

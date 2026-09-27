@@ -682,3 +682,28 @@ File:
 The notes focus on the protocol and architectural concepts while keeping
 authentication, authorization, validation, and reliability as application
 responsibilities.
+
+---
+
+## Day 58 — Prompt Injection, Data Boundaries & Safe Tool Use
+
+Day 58 focuses on security boundaries for AI applications.
+
+Topics include:
+
+- Prompt injection
+- Untrusted user and retrieved content
+- Data boundaries
+- Tenant and authorization context
+- Tool allowlists
+- Structured argument validation
+- Safe tool execution
+- Output validation
+- Sensitive-data handling
+
+File:
+
+`prompt_injection_data_boundaries_safe_tool_use.md`
+
+The notes emphasize that model-generated actions remain subject to
+application-owned authorization, validation, and resource controls.

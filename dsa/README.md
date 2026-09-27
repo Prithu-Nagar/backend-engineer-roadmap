@@ -951,3 +951,19 @@ Topics include:
 
 LeetCode implementations are stored under `dsa/binary_search/`.
 Interval patterns remain documented under `dsa/intervals/`.
+
+---
+
+## Day 58 — Mixed Medium Problems
+
+Day 58 uses a mixed medium-level set to practice switching patterns without a
+topic label.
+
+Added:
+
+- 3Sum — sorting + two pointers
+- Validate Binary Search Tree — recursive bounds
+- Pacific Atlantic Water Flow — reverse graph traversal
+
+The set reinforces pattern recognition, duplicate handling, invariant-based
+tree validation, and graph reachability.

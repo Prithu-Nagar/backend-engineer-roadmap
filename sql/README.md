@@ -1189,3 +1189,27 @@ File:
 
 The schema keeps capability metadata separate from execution data so discovery,
 authorization, and operational state can evolve independently.
+
+---
+
+## Day 58 — Evaluation Result Storage
+
+Day 58 models persistent storage for AI evaluation runs and per-case results.
+
+Topics include:
+
+- Evaluation datasets and versions
+- Evaluation cases
+- Pipeline/model/prompt version tracking
+- Per-case evaluation results
+- Retrieval and answer scores
+- Latency and token usage
+- Pass/fail outcomes
+- Run-level comparison queries
+
+File:
+
+`evaluation_result_storage.sql`
+
+The schema separates reusable evaluation datasets from individual runs so
+pipeline changes can be compared without changing the underlying test cases.
