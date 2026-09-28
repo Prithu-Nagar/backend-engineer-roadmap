@@ -37,3 +37,17 @@ This directory contains LeetCode problems involving string manipulation, two poi
 - Longest Substring Without Repeating Characters
 - Group Anagrams
 - Longest Palindromic Substring
+
+---
+
+## Day 59 — Decode String
+
+Added `decode_string.py`.
+
+Topics:
+
+- Stack-based parsing
+- Nested repetition
+- Multi-digit repeat counts
+- Restoring the previous string context
+- O(n + output size) time and O(n + output size) space

@@ -118,3 +118,30 @@ For an `m x n` sorted matrix using the top-right search:
 
 - Time: `O(m + n)`
 - Space: `O(1)`
+
+---
+
+## Day 59 — Find Peak Element
+
+Day 59 applies binary search to a local-neighbor condition rather than a
+fully sorted array.
+
+### Problem
+
+- Find Peak Element
+
+### Implementation
+
+- `find_peak_element.py`
+
+### Pattern
+
+- Compare `nums[mid]` with `nums[mid + 1]`.
+- If the slope descends, a peak exists at or to the left.
+- Otherwise, a peak exists to the right.
+- Continue until `left == right`.
+
+### Complexity
+
+- Time: `O(log n)`
+- Space: `O(1)`

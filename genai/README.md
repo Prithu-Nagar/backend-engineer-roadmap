@@ -707,3 +707,29 @@ File:
 
 The notes emphasize that model-generated actions remain subject to
 application-owned authorization, validation, and resource controls.
+
+---
+
+## Day 59 — Model Selection, Latency & Token/Cost Trade-offs
+
+Day 59 focuses on selecting AI models using workload-level quality, latency,
+token, and cost considerations.
+
+Topics include:
+
+- Model selection dimensions
+- Latency budgets and percentiles
+- Token economics
+- Context budgeting
+- Model routing
+- Caching and batching
+- Rate limits and cost controls
+- Fallback trade-offs
+- Evaluation before production optimization
+
+File:
+
+`model-selection-latency-token-cost-tradeoffs.md`
+
+The notes emphasize measuring the complete successful request rather than
+optimizing headline model price or latency in isolation.

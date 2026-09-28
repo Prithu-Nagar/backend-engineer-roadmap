@@ -1284,3 +1284,26 @@ File:
 
 The example keeps provider behavior behind a small protocol so service tests
 can cover success and failure paths without calling an external AI API.
+
+---
+
+## Day 59 — Rate Limiting AI Endpoints
+
+Day 59 adds a provider-neutral rate-limiting boundary for expensive AI-backed
+endpoints.
+
+Topics include:
+
+- Token-bucket rate limiting
+- Per-tenant or per-client keys
+- Refill-based quota recovery
+- Request cost based on estimated token usage
+- Higher or lower quota cost for request priority
+- Keeping rate-limit policy independent from the web framework
+
+File:
+
+`rate_limiting_ai_endpoints.py`
+
+The limiter is intentionally framework-neutral so the same policy can be
+enforced in a route, service boundary, or gateway.

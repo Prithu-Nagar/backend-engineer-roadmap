@@ -645,5 +645,12 @@ Recommended three-problem set:
 2. **Validate Binary Search Tree** — Trees / Recursive Bounds
 3. **Pacific Atlantic Water Flow** — Graphs / Reverse Reachability
 
-Attempt the problems without relying on the category labels first, then compare
-against the implementations under `dsa/`.
+---
+
+## Day 59 — Mixed Medium Set
+
+Recommended three-problem set:
+
+1. **Maximum Product Subarray** — Arrays / Dynamic Programming
+2. **Decode String** — Strings / Stack
+3. **Find Peak Element** — Binary Search

@@ -53,3 +53,16 @@ Topics:
 - Duplicate skipping
 - Fixed-index + two-pointer search
 - O(n²) time and O(1) auxiliary space excluding the output
+
+---
+
+## Day 59 — Maximum Product Subarray
+
+Added `maximum_product_subarray.py`.
+
+Topics:
+
+- Tracking both maximum and minimum products
+- Handling negative values by swapping the active extrema
+- Resetting the running product at zero
+- O(n) time and O(1) auxiliary space

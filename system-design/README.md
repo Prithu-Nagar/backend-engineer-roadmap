@@ -1322,3 +1322,28 @@ File:
 
 The design treats fallback behavior as an explicit reliability policy rather
 than silently hiding dependency failures.
+
+---
+
+## Day 59 — AI Cost / Performance Architecture
+
+Day 59 designs an AI-backed service around explicit cost, latency, throughput,
+and reliability controls.
+
+Topics include:
+
+- Model-selection policy
+- Token and context budgeting
+- Caching
+- Rate limits and tenant quotas
+- Latency budgets
+- Retry/fallback cost
+- Usage and cost observability
+- Capacity planning across requests, tokens, and spend
+
+File:
+
+`ai-cost-performance-architecture.md`
+
+The design treats cost and performance as first-class service concerns while
+preserving authorization, tenant isolation, and reliability boundaries.

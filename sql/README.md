@@ -1213,3 +1213,29 @@ File:
 
 The schema separates reusable evaluation datasets from individual runs so
 pipeline changes can be compared without changing the underlying test cases.
+
+---
+
+## Day 59 — Usage / Cost Analytics
+
+Day 59 adds relational usage-event storage for AI API cost and performance
+analytics.
+
+Topics include:
+
+- Tenant and request identifiers
+- Provider and model tracking
+- Input/output token counts
+- Latency measurement
+- Estimated request cost
+- Cache-hit tracking
+- Rate-limit and provider failure outcomes
+- Daily model-level and tenant-level cost queries
+- Endpoint latency and failure summaries
+
+File:
+
+`usage_cost_analytics.sql`
+
+The schema makes token usage, latency, cost, and operational outcomes queryable
+without coupling analytics to a specific AI provider.

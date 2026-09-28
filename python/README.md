@@ -1309,3 +1309,26 @@ File:
 
 The example keeps external model behavior behind a small protocol so service
 tests remain deterministic and do not require network access.
+
+---
+
+## Day 59 — Performance and Cost Considerations for AI APIs
+
+Day 59 connects Python implementation choices with measurable AI API
+performance and cost.
+
+Topics include:
+
+- Measuring operation latency with `perf_counter`
+- Estimating input/output token cost
+- Keeping pricing data separate from request logic
+- Simple model/execution-policy selection
+- Cache-aware execution decisions
+- Context-size thresholds for expensive requests
+
+File:
+
+`performance_cost_ai_apis.py`
+
+The example is provider-neutral and demonstrates policy boundaries without
+making real external API calls.

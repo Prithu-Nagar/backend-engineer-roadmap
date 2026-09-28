@@ -2969,3 +2969,59 @@ storage, AI-service reliability, and safe model/tool boundaries.
 Day 58 keeps AI capabilities testable and reliable while treating model output
 and external content as untrusted inputs that must remain behind application-owned
 security and authorization boundaries.
+
+---
+
+## Day 59 — AI Cost, Performance & Rate Limiting
+
+Day 59 continues the GenAI Engineering phase by connecting AI API economics
+with backend performance and operational controls.
+
+### DSA
+
+- Added Maximum Product Subarray
+- Added Decode String
+- Added Find Peak Element
+- Reinforced mixed-pattern recognition across arrays, strings, and binary search
+
+### Python
+
+- Added AI API latency measurement
+- Added token-based cost estimation
+- Added provider-neutral execution/model-selection policy
+- Added cache-aware and context-size-aware decisions
+
+### SQL
+
+- Added AI usage-event storage
+- Added token, latency, cache, status, and estimated-cost tracking
+- Added model, tenant, and endpoint analytics queries
+
+### LeetCode
+
+- Maximum Product Subarray
+- Decode String
+- Find Peak Element
+
+### Backend
+
+- Added token-bucket rate limiting for AI endpoints
+- Added per-client/tenant request keys
+- Added token-aware request cost calculation
+
+### System Design
+
+- Added AI cost/performance architecture
+- Covered model routing, token budgets, caching, rate limits, quotas,
+  observability, capacity planning, and retry/fallback cost
+
+### GenAI
+
+- Added model-selection, latency, and token/cost trade-off notes
+- Covered model routing, context budgeting, caching, batching, fallbacks,
+  and workload-level evaluation
+
+Day 59 treats AI cost and performance as explicit backend engineering
+concerns: model selection, token usage, latency, rate limits, and spend should
+be measurable and controlled without weakening authorization or tenant
+boundaries.
