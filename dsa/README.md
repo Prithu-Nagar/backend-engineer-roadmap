@@ -967,3 +967,24 @@ Added:
 
 The set reinforces pattern recognition, duplicate handling, invariant-based
 tree validation, and graph reachability.
+
+---
+
+## Day 60 — Review + Timed Assessment
+
+Day 60 is the DSA consolidation checkpoint for the GenAI Engineering phase.
+
+Review focus:
+
+- Arrays, strings, and hashing
+- Sliding window and two pointers
+- Prefix sums and binary search
+- Linked lists, stacks, queues, and heaps
+- Trees, graphs, and recursion
+- Backtracking and Dynamic Programming
+- Mixed-pattern recognition under time pressure
+- Complexity analysis and weak-area repair
+
+No new DSA solution files are added for Day 60. Existing implementations are
+reused for targeted revision so the session measures pattern selection and
+problem-solving speed rather than introducing another algorithm category.

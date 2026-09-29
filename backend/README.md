@@ -1307,3 +1307,24 @@ File:
 
 The limiter is intentionally framework-neutral so the same policy can be
 enforced in a route, service boundary, or gateway.
+
+---
+
+## Day 60 — AI Backend Review
+
+Day 60 consolidates the backend patterns used to expose AI capabilities as a
+controlled application service.
+
+Review areas:
+
+- Provider-neutral AI service boundaries
+- Request and response validation
+- Dependency injection and deterministic testing
+- Streaming responses and async execution
+- Rate limiting, quotas, and token-aware cost controls
+- Timeouts, retries, circuit breakers, and fallbacks
+- Prompt-injection and data-boundary controls
+- Observability for latency, tokens, cost, failures, and usage
+
+The review connects the individual AI backend examples without replacing their
+existing implementations.

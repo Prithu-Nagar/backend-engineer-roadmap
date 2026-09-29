@@ -1239,3 +1239,25 @@ File:
 
 The schema makes token usage, latency, cost, and operational outcomes queryable
 without coupling analytics to a specific AI provider.
+
+---
+
+## Day 60 — SQL Review
+
+Day 60 consolidates the SQL and database concepts covered through the GenAI
+Engineering phase.
+
+Review areas:
+
+- Joins, grouping, subqueries, and CTEs
+- Window functions and analytical queries
+- Transactions and isolation
+- Concurrent writes and deadlocks
+- Indexes and query optimization
+- Connection pooling and production migrations
+- JSON/metadata modeling for AI workloads
+- Usage, cost, evaluation, and retrieval analytics
+- Secure query patterns and least privilege
+
+No new SQL implementation is required. Existing schemas and queries are reused
+for timed review, correctness checks, and weak-area repair.

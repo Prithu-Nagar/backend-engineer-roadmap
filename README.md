@@ -3025,3 +3025,36 @@ Day 59 treats AI cost and performance as explicit backend engineering
 concerns: model selection, token usage, latency, rate limits, and spend should
 be measurable and controlled without weakening authorization or tenant
 boundaries.
+
+---
+
+## Day 60 — GenAI Engineering Review + RAG/Agent Prototype
+
+Day 60 is the consolidation checkpoint for the GenAI Engineering phase. It
+reviews the core interview and backend patterns covered through Day 59 while
+building a small provider-neutral RAG/Agent prototype.
+
+### Review Focus
+
+- DSA review and weak-area repair
+- Python review and weak-area repair
+- SQL review and weak-area repair
+- Timed LeetCode assessment
+- AI backend review
+- AI architecture and system-design review
+- RAG/Agent prototype implementation and documentation
+
+### Project
+
+Added:
+
+- `projects/rag-agent-prototype/rag_agent.py`
+- `projects/rag-agent-prototype/README.md`
+
+The prototype demonstrates a small retrieval-and-tool workflow without calling
+an external model or vector database. It keeps retrieval, prompt context, tool
+execution, and agent orchestration behind explicit boundaries so the prototype
+can later be replaced with production providers.
+
+Day 60 closes the GenAI Engineering phase before the roadmap moves into System
+Design and LLD on Day 61.

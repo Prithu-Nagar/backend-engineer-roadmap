@@ -1347,3 +1347,24 @@ File:
 
 The design treats cost and performance as first-class service concerns while
 preserving authorization, tenant isolation, and reliability boundaries.
+
+---
+
+## Day 60 — AI Architecture Review
+
+Day 60 consolidates the system-design patterns developed for AI-backed services.
+
+Review areas:
+
+- AI dependency and provider boundaries
+- Stateful versus stateless AI services
+- RAG ingestion and online serving separation
+- Tool and resource authorization boundaries
+- Streaming and backpressure
+- Reliability, timeouts, retries, and fallbacks
+- Rate limits, quotas, caching, and token budgets
+- Cost, latency, throughput, and capacity planning
+- Observability and tenant isolation
+
+The review focuses on connecting requirements, failure modes, scaling decisions,
+and operational controls into a coherent AI-service architecture.

@@ -810,3 +810,29 @@ Milestone review:
 No new application feature is required on Day 50. The milestone verifies that
 the Expense Tracker documents the production-engineering practices developed
 during Days 41–49 while preserving all earlier functionality.
+
+---
+
+## Day 60 — RAG/Agent Prototype
+
+Day 60 closes the GenAI Engineering phase with a small provider-neutral
+RAG/Agent prototype.
+
+Added:
+
+- `projects/rag-agent-prototype/rag_agent.py`
+- `projects/rag-agent-prototype/README.md`
+
+The prototype demonstrates:
+
+- Document ingestion into normalized chunks
+- Simple lexical retrieval with explicit top-k selection
+- Context assembly for an answer step
+- An application-owned tool registry
+- Tool argument validation before execution
+- A small agent loop that decides between retrieval and an approved tool
+- Clear boundaries between retrieval, tools, orchestration, and answer generation
+
+The implementation is intentionally deterministic and provider-neutral. It is a
+learning prototype, not a production replacement for a managed model or vector
+database.

@@ -654,3 +654,23 @@ Recommended three-problem set:
 1. **Maximum Product Subarray** — Arrays / Dynamic Programming
 2. **Decode String** — Strings / Stack
 3. **Find Peak Element** — Binary Search
+
+---
+
+## Day 60 — Timed Assessment
+
+Day 60 uses a timed LeetCode assessment to consolidate the DSA patterns covered
+through the GenAI Engineering phase.
+
+Assessment focus:
+
+- Mixed-pattern recognition
+- Selecting an approach without a topic label
+- Time and space complexity analysis
+- Writing a complete solution under time pressure
+- Recording incorrect, incomplete, or slow attempts
+- Re-attempting weak patterns after the timed session
+
+No new fixed problem list is required for Day 60. Select a mixed set from the
+existing problem patterns and compare against implementations under `dsa/` only
+after the timed attempt.
