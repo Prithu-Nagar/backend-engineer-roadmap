@@ -674,3 +674,22 @@ Assessment focus:
 No new fixed problem list is required for Day 60. Select a mixed set from the
 existing problem patterns and compare against implementations under `dsa/` only
 after the timed attempt.
+
+---
+
+## Day 61 — Design-Oriented Problems
+
+Day 61 shifts LeetCode practice toward problems that require explicit state,
+object boundaries, and data-structure design.
+
+Review set:
+
+- **LRU Cache** — combine a hash map with a doubly linked list to provide
+  constant-time lookup, update, and eviction
+- **Design Add and Search Words Data Structure** — encapsulate trie nodes and
+  support wildcard-aware recursive search
+
+Both implementations already exist under `dsa/` and are reused rather than
+creating duplicate files. The review should focus on API contracts, invariants,
+complexity, ownership, and how the implementation could be exposed as a backend
+component.

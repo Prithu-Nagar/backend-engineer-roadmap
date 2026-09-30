@@ -1354,3 +1354,28 @@ Review areas:
 No new Python implementation is required. Existing examples are used to repair
 weak areas and verify that the language features can be applied cleanly at a
 backend service boundary.
+
+---
+
+## Day 61 — SOLID Principles in Python
+
+Day 61 begins the System Design & LLD phase by applying SOLID principles to
+backend-oriented Python components.
+
+Topics include:
+
+- Single Responsibility Principle
+- Open / Closed Principle
+- Liskov Substitution Principle
+- Interface Segregation Principle
+- Dependency Inversion Principle
+- Composition over inheritance
+- Protocol-based interfaces
+- Dependency injection at construction time
+
+File:
+
+`solid_principles.py`
+
+The example keeps the application service dependent on repository and notifier
+contracts rather than concrete infrastructure classes.

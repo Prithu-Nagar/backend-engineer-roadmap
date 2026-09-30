@@ -749,3 +749,27 @@ The hardening layer demonstrates:
 Security-sensitive values are treated as secrets and should be supplied through
 the deployment environment or secret-management system rather than committed
 to source control or written to logs.
+
+---
+
+## Day 61 — LLD Data Structures Review
+
+Day 61 adds a small domain-focused LLD review artifact without replacing the
+existing Task Manager implementation.
+
+Added:
+
+- `lld_data_structures.py`
+
+The review models:
+
+- `TaskStatus` as an explicit domain type
+- Task dependencies as a set of task IDs
+- A `TaskStore` interface for persistence behavior
+- An in-memory store for deterministic examples
+- A `TaskService` that owns the task-completion use case
+
+The example demonstrates composition and dependency inversion while keeping the
+existing Flask application structure intact. It also makes the task dependency
+invariant explicit: a task cannot be completed while one of its dependencies is
+still incomplete.

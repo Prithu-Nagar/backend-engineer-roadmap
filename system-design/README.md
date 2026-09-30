@@ -1368,3 +1368,27 @@ Review areas:
 
 The review focuses on connecting requirements, failure modes, scaling decisions,
 and operational controls into a coherent AI-service architecture.
+
+---
+
+## Day 61 — LLD: SOLID, Composition, and Interfaces
+
+Day 61 begins the System Design & LLD phase with reusable object-design
+principles for scalable backend services.
+
+Topics include:
+
+- SOLID principles
+- Composition over inheritance
+- Small interfaces and dependency inversion
+- Presentation, application, domain, and infrastructure boundaries
+- Transaction and authorization boundaries
+- Repository and external-service abstractions
+- Trade-offs of adding abstraction to small services
+
+File:
+
+`lld-principles-solid-composition-interfaces.md`
+
+The design keeps concrete infrastructure at the edge while application policy
+depends on stable contracts.

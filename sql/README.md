@@ -1261,3 +1261,27 @@ Review areas:
 
 No new SQL implementation is required. Existing schemas and queries are reused
 for timed review, correctness checks, and weak-area repair.
+
+---
+
+## Day 61 — Schema Design
+
+Day 61 applies LLD thinking to relational data modeling for the Task Manager.
+
+Topics include:
+
+- Entity and relationship boundaries
+- Primary and foreign keys
+- Referential integrity
+- Status and priority constraints
+- Task dependency modeling
+- Composite and partial indexes
+- Query patterns that match expected access paths
+
+File:
+
+`schema_design.sql`
+
+The schema keeps users, projects, tasks, and task dependencies explicit while
+using constraints and indexes to enforce important invariants at the database
+boundary.

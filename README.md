@@ -3058,3 +3058,55 @@ can later be replaced with production providers.
 
 Day 60 closes the GenAI Engineering phase before the roadmap moves into System
 Design and LLD on Day 61.
+
+---
+
+## Day 61 — System Design & LLD: SOLID and Task Manager LLD
+
+Day 61 begins the System Design & LLD phase with object-oriented design
+principles and a focused Task Manager LLD review.
+
+### DSA
+
+- Reviewed LRU Cache as an object-oriented data-structure design
+- Reviewed Design Add and Search Words Data Structure
+- Focused on state ownership, invariants, interfaces, and composition
+
+### Python
+
+- Added SOLID principles in Python
+- Added composition-over-inheritance examples
+- Added protocol-based dependency boundaries
+
+### SQL
+
+- Added Task Manager schema-design exercise
+- Added relational constraints for task status, priority, and dependencies
+- Added indexes aligned with common project, assignee, and due-task access paths
+
+### LeetCode
+
+- LRU Cache
+- Design Add and Search Words Data Structure
+
+### Backend
+
+- Added layered backend architecture example
+- Separated presentation, application, domain, and infrastructure concerns
+- Added repository-oriented dependency boundaries
+
+### System Design
+
+- Added LLD notes covering SOLID, composition, interfaces, and dependency
+  inversion
+- Connected object-level boundaries to scalable backend service design
+
+### Project
+
+- Added `projects/task-manager/lld_data_structures.py`
+- Reviewed Task Manager domain data structures and dependency relationships
+- Kept the LLD artifact separate from the existing production-oriented Flask
+  implementation
+
+Day 61 starts the System Design & LLD phase by turning SOLID and object-design
+principles into explicit backend boundaries and a concrete Task Manager review.

@@ -836,3 +836,27 @@ The prototype demonstrates:
 The implementation is intentionally deterministic and provider-neutral. It is a
 learning prototype, not a production replacement for a managed model or vector
 database.
+
+---
+
+## Day 61 — Task Manager LLD Data Structures Review
+
+Day 61 starts the System Design & LLD phase by reviewing the Task Manager's
+domain data structures and their service boundaries.
+
+Added:
+
+- `projects/task-manager/lld_data_structures.py`
+
+The review artifact demonstrates:
+
+- Task status as an explicit domain type
+- Task dependency relationships
+- Repository-style storage abstraction
+- In-memory implementation for deterministic review
+- A service layer that enforces dependency completion before a task can be
+  completed
+- Composition through dependency injection rather than framework coupling
+
+This is an LLD review increment; it does not replace the existing Task Manager
+API, authentication, security, or production-oriented components.

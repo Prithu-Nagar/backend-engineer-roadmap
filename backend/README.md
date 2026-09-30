@@ -1328,3 +1328,27 @@ Review areas:
 
 The review connects the individual AI backend examples without replacing their
 existing implementations.
+
+---
+
+## Day 61 — Layered Backend Architecture
+
+Day 61 introduces layered backend design as the practical bridge from LLD
+principles to service architecture.
+
+Topics include:
+
+- Presentation/controller layer
+- Application/use-case layer
+- Domain responsibilities
+- Repository and infrastructure boundaries
+- Dependency direction
+- Composition and dependency injection
+- Keeping transport and persistence concerns out of business policy
+
+File:
+
+`layered_architecture.py`
+
+The example is framework-neutral so the same boundary model can be applied to
+Flask, Django, or FastAPI without coupling the core use case to a web framework.

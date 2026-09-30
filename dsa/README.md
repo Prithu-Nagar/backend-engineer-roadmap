@@ -988,3 +988,28 @@ Review focus:
 No new DSA solution files are added for Day 60. Existing implementations are
 reused for targeted revision so the session measures pattern selection and
 problem-solving speed rather than introducing another algorithm category.
+
+---
+
+## Day 61 — LLD-Oriented DSA Review
+
+Day 61 begins the System Design & LLD phase with data structures viewed from
+an object-design perspective.
+
+Review focus:
+
+- Designing classes around clear responsibilities
+- Encapsulating state and invariants
+- Choosing composition over unnecessary inheritance
+- Defining small interfaces for data-structure behavior
+- Reasoning about ownership, mutation, and lifecycle
+
+LeetCode/design-oriented implementations reused for the review:
+
+- `linked_list/lru_cache.py` — LRU cache state, eviction policy, and O(1)
+  lookup/update boundaries
+- `trie/add_and_search_words.py` — trie node ownership, recursive search, and
+  wildcard branching
+
+No duplicate solution files are added because both implementations already exist
+in the repository and directly support the LLD-oriented review.
