@@ -3110,3 +3110,55 @@ principles and a focused Task Manager LLD review.
 
 Day 61 starts the System Design & LLD phase by turning SOLID and object-design
 principles into explicit backend boundaries and a concrete Task Manager review.
+
+---
+
+## Day 62 — System Design & LLD: Factory and Strategy
+
+Day 62 continues the System Design & LLD phase with reusable object-design
+patterns and an Expense Tracker LLD increment.
+
+### DSA
+
+- OOP / graph review
+- Reused existing graph implementations to reinforce state ownership and
+  traversal boundaries
+
+### Python
+
+- Added Factory pattern example
+- Added Strategy pattern example
+- Covered explicit strategy registration and composition
+
+### SQL
+
+- Added Expense Tracker relational modeling exercise
+- Covered normalized category/tag relationships, constraints, and access-path
+  indexes
+
+### LeetCode
+
+- Clone Graph
+- Course Schedule
+
+### Backend
+
+- Reviewed service/repository patterns
+- Reinforced application-policy versus persistence boundaries
+- Reused the existing `backend/service_repository.py` implementation
+
+### System Design
+
+- Added LLD notes for Factory and Strategy patterns
+- Covered pattern composition, creation boundaries, interchangeable behavior,
+  and abstraction trade-offs
+
+### Project
+
+- Added `projects/expense-tracker/lld_design.py`
+- Applied Factory + Strategy to Expense Tracker reporting
+- Kept the LLD artifact separate from existing production-oriented project
+  layers
+
+Day 62 extends the LLD phase by turning reusable object-design patterns into a
+concrete backend-domain example without replacing earlier implementations.

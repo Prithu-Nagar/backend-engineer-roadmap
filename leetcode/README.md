@@ -693,3 +693,20 @@ Both implementations already exist under `dsa/` and are reused rather than
 creating duplicate files. The review should focus on API contracts, invariants,
 complexity, ownership, and how the implementation could be exposed as a backend
 component.
+
+---
+
+## Day 62 — OOP / Graph Review
+
+Day 62 uses two existing medium-level graph problems to practice switching
+between algorithmic reasoning and object-design concerns.
+
+Review set:
+
+1. **Clone Graph** — Graph traversal with explicit node ownership and visited-state management
+2. **Course Schedule** — Graph cycle detection / topological reasoning
+
+Both implementations already exist under `dsa/graphs/` and are reused rather
+than creating duplicate files. Focus on API boundaries, state ownership,
+complexity, and how the algorithms could be isolated behind a backend service
+interface.

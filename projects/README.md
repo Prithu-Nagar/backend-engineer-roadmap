@@ -860,3 +860,26 @@ The review artifact demonstrates:
 
 This is an LLD review increment; it does not replace the existing Task Manager
 API, authentication, security, or production-oriented components.
+
+---
+
+## Day 62 — Expense Tracker LLD
+
+Day 62 applies Factory and Strategy patterns to the existing Expense Tracker
+project without replacing its production-oriented layers.
+
+Added:
+
+- `projects/expense-tracker/lld_design.py`
+
+The LLD artifact demonstrates:
+
+- Expense as a small domain entity
+- Strategy contract for interchangeable report behavior
+- Factory for explicit report-strategy creation
+- Application-service coordination through abstractions
+- Reuse of the existing Expense Tracker domain rather than a separate sample
+  application
+
+The artifact is intentionally separate from the existing CRUD, caching,
+observability, reliability, and production-engineering implementations.

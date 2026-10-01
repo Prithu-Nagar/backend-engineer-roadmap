@@ -1392,3 +1392,26 @@ File:
 
 The design keeps concrete infrastructure at the edge while application policy
 depends on stable contracts.
+
+---
+
+## Day 62 — LLD: Factory and Strategy Patterns
+
+Day 62 extends the LLD phase with two patterns for controlled object creation
+and interchangeable behavior.
+
+Topics include:
+
+- Factory as a composition/creation boundary
+- Strategy as an interchangeable business-rule boundary
+- Combining Factory + Strategy without coupling application policy to concrete
+  implementations
+- Explicit handling of unsupported variants
+- Pattern trade-offs and abstraction cost
+
+File:
+
+`lld-factory-strategy-patterns.md`
+
+The design uses an Expense Tracker reporting example to connect object-level
+patterns with backend service boundaries.

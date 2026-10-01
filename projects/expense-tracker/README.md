@@ -389,3 +389,27 @@ observability, security, reliability, incident response, and recovery.
 
 Day 50 does not replace or remove earlier project layers. It is a milestone and
 documentation checkpoint before the roadmap moves to GenAI Engineering.
+
+---
+
+## Day 62 — Expense Tracker LLD
+
+Day 62 adds an LLD artifact that applies Factory and Strategy patterns to the
+existing Expense Tracker domain.
+
+Added:
+
+- `lld_design.py`
+
+The artifact demonstrates:
+
+- A small immutable Expense domain object
+- A report Strategy contract
+- Category and total report strategies
+- A Factory that creates the selected strategy
+- An application service that depends on the Factory boundary rather than a
+  concrete report implementation
+
+This is an LLD increment only. It does not replace the existing CRUD,
+background processing, caching, Redis, observability, reliability, or
+architecture-refactor layers.

@@ -1352,3 +1352,27 @@ File:
 
 The example is framework-neutral so the same boundary model can be applied to
 Flask, Django, or FastAPI without coupling the core use case to a web framework.
+
+---
+
+## Day 62 — Service / Repository Patterns Review
+
+Day 62 revisits service/repository boundaries as part of the System Design & LLD
+phase.
+
+Review focus:
+
+- Keeping application policy in a service layer
+- Defining repository contracts at the application boundary
+- Separating persistence details from business rules
+- Keeping transaction ownership outside individual repository methods
+- Using composition and dependency injection for replaceable adapters
+- Reusing the existing repository example rather than introducing a duplicate
+  implementation
+
+Existing file reviewed:
+
+`service_repository.py`
+
+The Day 62 focus is on applying the existing pattern deliberately in LLD rather
+than adding another persistence abstraction solely for the sake of the pattern.

@@ -1013,3 +1013,22 @@ LeetCode/design-oriented implementations reused for the review:
 
 No duplicate solution files are added because both implementations already exist
 in the repository and directly support the LLD-oriented review.
+
+---
+
+## Day 62 — OOP / Graph Review
+
+Day 62 reviews graph problems from an object-oriented design perspective while
+reinforcing ownership, interfaces, and state boundaries.
+
+Review focus:
+
+- Encapsulating graph state and traversal state
+- Separating graph representation from traversal behavior
+- Choosing explicit ownership for visited-state tracking
+- Applying composition when graph algorithms are used inside backend services
+- Reusing existing medium-level graph implementations rather than duplicating
+  solutions
+
+No new DSA solution files are added for Day 62. Existing graph implementations
+are reused for the LeetCode review set.

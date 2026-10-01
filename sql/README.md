@@ -1285,3 +1285,26 @@ File:
 The schema keeps users, projects, tasks, and task dependencies explicit while
 using constraints and indexes to enforce important invariants at the database
 boundary.
+
+---
+
+## Day 62 — Relational Modeling Exercise
+
+Day 62 applies LLD thinking to relational data modeling for the Expense Tracker.
+
+Topics include:
+
+- Explicit entity boundaries
+- Normalized category and tag relationships
+- Many-to-many relationship modeling
+- Monetary precision with `NUMERIC`
+- Foreign-key and uniqueness constraints
+- Composite indexes aligned with common access paths
+- Aggregation queries across related entities
+
+File:
+
+`relational_modeling.sql`
+
+The exercise models expenses, categories, tags, and tag links without replacing
+the existing Expense Tracker schema or earlier database work.

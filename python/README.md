@@ -1379,3 +1379,27 @@ File:
 
 The example keeps the application service dependent on repository and notifier
 contracts rather than concrete infrastructure classes.
+
+---
+
+## Day 62 — Factory and Strategy Design Patterns
+
+Day 62 applies two reusable object-design patterns to backend-oriented Python
+code.
+
+Topics include:
+
+- Factory pattern for controlled object creation
+- Strategy pattern for interchangeable business behavior
+- Explicit strategy registration
+- Composition of application services from abstractions
+- Runtime selection without spreading implementation-specific conditionals
+- Trade-offs between useful abstraction and unnecessary indirection
+
+File:
+
+`factory_strategy.py`
+
+The example uses expense reporting to show how a Factory can select a Strategy
+while the application service remains independent of concrete report
+implementations.
