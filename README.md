@@ -3162,3 +3162,55 @@ patterns and an Expense Tracker LLD increment.
 
 Day 62 extends the LLD phase by turning reusable object-design patterns into a
 concrete backend-domain example without replacing earlier implementations.
+
+---
+
+## Day 63 — System Design & LLD: Observer and Adapter
+
+Day 63 continues the System Design & LLD phase with event subscription,
+external integration boundaries, dependency injection, and a Notification
+Service LLD artifact.
+
+### DSA
+
+- Reviewed tree and recursion patterns
+- Reused existing tree implementations for recursive traversal practice
+- Focused on base cases, traversal state, and complexity
+
+### Python
+
+- Added Observer pattern example
+- Added Adapter pattern example
+- Covered subscription lifecycle and provider integration boundaries
+
+### SQL
+
+- Added Notification Service schema trade-off exercise
+- Compared normalized delivery state with denormalized read-state trade-offs
+- Added queue-oriented and recipient-oriented access-path indexes
+
+### LeetCode
+
+- Binary Tree Right Side View
+- Path Sum II
+
+### Backend
+
+- Added constructor-based dependency injection example
+- Added protocol-based repository and sender boundaries
+- Kept application policy independent from concrete infrastructure
+
+### System Design
+
+- Added LLD notes for Observer and Adapter patterns
+- Covered notification fan-out, external-provider isolation, and reliability
+  boundaries
+
+### Project
+
+- Added `projects/notification-service/lld_design.py`
+- Added `projects/notification-service/README.md`
+- Applied Observer + Adapter to a notification-service workflow
+
+Day 63 extends the LLD phase by connecting object-design patterns to a realistic
+notification-service boundary while preserving the existing project work.

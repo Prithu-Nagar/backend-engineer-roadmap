@@ -1376,3 +1376,26 @@ Existing file reviewed:
 
 The Day 62 focus is on applying the existing pattern deliberately in LLD rather
 than adding another persistence abstraction solely for the sake of the pattern.
+
+---
+
+## Day 63 — Dependency Injection
+
+Day 63 applies dependency injection to a notification-oriented backend service.
+
+Topics include:
+
+- Constructor injection
+- Protocol-based repository and sender contracts
+- Explicit application composition
+- Keeping infrastructure replaceable
+- Validation inside the application boundary
+- Test-friendly dependency replacement
+
+File:
+
+`dependency_injection.py`
+
+The example keeps the notification service independent from the concrete
+repository and sender implementations so infrastructure can be replaced without
+changing application policy.

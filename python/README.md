@@ -1403,3 +1403,27 @@ File:
 The example uses expense reporting to show how a Factory can select a Strategy
 while the application service remains independent of concrete report
 implementations.
+
+---
+
+## Day 63 — Observer and Adapter Design Patterns
+
+Day 63 applies Observer and Adapter patterns to backend-oriented Python code.
+
+Topics include:
+
+- Observer subject/subscriber relationship
+- Explicit subscription and unsubscription
+- Stable event contracts
+- Adapter boundaries around incompatible external APIs
+- Composition of Observer and Adapter
+- Failure and lifecycle considerations for subscribers
+- Avoiding unnecessary in-process coupling
+
+File:
+
+`observer_adapter.py`
+
+The example keeps event publication independent from provider-specific
+notification integration and demonstrates how an external client can be adapted
+to the application's notification contract.

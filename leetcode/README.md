@@ -710,3 +710,20 @@ Both implementations already exist under `dsa/graphs/` and are reused rather
 than creating duplicate files. Focus on API boundaries, state ownership,
 complexity, and how the algorithms could be isolated behind a backend service
 interface.
+
+---
+
+## Day 63 — Trees / Recursion
+
+Day 63 uses two existing medium-level tree problems to reinforce recursive
+decomposition, traversal state, and correctness invariants.
+
+Review set:
+
+1. **Binary Tree Right Side View** — tree traversal with depth-aware state
+2. **Path Sum II** — recursive path tracking and backtracking
+
+Both implementations already exist under `dsa/binary_tree/` and are reused
+rather than creating duplicate files. Focus on base cases, traversal order,
+state ownership, complexity, and when recursion should be replaced by an
+explicit stack.

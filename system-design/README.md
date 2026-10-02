@@ -1415,3 +1415,26 @@ File:
 
 The design uses an Expense Tracker reporting example to connect object-level
 patterns with backend service boundaries.
+
+---
+
+## Day 63 — LLD: Observer and Adapter Patterns
+
+Day 63 extends the LLD phase with event fan-out and external integration
+patterns.
+
+Topics include:
+
+- Observer as a one-to-many event subscription boundary
+- Adapter for incompatible provider interfaces
+- Combining Observer and Adapter in notification workflows
+- Subscriber failure and lifecycle considerations
+- Asynchronous delivery, retries, idempotency, and provider isolation
+- Trade-offs of additional in-process abstraction
+
+File:
+
+`lld-observer-adapter-patterns.md`
+
+The design uses a notification workflow to show how event subscribers and
+provider-specific integrations can evolve independently.

@@ -1032,3 +1032,21 @@ Review focus:
 
 No new DSA solution files are added for Day 62. Existing graph implementations
 are reused for the LeetCode review set.
+
+---
+
+## Day 63 — Trees / Recursion Review
+
+Day 63 reviews tree traversal and recursive reasoning as part of the System
+Design & LLD phase.
+
+Review focus:
+
+- Recursive decomposition of tree problems
+- Base cases and return-value design
+- Depth-first traversal state
+- Tree-level invariants
+- Comparing recursive and iterative traversal choices
+
+No new DSA solution files are added for Day 63. Existing tree implementations
+are reused for the assigned medium-level LeetCode review set.

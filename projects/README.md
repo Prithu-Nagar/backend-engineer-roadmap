@@ -883,3 +883,27 @@ The LLD artifact demonstrates:
 
 The artifact is intentionally separate from the existing CRUD, caching,
 observability, reliability, and production-engineering implementations.
+
+---
+
+## Day 63 — Notification Service LLD
+
+Day 63 adds a focused LLD artifact for a notification service.
+
+Added:
+
+- `projects/notification-service/lld_design.py`
+- `projects/notification-service/README.md`
+
+The artifact demonstrates:
+
+- Observer-based notification fan-out
+- Adapter-based integration with an external email provider
+- Small protocol-oriented contracts
+- Composition of application and infrastructure boundaries
+- Validation at the application service boundary
+- Production considerations for retries, idempotency, queues, and delivery state
+
+The artifact is intentionally separate from the existing Task Manager and
+Expense Tracker projects so the new LLD milestone does not replace earlier
+project layers.

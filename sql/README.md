@@ -1308,3 +1308,26 @@ File:
 
 The exercise models expenses, categories, tags, and tag links without replacing
 the existing Expense Tracker schema or earlier database work.
+
+---
+
+## Day 63 — Schema Trade-offs
+
+Day 63 evaluates relational schema choices for a notification service.
+
+Topics include:
+
+- Normalized notification and template entities
+- Separate delivery state for channel-specific processing
+- Foreign-key and uniqueness constraints
+- Queue-oriented partial indexes
+- Recipient and status access paths
+- Join cost versus denormalized read state
+- Synchronization complexity introduced by denormalization
+
+File:
+
+`schema_tradeoffs.sql`
+
+The exercise compares normalized ownership and delivery-state boundaries with the
+potential read-performance benefit and consistency cost of denormalized status.
