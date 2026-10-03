@@ -1427,3 +1427,26 @@ File:
 The example keeps event publication independent from provider-specific
 notification integration and demonstrates how an external client can be adapted
 to the application's notification contract.
+
+---
+
+## Day 64 — Builder and Template Method
+
+Day 64 applies two design patterns to backend-oriented Python code.
+
+Topics include:
+
+- Builder pattern for step-by-step object construction
+- Immutable result objects
+- Validation at the build boundary
+- Template Method for fixed workflows
+- Abstract hooks for customizable processing steps
+- Choosing composition or inheritance deliberately
+- Avoiding builders for objects that are already simple to construct
+
+File:
+
+`builder_template_method.py`
+
+The example builds an API request explicitly and then processes it through a
+stable workflow whose execution step can be customized by subclasses.

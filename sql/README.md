@@ -1331,3 +1331,27 @@ File:
 
 The exercise compares normalized ownership and delivery-state boundaries with the
 potential read-performance benefit and consistency cost of denormalized status.
+
+---
+
+## Day 64 — Database-per-Service Schema
+
+Day 64 applies service ownership principles to relational schema design.
+
+Topics include:
+
+- Service-owned schemas
+- URL Service and Identity Service boundaries
+- Local indexes aligned with service-owned access paths
+- External identifiers without cross-service foreign keys
+- Avoiding cross-service database joins
+- Eventual-consistency and projection considerations
+- Distributed workflow trade-offs
+
+File:
+
+`database_per_service_schema.sql`
+
+The exercise intentionally keeps the URL and identity data boundaries separate.
+Cross-service relationships are represented through application-level
+identifiers rather than database-level foreign keys.

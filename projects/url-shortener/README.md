@@ -493,3 +493,30 @@ implementation and architecture perspectives:
 Day 30 does not replace or remove any earlier project implementation. It
 documents the completed Backend Engineering milestone before the roadmap moves
 to database and distributed-systems topics.
+
+---
+
+## Day 64 — URL Shortener HLD
+
+Day 64 turns the URL Shortener into a high-level architecture exercise.
+
+Added:
+
+- `hld_design.md`
+
+The HLD covers:
+
+- Functional and non-functional requirements
+- Traffic and storage assumptions
+- Create and redirect request flows
+- URL/User service boundaries
+- Database ownership
+- Cache placement
+- Horizontal application scaling
+- Database scaling options
+- Reliability and failure modes
+- Architecture trade-offs
+- Interview discussion points
+
+The HLD is intentionally consistent with the existing URL Shortener learning
+implementation and does not replace earlier Django/DRF or FastAPI artifacts.

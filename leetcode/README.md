@@ -727,3 +727,20 @@ Both implementations already exist under `dsa/binary_tree/` and are reused
 rather than creating duplicate files. Focus on base cases, traversal order,
 state ownership, complexity, and when recursion should be replaced by an
 explicit stack.
+
+---
+
+## Day 64 — Graph Connectivity
+
+Day 64 uses two medium-level graph problems to reinforce connectivity and
+cycle-detection reasoning.
+
+Problems:
+
+1. **Graph Valid Tree** — Union-Find + edge-count reasoning
+2. **Number of Connected Components in an Undirected Graph** — DFS connected components
+
+Both implementations are stored under `dsa/graphs/`.
+
+Attempt the problems independently before comparing against the implementations
+and reviewing the graph invariants and complexity.

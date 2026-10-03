@@ -208,3 +208,28 @@ Topics:
 - Height constraints
 - Set intersection for cells reaching both oceans
 - O(m × n) time and O(m × n) auxiliary space
+
+---
+
+## Day 64 — Graph Connectivity
+
+Day 64 reviews graph connectivity through two medium-level problems.
+
+Problems solved:
+
+- Graph Valid Tree
+- Number of Connected Components in an Undirected Graph
+
+Files:
+
+- `graph_valid_tree.py`
+- `number_of_connected_components.py`
+
+The set reinforces:
+
+- Connected components
+- Cycle detection
+- Union-Find / DSU
+- DFS traversal
+- Edge-count reasoning for trees
+- Complexity analysis for sparse undirected graphs

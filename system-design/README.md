@@ -1438,3 +1438,28 @@ File:
 
 The design uses a notification workflow to show how event subscribers and
 provider-specific integrations can evolve independently.
+
+---
+
+## Day 64 — HLD Requirements and Capacity Estimates
+
+Day 64 moves from LLD patterns into high-level system design.
+
+Topics include:
+
+- Functional requirements
+- Non-functional requirements
+- Explicit traffic assumptions
+- Average versus peak request rate
+- Storage estimation
+- Read-heavy workload identification
+- Initial architecture and scaling constraints
+- Reliability and failure considerations
+- Capacity assumptions versus measured production data
+
+File:
+
+`hld-requirements-capacity-estimates.md`
+
+The URL Shortener is used as the example system. Capacity numbers are explicitly
+illustrative assumptions rather than production measurements.

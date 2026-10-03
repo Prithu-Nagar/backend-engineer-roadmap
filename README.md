@@ -3214,3 +3214,58 @@ Service LLD artifact.
 
 Day 63 extends the LLD phase by connecting object-design patterns to a realistic
 notification-service boundary while preserving the existing project work.
+
+---
+
+## Day 64 — System Design & LLD: HLD Requirements and URL Shortener
+
+Day 64 transitions from LLD design patterns into high-level system design while
+continuing graph interview practice and the URL Shortener project.
+
+### DSA
+
+- Added Graph Valid Tree
+- Added Number of Connected Components in an Undirected Graph
+- Reinforced connectivity, cycle detection, Union-Find, and DFS
+
+### Python
+
+- Added Builder pattern example
+- Added Template Method pattern example
+- Covered controlled construction, validation, fixed workflows, and overridable
+  processing steps
+
+### SQL
+
+- Added database-per-service schema exercise
+- Modeled URL Service and Identity Service ownership boundaries
+- Avoided cross-service foreign keys and direct cross-service joins
+
+### LeetCode
+
+- Graph Valid Tree
+- Number of Connected Components in an Undirected Graph
+
+### Backend
+
+- Added domain/service boundary example
+- Added URL Shortener domain validation and repository contract
+- Kept application policy separate from persistence
+
+### System Design
+
+- Added HLD requirements and capacity-estimation notes
+- Covered functional and non-functional requirements
+- Covered QPS, peak traffic, storage estimation, scaling, caching, and failure
+  considerations
+
+### Project
+
+- Added `projects/url-shortener/hld_design.md`
+- Added URL Shortener high-level architecture
+- Documented create and redirect flows
+- Documented service ownership, cache strategy, scaling, and failure modes
+
+Day 64 bridges the LLD phase into HLD by taking the URL Shortener from
+object/service boundaries to explicit requirements, capacity assumptions, and
+scalable architecture.

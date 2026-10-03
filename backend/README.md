@@ -1399,3 +1399,25 @@ File:
 The example keeps the notification service independent from the concrete
 repository and sender implementations so infrastructure can be replaced without
 changing application policy.
+
+---
+
+## Day 64 — Domain / Service Boundaries
+
+Day 64 connects LLD patterns to backend service boundaries.
+
+Topics include:
+
+- Domain entities with explicit invariants
+- Application service ownership of use-case policy
+- Repository contracts
+- Persistence hidden behind an interface
+- Validation at the application boundary
+- Keeping framework and infrastructure concerns outside domain policy
+
+File:
+
+`domain_service_boundaries.py`
+
+The example uses a URL Shortener use case so the service boundary can be
+related directly to the project's HLD work.
