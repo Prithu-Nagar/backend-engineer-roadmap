@@ -11,7 +11,7 @@ A small SQLAlchemy 2.x example covering:
 
 from __future__ import annotations
 
-from datetime import date
+from datetime import date, datetime
 from decimal import Decimal
 
 from sqlalchemy import Date, Numeric, String, create_engine, select
@@ -45,7 +45,7 @@ def add_expense(session: Session) -> Expense:
         amount=Decimal("125.50"),
         category="food",
         description="Team lunch",
-        expense_date=date.today(),
+        expense_date=datetime.now().astimezone().date(),
     )
     session.add(expense)
     session.commit()
@@ -66,7 +66,7 @@ def demonstrate_rollback(session: Session) -> None:
                 amount=Decimal("20.00"),
                 category="invalid-example",
                 description="Demonstration",
-                expense_date=date.today(),
+                expense_date=datetime.now().astimezone().date(),
             )
         )
         raise RuntimeError("simulate application failure")

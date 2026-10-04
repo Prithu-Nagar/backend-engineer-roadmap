@@ -7,8 +7,10 @@ Expense Tracker application service independent from concrete report types.
 
 from __future__ import annotations
 
+from collections.abc import Mapping
 from dataclasses import dataclass
-from typing import Protocol
+from types import MappingProxyType
+from typing import ClassVar, Protocol
 
 
 @dataclass(frozen=True)
@@ -39,10 +41,14 @@ class TotalReportStrategy:
 class ExpenseReportFactory:
     """Creates report strategies at the composition boundary."""
 
-    _strategies: dict[str, type[ExpenseReportStrategy]] = {
-        "category": CategoryReportStrategy,
-        "total": TotalReportStrategy,
-    }
+    _strategies: ClassVar[Mapping[str, type[ExpenseReportStrategy]]] = (
+        MappingProxyType(
+            {
+                "category": CategoryReportStrategy,
+                "total": TotalReportStrategy,
+            }
+        )
+    )
 
     @classmethod
     def create(cls, report_type: str) -> ExpenseReportStrategy:

@@ -5,7 +5,7 @@ Exception Handling Examples
 
 def basic_try_except():
     try:
-        result = 10 / 0
+        _ = 10 / 0
     except ZeroDivisionError:
         print("Cannot divide by zero.")
 
@@ -23,11 +23,11 @@ def multiple_exceptions(value):
         print("Division by zero is not allowed.")
 
 
-def generic_exception():
+def value_error_example():
     try:
-        value = int("Python")
-    except Exception as e:
-        print("Error:", e)
+        _ = int("Python")
+    except ValueError as exc:
+        print("Error:", exc)
 
 
 def try_except_else(value):
@@ -43,7 +43,8 @@ def try_except_else(value):
 
 def finally_example():
     try:
-        file = open("sample.txt", "r")
+        with open("sample.txt", "r", encoding="utf-8"):
+            pass
 
     except FileNotFoundError:
         print("File not found.")
@@ -120,7 +121,7 @@ if __name__ == "__main__":
     multiple_exceptions("0")
     multiple_exceptions("abc")
 
-    generic_exception()
+    value_error_example()
 
     try_except_else("22")
     try_except_else("abc")

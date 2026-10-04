@@ -4,12 +4,11 @@ Task Manager API
 Main Flask application entry point.
 """
 
-from flask import Flask
-
 from config import Config
+from flask import Flask
 from flask_routing import task_bp
-from pagination import pagination_bp
 from monitoring_health_checks import health_bp
+from pagination import pagination_bp
 
 
 def create_app():

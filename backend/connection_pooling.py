@@ -11,9 +11,9 @@ The same principles apply to database-driver pools:
 - Avoid creating a new connection for every request.
 """
 
+from collections.abc import Iterator
 from contextlib import contextmanager
 from queue import LifoQueue
-from typing import Iterator
 
 
 class FakeConnection:

@@ -7,13 +7,12 @@ Partition a string so every selected substring is a palindrome. The
 backtracking state is the next unprocessed index plus the current partition.
 """
 
-from typing import List
 
 
-def partition(s: str) -> List[List[str]]:
+def partition(s: str) -> list[list[str]]:
     """Return all palindrome partitions of s."""
-    result: List[List[str]] = []
-    current: List[str] = []
+    result: list[list[str]] = []
+    current: list[str] = []
 
     def is_palindrome(left: int, right: int) -> bool:
         while left < right:

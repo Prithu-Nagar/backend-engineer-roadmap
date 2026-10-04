@@ -7,7 +7,6 @@ make a Python application easier to build consistently across environments.
 
 from __future__ import annotations
 
-
 BUILD_PRACTICES = {
     "project_metadata": "pyproject.toml",
     "dependency_constraints": "requirements.txt or a lock file",

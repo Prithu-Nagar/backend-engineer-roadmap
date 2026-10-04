@@ -11,7 +11,6 @@ Day 15 focus:
 """
 
 from dataclasses import dataclass, field
-from typing import List
 
 
 @dataclass
@@ -29,7 +28,7 @@ class Person:
     name: str
     age: int
     email: str = ""
-    hobbies: List[str] = field(default_factory=list)
+    hobbies: list[str] = field(default_factory=list)
 
     def __post_init__(self):
         """Validate and process data after initialization."""

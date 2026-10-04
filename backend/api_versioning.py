@@ -49,7 +49,7 @@ class UnsupportedApiVersion(ValueError):
 class TaskApiRouter:
     """Selects an explicit version without duplicating domain logic."""
 
-    SUPPORTED_VERSIONS = {"v1", "v2"}
+    SUPPORTED_VERSIONS = frozenset({"v1", "v2"})
 
     def serialize(self, version: str, task: Task) -> dict[str, object]:
         normalized = version.lower().strip()

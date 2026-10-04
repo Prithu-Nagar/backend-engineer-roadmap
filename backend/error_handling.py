@@ -3,7 +3,6 @@ from typing import Any
 
 from flask import Flask, jsonify
 
-
 app = Flask(__name__)
 
 

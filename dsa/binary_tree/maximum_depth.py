@@ -5,7 +5,6 @@ Time Complexity: O(n)
 Space Complexity: O(h)
 """
 
-from typing import Optional
 
 
 class TreeNode:
@@ -16,7 +15,7 @@ class TreeNode:
 
 
 class Solution:
-    def maxDepth(self, root: Optional[TreeNode]) -> int:
+    def maxDepth(self, root: TreeNode | None) -> int:
         if root is None:
             return 0
 

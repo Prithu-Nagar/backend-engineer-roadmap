@@ -13,11 +13,10 @@ O(n^2)
 """
 
 from collections import deque
-from typing import List
 
 
 class Solution:
-    def shortestPathBinaryMatrix(self, grid: List[List[int]]) -> int:
+    def shortestPathBinaryMatrix(self, grid: list[list[int]]) -> int:
         n = len(grid)
 
         if grid[0][0] != 0 or grid[n - 1][n - 1] != 0:

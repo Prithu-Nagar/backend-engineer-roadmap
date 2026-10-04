@@ -9,9 +9,9 @@ a worker thread so the event loop remains responsive.
 from __future__ import annotations
 
 import asyncio
+from collections.abc import Callable
 from dataclasses import dataclass
 from datetime import date
-from typing import Callable
 
 
 @dataclass(frozen=True)

@@ -13,7 +13,6 @@ from typing import Any
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
-
 app = FastAPI(title="LangChain + FastAPI Integration")
 
 

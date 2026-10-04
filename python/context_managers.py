@@ -9,7 +9,6 @@ Demonstrates:
 
 from contextlib import contextmanager
 
-
 # ---------------------------------------
 # Using a Context Manager
 # ---------------------------------------

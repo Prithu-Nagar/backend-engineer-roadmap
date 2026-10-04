@@ -5,7 +5,6 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-
 EXACT_REQUIREMENT = re.compile(r"^([A-Za-z0-9_.-]+)==([0-9][A-Za-z0-9_.-]*)$")
 
 

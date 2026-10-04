@@ -6,7 +6,6 @@ import hmac
 import os
 from collections.abc import Iterable
 
-
 SAFE_METHODS = {"GET", "HEAD", "OPTIONS"}
 
 
@@ -37,9 +36,11 @@ def valid_csrf_token(request_token: str | None, session_token: str | None) -> bo
 
 def require_production_secret(secret: str | None, name: str = "SECRET_KEY") -> str:
     """Reject missing secrets when running in a production-like environment."""
-    if os.getenv("APP_ENV", "development").lower() == "production":
-        if not secret or not secret.strip():
-            raise RuntimeError(f"{name} must be configured in production")
+    if (
+        os.getenv("APP_ENV", "development").lower() == "production"
+        and (not secret or not secret.strip())
+    ):
+        raise RuntimeError(f"{name} must be configured in production")
     return secret or ""
 
 

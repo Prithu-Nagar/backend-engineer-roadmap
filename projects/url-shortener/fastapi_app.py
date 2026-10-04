@@ -34,7 +34,6 @@ from typing import Annotated
 from fastapi import Depends, FastAPI, Header, HTTPException, status
 from pydantic import BaseModel, Field, HttpUrl
 
-
 app = FastAPI(title="URL Shortener - FastAPI Comparison")
 
 SHORT_CODE_ALPHABET = string.ascii_letters + string.digits

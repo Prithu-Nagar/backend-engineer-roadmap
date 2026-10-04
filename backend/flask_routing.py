@@ -12,7 +12,6 @@ Demonstrates:
 
 from flask import Blueprint, jsonify, request
 
-
 task_bp = Blueprint(
     "tasks",
     __name__,

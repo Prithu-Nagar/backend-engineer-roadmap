@@ -43,7 +43,7 @@ class AddTool:
         right = arguments.get("right")
 
         if not isinstance(left, int) or not isinstance(right, int):
-            raise ValueError("left and right must be integers")
+            raise TypeError("left and right must be integers")
 
         return {"value": left + right}
 

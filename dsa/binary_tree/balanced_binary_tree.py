@@ -5,7 +5,6 @@ Time Complexity: O(n)
 Space Complexity: O(h)
 """
 
-from typing import Optional
 
 
 class TreeNode:
@@ -16,8 +15,8 @@ class TreeNode:
 
 
 class Solution:
-    def isBalanced(self, root: Optional[TreeNode]) -> bool:
-        def height(node: Optional[TreeNode]) -> int:
+    def isBalanced(self, root: TreeNode | None) -> bool:
+        def height(node: TreeNode | None) -> int:
             if node is None:
                 return 0
 

@@ -3,11 +3,10 @@ Day 11
 JWT Authentication
 """
 
-from datetime import datetime, timedelta, timezone
 import os
+from datetime import datetime, timedelta, timezone
 
 import jwt
-
 
 JWT_SECRET = os.getenv("JWT_SECRET", "development-only-secret-change-me-32-chars")
 JWT_ALGORITHM = "HS256"

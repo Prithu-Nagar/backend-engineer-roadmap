@@ -14,8 +14,8 @@ from dataclasses import dataclass
 @dataclass
 class TreeNode:
     val: int
-    left: "TreeNode | None" = None
-    right: "TreeNode | None" = None
+    left: TreeNode | None = None
+    right: TreeNode | None = None
 
 
 def zigzag_level_order(root: TreeNode | None) -> list[list[int]]:

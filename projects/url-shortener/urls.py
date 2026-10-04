@@ -7,7 +7,6 @@ from rest_framework.routers import DefaultRouter
 
 from .views import ShortURLViewSet
 
-
 router = DefaultRouter()
 router.register("api/urls", ShortURLViewSet, basename="url")
 

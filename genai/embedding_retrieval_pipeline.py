@@ -8,8 +8,9 @@ represented by small interfaces so they can be replaced independently.
 
 from __future__ import annotations
 
+from collections.abc import Sequence
 from dataclasses import dataclass
-from typing import Protocol, Sequence
+from typing import Protocol
 
 
 @dataclass(frozen=True)

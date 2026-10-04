@@ -13,7 +13,6 @@ from rest_framework import serializers
 from .models import ShortURL
 from .validation import validate_url
 
-
 SHORT_CODE_ALPHABET = string.ascii_letters + string.digits
 SHORT_CODE_LENGTH = 6
 MAX_URL_LENGTH = 2048

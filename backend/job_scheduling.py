@@ -8,10 +8,10 @@ specific task queue framework.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
 import heapq
+from collections.abc import Callable
+from dataclasses import dataclass
 from itertools import count
-from typing import Callable
 
 
 @dataclass(frozen=True)

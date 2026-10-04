@@ -13,7 +13,6 @@ Approach:
 """
 
 import heapq
-from typing import Optional
 
 
 class ListNode:
@@ -28,7 +27,7 @@ class ListNode:
         return self.val < other.val
 
 
-def mergeKLists(lists: list[Optional[ListNode]]) -> Optional[ListNode]:
+def mergeKLists(lists: list[ListNode | None]) -> ListNode | None:
     """
     Merge k sorted linked lists using a min heap.
 
@@ -51,7 +50,7 @@ def mergeKLists(lists: list[Optional[ListNode]]) -> Optional[ListNode]:
 
     while min_heap:
         # Get the node with minimum value
-        val, idx, node = heapq.heappop(min_heap)
+        _, idx, node = heapq.heappop(min_heap)
 
         # Add it to result
         current.next = node
@@ -64,7 +63,7 @@ def mergeKLists(lists: list[Optional[ListNode]]) -> Optional[ListNode]:
     return dummy.next
 
 
-def mergeKListsDivideConquer(lists: list[Optional[ListNode]]) -> Optional[ListNode]:
+def mergeKListsDivideConquer(lists: list[ListNode | None]) -> ListNode | None:
     """
     Merge k sorted lists using divide and conquer approach.
 
@@ -86,8 +85,8 @@ def mergeKListsDivideConquer(lists: list[Optional[ListNode]]) -> Optional[ListNo
 
 
 def mergeTwoLists(
-    l1: Optional[ListNode], l2: Optional[ListNode]
-) -> Optional[ListNode]:
+    l1: ListNode | None, l2: ListNode | None
+) -> ListNode | None:
     """Merge two sorted linked lists."""
     dummy = ListNode(0)
     current = dummy

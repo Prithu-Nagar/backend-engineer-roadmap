@@ -7,14 +7,13 @@ Find unique combinations that sum to the target. Each candidate can be used
 at most once, and duplicate values at the same recursion depth are skipped.
 """
 
-from typing import List
 
 
-def combination_sum2(candidates: List[int], target: int) -> List[List[int]]:
+def combination_sum2(candidates: list[int], target: int) -> list[list[int]]:
     """Return unique combinations whose values sum to target."""
     candidates.sort()
-    result: List[List[int]] = []
-    current: List[int] = []
+    result: list[list[int]] = []
+    current: list[int] = []
 
     def backtrack(start: int, remaining: int) -> None:
         if remaining == 0:

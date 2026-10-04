@@ -9,8 +9,6 @@ Backtracking pattern:
 LeetCode: Letter Combinations of a Phone Number
 """
 
-from typing import List
-
 
 PHONE = {
     "2": "abc",
@@ -24,14 +22,14 @@ PHONE = {
 }
 
 
-def letter_combinations(digits: str) -> List[str]:
+def letter_combinations(digits: str) -> list[str]:
     """Return every possible letter combination for the input digits."""
 
     if not digits:
         return []
 
-    result: List[str] = []
-    path: List[str] = []
+    result: list[str] = []
+    path: list[str] = []
 
     def backtrack(index: int) -> None:
         if index == len(digits):

@@ -6,7 +6,6 @@ from collections.abc import Iterable
 
 from flask import Request, Response
 
-
 SAFE_METHODS = {"GET", "HEAD", "OPTIONS"}
 
 

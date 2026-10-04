@@ -9,7 +9,6 @@ Day 14 focus:
 - Type hints for API inputs and outputs
 """
 
-from typing import Optional, Union
 
 
 def greet(name: str) -> str:
@@ -17,7 +16,7 @@ def greet(name: str) -> str:
     return f"Hello, {name}!"
 
 
-def parse_age(value: str) -> Optional[int]:
+def parse_age(value: str) -> int | None:
     """Convert an age string into an integer when possible."""
     try:
         return int(value)
@@ -25,7 +24,7 @@ def parse_age(value: str) -> Optional[int]:
         return None
 
 
-def normalize_id(value: Union[int, str]) -> str:
+def normalize_id(value: int | str) -> str:
     """Accept an integer or string ID and return it as a string."""
     return str(value)
 
@@ -39,7 +38,7 @@ def build_user_payload(
     user_id: int,
     name: str,
     tags: list[str],
-) -> dict[str, Union[int, str, list[str]]]:
+) -> dict[str, int | str | list[str]]:
     """Build a typed API-style user payload."""
     return {
         "user_id": user_id,

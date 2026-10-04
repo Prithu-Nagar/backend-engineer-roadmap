@@ -14,13 +14,12 @@ For every element we have two choices:
 This creates a recursion tree with 2^n possible subsets.
 """
 
-from typing import List
 
 
-def subsets(nums: List[int]) -> List[List[int]]:
+def subsets(nums: list[int]) -> list[list[int]]:
     """Return all possible subsets of nums."""
-    result: List[List[int]] = []
-    current: List[int] = []
+    result: list[list[int]] = []
+    current: list[int] = []
 
     def backtrack(index: int) -> None:
         if index == len(nums):

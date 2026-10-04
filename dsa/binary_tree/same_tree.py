@@ -5,7 +5,6 @@ Time Complexity: O(n)
 Space Complexity: O(h)
 """
 
-from typing import Optional
 
 
 class TreeNode:
@@ -18,8 +17,8 @@ class TreeNode:
 class Solution:
     def isSameTree(
         self,
-        p: Optional[TreeNode],
-        q: Optional[TreeNode]
+        p: TreeNode | None,
+        q: TreeNode | None
     ) -> bool:
 
         if p is None and q is None:

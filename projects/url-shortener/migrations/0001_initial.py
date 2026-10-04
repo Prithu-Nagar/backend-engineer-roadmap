@@ -2,16 +2,18 @@
 Initial Django migration for the URL Shortener project.
 """
 
+from typing import ClassVar
+
 from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
 
-    initial = True
+    initial: ClassVar[bool] = True
 
-    dependencies = []
+    dependencies: ClassVar[list] = []
 
-    operations = [
+    operations: ClassVar[list] = [
         migrations.CreateModel(
             name="ShortURL",
             fields=[

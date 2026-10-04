@@ -15,16 +15,15 @@ The same index is passed into the recursive call because the current
 candidate can be reused.
 """
 
-from typing import List
 
 
 def combination_sum(
-    candidates: List[int],
+    candidates: list[int],
     target: int,
-) -> List[List[int]]:
+) -> list[list[int]]:
     """Return all combinations whose sum equals target."""
-    result: List[List[int]] = []
-    current: List[int] = []
+    result: list[list[int]] = []
+    current: list[int] = []
 
     def backtrack(start: int, remaining: int) -> None:
         if remaining == 0:

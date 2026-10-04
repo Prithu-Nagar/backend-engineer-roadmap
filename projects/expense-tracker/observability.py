@@ -19,7 +19,6 @@ import time
 from contextvars import ContextVar
 from uuid import uuid4
 
-
 correlation_id: ContextVar[str] = ContextVar(
     "expense_tracker_correlation_id",
     default="-",

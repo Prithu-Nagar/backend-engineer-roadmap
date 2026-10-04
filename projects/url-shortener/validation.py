@@ -7,7 +7,6 @@ keep reusable domain checks explicit and easy to test independently.
 
 from urllib.parse import urlparse
 
-
 MAX_URL_LENGTH = 2048
 
 

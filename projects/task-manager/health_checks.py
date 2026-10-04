@@ -2,7 +2,10 @@
 
 from __future__ import annotations
 
-from typing import Callable
+import logging
+from collections.abc import Callable
+
+logger = logging.getLogger(__name__)
 
 
 def liveness_check() -> tuple[dict[str, str], int]:
@@ -23,7 +26,8 @@ def readiness_check(
         try:
             check()
             checks[name] = "ok"
-        except Exception:  # pragma: no cover - dependency failure is external.
+        except Exception:
+            logger.exception("%s health check failed", name)
             checks[name] = "failed"
 
     ready = all(value == "ok" for value in checks.values())

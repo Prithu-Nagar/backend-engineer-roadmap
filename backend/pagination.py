@@ -7,7 +7,6 @@ for a Flask API.
 
 from flask import Blueprint, jsonify, request
 
-
 pagination_bp = Blueprint(
     "pagination",
     __name__,

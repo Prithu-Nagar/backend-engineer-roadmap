@@ -11,13 +11,12 @@ Space Complexity:
 O(N^2)
 """
 
-from typing import List
 
 from dsa.graphs.kruskal_mst import DisjointSet
 
 
 class Solution:
-    def minCostConnectPoints(self, points: List[List[int]]) -> int:
+    def minCostConnectPoints(self, points: list[list[int]]) -> int:
         n = len(points)
         if n <= 1:
             return 0

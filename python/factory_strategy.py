@@ -7,8 +7,10 @@ keeping the application service independent from concrete implementations.
 
 from __future__ import annotations
 
+from collections.abc import Mapping
 from dataclasses import dataclass
-from typing import Protocol
+from types import MappingProxyType
+from typing import ClassVar, Protocol
 
 
 @dataclass(frozen=True)
@@ -41,10 +43,12 @@ class TotalSummaryStrategy:
 class ReportStrategyFactory:
     """Factory that selects a report strategy from an explicit report type."""
 
-    _strategies: dict[str, type[ReportStrategy]] = {
-        "category": CategorySummaryStrategy,
-        "total": TotalSummaryStrategy,
-    }
+    _strategies: ClassVar[Mapping[str, type[ReportStrategy]]] = MappingProxyType(
+        {
+            "category": CategorySummaryStrategy,
+            "total": TotalSummaryStrategy,
+        }
+    )
 
     @classmethod
     def create(cls, report_type: str) -> ReportStrategy:

@@ -4,9 +4,9 @@ The implementation is deterministic and intentionally keeps retrieval, tools,
 and orchestration behind small application-owned interfaces.
 """
 
-from dataclasses import dataclass
 import re
-from typing import Callable, Dict, List, Sequence
+from collections.abc import Callable, Sequence
+from dataclasses import dataclass
 
 
 @dataclass(frozen=True)
@@ -31,7 +31,7 @@ class LexicalRetriever:
     def _tokens(text: str) -> set[str]:
         return set(re.findall(r"[a-z0-9]+", text.lower()))
 
-    def search(self, query: str, top_k: int = 3) -> List[RetrievalResult]:
+    def search(self, query: str, top_k: int = 3) -> list[RetrievalResult]:
         query_tokens = self._tokens(query)
         scored = []
         for chunk in self._chunks:
@@ -46,7 +46,7 @@ class LexicalRetriever:
 class Tool:
     name: str
     description: str
-    handler: Callable[[Dict[str, str]], str]
+    handler: Callable[[dict[str, str]], str]
     required_argument: str
 
 
@@ -56,7 +56,7 @@ class ToolRegistry:
     def __init__(self, tools: Sequence[Tool]) -> None:
         self._tools = {tool.name: tool for tool in tools}
 
-    def execute(self, name: str, arguments: Dict[str, str]) -> str:
+    def execute(self, name: str, arguments: dict[str, str]) -> str:
         tool = self._tools.get(name)
         if tool is None:
             raise ValueError(f"Tool is not allowed: {name}")
@@ -110,7 +110,7 @@ def build_demo_agent() -> RagAgent:
         ),
     ]
 
-    def service_status(args: Dict[str, str]) -> str:
+    def service_status(args: dict[str, str]) -> str:
         service = args["service"]
         return f"{service}: healthy (demo response)"
 

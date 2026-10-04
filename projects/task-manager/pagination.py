@@ -5,8 +5,7 @@ Application-level reference implementation used to demonstrate the API
 pagination concepts before integrating them with a database-backed query.
 """
 
-from typing import Iterable
-
+from collections.abc import Iterable
 
 ALLOWED_SORT_FIELDS = {"id", "title", "priority", "completed"}
 

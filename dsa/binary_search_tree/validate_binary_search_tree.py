@@ -11,8 +11,8 @@ from dataclasses import dataclass
 @dataclass
 class TreeNode:
     val: int
-    left: "TreeNode | None" = None
-    right: "TreeNode | None" = None
+    left: TreeNode | None = None
+    right: TreeNode | None = None
 
 
 def is_valid_bst(root: TreeNode | None) -> bool:

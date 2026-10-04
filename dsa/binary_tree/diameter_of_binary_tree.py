@@ -5,7 +5,6 @@ Time Complexity: O(n)
 Space Complexity: O(h)
 """
 
-from typing import Optional
 
 
 class TreeNode:
@@ -16,10 +15,10 @@ class TreeNode:
 
 
 class Solution:
-    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+    def diameterOfBinaryTree(self, root: TreeNode | None) -> int:
         diameter = 0
 
-        def height(node: Optional[TreeNode]) -> int:
+        def height(node: TreeNode | None) -> int:
             nonlocal diameter
 
             if node is None:

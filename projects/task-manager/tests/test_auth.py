@@ -14,7 +14,6 @@ from pathlib import Path
 
 import pytest
 
-
 TASK_MANAGER_DIR = Path(__file__).resolve().parents[1]
 
 
@@ -158,7 +157,7 @@ def test_decode_access_token(user_data):
 def test_invalid_token_is_rejected():
     """An invalid JWT should fail validation."""
 
-    with pytest.raises(Exception):
+    with pytest.raises(jwt_authentication.jwt.InvalidTokenError):
         jwt_authentication.decode_access_token(
             "invalid.token.value"
         )

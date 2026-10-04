@@ -22,7 +22,7 @@ class ShortURLSerializer(serializers.Serializer):
 class ExampleShortURLViewSet(viewsets.ViewSet):
     """Illustrate ViewSet actions without requiring a project database."""
 
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
     def list(self, request):
         return Response({"data": [], "meta": {"count": 0}})

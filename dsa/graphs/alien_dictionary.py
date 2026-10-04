@@ -14,6 +14,7 @@ of precedence relationships.
 """
 
 from collections import deque
+from itertools import pairwise
 
 
 class Solution:
@@ -21,7 +22,7 @@ class Solution:
         graph = {char: set() for word in words for char in word}
         indegree = {char: 0 for char in graph}
 
-        for first, second in zip(words, words[1:]):
+        for first, second in pairwise(words):
             if len(first) > len(second) and first.startswith(second):
                 return ""
 

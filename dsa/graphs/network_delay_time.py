@@ -13,11 +13,10 @@ O(N + E)
 """
 
 import heapq
-from typing import List
 
 
 class Solution:
-    def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
+    def networkDelayTime(self, times: list[list[int]], n: int, k: int) -> int:
         graph: dict[int, list[tuple[int, int]]] = {node: [] for node in range(1, n + 1)}
 
         for u, v, w in times:

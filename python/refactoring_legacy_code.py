@@ -10,6 +10,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from decimal import Decimal
+from types import MappingProxyType
 
 
 @dataclass(frozen=True)
@@ -22,13 +23,15 @@ class Order:
 class DiscountPolicy:
     """Encapsulates discount rules instead of mixing them into orchestration."""
 
-    RATES = {
-        "SAVE10": Decimal("0.10"),
-        "SAVE20": Decimal("0.20"),
-    }
+    RATES = MappingProxyType(
+        {
+            "SAVE10": Decimal("0.10"),
+            "SAVE20": Decimal("0.20"),
+        }
+    )
 
     def calculate(self, subtotal: Decimal, code: str | None) -> Decimal:
-        rate = self.RATES.get((code or "").upper(), Decimal("0"))
+        rate = self.RATES.get((code or "").upper(), Decimal(0))
         return (subtotal * rate).quantize(Decimal("0.01"))
 
 
@@ -74,7 +77,7 @@ def legacy_pricing(order: Order) -> Decimal:
     discount_rate = {
         "SAVE10": Decimal("0.10"),
         "SAVE20": Decimal("0.20"),
-    }.get((order.discount_code or "").upper(), Decimal("0"))
+    }.get((order.discount_code or "").upper(), Decimal(0))
     discounted = order.subtotal - (order.subtotal * discount_rate)
     tax = discounted * Decimal("0.18")
     return (discounted + tax).quantize(Decimal("0.01"))

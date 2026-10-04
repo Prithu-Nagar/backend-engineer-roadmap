@@ -10,7 +10,6 @@ from typing import Annotated
 from fastapi import FastAPI, Path, Query
 from pydantic import BaseModel, Field
 
-
 app = FastAPI(title="FastAPI Validation")
 
 

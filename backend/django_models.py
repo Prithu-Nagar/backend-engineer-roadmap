@@ -19,7 +19,7 @@ class ShortURL(models.Model):
     is_active = models.BooleanField(default=True)
 
     class Meta:
-        ordering = ["-created_at"]
+        ordering = ("-created_at",)
 
     def __str__(self) -> str:
         return self.short_code

@@ -13,11 +13,10 @@ O(M * N)
 """
 
 import heapq
-from typing import List
 
 
 class Solution:
-    def minimumEffortPath(self, heights: List[List[int]]) -> int:
+    def minimumEffortPath(self, heights: list[list[int]]) -> int:
         rows = len(heights)
         cols = len(heights[0])
 

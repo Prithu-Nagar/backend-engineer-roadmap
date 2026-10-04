@@ -11,7 +11,7 @@ Space Complexity:
 O(N)
 """
 
-from typing import Sequence
+from collections.abc import Sequence
 
 
 def next_greater_indices(values: Sequence[int]) -> list[int]:

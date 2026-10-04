@@ -9,9 +9,8 @@ Topics:
 - Permission checks
 """
 
+from collections.abc import Callable
 from functools import wraps
-from typing import Callable
-
 
 ROLE_PERMISSIONS = {
     "admin": {

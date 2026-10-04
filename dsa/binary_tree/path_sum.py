@@ -5,7 +5,6 @@ Time Complexity: O(n)
 Space Complexity: O(h)
 """
 
-from typing import Optional
 
 
 class TreeNode:
@@ -16,7 +15,7 @@ class TreeNode:
 
 
 class Solution:
-    def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
+    def hasPathSum(self, root: TreeNode | None, targetSum: int) -> bool:
         if root is None:
             return False
 

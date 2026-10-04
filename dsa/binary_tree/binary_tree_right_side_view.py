@@ -7,10 +7,11 @@ from __future__ import annotations
 
 from collections import deque
 
+
 class TreeNode:
     """Binary-tree node used by the solution."""
 
-    def __init__(self, val: int = 0, left: "TreeNode | None" = None, right: "TreeNode | None" = None):
+    def __init__(self, val: int = 0, left: TreeNode | None = None, right: TreeNode | None = None):
         self.val = val
         self.left = left
         self.right = right

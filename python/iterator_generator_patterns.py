@@ -30,8 +30,7 @@ class Countdown:
 
 def numbers(limit: int):
     """Generate numbers lazily from 1 through limit."""
-    for number in range(1, limit + 1):
-        yield number
+    yield from range(1, limit + 1)
 
 
 def squared(values):

@@ -7,12 +7,12 @@ boundary without exposing internal exception details to API clients.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
 import logging
-from typing import Callable, TypeVar
+from collections.abc import Callable
+from dataclasses import dataclass
+from typing import TypeVar
 
 from flask import Flask, jsonify
-
 
 logger = logging.getLogger(__name__)
 app = Flask(__name__)

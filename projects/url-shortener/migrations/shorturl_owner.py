@@ -2,18 +2,20 @@
 Add authenticated ownership to ShortURL records.
 """
 
+from typing import ClassVar
+
+import django.db.models.deletion
 from django.conf import settings
 from django.db import migrations, models
-import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
 
-    dependencies = [
+    dependencies: ClassVar[list] = [
         ("url_shortener", "0001_initial"),
     ]
 
-    operations = [
+    operations: ClassVar[list] = [
         migrations.AddField(
             model_name="shorturl",
             name="owner",

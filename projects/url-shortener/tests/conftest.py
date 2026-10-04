@@ -15,7 +15,6 @@ from pathlib import Path
 import pytest
 from fastapi.testclient import TestClient
 
-
 PROJECT_DIR = Path(__file__).resolve().parents[1]
 APP_PATH = PROJECT_DIR / "fastapi_app.py"
 

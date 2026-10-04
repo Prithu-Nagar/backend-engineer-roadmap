@@ -13,7 +13,6 @@ O(n)
 """
 
 from collections import deque
-from typing import Optional
 
 
 class TreeNode:
@@ -24,7 +23,7 @@ class TreeNode:
 
 
 class Solution:
-    def levelOrder(self, root: Optional[TreeNode]) -> list[list[int]]:
+    def levelOrder(self, root: TreeNode | None) -> list[list[int]]:
         if root is None:
             return []
 

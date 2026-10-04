@@ -20,7 +20,7 @@ class ShortURLViewSet(
     """Expose the URL Shortener through a router-friendly ViewSet."""
 
     serializer_class = ShortURLSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = (permissions.IsAuthenticated,)
     lookup_field = "short_code"
 
     def get_queryset(self):

@@ -7,15 +7,14 @@ Authentication identifies the user.
 Authorization determines what the authenticated user is allowed to do.
 """
 
+from collections.abc import Callable
 from functools import wraps
-from typing import Callable
 
 from error_handling import (
     FORBIDDEN,
     UNAUTHORIZED,
     TaskManagerError,
 )
-
 
 ROLE_PERMISSIONS = {
     "admin": {

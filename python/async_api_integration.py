@@ -10,13 +10,13 @@ inspectable in environments where httpx is not installed.
 
 from __future__ import annotations
 
-from typing import Any, Optional
+from typing import Any
 
 
 async def post_json(
     url: str,
     payload: dict[str, Any],
-    headers: Optional[dict[str, str]] = None,
+    headers: dict[str, str] | None = None,
 ) -> dict[str, Any]:
     """POST JSON asynchronously and return a validated JSON object."""
     try:
@@ -32,7 +32,7 @@ async def post_json(
         data = response.json()
 
     if not isinstance(data, dict):
-        raise ValueError("Expected a JSON object from the API")
+        raise TypeError("Expected a JSON object from the API")
 
     return data
 

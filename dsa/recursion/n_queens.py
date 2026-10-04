@@ -7,15 +7,14 @@ Place n queens on an n x n chessboard so that no two queens attack each
 other. Track occupied columns and diagonals while building one row at a time.
 """
 
-from typing import List
 
 
-def solve_n_queens(n: int) -> List[List[str]]:
+def solve_n_queens(n: int) -> list[list[str]]:
     """Return all valid N-Queens board configurations."""
     if n <= 0:
         return []
 
-    result: List[List[str]] = []
+    result: list[list[str]] = []
     board = [["."] * n for _ in range(n)]
     columns: set[int] = set()
     diagonals: set[int] = set()  # row - col

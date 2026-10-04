@@ -10,10 +10,9 @@ Backtracking pattern:
 LeetCode: Word Search
 """
 
-from typing import List
 
 
-def exist(board: List[List[str]], word: str) -> bool:
+def exist(board: list[list[str]], word: str) -> bool:
     """Return True when ``word`` can be formed by adjacent board cells."""
 
     if not board or not board[0] or not word:

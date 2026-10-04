@@ -13,7 +13,6 @@ from dataclasses import asdict
 from typing import Protocol
 
 import redis
-
 from caching_layer import Expense, ExpenseRepository
 
 

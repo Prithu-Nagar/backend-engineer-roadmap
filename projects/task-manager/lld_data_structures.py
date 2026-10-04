@@ -7,9 +7,10 @@ service boundaries before introducing framework-specific implementation detail.
 
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import Dict, Iterable, Optional, Protocol
+from typing import Protocol
 
 
 class TaskStatus(str, Enum):
@@ -23,7 +24,7 @@ class Task:
     task_id: int
     title: str
     status: TaskStatus = TaskStatus.TODO
-    assignee_id: Optional[int] = None
+    assignee_id: int | None = None
     dependencies: set[int] = field(default_factory=set)
 
     def complete(self) -> None:
@@ -45,7 +46,7 @@ class TaskStore(Protocol):
 
 class InMemoryTaskStore:
     def __init__(self) -> None:
-        self._tasks: Dict[int, Task] = {}
+        self._tasks: dict[int, Task] = {}
 
     def get(self, task_id: int) -> Task:
         try:

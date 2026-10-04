@@ -12,13 +12,12 @@ current permutation.
 After the recursive call completes, undo the choice.
 """
 
-from typing import List
 
 
-def permute(nums: List[int]) -> List[List[int]]:
+def permute(nums: list[int]) -> list[list[int]]:
     """Return all possible permutations of nums."""
-    result: List[List[int]] = []
-    current: List[int] = []
+    result: list[list[int]] = []
+    current: list[int] = []
     used = [False] * len(nums)
 
     def backtrack() -> None:

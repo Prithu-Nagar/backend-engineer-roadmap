@@ -4,7 +4,6 @@ from __future__ import annotations
 
 from flask import Blueprint, current_app
 
-
 health_bp = Blueprint("health", __name__)
 
 
@@ -24,7 +23,8 @@ def readiness():
         try:
             database_checker()
             checks["database"] = "ok"
-        except Exception:  # pragma: no cover - dependency failure is external.
+        except Exception:
+            current_app.logger.exception("Database health check failed")
             checks["database"] = "failed"
 
     ready = all(value == "ok" for value in checks.values())

@@ -8,7 +8,6 @@ reference without introducing application-specific database code.
 
 from fastapi import Depends, FastAPI, Query
 
-
 app = FastAPI(title="FastAPI Fundamentals")
 
 

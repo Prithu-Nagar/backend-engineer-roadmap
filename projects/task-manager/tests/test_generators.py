@@ -1,8 +1,7 @@
 """Day 18 tests for generator-based task processing."""
 
-from pathlib import Path
 import importlib.util
-
+from pathlib import Path
 
 TASK_MANAGER_DIR = Path(__file__).resolve().parents[1]
 GENERATORS_PATH = TASK_MANAGER_DIR / "generators.py"

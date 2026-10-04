@@ -3,7 +3,6 @@ from pathlib import Path
 
 import pytest
 
-
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
 TASK_MANAGER_DIR = PROJECT_ROOT / "projects" / "task-manager"
 

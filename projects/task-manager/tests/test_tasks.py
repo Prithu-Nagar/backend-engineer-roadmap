@@ -13,7 +13,6 @@ Day 15 focus:
 import importlib.util
 from pathlib import Path
 
-
 TASK_MANAGER_DIR = Path(__file__).resolve().parents[1]
 AUTHORIZATION_PATH = TASK_MANAGER_DIR / "authorization.py"
 

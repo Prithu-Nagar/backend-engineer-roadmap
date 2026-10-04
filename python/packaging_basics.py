@@ -8,7 +8,6 @@ The commands are shown as examples and are not executed by this module.
 
 from __future__ import annotations
 
-
 PROJECT_SETUP = {
     "create_environment": "python -m venv .venv",
     "activate_windows": ".venv\\Scripts\\activate",

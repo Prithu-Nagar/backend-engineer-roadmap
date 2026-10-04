@@ -1,8 +1,8 @@
 """Tests for Day 47 Task Manager security hardening."""
 
 from security_hardening import (
-    is_allowed_origin,
     csrf_required,
+    is_allowed_origin,
     require_production_secret,
     security_headers,
     valid_csrf_token,

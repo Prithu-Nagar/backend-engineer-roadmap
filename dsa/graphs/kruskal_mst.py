@@ -11,7 +11,6 @@ Space Complexity:
 O(V + E)
 """
 
-from typing import List
 
 
 class DisjointSet:
@@ -42,7 +41,7 @@ class DisjointSet:
         return True
 
 
-def kruskal_mst(n: int, edges: List[List[int]]) -> tuple[int, list[list[int]]]:
+def kruskal_mst(n: int, edges: list[list[int]]) -> tuple[int, list[list[int]]]:
     """Return the MST total weight and selected edges for a connected graph."""
     if n <= 0:
         return 0, []

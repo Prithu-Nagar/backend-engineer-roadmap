@@ -13,11 +13,10 @@ O(N^2)
 """
 
 import heapq
-from typing import List
 
 
 class Solution:
-    def swimInWater(self, grid: List[List[int]]) -> int:
+    def swimInWater(self, grid: list[list[int]]) -> int:
         size = len(grid)
 
         min_heap: list[tuple[int, int, int]] = [(grid[0][0], 0, 0)]

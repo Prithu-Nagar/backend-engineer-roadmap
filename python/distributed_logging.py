@@ -19,7 +19,6 @@ import logging
 from contextvars import ContextVar
 from uuid import uuid4
 
-
 correlation_id: ContextVar[str] = ContextVar(
     "correlation_id",
     default="-",

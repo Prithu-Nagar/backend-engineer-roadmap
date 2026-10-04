@@ -11,13 +11,12 @@ This is a learning example. Production services should use a strong secret
 from a secure secret manager and a real identity store/provider.
 """
 
-from datetime import datetime, timedelta, timezone
 import os
+from datetime import datetime, timedelta, timezone
 
 import jwt
 from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
-
 
 app = FastAPI(title="FastAPI Authentication Example")
 

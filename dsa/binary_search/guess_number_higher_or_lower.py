@@ -17,7 +17,7 @@ class Solution:
         while left <= right:
             mid = left + (right - left) // 2
 
-            result = guess(mid)
+            result = guess(mid)  # noqa: F821 - provided by the online judge
 
             if result == 0:
                 return mid

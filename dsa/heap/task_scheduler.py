@@ -14,8 +14,8 @@ O(K)
 
 from __future__ import annotations
 
-from collections import Counter
 import heapq
+from collections import Counter
 
 
 class Solution:

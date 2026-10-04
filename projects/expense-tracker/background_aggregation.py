@@ -10,10 +10,9 @@ from __future__ import annotations
 from datetime import date
 from decimal import Decimal
 
+from crud import Expense
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
-
-from crud import Expense
 
 
 def aggregate_by_category(

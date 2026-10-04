@@ -15,10 +15,8 @@ import hashlib
 import hmac
 import os
 import time
-from typing import Optional
 
 import jwt
-
 
 JWT_ALGORITHM = "HS256"
 JWT_EXPIRATION_SECONDS = 3600
@@ -76,7 +74,7 @@ def create_access_token(
     )
 
 
-def decode_access_token(token: str) -> Optional[dict]:
+def decode_access_token(token: str) -> dict | None:
     """
     Validate and decode a JWT access token.
 
@@ -103,7 +101,7 @@ def authenticate_user(
     username: str,
     password: str,
     users: dict,
-) -> Optional[dict]:
+) -> dict | None:
     """
     Authenticate a user against a simple in-memory user store.
 

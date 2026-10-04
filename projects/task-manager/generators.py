@@ -7,8 +7,7 @@ Demonstrates lazy task processing using generator pipelines.
 
 def task_generator(tasks):
     """Yield tasks lazily one at a time."""
-    for task in tasks:
-        yield task
+    yield from tasks
 
 
 def completed_tasks(tasks):
