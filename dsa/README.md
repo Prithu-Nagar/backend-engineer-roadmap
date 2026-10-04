@@ -1050,3 +1050,19 @@ Review focus:
 
 No new DSA solution files are added for Day 63. Existing tree implementations
 are reused for the assigned medium-level LeetCode review set.
+
+---
+
+## Day 65 — Dynamic Programming
+
+Day 65 continues the DP track with two medium-level problems that emphasize
+state transformation and state-machine reasoning.
+
+Problems:
+
+- **Target Sum** — transform signed assignments into a subset-sum counting
+  problem and optimize the DP state to one dimension
+- **Best Time to Buy and Sell Stock with Cooldown** — model holding, sold, and
+  cooldown/resting states and reduce the implementation to constant space
+
+Both implementations are stored under `dsa/dynamic_programming/`.

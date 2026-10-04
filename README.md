@@ -3269,3 +3269,56 @@ continuing graph interview practice and the URL Shortener project.
 Day 64 bridges the LLD phase into HLD by taking the URL Shortener from
 object/service boundaries to explicit requirements, capacity assumptions, and
 scalable architecture.
+
+---
+
+## Day 65 — System Design & LLD: URL Shortener Deep Dive
+
+Day 65 deepens the URL Shortener HLD while continuing the DP, Python, SQL, and
+backend tracks.
+
+### DSA
+
+- Added Target Sum
+- Added Best Time to Buy and Sell Stock with Cooldown
+- Reinforced subset-sum transformation and state-machine DP
+
+### Python
+
+- Added legacy-code refactoring example
+- Separated discount policy, tax calculation, and orchestration
+- Preserved observable pricing behavior while improving testability
+
+### SQL
+
+- Added relational-database scaling exercise
+- Covered index-first optimization, read replicas, replica lag, partitioning,
+  and a measured path toward sharding
+
+### LeetCode
+
+- Target Sum
+- Best Time to Buy and Sell Stock with Cooldown
+
+### Backend
+
+- Added explicit API versioning example
+- Kept v1 stable while introducing a v2 response contract
+- Shared domain logic while isolating representation changes at the API boundary
+
+### System Design
+
+- Added URL Shortener HLD deep dive
+- Covered read/write flows, cache behavior, database scaling, consistency,
+  failure modes, API evolution, and observability
+
+### Project
+
+- Added `projects/url-shortener/design_document.md`
+- Converted the Day 64 HLD into an interview-ready design document
+- Documented requirements, ownership, API contracts, scaling, reliability, and
+  evolution strategy
+
+Day 65 deepens the URL Shortener from a capacity-oriented HLD into a practical
+architecture discussion that explicitly connects scaling decisions to measured
+bottlenecks, consistency requirements, and API compatibility.

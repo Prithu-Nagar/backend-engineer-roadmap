@@ -1421,3 +1421,26 @@ File:
 
 The example uses a URL Shortener use case so the service boundary can be
 related directly to the project's HLD work.
+
+---
+
+## Day 65 — API Versioning
+
+Day 65 introduces explicit API versioning so backend contracts can evolve
+without silently breaking existing clients.
+
+Topics include:
+
+- Stable v1 response contracts
+- Explicit v2 representation changes
+- Version selection at the API boundary
+- Sharing domain/application logic across versions
+- Deprecation and migration windows
+- Rejecting unsupported versions explicitly
+
+File:
+
+`api_versioning.py`
+
+The example keeps the domain `Task` model shared while version-specific
+serialization remains at the API boundary.

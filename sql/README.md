@@ -1355,3 +1355,28 @@ File:
 The exercise intentionally keeps the URL and identity data boundaries separate.
 Cross-service relationships are represented through application-level
 identifiers rather than database-level foreign keys.
+
+---
+
+## Day 65 — Scaling Relational Databases
+
+Day 65 focuses on scaling relational databases from measured workload
+characteristics rather than immediately introducing distributed complexity.
+
+Topics include:
+
+- Query and index optimization as the first scaling step
+- Connection and concurrency saturation
+- Read replicas and replica lag
+- Partitioning large append-heavy tables
+- Cache/database interaction
+- Operational metrics for database capacity
+- A measured progression toward sharding
+
+File:
+
+`scaling_relational_databases.sql`
+
+The exercise uses URL Shortener event data to demonstrate access-path indexes,
+time partitioning, read-replica considerations, and a practical scaling
+sequence.

@@ -541,3 +541,28 @@ Implementations:
 
 The key idea is to keep only the state that the next transition actually needs
 rather than storing the complete DP table.
+
+---
+
+## Day 65 — Dynamic Programming
+
+Day 65 continues Dynamic Programming with subset transformation and state-based
+optimization problems.
+
+Topics:
+
+- Target Sum and transformation to subset-sum counting
+- 1D DP with reverse iteration
+- State-machine DP for stock trading
+- Holding, sold, and cooldown/resting states
+- Constant-space optimization
+- Recognizing when a DP problem is better represented as explicit states
+
+Implementations:
+
+- `target_sum.py`
+- `best_time_to_buy_and_sell_stock_with_cooldown.py`
+
+The key focus is identifying a compact state representation before writing the
+transition. Reverse iteration remains important when a 1D array represents a
+0/1 subset-counting state.

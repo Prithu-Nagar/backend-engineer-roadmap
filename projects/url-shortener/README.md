@@ -520,3 +520,27 @@ The HLD covers:
 
 The HLD is intentionally consistent with the existing URL Shortener learning
 implementation and does not replace earlier Django/DRF or FastAPI artifacts.
+
+---
+
+## Day 65 — Design Document
+
+Day 65 deepens the URL Shortener architecture after the Day 64 HLD milestone.
+
+Added:
+
+- `design_document.md`
+
+The design document captures:
+
+- Requirements and API contracts
+- API versioning strategy
+- URL/User service ownership
+- Data model and uniqueness constraints
+- Redirect and create request flows
+- Cache, database, replica, and partitioning strategy
+- Reliability and observability
+- Interview-ready architecture explanation
+
+The document complements `hld_design.md`; it does not replace the existing
+Django/DRF or FastAPI implementations.

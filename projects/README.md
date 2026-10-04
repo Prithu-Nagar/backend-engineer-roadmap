@@ -907,3 +907,29 @@ The artifact demonstrates:
 The artifact is intentionally separate from the existing Task Manager and
 Expense Tracker projects so the new LLD milestone does not replace earlier
 project layers.
+
+---
+
+## Day 65 — URL Shortener Design Document
+
+Day 65 turns the URL Shortener HLD into a reusable design document for
+architecture review and interview discussion.
+
+Added:
+
+- `projects/url-shortener/design_document.md`
+
+The document records:
+
+- Functional and non-functional requirements
+- Versioned API contracts
+- URL/User service ownership
+- Data model and constraints
+- Redirect and create flows
+- Scaling and caching strategy
+- Reliability and observability
+- API evolution and deprecation strategy
+- Interview explanation sequence
+
+The design document complements the existing Day 64 `hld_design.md` and does
+not replace earlier project implementations.

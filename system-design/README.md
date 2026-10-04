@@ -1463,3 +1463,28 @@ File:
 
 The URL Shortener is used as the example system. Capacity numbers are explicitly
 illustrative assumptions rather than production measurements.
+
+---
+
+## Day 65 — HLD: URL Shortener Deep Dive
+
+Day 65 deepens the Day 64 URL Shortener HLD with scaling, caching, consistency,
+API evolution, reliability, and observability.
+
+Topics include:
+
+- Redirect and create-path deep dives
+- Read-heavy workload analysis
+- Cache stampede and invalidation considerations
+- Read replicas and replica lag
+- Partitioning versus premature sharding
+- API versioning and compatibility
+- Consistency requirements by operation
+- Failure modes and observability
+- Evidence-driven architecture evolution
+
+File:
+
+`url-shortener-deep-dive.md`
+
+The deep dive extends the Day 64 HLD rather than replacing it.

@@ -744,3 +744,18 @@ Both implementations are stored under `dsa/graphs/`.
 
 Attempt the problems independently before comparing against the implementations
 and reviewing the graph invariants and complexity.
+
+---
+
+## Day 65 — Dynamic Programming
+
+Day 65 uses two medium-level Dynamic Programming problems.
+
+Problems:
+
+1. **Target Sum** — subset-sum transformation + counting DP
+2. **Best Time to Buy and Sell Stock with Cooldown** — state-machine DP
+
+Both implementations are stored under `dsa/dynamic_programming/`.
+
+Focus on defining the state and transition before optimizing space.

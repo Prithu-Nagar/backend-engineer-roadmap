@@ -1450,3 +1450,28 @@ File:
 
 The example builds an API request explicitly and then processes it through a
 stable workflow whose execution step can be customized by subclasses.
+
+---
+
+## Day 65 — Refactoring Legacy Code
+
+Day 65 focuses on refactoring legacy backend code without changing the intended
+behavior of the use case.
+
+Topics include:
+
+- Identifying mixed responsibilities
+- Extracting domain policies
+- Separating orchestration from calculations
+- Dependency injection for replaceable collaborators
+- Preserving behavior during refactoring
+- Small, testable units and explicit boundaries
+- Avoiding speculative abstractions
+
+File:
+
+`refactoring_legacy_code.py`
+
+The example compares a mixed-responsibility pricing function with a refactored
+service that separates discount policy and tax calculation while keeping the
+same observable result.
