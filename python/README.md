@@ -1475,3 +1475,28 @@ File:
 The example compares a mixed-responsibility pricing function with a refactored
 service that separates discount policy and tax calculation while keeping the
 same observable result.
+
+---
+
+## Day 66 — Clean Code and Code Review Checklist
+
+Day 66 turns clean-code principles into a repeatable backend code-review pass.
+
+Topics include:
+
+- Correctness and boundary conditions
+- Naming, readability, and control flow
+- Responsibility boundaries and dependency design
+- Python type hints and resource management
+- Exception handling and sensitive-data safety
+- API compatibility and backend boundaries
+- Performance and database interaction
+- Deterministic testing
+- Prioritizing high-risk review findings
+
+File:
+
+`clean_code_review_checklist.md`
+
+The checklist is intended to be used during review of the repository's existing
+Python examples as well as future backend implementations.

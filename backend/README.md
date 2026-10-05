@@ -1444,3 +1444,25 @@ File:
 
 The example keeps the domain `Task` model shared while version-specific
 serialization remains at the API boundary.
+
+---
+
+## Day 66 — API Evolution and Compatibility
+
+Day 66 extends API versioning into an explicit compatibility layer.
+
+Topics include:
+
+- Stable legacy response contracts
+- Version-specific serializers
+- Explicit version rejection
+- Deprecation metadata
+- Sunset and successor-version headers
+- Keeping domain models shared while representations evolve at the API boundary
+
+File:
+
+`api_evolution_compatibility.py`
+
+The example keeps compatibility policy outside the domain model so API changes
+do not require duplicating business logic.

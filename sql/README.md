@@ -1380,3 +1380,26 @@ File:
 The exercise uses URL Shortener event data to demonstrate access-path indexes,
 time partitioning, read-replica considerations, and a practical scaling
 sequence.
+
+---
+
+## Day 66 — Caching and Database Interaction
+
+Day 66 connects database behavior with application-level caching.
+
+Topics include:
+
+- Cache-aside reads
+- Database fallback on cache misses
+- Post-commit cache invalidation
+- TTLs as a bounded staleness safeguard
+- Negative caching and cache stampedes
+- Replica-read and read-after-write considerations
+- Cache-key completeness for filtered and paginated queries
+
+File:
+
+`caching_database_interaction.sql`
+
+The SQL remains PostgreSQL-oriented while the Redis/cache behavior is documented
+as application-level pseudocode and design guidance.

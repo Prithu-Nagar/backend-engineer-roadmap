@@ -933,3 +933,27 @@ The document records:
 
 The design document complements the existing Day 64 `hld_design.md` and does
 not replace earlier project implementations.
+
+---
+
+## Day 66 — Rate Limiter Design
+
+Day 66 adds the Rate Limiter as the next scalable-service design milestone.
+
+Added:
+
+- `projects/rate-limiter/README.md`
+- `projects/rate-limiter/design_pseudocode.md`
+
+The artifact demonstrates:
+
+- Token-bucket enforcement
+- Deterministic rate-limit keys
+- Atomic shared-state updates
+- HTTP 429 and retry behavior
+- Explicit fail-open/fail-closed policy choices
+- Capacity and observability considerations
+- Interview-ready explanation flow
+
+The project is intentionally design-first and complements the standalone Rate
+Limiter HLD in `system-design/rate-limiter-hld.md`.

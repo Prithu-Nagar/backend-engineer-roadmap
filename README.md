@@ -3322,3 +3322,56 @@ backend tracks.
 Day 65 deepens the URL Shortener from a capacity-oriented HLD into a practical
 architecture discussion that explicitly connects scaling decisions to measured
 bottlenecks, consistency requirements, and API compatibility.
+
+---
+
+## Day 66 — System Design & LLD: Rate Limiter
+
+Day 66 moves from the URL Shortener deep dive into a Rate Limiter HLD while
+continuing mixed interview practice and backend compatibility design.
+
+### DSA
+
+- Reviewed **Merge Intervals**
+- Reviewed **Number of Islands**
+- Focused on mixed-pattern recognition rather than adding duplicate solutions
+
+### Python
+
+- Added clean-code and code-review checklist
+- Covered correctness, readability, design, error handling, API boundaries,
+  performance, testing, and review prioritization
+
+### SQL
+
+- Added caching/database interaction exercise
+- Covered cache-aside reads, post-commit invalidation, TTLs, cache stampedes,
+  negative caching, and replica-read considerations
+
+### LeetCode
+
+- Merge Intervals
+- Number of Islands
+
+### Backend
+
+- Added API evolution and compatibility example
+- Kept v1 stable while introducing a richer v2 response contract
+- Added explicit deprecation and successor-version metadata
+
+### System Design
+
+- Added Rate Limiter HLD
+- Covered token bucket, atomic shared state, policy modeling, failure modes,
+  capacity planning, observability, and regional/global trade-offs
+
+### Project
+
+- Added `projects/rate-limiter/design_pseudocode.md`
+- Added Rate Limiter design and token-bucket pseudocode
+- Documented Redis-style atomic enforcement, HTTP behavior, failure policy, and
+  interview explanation flow
+
+Day 66 establishes the Rate Limiter as the next scalable-service design
+milestone while keeping compatibility, caching, and code-quality concerns
+explicit at the implementation boundaries.

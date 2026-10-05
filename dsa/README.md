@@ -1066,3 +1066,25 @@ Problems:
   cooldown/resting states and reduce the implementation to constant space
 
 Both implementations are stored under `dsa/dynamic_programming/`.
+
+---
+
+## Day 66 — Mixed DSA Review
+
+Day 66 uses a mixed-problem review to reinforce pattern recognition rather than
+introducing a new data-structure category.
+
+Review focus:
+
+- Identifying the underlying pattern before coding
+- Choosing between traversal, sorting, hashing, and interval techniques
+- Writing the invariant before optimizing the implementation
+- Comparing time and space complexity under interview time pressure
+
+Problems reused for the Day 66 mixed set:
+
+- **Merge Intervals** — sorting + interval merging
+- **Number of Islands** — graph traversal with DFS/BFS
+
+Both implementations already exist in the repository. No duplicate solution
+files are added for the mixed review.

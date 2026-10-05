@@ -759,3 +759,20 @@ Problems:
 Both implementations are stored under `dsa/dynamic_programming/`.
 
 Focus on defining the state and transition before optimizing space.
+
+---
+
+## Day 66 — Mixed Medium Problems
+
+Day 66 returns to a mixed medium-level set to practice pattern recognition
+without being given the topic in advance.
+
+Review set:
+
+1. **Merge Intervals** — sorting and interval merging
+2. **Number of Islands** — graph traversal with DFS/BFS
+
+Both implementations already exist under `dsa/` and are reused rather than
+creating duplicate solution files. Focus on identifying the pattern, stating
+the invariant, and explaining the complexity before comparing against the
+existing implementations.

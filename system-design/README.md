@@ -1488,3 +1488,28 @@ File:
 `url-shortener-deep-dive.md`
 
 The deep dive extends the Day 64 HLD rather than replacing it.
+
+---
+
+## Day 66 — HLD: Rate Limiter
+
+Day 66 applies the HLD process to a shared Rate Limiter.
+
+Topics include:
+
+- Functional and non-functional requirements
+- Token-bucket rate limiting
+- Shared Redis state and atomic updates
+- Policy modeling and deterministic rate-limit keys
+- Failure behavior and retry storms
+- Hot keys and clock consistency
+- Capacity planning and key cardinality
+- Observability and operational trade-offs
+- Regional versus globally coordinated limits
+
+File:
+
+`rate-limiter-hld.md`
+
+The design uses a token bucket as the recommended starting point while keeping
+algorithm, consistency, and deployment choices explicit trade-offs.
