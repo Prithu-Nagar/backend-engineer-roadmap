@@ -1500,3 +1500,25 @@ File:
 
 The checklist is intended to be used during review of the repository's existing
 Python examples as well as future backend implementations.
+
+---
+
+## Day 67 — Concurrency Design Review
+
+Day 67 reviews concurrency design choices for backend services.
+
+Topics include:
+
+- Shared mutable state and explicit lock ownership
+- Bounded thread pools for independent I/O-oriented work
+- Future ownership and deterministic result collection
+- Avoiding unbounded concurrency
+- Separating concurrency policy from business logic
+- Reviewing failure, cancellation, and backpressure behavior
+
+File:
+
+`concurrency_design_review.py`
+
+The example is framework-neutral and intentionally small so concurrency
+boundaries can be reviewed without coupling the exercise to a web framework.

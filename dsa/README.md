@@ -1088,3 +1088,26 @@ Problems reused for the Day 66 mixed set:
 
 Both implementations already exist in the repository. No duplicate solution
 files are added for the mixed review.
+
+---
+
+## Day 67 — Mixed DSA Review
+
+Day 67 continues mixed-pattern interview practice without introducing a new
+data-structure category.
+
+Review focus:
+
+- Recognizing graph traversal and heap-based patterns from an unlabeled problem
+- Stating the invariant before coding
+- Comparing breadth-first traversal with other graph approaches
+- Choosing a heap when the problem asks for repeated closest/best candidates
+- Explaining time and space complexity before reviewing the existing solution
+
+Problems reused for the Day 67 mixed set:
+
+- **Rotting Oranges** — multi-source BFS
+- **K Closest Points to Origin** — heap / selection
+
+Both implementations already exist in the repository. No duplicate DSA solution
+files are added for the mixed review.

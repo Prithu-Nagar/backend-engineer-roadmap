@@ -1403,3 +1403,27 @@ File:
 
 The SQL remains PostgreSQL-oriented while the Redis/cache behavior is documented
 as application-level pseudocode and design guidance.
+
+---
+
+## Day 67 — Queue / Event Persistence
+
+Day 67 models durable event and notification-delivery state for queue-oriented
+backend workflows.
+
+Topics include:
+
+- Transactional outbox state
+- Pending-event indexes
+- Channel-specific delivery state
+- Idempotent delivery constraints
+- Retry scheduling
+- `FOR UPDATE SKIP LOCKED` worker claiming
+- At-least-once processing trade-offs
+
+File:
+
+`queue_event_persistence.sql`
+
+The examples are PostgreSQL-oriented. The message broker remains outside the
+database, while the database provides durable intent and delivery state.

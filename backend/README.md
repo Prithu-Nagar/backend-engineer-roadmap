@@ -1466,3 +1466,26 @@ File:
 
 The example keeps compatibility policy outside the domain model so API changes
 do not require duplicating business logic.
+
+---
+
+## Day 67 — Event-Driven API Patterns
+
+Day 67 introduces API patterns for event-driven backend workflows.
+
+Topics include:
+
+- Event contracts and validation
+- Durable event persistence
+- Transaction boundaries before publication
+- Publisher and event-store interfaces
+- Outbox-oriented publication flow
+- Framework-neutral composition and testability
+
+File:
+
+`event_driven_api_patterns.py`
+
+The example keeps event persistence and publication behind explicit contracts so
+the same application boundary can later be connected to a database and message
+broker.

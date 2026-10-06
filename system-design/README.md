@@ -1513,3 +1513,27 @@ File:
 
 The design uses a token bucket as the recommended starting point while keeping
 algorithm, consistency, and deployment choices explicit trade-offs.
+
+---
+
+## Day 67 — HLD: Notification System
+
+Day 67 applies the HLD process to a multi-channel Notification System.
+
+Topics include:
+
+- Notification API and asynchronous delivery
+- Transactional outbox
+- Durable message-broker flow
+- Per-channel worker isolation
+- At-least-once processing and idempotency
+- Retries, backpressure, and dead-letter handling
+- Ordering and scaling trade-offs
+- Delivery observability and failure modes
+
+File:
+
+`notification-system-hld.md`
+
+The design extends the earlier Notification Service LLD into a distributed
+architecture without replacing the existing LLD artifact.

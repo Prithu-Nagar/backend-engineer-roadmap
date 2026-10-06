@@ -957,3 +957,27 @@ The artifact demonstrates:
 
 The project is intentionally design-first and complements the standalone Rate
 Limiter HLD in `system-design/rate-limiter-hld.md`.
+
+---
+
+## Day 67 — Notification System Design
+
+Day 67 turns the existing Notification Service LLD into a portfolio-ready
+high-level system design.
+
+Added:
+
+- `projects/notification-service/notification_system_design.md`
+
+The design documents:
+
+- API contracts
+- Notification and delivery state
+- Transactional outbox flow
+- Broker and channel-worker architecture
+- At-least-once delivery and idempotency
+- Retry and dead-letter handling
+- Capacity, reliability, and security boundaries
+
+The new design complements the existing Observer/Adapter LLD rather than
+replacing it.

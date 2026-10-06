@@ -3375,3 +3375,52 @@ continuing mixed interview practice and backend compatibility design.
 Day 66 establishes the Rate Limiter as the next scalable-service design
 milestone while keeping compatibility, caching, and code-quality concerns
 explicit at the implementation boundaries.
+
+---
+
+## Day 67 — System Design & LLD: Notification System
+
+Day 67 moves from the Rate Limiter into a multi-channel Notification System HLD
+while continuing mixed interview practice and event-driven backend design.
+
+### DSA
+
+- Reviewed **Rotting Oranges**
+- Reviewed **K Closest Points to Origin**
+- Focused on mixed-pattern recognition, BFS state propagation, and heap-based selection
+
+### Python
+
+- Added concurrency design review
+- Covered lock ownership, bounded worker pools, futures, and avoiding unbounded concurrency
+
+### SQL
+
+- Added queue/event persistence exercise
+- Covered transactional outbox state, delivery records, retry scheduling, and `SKIP LOCKED`
+
+### LeetCode
+
+- Rotting Oranges
+- K Closest Points to Origin
+
+### Backend
+
+- Added event-driven API patterns
+- Covered durable event contracts, transaction boundaries, and outbox-oriented publication
+
+### System Design
+
+- Added Notification System HLD
+- Covered asynchronous delivery, transactional outbox, queues, workers, idempotency,
+  retries, backpressure, ordering, scaling, and failure modes
+
+### Project
+
+- Added `projects/notification-service/notification_system_design.md`
+- Extended the existing Notification Service LLD into a distributed-system design
+- Documented API contracts, state transitions, delivery semantics, reliability, and security
+
+Day 67 connects the existing notification LLD to a production-oriented
+distributed architecture where durable intent, asynchronous delivery, and
+idempotent processing are explicit boundaries.

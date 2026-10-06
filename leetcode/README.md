@@ -776,3 +776,18 @@ Both implementations already exist under `dsa/` and are reused rather than
 creating duplicate solution files. Focus on identifying the pattern, stating
 the invariant, and explaining the complexity before comparing against the
 existing implementations.
+
+---
+
+## Day 67 — Mixed Medium Problems
+
+Day 67 continues mixed medium-level practice with two existing implementations.
+
+Review set:
+
+1. **Rotting Oranges** — multi-source BFS and level-by-level state propagation
+2. **K Closest Points to Origin** — heap-based candidate selection
+
+Both implementations already exist under `dsa/` and are reused rather than
+creating duplicate solution files. Focus on recognizing the underlying pattern,
+defining the invariant, and comparing complexity before reviewing the code.
