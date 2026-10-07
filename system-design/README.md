@@ -1537,3 +1537,29 @@ File:
 
 The design extends the earlier Notification Service LLD into a distributed
 architecture without replacing the existing LLD artifact.
+
+---
+
+## Day 68 — HLD: Chat Application
+
+Day 68 applies the HLD process to a real-time Chat Application.
+
+Topics include:
+
+- HTTP and WebSocket responsibilities
+- WebSocket gateway architecture
+- Durable message persistence
+- Cross-instance fan-out
+- Per-room ordering
+- At-least-once delivery and idempotency
+- Reconnect and offline-message recovery
+- Backpressure and slow-consumer handling
+- Capacity estimation
+- Security and observability
+
+File:
+
+`chat-application-hld.md`
+
+The design keeps live connection state at the gateway while durable messages,
+membership, and read cursors remain in shared storage.

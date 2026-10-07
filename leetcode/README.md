@@ -791,3 +791,18 @@ Review set:
 Both implementations already exist under `dsa/` and are reused rather than
 creating duplicate solution files. Focus on recognizing the underlying pattern,
 defining the invariant, and comparing complexity before reviewing the code.
+
+---
+
+## Day 68 — Mixed Medium Problems
+
+Day 68 continues mixed medium-level practice with two existing implementations.
+
+Review set:
+
+1. **Longest Consecutive Sequence** — hash-set based sequence detection
+2. **Word Break** — dynamic programming over valid prefix states
+
+Both implementations already exist under `dsa/` and are reused rather than
+creating duplicate solution files. Focus on pattern recognition, state/invariant
+definition, complexity, and explaining why each approach is appropriate.

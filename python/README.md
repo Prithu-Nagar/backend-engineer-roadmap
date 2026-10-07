@@ -1522,3 +1522,27 @@ File:
 
 The example is framework-neutral and intentionally small so concurrency
 boundaries can be reviewed without coupling the exercise to a web framework.
+
+---
+
+## Day 68 — Async Architecture Review
+
+Day 68 reviews how asynchronous Python should be structured for backend
+workloads rather than treating `async` as an automatic performance improvement.
+
+Topics include:
+
+- Explicit concurrency limits with `asyncio.Semaphore`
+- Timeout boundaries around individual I/O operations
+- Task ownership and cancellation
+- Deterministic result collection with `asyncio.gather`
+- Separating concurrency policy from business logic
+- Avoiding unbounded task creation
+- Backpressure and failure propagation
+
+File:
+
+`async_architecture_review.py`
+
+The example provides a small framework-neutral pattern for bounded async work
+that can be adapted to backend I/O workflows.

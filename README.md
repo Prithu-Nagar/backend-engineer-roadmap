@@ -3424,3 +3424,55 @@ while continuing mixed interview practice and event-driven backend design.
 Day 67 connects the existing notification LLD to a production-oriented
 distributed architecture where durable intent, asynchronous delivery, and
 idempotent processing are explicit boundaries.
+
+---
+
+## Day 68 — System Design & LLD: Chat Application
+
+Day 68 moves from the Notification System into a real-time Chat Application HLD
+while continuing mixed interview practice and asynchronous backend design.
+
+### DSA
+
+- Reviewed **Longest Consecutive Sequence**
+- Reviewed **Word Break**
+- Focused on mixed-pattern recognition, hashing, dynamic programming, invariants,
+  and complexity explanation
+
+### Python
+
+- Added async architecture review
+- Covered bounded concurrency, timeouts, cancellation, task ownership, and backpressure
+
+### SQL
+
+- Added chat/message schema exercise
+- Covered rooms, membership, durable messages, idempotency keys, read cursors,
+  and cursor-based history pagination
+
+### LeetCode
+
+- Longest Consecutive Sequence
+- Word Break
+
+### Backend
+
+- Added WebSocket concepts
+- Covered connection lifecycle, room membership, broadcast, and failure isolation
+
+### System Design
+
+- Added Chat Application HLD
+- Covered WebSocket gateways, durable persistence, cross-instance fan-out,
+  ordering, reconnects, backpressure, capacity, security, and observability
+
+### Project
+
+- Added `projects/chat-application/README.md`
+- Added `projects/chat-application/architecture.md`
+- Documented the project architecture, core flows, implementation boundaries,
+  and reliability checklist
+
+Day 68 establishes the architectural boundary between durable chat state and
+real-time connection state, preparing the roadmap for scalable real-time backend
+design.

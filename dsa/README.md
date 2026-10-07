@@ -1111,3 +1111,26 @@ Problems reused for the Day 67 mixed set:
 
 Both implementations already exist in the repository. No duplicate DSA solution
 files are added for the mixed review.
+
+---
+
+## Day 68 — Mixed DSA Review
+
+Day 68 continues mixed medium-level practice while emphasizing pattern
+recognition and clean complexity explanations.
+
+Review focus:
+
+- Identify the underlying pattern before choosing a data structure
+- Compare hashing and dynamic-programming approaches
+- State the invariant before coding
+- Explain time and space complexity under interview time pressure
+- Reuse proven implementations rather than duplicating solutions
+
+Problems reused for the Day 68 mixed set:
+
+- **Longest Consecutive Sequence** — hashing / set-based sequence detection
+- **Word Break** — dynamic programming over valid prefix states
+
+Both implementations already exist in the repository. No duplicate DSA solution
+files are added for the mixed review.

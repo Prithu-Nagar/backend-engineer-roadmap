@@ -1427,3 +1427,28 @@ File:
 
 The examples are PostgreSQL-oriented. The message broker remains outside the
 database, while the database provides durable intent and delivery state.
+
+---
+
+## Day 68 — Chat / Message Schema
+
+Day 68 models the relational state needed by a chat application.
+
+Topics include:
+
+- Users, rooms, and room membership
+- Durable message identity
+- Client idempotency keys
+- Read cursors
+- Deterministic cursor-based history pagination
+- Access-path indexes for room history and membership
+- Unread-message counting
+- Retention and archival considerations
+
+File:
+
+`chat_message_schema.sql`
+
+The exercise is PostgreSQL-oriented and keeps live WebSocket state outside the
+relational schema while treating PostgreSQL as the durable source of message
+history.

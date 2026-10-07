@@ -1489,3 +1489,27 @@ File:
 The example keeps event persistence and publication behind explicit contracts so
 the same application boundary can later be connected to a database and message
 broker.
+
+---
+
+## Day 68 — WebSocket Concepts
+
+Day 68 introduces the backend boundaries needed for WebSocket-based real-time
+applications.
+
+Topics include:
+
+- WebSocket connection lifecycle
+- Connection ownership at the gateway layer
+- Room-based connection tracking
+- Broadcast and fan-out
+- Authentication and authorization boundaries
+- Isolating slow or failed connections
+- Separating durable persistence from live delivery
+
+File:
+
+`websocket_concepts.py`
+
+The example is framework-neutral and models the connection manager and message
+boundary without requiring a concrete WebSocket framework.

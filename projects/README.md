@@ -981,3 +981,28 @@ The design documents:
 
 The new design complements the existing Observer/Adapter LLD rather than
 replacing it.
+
+---
+
+## Day 68 — Chat Application Architecture
+
+Day 68 adds a project-oriented architecture artifact for the Chat Application
+milestone.
+
+Added:
+
+- `projects/chat-application/README.md`
+- `projects/chat-application/architecture.md`
+
+The artifact documents:
+
+- WebSocket gateway responsibilities
+- Chat API and durable persistence boundaries
+- Cross-instance pub/sub or broker fan-out
+- Message send and reconnect flows
+- Idempotency and ordering
+- Backpressure and slow-consumer handling
+- Reliability and implementation boundaries
+
+The project remains design-first and complements the standalone Chat Application
+HLD in `system-design/chat-application-hld.md`.
