@@ -1006,3 +1006,27 @@ The artifact documents:
 
 The project remains design-first and complements the standalone Chat Application
 HLD in `system-design/chat-application-hld.md`.
+
+---
+
+## Day 69 — News Feed Architecture
+
+Day 69 adds a project-oriented architecture artifact for the News Feed milestone.
+
+Added:
+
+- `projects/news-feed/README.md`
+- `projects/news-feed/architecture.md`
+
+The artifact documents:
+
+- Personalized feed read and post-publication flows
+- Hybrid fan-out policy
+- Cursor pagination
+- Bounded caching
+- Asynchronous feed propagation
+- Eventual consistency and freshness
+- Reliability and observability boundaries
+
+The project remains design-first and complements the standalone News Feed HLD in
+`system-design/news-feed-hld.md`.

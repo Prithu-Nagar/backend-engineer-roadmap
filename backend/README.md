@@ -1513,3 +1513,28 @@ File:
 
 The example is framework-neutral and models the connection manager and message
 boundary without requiring a concrete WebSocket framework.
+
+---
+
+## Day 69 — Pagination and Caching at Scale
+
+Day 69 applies cursor pagination and bounded caching to a read-heavy backend.
+
+Topics include:
+
+- Stable cursor-based pagination
+- Bounded page sizes
+- Cache-aside reads
+- Short TTLs
+- Explicit cache keys
+- First-page invalidation
+- Cache failure fallback to durable storage
+- Avoiding deep `OFFSET` scans
+- Keeping cache policy separate from domain logic
+
+File:
+
+`pagination_caching_at_scale.py`
+
+The example is framework-neutral and keeps the cache as an optimization rather
+than the source of truth.

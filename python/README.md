@@ -1546,3 +1546,27 @@ File:
 
 The example provides a small framework-neutral pattern for bounded async work
 that can be adapted to backend I/O workflows.
+
+---
+
+## Day 69 — Performance and Scalability Review
+
+Day 69 reviews Python performance and scalability from a backend-engineering
+perspective.
+
+Topics include:
+
+- Measure before optimizing
+- Request-level latency and hot-path identification
+- CPU-bound versus I/O-bound workloads
+- Bounded batching to control memory
+- Async/concurrent I/O and horizontal scaling
+- Queues for burst smoothing
+- Process-based parallelism for suitable CPU-bound workloads
+- Avoiding premature optimization and unbounded concurrency
+
+File:
+
+`performance_scalability_review.py`
+
+The example keeps the scaling decision workload-driven and provider-neutral.

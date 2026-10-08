@@ -1563,3 +1563,28 @@ File:
 
 The design keeps live connection state at the gateway while durable messages,
 membership, and read cursors remain in shared storage.
+
+---
+
+## Day 69 — HLD: News Feed
+
+Day 69 applies the HLD process to a read-heavy personalized News Feed.
+
+Topics include:
+
+- Functional and non-functional requirements
+- Fan-out-on-read versus fan-out-on-write
+- Hybrid feed generation for high-fan-out authors
+- Cursor pagination
+- Bounded caching and stampede protection
+- Asynchronous feed materialization
+- Eventual consistency and freshness targets
+- Capacity and scaling metrics
+- Failure handling, security, and observability
+
+File:
+
+`news-feed-hld.md`
+
+The design emphasizes controlling fan-out cost so both read and write paths
+remain predictable as the system scales.

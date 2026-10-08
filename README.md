@@ -3476,3 +3476,52 @@ while continuing mixed interview practice and asynchronous backend design.
 Day 68 establishes the architectural boundary between durable chat state and
 real-time connection state, preparing the roadmap for scalable real-time backend
 design.
+
+---
+
+## Day 69 — System Design & LLD: News Feed
+
+Day 69 moves from real-time Chat Application design into a read-heavy News Feed
+HLD while continuing mixed interview practice and performance-oriented backend
+design.
+
+### DSA
+
+- Reviewed **Find Median from Data Stream**
+- Reviewed **Search in Rotated Sorted Array**
+- Focused on mixed-pattern recognition, invariants, and complexity explanation
+
+### Python
+
+- Added performance and scalability review
+- Covered measurement, workload classification, bounded batching, and scaling choices
+
+### SQL
+
+- Added feed/query design exercise
+- Covered follow relationships, cursor pagination, feed indexes, and materialized feed entries
+
+### LeetCode
+
+- Find Median from Data Stream
+- Search in Rotated Sorted Array
+
+### Backend
+
+- Added pagination and caching at scale
+- Covered cursor pagination, bounded caching, TTLs, invalidation, and cache fallback
+
+### System Design
+
+- Added News Feed HLD
+- Covered fan-out strategies, caching, pagination, asynchronous propagation,
+  consistency, scaling, failure handling, and observability
+
+### Project
+
+- Added `projects/news-feed/README.md`
+- Added `projects/news-feed/architecture.md`
+- Documented hybrid feed generation, core flows, caching, pagination, and reliability
+
+Day 69 establishes the key News Feed scaling trade-off: controlling fan-out cost
+while keeping the read path fast, bounded, and resilient.

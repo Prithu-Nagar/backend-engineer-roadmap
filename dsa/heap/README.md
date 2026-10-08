@@ -135,3 +135,21 @@ Repository files:
 - `kth_smallest_element_in_sorted_matrix.py`
 - `meeting_rooms_ii.py`
 - `minimum_number_of_refueling_stops.py`
+
+---
+
+## Day 69 — Find Median from Data Stream Review
+
+Day 69 reuses **Find Median from Data Stream** for mixed-pattern interview
+practice.
+
+Focus:
+
+- Maintain lower and upper halves with two heaps
+- Keep the size invariant balanced
+- Restore ordering after each insertion
+- Explain `O(log n)` insertion and `O(1)` median lookup
+
+File:
+
+- `find_median_from_data_stream.py`

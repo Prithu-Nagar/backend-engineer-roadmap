@@ -1134,3 +1134,25 @@ Problems reused for the Day 68 mixed set:
 
 Both implementations already exist in the repository. No duplicate DSA solution
 files are added for the mixed review.
+
+---
+
+## Day 69 — Mixed DSA Review
+
+Day 69 continues mixed medium-level practice during the System Design & LLD
+phase.
+
+Review focus:
+
+- Recognize the data-structure pattern before coding
+- Compare heap and binary-search reasoning
+- State the invariant and complexity before reviewing the implementation
+- Reuse existing solutions rather than creating duplicate files
+
+Problems reused for the Day 69 mixed set:
+
+- **Find Median from Data Stream** — two-heaps / online order statistics
+- **Search in Rotated Sorted Array** — modified binary search
+
+Both implementations already exist in the repository. No duplicate DSA solution
+files are added for Day 69.

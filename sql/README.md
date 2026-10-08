@@ -1452,3 +1452,27 @@ File:
 The exercise is PostgreSQL-oriented and keeps live WebSocket state outside the
 relational schema while treating PostgreSQL as the durable source of message
 history.
+
+---
+
+## Day 69 — Feed / Query Design
+
+Day 69 applies relational query design to a read-heavy News Feed workload.
+
+Topics include:
+
+- Follow relationships and author timelines
+- Fan-out-on-read queries
+- Cursor pagination with stable ordering
+- Materialized user-feed entries
+- Indexes for following, author timelines, and feed reads
+- Hybrid fan-out strategies
+- `EXPLAIN (ANALYZE, BUFFERS)` as the validation step
+- Caching and feed freshness as application-level concerns
+
+File:
+
+`feed_query_design.sql`
+
+The SQL is PostgreSQL-oriented and deliberately keeps fan-out policy and cache
+behavior outside the relational schema.

@@ -145,3 +145,21 @@ fully sorted array.
 
 - Time: `O(log n)`
 - Space: `O(1)`
+
+---
+
+## Day 69 — Search in Rotated Sorted Array Review
+
+Day 69 reuses **Search in Rotated Sorted Array** for mixed-pattern interview
+practice.
+
+Focus:
+
+- Identify which half remains sorted
+- Decide whether the target lies inside that sorted half
+- Shrink the search interval in logarithmic time
+- Explain why duplicates change the standard invariant
+
+File:
+
+- `search_in_rotated_sorted_array.py`

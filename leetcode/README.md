@@ -806,3 +806,18 @@ Review set:
 Both implementations already exist under `dsa/` and are reused rather than
 creating duplicate solution files. Focus on pattern recognition, state/invariant
 definition, complexity, and explaining why each approach is appropriate.
+
+---
+
+## Day 69 — Mixed Medium Problems
+
+Day 69 continues mixed medium-level practice with two existing implementations.
+
+Review set:
+
+1. **Find Median from Data Stream** — two heaps for online median maintenance
+2. **Search in Rotated Sorted Array** — modified binary search on a rotated array
+
+Both implementations already exist under `dsa/` and are reused rather than
+creating duplicate solution files. Focus on recognizing the pattern, stating
+the invariant, and explaining complexity before reviewing the code.
