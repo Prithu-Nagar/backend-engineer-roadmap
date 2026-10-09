@@ -1588,3 +1588,21 @@ File:
 
 The design emphasizes controlling fan-out cost so both read and write paths
 remain predictable as the system scales.
+
+---
+
+## Day 70 — HLD Review and Portfolio Consolidation
+
+Day 70 consolidates the System Design & LLD phase with a timed review of bottlenecks, trade-offs, and CAP.
+
+Topics reviewed:
+
+- Capacity assumptions and bottleneck identification
+- Read/write amplification, cache behavior, and queue saturation
+- Consistency and availability choices during network partitions
+- Reliability, observability, and graceful degradation
+- Timed review of the URL Shortener, Rate Limiter, Notification System, Chat Application, and News Feed
+
+Review artifact: `day-70-review.md`.
+
+The portfolio index is maintained in `../projects/system-design-portfolio/README.md`.

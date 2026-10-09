@@ -1030,3 +1030,16 @@ The artifact documents:
 
 The project remains design-first and complements the standalone News Feed HLD in
 `system-design/news-feed-hld.md`.
+
+---
+
+## Day 70 — System Design Portfolio Pack
+
+Day 70 consolidates the System Design & LLD phase into a concise, interview-ready portfolio index.
+
+Added:
+
+- `projects/system-design-portfolio/README.md`
+- `system-design/day-70-review.md`
+
+The pack links the URL Shortener, Rate Limiter, Notification System, Chat Application, and News Feed HLD artifacts, and includes a repeatable review framework for requirements, capacity, bottlenecks, trade-offs, CAP, reliability, and observability.

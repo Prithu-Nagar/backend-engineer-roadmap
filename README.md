@@ -3525,3 +3525,34 @@ design.
 
 Day 69 establishes the key News Feed scaling trade-off: controlling fan-out cost
 while keeping the read path fast, bounded, and resilient.
+
+---
+
+## Day 70 — System Design Review and Portfolio Pack
+
+Day 70 closes the System Design & LLD phase with a timed review and a consolidated portfolio index.
+
+### DSA, Python, and SQL
+
+- Completed a mixed review and timed assessment across DSA, Python, and SQL.
+- Recorded weak areas for targeted follow-up rather than relying on an overall score alone.
+
+### LeetCode
+
+- Completed a timed assessment and reviewed correctness, complexity, and time management.
+
+### Backend
+
+- Reviewed architecture boundaries, request flows, persistence, caching, asynchronous work, and failure behavior across the design milestones.
+
+### System Design
+
+- Reviewed HLD bottlenecks, capacity assumptions, architecture trade-offs, and CAP behavior during network partitions.
+- Consolidated the URL Shortener, Rate Limiter, Notification System, Chat Application, and News Feed designs.
+- Added `system-design/day-70-review.md` and `projects/system-design-portfolio/README.md`.
+
+### Project
+
+- Added a system-design portfolio pack linking the major HLD artifacts and providing a consistent interview review checklist.
+
+Day 70 completes the System Design & LLD phase and transitions the roadmap to structured interview preparation on Day 71.
