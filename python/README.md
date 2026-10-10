@@ -1570,3 +1570,19 @@ File:
 `performance_scalability_review.py`
 
 The example keeps the scaling decision workload-driven and provider-neutral.
+
+---
+
+## Day 71 — Python Interview Fundamentals
+
+Day 71 reviews Python fundamentals through small runnable examples.
+
+Topics include:
+
+- Avoiding mutable default arguments
+- Dictionary counting and hashable keys
+- Lazy iteration with generators
+- Dataclasses and immutable records
+- Explicit exception behavior and type annotations
+
+File: `interview_fundamentals.py`.

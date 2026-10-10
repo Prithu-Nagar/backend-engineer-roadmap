@@ -33,37 +33,23 @@ The current authentication and authorization flow is:
 
 ```text
 Client
-   ↓
-```
+  ↓
 Login
-```text
-   ↓
-```
+  ↓
 Authentication
-```text
-   ↓
-```
+  ↓
 JWT Access Token
-```text
-   ↓
-```
+  ↓
 Authenticated Request
-```text
-   ↓
-```
+  ↓
 JWT Validation
-```text
-   ↓
-```
+  ↓
 Authorization
-```text
-   ↓
-```
+  ↓
 Role / Permission Check
-```text
-   ↓
-```
+  ↓
 Task Resource
+```
 
 Authentication determines who the user is.
 
@@ -99,31 +85,23 @@ The authentication flow is:
 
 ```text
 User
- ↓
-```
+  ↓
 Login Request
-```text
- ↓
-```
+  ↓
 Verify Credentials
-```text
- ↓
-```
+  ↓
 Create JWT
-```text
- ↓
-```
+  ↓
 Return Access Token
-```text
- ↓
+  ↓
 Client Stores Token
- ↓
+  ↓
 Client Sends Token
- ↓
+  ↓
 Backend Validates JWT
- ↓
-```
+  ↓
 Authenticated User
+```
 
 The JWT contains user-related claims such as:
 
@@ -773,3 +751,16 @@ The example demonstrates composition and dependency inversion while keeping the
 existing Flask application structure intact. It also makes the task dependency
 invariant explicit: a task cannot be completed while one of its dependencies is
 still incomplete.
+
+---
+
+## Day 71 — Resume Bullet Preparation
+
+Day 71 turns the existing Task Manager implementation into evidence-based
+resume bullets covering REST API development, authentication and authorization,
+pagination, tests, logging, and operational practices.
+
+Draft artifact: `resume_bullets.md`.
+
+Use only claims supported by the repository. Add performance metrics only after
+measuring them, and do not claim deployment or scale without evidence.

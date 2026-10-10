@@ -1606,3 +1606,13 @@ Topics reviewed:
 Review artifact: `day-70-review.md`.
 
 The portfolio index is maintained in `../projects/system-design-portfolio/README.md`.
+
+---
+
+## Day 71 — System Design Interview Framework
+
+Day 71 introduces a repeatable interview flow: clarify requirements, estimate
+capacity, define APIs and data models, sketch the high-level architecture,
+analyze bottlenecks and failures, and defend trade-offs.
+
+Review artifact: `interview_framework.md`.

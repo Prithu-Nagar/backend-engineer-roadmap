@@ -3556,3 +3556,25 @@ Day 70 closes the System Design & LLD phase with a timed review and a consolidat
 - Added a system-design portfolio pack linking the major HLD artifacts and providing a consistent interview review checklist.
 
 Day 70 completes the System Design & LLD phase and transitions the roadmap to structured interview preparation on Day 71.
+
+---
+
+## Day 71 — Interview Preparation
+
+Day 71 starts structured interview preparation across DSA, Python, SQL, backend
+fundamentals, and system design.
+
+- **DSA:** Review arrays, strings, and hash maps; practice four easy/medium
+  problems using existing solutions such as `dsa/arrays/two_sum.py`,
+  `dsa/arrays/contains_duplicate.py`, `dsa/arrays/valid_anagram.py`, and
+  `dsa/hashing/group_anagrams.py`.
+- **Python:** Added `python/interview_fundamentals.py` with runnable examples
+  for common language concepts.
+- **SQL:** Added `sql/interview_set_1.sql` for filtering, joins, grouping,
+  HAVING, and subquery practice.
+- **Backend:** Added `backend/http_rest_interview.md` for HTTP and REST
+  interview review.
+- **System Design:** Added `system-design/interview_framework.md` to structure
+  requirements, estimation, API design, bottleneck analysis, and trade-offs.
+- **Project:** Added `projects/task-manager/resume_bullets.md` with
+  evidence-based resume bullet drafts for the Task Manager.

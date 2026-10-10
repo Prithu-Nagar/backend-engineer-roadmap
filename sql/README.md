@@ -1476,3 +1476,16 @@ File:
 
 The SQL is PostgreSQL-oriented and deliberately keeps fan-out policy and cache
 behavior outside the relational schema.
+
+---
+
+## Day 71 — SQL Interview Set 1
+
+Day 71 practices common SQL interview patterns: filtering and ordering, LEFT
+JOINs, aggregation with HAVING, correlated subqueries, and counting related
+records while preserving empty categories.
+
+File: `interview_set_1.sql`.
+
+The exercises use illustrative table names and PostgreSQL-compatible syntax;
+adapt names and schema details to the interview prompt.

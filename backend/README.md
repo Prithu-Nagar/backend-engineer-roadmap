@@ -1538,3 +1538,13 @@ File:
 
 The example is framework-neutral and keeps the cache as an optimization rather
 than the source of truth.
+
+---
+
+## Day 71 — HTTP and REST Interview Questions
+
+Day 71 reviews HTTP request flow, method semantics, status codes, REST
+constraints, error contracts, authentication versus authorization, API
+compatibility, and idempotent writes.
+
+Review artifact: `http_rest_interview.md`.
