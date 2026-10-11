@@ -1548,3 +1548,17 @@ constraints, error contracts, authentication versus authorization, API
 compatibility, and idempotent writes.
 
 Review artifact: `http_rest_interview.md`.
+
+---
+
+## Day 72 — Flask, Django, and FastAPI Interview Review
+
+Day 72 compares the request lifecycle, routing, dependency patterns, validation,
+testing, and deployment considerations across common Python web frameworks.
+
+Review artifact: `framework_interview.md`.
+
+Be prepared to explain why a framework fits a specific workload, how request
+validation and error handling are implemented, and how tests isolate database
+and external-service dependencies. Avoid claiming one framework is universally
+faster or better without defining the workload and measurement method.

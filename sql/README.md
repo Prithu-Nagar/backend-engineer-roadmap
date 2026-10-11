@@ -1489,3 +1489,17 @@ File: `interview_set_1.sql`.
 
 The exercises use illustrative table names and PostgreSQL-compatible syntax;
 adapt names and schema details to the interview prompt.
+
+---
+
+## Day 72 — SQL Interview Set 2: Joins and Grouping
+
+Day 72 focuses on joining related tables and aggregating the result correctly.
+
+File: `interview_set_2.sql`.
+
+The practice set covers INNER and LEFT JOINs, join conditions, counting related
+rows without losing empty parent groups, `GROUP BY`, `HAVING`, conditional
+aggregation, and duplicate-row pitfalls. The queries use illustrative table
+names and PostgreSQL-compatible syntax; adapt them to the schema in an
+interview prompt.

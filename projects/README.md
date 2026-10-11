@@ -1043,3 +1043,15 @@ Added:
 - `system-design/day-70-review.md`
 
 The pack links the URL Shortener, Rate Limiter, Notification System, Chat Application, and News Feed HLD artifacts, and includes a repeatable review framework for requirements, capacity, bottlenecks, trade-offs, CAP, reliability, and observability.
+
+---
+
+## Day 72 — URL Shortener Resume Bullets
+
+Day 72 turns the URL Shortener project into evidence-based resume material.
+
+Added: `url-shortener/resume_bullets.md`.
+
+The draft describes the project using verifiable implementation details and
+clearly marks where measured metrics may be inserted. Only retain bullets that
+match code and design artifacts you can explain in an interview.

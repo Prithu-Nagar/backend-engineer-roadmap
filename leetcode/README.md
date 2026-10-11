@@ -821,3 +821,18 @@ Review set:
 Both implementations already exist under `dsa/` and are reused rather than
 creating duplicate solution files. Focus on recognizing the pattern, stating
 the invariant, and explaining complexity before reviewing the code.
+
+---
+
+## Day 72 — Linked Lists, Stacks, and Queues
+
+Day 72 reviews four easy/medium problems across linked lists, stacks, and
+queues. Reuse the repository implementations rather than creating duplicates.
+
+1. **Reverse Linked List** — iterative pointer reversal
+2. **Linked List Cycle** — fast/slow pointer detection
+3. **Valid Parentheses** — stack matching
+4. **Implement Queue using Stacks** — amortized queue operations
+
+Interview practice: explain the invariant and complexity first, then trace an
+empty input, a one-element input, and a representative normal case.

@@ -544,3 +544,13 @@ The design document captures:
 
 The document complements `hld_design.md`; it does not replace the existing
 Django/DRF or FastAPI implementations.
+
+---
+
+## Day 72 — Resume Bullet Drafts
+
+Day 72 adds `resume_bullets.md` with evidence-based resume bullet options for
+the URL Shortener. The bullets are intended to be checked against the actual
+implementation and design artifacts before being used in a job application.
+Do not claim deployment scale, latency improvements, or production traffic
+without measurements that can be demonstrated.

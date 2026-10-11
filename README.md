@@ -3578,3 +3578,29 @@ fundamentals, and system design.
   requirements, estimation, API design, bottleneck analysis, and trade-offs.
 - **Project:** Added `projects/task-manager/resume_bullets.md` with
   evidence-based resume bullet drafts for the Task Manager.
+
+---
+
+## Day 72 — Interview Preparation
+
+Day 72 continues structured interview preparation with linked lists, stacks,
+queues, object-oriented Python, SQL joins and grouping, backend frameworks, and
+an end-to-end URL Shortener mock interview.
+
+- **DSA:** Practiced four easy/medium problems by reusing existing solutions:
+  `dsa/linked_list/reverse_linked_list.py`,
+  `dsa/linked_list/linked_list_cycle.py`, `dsa/stack/valid_parentheses.py`,
+  and `dsa/queue/implement_queue_using_stacks.py`.
+- **Python:** Added `python/oop_interview_questions.md` for OOP concepts,
+  principles, and practical design trade-offs.
+- **SQL:** Added `sql/interview_set_2.sql` for join and grouping interview
+  queries, including unmatched rows and aggregation filters.
+- **Backend:** Added `backend/framework_interview.md` for Flask, Django/DRF,
+  and FastAPI interview questions.
+- **System Design:** Added `system-design/url-shortener-mock-interview.md` for a
+  timed URL Shortener design walkthrough and follow-up questions.
+- **Project:** Added `projects/url-shortener/resume_bullets.md` with
+  implementation-verifiable resume bullet drafts.
+
+The DSA review reuses existing implementations; no duplicate solution files
+were added.
