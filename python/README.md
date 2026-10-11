@@ -1586,3 +1586,17 @@ Topics include:
 - Explicit exception behavior and type annotations
 
 File: `interview_fundamentals.py`.
+
+---
+
+## Day 72 — OOP Interview Questions
+
+Day 72 reviews object-oriented Python through interview-style questions on
+encapsulation, abstraction, inheritance, polymorphism, composition, and SOLID.
+
+Review artifact: `oop_interview_questions.md`.
+
+Focus on explaining the trade-offs with small backend examples rather than
+reciting definitions. Be ready to justify composition over inheritance when
+behavior can vary independently, and to explain how dependency injection makes
+services easier to test.

@@ -4,7 +4,7 @@ JWT Authentication
 """
 
 import os
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 
 import jwt
 
@@ -14,7 +14,7 @@ ACCESS_TOKEN_EXPIRES_MINUTES = 30
 
 
 def create_access_token(user_id):
-    now = datetime.now(timezone.utc)
+    now = datetime.now(UTC)
 
     payload = {
         "sub": str(user_id),

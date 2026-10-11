@@ -1156,3 +1156,24 @@ Problems reused for the Day 69 mixed set:
 
 Both implementations already exist in the repository. No duplicate DSA solution
 files are added for Day 69.
+
+---
+
+## Day 72 — Linked Lists, Stacks, and Queues Review
+
+Day 72 reviews pointer manipulation and linear data structures through four
+existing easy/medium solutions. No duplicate solution files are added.
+
+Review set:
+
+- **Reverse Linked List** — iterative pointer reversal
+  (`linked_list/reverse_linked_list.py`)
+- **Linked List Cycle** — fast and slow pointers
+  (`linked_list/linked_list_cycle.py`)
+- **Valid Parentheses** — stack-based matching
+  (`stack/valid_parentheses.py`)
+- **Implement Queue using Stacks** — amortized queue operations
+  (`queue/implement_queue_using_stacks.py`)
+
+For each problem, state the invariant, walk through an edge case, and explain
+time and auxiliary-space complexity before looking at the implementation.

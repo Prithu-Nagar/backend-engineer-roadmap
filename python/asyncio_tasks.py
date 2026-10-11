@@ -56,7 +56,7 @@ async def run_with_timeout() -> None:
 
         print(result)
 
-    except asyncio.TimeoutError:
+    except TimeoutError:
         print("Task timed out")
 
 

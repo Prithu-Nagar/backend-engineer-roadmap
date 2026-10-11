@@ -1616,3 +1616,13 @@ capacity, define APIs and data models, sketch the high-level architecture,
 analyze bottlenecks and failures, and defend trade-offs.
 
 Review artifact: `interview_framework.md`.
+
+---
+
+## Day 72 — URL Shortener Mock Interview
+
+Day 72 applies the interview framework to a URL Shortener in a timed mock
+interview. Practice requirements, API contracts, storage, redirect latency,
+cache behavior, abuse prevention, analytics, and failure handling.
+
+Review artifact: `url-shortener-mock-interview.md`.
