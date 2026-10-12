@@ -3604,3 +3604,30 @@ an end-to-end URL Shortener mock interview.
 
 The DSA review reuses existing implementations; no duplicate solution files
 were added.
+
+---
+
+## Day 73 — Interview Preparation
+
+Day 73 continues interview preparation with tree/BST problem solving, advanced
+Python language features, SQL window functions and CTEs, authentication/JWT,
+and a Rate Limiter mock interview.
+
+- **DSA:** Practiced four medium problems by reusing existing implementations:
+  `dsa/binary_tree/binary_tree_level_order_traversal.py`,
+  `dsa/binary_tree/diameter_of_binary_tree.py`,
+  `dsa/binary_search_tree/kth_smallest_element.py`, and
+  `dsa/binary_search_tree/validate_binary_search_tree.py`.
+- **Python:** Added `python/advanced_python_interview.md` for decorators,
+  generators/iterators, and context managers.
+- **SQL:** Added `sql/interview_set_3.sql` for ranking, running totals, CTEs,
+  and filtering results using window-function patterns.
+- **Backend:** Added `backend/authentication_jwt_interview.md` for token
+  validation, lifecycle, authorization, and framework-specific questions.
+- **System Design:** Added `system-design/rate-limiter-mock-interview.md` for
+  algorithm selection, distributed enforcement, failure modes, and observability.
+- **Project:** Added `projects/technical_skills_mapping.md` to map resume skills
+  to verifiable repository evidence.
+
+The DSA review reuses existing implementations; no duplicate solution files
+were added.
