@@ -1562,3 +1562,11 @@ Be prepared to explain why a framework fits a specific workload, how request
 validation and error handling are implemented, and how tests isolate database
 and external-service dependencies. Avoid claiming one framework is universally
 faster or better without defining the workload and measurement method.
+
+---
+
+## Day 74 — Testing, Logging, and Security Interview Review
+
+File: `testing_logging_security_interview.md`
+
+The review covers unit/integration/end-to-end testing, deterministic tests, structured logging, logs vs metrics vs traces, secure secret handling, authorization, CI quality gates, and incident triage.

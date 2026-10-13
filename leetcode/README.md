@@ -836,3 +836,16 @@ queues. Reuse the repository implementations rather than creating duplicates.
 
 Interview practice: explain the invariant and complexity first, then trace an
 empty input, a one-element input, and a representative normal case.
+
+---
+
+## Day 74 — Heap and Graph Review
+
+Day 74 practices four medium problems by reusing existing solutions:
+
+- Kth Largest Element in an Array — `dsa/heap/kth_largest_element.py`
+- Top K Frequent Elements — `dsa/heap/top_k_frequent_elements.py`
+- Network Delay Time — `dsa/graphs/network_delay_time.py`
+- Course Schedule II — `dsa/graphs/course_schedule_ii.py`
+
+The emphasis is on recognizing heap vs graph patterns, explaining invariants, and discussing complexity. No duplicate solution files were added.

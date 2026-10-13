@@ -52,3 +52,22 @@ Set a 45-minute timer and select one system from the index:
 - 5 minutes: summarize trade-offs and metrics without looking at notes.
 
 Record the weakest section and revisit the corresponding design artifact. Keep estimates explicit and approximate; explain assumptions rather than presenting guesses as facts.
+
+---
+
+## Day 74 — Portfolio README Review
+
+Use this checklist to review the portfolio before sharing it with a recruiter or interviewer.
+
+- [ ] Every linked design document exists and opens correctly.
+- [ ] Each project states its problem, requirements, architecture, and key trade-offs.
+- [ ] Capacity estimates label assumptions and units.
+- [ ] Read/write paths, data ownership, and consistency expectations are clear.
+- [ ] Failure modes include timeouts, retries, overload, and dependency outages.
+- [ ] Observability includes actionable metrics, logs, and traces.
+- [ ] Security notes cover authentication, authorization, secrets, and sensitive data.
+- [ ] Claims match the artifacts and implementations actually present in the repository.
+- [ ] The README is concise, navigable, and free of unsupported performance or scale claims.
+- [ ] Links and Markdown formatting have been checked before publishing.
+
+During an interview, explain the decision and its alternatives rather than reciting a technology list.

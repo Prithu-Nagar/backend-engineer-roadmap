@@ -3631,3 +3631,18 @@ and a Rate Limiter mock interview.
 
 The DSA review reuses existing implementations; no duplicate solution files
 were added.
+
+---
+
+## Day 74 — Interview Preparation
+
+Day 74 continues interview preparation with heap/graph problem solving, Python concurrency, SQL indexing and optimization, backend testing/logging/security, caching and Redis design, and portfolio review.
+
+- **DSA:** Reused four medium solutions: Kth Largest Element, Top K Frequent Elements, Network Delay Time, and Course Schedule II.
+- **Python:** Added `python/asyncio_concurrency_interview.md` for AsyncIO and concurrency interview questions.
+- **SQL:** Added `sql/interview_set_4.sql` for index design and query optimization practice.
+- **Backend:** Added `backend/testing_logging_security_interview.md` for testing, observability, and security interview review.
+- **System Design:** Added `system-design/caching-redis-mock-interview.md` for a caching/Redis mock interview.
+- **Project:** Updated `projects/system-design-portfolio/README.md` with a portfolio-readiness checklist.
+
+The DSA review reuses existing implementations; no duplicate solution files were added.

@@ -1626,3 +1626,11 @@ interview. Practice requirements, API contracts, storage, redirect latency,
 cache behavior, abuse prevention, analytics, and failure handling.
 
 Review artifact: `url-shortener-mock-interview.md`.
+
+---
+
+## Day 74 — Caching and Redis Mock Interview
+
+File: `caching-redis-mock-interview.md`
+
+The mock interview covers cache-aside and related patterns, key design, TTL and invalidation, stampede protection, Redis failures, database fallback, observability, and cache security.

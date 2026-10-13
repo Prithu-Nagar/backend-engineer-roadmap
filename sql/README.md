@@ -1503,3 +1503,11 @@ rows without losing empty parent groups, `GROUP BY`, `HAVING`, conditional
 aggregation, and duplicate-row pitfalls. The queries use illustrative table
 names and PostgreSQL-compatible syntax; adapt them to the schema in an
 interview prompt.
+
+---
+
+## Day 74 — Indexes and Query Optimization Interview Review
+
+`interview_set_4.sql` provides PostgreSQL-oriented practice for composite and partial indexes, range predicates, query plans, aggregation, and index trade-offs.
+
+Review execution plans and workload characteristics before recommending an index. `EXPLAIN ANALYZE` executes the statement, so use it carefully with statements that mutate data.

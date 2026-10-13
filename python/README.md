@@ -1600,3 +1600,20 @@ Focus on explaining the trade-offs with small backend examples rather than
 reciting definitions. Be ready to justify composition over inheritance when
 behavior can vary independently, and to explain how dependency injection makes
 services easier to test.
+
+---
+
+## Day 74 — AsyncIO and Concurrency Interview Review
+
+Day 74 consolidates asynchronous programming and concurrency concepts for technical interviews.
+
+Topics include:
+
+- Coroutine, Task, and Future
+- Event-loop blocking and async-compatible I/O
+- `asyncio.gather()` and `TaskGroup`
+- AsyncIO vs threading vs multiprocessing
+- Bounded concurrency, cancellation, and timeouts
+- Retry budgets and asynchronous testing
+
+File: `asyncio_concurrency_interview.md`

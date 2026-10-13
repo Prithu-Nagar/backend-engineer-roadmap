@@ -233,3 +233,16 @@ The set reinforces:
 - DFS traversal
 - Edge-count reasoning for trees
 - Complexity analysis for sparse undirected graphs
+
+---
+
+## Day 74 — Graph Interview Review
+
+Day 74 revisits graph problems using existing implementations.
+
+Review:
+
+- `network_delay_time.py` — Dijkstra's algorithm for non-negative edge weights
+- `course_schedule_ii.py` — topological ordering and cycle detection
+
+Be prepared to justify the algorithm, identify edge cases, and state complexity in terms of vertices and edges.

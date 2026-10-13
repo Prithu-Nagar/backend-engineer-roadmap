@@ -153,3 +153,17 @@ Focus:
 File:
 
 - `find_median_from_data_stream.py`
+
+---
+
+## Day 74 — Heap Interview Review
+
+Day 74 revisits heap-based interview reasoning using existing implementations.
+
+Review:
+
+- `kth_largest_element.py` — bounded heap selection
+- `top_k_frequent_elements.py` — frequency counting and top-K selection
+- `find_median_from_data_stream.py` — two-heap balancing
+
+Focus on explaining invariants, alternatives, and time/space complexity under interview time constraints.
