@@ -1511,3 +1511,9 @@ interview prompt.
 `interview_set_4.sql` provides PostgreSQL-oriented practice for composite and partial indexes, range predicates, query plans, aggregation, and index trade-offs.
 
 Review execution plans and workload characteristics before recommending an index. `EXPLAIN ANALYZE` executes the statement, so use it carefully with statements that mutate data.
+
+---
+
+## Day 75 — Transactions and Isolation Interview Review
+
+Added `transactions_isolation_interview.md` covering ACID, isolation levels, concurrency anomalies, locking, deadlocks, and transaction-focused interview scenarios.

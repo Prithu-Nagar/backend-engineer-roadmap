@@ -1570,3 +1570,9 @@ faster or better without defining the workload and measurement method.
 File: `testing_logging_security_interview.md`
 
 The review covers unit/integration/end-to-end testing, deterministic tests, structured logging, logs vs metrics vs traces, secure secret handling, authorization, CI quality gates, and incident triage.
+
+---
+
+## Day 75 — Docker and Deployment Interview Review
+
+Added `docker_deployment_interview.md` covering image/container fundamentals, configuration and secrets, health checks, migrations, deployment strategies, and production troubleshooting.

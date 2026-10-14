@@ -3646,3 +3646,18 @@ Day 74 continues interview preparation with heap/graph problem solving, Python c
 - **Project:** Updated `projects/system-design-portfolio/README.md` with a portfolio-readiness checklist.
 
 The DSA review reuses existing implementations; no duplicate solution files were added.
+
+---
+
+## Day 75 — Interview Preparation
+
+Day 75 continues structured interview preparation with dynamic-programming patterns, Python memory and performance, SQL transactions and isolation, Docker and deployment, database-scaling design, and a production-readiness review.
+
+- **DSA:** Practiced four medium DP problems by reusing existing solutions: Coin Change, Longest Increasing Subsequence, Word Break, and Target Sum.
+- **Python:** Added `python/memory_performance_interview.md` for memory management, profiling, and performance interview questions.
+- **SQL:** Added `sql/transactions_isolation_interview.md` for ACID, isolation levels, concurrency anomalies, locking, and deadlocks.
+- **Backend:** Added `backend/docker_deployment_interview.md` for containerization, configuration, health checks, migrations, and deployment troubleshooting.
+- **System Design:** Added `system-design/database-scaling-mock-interview.md` for database bottleneck analysis and scaling trade-offs.
+- **Project:** Added `projects/production_readiness_checklist.md` to review application behavior, data integrity, security, deployment, observability, and portfolio evidence.
+
+The DSA review reuses existing implementations; no duplicate solution files were added.

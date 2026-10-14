@@ -1617,3 +1617,9 @@ Topics include:
 - Retry budgets and asynchronous testing
 
 File: `asyncio_concurrency_interview.md`
+
+---
+
+## Day 75 — Memory and Performance Interview Review
+
+Added `memory_performance_interview.md` covering Python memory management, profiling, performance bottlenecks, streaming, and backend troubleshooting scenarios.

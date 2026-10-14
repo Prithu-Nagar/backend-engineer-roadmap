@@ -1063,3 +1063,9 @@ match code and design artifacts you can explain in an interview.
 Day 74 reviews the system-design portfolio README for clarity, navigation, and evidence-backed claims.
 
 The review checklist is maintained in `projects/system-design-portfolio/README.md`. Confirm that linked artifacts exist, design trade-offs are explicit, and claims about implementation or scale are supported by repository evidence.
+
+---
+
+## Day 75 — Production Readiness Review
+
+Added `production_readiness_checklist.md` to review API behavior, data integrity, testing, security, deployment, observability, and portfolio evidence before presenting a backend project.

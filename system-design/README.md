@@ -1634,3 +1634,9 @@ Review artifact: `url-shortener-mock-interview.md`.
 File: `caching-redis-mock-interview.md`
 
 The mock interview covers cache-aside and related patterns, key design, TTL and invalidation, stampede protection, Redis failures, database fallback, observability, and cache security.
+
+---
+
+## Day 75 — Database Scaling Mock Interview
+
+Added `database-scaling-mock-interview.md` for a structured database-scaling interview covering baseline measurement, query optimization, connection pools, caching, replicas, partitioning, sharding, and failure handling.
