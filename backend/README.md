@@ -1576,3 +1576,9 @@ The review covers unit/integration/end-to-end testing, deterministic tests, stru
 ## Day 75 — Docker and Deployment Interview Review
 
 Added `docker_deployment_interview.md` covering image/container fundamentals, configuration and secrets, health checks, migrations, deployment strategies, and production troubleshooting.
+
+---
+
+## Day 76 — API Design Interview Review
+
+Added `api_design_interview.md` covering REST resource contracts, HTTP method semantics, validation, consistent errors, pagination, idempotency, compatibility, authorization, and observability.

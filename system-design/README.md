@@ -1640,3 +1640,9 @@ The mock interview covers cache-aside and related patterns, key design, TTL and 
 ## Day 75 — Database Scaling Mock Interview
 
 Added `database-scaling-mock-interview.md` for a structured database-scaling interview covering baseline measurement, query optimization, connection pools, caching, replicas, partitioning, sharding, and failure handling.
+
+---
+
+## Day 76 — Kafka and Event-Driven Mock Interview
+
+Added `kafka-event-driven-mock-interview.md` for event-flow design, the transactional outbox, partition keys, schema evolution, idempotent consumers, delivery guarantees, failure modes, and operational metrics.

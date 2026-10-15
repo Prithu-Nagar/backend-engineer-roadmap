@@ -1177,3 +1177,16 @@ Review set:
 
 For each problem, state the invariant, walk through an edge case, and explain
 time and auxiliary-space complexity before looking at the implementation.
+
+---
+
+## Day 76 — Sliding Window and Two-Pointer Interview Review
+
+Day 76 revisits four medium problems using existing implementations; no duplicate solution files are added.
+
+- **Longest Substring Without Repeating Characters** — variable sliding window
+- **Minimum Size Subarray Sum** — shrinkable window for positive values
+- **Container With Most Water** — two pointers with a greedy movement argument
+- **3Sum** — sorting, duplicate skipping, and inward-moving pointers
+
+For each problem, state the invariant, explain why moving a boundary is safe, test edge cases, and give time and auxiliary-space complexity.

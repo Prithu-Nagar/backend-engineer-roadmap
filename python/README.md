@@ -1623,3 +1623,9 @@ File: `asyncio_concurrency_interview.md`
 ## Day 75 — Memory and Performance Interview Review
 
 Added `memory_performance_interview.md` covering Python memory management, profiling, performance bottlenecks, streaming, and backend troubleshooting scenarios.
+
+---
+
+## Day 76 — Coding Style and Debugging Interview Review
+
+Added `coding_style_debugging_interview.md` covering maintainability, type hints, exception handling, code review, systematic production debugging, and profiling-versus-debugging questions.

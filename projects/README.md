@@ -1069,3 +1069,9 @@ The review checklist is maintained in `projects/system-design-portfolio/README.m
 ## Day 75 — Production Readiness Review
 
 Added `production_readiness_checklist.md` to review API behavior, data integrity, testing, security, deployment, observability, and portfolio evidence before presenting a backend project.
+
+---
+
+## Day 76 — Incident and Debugging Walkthrough
+
+Added `incident_debugging_walkthrough.md` as an evidence-based interview template for incident triage, hypothesis testing, mitigation, recovery verification, root-cause analysis, and prevention. Replace illustrative details with a real incident before using it in interviews.

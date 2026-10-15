@@ -1517,3 +1517,8 @@ Review execution plans and workload characteristics before recommending an index
 ## Day 75 — Transactions and Isolation Interview Review
 
 Added `transactions_isolation_interview.md` covering ACID, isolation levels, concurrency anomalies, locking, deadlocks, and transaction-focused interview scenarios.
+---
+
+## Day 76 — Timed SQL Interview Set
+
+Added `interview_set_5.sql` with eight PostgreSQL-oriented timed exercises covering aggregation, anti-joins, window functions, latest-row selection, date grouping, `HAVING`, data-quality checks, and index-design discussion. Confirm table and column names against the target schema before execution.

@@ -3661,3 +3661,18 @@ Day 75 continues structured interview preparation with dynamic-programming patte
 - **Project:** Added `projects/production_readiness_checklist.md` to review application behavior, data integrity, security, deployment, observability, and portfolio evidence.
 
 The DSA review reuses existing implementations; no duplicate solution files were added.
+
+---
+
+## Day 76 — Interview Preparation
+
+Day 76 continues interview preparation with sliding-window/two-pointer problem solving, Python coding style and debugging, timed SQL practice, API design, Kafka/event-driven architecture, and an incident/debugging walkthrough.
+
+- **DSA:** Reused existing solutions for Longest Substring Without Repeating Characters, Minimum Size Subarray Sum, Container With Most Water, and 3Sum; no duplicate solution files were added.
+- **Python:** Added `python/coding_style_debugging_interview.md` for maintainable code, exception handling, code review, and systematic debugging.
+- **SQL:** Added `sql/interview_set_5.sql` for eight timed PostgreSQL-oriented query and index-design exercises.
+- **Backend:** Added `backend/api_design_interview.md` for REST contracts, validation, pagination, idempotency, compatibility, and observability.
+- **System Design:** Added `system-design/kafka-event-driven-mock-interview.md` for event-driven design, Kafka delivery semantics, idempotency, and failure handling.
+- **Project:** Added `projects/incident_debugging_walkthrough.md` as an incident investigation and prevention interview template.
+
+The DSA review reuses existing implementations; no duplicate solution files were added.
