@@ -163,3 +163,17 @@ Focus:
 File:
 
 - `search_in_rotated_sorted_array.py`
+
+---
+
+## Day 77 — Timed Interview Review
+
+Revisit binary search as a boundary-finding technique and explain the invariant before coding.
+
+Review prompts:
+- Which half can be eliminated after comparing the midpoint with the target or a neighbor?
+- When should the loop use `left < right` versus `left <= right`?
+- How do you avoid off-by-one errors when returning the first or last valid position?
+- What changes when searching a monotonic answer space?
+
+Use existing implementations for timed practice; do not add duplicate solutions solely for this review.

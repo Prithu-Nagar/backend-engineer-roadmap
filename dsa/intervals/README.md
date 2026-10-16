@@ -140,3 +140,18 @@ A reliable workflow is:
 
 The interval implementations already in this directory provide reusable patterns
 for merging, insertion, intersection, and conflict detection.
+
+---
+
+## Day 77 — Timed Interview Review
+
+Practice interval problems by stating endpoint semantics before choosing the algorithm.
+
+Review prompts:
+- Are intervals closed, open, or half-open?
+- Do touching endpoints count as overlap?
+- Can sorting reduce the task to a single scan?
+- What invariant does the current merged interval maintain?
+- What are the time and output-space costs?
+
+Use the existing merge, insertion, intersection, and conflict-detection solutions for timed practice; no duplicate solution files are needed.

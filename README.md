@@ -3676,3 +3676,18 @@ Day 76 continues interview preparation with sliding-window/two-pointer problem s
 - **Project:** Added `projects/incident_debugging_walkthrough.md` as an incident investigation and prevention interview template.
 
 The DSA review reuses existing implementations; no duplicate solution files were added.
+
+---
+
+## Day 77 — Interview Preparation
+
+Day 77 focuses on binary-search and interval reasoning, Python concurrency coding, timed schema design, distributed-systems fundamentals, a chat-system design mock interview, and a clear architecture walkthrough for the portfolio.
+
+- **DSA:** Reused existing binary-search and interval solutions for four medium problems; no duplicate LeetCode solution files were added.
+- **Python:** Added `python/concurrency_coding_interview.md` with bounded async I/O, thread safety, CPU-bound work, event-loop blocking, and producer–consumer exercises.
+- **SQL:** Added `sql/schema_design_timed_exercise.sql` with a PostgreSQL chat schema, constraints, indexes, idempotency, and keyset-pagination prompts.
+- **Backend:** Added `backend/distributed_systems_interview.md` covering consistency, delivery semantics, retries, idempotency, outbox patterns, ordering, sagas, and troubleshooting.
+- **System Design:** Added `system-design/chat-system-mock-interview.md` with requirements, APIs, architecture, message flow, scaling, reliability, and trade-offs.
+- **Project:** Added `projects/architecture_explanation_practice.md` to rehearse the project's problem, architecture, data/API design, failure handling, trade-offs, and evidence.
+
+The DSA review reuses existing implementations; no duplicate solution files were added.
