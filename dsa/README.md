@@ -1190,3 +1190,18 @@ Day 76 revisits four medium problems using existing implementations; no duplicat
 - **3Sum** — sorting, duplicate skipping, and inward-moving pointers
 
 For each problem, state the invariant, explain why moving a boundary is safe, test edge cases, and give time and auxiliary-space complexity.
+
+---
+
+## Day 78 — Backtracking and Greedy Interview Review
+
+Day 78 reuses existing solutions rather than adding duplicate implementations.
+
+- **Combination Sum II** — `recursion/combination_sum_ii.py`
+- **Palindrome Partitioning** — `recursion/palindrome_partitioning.py`
+- **Jump Game** — `greedy/jump_game.py`
+- **Gas Station** — `greedy/gas_station.py`
+
+For each problem, state the invariant or recursive state, justify pruning or
+the greedy choice, test boundary cases, and explain time and auxiliary-space
+complexity.

@@ -849,3 +849,22 @@ Day 74 practices four medium problems by reusing existing solutions:
 - Course Schedule II — `dsa/graphs/course_schedule_ii.py`
 
 The emphasis is on recognizing heap vs graph patterns, explaining invariants, and discussing complexity. No duplicate solution files were added.
+
+---
+
+## Day 78 — Backtracking and Greedy
+
+Day 78 practices four medium problems by reusing the repository's existing
+solutions; no duplicate solution files were added.
+
+1. **Combination Sum II** — backtracking with duplicate avoidance
+   (`dsa/recursion/combination_sum_ii.py`)
+2. **Palindrome Partitioning** — recursive partitioning and pruning
+   (`dsa/recursion/palindrome_partitioning.py`)
+3. **Jump Game** — greedy farthest-reachable invariant
+   (`dsa/greedy/jump_game.py`)
+4. **Gas Station** — greedy feasibility and candidate-start reset
+   (`dsa/greedy/gas_station.py`)
+
+Practice explaining the invariant, complexity, edge cases, and why the chosen
+pattern is appropriate before reviewing the implementation.

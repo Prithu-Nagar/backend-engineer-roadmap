@@ -1522,3 +1522,12 @@ Added `transactions_isolation_interview.md` covering ACID, isolation levels, con
 ## Day 76 — Timed SQL Interview Set
 
 Added `interview_set_5.sql` with eight PostgreSQL-oriented timed exercises covering aggregation, anti-joins, window functions, latest-row selection, date grouping, `HAVING`, data-quality checks, and index-design discussion. Confirm table and column names against the target schema before execution.
+
+---
+
+## Day 78 — Mixed SQL Interview Set
+
+Added `interview_set_6.sql` with PostgreSQL practice for outer joins, aggregates,
+CTEs, window functions, anti-joins, date grouping, index trade-offs, and
+concurrent state changes. Confirm table and column names against the target
+schema before execution.

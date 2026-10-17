@@ -1629,3 +1629,12 @@ Added `memory_performance_interview.md` covering Python memory management, profi
 ## Day 76 — Coding Style and Debugging Interview Review
 
 Added `coding_style_debugging_interview.md` covering maintainability, type hints, exception handling, code review, systematic production debugging, and profiling-versus-debugging questions.
+
+---
+
+## Day 78 — Practical Backend Coding Exercise
+
+Added `practical_backend_coding_exercise.py`, a framework-independent task
+service with input validation, a repository protocol, bounded pagination,
+status transitions, explicit exceptions, and smoke checks. The in-memory
+repository is for interview practice, not durable production storage.

@@ -58,3 +58,23 @@ Problems:
 
 The implementations are stored in `dsa/heap/` because the heap is the primary
 supporting data structure for both solutions.
+
+---
+
+## Day 78 — Backtracking and Greedy Interview Review
+
+Day 78 revisits backtracking and greedy reasoning through existing implementations.
+No duplicate LeetCode solution files are added.
+
+Review set:
+
+- **Combination Sum II** — backtracking, duplicate avoidance, and pruning
+  (`../recursion/combination_sum_ii.py`)
+- **Palindrome Partitioning** — recursive partitioning with constraint checks
+  (`../recursion/palindrome_partitioning.py`)
+- **Jump Game** — farthest-reachable invariant (`jump_game.py`)
+- **Gas Station** — greedy feasibility and reset reasoning (`gas_station.py`)
+
+For each problem, explain the state or invariant, identify pruning or greedy
+choice justification, trace an edge case, and state time and auxiliary-space
+complexity.

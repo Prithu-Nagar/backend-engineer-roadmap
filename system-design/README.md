@@ -1646,3 +1646,11 @@ Added `database-scaling-mock-interview.md` for a structured database-scaling int
 ## Day 76 — Kafka and Event-Driven Mock Interview
 
 Added `kafka-event-driven-mock-interview.md` for event-flow design, the transactional outbox, partition keys, schema evolution, idempotent consumers, delivery guarantees, failure modes, and operational metrics.
+
+---
+
+## Day 78 — News Feed Mock Interview
+
+Added `news-feed-mock-interview.md` for a timed design exercise covering
+requirements, APIs, data modeling, fan-out strategies, cursor pagination,
+caching, consistency, reliability, observability, and capacity estimates.

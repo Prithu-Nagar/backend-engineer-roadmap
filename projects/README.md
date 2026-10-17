@@ -1075,3 +1075,11 @@ Added `production_readiness_checklist.md` to review API behavior, data integrity
 ## Day 76 — Incident and Debugging Walkthrough
 
 Added `incident_debugging_walkthrough.md` as an evidence-based interview template for incident triage, hypothesis testing, mitigation, recovery verification, root-cause analysis, and prevention. Replace illustrative details with a real incident before using it in interviews.
+
+---
+
+## Day 78 — End-to-End Coding Exercise
+
+Added `task-manager/day_78_end_to_end_exercise.md` to practice an end-to-end
+REST API implementation across validation, service/repository boundaries,
+database constraints, HTTP behavior, tests, and failure paths.

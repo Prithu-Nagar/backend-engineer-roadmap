@@ -3691,3 +3691,18 @@ Day 77 focuses on binary-search and interval reasoning, Python concurrency codin
 - **Project:** Added `projects/architecture_explanation_practice.md` to rehearse the project's problem, architecture, data/API design, failure handling, trade-offs, and evidence.
 
 The DSA review reuses existing implementations; no duplicate solution files were added.
+
+---
+
+## Day 78 — Interview Preparation
+
+Day 78 combines backtracking and greedy problem solving with a practical Python service exercise, a mixed SQL interview set, a timed REST API build, a News Feed mock interview, and an end-to-end Task Manager coding exercise.
+
+- **DSA:** Reused Combination Sum II, Palindrome Partitioning, Jump Game, and Gas Station; no duplicate solution files were added.
+- **Python:** Added `python/practical_backend_coding_exercise.py` with validation, a repository protocol, bounded pagination, status updates, and smoke checks.
+- **SQL:** Added `sql/interview_set_6.sql` with mixed PostgreSQL interview queries and concurrency/index discussion prompts.
+- **Backend:** Added `backend/build_rest_api_timed_exercise.py` with Flask CRUD endpoints, validation, consistent errors, and bounded pagination.
+- **System Design:** Added `system-design/news-feed-mock-interview.md` for a timed News Feed architecture discussion.
+- **Project:** Added `projects/task-manager/day_78_end_to_end_exercise.md` with end-to-end requirements, API contract, implementation sequence, and test matrix.
+
+The API and service exercises use in-memory storage for interview practice; they do not replace the project's existing persistence or authorization layers.

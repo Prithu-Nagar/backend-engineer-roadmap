@@ -1582,3 +1582,12 @@ Added `docker_deployment_interview.md` covering image/container fundamentals, co
 ## Day 76 — API Design Interview Review
 
 Added `api_design_interview.md` covering REST resource contracts, HTTP method semantics, validation, consistent errors, pagination, idempotency, compatibility, authorization, and observability.
+
+---
+
+## Day 78 — Build-a-REST-API Timed Exercise
+
+Added `build_rest_api_timed_exercise.py`, a compact Flask CRUD API exercise with
+request validation, consistent JSON errors, bounded pagination, health checks,
+and explicit HTTP status codes. It uses in-memory storage and is not intended
+as a production persistence layer.

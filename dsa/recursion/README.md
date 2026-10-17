@@ -300,3 +300,18 @@ These problems reinforce:
 - Branch pruning
 - State restoration
 - Building results from a recursion path
+
+---
+
+## Day 78 — Backtracking Review
+
+Day 78 uses existing backtracking implementations as part of a mixed
+backtracking/greedy interview set.
+
+- `combination_sum_ii.py` — choose each candidate at most once and skip
+  duplicates at the same recursion depth.
+- `palindrome_partitioning.py` — extend a partition only when the next
+  substring is a palindrome.
+
+Explain the recursive state, the stopping condition, pruning, and why each
+branch restores or copies mutable state correctly.
