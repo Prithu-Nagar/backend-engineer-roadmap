@@ -1638,3 +1638,11 @@ Added `practical_backend_coding_exercise.py`, a framework-independent task
 service with input validation, a repository protocol, bounded pagination,
 status transitions, explicit exceptions, and smoke checks. The in-memory
 repository is for interview practice, not durable production storage.
+
+---
+
+## Day 79 — Mixed Timed Assessment
+
+File: `mixed_timed_assessment.py`
+
+The assessment combines generic chunking, selective retries for transient failures, and elapsed-time measurement. It emphasizes type hints, generator behavior, validation, and exception propagation. Run the file directly for smoke tests.

@@ -1591,3 +1591,11 @@ Added `build_rest_api_timed_exercise.py`, a compact Flask CRUD API exercise with
 request validation, consistent JSON errors, bounded pagination, health checks,
 and explicit HTTP status codes. It uses in-memory storage and is not intended
 as a production persistence layer.
+
+---
+
+## Day 79 — Backend Debugging Exercise
+
+File: `backend_debugging_exercise.py`
+
+A small task-store exercise for validating inputs, diagnosing missing records, maintaining identifiers, and testing status transitions. Run the module directly to execute its smoke tests.

@@ -1531,3 +1531,11 @@ Added `interview_set_6.sql` with PostgreSQL practice for outer joins, aggregates
 CTEs, window functions, anti-joins, date grouping, index trade-offs, and
 concurrent state changes. Confirm table and column names against the target
 schema before execution.
+
+---
+
+## Day 79 — Mixed Timed Assessment
+
+File: `mixed_timed_assessment.sql`
+
+A PostgreSQL practice set covering outer joins, aggregation, window functions, CTEs, `HAVING`, and query-plan/index evaluation. Review the schema assumptions and inspect actual query plans before applying index changes in a real database.

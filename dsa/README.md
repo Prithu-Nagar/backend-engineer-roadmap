@@ -1205,3 +1205,9 @@ Day 78 reuses existing solutions rather than adding duplicate implementations.
 For each problem, state the invariant or recursive state, justify pruning or
 the greedy choice, test boundary cases, and explain time and auxiliary-space
 complexity.
+
+---
+
+## Day 79 — Mixed Timed Assessment
+
+`mixed_timed_assessment.py` combines representative array, graph traversal, and interval problems for a short timed review. It includes smoke tests and complexity notes. The LeetCode practice set references existing solutions rather than duplicating them.

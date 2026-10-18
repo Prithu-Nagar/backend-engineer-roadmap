@@ -3706,3 +3706,13 @@ Day 78 combines backtracking and greedy problem solving with a practical Python 
 - **Project:** Added `projects/task-manager/day_78_end_to_end_exercise.md` with end-to-end requirements, API contract, implementation sequence, and test matrix.
 
 The API and service exercises use in-memory storage for interview practice; they do not replace the project's existing persistence or authorization layers.
+
+---
+
+## Day 79 — Interview Preparation (18 Oct 2026)
+
+- Mixed timed DSA, Python, and SQL assessments.
+- Five mixed LeetCode problems with time and complexity review.
+- Backend debugging exercise with validation and smoke tests.
+- Full system design mock interview for a news feed service.
+- Portfolio weak-area identification and repair checklist.

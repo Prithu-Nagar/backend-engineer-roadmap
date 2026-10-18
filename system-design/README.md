@@ -1654,3 +1654,11 @@ Added `kafka-event-driven-mock-interview.md` for event-flow design, the transact
 Added `news-feed-mock-interview.md` for a timed design exercise covering
 requirements, APIs, data modeling, fan-out strategies, cursor pagination,
 caching, consistency, reliability, observability, and capacity estimates.
+
+---
+
+## Day 79 — Full System Design Mock Interview
+
+File: `full_mock_interview.md`
+
+A timed news-feed design interview covering requirements, APIs, data modeling, fan-out strategies, pagination, reliability, scaling, security, trade-offs, and a self-review scorecard.

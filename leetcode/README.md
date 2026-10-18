@@ -868,3 +868,9 @@ solutions; no duplicate solution files were added.
 
 Practice explaining the invariant, complexity, edge cases, and why the chosen
 pattern is appropriate before reviewing the implementation.
+
+---
+
+## Day 79 — Five Mixed Problems
+
+The Day 79 timed set revisits five existing solutions across arrays, graphs, intervals, and dynamic programming. See `day79_mixed_problem_set.md` for the time log and review checklist.

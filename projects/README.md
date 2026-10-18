@@ -1083,3 +1083,11 @@ Added `incident_debugging_walkthrough.md` as an evidence-based interview templat
 Added `task-manager/day_78_end_to_end_exercise.md` to practice an end-to-end
 REST API implementation across validation, service/repository boundaries,
 database constraints, HTTP behavior, tests, and failure paths.
+
+---
+
+## Day 79 — Portfolio Weak-Area Repair
+
+File: `day79_portfolio_weak_area_repair.md`
+
+Use assessment evidence to select one weak area, implement a focused repair, validate it with tests or review, and update documentation only when it reflects the real project.
