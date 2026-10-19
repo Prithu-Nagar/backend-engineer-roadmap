@@ -874,3 +874,17 @@ pattern is appropriate before reviewing the implementation.
 ## Day 79 — Five Mixed Problems
 
 The Day 79 timed set revisits five existing solutions across arrays, graphs, intervals, and dynamic programming. See `day79_mixed_problem_set.md` for the time log and review checklist.
+
+---
+
+## Day 80 — Timed Targeted Assessment
+
+Day 80 uses a 75-minute set of five existing problems selected to diagnose weak patterns:
+
+1. Two Sum — hash map
+2. Search in Rotated Sorted Array — binary search
+3. Merge Intervals — sorting and intervals
+4. Number of Islands — graph traversal
+5. Coin Change — dynamic programming
+
+Use `day80_timed_assessment.md` to record timing, correctness, complexity, missed edge cases, and one corrective action per problem. Reuse existing implementations rather than adding duplicate solution files.

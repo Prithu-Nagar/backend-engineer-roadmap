@@ -3716,3 +3716,19 @@ The API and service exercises use in-memory storage for interview practice; they
 - Backend debugging exercise with validation and smoke tests.
 - Full system design mock interview for a news feed service.
 - Portfolio weak-area identification and repair checklist.
+
+---
+
+## Day 80 — Interview Preparation (19 Oct 2026)
+
+Day 80 focuses on evidence-based weak-area repair after the Day 79 assessments and finalization of the primary portfolio project.
+
+- **DSA:** Added `dsa/weak_area_repair.py` with focused hash-map, binary-search, and interval implementations plus smoke tests.
+- **Python:** Added `python/weak_area_repair.py` for generator-based batching, input validation, and bounded transient retries.
+- **SQL:** Added `sql/weak_area_repair.sql` with customer revenue, per-customer ranking, product aggregation, and query-plan review.
+- **LeetCode:** Added `leetcode/day80_timed_assessment.md` for a five-problem, 75-minute targeted assessment using existing solutions.
+- **Backend:** Added `backend/weak_area_repair.py` for service validation, status updates, predictable errors, and regression checks.
+- **System Design:** Added `system-design/weak-area-repair.md` to diagnose and repair one gap from the Day 79 mock interview.
+- **Project:** Added `projects/day80_finalize_primary_project.md` to verify documentation, tests, setup, demo readiness, and honest project claims.
+
+The repair exercises are intentionally focused. Choose the weakest area using assessment evidence, rerun the relevant checks, and document the remaining limitations.
