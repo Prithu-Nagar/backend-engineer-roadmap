@@ -3732,3 +3732,19 @@ Day 80 focuses on evidence-based weak-area repair after the Day 79 assessments a
 - **Project:** Added `projects/day80_finalize_primary_project.md` to verify documentation, tests, setup, demo readiness, and honest project claims.
 
 The repair exercises are intentionally focused. Choose the weakest area using assessment evidence, rerun the relevant checks, and document the remaining limitations.
+
+---
+
+## Day 81 — Final Integration (20 Oct 2026)
+
+Day 81 begins the final integration phase by connecting interview fundamentals with a coherent capstone architecture.
+
+- **DSA:** Added `dsa/full_interview_set.py` with hash-map, binary-search, interval-merging, and BFS shortest-path exercises plus smoke tests.
+- **Python:** Added `python/backend_python_review.py` for validated pagination, batching, and bounded transient retries.
+- **SQL:** Added `sql/full_interview_set.sql` with joins, aggregation, window functions, CTEs, and query-plan review prompts.
+- **LeetCode:** Added `leetcode/day81_full_interview_set.md` for five mixed problems across arrays, binary search, intervals, and graphs.
+- **Backend:** Added `backend/api_architecture_review.py` for endpoint validation and consistent success/error response envelopes.
+- **System Design:** Added `system-design/end_to_end_design_exercise.md` for an end-to-end task-management API design.
+- **Project:** Added `projects/day81_capstone_requirements_architecture.md` to define capstone requirements, contracts, architecture, risks, and acceptance criteria.
+
+The capstone document is a planning artifact. Replace its generic examples with the selected project's real requirements and distinguish implemented behavior from future plans.

@@ -1662,3 +1662,11 @@ caching, consistency, reliability, observability, and capacity estimates.
 File: `full_mock_interview.md`
 
 A timed news-feed design interview covering requirements, APIs, data modeling, fan-out strategies, pagination, reliability, scaling, security, trade-offs, and a self-review scorecard.
+
+---
+
+## Day 81 — End-to-End Design Exercise
+
+File: `end_to_end_design_exercise.md`
+
+Design a multi-user task-management API from requirements and contracts through data modeling, security, reliability, scaling, observability, and trade-offs.

@@ -1599,3 +1599,11 @@ as a production persistence layer.
 File: `backend_debugging_exercise.py`
 
 A small task-store exercise for validating inputs, diagnosing missing records, maintaining identifiers, and testing status transitions. Run the module directly to execute its smoke tests.
+
+---
+
+## Day 81 — API Architecture Review
+
+File: `api_architecture_review.py`
+
+Practices endpoint contract validation and consistent success/error response envelopes with request correlation IDs. The module is framework-independent interview practice; the HTTP adapter remains responsible for status codes and transport concerns.

@@ -1539,3 +1539,11 @@ schema before execution.
 File: `mixed_timed_assessment.sql`
 
 A PostgreSQL practice set covering outer joins, aggregation, window functions, CTEs, `HAVING`, and query-plan/index evaluation. Review the schema assumptions and inspect actual query plans before applying index changes in a real database.
+
+---
+
+## Day 81 — Full SQL Interview Set
+
+File: `full_interview_set.sql`
+
+PostgreSQL practice covering outer joins, revenue aggregation, ranking, monthly comparisons with `LAG`, `HAVING`, and evidence-based index evaluation. Verify the assumed schema before running queries.

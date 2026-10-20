@@ -1646,3 +1646,11 @@ repository is for interview practice, not durable production storage.
 File: `mixed_timed_assessment.py`
 
 The assessment combines generic chunking, selective retries for transient failures, and elapsed-time measurement. It emphasizes type hints, generator behavior, validation, and exception propagation. Run the file directly for smoke tests.
+
+---
+
+## Day 81 — Backend Python Review
+
+File: `backend_python_review.py`
+
+Reviews defensive parsing, validated pagination, generic batching, type hints, and retries limited to transient timeouts. Run the module directly to execute smoke tests.

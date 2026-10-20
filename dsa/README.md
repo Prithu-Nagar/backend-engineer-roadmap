@@ -1211,3 +1211,11 @@ complexity.
 ## Day 79 — Mixed Timed Assessment
 
 `mixed_timed_assessment.py` combines representative array, graph traversal, and interval problems for a short timed review. It includes smoke tests and complexity notes. The LeetCode practice set references existing solutions rather than duplicating them.
+
+---
+
+## Day 81 — Full Interview Set
+
+File: `full_interview_set.py`
+
+A smoke-tested mixed set covering hash maps, lower-bound binary search, interval merging, and unweighted BFS shortest paths. Reuse the concepts to explain invariants, edge cases, and complexity across interview problems.

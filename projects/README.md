@@ -1091,3 +1091,11 @@ database constraints, HTTP behavior, tests, and failure paths.
 File: `day79_portfolio_weak_area_repair.md`
 
 Use assessment evidence to select one weak area, implement a focused repair, validate it with tests or review, and update documentation only when it reflects the real project.
+
+---
+
+## Day 81 — Capstone Requirements and Architecture
+
+File: `day81_capstone_requirements_architecture.md`
+
+Capture project-specific requirements, acceptance checks, API/data contracts, architecture boundaries, and risks before implementation. Replace generic examples with the selected project's actual scope and avoid claiming unmeasured capabilities.

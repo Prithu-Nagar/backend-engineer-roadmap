@@ -888,3 +888,9 @@ Day 80 uses a 75-minute set of five existing problems selected to diagnose weak 
 5. Coin Change — dynamic programming
 
 Use `day80_timed_assessment.md` to record timing, correctness, complexity, missed edge cases, and one corrective action per problem. Reuse existing implementations rather than adding duplicate solution files.
+
+---
+
+## Day 81 — Full Interview Set: Arrays to Graphs
+
+See `day81_full_interview_set.md` for a 90-minute five-problem set covering Two Sum, Search Insert Position, Merge Intervals, Number of Islands, and Course Schedule. Reuse existing implementations and record invariants, complexity, and edge cases instead of duplicating solution files.
