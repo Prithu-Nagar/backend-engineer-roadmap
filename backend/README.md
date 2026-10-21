@@ -1607,3 +1607,14 @@ A small task-store exercise for validating inputs, diagnosing missing records, m
 File: `api_architecture_review.py`
 
 Practices endpoint contract validation and consistent success/error response envelopes with request correlation IDs. The module is framework-independent interview practice; the HTTP adapter remains responsible for status codes and transport concerns.
+
+---
+
+## Day 82 — Authentication and API Security Review
+
+File: `auth_security_review.py`
+
+Framework-independent smoke-tested exercises for authentication checks,
+resource ownership/role authorization, and bounded pagination. These examples
+support interview practice and are not a replacement for a maintained auth
+library or a full application security review.

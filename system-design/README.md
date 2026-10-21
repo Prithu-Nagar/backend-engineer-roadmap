@@ -1670,3 +1670,13 @@ A timed news-feed design interview covering requirements, APIs, data modeling, f
 File: `end_to_end_design_exercise.md`
 
 Design a multi-user task-management API from requirements and contracts through data modeling, security, reliability, scaling, observability, and trade-offs.
+
+---
+
+## Day 82 — Scalability Review
+
+File: `scalability_review.md`
+
+Reviews workload assumptions, bottleneck signals, capacity estimation, deliberate
+scaling choices, failure handling, and observability. Treat numerical examples as
+illustrative and validate sizing decisions with representative measurements.

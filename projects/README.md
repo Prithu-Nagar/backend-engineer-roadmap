@@ -1099,3 +1099,13 @@ Use assessment evidence to select one weak area, implement a focused repair, val
 File: `day81_capstone_requirements_architecture.md`
 
 Capture project-specific requirements, acceptance checks, API/data contracts, architecture boundaries, and risks before implementation. Replace generic examples with the selected project's actual scope and avoid claiming unmeasured capabilities.
+
+---
+
+## Day 82 — Capstone Database and API Contracts
+
+File: `day82_database_api_contracts.md`
+
+Extends the Day 81 capstone plan with a data-model review, endpoint contract
+template, transaction/integrity rules, security checks, and contract-test criteria.
+Replace illustrative examples with the selected project's actual schema and API.

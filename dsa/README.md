@@ -1219,3 +1219,13 @@ complexity.
 File: `full_interview_set.py`
 
 A smoke-tested mixed set covering hash maps, lower-bound binary search, interval merging, and unweighted BFS shortest paths. Reuse the concepts to explain invariants, edge cases, and complexity across interview problems.
+
+---
+
+## Day 82 — Dynamic Programming and Backtracking Review
+
+File: `day82_dp_backtracking_review.py`
+
+Adds smoke-tested examples for obstacle-grid path counting with a one-dimensional
+DP state, Combination Sum backtracking, and Word Search with visited-cell
+tracking. Explain state transitions, pruning, state restoration, and complexity.

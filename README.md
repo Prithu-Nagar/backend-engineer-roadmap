@@ -3709,7 +3709,7 @@ The API and service exercises use in-memory storage for interview practice; they
 
 ---
 
-## Day 79 — Interview Preparation (18 Oct 2026)
+## Day 79 — Interview Preparation
 
 - Mixed timed DSA, Python, and SQL assessments.
 - Five mixed LeetCode problems with time and complexity review.
@@ -3719,7 +3719,7 @@ The API and service exercises use in-memory storage for interview practice; they
 
 ---
 
-## Day 80 — Interview Preparation (19 Oct 2026)
+## Day 80 — Interview Preparation
 
 Day 80 focuses on evidence-based weak-area repair after the Day 79 assessments and finalization of the primary portfolio project.
 
@@ -3735,7 +3735,7 @@ The repair exercises are intentionally focused. Choose the weakest area using as
 
 ---
 
-## Day 81 — Final Integration (20 Oct 2026)
+## Day 81 — Final Integration
 
 Day 81 begins the final integration phase by connecting interview fundamentals with a coherent capstone architecture.
 
@@ -3748,3 +3748,21 @@ Day 81 begins the final integration phase by connecting interview fundamentals w
 - **Project:** Added `projects/day81_capstone_requirements_architecture.md` to define capstone requirements, contracts, architecture, risks, and acceptance criteria.
 
 The capstone document is a planning artifact. Replace its generic examples with the selected project's real requirements and distinguish implemented behavior from future plans.
+
+---
+
+## Day 82 — Final Integration
+
+Day 82 continues capstone integration by reviewing DP/backtracking, asynchronous
+concurrency, transaction safety, authentication/security, scalability, and
+database/API contracts.
+
+- **DSA:** Added `dsa/day82_dp_backtracking_review.py` with smoke-tested obstacle-grid DP, Combination Sum, and Word Search exercises.
+- **Python:** Added `python/async_concurrency_review.py` for bounded AsyncIO concurrency and order-preserving results.
+- **SQL:** Added `sql/transactions_optimization_review.sql` for transaction boundaries, conditional writes, idempotency, and query-plan review.
+- **LeetCode:** Added `leetcode/day82_mixed_interview_set.md` for five mixed DP/backtracking/interview problems.
+- **Backend:** Added `backend/auth_security_review.py` for authentication, ownership/role checks, and bounded pagination.
+- **System Design:** Added `system-design/scalability_review.md` for workload sizing, bottleneck analysis, and scaling trade-offs.
+- **Project:** Updated `projects/day81_capstone_requirements_architecture.md` with database integrity and API contract details.
+
+The examples are interview exercises and planning aids. Validate schema assumptions, test the real application, and distinguish measured results from illustrative targets.

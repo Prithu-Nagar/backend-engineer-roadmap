@@ -1547,3 +1547,14 @@ A PostgreSQL practice set covering outer joins, aggregation, window functions, C
 File: `full_interview_set.sql`
 
 PostgreSQL practice covering outer joins, revenue aggregation, ranking, monthly comparisons with `LAG`, `HAVING`, and evidence-based index evaluation. Verify the assumed schema before running queries.
+
+---
+
+## Day 82 — Transactions and Optimization Review
+
+File: `transactions_optimization_review.sql`
+
+PostgreSQL-oriented review of row locking, conditional updates, idempotency
+records, transaction boundaries, and evidence-based index evaluation. The schema
+is illustrative; adapt parameters and table names, and inspect query plans before
+applying tuning changes.

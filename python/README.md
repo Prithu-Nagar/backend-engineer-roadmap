@@ -1654,3 +1654,13 @@ The assessment combines generic chunking, selective retries for transient failur
 File: `backend_python_review.py`
 
 Reviews defensive parsing, validated pagination, generic batching, type hints, and retries limited to transient timeouts. Run the module directly to execute smoke tests.
+
+---
+
+## Day 82 — AsyncIO and Concurrency Review
+
+File: `async_concurrency_review.py`
+
+Reviews bounded asynchronous concurrency with a semaphore, order-preserving
+results, validation, and smoke tests. Use it to explain when AsyncIO is suitable
+for I/O-bound workloads and why blocking work should not run on the event loop.

@@ -894,3 +894,13 @@ Use `day80_timed_assessment.md` to record timing, correctness, complexity, misse
 ## Day 81 — Full Interview Set: Arrays to Graphs
 
 See `day81_full_interview_set.md` for a 90-minute five-problem set covering Two Sum, Search Insert Position, Merge Intervals, Number of Islands, and Course Schedule. Reuse existing implementations and record invariants, complexity, and edge cases instead of duplicating solution files.
+
+---
+
+## Day 82 — Mixed Interview Set
+
+File: `day82_mixed_interview_set.md`
+
+Five timed problems covering Coin Change, Word Search, Combination Sum, House
+Robber, and Longest Increasing Subsequence. The document is a practice tracker;
+implementations should remain under the relevant `dsa/` topic directories.
