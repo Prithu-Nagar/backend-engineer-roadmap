@@ -764,3 +764,16 @@ Draft artifact: `resume_bullets.md`.
 
 Use only claims supported by the repository. Add performance metrics only after
 measuring them, and do not claim deployment or scale without evidence.
+
+---
+
+## Day 83 — Capstone Implementation Sprint 1
+
+Added `task_service.py` as a framework-independent domain-service increment.
+It validates task payloads, allowlists writable fields, generates stable
+in-memory IDs, and raises explicit validation/not-found exceptions. The
+implementation is intentionally an in-memory development artifact; integrate
+it with the existing database-backed model/repository before wiring it into
+production routes.
+
+The sprint plan is documented in `../day83_capstone_implementation_sprint1.md`.

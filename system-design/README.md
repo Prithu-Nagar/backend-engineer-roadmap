@@ -1680,3 +1680,12 @@ File: `scalability_review.md`
 Reviews workload assumptions, bottleneck signals, capacity estimation, deliberate
 scaling choices, failure handling, and observability. Treat numerical examples as
 illustrative and validate sizing decisions with representative measurements.
+
+---
+
+## Day 83 — Reliability Review
+
+Added `day83_reliability_review.md` covering reliability objectives, dependency
+failure analysis, timeouts, bounded retries, circuit breakers, graceful
+ degradation, health checks, and observability. Use explicit SLOs and measured
+signals rather than unverified availability or latency claims.

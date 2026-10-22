@@ -246,3 +246,16 @@ Review:
 - `course_schedule_ii.py` — topological ordering and cycle detection
 
 Be prepared to justify the algorithm, identify edge cases, and state complexity in terms of vertices and edges.
+
+---
+
+## Day 83 — Graph Review
+
+Reviewed:
+
+- Connected-component counting with iterative DFS.
+- Course dependency ordering with Kahn's algorithm.
+- Cycle detection by comparing processed vertices with the total vertex count.
+- Input validation for invalid vertex identifiers.
+
+Runnable examples are in `../day83_trees_graphs_review.py`.

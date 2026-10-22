@@ -162,3 +162,14 @@ Reused:
 
 The solution uses breadth-first traversal with a queue and groups values by
 tree depth.
+
+---
+
+## Day 83 — Tree Review
+
+Reviewed two common interview patterns:
+
+- `level_order` — breadth-first traversal with a queue, grouping nodes by depth.
+- `is_valid_bst` — recursive validation using lower and upper bounds rather than checking only parent-child pairs.
+
+Runnable review examples are in `../day83_trees_graphs_review.py`.

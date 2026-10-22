@@ -904,3 +904,11 @@ File: `day82_mixed_interview_set.md`
 Five timed problems covering Coin Change, Word Search, Combination Sum, House
 Robber, and Longest Increasing Subsequence. The document is a practice tracker;
 implementations should remain under the relevant `dsa/` topic directories.
+
+---
+
+## Day 83 — Mixed Interview Set
+
+Added `day83_mixed_interview_set.md`, a five-problem review covering binary-tree
+BFS, BST validation, graph connectivity, topological sorting, and hashing.
+The set emphasizes timed attempts, edge-case testing, and complexity analysis.

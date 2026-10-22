@@ -1664,3 +1664,17 @@ File: `async_concurrency_review.py`
 Reviews bounded asynchronous concurrency with a semaphore, order-preserving
 results, validation, and smoke tests. Use it to explain when AsyncIO is suitable
 for I/O-bound workloads and why blocking work should not run on the event loop.
+
+---
+
+## Day 83 — Testing and Observability Review
+
+`day83_testing_observability_review.py` demonstrates:
+
+- Measuring operation duration with `time.perf_counter()`.
+- Logging failures with exception context while preserving exceptions.
+- Recording request/error counts and status-code distributions.
+- Returning a serializable metrics snapshot.
+
+The counters are process-local teaching examples; use a metrics backend and
+aggregation strategy for multi-process or distributed deployments.

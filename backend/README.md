@@ -1618,3 +1618,15 @@ Framework-independent smoke-tested exercises for authentication checks,
 resource ownership/role authorization, and bounded pagination. These examples
 support interview practice and are not a replacement for a maintained auth
 library or a full application security review.
+
+---
+
+## Day 83 — Testing, Logging, and Metrics Review
+
+`day83_testing_logging_metrics_review.py` provides a framework-independent
+example for instrumenting backend operations.
+
+It records request totals, server-error totals, status counts, and average
+latency; emits structured completion events; and logs exceptions without
+swallowing them. Process-local metrics are illustrative and should be replaced
+or exported to a production metrics system in deployed services.

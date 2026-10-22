@@ -1558,3 +1558,14 @@ PostgreSQL-oriented review of row locking, conditional updates, idempotency
 records, transaction boundaries, and evidence-based index evaluation. The schema
 is illustrative; adapt parameters and table names, and inspect query plans before
 applying tuning changes.
+
+---
+
+## Day 83 — Indexing and Schema Review
+
+`day83_indexing_schema_review.sql` reviews composite and partial indexes,
+database-enforced constraints, index inventory, and query-plan inspection.
+
+Review indexes against real query predicates and ordering, then verify plans
+with representative data. Indexes improve selected reads but add storage and
+write overhead; avoid adding them without an access-pattern rationale.

@@ -1109,3 +1109,13 @@ File: `day82_database_api_contracts.md`
 Extends the Day 81 capstone plan with a data-model review, endpoint contract
 template, transaction/integrity rules, security checks, and contract-test criteria.
 Replace illustrative examples with the selected project's actual schema and API.
+
+---
+
+## Day 83 — Capstone Implementation Sprint 1
+
+Added `day83_capstone_implementation_sprint1.md` to define the first
+implementation increment and its acceptance criteria. The Task Manager now has
+an isolated service-contract example at `task-manager/task_service.py`; it uses
+in-memory storage and must be integrated with the real persistence layer before
+it is treated as a production feature.
