@@ -1229,3 +1229,9 @@ File: `day82_dp_backtracking_review.py`
 Adds smoke-tested examples for obstacle-grid path counting with a one-dimensional
 DP state, Combination Sum backtracking, and Word Search with visited-cell
 tracking. Explain state transitions, pruning, state restoration, and complexity.
+
+---
+
+## Day 84 — Arrays, Hashing, and Sliding Window
+
+`day84_arrays_hashing_sliding_window_review.py` reviews hash-map lookup, anagram signatures, variable-size windows, fixed-size windows, and frequency counting. Run the module directly to execute its smoke tests.

@@ -1689,3 +1689,9 @@ Added `day83_reliability_review.md` covering reliability objectives, dependency
 failure analysis, timeouts, bounded retries, circuit breakers, graceful
  degradation, health checks, and observability. Use explicit SLOs and measured
 signals rather than unverified availability or latency claims.
+
+---
+
+## Day 84 — Deployment and Operations Review
+
+See `day84_deployment_operations_review.md` for reproducible delivery pipelines, rolling/blue-green/canary trade-offs, operational readiness, incident response, and rollback planning.

@@ -1569,3 +1569,9 @@ database-enforced constraints, index inventory, and query-plan inspection.
 Review indexes against real query predicates and ordering, then verify plans
 with representative data. Indexes improve selected reads but add storage and
 write overhead; avoid adding them without an access-pattern rationale.
+
+---
+
+## Day 84 — Production Database Review
+
+`day84_production_database_review.sql` contains PostgreSQL examples for session and table-size inspection, conditional updates, constraint/index review, least privilege, migration safety, and backup/restore readiness. Verify object names and run statements only in an appropriate environment.

@@ -912,3 +912,9 @@ implementations should remain under the relevant `dsa/` topic directories.
 Added `day83_mixed_interview_set.md`, a five-problem review covering binary-tree
 BFS, BST validation, graph connectivity, topological sorting, and hashing.
 The set emphasizes timed attempts, edge-case testing, and complexity analysis.
+
+---
+
+## Day 84 — Arrays, Hashing, and Sliding Window
+
+See `day84_mixed_interview_set.md` for five timed problems: Two Sum, Group Anagrams, Longest Substring Without Repeating Characters, Minimum Size Subarray Sum, and Longest Consecutive Sequence.

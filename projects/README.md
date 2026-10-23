@@ -1119,3 +1119,9 @@ implementation increment and its acceptance criteria. The Task Manager now has
 an isolated service-contract example at `task-manager/task_service.py`; it uses
 in-memory storage and must be integrated with the real persistence layer before
 it is treated as a production feature.
+
+---
+
+## Day 84 — Capstone Implementation Sprint 2
+
+`day84_capstone_implementation_sprint2.md` continues the capstone plan with packaging, environment configuration, container build, CI gates, database safety, health checks, and rollback documentation. Treat it as a plan until each item is implemented and verified against the actual project.

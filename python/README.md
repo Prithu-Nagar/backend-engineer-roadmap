@@ -1678,3 +1678,9 @@ for I/O-bound workloads and why blocking work should not run on the event loop.
 
 The counters are process-local teaching examples; use a metrics backend and
 aggregation strategy for multi-process or distributed deployments.
+
+---
+
+## Day 84 — Packaging and Deployment Review
+
+`day84_packaging_deployment_review.py` demonstrates fail-fast environment validation, runtime-version checks, and project-root discovery. It is a small review utility, not a replacement for the repository's actual packaging configuration.

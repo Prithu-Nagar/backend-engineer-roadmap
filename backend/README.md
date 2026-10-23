@@ -1630,3 +1630,9 @@ It records request totals, server-error totals, status counts, and average
 latency; emits structured completion events; and logs exceptions without
 swallowing them. Process-local metrics are illustrative and should be replaced
 or exported to a production metrics system in deployed services.
+
+---
+
+## Day 84 — Docker, CI/CD, and Deployment Review
+
+`day84_docker_cicd_deployment_review.py` models basic deployment configuration validation and release gates for tests, image scanning, and configuration. It is framework-independent and does not deploy a service by itself.

@@ -3782,3 +3782,19 @@ Day 83 reviews tree/graph patterns, Python testing and observability, SQL indexi
 - **Project:** Added `projects/day83_capstone_implementation_sprint1.md` and `projects/task-manager/task_service.py` to begin a testable service boundary without replacing existing application files.
 
 The capstone service currently uses in-memory storage as a development artifact. It is not a substitute for the project's database-backed repository, and production readiness should only be claimed after integration and tests.
+
+---
+
+## Day 84 — Final Integration
+
+Day 84 reviews arrays, hashing, and sliding-window patterns alongside Python packaging, production database practices, Docker/CI/CD deployment, and deployment operations while continuing capstone implementation sprint 2.
+
+- **DSA:** Added `dsa/day84_arrays_hashing_sliding_window_review.py` with smoke-tested array, hashing, and sliding-window exercises.
+- **Python:** Added `python/day84_packaging_deployment_review.py` for required configuration validation, runtime checks, and project-root discovery.
+- **SQL:** Added `sql/day84_production_database_review.sql` for production connection, schema, transaction, and backup/restore review.
+- **LeetCode:** Added `leetcode/day84_mixed_interview_set.md` with five arrays, hashing, and sliding-window problems.
+- **Backend:** Added `backend/day84_docker_cicd_deployment_review.py` for deployment configuration and release-gate exercises.
+- **System Design:** Added `system-design/day84_deployment_operations_review.md` covering CI/CD, rollout strategies, operational readiness, and rollback.
+- **Project:** Added `projects/day84_capstone_implementation_sprint2.md` for packaging, deployment, CI gates, database safety, and operational acceptance criteria.
+
+These artifacts are review exercises and planning aids. Confirm actual application configuration, CI behavior, database schema, and deployment environment before treating any checklist item as implemented.
