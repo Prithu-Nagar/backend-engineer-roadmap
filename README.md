@@ -3798,3 +3798,19 @@ Day 84 reviews arrays, hashing, and sliding-window patterns alongside Python pac
 - **Project:** Added `projects/day84_capstone_implementation_sprint2.md` for packaging, deployment, CI gates, database safety, and operational acceptance criteria.
 
 These artifacts are review exercises and planning aids. Confirm actual application configuration, CI behavior, database schema, and deployment environment before treating any checklist item as implemented.
+
+---
+
+## Day 85 — Final Integration
+
+Day 85 focuses on binary search, intervals, and greedy patterns, Python performance, practical SQL query optimization, backend caching, and measured bottleneck analysis for the capstone.
+
+- **DSA:** Added `dsa/day85_binary_search_intervals_greedy_review.py` with lower-bound search, interval merging, and greedy reachability smoke tests.
+- **Python:** Added `python/day85_performance_review.py` for basic timing and bounded-memory chunk processing.
+- **SQL:** Added `sql/day85_query_optimization_practical.sql` for execution-plan comparison, composite indexing, keyset pagination, and index-usage review.
+- **LeetCode:** Added `leetcode/day85_mixed_interview_set.md` with five binary-search, interval, and greedy interview problems.
+- **Backend:** Added `backend/day85_performance_caching_review.py` with a testable TTL cache and cache-aside behavior.
+- **System Design:** Added `system-design/day85_bottleneck_analysis.md` for measurement-led performance investigation and caching trade-offs.
+- **Project:** Added `projects/day85_capstone_redis_caching_performance.md` for a measured Redis/query optimization sprint and acceptance criteria.
+
+These are review exercises and implementation guidance. Validate query plans against representative data and integrate Redis into the real capstone only when tests and measurements support the change.
