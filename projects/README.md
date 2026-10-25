@@ -1125,3 +1125,10 @@ it is treated as a production feature.
 ## Day 84 — Capstone Implementation Sprint 2
 
 `day84_capstone_implementation_sprint2.md` continues the capstone plan with packaging, environment configuration, container build, CI gates, database safety, health checks, and rollback documentation. Treat it as a plan until each item is implemented and verified against the actual project.
+
+---
+
+## Day 86 — Capstone Security and Error Handling
+
+`day86_capstone_security_error_handling.md` defines the security-hardening increment, consistent error contract, negative tests, and acceptance criteria. Verify every item against the actual application and its test suite.
+

@@ -777,3 +777,12 @@ it with the existing database-backed model/repository before wiring it into
 production routes.
 
 The sprint plan is documented in `../day83_capstone_implementation_sprint1.md`.
+
+---
+
+## Day 86 — Security and Error Handling
+
+The capstone increment is documented in `../day86_capstone_security_error_handling.md`.
+Review the existing `security_hardening.py` and `error_handling.py` helpers against
+the plan, then add integration-level authorization and error-contract tests before
+treating the controls as complete.

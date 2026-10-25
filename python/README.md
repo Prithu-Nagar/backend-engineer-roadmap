@@ -1684,3 +1684,12 @@ aggregation strategy for multi-process or distributed deployments.
 ## Day 84 — Packaging and Deployment Review
 
 `day84_packaging_deployment_review.py` demonstrates fail-fast environment validation, runtime-version checks, and project-root discovery. It is a small review utility, not a replacement for the repository's actual packaging configuration.
+
+---
+
+## Day 86 — Security Review
+
+File: `day86_security_review.py`
+
+Reviews constant-time token comparison, secure random token generation, path traversal containment, and SHA-256 fingerprints for integrity demonstrations. The fingerprint helper is not password storage; use a password-hashing library for passwords.
+

@@ -1636,3 +1636,10 @@ or exported to a production metrics system in deployed services.
 ## Day 84 — Docker, CI/CD, and Deployment Review
 
 `day84_docker_cicd_deployment_review.py` models basic deployment configuration validation and release gates for tests, image scanning, and configuration. It is framework-independent and does not deploy a service by itself.
+
+---
+
+## Day 86 — Security Hardening Review
+
+`day86_security_hardening_review.py` demonstrates fail-safe production configuration checks, resource ownership checks, and client-safe error payloads. Integrate equivalent controls with the framework's authentication, authorization, logging, and exception-handling layers.
+

@@ -1235,3 +1235,12 @@ tracking. Explain state transitions, pruning, state restoration, and complexity.
 ## Day 84 — Arrays, Hashing, and Sliding Window
 
 `day84_arrays_hashing_sliding_window_review.py` reviews hash-map lookup, anagram signatures, variable-size windows, fixed-size windows, and frequency counting. Run the module directly to execute its smoke tests.
+
+---
+
+## Day 86 — Mixed Hard-Pattern Review
+
+File: `day86_mixed_hard_pattern_review.py`
+
+Includes smoke-tested examples for a monotonic stack, minimum-window sliding window, and Dijkstra's algorithm. Explain each invariant and complexity, then attempt the assigned timed problems independently.
+

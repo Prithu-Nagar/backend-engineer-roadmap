@@ -1695,3 +1695,10 @@ signals rather than unverified availability or latency claims.
 ## Day 84 — Deployment and Operations Review
 
 See `day84_deployment_operations_review.md` for reproducible delivery pipelines, rolling/blue-green/canary trade-offs, operational readiness, incident response, and rollback planning.
+
+---
+
+## Day 86 — Security and Failure Modes
+
+See `day86_security_failure_modes.md` for threat modeling, trust boundaries, layered controls, dependency-failure behavior, and observable security signals.
+

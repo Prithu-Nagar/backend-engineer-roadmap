@@ -3814,3 +3814,18 @@ Day 85 focuses on binary search, intervals, and greedy patterns, Python performa
 - **Project:** Added `projects/day85_capstone_redis_caching_performance.md` for a measured Redis/query optimization sprint and acceptance criteria.
 
 These are review exercises and implementation guidance. Validate query plans against representative data and integrate Redis into the real capstone only when tests and measurements support the change.
+
+---
+
+## Day 86 — Security and Error Handling
+
+- **DSA:** Added `dsa/day86_mixed_hard_pattern_review.py` with smoke-tested monotonic-stack, sliding-window, and Dijkstra examples.
+- **Python:** Added `python/day86_security_review.py` for constant-time token comparison, secure token generation, path-containment checks, and integrity fingerprints.
+- **SQL:** Added `sql/day86_security_integrity_review.sql` for least-privilege review, integrity constraints, parameterization, and row-level security inspection.
+- **LeetCode:** Added `leetcode/day86_security_and_mixed_review.md` with a four-medium/one-hard practice workflow and security reasoning prompts.
+- **Backend:** Added `backend/day86_security_hardening_review.py` for production configuration checks, resource ownership, and sanitized error payloads.
+- **System Design:** Added `system-design/day86_security_failure_modes.md` covering threat modeling and explicit dependency/abuse failure behavior.
+- **Project:** Added `projects/day86_capstone_security_error_handling.md` for capstone authorization, validation, error contracts, and security acceptance criteria.
+
+These are review exercises and implementation guidance. Adapt security controls to the real framework, threat model, and deployment environment; verify them with integration tests before claiming production readiness.
+

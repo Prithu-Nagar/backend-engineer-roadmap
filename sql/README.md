@@ -1575,3 +1575,12 @@ write overhead; avoid adding them without an access-pattern rationale.
 ## Day 84 — Production Database Review
 
 `day84_production_database_review.sql` contains PostgreSQL examples for session and table-size inspection, conditional updates, constraint/index review, least privilege, migration safety, and backup/restore readiness. Verify object names and run statements only in an appropriate environment.
+
+---
+
+## Day 86 — Security and Integrity Review
+
+File: `day86_security_integrity_review.sql`
+
+Contains PostgreSQL examples for privilege auditing, least-privilege grants, integrity checks, parameterized queries, and row-level security inventory. Review object names and existing data before applying any migration or privilege change.
+
