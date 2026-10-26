@@ -3829,3 +3829,19 @@ These are review exercises and implementation guidance. Validate query plans aga
 
 These are review exercises and implementation guidance. Adapt security controls to the real framework, threat model, and deployment environment; verify them with integration tests before claiming production readiness.
 
+---
+
+## Day 87 — Final Integration
+
+Day 87 is a full timed assessment across DSA, Python, SQL, LeetCode, backend engineering, and system design, with a capstone sprint focused on tests and observability.
+
+- **DSA:** Added `dsa/day87_full_timed_assessment.py` with hashing, sliding-window, tree BFS, topological-sort, and dynamic-programming exercises.
+- **Python:** Added `python/day87_full_timed_assessment.py` covering chunked iteration, selective retries, context managers, and timing.
+- **SQL:** Added `sql/day87_full_timed_assessment.sql` with joins, window functions, aggregation, and query-plan review.
+- **LeetCode:** Added `leetcode/day87_interview_simulation.md` with a timed interview protocol and scorecard.
+- **Backend:** Added `backend/day87_full_backend_interview_simulation.py` for pagination validation, stable error contracts, and resource ownership.
+- **System Design:** Added `system-design/day87_full_system_design_simulation.md` for an end-to-end Task Manager API design interview.
+- **Project:** Added `projects/day87_capstone_tests_observability.md` for capstone test coverage, safe instrumentation, and acceptance criteria.
+
+Treat these as timed practice and implementation guidance. Run the repository's full test suite and document any integration gaps before making production-readiness claims.
+
