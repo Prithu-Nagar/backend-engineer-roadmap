@@ -3845,3 +3845,18 @@ Day 87 is a full timed assessment across DSA, Python, SQL, LeetCode, backend eng
 
 Treat these as timed practice and implementation guidance. Run the repository's full test suite and document any integration gaps before making production-readiness claims.
 
+---
+
+## Day 88 — Targeted Weak-Area Repair
+
+Day 88 repairs the weak areas identified during the Day 87 full assessment and documents the capstone architecture. Select work from actual assessment results rather than treating every practice item as a confirmed weakness.
+
+- **DSA:** Added `dsa/day88_weak_area_repair.py` with hashing, sliding-window, tree BFS, topological-sort, and dynamic-programming repair exercises.
+- **Python:** Added `python/day88_weak_area_repair.py` for chunked iteration, selective retries, pagination validation, and monotonic timing.
+- **SQL:** Added `sql/day88_weak_area_repair.sql` for join/filter placement, window functions, aggregation, and measured query-plan review.
+- **LeetCode:** Added `leetcode/day88_targeted_repair_set.md` with a targeted re-solve protocol and repair log.
+- **Backend:** Added `backend/day88_weak_area_repair.py` for pagination contracts, sanitized API errors, and resource ownership checks.
+- **System Design:** Added `system-design/day88_weak_area_repair.md` with a failure-mode drill and architecture review checklist.
+- **Project:** Added `projects/day88_capstone_documentation_architecture.md` for portfolio documentation, an architecture diagram, and demo acceptance criteria.
+
+These files are repair exercises and documentation templates. Verify all examples against the real capstone before claiming deployment or production readiness.
