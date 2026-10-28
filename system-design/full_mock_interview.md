@@ -1,7 +1,7 @@
 # Day 79 — Full System Design Mock Interview
 
-**Suggested duration:** 45–60 minutes  
-**Prompt:** Design a news feed service for a social application.
+- **Suggested duration:** 45–60 minutes
+- **Prompt:** Design a news feed service for a social application.
 
 ## 1. Clarify requirements (5 minutes)
 

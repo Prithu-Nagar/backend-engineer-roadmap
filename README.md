@@ -3860,3 +3860,17 @@ Day 88 repairs the weak areas identified during the Day 87 full assessment and d
 - **Project:** Added `projects/day88_capstone_documentation_architecture.md` for portfolio documentation, an architecture diagram, and demo acceptance criteria.
 
 These files are repair exercises and documentation templates. Verify all examples against the real capstone before claiming deployment or production readiness.
+
+---
+
+## Day 89 — Final Mixed Assessment and Portfolio Polish
+
+- **DSA:** Added `dsa/day89_final_mixed_assessment.py` for a final mixed set covering hashing, sliding windows, tree BFS, topological sorting, and dynamic programming.
+- **Python:** Added `python/day89_final_interview_review.py` for generators, retry boundaries, pagination, dataclasses, and timing.
+- **SQL:** Added `sql/day89_final_interview_review.sql` for joins, window functions, transactions, and query-plan review.
+- **LeetCode:** Added `leetcode/day89_final_timed_set.md` with a timed five-problem set and scorecard.
+- **Backend:** Added `backend/day89_final_interview_review.py` for pagination, API error contracts, ownership, and idempotency-key validation.
+- **System Design:** Added `system-design/day89_final_mock_interview.md` with a structured mock interview, architecture sketch, and self-review scorecard.
+- **Project:** Added `projects/day89_capstone_final_polish_demo_checklist.md` for final README polish, reproducible validation, and a short demo plan.
+
+Run the code examples and project checks in the target environment before recording results or describing the capstone as production-ready.

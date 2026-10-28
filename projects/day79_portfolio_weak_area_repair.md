@@ -38,11 +38,11 @@ Select one area based on evidence, not familiarity or preference.
 
 ## 4. Interview explanation template
 
-**Problem:** What was incorrect, slow, fragile, or unclear?  
-**Evidence:** How was the issue observed or reproduced?  
-**Root cause:** What underlying assumption or design caused it?  
-**Fix:** What changed and why?  
-**Validation:** Which tests or measurements confirm the repair?  
-**Trade-off:** What limitation remains, and what would be the next improvement?
+- **Problem:** What was incorrect, slow, fragile, or unclear?
+- **Evidence:** How was the issue observed or reproduced?
+- **Root cause:** What underlying assumption or design caused it?
+- **Fix:** What changed and why?
+- **Validation:** Which tests or measurements confirm the repair?
+- **Trade-off:** What limitation remains, and what would be the next improvement?
 
 Do not claim production impact, performance gains, or metrics unless you measured them.
