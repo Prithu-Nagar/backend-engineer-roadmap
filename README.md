@@ -3874,3 +3874,20 @@ These files are repair exercises and documentation templates. Verify all example
 - **Project:** Added `projects/day89_capstone_final_polish_demo_checklist.md` for final README polish, reproducible validation, and a short demo plan.
 
 Run the code examples and project checks in the target environment before recording results or describing the capstone as production-ready.
+
+---
+
+## Day 90 — Final Assessment and Portfolio Readiness
+
+Day 90 closes the roadmap with final benchmarks, long-term practice plans, and a portfolio readiness review. Use actual assessment results to choose the next learning priorities.
+
+- **DSA:** Added `dsa/day90_final_assessment_long_term_plan.py` for a final mixed benchmark across hashing, sliding windows, trees, graphs, and dynamic programming.
+- **Python:** Added `python/day90_final_assessment_long_term_plan.py` covering typed assessment records, generators, selective retries, and timing.
+- **SQL:** Added `sql/day90_final_assessment_long_term_plan.sql` for joins, window functions, transaction review, and measured query-plan analysis.
+- **LeetCode:** Added `leetcode/day90_final_benchmark_set.md` with a timed benchmark, scorecard, and spaced-repetition plan.
+- **Backend:** Added `backend/day90_backend_engineer_checklist.py` for API contracts, pagination, resource ownership, and idempotency checks.
+- **System Design:** Added `system-design/day90_hld_lld_checklist.md` for final HLD/LLD review, trade-offs, and ongoing practice.
+- **GenAI:** Added `genai/day90_langchain_rag_agents_mcp_checklist.md` covering LangChain, RAG, agents, MCP, evaluation, and trust boundaries.
+- **Project:** Added `projects/day90_capstone_portfolio_readiness.md` for final validation, documentation, demo, and portfolio readiness.
+
+Run the examples and project checks in the target environment before recording results or claiming production readiness. The long-term plan should be driven by demonstrated gaps and verified project evidence.
