@@ -296,11 +296,25 @@ The goal is not only to produce a working solution but also to understand its pe
 
 ---
 
-# Upcoming Topics
+## Additional Topics Practiced in the Later Review Phase
 
-- Backtracking
-- Advanced Tree Algorithms
-- Advanced Graph Algorithms
+Backtracking is represented by the recursion solutions (including combinations,
+permutations, N-Queens, palindrome partitioning, and word search). Later review
+files also revisit tree and graph patterns, including advanced traversal,
+connectivity, shortest-path, and spanning-tree problems.
+
+Relevant directories:
+
+- `recursion/` — recursion and backtracking
+- `greedy/` — greedy patterns
+- `intervals/` — interval scheduling and merging
+- `prefix_sums/` — prefix sums and difference arrays
+- `trie/` — trie operations and word search
+- `sorting/` — merge sort, quicksort, and sorting problems
+
+The Day 82–90 review and assessment files are maintained at the `dsa/` root.
+They are review artifacts, not a claim that every possible advanced algorithm
+has been exhaustively covered.
 
 ---
 
@@ -1243,4 +1257,3 @@ tracking. Explain state transitions, pruning, state restoration, and complexity.
 File: `day86_mixed_hard_pattern_review.py`
 
 Includes smoke-tested examples for a monotonic stack, minimum-window sliding window, and Dijkstra's algorithm. Explain each invariant and complexity, then attempt the assigned timed problems independently.
-

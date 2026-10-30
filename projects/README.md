@@ -10,7 +10,8 @@ The projects are developed incrementally alongside the topics covered in the roa
 
 ### Task Manager REST API
 
-**Status:** 🚧 In Progress
+**Status:** Learning milestones documented; capstone integration and end-to-end
+verification are still required.
 
 The Task Manager REST API is the primary backend project being developed throughout the roadmap.
 
@@ -55,7 +56,10 @@ The current API supports basic task retrieval and creation.
 | GET   | `/api/tasks/search?query=...` | Search tasks        |
 | POST  | `/api/tasks/`                 | Create a task       |
 
-PUT and DELETE operations have not been implemented yet.
+The general roadmap Flask app exposes the routes listed above. The separate
+Task Manager learning modules include additional service, validation, auth,
+pagination, logging, and testing exercises; they are not yet assembled into one
+persistent, project-specific application with a verified full CRUD HTTP surface.
 
 ---
 
@@ -212,38 +216,19 @@ request/response flow.
 
 ---
 
-## Planned Enhancements
+## Project Completion Matrix
 
-- SQLite Integration
-- SQLAlchemy
-- Service Layer
-- Request Validation
-- Testing
-- Docker
-- Deployment
+| Project | What exists in this repository | Accurate status |
+|---|---|---|
+| Task Manager | Flask roadmap app plus separate validation, service, auth, pagination, logging, Docker, and test exercises | Capstone integration, persistence, and end-to-end runtime verification remain |
+| URL Shortener | Django model/migrations/DRF layer and a separate FastAPI comparison app | Learning implementation; verify redirect, runtime, and deployment before claiming completion |
+| Expense Tracker | SQL schema and separate CRUD, caching, async, reliability, and observability exercises | Learning modules; no single integrated API application is documented here |
+| Blog API | No project implementation directory in this archive | Not implemented |
+| Chat Application | System-design HLD/LLD learning material exists; no complete application implementation | Design exercise, not a completed application |
 
----
-
-## Future API Improvements
-
-Future iterations will introduce:
-
-- PUT and DELETE operations
-- Persistent database storage
-- Database models
-- Improved validation
-- Consistent error responses
-- Automated tests
-- API documentation
-
----
-
-## Planned Projects
-
-- URL Shortener
-- Expense Tracker API
-- Blog API
-- Chat Application
+The Task Manager and URL Shortener READMEs contain their own acceptance and
+verification notes. Do not mark a project complete solely because its topic
+was studied elsewhere in the roadmap.
 
 ---
 
@@ -1132,3 +1117,14 @@ it is treated as a production feature.
 
 `day86_capstone_security_error_handling.md` defines the security-hardening increment, consistent error contract, negative tests, and acceptance criteria. Verify every item against the actual application and its test suite.
 
+
+
+---
+
+## Post-Day-90 Project Readiness
+
+The roadmap's project-related learning milestones are documented, but the
+repository is not yet evidence of three finished, deployable backend products.
+Prioritize one integrated capstone (Task Manager) before expanding the project
+portfolio. Keep design exercises and standalone concept modules clearly
+labelled as such.

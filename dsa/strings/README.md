@@ -30,13 +30,16 @@ This directory contains LeetCode problems involving string manipulation, two poi
 
 ---
 
-## Upcoming Problems
+## Additional String Problems Already Present
 
-- Valid Anagram
-- Longest Common Prefix
-- Longest Substring Without Repeating Characters
-- Group Anagrams
-- Longest Palindromic Substring
+- Valid Anagram — `../arrays/valid_anagram.py`
+- Longest Substring Without Repeating Characters — `../sliding_window/longest_substring_without_repeating_characters.py`
+- Group Anagrams — `../hashing/group_anagrams.py`
+- Longest Palindromic Substring — `longest_palindromic_substring.py`
+- Decode String — `decode_string.py`
+
+Longest Common Prefix does not have a dedicated solution file in this archive;
+it is optional follow-up practice, not an unfulfilled scheduled roadmap item.
 
 ---
 

@@ -65,7 +65,9 @@ The project demonstrates authorization rules for:
 - Update task
 - Delete task
 
-The underlying REST API endpoints for PUT and DELETE will be implemented as the project evolves.
+Update/delete behavior is represented in the service and test learning artifacts,
+but the project-specific HTTP routes are not yet assembled and verified as one
+persistent Task Manager application.
 
 Authentication verifies the identity of the user.
 
@@ -299,13 +301,13 @@ JWT access-token handling
 Authorization
 Role-Based Access Control
 
-Current focus:
+Historical learning progress:
 
-Applying authorization rules to task operations
-Separating authentication from authorization
-Enforcing role and permission checks
-Logging application events
-Adding automated tests for auth and authorization behavior
+The repository now includes authorization, validation, error handling,
+pagination, logging, health-check, security-hardening, and automated-test
+exercises. These modules are not all wired into one project-specific runtime.
+See the Day 90 acceptance checklist near the end of this README before treating
+the capstone as complete.
 
 Relevant files:
 
@@ -786,3 +788,26 @@ The capstone increment is documented in `../day86_capstone_security_error_handli
 Review the existing `security_hardening.py` and `error_handling.py` helpers against
 the plan, then add integration-level authorization and error-contract tests before
 treating the controls as complete.
+
+
+---
+
+## Day 90 Capstone Acceptance Checklist
+
+The roadmap exercises are present, but the capstone should not be described as
+a complete production-style API until each item is verified in the integrated
+application:
+
+- [ ] One Task Manager application entry point wires the project routes and services.
+- [ ] Create, list, retrieve, update, and delete HTTP endpoints work end to end.
+- [ ] A project-specific ORM model/repository persists tasks across restarts.
+- [ ] Database migrations and local database setup are documented and tested.
+- [ ] Authentication and resource-ownership authorization are enforced at route level.
+- [ ] Validation, standardized errors, pagination, and filtering are integrated.
+- [ ] Tests cover success, invalid input, not found, unauthenticated, and forbidden cases.
+- [ ] Docker and Compose start the actual Task Manager application and dependencies.
+- [ ] CI runs the complete test suite from the repository root.
+- [ ] Configuration, secrets, logging, health checks, and deployment steps are documented.
+
+A passing test suite for individual learning modules is useful evidence, but it
+does not replace end-to-end verification of the integrated capstone.

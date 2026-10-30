@@ -385,15 +385,17 @@ Completed:
 - Logging Fundamentals
 - Testing Basics
 
-# Current focus:
+## Day 90 Coverage Status
 
-- Task Manager validation
-- Project-level automated testing
+The backend learning material now includes Docker and containerized service
+exercises, deployment strategies, CI/CD, health checks, observability, security
+hardening, performance reviews, and final interview assessments. These are
+documented learning exercises; they do not certify that the Task Manager
+capstone is deployed or production-ready.
 
-# Upcoming:
-
-- Docker
-- Deployment
+The remaining project-level work is to integrate the Task Manager modules into
+one application entry point and verify its database, authorization, Docker
+Compose, and deployment path end to end. See `projects/task-manager/README.md`.
 
 ---
 
@@ -1642,4 +1644,3 @@ or exported to a production metrics system in deployed services.
 ## Day 86 — Security Hardening Review
 
 `day86_security_hardening_review.py` demonstrates fail-safe production configuration checks, resource ownership checks, and client-safe error payloads. Integrate equivalent controls with the framework's authentication, authorization, logging, and exception-handling layers.
-

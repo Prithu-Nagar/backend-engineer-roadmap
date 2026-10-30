@@ -494,12 +494,16 @@ The goal is to understand why a particular architecture is appropriate rather th
 
 ---
 
-## Upcoming Topics
+## Day 90 Coverage Status
 
-- Kafka
-- Distributed Systems
-- Message Queues
-- Event-Driven Architecture
+The repository now contains learning and interview material for message
+queues, event-driven architecture, Kafka design, worker queues, retries,
+idempotency, schema evolution, distributed locks, tracing, resilience, and
+failure handling. Kafka is covered at the architecture/interview level; this
+repository does not claim a live Kafka broker deployment.
+
+Distributed systems is a broad discipline, so the material is a foundation
+for continued interview practice rather than an exhaustive treatment.
 
 ---
 
@@ -1701,4 +1705,3 @@ See `day84_deployment_operations_review.md` for reproducible delivery pipelines,
 ## Day 86 — Security and Failure Modes
 
 See `day86_security_failure_modes.md` for threat modeling, trust boundaries, layered controls, dependency-failure behavior, and observable security signals.
-

@@ -31,10 +31,10 @@ This directory contains interview-focused Linked List problems.
 
 ---
 
-## Upcoming Problems
+## Coverage and Remaining Practice
 
-- Remove Nth Node From End
-- Reorder List
-- Copy List with Random Pointer
-- Add Two Numbers
-- LRU Cache
+The current folder contains Reverse Linked List, Merge Two Sorted Lists,
+Linked List Cycle, and LRU Cache. Remove Nth Node From End, Reorder List,
+Copy List with Random Pointer, and Add Two Numbers do not have dedicated
+solution files in this folder in this archive; they remain optional interview
+practice, not missing Day 1–90 deliverables.

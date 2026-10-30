@@ -486,9 +486,13 @@ Completed:
 - AI Agents
 - LangChain Architecture
 
-Upcoming:
+## Day 90 Coverage Status
 
-- Model Context Protocol (MCP)
+MCP is covered by `model_context_protocol_fundamentals.md`, with related
+client/server flow and backend integration concepts also represented in the
+Python and backend directories. The Day 90 checklist consolidates the final
+LangChain, RAG, agent, and MCP review. This is conceptual and example-level
+coverage; no claim is made that a production MCP service has been deployed.
 
 ---
 

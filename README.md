@@ -107,8 +107,8 @@ problem-solving.
 - ✅ FastAPI API Testing
 - ✅ Job Scheduling
 - ✅ Docker
-- ⏳ Docker Compose
-- ⏳ Deployment
+- ✅ Docker Compose (learning and deployment exercises)
+- ✅ Deployment concepts and deployment-readiness exercises
 
 ---
 
@@ -151,7 +151,7 @@ problem-solving.
 - ✅ Event-Driven Architecture
 - ✅ Schema Evolution & Backward Compatibility
 - ✅ Database Partitioning / Sharding
-- ⏳ Kafka
+- ✅ Kafka concepts and event-driven design (no live broker deployment claimed)
 
 ---
 
@@ -169,17 +169,15 @@ problem-solving.
 - ✅ LangChain
 - ✅ AI Agents
 - ✅ LangChain + FastAPI Integration
-- ⏳ Model Context Protocol (MCP)
+- ✅ Model Context Protocol fundamentals and client/server flow
 
 ---
 
 ## Projects
 
-- 🚧 Task Manager REST API
-- 🚧 URL Shortener
-- 🚧 Expense Tracker API
-- ⏳ Blog API
-- ⏳ Chat Application
+- 🚧 Task Manager REST API (capstone integration and end-to-end verification remain)
+- 🚧 URL Shortener (learning implementations; redirect/deployment verification remains)
+- 🚧 Expense Tracker (schema and learning modules; integrated API remains)
 
 ---
 
@@ -3891,3 +3889,21 @@ Day 90 closes the roadmap with final benchmarks, long-term practice plans, and a
 - **Project:** Added `projects/day90_capstone_portfolio_readiness.md` for final validation, documentation, demo, and portfolio readiness.
 
 Run the examples and project checks in the target environment before recording results or claiming production readiness. The long-term plan should be driven by demonstrated gaps and verified project evidence.
+
+
+---
+
+## Day 90 Completion — What the Status Means
+
+The 90-day learning sequence and its review/assessment artifacts are present in
+this repository. The topic checkmarks above mean that the topic has learning
+material or a practical exercise in the repository; they do **not** mean that
+every technology has been deployed as a production service.
+
+The remaining work is primarily portfolio engineering: integrate and verify
+the Task Manager, complete the URL Shortener redirect/runtime path, and decide
+whether the Expense Tracker should become a standalone end-to-end application.
+Blog API and Chat Application are not completed projects and are intentionally
+not marked complete. See `REPOSITORY_COMPLETION_AUDIT.md` for the README-by-README
+audit and the exact distinction between completed learning topics and unfinished
+project implementation.

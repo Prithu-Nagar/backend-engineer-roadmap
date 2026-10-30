@@ -51,17 +51,17 @@ business operations rather than treating transactions as isolated SQL syntax.
 
 ---
 
-## Current Topics
+## Day 90 Coverage Status
 
-None
+The repository includes practical material for relational modeling, schema
+trade-offs, database scaling, partitioning, read replicas, connection pooling,
+migrations, query plans/monitoring, production troubleshooting, security, and
+query optimization. These topics have learning files and exercises; coverage
+does not imply hands-on operation of a production database cluster.
 
----
-
-## Upcoming Topics
-
-- Advanced Database Design
-- Database Scaling
-- Advanced Query Optimization
+Use the topic sections below and the Day 83–90 review files as the coverage
+index. Further database design and performance work is optional continued
+practice, not an unstarted roadmap milestone.
 
 ---
 
@@ -1583,4 +1583,3 @@ write overhead; avoid adding them without an access-pattern rationale.
 File: `day86_security_integrity_review.sql`
 
 Contains PostgreSQL examples for privilege auditing, least-privilege grants, integrity checks, parameterized queries, and row-level security inventory. Review object names and existing data before applying any migration or privilege change.
-

@@ -3,11 +3,13 @@
 Day 21 starts a backend URL shortener project that is developed incrementally
 through the Django/DRF and FastAPI learning milestones in this repository.
 
-> **Current status (Day 30):** The repository contains the planned learning
-> artifacts and framework implementations through Day 30. The Django/DRF
-> portion is intentionally a learning-stage implementation rather than a
-> standalone deployment-ready Django project. The FastAPI implementation has
-> an executable test suite.
+> **Current status:** The repository contains a Django model, migrations,
+> admin registration, DRF serializers/views/routes, ownership permissions, and
+> a separate FastAPI comparison app with tests. This is a learning-stage
+> implementation, not yet a verified deployable URL Shortener service. Confirm
+> that the Django project settings/runtime are wired, migrations apply in the
+> target environment, and a short-code request returns an actual HTTP redirect
+> before claiming end-to-end completion.
 
 ## Goal
 
@@ -554,3 +556,26 @@ the URL Shortener. The bullets are intended to be checked against the actual
 implementation and design artifacts before being used in a job application.
 Do not claim deployment scale, latency improvements, or production traffic
 without measurements that can be demonstrated.
+
+
+---
+
+## Day 90 Verification Notes
+
+The Django/DRF model and API artifacts are present, including owner-aware
+migrations and permissions. The FastAPI comparison app is a separate example;
+its storage and behavior must be evaluated from `fastapi_app.py` and its tests,
+not inferred from the Django implementation.
+
+Before presenting this as a finished project, verify:
+
+- [ ] A documented Django settings module and runnable project entry point exist.
+- [ ] Migrations apply cleanly to the intended database.
+- [ ] Create/list/retrieve operations enforce owner scoping.
+- [ ] `GET /<short_code>` returns a real redirect for active records.
+- [ ] Expired, inactive, and unknown short codes have defined behavior.
+- [ ] Tests exercise the full HTTP flow and persistence across restarts.
+- [ ] Docker/deployment configuration starts this project rather than another app.
+
+Keep the FastAPI in-memory comparison labelled as a framework exercise unless
+it is separately upgraded and tested for persistence and redirect semantics.

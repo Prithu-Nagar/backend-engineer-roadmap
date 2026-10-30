@@ -32,11 +32,14 @@ This directory contains interview problems that use the Stack data structure.
 
 ---
 
-## Upcoming Problems
+## Coverage and Additional Practice
 
-- Evaluate Reverse Polish Notation
-- Generate Parentheses
-- Largest Rectangle in Histogram
+The repository includes monotonic-stack solutions for Daily Temperatures and
+Next Greater Element I, plus Min Stack and Valid Parentheses. Generate
+Parentheses is implemented under `../recursion/generate_parentheses.py`.
+Evaluate Reverse Polish Notation and Largest Rectangle in Histogram are not
+present as dedicated solutions in this archive; they remain optional follow-up
+practice rather than unfulfilled scheduled roadmap items.
 
 ---
 

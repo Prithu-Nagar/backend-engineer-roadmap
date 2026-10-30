@@ -32,14 +32,16 @@ This directory contains LeetCode problems focused on array manipulation, hashing
 
 ---
 
-## Upcoming Problems
+## Additional Array Problems Already Present
 
-- Best Time to Buy and Sell Stock
-- Product of Array Except Self
-- Maximum Subarray
-- Top K Frequent Elements
-- Encode and Decode Strings
-- Longest Consecutive Sequence
+- Best Time to Buy and Sell Stock — covered in the greedy pattern folder
+- Product of Array Except Self — `../prefix_sums/product_of_array_except_self.py`
+- Maximum Subarray — `maximum_subarray.py`
+- Top K Frequent Elements — `../heap/top_k_frequent_elements.py`
+- Longest Consecutive Sequence — `../hashing/longest_consecutive_sequence.py`
+
+The repository organizes some problems by their primary solving pattern, so
+not every array-related solution is stored in this directory.
 
 ---
 

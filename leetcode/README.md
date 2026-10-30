@@ -250,16 +250,14 @@ dsa/
 
 The leetcode/ directory serves as the progress tracker, while the actual implementations are maintained under dsa/.
 
-## Future Problems
+## Day 90 Coverage Note
 
-Future LeetCode problems will be added as new DSA topics are introduced in the roadmap.
-
-Upcoming areas include:
-
-- Backtracking
-- Advanced Trees
-- Advanced Graph Algorithms
-- More Dynamic Programming patterns
+The roadmap's scheduled problem-solving sequence is complete. Backtracking,
+tree, graph, and additional dynamic-programming patterns are represented in
+the DSA solution folders and the Day 82–90 review/assessment files. This is
+not a claim that the repository contains every canonical LeetCode problem;
+continue adding problems as deliberate interview practice rather than leaving
+these categories labelled as unstarted.
 
 ---
 
