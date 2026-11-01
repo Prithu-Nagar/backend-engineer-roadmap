@@ -71,7 +71,12 @@ class SimpleChunker:
         return chunks
 
 
-class DemoEmbedder:
+"""DEMO ONLY: deterministic toy vectors, not semantic embeddings.
+
+Do not use for similarity search or production retrieval; inject a
+real embedding provider for those use cases.
+"""
+class DeterministicDemoEmbedder:
     async def embed(self, chunks: list[DocumentChunk]) -> list[list[float]]:
         # Replace this deterministic placeholder with a real embedding provider.
         return [[float(len(chunk.text)), float(chunk.chunk_id)] for chunk in chunks]

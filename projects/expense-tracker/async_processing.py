@@ -60,7 +60,7 @@ class AsyncAggregationWorker:
 
 
 def process_aggregation(job: AggregationJob) -> None:
-    """Placeholder for the existing synchronous aggregation service."""
+    """Demonstration callback only; connect the persistent aggregation service before treating this as a completed worker."""
     print(f"aggregating expenses from {job.start_date} to {job.end_date}")
 
 

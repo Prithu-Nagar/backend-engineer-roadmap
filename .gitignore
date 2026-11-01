@@ -14,3 +14,15 @@ venv/
 Thumbs.db
 
 *.log
+
+# Test, lint, coverage, packaging, and build artifacts
+.pytest_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+build/
+dist/
+*.egg-info/
