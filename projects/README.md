@@ -220,7 +220,7 @@ request/response flow.
 
 | Project | What exists in this repository | Accurate status |
 |---|---|---|
-| Task Manager | Flask roadmap app plus separate validation, service, auth, pagination, logging, Docker, and test exercises | Capstone integration, persistence, and end-to-end runtime verification remain |
+| Task Manager | Shared Flask roadmap app; project-level in-memory service and separate validation, auth, pagination, logging, health, security, Docker, and helper-test modules | **In progress** — project-specific HTTP and durable database workflows still need integration and end-to-end verification |
 | URL Shortener | Django model/migrations/DRF layer and a separate FastAPI comparison app | Learning implementation; verify redirect, runtime, and deployment before claiming completion |
 | Expense Tracker | SQL schema and separate CRUD, caching, async, reliability, and observability exercises | Learning modules; no single integrated API application is documented here |
 | Blog API | No project implementation directory in this archive | Not implemented |
