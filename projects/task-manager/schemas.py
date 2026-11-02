@@ -1,15 +1,16 @@
 """
 Task Manager - Day 16 Schemas
+Task Manager - Phase 2 Day 2 API Contract Schemas
 
-Defines the fields accepted by the API for task creation,
-updates, and responses.
+Defines the canonical fields accepted by the Task Manager MVP API
+for task creation, updates, and responses.
 """
 
 
 CREATE_TASK_FIELDS = {
     "title",
     "description",
-    "completed",
+    "status",
     "priority",
 }
 
@@ -19,11 +20,17 @@ RESPONSE_FIELDS = {
     "id",
     "title",
     "description",
-    "completed",
+    "status",
     "priority",
     "created_at",
     "updated_at",
 }
+
+TASK_STATUSES = frozenset({"pending", "in_progress", "completed"})
+TASK_PRIORITIES = frozenset({"low", "medium", "high"})
+TASK_TITLE_MAX_LENGTH = 200
+DEFAULT_PAGE_SIZE = 20
+MAX_PAGE_SIZE = 100
 
 
 def create_task_schema(data):

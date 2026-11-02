@@ -819,3 +819,168 @@ does not replace end-to-end verification of the integrated capstone.
 The initial review mapped the existing application entry point, route modules, configuration, task-service helpers, validation, authentication, authorization, persistence gaps, Docker setup, and tests. The existing helper tests provide a useful baseline, but passing module-level tests do not establish end-to-end HTTP/database behavior.
 
 The implementation decision is to preserve useful learning modules, avoid a wholesale rewrite, and integrate the existing pieces behind one canonical Task Manager application. Durable persistence, route-level ownership enforcement, and integrated API behavior remain implementation work.
+
+---
+
+## Phase 2 — Day 2: MVP Scope, API Contract and Configuration
+
+### Canonical implementation and scope
+
+The canonical implementation for the integrated MVP is **Flask**, using the
+existing repository entry point at `backend/app.py` and shared environment
+configuration at `backend/config.py`. PostgreSQL is the target persistent
+database. The existing project-level Python files remain useful learning
+artifacts; they are not represented as an already-integrated persistent API.
+
+The five-day MVP is limited to:
+
+- User registration and login with password hashing and JWT access tokens.
+- Authenticated task creation, listing, retrieval, update and deletion.
+- Per-user task ownership; an administrator may access all tasks.
+- Task status and priority validation, list filtering and bounded pagination.
+- PostgreSQL persistence, reproducible schema initialization, automated tests
+  and Docker-based local setup.
+
+Out of scope for this MVP are refresh-token rotation, password reset/email
+flows, role/permission administration endpoints, Redis-backed behavior,
+background jobs, a frontend, and production deployment. Existing exercises
+for those topics remain separate unless a later day's task explicitly
+integrates them.
+
+### Locked API contract
+
+All application endpoints use the `/api/v1` prefix. JSON is used for request
+and response bodies. Task endpoints require
+`Authorization: Bearer <access-token>`.
+
+| Method | Path | Purpose | Success |
+| --- | --- | --- | --- |
+| POST | `/api/v1/auth/register` | Register a user | 201 |
+| POST | `/api/v1/auth/login` | Verify credentials and issue an access token | 200 |
+| GET | `/api/v1/tasks` | List the authenticated user's tasks | 200 |
+| POST | `/api/v1/tasks` | Create a task for the authenticated user | 201 |
+| GET | `/api/v1/tasks/{task_id}` | Retrieve an owned task | 200 |
+| PATCH | `/api/v1/tasks/{task_id}` | Partially update an owned task | 200 |
+| DELETE | `/api/v1/tasks/{task_id}` | Delete an owned task | 204 |
+
+A regular user can access only their own tasks. An administrator can access
+tasks across users. Missing/invalid authentication returns `401`; an
+authenticated but disallowed operation returns `403`; missing tasks return
+`404`; invalid input returns `422`; duplicate username/email returns `409`.
+
+Registration accepts `username`, `email` and `password`. Login accepts
+`email` and `password`. Passwords are never returned by the API; only a
+password hash is stored.
+
+Task creation accepts:
+
+```json
+{
+  "title": "Prepare release",
+  "description": "Write release notes",
+  "status": "pending",
+  "priority": "medium"
+}
+```
+
+`title` is required (1–200 characters after trimming). `description` is
+optional. `status` is one of `pending`, `in_progress`, or `completed` and
+defaults to `pending`. `priority` is one of `low`, `medium`, or `high` and
+defaults to `medium`. Updates accept any non-empty subset of those four task
+fields. Clients cannot set `id`, `user_id`, timestamps, role, or password
+fields.
+
+The list endpoint supports `status` and `priority` filters, plus `page`
+(default `1`) and `per_page` (default `20`, maximum `100`). Results are ordered
+by `created_at` descending, with `id` descending as a stable tie-breaker.
+Timestamps are ISO-8601 UTC values. Task responses expose `id`, `title`,
+`description`, `status`, `priority`, `created_at` and `updated_at`; ownership
+and authentication fields remain internal.
+
+Errors use the existing standard envelope:
+
+```json
+{
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "message": "A human-readable explanation."
+  }
+}
+```
+
+### Database contract
+
+`sql/task_manager_schema.sql` is the canonical PostgreSQL schema reference.
+It defines:
+
+- `users`: identity primary key, unique username/email, password hash,
+  `user`/`admin` role and creation timestamp.
+- `tasks`: identity primary key, required owner foreign key with cascade delete,
+  title, optional description, status, priority and creation/update timestamps.
+- Check constraints for role, non-empty title, status and priority.
+- Owner/status and owner/priority indexes for the MVP's list filters.
+
+Task completion is represented by the single `status` field; there is no
+separate boolean `completed` column to drift out of sync. Seed users contain an
+intentionally unusable password sentinel and cannot log in until real password
+hashes are supplied. The SQL file is a schema/demo script, not a versioned
+migration; migration tooling and clean database initialization are Day 3 work.
+
+### Configuration and environment
+
+The existing `backend/config.py` is the shared configuration source. The
+project's `.env.example` lists the supported local variables:
+
+| Variable | Purpose |
+| --- | --- |
+| `APP_ENV` | Runtime environment (`development`, `testing`, `production`) |
+| `APP_DEBUG` | Enable Flask debug mode locally; keep false in production |
+| `SECRET_KEY` | Secret used by Flask/JWT-related application components |
+| `DATABASE_URL` | PostgreSQL connection URL |
+| `REDIS_URL` | Optional Redis connection URL; not required by the MVP |
+
+Copy `.env.example` to `.env` and export its values in the shell before
+starting the application. The repository does not currently auto-load `.env`
+files. Use a unique local secret; never commit `.env` or production secrets.
+The current configuration has a development-only fallback secret, which must
+not be used for production. Redis is documented for compatibility with the
+shared configuration but is not a Day 2 runtime dependency.
+
+### Folder and ownership boundaries
+
+The existing repository layout is retained. The integration will use these
+boundaries rather than moving or duplicating the current learning modules:
+
+```text
+backend/
+  app.py                 # Flask entry point / application factory integration
+  config.py              # shared environment-based configuration
+
+projects/task-manager/
+  .env.example           # local configuration template
+  tests/                 # project tests
+  schemas.py              # request/response field allow-lists
+  authorization.py       # authorization rules
+  validation.py          # reusable input validation
+  ...                    # existing focused learning modules
+
+sql/
+  task_manager_schema.sql # canonical PostgreSQL schema reference
+```
+
+Day 3 will add the database models, migrations and test-database integration
+inside this structure. This section records the agreed contract; it does not
+claim that the endpoints or persistent application are already implemented.
+
+### Contract walkthrough (planned demo)
+
+1. Initialize a clean PostgreSQL database from the schema reference.
+2. Register a user, then log in to obtain a bearer token.
+3. Create a task and retrieve it using the returned task ID.
+4. List tasks with a status filter and page size.
+5. Attempt to access another user's task and verify the ownership denial.
+6. Update the task status, then delete it.
+
+The walkthrough becomes executable when the API integration is completed; it
+is a contract/demo path, not a claim that these routes are runnable today.
+
