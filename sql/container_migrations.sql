@@ -2,9 +2,9 @@
 -- Day 42 — Database Migrations in Containers
 -- ============================================================
 --
--- This file demonstrates an idempotent migration step that can be
--- mounted into PostgreSQL's initialization directory after the
--- baseline schema script.
+-- This is a standalone Day 42 learning example, not part of the current
+-- Task Manager Compose startup. The example assumes an Expense Tracker
+-- `expenses` table exists before its index migration runs.
 --
 -- In a production environment, a dedicated migration tool should
 -- own migration ordering and execution history. This example keeps

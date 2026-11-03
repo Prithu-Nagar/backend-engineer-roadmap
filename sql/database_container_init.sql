@@ -5,6 +5,10 @@
 -- This script is intended for a PostgreSQL container's
 -- initialization directory (for example, /docker-entrypoint-initdb.d).
 --
+-- This is a standalone Day 41 learning exercise, not the current Task Manager
+-- Compose bootstrap. The integrated Task Manager schema is managed by Alembic
+-- in migrations/versions/0001_create_users_and_tasks.py.
+--
 -- Initialization scripts run when the database is first created.
 -- They should be safe to understand as schema/bootstrap steps rather
 -- than as application-level migration history.

@@ -10,8 +10,10 @@ The projects are developed incrementally alongside the topics covered in the roa
 
 ### Task Manager REST API
 
-**Status:** Learning milestones documented; capstone integration and end-to-end
-verification are still required.
+**Status:** In progress. The Phase 2 Day 3 database foundation now includes an
+application factory, SQLAlchemy models, an Alembic migration, and clean-database
+tests. Authentication, route-level ownership, full CRUD integration, and
+end-to-end verification remain scheduled work.
 
 The Task Manager REST API is the primary backend project being developed throughout the roadmap.
 
@@ -47,7 +49,7 @@ Instead of creating multiple small projects, the same application evolves over t
 
 ### REST API
 
-The current API supports basic task retrieval and creation.
+The shared roadmap Flask app supports basic task retrieval and creation.
 
 |Method |          Endpoint             |        Purpose      |
 |-------|-------------------------------|---------------------|
@@ -58,8 +60,9 @@ The current API supports basic task retrieval and creation.
 
 The general roadmap Flask app exposes the routes listed above. The separate
 Task Manager learning modules include additional service, validation, auth,
-pagination, logging, and testing exercises; they are not yet assembled into one
-persistent, project-specific application with a verified full CRUD HTTP surface.
+pagination, logging, and testing exercises. The Phase 2 Day 3 database
+foundation is integrated, but the modules are not yet assembled into one
+project-specific application with a verified full CRUD HTTP surface.
 
 ---
 
@@ -124,7 +127,8 @@ Service Layer
 Database / Models
 
 ```
-The service and database layers will be introduced as the project progresses through the roadmap.
+The database/model foundation is now present; the service and route layers will
+be integrated in the following project milestones.
 
 ---
 
@@ -220,7 +224,7 @@ request/response flow.
 
 | Project | What exists in this repository | Accurate status |
 |---|---|---|
-| Task Manager | Shared Flask roadmap app; project-level in-memory service and separate validation, auth, pagination, logging, health, security, Docker, and helper-test modules | **In progress** — project-specific HTTP and durable database workflows still need integration and end-to-end verification |
+| Task Manager | Flask application factory, SQLAlchemy user/task models, Alembic migration, project learning modules, and isolated database tests | **In progress** — database foundation is integrated; authentication, route-level ownership, CRUD workflows, and end-to-end verification remain |
 | URL Shortener | Django model/migrations/DRF layer and a separate FastAPI comparison app | Learning implementation; verify redirect, runtime, and deployment before claiming completion |
 | Expense Tracker | SQL schema and separate CRUD, caching, async, reliability, and observability exercises | Learning modules; no single integrated API application is documented here |
 | Blog API | No project implementation directory in this archive | Not implemented |

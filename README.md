@@ -2703,6 +2703,43 @@ tightly coupled implementation details.
 
 ---
 
+## Day 53 — RAG API Design and Retrieval Pipeline
+
+Day 53 connects RAG retrieval concepts to an API boundary and a bounded
+online-serving architecture.
+
+### DSA
+
+- Focused on tree and graph patterns; the blueprint calls for three
+  tree/graph interview problems.
+
+### Python
+
+- Added async streaming concepts with async generators, cooperative
+  cancellation, and a bounded producer/consumer queue in
+  `python/async_streaming_concepts.py`.
+
+### SQL
+
+- Added tenant-aware document metadata filters and JSONB query examples in
+  `sql/rag_metadata_query_patterns.sql`.
+
+### Backend
+
+- Added a provider-neutral RAG API boundary in `backend/rag_api.py`.
+
+### System Design
+
+- Added the online RAG query, retrieval, reranking, context, and generation
+  flow in `system-design/rag-system-architecture.md`.
+
+### GenAI
+
+- Added dependency-free chunking, lexical candidate retrieval, reranking, and
+  bounded context construction in `genai/rag_retrieval_pipeline.py`.
+
+---
+
 ## Day 54 — RAG Evaluation + Offline Ingestion
 
 Day 54 continues the GenAI Engineering phase by evaluating RAG quality and
@@ -3904,6 +3941,6 @@ The remaining work is primarily portfolio engineering: integrate and verify
 the Task Manager, complete the URL Shortener redirect/runtime path, and decide
 whether the Expense Tracker should become a standalone end-to-end application.
 Blog API and Chat Application are not completed projects and are intentionally
-not marked complete. See `REPOSITORY_COMPLETION_AUDIT.md` for the README-by-README
-audit and the exact distinction between completed learning topics and unfinished
-project implementation.
+not marked complete. See [projects/README.md](projects/README.md) for the
+current project status and the distinction between completed learning topics
+and unfinished project implementation.

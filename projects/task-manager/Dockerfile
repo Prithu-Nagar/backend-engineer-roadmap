@@ -17,8 +17,9 @@ COPY python/requirements.txt /app/requirements.txt
 RUN python -m pip install --no-cache-dir -r /app/requirements.txt
 
 COPY backend /app/backend
+COPY migrations /app/migrations
 COPY projects/task-manager /app/projects/task-manager
 
 EXPOSE 5000
 
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--workers", "2", "--access-logfile", "-", "--error-logfile", "-", "app:app"]
+CMD ["sh", "-c", "flask --app app:app db upgrade && exec gunicorn --bind 0.0.0.0:5000 --workers 2 --access-logfile - --error-logfile - app:app"]

@@ -29,7 +29,7 @@ The Task Manager API is designed to demonstrate:
 
 The project is being developed incrementally.
 
-The current authentication and authorization flow is:
+The authentication and authorization learning flow is:
 
 ```text
 Client
@@ -51,6 +51,9 @@ Role / Permission Check
 Task Resource
 ```
 
+These diagrams describe the concepts covered by the learning modules; they do
+not claim that the project-specific routes already enforce this flow.
+
 Authentication determines who the user is.
 
 Authorization determines what the authenticated user is allowed to do.
@@ -65,9 +68,10 @@ The project demonstrates authorization rules for:
 - Update task
 - Delete task
 
-Update/delete behavior is represented in the service and test learning artifacts,
-but the project-specific HTTP routes are not yet assembled and verified as one
-persistent Task Manager application.
+Update/delete behavior is represented in the service and test learning artifacts.
+The Phase 2 Day 3 database foundation is now persistent and migration-backed, but
+the project-specific HTTP routes are not yet assembled and verified as one full
+CRUD Task Manager application.
 
 Authentication verifies the identity of the user.
 
@@ -560,16 +564,12 @@ Tests follow the Arrange-Act-Assert pattern:
 
 ## Future Improvements
 
-Planned improvements include:
+Remaining integration work includes:
 
-Database persistence
-Better password hashing
-Token refresh mechanism
-More granular permissions
-Dockerization
-Production deployment
-Improved configuration management
-API documentation
+- Connect database models and migrations to the project-specific services/routes.
+- Add password hashing and authenticated route-level ownership (Phase 2 Day 4).
+- Add token refresh, more granular permissions, and production deployment later.
+- Complete API documentation for the integrated endpoint surface.
 
 The project will continue evolving as new backend, system-design, SQL, and Python concepts are introduced throughout the roadmap.
 
@@ -596,7 +596,9 @@ docker run --rm -p 5000:5000 task-manager-api
 ```
 
 The container listens on port `5000` and runs the existing Flask application.
-Application and database state are not stored in the container filesystem.
+The container applies Alembic migrations before starting Gunicorn. A plain
+`docker run` uses the SQLite fallback, which is ephemeral with the container;
+Docker Compose uses PostgreSQL with a named volume.
 
 Docker Compose is intentionally deferred to Day 42.
 
@@ -622,7 +624,9 @@ The database and Redis services include health checks, and PostgreSQL data is
 stored in a named Docker volume.
 
 The application code is not replaced. Docker Compose adds orchestration around
-the existing Day 41 image.
+the Day 41 image. PostgreSQL starts empty and the app applies the root Alembic
+migrations; the standalone Day 41/42 SQL exercises are not mounted as schema
+initializers.
 
 ---
 
@@ -814,15 +818,25 @@ does not replace end-to-end verification of the integrated capstone.
 
 ---
 
-## Phase 2 — Day 1 Repository Review
+## Phase 2 — Day 1 Repository Review (1 November 2026)
 
-The initial review mapped the existing application entry point, route modules, configuration, task-service helpers, validation, authentication, authorization, persistence gaps, Docker setup, and tests. The existing helper tests provide a useful baseline, but passing module-level tests do not establish end-to-end HTTP/database behavior.
+Phase 2 dates in this repository are shifted one day earlier than the dates
+printed in the sprint DOCX: Day 1 is 1 November 2026, Day 2 is 2 November, and
+Day 3 is 3 November. The initial review mapped the existing application entry
+point, route modules, configuration, task-service helpers, validation,
+authentication, authorization, persistence gaps, Docker setup, and tests. The
+existing helper tests provide a useful baseline, but passing module-level tests
+do not establish end-to-end HTTP/database behavior.
 
-The implementation decision is to preserve useful learning modules, avoid a wholesale rewrite, and integrate the existing pieces behind one canonical Task Manager application. Durable persistence, route-level ownership enforcement, and integrated API behavior remain implementation work.
+The implementation decision is to preserve useful learning modules, avoid a
+wholesale rewrite, and integrate the existing pieces behind one canonical Task
+Manager application. The ORM models and initial Alembic migration now provide
+durable persistence; route-level ownership enforcement and integrated API
+behavior remain implementation work.
 
 ---
 
-## Phase 2 — Day 2: MVP Scope, API Contract and Configuration
+## Phase 2 — Day 2 (2 November 2026): MVP Scope, API Contract and Configuration
 
 ### Canonical implementation and scope
 
@@ -830,7 +844,8 @@ The canonical implementation for the integrated MVP is **Flask**, using the
 existing repository entry point at `backend/app.py` and shared environment
 configuration at `backend/config.py`. PostgreSQL is the target persistent
 database. The existing project-level Python files remain useful learning
-artifacts; they are not represented as an already-integrated persistent API.
+artifacts; the Phase 2 Day 3 database foundation is now integrated, but the
+project-specific API is not yet a complete persistent application.
 
 The five-day MVP is limited to:
 
@@ -923,8 +938,9 @@ It defines:
 Task completion is represented by the single `status` field; there is no
 separate boolean `completed` column to drift out of sync. Seed users contain an
 intentionally unusable password sentinel and cannot log in until real password
-hashes are supplied. The SQL file is a schema/demo script, not a versioned
-migration; migration tooling and clean database initialization are Day 3 work.
+hashes are supplied. `sql/task_manager_schema.sql` remains a reference/demo
+script; the versioned schema and clean-database initialization are implemented
+by the Alembic migration in the root `migrations/` directory.
 
 ### Configuration and environment
 
@@ -968,13 +984,14 @@ sql/
   task_manager_schema.sql # canonical PostgreSQL schema reference
 ```
 
-Day 3 will add the database models, migrations and test-database integration
-inside this structure. This section records the agreed contract; it does not
-claim that the endpoints or persistent application are already implemented.
+Day 3 adds `backend/models.py`, shared SQLAlchemy extensions, and the root
+`migrations/` directory. This section records the agreed API contract; it does
+not claim that the endpoints or complete persistent application are already
+implemented.
 
 ### Contract walkthrough (planned demo)
 
-1. Initialize a clean PostgreSQL database from the schema reference.
+1. Initialize a clean PostgreSQL database with `flask db upgrade`.
 2. Register a user, then log in to obtain a bearer token.
 3. Create a task and retrieve it using the returned task ID.
 4. List tasks with a status filter and page size.
@@ -984,3 +1001,41 @@ claim that the endpoints or persistent application are already implemented.
 The walkthrough becomes executable when the API integration is completed; it
 is a contract/demo path, not a claim that these routes are runnable today.
 
+
+
+---
+
+## Phase 2 — Day 3 (3 November 2026): Application Factory and Database Foundation
+
+The Flask entry point now initializes shared SQLAlchemy and Flask-Migrate
+extensions through `create_app()`. The factory accepts an explicit
+configuration, so tests use an isolated in-memory SQLite database while local
+runs can use `DATABASE_URL` (or the local SQLite fallback).
+
+The database models implement the Day 2 contract:
+
+- `User`: unique username/email, password hash, constrained `user`/`admin` role.
+- `Task`: required owner foreign key, title, description, status, priority and
+  timestamps; status/priority/title checks and owner-oriented indexes.
+- A one-to-many user/task relationship with cascading task deletion.
+
+The initial Alembic revision is maintained in the repository-root `migrations/`
+directory. From the repository root, install `python/requirements.txt`, set
+`DATABASE_URL`, and run:
+
+```bash
+flask --app backend.app:app db upgrade
+```
+
+The database fixture creates and removes model metadata for isolated data
+tests. A separate clean-database test runs `flask db upgrade` and verifies the
+Alembic revision, tables, foreign key, and indexes. Run the focused tests with:
+
+```bash
+pytest projects/task-manager/tests/test_database.py
+```
+
+The `/health/database` endpoint performs a lightweight database connectivity
+check. The Docker image runs Alembic migrations before Gunicorn starts; SQLite
+is used for deterministic tests and does not replace PostgreSQL as the target
+persistent database.
