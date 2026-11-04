@@ -6,6 +6,7 @@ from flask import Flask
 
 if __package__:
     from . import models
+    from .auth_routes import auth_bp
     from .config import Config, ProductionConfig, TestingConfig
     from .extensions import db, migrate
     from .flask_routing import task_bp
@@ -13,6 +14,7 @@ if __package__:
     from .pagination import pagination_bp
 else:  # pragma: no cover - Docker runs app.py as a top-level module
     import models  # noqa: F401
+    from auth_routes import auth_bp
     from config import Config, ProductionConfig, TestingConfig
     from extensions import db, migrate
     from flask_routing import task_bp
@@ -31,6 +33,7 @@ def create_app(config_object: type[Config] | object | None = None) -> Flask:
     db.init_app(app)
     migration_directory = Path(__file__).resolve().parent.parent / "migrations"
     migrate.init_app(app, db, directory=str(migration_directory))
+    app.register_blueprint(auth_bp)
     app.register_blueprint(task_bp)
     app.register_blueprint(pagination_bp)
     app.register_blueprint(health_bp)

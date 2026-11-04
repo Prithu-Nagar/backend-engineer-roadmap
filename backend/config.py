@@ -28,6 +28,9 @@ class Config:
     DEBUG = _env_bool("APP_DEBUG", default=ENVIRONMENT == "development")
     TESTING = False
     SECRET_KEY = os.getenv("SECRET_KEY", "development-only-secret")
+    JWT_SECRET = os.getenv("JWT_SECRET", SECRET_KEY)
+    JWT_ACCESS_TOKEN_TTL_SECONDS = int(os.getenv("JWT_ACCESS_TOKEN_TTL_SECONDS", "1800"))
+    PASSWORD_MIN_LENGTH = int(os.getenv("PASSWORD_MIN_LENGTH", "8"))
     DATABASE_URL = os.getenv("DATABASE_URL", "")
     SQLALCHEMY_DATABASE_URI = _database_uri(DATABASE_URL) or "sqlite:///task_manager.db"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
@@ -59,3 +62,7 @@ class ProductionConfig(Config):
             raise RuntimeError("DATABASE_URL must be configured in production")
         if cls.SECRET_KEY == "development-only-secret":
             raise RuntimeError("SECRET_KEY must be configured in production")
+        if cls.JWT_SECRET == "development-only-secret" or len(cls.JWT_SECRET) < 32:
+            raise RuntimeError("JWT_SECRET must be configured with at least 32 characters in production")
+        if cls.JWT_ACCESS_TOKEN_TTL_SECONDS <= 0:
+            raise RuntimeError("JWT_ACCESS_TOKEN_TTL_SECONDS must be positive")

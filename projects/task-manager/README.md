@@ -29,30 +29,13 @@ The Task Manager API is designed to demonstrate:
 
 The project is being developed incrementally.
 
-The authentication and authorization learning flow is:
+The integrated Flask application now enforces the authentication flow:
 
 ```text
-Client
-  ↓
-Login
-  ↓
-Authentication
-  ↓
-JWT Access Token
-  ↓
-Authenticated Request
-  ↓
-JWT Validation
-  ↓
-Authorization
-  ↓
-Role / Permission Check
-  ↓
-Task Resource
+Client → Register / Login → Password verification → Signed JWT
+  → Bearer token validation → Database user lookup
+  → Ownership / role check → Task resource
 ```
-
-These diagrams describe the concepts covered by the learning modules; they do
-not claim that the project-specific routes already enforce this flow.
 
 Authentication determines who the user is.
 
@@ -69,19 +52,26 @@ The project demonstrates authorization rules for:
 - Delete task
 
 Update/delete behavior is represented in the service and test learning artifacts.
-The Phase 2 Day 3 database foundation is now persistent and migration-backed, but
-the project-specific HTTP routes are not yet assembled and verified as one full
-CRUD Task Manager application.
+The Phase 2 Day 3 database foundation is persistent and migration-backed.
+Phase 2 Day 4 integrates registration, login, JWT validation, authenticated
+task creation/listing/detail retrieval, and task ownership into the Flask app.
+Full update/delete CRUD, expanded validation, and pagination acceptance remain
+separate project milestones.
 
 Authentication verifies the identity of the user.
 
-The project has progressively introduced:
+The integrated API now provides:
 
-Authentication fundamentals
-User identity
-Password verification
-JWT access tokens
-Token validation
+- `POST /api/auth/register` — create a regular user account
+- `POST /api/auth/login` — verify credentials and issue a JWT
+- `GET /api/auth/me` — return the authenticated user's profile
+- `Authorization: Bearer <token>` — authenticate protected requests
+
+Passwords are stored using Werkzeug PBKDF2-SHA256 password hashing; plaintext
+passwords are never stored or returned. JWTs are signed with `JWT_SECRET`,
+include subject/issued-at/expiry claims, and default to a 30-minute lifetime.
+The user is reloaded from the database on each authenticated request, so the
+token does not independently grant access after the account is removed.
 
 JWT tokens contain information required to identify the authenticated user.
 
@@ -120,7 +110,12 @@ Authorization
 
 Authorization is performed after authentication.
 
-The project uses role-based authorization.
+The integrated task endpoints apply ownership filtering: regular users can
+create and list their own tasks and retrieve only their own task records.
+Requests for another user's task return `404` to avoid revealing whether the
+resource exists. Administrators can list and retrieve tasks across owners.
+
+The project retains role-based authorization.
 
 Example roles:
 
@@ -315,8 +310,9 @@ the capstone as complete.
 
 Relevant files:
 
-- `logging_config.py`
-- `tests/test_task_manager.py`
+- `auth.py` and `auth_routes.py` — integrated password/JWT authentication
+- `flask_routing.py` — authenticated task routes and ownership filtering
+- `tests/test_phase2_day4_auth.py` — authentication and ownership integration tests
 
 ---
 
@@ -562,14 +558,41 @@ Tests follow the Arrange-Act-Assert pattern:
 
 ---
 
-## Future Improvements
+## Phase 2 Day 4 — Integrated Authentication
 
-Remaining integration work includes:
+Configuration:
 
-- Connect database models and migrations to the project-specific services/routes.
-- Add password hashing and authenticated route-level ownership (Phase 2 Day 4).
-- Add token refresh, more granular permissions, and production deployment later.
-- Complete API documentation for the integrated endpoint surface.
+- `JWT_SECRET` — signing secret; use a unique secret of at least 32 characters in production
+- `JWT_ACCESS_TOKEN_TTL_SECONDS` — access-token lifetime (default: `1800`)
+- `PASSWORD_MIN_LENGTH` — registration password minimum (default: `8`)
+
+Production startup validates the JWT signing secret. Do not commit secrets.
+Public registration always creates the `user` role; administrative roles must
+be provisioned through a trusted administrative process.
+
+Example:
+
+```bash
+curl -X POST http://localhost:5000/api/auth/register \\
+  -H "Content-Type: application/json" \\
+  -d '{"username":"alice","email":"alice@example.com","password":"correct-horse"}'
+
+curl -X POST http://localhost:5000/api/auth/login \\
+  -H "Content-Type: application/json" \\
+  -d '{"username":"alice","password":"correct-horse"}'
+
+curl http://localhost:5000/api/auth/me \\
+  -H "Authorization: Bearer <access-token>"
+```
+
+The existing Alembic users/tasks migration already contains the password hash,
+role, and task owner columns, so this milestone requires no schema migration.
+
+## Remaining Work
+
+- Complete task update/delete CRUD and broader filtering/pagination acceptance.
+- Add token refresh/revocation only if the later project scope requires it.
+- Complete API documentation and fresh-environment acceptance.
 
 The project will continue evolving as new backend, system-design, SQL, and Python concepts are introduced throughout the roadmap.
 
