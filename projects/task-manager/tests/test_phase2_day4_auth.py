@@ -126,7 +126,7 @@ def test_user_can_create_and_list_only_own_tasks(client):
         headers=headers,
     )
     assert created.status_code == 201
-    assert created.json["task"]["user_id"] == 1
+    assert "user_id" not in created.json["task"]
 
     assert client.get("/api/tasks/", headers=headers).json["tasks"][0]["title"] == "My task"
 

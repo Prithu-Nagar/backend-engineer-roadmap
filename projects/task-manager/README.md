@@ -887,28 +887,28 @@ integrates them.
 
 ### Locked API contract
 
-All application endpoints use the `/api/v1` prefix. JSON is used for request
-and response bodies. Task endpoints require
-`Authorization: Bearer <access-token>`.
+The authentication endpoints use `/api/auth`; task endpoints use
+`/api/tasks/`. JSON is used for request and response bodies. Task endpoints
+require `Authorization: Bearer <access-token>`.
 
 | Method | Path | Purpose | Success |
 | --- | --- | --- | --- |
-| POST | `/api/v1/auth/register` | Register a user | 201 |
-| POST | `/api/v1/auth/login` | Verify credentials and issue an access token | 200 |
-| GET | `/api/v1/tasks` | List the authenticated user's tasks | 200 |
-| POST | `/api/v1/tasks` | Create a task for the authenticated user | 201 |
-| GET | `/api/v1/tasks/{task_id}` | Retrieve an owned task | 200 |
-| PATCH | `/api/v1/tasks/{task_id}` | Partially update an owned task | 200 |
-| DELETE | `/api/v1/tasks/{task_id}` | Delete an owned task | 204 |
+| POST | `/api/auth/register` | Register a user | 201 |
+| POST | `/api/auth/login` | Verify credentials and issue an access token | 200 |
+| GET | `/api/tasks/` | List the authenticated user's tasks | 200 |
+| POST | `/api/tasks/` | Create a task for the authenticated user | 201 |
+| GET | `/api/tasks/{task_id}` | Retrieve an owned task | 200 |
+| PATCH | `/api/tasks/{task_id}` | Partially update an owned task | 200 |
+| DELETE | `/api/tasks/{task_id}` | Delete an owned task | 204 |
 
 A regular user can access only their own tasks. An administrator can access
-tasks across users. Missing/invalid authentication returns `401`; an
-authenticated but disallowed operation returns `403`; missing tasks return
-`404`; invalid input returns `422`; duplicate username/email returns `409`.
+tasks across users. Missing/invalid authentication returns `401`; a task that
+is missing or belongs to another user returns `404` to avoid disclosing its
+existence; invalid input returns `422`; duplicate username/email returns `409`.
 
-Registration accepts `username`, `email` and `password`. Login accepts
-`email` and `password`. Passwords are never returned by the API; only a
-password hash is stored.
+Registration accepts `username`, `email` and `password`. Login accepts either
+`username` or `email` with `password`. Passwords and task ownership identifiers
+are not returned by the API; only a password hash is stored.
 
 Task creation accepts:
 
@@ -1012,7 +1012,7 @@ Day 3 adds `backend/models.py`, shared SQLAlchemy extensions, and the root
 not claim that the endpoints or complete persistent application are already
 implemented.
 
-### Contract walkthrough (planned demo)
+### Contract walkthrough
 
 1. Initialize a clean PostgreSQL database with `flask db upgrade`.
 2. Register a user, then log in to obtain a bearer token.
@@ -1021,8 +1021,8 @@ implemented.
 5. Attempt to access another user's task and verify the ownership denial.
 6. Update the task status, then delete it.
 
-The walkthrough becomes executable when the API integration is completed; it
-is a contract/demo path, not a claim that these routes are runnable today.
+The walkthrough is supported by the integrated Flask routes. Use the
+`/api/tasks/` route family and the bearer token returned by login.
 
 
 
@@ -1062,3 +1062,62 @@ The `/health/database` endpoint performs a lightweight database connectivity
 check. The Docker image runs Alembic migrations before Gunicorn starts; SQLite
 is used for deterministic tests and does not replace PostgreSQL as the target
 persistent database.
+
+
+---
+
+## Phase 2 — Day 5: Integrated Task CRUD and Acceptance
+
+The canonical Flask API now supports the complete authenticated task lifecycle:
+
+- `POST /api/tasks/` creates a task for the current user.
+- `GET /api/tasks/` lists visible tasks with database-backed pagination,
+  status/priority filters, title search and allow-listed sorting.
+- `GET /api/tasks/{task_id}` retrieves a task visible to the current user.
+- `PATCH /api/tasks/{task_id}` partially updates an owned task.
+- `DELETE /api/tasks/{task_id}` deletes an owned task and returns `204`.
+
+Regular users can access only their own tasks. Administrators can list and
+manage tasks across owners. A foreign-owned task returns the same `404` response
+as a missing task so its existence is not disclosed.
+
+List query parameters:
+
+| Parameter | Default | Constraint |
+| --- | --- | --- |
+| `page` | `1` | Positive integer |
+| `per_page` | `20` | Integer from `1` to `100` |
+| `status` | — | `pending`, `in_progress`, or `completed` |
+| `priority` | — | `low`, `medium`, or `high` |
+| `search` | — | Case-insensitive title substring, up to 200 characters |
+| `sort_by` | `created_at` | `id`, `title`, `status`, `priority`, `created_at`, `updated_at` |
+| `sort_order` | `desc` | `asc` or `desc` |
+
+List responses include `tasks` and pagination metadata (`page`, `per_page`,
+`total`, `pages`, `has_next`, and `has_previous`). Validation failures use the
+standard `error.code` / `error.message` envelope with HTTP `422`; malformed
+non-object JSON uses `400`. Authentication, ownership and not-found behavior
+remain enforced by the integrated route layer.
+
+### Run and verify
+
+Install dependencies from the repository root:
+
+```bash
+python -m pip install -r python/requirements.txt
+flask --app backend.app:app db upgrade
+pytest projects/task-manager/tests/test_phase2_day4_auth.py projects/task-manager/tests/test_phase2_day5_crud.py
+```
+
+Build and run the Docker image from the repository root:
+
+```bash
+docker build -f projects/task-manager/Dockerfile -t task-manager-api .
+docker run --rm -p 5000:5000 task-manager-api
+```
+
+The image applies the existing Alembic migrations before starting Gunicorn and
+exposes a liveness health check. The default SQLite database is suitable only
+for a local demonstration; configure PostgreSQL and strong external secrets
+for a persistent deployment. Docker Compose remains the repository's existing
+multi-service environment and is not required by this single-container run.
