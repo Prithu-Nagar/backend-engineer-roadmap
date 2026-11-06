@@ -11,6 +11,53 @@ through the Django/DRF and FastAPI learning milestones in this repository.
 > target environment, and a short-code request returns an actual HTTP redirect
 > before claiming end-to-end completion.
 
+## Phase 2 — Framework Selection Decision
+
+**Canonical implementation: Django + Django REST Framework (DRF).**
+
+The Django/DRF implementation is the foundation that will be completed as the
+URL Shortener MVP. FastAPI remains a clearly labelled framework-comparison
+example and will not receive a second full feature implementation.
+
+### Audit findings
+
+| Area | Django + DRF | FastAPI |
+|---|---|---|
+| Persistence | Django `ShortURL` model and migrations are present | In-memory dictionary store |
+| API layer | DRF serializer, ViewSet, and router are present | Create, list, and lookup routes are present |
+| Validation | Serializer plus reusable URL validation helper | Pydantic request model |
+| Identity and ownership | Optional user relation, authenticated ViewSet, and owner permission are present | No authentication or ownership boundary |
+| Automated API tests | No Django integration test suite is present in this project folder | Existing `TestClient` suite; 5 tests pass in the current audit |
+| Runtime integration | Django settings/project entry point are not present in this project folder, so end-to-end startup is not yet verified | The standalone FastAPI app can be exercised by its existing tests |
+
+### Why Django/DRF is canonical
+
+- The target MVP requires durable URL mappings, and the Django model and
+  migrations already provide the strongest persistence foundation.
+- Authentication and user ownership are already represented in the model,
+  DRF permissions, and owner-scoped queryset.
+- The existing DRF serializer, ViewSet, and router provide a coherent API
+  boundary to extend with collision-safe creation, redirects, expiry, and
+  analytics.
+- Choosing Django/DRF avoids maintaining two competing implementations of the
+  same product while preserving the useful FastAPI learning artifact.
+
+### FastAPI's retained role
+
+`fastapi_app.py` remains a comparison implementation for routing, Pydantic
+validation, dependency injection, async endpoint syntax, and API testing. Its
+in-memory store is test/demo state only; it is not the canonical persistent
+service and must not be described as one.
+
+### Implementation boundary and known gaps
+
+This is a framework-selection decision, not a claim that the URL Shortener MVP
+is complete. The Django/DRF project still needs a verified Django settings and
+application entry point, clean migration execution, persistent integration
+tests, and the actual redirect/expiry/analytics workflows. These are follow-on
+implementation tasks; the existing FastAPI comparison code and tests are
+preserved unchanged.
+
 ## Goal
 
 Accept a long URL, generate a unique short code, and redirect requests
