@@ -10,12 +10,59 @@ Day 29 focus:
 from __future__ import annotations
 
 import importlib.util
+import sys
 from pathlib import Path
+from types import ModuleType
 
+import django
 import pytest
+from django.conf import settings
 from fastapi.testclient import TestClient
 
 PROJECT_DIR = Path(__file__).resolve().parents[1]
+
+# Configure a small SQLite-backed Django environment for the canonical
+# persistent implementation tests. The FastAPI comparison tests remain
+# isolated and continue using dependency overrides.
+
+app_package = ModuleType("url_shortener")
+app_package.__path__ = [str(PROJECT_DIR)]
+sys.modules.setdefault("url_shortener", app_package)
+
+if not settings.configured:
+    settings.configure(
+        SECRET_KEY="url-shortener-tests",
+        DEBUG=True,
+        ALLOWED_HOSTS=["testserver"],
+        USE_TZ=True,
+        DEFAULT_AUTO_FIELD="django.db.models.BigAutoField",
+        ROOT_URLCONF="url_shortener.urls",
+        INSTALLED_APPS=[
+            "django.contrib.auth",
+            "django.contrib.contenttypes",
+            "rest_framework",
+            "url_shortener",
+        ],
+        DATABASES={
+            "default": {
+                "ENGINE": "django.db.backends.sqlite3",
+                "NAME": ":memory:",
+            }
+        },
+        MIDDLEWARE=[],
+        REST_FRAMEWORK={
+            "DEFAULT_AUTHENTICATION_CLASSES": [
+                "rest_framework.authentication.SessionAuthentication",
+                "rest_framework.authentication.BasicAuthentication",
+            ],
+            "DEFAULT_PERMISSION_CLASSES": [
+                "rest_framework.permissions.IsAuthenticated",
+            ],
+        },
+    )
+
+django.setup()
+
 APP_PATH = PROJECT_DIR / "fastapi_app.py"
 
 spec = importlib.util.spec_from_file_location("url_shortener_fastapi", APP_PATH)
@@ -43,3 +90,21 @@ def client(store):
         yield test_client
 
     fastapi_app.app.dependency_overrides.clear()
+
+
+
+@pytest.fixture(scope="session", autouse=True)
+def django_database():
+    """Create the migrated SQLite schema for Django API tests."""
+    from django.core.management import call_command
+
+    call_command("migrate", verbosity=0, interactive=False)
+
+
+
+@pytest.fixture(autouse=True)
+def clean_django_database(django_database):
+    """Keep persistent API tests independent while reusing the migrated DB."""
+    from django.core.management import call_command
+
+    call_command("flush", verbosity=0, interactive=False)

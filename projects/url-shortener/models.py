@@ -18,7 +18,7 @@ class ShortURL(models.Model):
         blank=True,
     )
     short_code = models.CharField(max_length=32, unique=True)
-    original_url = models.URLField()
+    original_url = models.URLField(max_length=2048)
     created_at = models.DateTimeField(auto_now_add=True)
     expires_at = models.DateTimeField(null=True, blank=True)
     is_active = models.BooleanField(default=True)

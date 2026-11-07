@@ -626,3 +626,30 @@ Before presenting this as a finished project, verify:
 
 Keep the FastAPI in-memory comparison labelled as a framework exercise unless
 it is separately upgraded and tested for persistence and redirect semantics.
+
+---
+
+## Day 7 — Persistent URL Creation
+
+The canonical Django/DRF implementation now has a database-backed URL creation
+path with the following behavior:
+
+- The destination URL is normalized and validated as an HTTP(S) URL.
+- Destination URLs support the same 2,048-character limit enforced by the
+  reusable validation layer.
+- Short codes are generated from a cryptographically secure alphanumeric
+  alphabet.
+- Each insert is protected by a database transaction. The unique
+  `short_code` constraint resolves concurrent collisions; a confirmed
+  collision triggers a bounded retry.
+- Non-collision database integrity errors are allowed to surface rather than
+  being misreported as code-generation failures.
+- Authenticated creation persists the record and associates it with the
+  requesting user.
+
+The Django migration updates the destination column length. The SQL reference
+schema now reflects the Django table name, optional user ownership, unique
+short-code constraint, and lookup indexes.
+
+The FastAPI implementation remains a separate in-memory comparison example;
+it is not the persistent source of truth.

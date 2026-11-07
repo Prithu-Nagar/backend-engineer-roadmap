@@ -7,6 +7,7 @@ import secrets
 import string
 from datetime import timedelta
 
+from django.db import IntegrityError, transaction
 from django.utils import timezone
 from rest_framework import serializers
 
@@ -71,11 +72,21 @@ class ShortURLSerializer(serializers.ModelSerializer):
                 secrets.choice(SHORT_CODE_ALPHABET)
                 for _ in range(SHORT_CODE_LENGTH)
             )
-            if not ShortURL.objects.filter(short_code=short_code).exists():
-                return ShortURL.objects.create(
-                    short_code=short_code,
-                    **validated_data,
-                )
+            try:
+                # The unique database constraint is the final authority when
+                # concurrent requests generate the same candidate code.
+                with transaction.atomic():
+                    return ShortURL.objects.create(
+                        short_code=short_code,
+                        **validated_data,
+                    )
+            except IntegrityError:
+                # Retry only when this candidate actually collided. Other
+                # integrity failures (for example, an invalid owner FK) should
+                # not be disguised as code-generation failures.
+                if ShortURL.objects.filter(short_code=short_code).exists():
+                    continue
+                raise
 
         raise serializers.ValidationError(
             {"short_code": "Unable to generate a unique short code."}

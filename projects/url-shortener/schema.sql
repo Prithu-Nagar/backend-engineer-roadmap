@@ -1,28 +1,30 @@
--- Day 21 — URL Shortener Schema
+-- URL Shortener relational schema.
 --
--- PostgreSQL-oriented initial schema.
--- The schema keeps the short code unique and stores lifecycle metadata.
+-- This PostgreSQL schema mirrors the canonical Django/DRF model. The
+-- short_code unique constraint is the concurrency-safe collision boundary.
+-- The owner FK targets Django's default auth_user table.
 
-CREATE TABLE short_urls (
+CREATE TABLE url_shortener_shorturl (
     id BIGSERIAL PRIMARY KEY,
+    owner_id BIGINT REFERENCES auth_user(id) ON DELETE CASCADE,
     short_code VARCHAR(32) NOT NULL UNIQUE,
-    original_url TEXT NOT NULL,
+    original_url VARCHAR(2048) NOT NULL,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     expires_at TIMESTAMPTZ,
     is_active BOOLEAN NOT NULL DEFAULT TRUE,
 
-    CONSTRAINT short_urls_original_url_not_empty
+    CONSTRAINT shorturl_original_url_not_empty
         CHECK (length(trim(original_url)) > 0),
 
-    CONSTRAINT short_urls_short_code_not_empty
+    CONSTRAINT shorturl_short_code_not_empty
         CHECK (length(trim(short_code)) > 0),
 
-    CONSTRAINT short_urls_expiry_after_creation
+    CONSTRAINT shorturl_expiry_after_creation
         CHECK (expires_at IS NULL OR expires_at > created_at)
 );
 
-CREATE INDEX idx_short_urls_active
-    ON short_urls (is_active);
+CREATE INDEX idx_url_shortener_shorturl_owner_created
+    ON url_shortener_shorturl (owner_id, created_at DESC);
 
-CREATE INDEX idx_short_urls_expires_at
-    ON short_urls (expires_at);
+CREATE INDEX idx_url_shortener_shorturl_active_expiry
+    ON url_shortener_shorturl (is_active, expires_at);
