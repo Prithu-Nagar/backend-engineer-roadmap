@@ -22,6 +22,7 @@ class ShortURL(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     expires_at = models.DateTimeField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
+    click_count = models.PositiveBigIntegerField(default=0)
 
     class Meta:
         ordering = ("-created_at",)

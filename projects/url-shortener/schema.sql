@@ -12,6 +12,7 @@ CREATE TABLE url_shortener_shorturl (
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     expires_at TIMESTAMPTZ,
     is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    click_count BIGINT NOT NULL DEFAULT 0 CHECK (click_count >= 0),
 
     CONSTRAINT shorturl_original_url_not_empty
         CHECK (length(trim(original_url)) > 0),

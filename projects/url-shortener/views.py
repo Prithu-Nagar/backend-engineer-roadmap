@@ -3,6 +3,10 @@ Day 24 — URL Shortener DRF ViewSet, permissions, validation and responses.
 Day 25 adds Django authentication and owner-scoped access.
 """
 
+from django.db.models import F
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import get_object_or_404
+from django.utils import timezone
 from rest_framework import mixins, permissions, status, viewsets
 from rest_framework.response import Response
 
@@ -62,3 +66,20 @@ class ShortURLViewSet(
         instance = self.get_object()
         serializer = self.get_serializer(instance)
         return Response({"data": serializer.data})
+
+
+def redirect_short_url(request, short_code):
+    """Redirect active short URLs and atomically record successful visits."""
+    del request
+    short_url = get_object_or_404(ShortURL, short_code=short_code)
+
+    if not short_url.is_active or (
+        short_url.expires_at is not None and short_url.expires_at <= timezone.now()
+    ):
+        return HttpResponse(
+            "This short URL is no longer available.",
+            status=status.HTTP_410_GONE,
+        )
+
+    ShortURL.objects.filter(pk=short_url.pk).update(click_count=F("click_count") + 1)
+    return HttpResponseRedirect(short_url.original_url)

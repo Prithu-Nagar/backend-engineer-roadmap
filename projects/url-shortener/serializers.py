@@ -32,12 +32,14 @@ class ShortURLSerializer(serializers.ModelSerializer):
             "created_at",
             "expires_at",
             "is_active",
+            "click_count",
             "owner",
         )
         read_only_fields = (
             "short_code",
             "created_at",
             "short_url",
+            "click_count",
             "owner",
         )
 

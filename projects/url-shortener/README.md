@@ -23,11 +23,11 @@ example and will not receive a second full feature implementation.
 
 | Area | Django + DRF | FastAPI |
 |---|---|---|
-| Persistence | Django `ShortURL` model and migrations are present | In-memory dictionary store |
+| Persistence | Django `ShortURL` model, migrations, and click counter are present | In-memory dictionary store |
 | API layer | DRF serializer, ViewSet, and router are present | Create, list, and lookup routes are present |
 | Validation | Serializer plus reusable URL validation helper | Pydantic request model |
 | Identity and ownership | Optional user relation, authenticated ViewSet, and owner permission are present | No authentication or ownership boundary |
-| Automated API tests | No Django integration test suite is present in this project folder | Existing `TestClient` suite; 5 tests pass in the current audit |
+| Automated API tests | Django/DRF creation and redirect lifecycle tests are present; execution still requires the declared dependencies | Existing FastAPI `TestClient` suite is retained |
 | Runtime integration | Django settings/project entry point are not present in this project folder, so end-to-end startup is not yet verified | The standalone FastAPI app can be exercised by its existing tests |
 
 ### Why Django/DRF is canonical
@@ -110,8 +110,9 @@ The database should retain:
 - Creation timestamp
 - Optional expiration timestamp
 - Active/inactive state
+- Successful redirect count (`click_count`)
 
-The initial schema is provided in `schema.sql`.
+The initial schema and the click-count field are represented in `schema.sql`.
 
 ## Suggested API Shape
 
@@ -653,3 +654,34 @@ short-code constraint, and lookup indexes.
 
 The FastAPI implementation remains a separate in-memory comparison example;
 it is not the persistent source of truth.
+
+
+---
+
+## Phase 2 — Day 8: Redirect Lifecycle + Analytics
+
+The canonical Django/DRF implementation now handles short-code redirects and
+records successful visits.
+
+### Redirect behavior
+
+| Request condition | Behavior |
+|---|---|
+| Existing, active, unexpired short code | HTTP `302` redirect to the original URL |
+| Unknown short code | HTTP `404 Not Found` |
+| Disabled or expired short code | HTTP `410 Gone` |
+
+The redirect handler checks lifecycle state before counting a visit. Successful
+visits increment `click_count` with a database-side `F()` expression, avoiding
+a read-modify-write race between concurrent requests.
+
+### Analytics
+
+- `ShortURL.click_count` stores the number of successful redirects.
+- The count is included as a read-only field in URL metadata responses.
+- The Django migration and reference SQL schema include the counter.
+- Redirect tests cover successful redirects, repeated visits, expired and
+  disabled records, unknown codes, and metadata analytics.
+
+The FastAPI comparison implementation remains unchanged; Day 8 behavior is
+implemented in the canonical persistent Django/DRF service.
