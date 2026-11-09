@@ -3,13 +3,12 @@
 Day 21 starts a backend URL shortener project that is developed incrementally
 through the Django/DRF and FastAPI learning milestones in this repository.
 
-> **Current status:** The repository contains a Django model, migrations,
-> admin registration, DRF serializers/views/routes, ownership permissions, and
-> a separate FastAPI comparison app with tests. This is a learning-stage
-> implementation, not yet a verified deployable URL Shortener service. Confirm
-> that the Django project settings/runtime are wired, migrations apply in the
-> target environment, and a short-code request returns an actual HTTP redirect
-> before claiming end-to-end completion.
+> **Current status:** The canonical Django/DRF implementation includes
+> persistent URL creation, owner-scoped metadata, redirect lifecycle handling,
+> click analytics, scoped abuse throttles, a runnable Django entry point, and
+> Docker Compose setup. Run the documented acceptance commands in the target
+> environment before treating the deployment as verified. FastAPI remains a
+> separate in-memory framework-comparison example.
 
 ## Phase 2 — Framework Selection Decision
 
@@ -685,3 +684,78 @@ a read-modify-write race between concurrent requests.
 
 The FastAPI comparison implementation remains unchanged; Day 8 behavior is
 implemented in the canonical persistent Django/DRF service.
+
+
+## Phase 2 — Day 9: Abuse Safeguards and Runnable Setup
+
+### Rate limits
+
+The canonical DRF API applies separate scoped limits:
+
+- URL creation: `10/hour` per authenticated user by default.
+- Public redirects: `60/minute` per client IP by default.
+- The limits can be changed with `URL_CREATE_RATE` and `URL_REDIRECT_RATE`.
+- DRF returns HTTP `429 Too Many Requests` when a scope is exceeded.
+- The Compose stack configures Django's Redis cache so application workers
+  share throttle state. Local runs without `REDIS_URL` use Django's local-memory
+  cache. DRF's cache-backed throttle is a best-effort abuse control, not a
+  strict concurrency-safe quota; high-volume deployments should enforce hard
+  quotas with an atomic Redis operation or API gateway.
+
+### Local setup
+
+Install the repository dependencies and run the Django migrations:
+
+```bash
+python -m pip install -r python/requirements.txt
+cd projects/url-shortener
+python manage.py migrate
+python manage.py runserver
+```
+
+The local default database is SQLite. Set `DATABASE_URL` to a PostgreSQL URL
+when using PostgreSQL. Set a non-development `SECRET_KEY` before exposing the
+service outside a local environment.
+
+### Docker Compose
+
+From the repository root:
+
+```bash
+docker compose -f projects/url-shortener/docker-compose.yml up --build
+```
+
+The stack starts the Django/DRF service, PostgreSQL, and Redis. The API is
+available at `http://localhost:8000`; the unauthenticated health endpoint is
+`GET /health/`. Create/list/metadata endpoints require authentication. The
+public redirect endpoint is `GET /<short_code>`.
+
+Stop the stack with:
+
+```bash
+docker compose -f projects/url-shortener/docker-compose.yml down
+```
+
+Add `-v` only when intentionally deleting the local PostgreSQL volume.
+
+### Demo path
+
+1. Create a Django user with `python manage.py createsuperuser`.
+2. Authenticate to `POST /api/urls/` using HTTP Basic authentication and submit
+   `{"original_url":"https://example.com"}`.
+3. Open the returned short URL and confirm the browser redirects to the target.
+4. Retrieve `GET /api/urls/<short_code>/` as the owner and inspect `click_count`.
+5. Repeat requests beyond the configured scope limit and confirm HTTP `429`.
+
+### Day 9 verification commands
+
+```bash
+python -m pytest projects/url-shortener/tests -q
+python manage.py check
+python manage.py migrate --check
+```
+
+Run Django management commands from `projects/url-shortener`. The automated
+suite includes persistent creation/redirect lifecycle coverage and focused
+rate-limit boundary tests. Docker Compose startup requires Docker Engine and
+Compose to be available.

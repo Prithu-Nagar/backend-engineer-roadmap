@@ -4,11 +4,13 @@ Day 25 adds Django authentication and owner-scoped access.
 """
 
 from django.db.models import F
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from rest_framework import mixins, permissions, status, viewsets
+from rest_framework.decorators import api_view, permission_classes, throttle_classes
 from rest_framework.response import Response
+from rest_framework.throttling import ScopedRateThrottle
 
 from .models import ShortURL
 from .permissions import IsShortURLOwner
@@ -26,6 +28,14 @@ class ShortURLViewSet(
     serializer_class = ShortURLSerializer
     permission_classes = (permissions.IsAuthenticated,)
     lookup_field = "short_code"
+    throttle_classes = (ScopedRateThrottle,)
+
+    def get_throttles(self):
+        # Apply a creation-specific quota without throttling owner-scoped reads.
+        if self.action == "create":
+            self.throttle_scope = "url_create"
+            return super().get_throttles()
+        return []
 
     def get_queryset(self):
         return ShortURL.objects.filter(
@@ -68,9 +78,11 @@ class ShortURLViewSet(
         return Response({"data": serializer.data})
 
 
+@api_view(["GET"])
+@permission_classes([permissions.AllowAny])
+@throttle_classes([ScopedRateThrottle])
 def redirect_short_url(request, short_code):
     """Redirect active short URLs and atomically record successful visits."""
-    del request
     short_url = get_object_or_404(ShortURL, short_code=short_code)
 
     if not short_url.is_active or (
@@ -83,3 +95,13 @@ def redirect_short_url(request, short_code):
 
     ShortURL.objects.filter(pk=short_url.pk).update(click_count=F("click_count") + 1)
     return HttpResponseRedirect(short_url.original_url)
+
+
+def health_check(request):
+    """Expose a lightweight unauthenticated container health endpoint."""
+    del request
+    return JsonResponse({"status": "ok"})
+
+
+# Redirects are public, so DRF keys this scope by the client IP address.
+redirect_short_url.cls.throttle_scope = "url_redirect"

@@ -1,0 +1,45 @@
+services:
+  url-shortener:
+    build:
+      context: ../..
+      dockerfile: projects/url-shortener/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      SECRET_KEY: ${SECRET_KEY:-local-compose-only-change-me}
+      DEBUG: "false"
+      ALLOWED_HOSTS: localhost,127.0.0.1
+      DATABASE_URL: postgresql://urlshortener:urlshortener@db:5432/urlshortener
+      REDIS_URL: redis://redis:6379/1
+      URL_CREATE_RATE: ${URL_CREATE_RATE:-10/hour}
+      URL_REDIRECT_RATE: ${URL_REDIRECT_RATE:-60/minute}
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: urlshortener
+      POSTGRES_USER: urlshortener
+      POSTGRES_PASSWORD: urlshortener
+    volumes:
+      - url_shortener_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U urlshortener -d urlshortener"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  url_shortener_data:

@@ -58,6 +58,10 @@ if not settings.configured:
             "DEFAULT_PERMISSION_CLASSES": [
                 "rest_framework.permissions.IsAuthenticated",
             ],
+            "DEFAULT_THROTTLE_RATES": {
+                "url_create": "2/hour",
+                "url_redirect": "2/minute",
+            },
         },
     )
 
@@ -108,3 +112,13 @@ def clean_django_database(django_database):
     from django.core.management import call_command
 
     call_command("flush", verbosity=0, interactive=False)
+
+
+@pytest.fixture(autouse=True)
+def clear_throttle_cache():
+    """Prevent rate-limit state from leaking between tests."""
+    from django.core.cache import cache
+
+    cache.clear()
+    yield
+    cache.clear()
