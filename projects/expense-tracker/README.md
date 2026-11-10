@@ -416,3 +416,35 @@ The artifact demonstrates:
 This is an LLD increment only. It does not replace the existing CRUD,
 background processing, caching, Redis, observability, reliability, or
 architecture-refactor layers.
+
+---
+
+## Day 10 — MVP Audit and Contract
+
+The existing Expense Tracker modules were audited before implementation work.
+The audit confirmed that the repository has a reusable SQLAlchemy CRUD/model
+layer and PostgreSQL schema, plus separate aggregation, async-processing,
+caching, observability, reliability, and architecture exercises. It does not
+yet have an integrated Expense Tracker HTTP application or a project-specific
+automated test suite. The project therefore remains **in progress**.
+
+The canonical starting points are:
+
+- `schema.sql` for the relational table and indexes.
+- `crud.py` for SQLAlchemy persistence operations using `Decimal`, `DATE`,
+  and caller-owned transaction boundaries.
+- `background_aggregation.py` for category totals over inclusive date ranges.
+
+The architecture, caching, Redis, and LLD examples contain separate
+`float`-based expense representations. They remain learning artifacts and
+must not be treated as the canonical monetary model. In particular, Redis
+serialization must be made Decimal-safe before it is used for real expense
+amounts.
+
+The MVP domain, API routes, request/response shape, validation/error behavior,
+money precision, date semantics, ownership boundary, and persistence
+transaction rules are defined in [MVP_CONTRACT.md](MVP_CONTRACT.md). This is a
+target contract, not a claim that those endpoints are already implemented.
+
+No existing application code or learning module was replaced for this audit.
+
