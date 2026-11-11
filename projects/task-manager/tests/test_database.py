@@ -47,6 +47,8 @@ def test_migration_initializes_a_clean_database():
             inspector = inspect(db.engine)
             assert set(inspector.get_table_names()) == {
                 "alembic_version",
+                "expense_categories",
+                "expenses",
                 "tasks",
                 "users",
             }
@@ -62,9 +64,19 @@ def test_migration_initializes_a_clean_database():
                 foreign_key["name"] == "tasks_user_fk"
                 for foreign_key in inspector.get_foreign_keys("tasks")
             )
+            assert {
+                index["name"]
+                for index in inspector.get_indexes("expenses")
+            } == {
+                "idx_expenses_category_date",
+                "idx_expenses_date",
+                "idx_expenses_owner_category_date",
+                "idx_expenses_owner_date",
+                "idx_expenses_owner_id",
+            }
             assert db.session.execute(
                 text("SELECT version_num FROM alembic_version")
-            ).scalar_one() == "0001_create_users_tasks"
+            ).scalar_one() == "0002_expense_ownership_categories"
         finally:
             db.session.remove()
             db.engine.dispose()

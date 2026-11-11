@@ -23,8 +23,7 @@ API described here is already implemented.
 
 - Multiple wallets or accounts, transfers, recurring expenses, attachments,
   receipt OCR, exchange-rate conversion, and shared household accounts.
-- A full category-management subsystem; categories are initially validated
-  labels rather than independently managed resources.
+- Budgets, recurring expenses, transfers, and shared household accounts.
 - A frontend, microservices, and production-scale distributed processing.
 - Redis caching or asynchronous aggregation until correctness and measured
   need justify them.
@@ -48,6 +47,15 @@ The MVP uses a single configured currency per deployment. Currency conversion
 and per-record currency are not part of this contract. The configured currency
 must be made explicit in application configuration and documentation before
 the API is exposed; do not infer it from a user's locale.
+
+## Category persistence
+
+Categories are independently managed per owner. The persistence layer supports
+create, retrieve, list, rename, and delete operations. Category names are
+non-empty, limited to 50 characters, and unique within an owner. The expense
+record continues to store the category label as defined by the existing MVP
+contract; the calling service must use the authenticated owner's context when
+performing both category and expense operations.
 
 ## Money rules
 
@@ -198,7 +206,7 @@ status must remain until the API and tests exist.
 
 ## Next implementation boundary
 
-The next increment should integrate the database schema/model and transaction
-CRUD with owner scoping. It should not yet implement budgets, advanced
-aggregation workflows, background workers, caching, or deployment work unless
-those are explicitly assigned in a later daily scope.
+The Day 11 increment integrates the database schema/model, owner-scoped
+transaction CRUD, and independently managed owner-scoped categories. It does
+not implement budgets, advanced aggregation workflows, background workers,
+caching, or deployment work.

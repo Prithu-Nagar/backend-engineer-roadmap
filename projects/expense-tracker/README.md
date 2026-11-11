@@ -448,3 +448,41 @@ target contract, not a claim that those endpoints are already implemented.
 
 No existing application code or learning module was replaced for this audit.
 
+---
+
+## Day 11 — Persistence, Transactions, Categories, and Ownership
+
+Day 11 integrates the Expense Tracker persistence layer with owner-scoped
+transaction and category CRUD.
+
+Implemented:
+
+- Added `owner_id` foreign keys to expenses and categories, referencing the
+  existing Task Manager `users` table with cascade deletion.
+- Added a unique per-owner category name constraint and owner-oriented indexes.
+- Added an Alembic migration that creates categories and adds expense ownership.
+- Extended the SQLAlchemy models and CRUD helpers for category create, retrieve,
+  list, rename, and delete operations.
+- Scoped expense create, retrieve, list, update, and delete operations to the
+  authenticated owner's ID supplied by the calling service.
+- Kept all CRUD operations flush-only; the caller retains commit/rollback
+  ownership.
+
+The CRUD layer does not accept an owner ID from an expense payload. The
+authenticated request/service layer must pass the trusted owner ID explicitly.
+An expense or category belonging to another owner is returned as not found.
+
+The migration refuses to silently assign legacy expenses to an arbitrary user.
+If pre-existing expense rows are present, assign each row to its real owner
+before applying the non-null ownership constraint.
+
+Automated persistence tests cover both CRUD groups, cross-owner isolation,
+database uniqueness, and caller-controlled transaction rollback. Run them from
+the repository root with:
+
+```bash
+python -m pytest projects/expense-tracker/tests
+```
+
+The project remains an in-progress MVP: these persistence functions are not
+yet exposed through an integrated HTTP application.
