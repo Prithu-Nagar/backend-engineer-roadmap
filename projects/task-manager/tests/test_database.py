@@ -48,6 +48,7 @@ def test_migration_initializes_a_clean_database():
             assert set(inspector.get_table_names()) == {
                 "alembic_version",
                 "expense_categories",
+                "expense_budgets",
                 "expenses",
                 "tasks",
                 "users",
@@ -76,7 +77,7 @@ def test_migration_initializes_a_clean_database():
             }
             assert db.session.execute(
                 text("SELECT version_num FROM alembic_version")
-            ).scalar_one() == "0002_expense_ownership_categories"
+            ).scalar_one() == "0003_expense_budgets"
         finally:
             db.session.remove()
             db.engine.dispose()

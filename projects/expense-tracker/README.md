@@ -486,3 +486,29 @@ python -m pytest projects/expense-tracker/tests
 
 The project remains an in-progress MVP: these persistence functions are not
 yet exposed through an integrated HTTP application.
+
+
+## Day 12 — Budgets, Filtering, Summaries, and Aggregation
+
+Day 12 extends the owner-scoped persistence layer with monthly category
+budgets and reporting queries.
+
+Implemented:
+
+- Added `expense_budgets` with positive `NUMERIC(12, 2)` amounts, first-of-month
+  dates, per-owner/category/month uniqueness, owner foreign keys, and an
+  owner/month index.
+- Added an Alembic migration for the budget table.
+- Added owner-scoped budget create, retrieve, list, update, and delete helpers.
+- Added `reporting.py` for inclusive date-range summaries, optional category
+  filtering, total/count aggregation, and stable per-category totals.
+- Added monthly budget progress with spent, remaining, percentage-used, and
+  over-budget values. Spending is isolated by owner and month.
+- Made the existing background category aggregation owner-scoped.
+- Added fixture-based tests for date boundaries, empty results, Decimal
+  arithmetic, budget CRUD/uniqueness, over-budget calculations, and
+  cross-owner isolation.
+
+All persistence helpers remain flush-only. The caller retains commit,
+rollback, and session lifecycle ownership. These are persistence/reporting
+capabilities; they do not claim to provide an integrated HTTP API.

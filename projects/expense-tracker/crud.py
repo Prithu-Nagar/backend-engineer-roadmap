@@ -45,6 +45,39 @@ class Category(Base):
     )
 
 
+class Budget(Base):
+    """A monthly spending limit for one category and owner."""
+
+    __tablename__ = "expense_budgets"
+    __table_args__ = (
+        UniqueConstraint(
+            "owner_id", "category", "month_start",
+            name="uq_expense_budget_owner_category_month",
+        ),
+        CheckConstraint("amount > 0", name="expense_budget_amount_check"),
+        CheckConstraint(
+            "length(trim(category)) > 0", name="expense_budget_category_check"
+        ),
+    )
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    owner_id: Mapped[int] = mapped_column(
+        ForeignKey("users.id", ondelete="CASCADE"), nullable=False, index=True
+    )
+    category: Mapped[str] = mapped_column(String(50), nullable=False)
+    month_start: Mapped[date] = mapped_column(Date, nullable=False)
+    amount: Mapped[Decimal] = mapped_column(Numeric(12, 2), nullable=False)
+    created_at: Mapped[object] = mapped_column(
+        DateTime(timezone=True), server_default=func.now(), nullable=False
+    )
+    updated_at: Mapped[object] = mapped_column(
+        DateTime(timezone=True),
+        server_default=func.now(),
+        onupdate=func.now(),
+        nullable=False,
+    )
+
+
 class Expense(Base):
     __tablename__ = "expenses"
     __table_args__ = (
@@ -164,6 +197,10 @@ def list_expenses(
     offset: int = 0,
 ) -> list[Expense]:
     """Return one owner's expenses with stable pagination."""
+    if limit < 1 or offset < 0:
+        raise ValueError("limit must be positive and offset must not be negative")
+    if start_date is not None and end_date is not None and start_date > end_date:
+        raise ValueError("start_date must be on or before end_date")
     statement = select(Expense).where(Expense.owner_id == owner_id)
 
     if category is not None:
@@ -217,5 +254,84 @@ def delete_expense(
     if expense is None:
         return False
     session.delete(expense)
+    session.flush()
+    return True
+
+
+def create_budget(
+    session: Session,
+    *,
+    owner_id: int,
+    category: str,
+    month_start: date,
+    amount: Decimal,
+) -> Budget:
+    """Create a monthly category budget in the caller-owned transaction."""
+    if month_start.day != 1:
+        raise ValueError("month_start must be the first day of a month")
+    budget = Budget(
+        owner_id=owner_id,
+        category=category,
+        month_start=month_start,
+        amount=amount,
+    )
+    session.add(budget)
+    session.flush()
+    return budget
+
+
+def get_budget(
+    session: Session, budget_id: int, *, owner_id: int
+) -> Budget | None:
+    """Return a budget only when it belongs to the supplied owner."""
+    return session.scalar(
+        select(Budget).where(
+            Budget.id == budget_id, Budget.owner_id == owner_id
+        )
+    )
+
+
+def list_budgets(
+    session: Session,
+    *,
+    owner_id: int,
+    month_start: date | None = None,
+    category: str | None = None,
+) -> list[Budget]:
+    """List an owner's budgets with optional month/category filters."""
+    statement = select(Budget).where(Budget.owner_id == owner_id)
+    if month_start is not None:
+        if month_start.day != 1:
+            raise ValueError("month_start must be the first day of a month")
+        statement = statement.where(Budget.month_start == month_start)
+    if category is not None:
+        statement = statement.where(Budget.category == category)
+    statement = statement.order_by(Budget.month_start.desc(), Budget.category, Budget.id)
+    return list(session.scalars(statement))
+
+
+def update_budget(
+    session: Session,
+    budget_id: int,
+    *,
+    owner_id: int,
+    amount: Decimal | None = None,
+) -> Budget | None:
+    """Update an owner's budget amount without committing the transaction."""
+    budget = get_budget(session, budget_id, owner_id=owner_id)
+    if budget is None:
+        return None
+    if amount is not None:
+        budget.amount = amount
+    session.flush()
+    return budget
+
+
+def delete_budget(session: Session, budget_id: int, *, owner_id: int) -> bool:
+    """Delete a budget only when it belongs to the supplied owner."""
+    budget = get_budget(session, budget_id, owner_id=owner_id)
+    if budget is None:
+        return False
+    session.delete(budget)
     session.flush()
     return True

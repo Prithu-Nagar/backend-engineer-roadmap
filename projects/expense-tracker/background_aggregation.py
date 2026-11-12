@@ -18,12 +18,16 @@ from sqlalchemy.orm import Session
 def aggregate_by_category(
     session: Session,
     *,
+    owner_id: int,
     start_date: date,
     end_date: date,
 ) -> list[tuple[str, Decimal]]:
-    """Return total expense amount grouped by category for a date range."""
+    """Return one owner's category totals for an inclusive date range."""
+    if start_date > end_date:
+        raise ValueError("start_date must be on or before end_date")
     statement = (
         select(Expense.category, func.sum(Expense.amount))
+        .where(Expense.owner_id == owner_id)
         .where(Expense.expense_date >= start_date)
         .where(Expense.expense_date <= end_date)
         .group_by(Expense.category)

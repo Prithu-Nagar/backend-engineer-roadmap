@@ -38,3 +38,21 @@ CREATE INDEX idx_expenses_owner_category_date
 
 CREATE INDEX idx_expenses_owner_date
     ON expenses (owner_id, expense_date DESC);
+
+
+CREATE TABLE expense_budgets (
+    id BIGSERIAL PRIMARY KEY,
+    owner_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    category VARCHAR(50) NOT NULL,
+    month_start DATE NOT NULL CHECK (EXTRACT(DAY FROM month_start) = 1),
+    amount NUMERIC(12, 2) NOT NULL CHECK (amount > 0),
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT uq_expense_budget_owner_category_month
+        UNIQUE (owner_id, category, month_start),
+    CONSTRAINT expense_budget_category_check
+        CHECK (length(trim(category)) > 0)
+);
+
+CREATE INDEX idx_expense_budgets_owner_month
+    ON expense_budgets (owner_id, month_start);
