@@ -192,21 +192,22 @@ The repository already has these reusable pieces:
 | `schema.sql` | PostgreSQL-style `expenses` table, positive amount check, `NUMERIC(12, 2)`, date and category/date indexes; no owner column yet | Retain; extend with ownership when persistence is integrated |
 | `crud.py` | SQLAlchemy 2.x model and CRUD helpers; uses `Decimal`, `DATE`, and injected `Session`; helpers flush without committing | Retain as the primary persistence starting point |
 | `background_aggregation.py` | SQL aggregation by category and inclusive date bounds; returns `Decimal` totals | Reuse after persistence integration |
-| `async_processing.py` | In-process `asyncio.Queue` worker; callback is currently a demonstration | Keep as a later optional execution adapter; not part of initial API |
+| `async_processing.py` | In-process `asyncio.Queue` worker runs owner-scoped aggregation with per-job sessions and result/error reporting | Reuse for local background execution; it is not durable and is not part of the initial HTTP API |
 | `caching_layer.py` | Cache-aside example with a separate `float`-based domain object | Do not use as the canonical money model; align only if caching is justified |
 | `redis_caching.py` | Redis adapter serializes amounts through `float` | Requires Decimal-safe serialization before production use |
 | `architecture_refactor.py` | In-memory repository example uses `float` and caller-supplied IDs | Treat as an architecture exercise, not canonical persistence |
 | `lld_design.py` | Reporting Strategy/Factory example uses `float` | Preserve as a pattern exercise; align monetary types before reuse |
 | `observability.py`, `reliability.py` | Framework-independent logging and bounded retry examples | Reuse selectively at service/integration boundaries |
 
-No Expense Tracker HTTP application, integrated route set, or project-specific
-automated test suite was present in the inspected project directory. The
-existing README correctly describes the project as not yet integrated; that
-status must remain until the API and tests exist.
+There is still no Expense Tracker HTTP application or integrated route set.
+Project-specific tests now cover the persistence, reporting, and local worker
+modules, but the README must continue to label the overall project as not yet
+integrated until the API exists.
 
-## Next implementation boundary
+## Phase 2 Day 13 boundary
 
-The Day 11 increment integrates the database schema/model, owner-scoped
-transaction CRUD, and independently managed owner-scoped categories. It does
-not implement budgets, advanced aggregation workflows, background workers,
-caching, or deployment work.
+Day 13 connects the in-process worker to the persistent category aggregation
+and verifies owner isolation, per-job session lifecycle, and failure
+propagation. It intentionally does not add a durable queue, an HTTP job API,
+or caching; the existing project has no demonstrated cache need. The worker
+and aggregation are runnable modules, not an integrated HTTP application.

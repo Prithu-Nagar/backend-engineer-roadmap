@@ -512,3 +512,23 @@ Implemented:
 All persistence helpers remain flush-only. The caller retains commit,
 rollback, and session lifecycle ownership. These are persistence/reporting
 capabilities; they do not claim to provide an integrated HTTP API.
+
+## Phase 2 — Day 13: Background Aggregation Worker
+
+The existing in-process `asyncio.Queue` worker now executes the real
+owner-scoped category aggregation against the persisted Expense Tracker model.
+Each queued job carries an owner and inclusive date range, runs the blocking
+SQLAlchemy query in a worker thread with a session created and closed for that
+job, and exposes either its result or its exception to the submitter. A failed
+job does not stop the consumer from processing later jobs.
+
+This is a local, in-memory worker: queued work is lost if the process exits, and
+it is not a durable queue or an HTTP job API. No cache was added because there
+is no measured repeated-read bottleneck, and caching aggregation results would
+need explicit invalidation when expenses change.
+
+Run the focused worker tests from the repository root:
+
+```bash
+python -m pytest projects/expense-tracker/tests/test_async_processing.py
+```
