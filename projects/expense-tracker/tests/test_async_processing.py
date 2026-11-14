@@ -111,3 +111,22 @@ def test_job_failure_is_returned_and_worker_continues(session_factory):
             await worker.stop()
 
     asyncio.run(run_jobs())
+
+
+
+def test_worker_rejects_submissions_after_clean_shutdown():
+    async def run_worker():
+        worker = AsyncAggregationWorker(lambda job: [])
+        await worker.start()
+        await worker.stop()
+
+        with pytest.raises(RuntimeError, match="not accepting jobs"):
+            await worker.submit(
+                AggregationJob(
+                    owner_id=1,
+                    start_date=date(2025, 1, 1),
+                    end_date=date(2025, 1, 31),
+                )
+            )
+
+    asyncio.run(run_worker())

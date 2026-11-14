@@ -1,0 +1,13 @@
+services:
+  expense-demo:
+    build:
+      context: ../..
+      dockerfile: projects/expense-tracker/Dockerfile
+    environment:
+      DATABASE_URL: sqlite:////data/expense-tracker.db
+    volumes:
+      - expense_tracker_data:/data
+    restart: "no"
+
+volumes:
+  expense_tracker_data:

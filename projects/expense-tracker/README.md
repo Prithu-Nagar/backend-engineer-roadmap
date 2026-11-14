@@ -532,3 +532,56 @@ Run the focused worker tests from the repository root:
 ```bash
 python -m pytest projects/expense-tracker/tests/test_async_processing.py
 ```
+
+
+## Phase 2 — Day 14: Failure Tests, Compose Demo, and Acceptance
+
+Day 14 adds transaction/failure coverage and a reproducible local demonstration
+around the existing persistence and in-process worker modules.
+
+Implemented:
+
+- Added a multi-step transaction test proving that an integrity failure rolls
+  back the expense and budget writes together.
+- Added a worker lifecycle test proving that submissions are rejected after
+  clean shutdown. Existing worker tests also verify job-level failure
+  propagation and continued processing.
+- Added `ARCHITECTURE.md` describing the persistence/session boundary, worker
+  flow, failure behavior, and explicit MVP limitations.
+- Added a self-contained `demo.py` and project-scoped Docker Compose setup.
+  The demo persists a sample expense in SQLite and runs owner-scoped category
+  aggregation through the actual in-process worker.
+- The Compose service uses a named volume so the local demo database survives
+  container recreation.
+
+### Run the local demo
+
+From the repository root:
+
+```bash
+docker compose -f projects/expense-tracker/docker-compose.yml up --build
+```
+
+The service prints category totals and exits. Run it again to reuse the
+persisted database. Stop/remove the service with:
+
+```bash
+docker compose -f projects/expense-tracker/docker-compose.yml down
+```
+
+To run the demo without Docker:
+
+```bash
+PYTHONPATH=projects/expense-tracker python projects/expense-tracker/demo.py
+```
+
+### Run the acceptance tests
+
+```bash
+python -m pytest projects/expense-tracker/tests
+```
+
+The Compose target is intentionally a CLI demonstration backed by SQLite. It
+is not an HTTP API, a durable queue, or a production deployment. The project
+remains **in progress** until the integrated application and its API workflows
+exist.

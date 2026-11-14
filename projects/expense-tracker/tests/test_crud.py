@@ -129,3 +129,28 @@ def test_crud_helpers_leave_commit_and_rollback_to_caller(session):
     session.rollback()
 
     assert get_expense(session, expense_id, owner_id=1) is None
+
+
+
+def test_failed_multi_step_transaction_rolls_back_all_writes(session):
+    from crud import Budget, create_budget
+
+    with pytest.raises(IntegrityError), session.begin():
+        make_expense(session, owner_id=1, category="Food")
+        create_budget(
+            session,
+            owner_id=1,
+            category="Food",
+            month_start=date(2025, 1, 1),
+            amount=Decimal("100.00"),
+        )
+        create_budget(
+            session,
+            owner_id=1,
+            category="Food",
+            month_start=date(2025, 1, 1),
+            amount=Decimal("125.00"),
+        )
+
+    assert list_expenses(session, owner_id=1) == []
+    assert session.query(Budget).count() == 0
