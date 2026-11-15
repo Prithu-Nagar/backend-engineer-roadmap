@@ -10,6 +10,7 @@ import asyncio
 import os
 from datetime import UTC, date, datetime
 from decimal import Decimal
+from pathlib import Path
 
 from async_processing import (
     AggregationJob,
@@ -18,7 +19,7 @@ from async_processing import (
 )
 from crud import Base, Expense, create_expense
 from sqlalchemy import String, create_engine, func, select
-from sqlalchemy.engine import make_url
+from sqlalchemy.engine import URL, make_url
 from sqlalchemy.orm import Mapped, mapped_column, sessionmaker
 
 
@@ -50,7 +51,12 @@ async def run_worker(session_factory: sessionmaker) -> list[tuple[str, Decimal]]
 
 def main() -> None:
     """Initialize the local database, seed one example, and run aggregation."""
-    database_url = os.getenv("DATABASE_URL", "sqlite:///expense-tracker.db")
+    database_url = os.getenv("DATABASE_URL")
+    if database_url is None:
+        database_url = URL.create(
+            "sqlite",
+            database=str(Path(__file__).resolve().with_name("expense-tracker.db")),
+        )
     url = make_url(database_url)
     connect_args = (
         {"check_same_thread": False}

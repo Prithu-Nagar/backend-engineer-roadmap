@@ -35,6 +35,9 @@ jobs:
       - name: Run URL Shortener tests with coverage
         run: pytest --cov=projects/url-shortener --cov-report=term-missing --cov-report=xml:coverage-url-shortener.xml -q projects/url-shortener/tests
 
+      - name: Run Expense Tracker tests
+        run: pytest -q projects/expense-tracker/tests
+
   docker-build:
     name: Build Docker image
     runs-on: ubuntu-latest
@@ -46,3 +49,6 @@ jobs:
 
       - name: Build Task Manager image
         run: docker build -f projects/task-manager/Dockerfile -t task-manager-api:ci .
+
+      - name: Build Expense Tracker demo image
+        run: docker build -f projects/expense-tracker/Dockerfile -t expense-tracker-demo:ci .

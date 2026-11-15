@@ -575,6 +575,10 @@ To run the demo without Docker:
 PYTHONPATH=projects/expense-tracker python projects/expense-tracker/demo.py
 ```
 
+The local run stores its SQLite database at
+`projects/expense-tracker/expense-tracker.db` by default. Set `DATABASE_URL` to
+use a different database location.
+
 ### Run the acceptance tests
 
 ```bash
