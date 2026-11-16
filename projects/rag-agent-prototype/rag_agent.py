@@ -5,20 +5,21 @@ and orchestration behind small application-owned interfaces.
 """
 
 import re
-from collections.abc import Callable, Sequence
-from dataclasses import dataclass
+from collections.abc import Callable, Mapping, Sequence
+from dataclasses import dataclass, field
 
 
 @dataclass(frozen=True)
 class DocumentChunk:
     document_id: str
     text: str
+    metadata: Mapping[str, str] = field(default_factory=dict)
 
 
 @dataclass(frozen=True)
 class RetrievalResult:
     chunk: DocumentChunk
-    score: int
+    score: float
 
 
 class LexicalRetriever:

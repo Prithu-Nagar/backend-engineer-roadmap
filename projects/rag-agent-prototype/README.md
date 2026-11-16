@@ -1,61 +1,46 @@
 # RAG / Agent Prototype
 
-Day 60 closes the GenAI Engineering phase with a small provider-neutral
-prototype that combines retrieval with an application-owned tool boundary.
-
-## Goal
-
-Demonstrate the core flow of a RAG/Agent backend without requiring an external
-LLM provider, API key, hosted vector database, or network connection.
+A provider-neutral RAG/Agent backend prototype with document ingestion, metadata-aware chunking, embedding generation, vector retrieval, and an application-owned tool boundary.
 
 ## Architecture
 
 ```text
-User Query
-    |
-    v
-Agent Router
-    |
-    +----> Retriever ----> Ranked Context
-    |                         |
-    |                         v
-    |                    Answer Boundary
-    |
-    +----> Tool Registry ---> Validated Tool ---> Tool Result
+Source Documents
+      |
+      v
+Document Ingestion --> Chunking + Metadata
+                              |
+                              v
+                       Embedding Provider
+                              |
+                              v
+                       Vector Store
+                              |
+User Query --> Query Embedding --> Vector Retriever
+                                      |
+                                      v
+                              Ranked Context
+                                      |
+                                      v
+                              Agent Boundary
+                                      |
+                         Approved Tool Registry
 ```
 
 ## Components
 
-### `rag_agent.py`
+- `rag_agent.py` retains the original `DocumentChunk`, deterministic `LexicalRetriever`, allow-listed `ToolRegistry`, and `RagAgent` routing behavior. Chunk metadata is additive and optional, preserving existing callers.
+- `rag_ingestion.py` provides `load_text_file` for UTF-8 text/Markdown input, `SourceDocument`, `DocumentChunker`, `DocumentIngestionPipeline`, an `EmbeddingProvider` interface, `OpenAIEmbeddingProvider`, `HashingEmbeddingProvider`, `InMemoryVectorStore`, and `VectorRetriever`.
+- Chunk metadata carries caller-supplied source fields plus `chunk_index`, `start_char`, and `end_char` offsets.
+- The vector store ranks records by cosine similarity and validates vector dimensions. It is in-memory only; records are not persisted across process restarts.
 
-The prototype contains four small application-owned boundaries:
+## Embeddings and configuration
 
-- `DocumentChunk` — normalized retrieval unit
-- `LexicalRetriever` — deterministic top-k retrieval implementation
-- `ToolRegistry` — allow-listed tool execution with argument validation
-- `RagAgent` — routing between retrieval and an approved tool
+For live embeddings, set `OPENAI_API_KEY` in the environment and instantiate `OpenAIEmbeddingProvider`. The default model is `text-embedding-3-small`; callers may supply another compatible model. Provider errors are surfaced rather than silently replaced with local vectors.
 
-The lexical retriever intentionally stands in for a vector-search component so
-the learning example remains deterministic and dependency-free.
+`HashingEmbeddingProvider` is a deterministic, dependency-free feature-hashing implementation for offline tests and local demonstrations. It is **not** a semantic embedding model and must not be represented as a live embedding integration.
 
-## RAG Flow
-
-1. Documents are represented as normalized chunks.
-2. A query is tokenized and matched against chunk tokens.
-3. Matching chunks are ranked by overlap score.
-4. The top results are assembled into an explicit context boundary.
-5. A production implementation could pass that context to an LLM answer step.
-
-## Agent Flow
-
-1. The application receives a user query.
-2. The router recognizes the supported tool-intent shape.
-3. The tool registry checks that the requested tool is allow-listed.
-4. Required arguments are validated before execution.
-5. The tool result is returned through the application boundary.
-
-The example does not allow arbitrary function names or arbitrary internal
-resource access.
+The prototype uses an in-memory cosine-similarity store. A persistent vector database, batching limits for large corpora, document-format loaders, tenant isolation, and production-scale indexing remain future work.
 
 ## Run
 
@@ -65,26 +50,16 @@ From the repository root:
 python projects/rag-agent-prototype/rag_agent.py
 ```
 
-The script prints one retrieval example and one approved-tool example.
+## Test
 
-## Production Evolution
+From the repository root:
 
-A production version could replace the deterministic components with:
+```bash
+PYTHONPATH=projects/rag-agent-prototype pytest projects/rag-agent-prototype/tests -q
+```
 
-- Embedding generation
-- A vector database or pgvector
-- An LLM provider behind an application-owned interface
-- Structured model/tool calls
-- Persistent conversation state
-- Authentication and tenant authorization
-- Rate limits and token budgets
-- Tracing, metrics, cost tracking, and evaluation
+The tests cover chunk boundaries and metadata, empty input, embedding behavior, vector-store validation and ranking, the provider response adapter, and compatibility with the original lexical retriever and agent flow. The live provider endpoint is not called by the test suite.
 
-Those additions are intentionally outside this Day 60 learning prototype.
+## Agent and retrieval boundary
 
-## Day 60 Review Connection
-
-The prototype ties together the phase's earlier work on RAG retrieval, agent
-tool boundaries, AI backend validation, rate limiting, reliability, and cost
-observability without replacing the dedicated learning examples in the rest of
-the repository.
+The existing agent continues to route supported status requests through an allow-listed tool registry. Retrieval context is returned with document identifiers and an explicit answer boundary; this prototype does not claim to implement live LLM answer generation or unrestricted tool execution.
