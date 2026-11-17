@@ -30,7 +30,7 @@ User Query --> Query Embedding --> Vector Retriever
 ## Components
 
 - `rag_agent.py` retains the original `DocumentChunk`, deterministic `LexicalRetriever`, allow-listed `ToolRegistry`, and `RagAgent` routing behavior. Chunk metadata is additive and optional, preserving existing callers.
-- `rag_ingestion.py` provides `load_text_file` for UTF-8 text/Markdown input, `SourceDocument`, `DocumentChunker`, `DocumentIngestionPipeline`, an `EmbeddingProvider` interface, `OpenAIEmbeddingProvider`, `HashingEmbeddingProvider`, `InMemoryVectorStore`, and `VectorRetriever`.
+- `rag_generation.py` provides a provider-neutral grounded-answer stage, a live OpenAI Chat Completions adapter, bounded source/context selection, citation validation, and explicit abstention when evidence is missing or citations are invalid.\n- `rag_ingestion.py` provides `load_text_file` for UTF-8 text/Markdown input, `SourceDocument`, `DocumentChunker`, `DocumentIngestionPipeline`, an `EmbeddingProvider` interface, `OpenAIEmbeddingProvider`, `HashingEmbeddingProvider`, `InMemoryVectorStore`, and `VectorRetriever`.
 - Chunk metadata carries caller-supplied source fields plus `chunk_index`, `start_char`, and `end_char` offsets.
 - The vector store ranks records by cosine similarity and validates vector dimensions. It is in-memory only; records are not persisted across process restarts.
 
@@ -58,7 +58,7 @@ From the repository root:
 PYTHONPATH=projects/rag-agent-prototype pytest projects/rag-agent-prototype/tests -q
 ```
 
-The tests cover chunk boundaries and metadata, empty input, embedding behavior, vector-store validation and ranking, the provider response adapter, and compatibility with the original lexical retriever and agent flow. The live provider endpoint is not called by the test suite.
+The tests cover grounded answers, citation validation, abstention, bounded context/source selection, chunk boundaries and metadata, empty input, embedding behavior, vector-store validation and ranking, the provider response adapter, and compatibility with the original lexical retriever and agent flow. The live embedding and chat-completion endpoints are not called by the test suite. Configure `OPENAI_API_KEY` and instantiate `OpenAIChatCompletionProvider` for live answer generation; tests use a deterministic fake provider.
 
 ## Agent and retrieval boundary
 
