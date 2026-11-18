@@ -67,3 +67,105 @@ def test_generator_bounds_number_of_sources_and_context():
     assert "[source:first]" in provider.prompt
     assert "[source:second]" not in provider.prompt
     assert len(provider.prompt) < 500
+
+
+def test_generator_abstains_when_any_citation_is_unknown():
+    provider = FakeProvider("Supported [source:handbook], unsupported [source:other].")
+    answer = GroundedAnswerGenerator(provider).generate("Question?", [result()])
+    assert answer.abstained
+    assert answer.source_ids == ()
+
+
+def test_generator_preserves_provider_failures_for_caller():
+    class FailingProvider:
+        def complete(self, prompt):
+            raise RuntimeError("provider unavailable")
+
+    with pytest.raises(RuntimeError, match="provider unavailable"):
+        GroundedAnswerGenerator(FailingProvider()).generate("Question?", [result()])
+
+
+def test_generator_does_not_call_provider_when_retrieved_context_is_blank():
+    provider = FakeProvider("should not be called")
+    blank = RetrievalResult(DocumentChunk("blank", "  "), 0.0)
+    answer = GroundedAnswerGenerator(provider).generate("Question?", [blank])
+    assert answer.abstained
+    assert provider.prompt is None
+
+
+def test_chat_provider_wraps_transport_and_invalid_response_errors(monkeypatch):
+    import json
+    import urllib.error
+
+    from rag_generation import OpenAIChatCompletionProvider
+
+    provider = OpenAIChatCompletionProvider(api_key="test-key")
+
+    def transport_failure(request, timeout):
+        raise urllib.error.URLError("offline")
+
+    monkeypatch.setattr("urllib.request.urlopen", transport_failure)
+    with pytest.raises(RuntimeError, match="Answer provider request failed"):
+        provider.complete("question")
+
+    def malformed_response(request, timeout):
+        class Response:
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *args):
+                return False
+
+            def read(self):
+                return json.dumps({"unexpected": []}).encode()
+
+        return Response()
+
+    monkeypatch.setattr("urllib.request.urlopen", malformed_response)
+    with pytest.raises(RuntimeError, match="Answer provider request failed"):
+        provider.complete("question")
+
+
+def test_chat_provider_requires_key_and_positive_timeout(monkeypatch):
+    from rag_generation import OpenAIChatCompletionProvider
+
+    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
+    with pytest.raises(ValueError, match="OPENAI_API_KEY"):
+        OpenAIChatCompletionProvider(api_key="")
+    with pytest.raises(ValueError, match="timeout"):
+        OpenAIChatCompletionProvider(api_key="test-key", timeout=0)
+
+
+
+def test_chat_provider_sends_configured_model_and_parses_answer(monkeypatch):
+    import json
+
+    from rag_generation import OpenAIChatCompletionProvider
+
+    captured = {}
+
+    def successful_response(request, timeout):
+        captured["payload"] = json.loads(request.data.decode())
+        captured["timeout"] = timeout
+
+        class Response:
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *args):
+                return False
+
+            def read(self):
+                return json.dumps({
+                    "choices": [{"message": {"content": "Grounded answer [source:handbook]."}}]
+                }).encode()
+
+        return Response()
+
+    monkeypatch.setattr("urllib.request.urlopen", successful_response)
+    provider = OpenAIChatCompletionProvider(api_key="test-key", model="test-model", timeout=5)
+    assert provider.complete("question") == "Grounded answer [source:handbook]."
+    assert captured["payload"]["model"] == "test-model"
+    assert captured["timeout"] == 5
+    system_message = captured["payload"]["messages"][0]["content"]
+    assert "untrusted data" in system_message

@@ -139,3 +139,40 @@ def test_existing_lexical_retriever_and_agent_remain_compatible():
     assert "Retrieved context:" in output
     assert "rag-retrieval" in output
     assert "Tool result:" in build_demo_agent().run("status retrieval-service")
+
+
+
+def test_tool_registry_rejects_unknown_empty_and_oversized_arguments():
+    from rag_agent import Tool, ToolRegistry
+
+    registry = ToolRegistry([
+        Tool("lookup", "Lookup a service", lambda args: args["service"], "service")
+    ], max_argument_length=8)
+
+    with pytest.raises(ValueError, match="not allowed"):
+        registry.execute("unregistered", {"service": "api"})
+    with pytest.raises(ValueError, match="Missing or empty"):
+        registry.execute("lookup", {"service": " "})
+    with pytest.raises(ValueError, match="exceeds"):
+        registry.execute("lookup", {"service": "service-name"})
+    assert registry.execute("lookup", {"service": " api "}) == "api"
+
+
+def test_tool_registry_rejects_duplicate_names_and_invalid_limits():
+    from rag_agent import Tool, ToolRegistry
+
+    tool = Tool("lookup", "Lookup", lambda args: "ok", "service")
+    with pytest.raises(ValueError, match="unique"):
+        ToolRegistry([tool, tool])
+    with pytest.raises(ValueError, match="positive"):
+        ToolRegistry([tool], max_argument_length=0)
+
+
+def test_agent_rejects_empty_or_oversized_queries():
+    from rag_agent import RagAgent, ToolRegistry
+
+    agent = RagAgent(LexicalRetriever([]), ToolRegistry([]), max_query_chars=10)
+    with pytest.raises(ValueError, match="empty"):
+        agent.run(" ")
+    with pytest.raises(ValueError, match="exceeds"):
+        agent.run("this query is too long")

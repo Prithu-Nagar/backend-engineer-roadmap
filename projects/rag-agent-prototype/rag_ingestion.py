@@ -57,13 +57,15 @@ class OpenAIEmbeddingProvider:
     def __init__(
         self,
         api_key: str | None = None,
-        model: str = "text-embedding-3-small",
+        model: str | None = None,
         timeout: float = 20.0,
     ) -> None:
         self.api_key = api_key or os.getenv("OPENAI_API_KEY")
         if not self.api_key:
             raise ValueError("OPENAI_API_KEY is required for live embeddings")
-        self.model = model
+        if timeout <= 0:
+            raise ValueError("timeout must be positive")
+        self.model = model or os.getenv("OPENAI_EMBEDDING_MODEL", "text-embedding-3-small")
         self.timeout = timeout
 
     def _embed(self, texts: Sequence[str]) -> list[list[float]]:

@@ -1,0 +1,24 @@
+{
+  "dataset_version": "1",
+  "description": "Small deterministic regression set for the prototype's lexical retriever.",
+  "cases": [
+    {
+      "question": "How does RAG separate retrieval from answer generation?",
+      "relevant_source_ids": [
+        "rag-retrieval"
+      ]
+    },
+    {
+      "question": "How do AI endpoints control token usage and cost?",
+      "relevant_source_ids": [
+        "backend-rate-limits"
+      ]
+    },
+    {
+      "question": "What protects AI services from transient failures?",
+      "relevant_source_ids": [
+        "ai-reliability"
+      ]
+    }
+  ]
+}

@@ -54,26 +54,45 @@ class Tool:
 class ToolRegistry:
     """Application-owned allow-list for agent tools."""
 
-    def __init__(self, tools: Sequence[Tool]) -> None:
-        self._tools = {tool.name: tool for tool in tools}
+    def __init__(self, tools: Sequence[Tool], max_argument_length: int = 256) -> None:
+        if max_argument_length <= 0:
+            raise ValueError("max_argument_length must be positive")
+        self.max_argument_length = max_argument_length
+        self._tools: dict[str, Tool] = {}
+        for tool in tools:
+            if not tool.name or tool.name in self._tools:
+                raise ValueError("Tool names must be non-empty and unique")
+            self._tools[tool.name] = tool
 
     def execute(self, name: str, arguments: dict[str, str]) -> str:
         tool = self._tools.get(name)
         if tool is None:
             raise ValueError(f"Tool is not allowed: {name}")
-        if tool.required_argument not in arguments:
-            raise ValueError(f"Missing required argument: {tool.required_argument}")
-        return tool.handler(arguments)
+        value = arguments.get(tool.required_argument)
+        if not isinstance(value, str) or not value.strip():
+            raise ValueError(f"Missing or empty required argument: {tool.required_argument}")
+        if len(value) > self.max_argument_length:
+            raise ValueError(f"Tool argument exceeds {self.max_argument_length} characters")
+        return tool.handler({tool.required_argument: value.strip()})
 
 
 class RagAgent:
     """Simple routing layer that chooses retrieval or an approved tool."""
 
-    def __init__(self, retriever: LexicalRetriever, tools: ToolRegistry) -> None:
+    def __init__(
+        self, retriever: LexicalRetriever, tools: ToolRegistry, max_query_chars: int = 2000
+    ) -> None:
+        if max_query_chars <= 0:
+            raise ValueError("max_query_chars must be positive")
         self.retriever = retriever
         self.tools = tools
+        self.max_query_chars = max_query_chars
 
     def run(self, query: str) -> str:
+        if not isinstance(query, str) or not query.strip():
+            raise ValueError("query must not be empty")
+        if len(query) > self.max_query_chars:
+            raise ValueError(f"query exceeds {self.max_query_chars} characters")
         normalized = query.lower()
         if normalized.startswith("status "):
             service = query[7:].strip()
