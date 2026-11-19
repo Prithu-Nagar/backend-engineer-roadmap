@@ -1132,3 +1132,15 @@ repository is not yet evidence of three finished, deployable backend products.
 Prioritize one integrated capstone (Task Manager) before expanding the project
 portfolio. Keep design exercises and standalone concept modules clearly
 labelled as such.
+
+
+---
+
+## Phase 2 — In-process Rate Limiter
+
+The Rate Limiter now includes a runnable, process-local token-bucket reference
+implementation in `rate-limiter/token_bucket.py`, with an injectable clock,
+per-key state, thread-safe decisions, retry timing, a demo, and deterministic
+boundary/concurrency tests. The Redis-backed atomic implementation remains a
+separate follow-up milestone; this implementation does not share state across
+processes or hosts.

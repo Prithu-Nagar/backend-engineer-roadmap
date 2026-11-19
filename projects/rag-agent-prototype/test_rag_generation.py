@@ -169,3 +169,24 @@ def test_chat_provider_sends_configured_model_and_parses_answer(monkeypatch):
     assert captured["timeout"] == 5
     system_message = captured["payload"]["messages"][0]["content"]
     assert "untrusted data" in system_message
+
+
+def test_generator_does_not_allow_citations_for_sources_cut_off_by_context_limit():
+    provider = FakeProvider("Claim [source:second].")
+    generator = GroundedAnswerGenerator(provider, max_context_chars=40, max_sources=2)
+    answer = generator.generate(
+        "Question?",
+        [result("first", "A" * 200), result("second", "Second source text.")],
+    )
+    assert answer.abstained
+    assert "[source:second]" not in provider.prompt
+
+
+def test_generator_deduplicates_source_ids_in_bounded_context():
+    provider = FakeProvider("Supported [source:handbook].")
+    generator = GroundedAnswerGenerator(provider, max_context_chars=200, max_sources=3)
+    answer = generator.generate(
+        "Question?", [result("handbook", "First passage."), result("handbook", "Duplicate passage.")]
+    )
+    assert not answer.abstained
+    assert provider.prompt.count("[source:handbook]") == 1

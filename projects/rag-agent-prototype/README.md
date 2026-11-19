@@ -33,7 +33,7 @@ Agent Requests --> Allow-listed Tool Registry --> One approved tool call
 
 - `rag_agent.py` retains `DocumentChunk`, the deterministic `LexicalRetriever`, the allow-listed `ToolRegistry`, and `RagAgent`. Tool names are allow-listed, required arguments are validated and length-bounded, and one deterministic tool route is executed per request.
 - `rag_ingestion.py` provides UTF-8 text/Markdown loading, metadata-aware chunking, an `EmbeddingProvider` interface, live OpenAI embeddings, deterministic local feature hashing, an in-memory vector store, and vector retrieval.
-- `rag_generation.py` provides a provider-neutral answer stage, a live OpenAI Chat Completions adapter, bounded source/context selection, citation allow-list validation, and explicit abstention when evidence is missing or citations are invalid.
+- `rag_generation.py` provides a provider-neutral answer stage, a live OpenAI Chat Completions adapter, bounded source/context selection, citation allow-list validation against sources actually included in the prompt, and explicit abstention when evidence is missing or citations are invalid.
 - `rag_evaluation.py` calculates deterministic Precision@K, Recall@K, and MRR over the versioned `evaluation_cases.json` regression set.
 - `demo.py` demonstrates ingestion and retrieval offline, or live retrieval and grounded generation with `--live`.
 - Chunk metadata retains caller-supplied source fields plus `chunk_index`, `start_char`, and `end_char`.

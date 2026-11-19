@@ -86,14 +86,24 @@ class GroundedAnswerGenerator:
 
         sections = []
         allowed = set()
+        remaining_chars = self.max_context_chars
         for result in selected:
             source_text = result.chunk.text.strip()
-            if not source_text:
-                continue
             source_id = result.chunk.document_id
+            if not source_text or source_id in allowed:
+                continue
+            prefix = f"[source:{source_id}] "
+            separator = "\n" if sections else ""
+            available = remaining_chars - len(separator) - len(prefix)
+            if available <= 0:
+                break
+            bounded_text = source_text[:available]
+            sections.append(f"{prefix}{bounded_text}")
             allowed.add(source_id)
-            sections.append(f"[source:{source_id}] {source_text}")
-        context = "\n".join(sections)[:self.max_context_chars]
+            remaining_chars -= len(separator) + len(prefix) + len(bounded_text)
+            if len(bounded_text) < len(source_text):
+                break
+        context = "\n".join(sections)
         if not context.strip():
             return GroundedAnswer("I don't have enough relevant information to answer that.", (), True)
 
