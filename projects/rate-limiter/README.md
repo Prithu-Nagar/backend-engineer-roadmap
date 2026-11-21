@@ -75,3 +75,51 @@ middleware, metrics, or a Redis connection lifecycle manager.
 The Redis tests use an atomic in-memory test double to verify adapter behavior,
 TTL calculation, shared-instance limits, and concurrency. They do not replace
 an integration test against a live Redis server.
+
+## Flask API middleware
+
+`flask_middleware.py` provides a reusable Flask integration for either limiter
+implementation. Register it with an application, a limiter instance, and a
+trusted identity function:
+
+```python
+from flask import Flask
+from flask_middleware import register_rate_limit
+from token_bucket import TokenBucketRateLimiter
+
+app = Flask(__name__)
+limiter = TokenBucketRateLimiter(capacity=5, refill_rate=1)
+register_rate_limit(
+    app,
+    limiter,
+    key_func=lambda request: request.headers.get("X-Authenticated-User", "anonymous"),
+)
+```
+
+The middleware returns HTTP `429` when the quota is exhausted and includes
+`Retry-After`, `X-RateLimit-Limit`, and `X-RateLimit-Remaining` headers. Limiter
+backend errors fail closed with HTTP `503` by default. Set `fail_open=True`
+only when endpoint availability is more important than enforcing the quota;
+such responses carry `X-RateLimit-Status: unavailable`. The demo identity
+header is for local demonstration only: production applications should derive
+the key from authenticated identity and trust forwarded client addresses only
+behind a correctly configured proxy.
+
+Run the API example from the repository root:
+
+```bash
+python projects/rate-limiter/api_demo.py
+```
+
+Then request `http://127.0.0.1:5000/resource`. The example uses the in-process
+limiter; replace it with `RedisTokenBucketRateLimiter` and a configured Redis
+client to share counters across application instances.
+
+Run all focused tests, including HTTP contract and backend-failure behavior:
+
+```bash
+python -m pytest projects/rate-limiter/tests -q
+```
+
+The Redis adapter is tested with an atomic in-memory test double. A live Redis
+server integration test and production deployment behavior are not claimed.

@@ -177,3 +177,25 @@ Explain the design in this order:
 The central design principle is that rate-limit state is a shared concurrency
 boundary, so the decision must remain atomic even when requests are distributed
 across many backend instances.
+
+
+## Flask middleware integration
+
+The runnable Flask adapter in `flask_middleware.py` applies one limiter
+decision before the view function. Its identity callback must use a stable,
+trusted key (prefer the authenticated principal); client-supplied forwarding
+headers must not be trusted unless a trusted proxy has normalized them.
+
+| Outcome | HTTP response | Headers / behavior |
+|---|---|---|
+| Allowed | Continue to endpoint | `X-RateLimit-Limit`, `X-RateLimit-Remaining` |
+| Quota exhausted | `429 Too Many Requests` | Same quota headers plus `Retry-After` |
+| Limiter backend unavailable (default) | `503 Service Unavailable` | Request is not processed |
+| Limiter backend unavailable (`fail_open=True`) | Continue to endpoint | `X-RateLimit-Status: unavailable` |
+
+Fail-closed is the default so a Redis outage cannot silently disable a
+security-sensitive quota. Fail-open is an explicit availability trade-off,
+not a universally safe setting. Monitor backend failures and choose the policy
+per endpoint risk. The API example uses the in-process limiter; replacing it
+with the Redis adapter shares quota state only when all instances use the same
+Redis deployment, policy, key derivation, and prefix.
