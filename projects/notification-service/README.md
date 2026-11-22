@@ -81,3 +81,39 @@ The design covers:
 
 The Day 63 Observer/Adapter LLD remains unchanged. The Day 67 artifact adds
 distributed-system boundaries around that earlier object-level design.
+
+## Runnable notification API and local worker
+
+The project now includes a runnable Flask API, notification domain model,
+in-memory enqueue service, worker abstraction, and local provider adapter.
+
+Start the API from the repository root:
+
+```bash
+python projects/notification-service/app.py
+```
+
+Create a notification:
+
+```bash
+curl -X POST http://127.0.0.1:5000/notifications \\
+  -H "Content-Type: application/json" \\
+  -d '{"recipient":"person@example.com","channel":"email","message":"Hello"}'
+```
+
+The API returns `202 Accepted` with the notification identifier and `queued`
+status. Inspect it with `GET /notifications/<notification_id>`. Process one
+queued item using `POST /notifications/process-next`; the local provider
+records the delivery in process memory and the notification becomes `sent`.
+Provider failures are captured as `failed` delivery status.
+
+Run focused tests:
+
+```bash
+python -m pytest projects/notification-service/tests -q
+```
+
+The current queue, notification store, and local provider are in-memory demo
+adapters. They are not durable across restarts, do not contact a real email/SMS/
+push provider, and do not yet implement retries or idempotency. Those are
+subsequent implementation steps, not claimed as complete here.
