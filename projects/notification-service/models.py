@@ -13,6 +13,7 @@ class NotificationStatus(str, Enum):
     CREATED = "created"
     QUEUED = "queued"
     PROCESSING = "processing"
+    RETRYING = "retrying"
     SENT = "sent"
     FAILED = "failed"
 
@@ -30,6 +31,8 @@ class Notification:
     attempts: int = 0
     provider_message_id: str | None = None
     error: str | None = None
+    idempotency_key: str | None = None
+    next_retry_delay: float | None = None
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -42,4 +45,6 @@ class Notification:
             "attempts": self.attempts,
             "provider_message_id": self.provider_message_id,
             "error": self.error,
+            "idempotency_key": self.idempotency_key,
+            "next_retry_delay": self.next_retry_delay,
         }

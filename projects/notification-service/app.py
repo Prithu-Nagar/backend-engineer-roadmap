@@ -2,9 +2,15 @@
 
 from __future__ import annotations
 
+from uuid import uuid4
+
 from flask import Flask, jsonify, request
 from providers import LocalNotificationProvider
-from service import NotificationNotFoundError, NotificationService
+from service import (
+    IdempotencyConflictError,
+    NotificationNotFoundError,
+    NotificationService,
+)
 from worker import NotificationWorker
 
 
@@ -20,6 +26,13 @@ def create_app(
     app.extensions["notification_provider"] = local_provider
     app.extensions["notification_worker"] = worker
 
+    @app.after_request
+    def add_response_headers(response):
+        response.headers.setdefault("X-Request-ID", uuid4().hex)
+        response.headers.setdefault("X-Content-Type-Options", "nosniff")
+        response.headers.setdefault("Cache-Control", "no-store")
+        return response
+
     @app.post("/notifications")
     def create_notification():
         payload = request.get_json(silent=True)
@@ -30,7 +43,10 @@ def create_app(
                 recipient=payload.get("recipient"),
                 channel=payload.get("channel"),
                 message=payload.get("message"),
+                idempotency_key=request.headers.get("Idempotency-Key") or payload.get("idempotency_key"),
             )
+        except IdempotencyConflictError as exc:
+            return jsonify(error="idempotency_conflict", message=str(exc)), 409
         except ValueError as exc:
             return jsonify(error="invalid_notification", message=str(exc)), 400
         return jsonify(notification.to_dict()), 202

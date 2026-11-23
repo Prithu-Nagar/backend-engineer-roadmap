@@ -63,3 +63,36 @@ def test_unknown_notification_returns_404(app):
     assert response.status_code == 404
 
 
+
+
+def test_api_supports_idempotency_header_and_returns_same_notification(app):
+    client = app.test_client()
+    payload = {"recipient": "person@example.com", "channel": "email", "message": "Hello"}
+    first = client.post("/notifications", json=payload, headers={"Idempotency-Key": "api-key"})
+    second = client.post("/notifications", json=payload, headers={"Idempotency-Key": "api-key"})
+
+    assert first.status_code == second.status_code == 202
+    assert first.get_json()["id"] == second.get_json()["id"]
+    assert app.extensions["notification_service"].queue.qsize() == 1
+
+
+def test_api_rejects_idempotency_key_payload_conflict(app):
+    client = app.test_client()
+    headers = {"Idempotency-Key": "api-key"}
+    client.post("/notifications", json={
+        "recipient": "first", "channel": "email", "message": "Hello"
+    }, headers=headers)
+    response = client.post("/notifications", json={
+        "recipient": "second", "channel": "email", "message": "Hello"
+    }, headers=headers)
+
+    assert response.status_code == 409
+    assert response.get_json()["error"] == "idempotency_conflict"
+
+
+def test_api_responses_include_safety_and_trace_headers(app):
+    response = app.test_client().get("/notifications/missing")
+
+    assert response.headers.get("X-Request-ID")
+    assert response.headers["X-Content-Type-Options"] == "nosniff"
+    assert response.headers["Cache-Control"] == "no-store"

@@ -105,7 +105,7 @@ The API returns `202 Accepted` with the notification identifier and `queued`
 status. Inspect it with `GET /notifications/<notification_id>`. Process one
 queued item using `POST /notifications/process-next`; the local provider
 records the delivery in process memory and the notification becomes `sent`.
-Provider failures are captured as `failed` delivery status.
+Transient provider failures are retried with bounded exponential backoff; exhausted or permanent failures are captured as `failed` delivery status. Requests can include an `Idempotency-Key` header (or `idempotency_key` field) to prevent duplicate enqueueing. Reusing a key with a different payload returns `409 Conflict`. API responses also include a generated `X-Request-ID`, `X-Content-Type-Options: nosniff`, and `Cache-Control: no-store` headers.
 
 Run focused tests:
 
@@ -115,5 +115,19 @@ python -m pytest projects/notification-service/tests -q
 
 The current queue, notification store, and local provider are in-memory demo
 adapters. They are not durable across restarts, do not contact a real email/SMS/
-push provider, and do not yet implement retries or idempotency. Those are
-subsequent implementation steps, not claimed as complete here.
+push provider. Retry and idempotency behavior is implemented for the in-memory
+demo workflow, but queue state and idempotency records are lost on restart.
+
+
+## Retry and duplicate protection
+
+- `Idempotency-Key` may be supplied as an HTTP header or as `idempotency_key`
+  in the JSON request. Repeating the same key and payload returns the original
+  notification without adding another queue item; a different payload with the
+  same key returns `409 Conflict`.
+- Connection and timeout failures are treated as transient and retried up to
+  three attempts by default, with exponential delays (1s, then 2s). Permanent
+  provider errors are not retried. Exhausted requests retain `failed` status
+  and the last error; successful requests retain provider delivery identifiers.
+- The in-memory adapter demonstrates bounded retry and request deduplication,
+  not durable idempotency across restarts or exactly-once external delivery.
