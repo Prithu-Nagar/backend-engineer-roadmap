@@ -131,3 +131,67 @@ demo workflow, but queue state and idempotency records are lost on restart.
   and the last error; successful requests retain provider delivery identifiers.
 - The in-memory adapter demonstrates bounded retry and request deduplication,
   not durable idempotency across restarts or exactly-once external delivery.
+
+
+## Day 24 — Delivery guarantees, queue decision, and acceptance demo
+
+### Queue choice for this MVP
+
+The runnable implementation deliberately uses Python's thread-safe
+`queue.Queue` as a **process-local FIFO queue**. It is dependency-free, makes
+enqueue/worker behavior deterministic in tests, and is sufficient for a single
+process demo. The queue is not persistent, shared across processes, bounded by
+a configured capacity, or suitable for horizontal worker scaling. Both queued
+items and the in-memory notification/idempotency stores are lost on restart.
+
+For a multi-process deployment, replace this adapter boundary with a durable
+broker (for example, RabbitMQ or Redis Streams) and persist notification and
+idempotency state in a database. Select the broker based on operational
+requirements: acknowledgement/redelivery behavior, ordering needs, retention,
+consumer-group support, dead-letter routing, throughput, and operational
+complexity. Do not treat swapping only the queue while leaving state in memory
+as a durable production implementation.
+
+### Delivery guarantee and failure window
+
+- The demo provides FIFO enqueueing and bounded retries for connection/time-out
+  failures. Retry delays are exponential and deterministic in tests.
+- Idempotency keys suppress duplicate enqueue requests while the process is
+  alive; reusing a key with a different payload is rejected.
+- Processing is **at-least-once in intent, not exactly-once delivery**. A worker
+  can call a provider successfully and then crash before recording `sent`;
+  a redelivered item could therefore send twice. Use a stable delivery key and
+  provider-side idempotency where supported.
+- Permanent provider errors are not retried. Exhausted transient failures end
+  in `failed` with the last error retained.
+- The local provider records messages in memory and does not send real email,
+  SMS, or push notifications. The current API has no authentication, durable
+  outbox, dead-letter broker, or cross-process coordination; those are explicit
+  MVP limitations.
+
+### Run the deterministic end-to-end demo
+
+From the repository root:
+
+```bash
+python projects/notification-service/demo.py
+```
+
+The demo enqueues one request, repeats it with the same idempotency key,
+simulates one transient provider outage, retries, and prints the final delivery
+status. It uses an in-process local provider and performs no external delivery.
+
+### Acceptance gate
+
+Run from the repository root:
+
+```bash
+python -m pytest projects/notification-service/tests -q
+python projects/notification-service/demo.py
+```
+
+The test suite covers API validation/status responses, duplicate request
+handling, key conflicts, successful local delivery, transient retry/backoff,
+retry exhaustion, permanent failure, and empty-queue behavior. Record actual
+command output when presenting verification; this README does not imply that a
+remote broker, external provider, or production deployment has been tested.

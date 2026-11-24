@@ -235,3 +235,58 @@ Future implementation increments can proceed in this order:
 The design is intentionally framework-neutral so it can later be implemented
 with Flask, FastAPI, Django, or another backend stack without changing the core
 architecture.
+
+
+---
+
+## 12. Day 24 implementation decision: queue and delivery guarantees
+
+### Current runnable adapter
+
+The code uses Python `queue.Queue` with a process-local in-memory notification
+store. This is a deliberate MVP choice: it keeps the worker contract simple,
+provides thread-safe FIFO handoff inside one process, and requires no broker
+installation for the demo. It is not durable and does not provide cross-process
+consumer coordination, broker acknowledgements, retention, or dead-letter
+routing. A process restart loses queued work and idempotency records.
+
+A production evolution should introduce a queue protocol/adapter backed by a
+durable broker and a database-backed notification/idempotency store. RabbitMQ
+is a reasonable choice when routing, acknowledgements, and dead-letter
+exchanges are central; Redis Streams is a reasonable choice when Redis is
+already operated and consumer groups plus retained stream entries meet the
+requirements. The decision must include persistence, failover, ordering,
+redelivery, observability, and operational ownership—not just throughput.
+
+### Explicit delivery contract
+
+The current worker retries connection and timeout errors with bounded
+exponential backoff and records permanent/exhausted errors as `FAILED`.
+Idempotency keys prevent duplicate enqueueing within the lifetime of the
+process. These are useful application-level safeguards, but they do not create
+exactly-once external delivery.
+
+The critical duplicate window is provider success followed by worker/process
+failure before `mark_sent` is recorded. A durable broker may redeliver that
+message, so the provider call can happen again. Production workers should use a
+stable per-notification/per-channel delivery key, provider idempotency when
+available, durable attempt state, and acknowledgement only after the delivery
+state transition commits. The honest guarantee is at-least-once processing with
+idempotent effects where the provider supports them.
+
+### Scaling trade-offs
+
+- Keep the API stateless and scale it independently from channel workers.
+- Separate queues/worker pools by channel to isolate slow or quota-limited
+  providers.
+- Bound concurrency by provider quotas; use backpressure rather than accepting
+  unlimited in-memory work.
+- Monitor queue depth/age, retry counts, attempt latency, provider error rates,
+  and dead-letter volume.
+- Add durable outbox publication when notification intent must be atomic with
+  a business transaction.
+- Add jitter, circuit breakers, and dead-letter replay controls before
+  operating at significant volume.
+
+The current implementation demonstrates the workflow locally; these
+production capabilities are design trade-offs, not claims about shipped code.
