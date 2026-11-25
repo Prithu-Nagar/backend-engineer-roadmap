@@ -77,3 +77,30 @@ changing the core architectural boundaries documented here.
 - [ ] Gateway failures can be recovered through reconnect.
 - [ ] Message history uses cursor pagination.
 - [ ] Delivery and persistence latency are observable.
+
+
+## Day 25 — Implemented persistence and authorization slice
+
+The runnable Flask API implements the first durable application boundary:
+
+- SQLite stores users, rooms, memberships, and messages with foreign keys and
+  an index for room-scoped message history.
+- Registration stores salted `scrypt` password hashes; login issues a
+  time-limited HMAC-signed bearer token.
+- Room creation automatically makes the creator its owner and first member.
+  Only the owner can add existing users to the room.
+- Sending and reading messages both enforce current room membership.
+- Message history uses a descending ID cursor internally and returns each page
+  in chronological order.
+
+The implementation deliberately does not add WebSockets or cross-instance
+fan-out yet. Those belong to the next scheduled chat increment. The database
+is SQLite for the local MVP; production deployment should use managed secrets,
+TLS, operational database backups, and a production database with migration
+management.
+
+### Day 25 verification
+
+Run `python -m pytest projects/chat-application/tests -q`. The integration
+suite covers authentication, owner/member permissions, message persistence
+across app instances, validation, and cursor pagination.
