@@ -68,10 +68,10 @@ changing the core architectural boundaries documented here.
 
 ## Reliability Checklist
 
-- [ ] WebSocket authentication is enforced.
-- [ ] Room authorization is checked on connection and message send.
-- [ ] Client retries use an idempotency key.
-- [ ] Messages are durable before being acknowledged as persisted.
+- [x] WebSocket authentication is enforced.
+- [x] Room authorization is checked on connection and message send.
+- [x] Client retries use an idempotency key.
+- [x] Messages are durable before being acknowledged as persisted.
 - [ ] Cross-instance fan-out is externalized.
 - [ ] Slow consumers have bounded queues.
 - [ ] Gateway failures can be recovered through reconnect.
@@ -104,3 +104,21 @@ management.
 Run `python -m pytest projects/chat-application/tests -q`. The integration
 suite covers authentication, owner/member permissions, message persistence
 across app instances, validation, and cursor pagination.
+
+
+
+## Day 26 — Real-time application slice
+
+The Flask application exposes `/ws/rooms/<room_id>` through Flask-Sock.
+A connection sends its bearer token in the first JSON frame; the server
+authenticates the user and verifies room membership before registering the
+socket. Each incoming send is validated and authorized again, persisted, and
+then broadcast to active sockets registered for that room in the same process.
+
+Clients supply a stable `client_message_id`. A unique database index scoped
+to room and sender prevents duplicate durable messages when a client retries
+after a disconnect. The REST history endpoint remains the reconnect catch-up
+mechanism; the WebSocket registry is transient and in-process only.
+
+This implementation does not claim cross-process fan-out. A shared broker
+would be required when deploying multiple workers or hosts.

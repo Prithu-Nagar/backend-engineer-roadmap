@@ -1,8 +1,13 @@
 """Integration tests for authenticated rooms and persisted message history."""
+import json
 import sys
+import threading
+from contextlib import contextmanager
 from pathlib import Path
 
 import pytest
+from simple_websocket import Client as WebSocketClient
+from werkzeug.serving import make_server
 
 PROJECT_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_DIR))
@@ -18,6 +23,28 @@ def client(tmp_path):
         "SECRET_KEY": "test-secret",
     })
     return app.test_client()
+
+
+@pytest.fixture
+def websocket_url(client):
+    server = make_server("127.0.0.1", 0, client.application, threaded=True)
+    thread = threading.Thread(target=server.serve_forever, daemon=True)
+    thread.start()
+    try:
+        yield f"ws://127.0.0.1:{server.server_port}"
+    finally:
+        server.shutdown()
+        thread.join()
+        server.server_close()
+
+
+@contextmanager
+def connect_websocket(url):
+    websocket = WebSocketClient.connect(url)
+    try:
+        yield websocket
+    finally:
+        websocket.close()
 
 
 def register(client, username):
@@ -106,3 +133,68 @@ def test_duplicate_registration_and_invalid_pagination(client):
     headers = login(client, "alice")
     room_id = client.post("/rooms", json={"name": "general"}, headers=headers).get_json()["id"]
     assert client.get(f"/rooms/{room_id}/messages?limit=0", headers=headers).status_code == 400
+
+
+
+def test_rest_message_client_id_is_idempotent(client):
+    register(client, "alice")
+    headers = login(client, "alice")
+    room_id = client.post("/rooms", json={"name": "general"}, headers=headers).get_json()["id"]
+    payload = {"body": "retry-safe", "client_message_id": "client-1"}
+    first = client.post(f"/rooms/{room_id}/messages", json=payload, headers=headers)
+    retry = client.post(f"/rooms/{room_id}/messages", json=payload, headers=headers)
+    assert first.status_code == 201
+    assert retry.status_code == 200
+    assert retry.get_json()["duplicate"] is True
+    assert retry.get_json()["id"] == first.get_json()["id"]
+    history = client.get(f"/rooms/{room_id}/messages", headers=headers).get_json()
+    assert len(history["messages"]) == 1
+
+
+def test_websocket_auth_send_receive_and_reconnect_deduplication(client, websocket_url):
+    register(client, "alice")
+    headers = login(client, "alice")
+    room_id = client.post("/rooms", json={"name": "general"}, headers=headers).get_json()["id"]
+    token = headers["Authorization"].split(" ", 1)[1]
+
+    with connect_websocket(f"{websocket_url}/ws/rooms/{room_id}") as ws:
+        ws.send(json.dumps({"token": token}))
+        assert json.loads(ws.receive())["type"] == "ready"
+        event = {"type": "send", "body": "hello live", "client_message_id": "stable-1"}
+        ws.send(json.dumps(event))
+        delivered = json.loads(ws.receive())
+        assert delivered["type"] == "message"
+        assert delivered["message"]["body"] == "hello live"
+        assert delivered["duplicate"] is False
+
+    # Reconnect and retrying the same client message ID returns the persisted row.
+    with connect_websocket(f"{websocket_url}/ws/rooms/{room_id}") as ws:
+        ws.send(json.dumps({"token": token}))
+        assert json.loads(ws.receive())["type"] == "ready"
+        ws.send(json.dumps(event))
+        replay = json.loads(ws.receive())
+        assert replay["duplicate"] is True
+        assert replay["message"]["id"] == delivered["message"]["id"]
+
+
+
+def test_malformed_bearer_token_is_rejected(client):
+    response = client.get(
+        "/rooms",
+        headers={"Authorization": "Bearer not-a-valid-token%%%"},
+    )
+    assert response.status_code == 401
+
+
+
+def test_websocket_rejects_non_member(client, websocket_url):
+    register(client, "owner")
+    register(client, "outsider")
+    owner_headers = login(client, "owner")
+    outsider_token = login(client, "outsider")["Authorization"].split(" ", 1)[1]
+    room_id = client.post("/rooms", json={"name": "private"}, headers=owner_headers).get_json()["id"]
+
+    with connect_websocket(f"{websocket_url}/ws/rooms/{room_id}") as ws:
+        ws.send(json.dumps({"token": outsider_token}))
+        rejection = json.loads(ws.receive())
+        assert rejection == {"type": "error", "error": "forbidden"}

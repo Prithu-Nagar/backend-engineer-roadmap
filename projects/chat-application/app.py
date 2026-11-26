@@ -1,15 +1,14 @@
-"""Authenticated chat REST API with SQLite-backed rooms and message history.
-
-Real-time transport is intentionally left for the next project increment.
-"""
+"""Authenticated chat API with durable history and room-scoped WebSockets."""
 from __future__ import annotations
 
 import base64
+import binascii
 import hashlib
 import hmac
 import json
 import os
 import sqlite3
+import threading
 import time
 from contextlib import contextmanager
 from functools import wraps
@@ -17,6 +16,8 @@ from pathlib import Path
 from typing import Any
 
 from flask import Flask, g, jsonify, request
+from flask_sock import Sock
+from simple_websocket.errors import ConnectionClosed
 
 SCHEMA = """
 PRAGMA foreign_keys = ON;
@@ -44,7 +45,8 @@ CREATE TABLE IF NOT EXISTS messages (
     room_id INTEGER NOT NULL REFERENCES rooms(id) ON DELETE CASCADE,
     sender_id INTEGER NOT NULL REFERENCES users(id),
     body TEXT NOT NULL,
-    created_at INTEGER NOT NULL
+    created_at INTEGER NOT NULL,
+    client_message_id TEXT
 );
 CREATE INDEX IF NOT EXISTS ix_messages_room_id_id ON messages(room_id, id DESC);
 """
@@ -80,7 +82,7 @@ def _read_token(token: str, secret: str) -> int | None:
         if int(claims["exp"]) <= int(time.time()):
             return None
         return int(claims["sub"])
-    except (ValueError, TypeError, KeyError, json.JSONDecodeError):
+    except (ValueError, TypeError, KeyError, json.JSONDecodeError, binascii.Error):
         return None
 
 
@@ -124,6 +126,20 @@ def create_app(config: dict[str, Any] | None = None) -> Flask:
 
     with database() as connection:
         connection.executescript(SCHEMA)
+        columns = {row["name"] for row in connection.execute("PRAGMA table_info(messages)")}
+        if "client_message_id" not in columns:
+            connection.execute("ALTER TABLE messages ADD COLUMN client_message_id TEXT")
+        connection.execute(
+            """CREATE UNIQUE INDEX IF NOT EXISTS ux_messages_client_id
+               ON messages(room_id, sender_id, client_message_id)
+               WHERE client_message_id IS NOT NULL"""
+        )
+
+    # The in-process registry supports a single application process. Durable
+    # history remains the source of truth across disconnects and restarts.
+    socket_lock = threading.RLock()
+    room_sockets: dict[int, set[Any]] = {}
+    sock = Sock(app)
 
     def authenticated(function):
         @wraps(function)
@@ -250,14 +266,33 @@ def create_app(config: dict[str, Any] | None = None) -> Flask:
                 return jsonify(error="room_not_found"), 404
             if not is_member(connection, room_id, g.user["id"]):
                 return jsonify(error="forbidden"), 403
+            client_message_id = data.get("client_message_id") if isinstance(data, dict) else None
+            if client_message_id is not None and (
+                not isinstance(client_message_id, str) or not client_message_id.strip()
+                or len(client_message_id) > 128
+            ):
+                return jsonify(error="invalid_client_message_id"), 400
+            if client_message_id:
+                existing = connection.execute(
+                    """SELECT m.id, m.room_id, m.sender_id, u.username AS sender_username,
+                              m.body, m.created_at, m.client_message_id
+                       FROM messages m JOIN users u ON u.id = m.sender_id
+                       WHERE m.room_id = ? AND m.sender_id = ? AND m.client_message_id = ?""",
+                    (room_id, g.user["id"], client_message_id),
+                ).fetchone()
+                if existing:
+                    duplicate_response = dict(existing)
+                    duplicate_response["duplicate"] = True
+                    return jsonify(duplicate_response), 200
             cursor = connection.execute(
-                "INSERT INTO messages(room_id, sender_id, body, created_at) VALUES (?, ?, ?, ?)",
-                (room_id, g.user["id"], body.strip(), int(time.time())),
+                """INSERT INTO messages(room_id, sender_id, body, created_at, client_message_id)
+                   VALUES (?, ?, ?, ?, ?)""",
+                (room_id, g.user["id"], body.strip(), int(time.time()), client_message_id),
             )
             message_id = cursor.lastrowid
             row = connection.execute(
                 """SELECT m.id, m.room_id, m.sender_id, u.username AS sender_username,
-                          m.body, m.created_at
+                          m.body, m.created_at, m.client_message_id
                    FROM messages m JOIN users u ON u.id = m.sender_id WHERE m.id = ?""",
                 (message_id,),
             ).fetchone()
@@ -293,6 +328,96 @@ def create_app(config: dict[str, Any] | None = None) -> Flask:
         messages = [dict(row) for row in reversed(rows)]
         next_before_id = messages[0]["id"] if len(rows) == limit else None
         return jsonify(messages=messages, next_before_id=next_before_id), 200
+
+    @sock.route("/ws/rooms/<int:room_id>")
+    def room_socket(ws, room_id: int):
+        """Authenticate first, then exchange durable room messages over WebSocket."""
+        try:
+            auth_frame = ws.receive(timeout=10)
+            auth_data = json.loads(auth_frame) if isinstance(auth_frame, str) else {}
+            token = auth_data.get("token") if isinstance(auth_data, dict) else None
+            user_id = _read_token(token, app.config["SECRET_KEY"]) if isinstance(token, str) else None
+            if user_id is None:
+                ws.send(json.dumps({"type": "error", "error": "unauthorized"}))
+                return
+            with database() as connection:
+                user = connection.execute(
+                    "SELECT id, username FROM users WHERE id = ?", (user_id,)
+                ).fetchone()
+                member = user is not None and is_member(connection, room_id, user_id)
+            if not member:
+                ws.send(json.dumps({"type": "error", "error": "forbidden"}))
+                return
+            with socket_lock:
+                room_sockets.setdefault(room_id, set()).add(ws)
+            ws.send(json.dumps({"type": "ready", "room_id": room_id}))
+            while True:
+                raw = ws.receive()
+                if raw is None:
+                    break
+                try:
+                    payload = json.loads(raw)
+                except (TypeError, json.JSONDecodeError):
+                    ws.send(json.dumps({"type": "error", "error": "invalid_json"}))
+                    continue
+                if not isinstance(payload, dict) or payload.get("type") != "send":
+                    ws.send(json.dumps({"type": "error", "error": "unsupported_event"}))
+                    continue
+                body = payload.get("body")
+                client_message_id = payload.get("client_message_id")
+                if (not isinstance(body, str) or not body.strip()
+                    or len(body.strip()) > app.config["MAX_MESSAGE_LENGTH"]):
+                    ws.send(json.dumps({"type": "error", "error": "invalid_message"}))
+                    continue
+                if (not isinstance(client_message_id, str) or not client_message_id.strip()
+                    or len(client_message_id) > 128):
+                    ws.send(json.dumps({"type": "error", "error": "invalid_client_message_id"}))
+                    continue
+                with transaction() as connection:
+                    if not is_member(connection, room_id, user_id):
+                        ws.send(json.dumps({"type": "error", "error": "forbidden"}))
+                        break
+                    row = connection.execute(
+                        """SELECT m.id, m.room_id, m.sender_id, u.username AS sender_username,
+                                  m.body, m.created_at, m.client_message_id
+                           FROM messages m JOIN users u ON u.id = m.sender_id
+                           WHERE m.room_id = ? AND m.sender_id = ? AND m.client_message_id = ?""",
+                        (room_id, user_id, client_message_id),
+                    ).fetchone()
+                    duplicate = row is not None
+                    if row is None:
+                        cursor = connection.execute(
+                            """INSERT INTO messages
+                               (room_id, sender_id, body, created_at, client_message_id)
+                               VALUES (?, ?, ?, ?, ?)""",
+                            (room_id, user_id, body.strip(), int(time.time()), client_message_id),
+                        )
+                        row = connection.execute(
+                            """SELECT m.id, m.room_id, m.sender_id,
+                                      u.username AS sender_username, m.body, m.created_at,
+                                      m.client_message_id
+                               FROM messages m JOIN users u ON u.id = m.sender_id
+                               WHERE m.id = ?""", (cursor.lastrowid,)
+                        ).fetchone()
+                event = {"type": "message", "message": dict(row), "duplicate": duplicate}
+                encoded = json.dumps(event)
+                with socket_lock:
+                    recipients = tuple(room_sockets.get(room_id, ()))
+                for recipient in recipients:
+                    try:
+                        recipient.send(encoded)
+                    except ConnectionClosed:
+                        with socket_lock:
+                            room_sockets.get(room_id, set()).discard(recipient)
+        except ConnectionClosed:
+            pass
+        finally:
+            with socket_lock:
+                sockets = room_sockets.get(room_id)
+                if sockets is not None:
+                    sockets.discard(ws)
+                    if not sockets:
+                        room_sockets.pop(room_id, None)
 
     @app.get("/health")
     def health():

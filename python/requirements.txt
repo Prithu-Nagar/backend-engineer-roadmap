@@ -18,3 +18,6 @@ SQLAlchemy==2.0.54
 redis==8.1.0
 pytest-cov==7.1.0
 gunicorn==26.2.0
+
+# WebSocket transport for the Chat Application MVP.
+Flask-Sock==0.7.0
