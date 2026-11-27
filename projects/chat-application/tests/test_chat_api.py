@@ -7,6 +7,7 @@ from pathlib import Path
 
 import pytest
 from simple_websocket import Client as WebSocketClient
+from simple_websocket.errors import ConnectionClosed
 from werkzeug.serving import make_server
 
 PROJECT_DIR = Path(__file__).resolve().parents[1]
@@ -44,7 +45,10 @@ def connect_websocket(url):
     try:
         yield websocket
     finally:
-        websocket.close()
+        try:
+            websocket.close()
+        except ConnectionClosed:
+            pass
 
 
 def register(client, username):
@@ -198,3 +202,38 @@ def test_websocket_rejects_non_member(client, websocket_url):
         ws.send(json.dumps({"token": outsider_token}))
         rejection = json.loads(ws.receive())
         assert rejection == {"type": "error", "error": "forbidden"}
+
+
+
+def test_websocket_broadcast_reaches_other_room_members(client, websocket_url):
+    register(client, "alice")
+    bob_id = register(client, "bob")
+    alice_headers = login(client, "alice")
+    bob_headers = login(client, "bob")
+    room_id = client.post("/rooms", json={"name": "general"}, headers=alice_headers).get_json()["id"]
+    assert client.post(
+        f"/rooms/{room_id}/members",
+        json={"user_id": bob_id},
+        headers=alice_headers,
+    ).status_code == 200
+
+    alice_token = alice_headers["Authorization"].split(" ", 1)[1]
+    bob_token = bob_headers["Authorization"].split(" ", 1)[1]
+    with connect_websocket(f"{websocket_url}/ws/rooms/{room_id}") as alice_ws:
+        alice_ws.send(json.dumps({"token": alice_token}))
+        assert json.loads(alice_ws.receive())["type"] == "ready"
+        with connect_websocket(f"{websocket_url}/ws/rooms/{room_id}") as bob_ws:
+            bob_ws.send(json.dumps({"token": bob_token}))
+            assert json.loads(bob_ws.receive())["type"] == "ready"
+            alice_ws.send(json.dumps({
+                "type": "send",
+                "body": "broadcast to the room",
+                "client_message_id": "broadcast-1",
+            }))
+            alice_event = json.loads(alice_ws.receive())
+            bob_event = json.loads(bob_ws.receive())
+
+    assert alice_event == bob_event
+    assert alice_event["type"] == "message"
+    assert alice_event["message"]["body"] == "broadcast to the room"
+    assert alice_event["message"]["sender_username"] == "alice"

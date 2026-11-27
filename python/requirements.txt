@@ -21,3 +21,4 @@ gunicorn==26.2.0
 
 # WebSocket transport for the Chat Application MVP.
 Flask-Sock==0.7.0
+simple-websocket==1.1.0

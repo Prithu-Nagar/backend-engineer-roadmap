@@ -1,99 +1,144 @@
 # Chat Application
 
-Day 68 architecture artifact for the Chat Application milestone.
+A runnable, single-process chat MVP built with Flask, Flask-Sock, SQLite, and
+signed bearer tokens. It supports authenticated room membership, durable
+message history, live WebSocket delivery, and reconnect-safe message retries.
 
-The detailed project architecture is documented in:
+## Architecture
 
-- `architecture.md`
+- Flask REST API handles registration, login, room creation, membership, and
+  message history.
+- SQLite is the source of truth for users, rooms, memberships, and messages.
+- Flask-Sock provides room-scoped WebSocket connections.
+- A process-local connection registry broadcasts persisted messages to active
+  sockets in the same room.
+- Clients recover messages missed while disconnected through the paginated
+  history endpoint.
 
-The design focuses on WebSocket connection ownership, durable message storage,
-cross-instance fan-out, reconnect behavior, ordering, idempotency, and
-backpressure.
+See [`architecture.md`](architecture.md) for component boundaries, request
+flows, data model, guarantees, and scaling limitations.
 
+## Setup and run
 
-## Runnable authenticated chat API — Day 25
-
-The application provides authenticated room membership, SQLite-backed
-messages, cursor-paginated history, and a Flask-Sock WebSocket endpoint for
-live room messaging. Persistence, password hashing, and signed access tokens
-use Python standard-library modules.
-
-### Setup and run
-
-Install the repository dependencies, then start the API from the repository
-root:
+From the repository root:
 
 ```bash
 python -m pip install -r python/requirements.txt
 python projects/chat-application/app.py
 ```
 
-The default SQLite database is `projects/chat-application/chat.sqlite3`.
-Override it with `CHAT_DATABASE`; set `CHAT_SECRET_KEY` to a strong secret
-outside local development.
+The API listens on `http://127.0.0.1:5001`. The default database is
+`projects/chat-application/chat.sqlite3`. Set `CHAT_DATABASE` to change it and
+set `CHAT_SECRET_KEY` to a strong secret before use outside local development.
+The development fallback secret is not suitable for deployment.
 
-### API flow
+Check the process:
 
-1. `POST /auth/register` with `{"username":"alice","password":"at-least-8-chars"}`.
-2. `POST /auth/login` with the same credentials; send the returned token as
-   `Authorization: Bearer <access_token>`.
-3. `POST /rooms` with `{"name":"general"}`; the creator becomes the owner
-   and first member.
-4. The room owner adds an existing user with
-   `POST /rooms/<room_id>/members` and `{"user_id":2}`.
-5. Members send messages through `POST /rooms/<room_id>/messages` with
-   `{"body":"Hello"}`.
-6. Members retrieve history through
-   `GET /rooms/<room_id>/messages?limit=50` and continue older pages with
-   the returned `next_before_id` cursor.
-7. Connect to `ws://localhost:5001/ws/rooms/<room_id>`. The first WebSocket
-   frame must be `{"token":"<access_token>"}`. After a `ready` response, send
-   `{"type":"send","client_message_id":"<stable-client-id>","body":"Hello"}`.
-   The server broadcasts the persisted message as a `message` event to active
-   connections in that room.
+```bash
+curl http://127.0.0.1:5001/health
+```
+
+## Demo flow
+
+Run the API in one terminal. In another terminal, create two users and log in:
+
+```bash
+curl -s http://127.0.0.1:5001/auth/register \
+  -H 'Content-Type: application/json' \
+  -d '{"username":"alice","password":"correct-horse"}'
+
+curl -s http://127.0.0.1:5001/auth/register \
+  -H 'Content-Type: application/json' \
+  -d '{"username":"bob","password":"correct-horse"}'
+
+curl -s http://127.0.0.1:5001/auth/login \
+  -H 'Content-Type: application/json' \
+  -d '{"username":"alice","password":"correct-horse"}'
+```
+
+Use Alice's returned `access_token` as `TOKEN` below. Create a room and add
+Bob using Bob's numeric user `id` returned by registration:
+
+```bash
+export TOKEN='<alice-access-token>'
+export BOB_ID='<bob-user-id>'
+
+curl -s http://127.0.0.1:5001/rooms \
+  -H "Authorization: Bearer $TOKEN" \
+  -H 'Content-Type: application/json' \
+  -d '{"name":"general"}'
+```
+
+Use the returned room `id` as `ROOM_ID`, then add Bob:
+
+```bash
+export ROOM_ID='<room-id>'
+curl -s "http://127.0.0.1:5001/rooms/$ROOM_ID/members" \
+  -X POST -H "Authorization: Bearer $TOKEN" \
+  -H 'Content-Type: application/json' -d "{\"user_id\":$BOB_ID}"
+```
+
+Send and read a message over the REST API:
+
+```bash
+curl -s "http://127.0.0.1:5001/rooms/$ROOM_ID/messages" \
+  -X POST -H "Authorization: Bearer $TOKEN" \
+  -H 'Content-Type: application/json' \
+  -d '{"body":"Hello from the chat MVP","client_message_id":"demo-message-1"}'
+
+curl -s "http://127.0.0.1:5001/rooms/$ROOM_ID/messages" \
+  -H "Authorization: Bearer $TOKEN"
+```
+
+For live messaging, connect a WebSocket client to
+`ws://127.0.0.1:5001/ws/rooms/<room_id>`. Send the access token as the first
+JSON frame: `{"token":"<access_token>"}`. After receiving `{"type":"ready"}`,
+send `{"type":"send","body":"Hello live","client_message_id":"<stable-id>"}`.
+The server emits a `message` event containing the persisted message to every
+active socket in that room. Use the same stable ID when retrying after a
+reconnect; the server acknowledges the original persisted message to the
+retrying connection without broadcasting a second copy to the room.
+
+## API contract
+
+| Method | Endpoint | Behavior |
+|---|---|---|
+| POST | `/auth/register` | Create a user with a salted password hash |
+| POST | `/auth/login` | Issue a signed, time-limited bearer token |
+| POST | `/rooms` | Create a room; creator becomes owner and member |
+| GET | `/rooms` | List rooms the authenticated user belongs to |
+| POST | `/rooms/<room_id>/members` | Owner adds an existing user |
+| POST | `/rooms/<room_id>/messages` | Persist a room message; optional idempotency key |
+| GET | `/rooms/<room_id>/messages` | Read chronological history using `limit` and `before_id` |
+| WebSocket | `/ws/rooms/<room_id>` | Authenticated live room send and broadcast |
+| GET | `/health` | Process health check |
 
 All room and message operations require a valid bearer token and current room
-membership. Only the room owner can add members. WebSocket connections
-authenticate before joining a room and membership is rechecked for each send.
-Use a stable client-generated message ID when retrying after reconnect: the
-same sender, room, and ID resolve to the original persisted message rather
-than creating a duplicate. Message history remains the recovery path for
-messages missed while disconnected.
+membership. Only the room owner can add members. Message bodies are limited to
+4,000 characters by default; history page size is capped at 100.
 
-### Tests
+## Tests
+
+Install dependencies, then run from the repository root:
 
 ```bash
 python -m pytest projects/chat-application/tests -q
 ```
 
-### Scope and limitations
+The integration suite covers authentication, ownership and membership,
+persistence across app instances, validation, cursor pagination, REST
+idempotency, WebSocket authorization, live delivery, and reconnect
+deduplication.
 
-The WebSocket connection registry and live fan-out are in-process; they do
-not deliver between multiple worker processes or hosts. Durable SQLite history
-allows clients to recover missed messages after reconnect, while the
-client-generated message ID makes retries idempotent. A shared broker and
-production database are intentionally outside this MVP. Change the default
-development secret before exposing the service.
+## Known limitations
 
-
-
-## Real-time transport and reconnect behavior
-
-- WebSocket route: `/ws/rooms/<room_id>`.
-- Authentication is the first JSON frame; the access token is not placed in
-  the URL or logged by the application.
-- The server validates room membership at connection time and again before
-  accepting each message.
-- A message is committed to SQLite before it is broadcast to connected clients.
-- `client_message_id` is unique per room and sender. Replaying the same ID
-  returns the original message, making reconnect retries safe.
-- The in-process socket registry is a single-process demo adapter, not
-  cross-instance delivery. Clients use the REST history endpoint to catch up
-  after disconnects.
-
-Install dependencies and run the integration tests:
-
-```bash
-python -m pip install -r python/requirements.txt
-python -m pytest projects/chat-application/tests -q
-```
+- Live fan-out is process-local. Multiple workers or hosts require a shared
+  broker/pub-sub layer; this MVP does not claim cross-instance delivery.
+- A disconnected client catches up through the REST history endpoint; there
+  is no automatic replay protocol on WebSocket reconnect.
+- Slow-consumer backpressure, presence, read receipts, typing indicators,
+  message edits/deletes, and delivery acknowledgements are out of scope.
+- SQLite and the development server are for a local demonstration, not a
+  production deployment. Production use needs managed secrets, TLS, a
+  production database/migrations, operational monitoring, and a broker-backed
+  gateway design.

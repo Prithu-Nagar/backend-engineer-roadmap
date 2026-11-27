@@ -401,6 +401,11 @@ def create_app(config: dict[str, Any] | None = None) -> Flask:
                         ).fetchone()
                 event = {"type": "message", "message": dict(row), "duplicate": duplicate}
                 encoded = json.dumps(event)
+                if duplicate:
+                    # A retry needs an acknowledgement, not a second room-wide
+                    # delivery of a message that recipients already received.
+                    ws.send(encoded)
+                    continue
                 with socket_lock:
                     recipients = tuple(room_sockets.get(room_id, ()))
                 for recipient in recipients:

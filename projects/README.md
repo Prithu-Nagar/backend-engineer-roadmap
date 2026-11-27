@@ -228,7 +228,7 @@ request/response flow.
 | URL Shortener | Django model/migrations/DRF layer and a separate FastAPI comparison app | Learning implementation; verify redirect, runtime, and deployment before claiming completion |
 | Expense Tracker | SQL schema and separate CRUD, caching, async, reliability, and observability exercises | Learning modules; no single integrated API application is documented here |
 | Blog API | No project implementation directory in this archive | Not implemented |
-| Chat Application | System-design HLD/LLD learning material exists; no complete application implementation | Design exercise, not a completed application |
+| Chat Application | Flask/Flask-Sock API with authenticated rooms, SQLite message history, cursor pagination, WebSocket broadcast, and retry idempotency | **In progress** — runnable single-process MVP and focused integration tests are present; final acceptance remains pending a successful dependency-installed test run |
 
 The Task Manager and URL Shortener READMEs contain their own acceptance and
 verification notes. Do not mark a project complete solely because its topic
@@ -993,8 +993,12 @@ The artifact documents:
 - Backpressure and slow-consumer handling
 - Reliability and implementation boundaries
 
-The project remains design-first and complements the standalone Chat Application
-HLD in `system-design/chat-application-hld.md`.
+The architecture artifact remains the design reference and complements the
+standalone Chat Application HLD in `system-design/chat-application-hld.md`.
+The Phase 2 implementation adds authenticated rooms, durable SQLite messages,
+paginated history, WebSocket send/broadcast, and reconnect-safe idempotency.
+The current MVP is single-process; see the project README and architecture
+for the demo path and explicit limitations.
 
 ---
 
@@ -1144,3 +1148,16 @@ per-key state, thread-safe decisions, retry timing, a demo, and deterministic
 boundary/concurrency tests. The Redis-backed atomic implementation remains a
 separate follow-up milestone; this implementation does not share state across
 processes or hosts.
+
+
+## Chat Application — Runnable MVP
+
+The project now includes an integrated Flask/Flask-Sock application with
+authenticated room membership, persistent SQLite messages, paginated history,
+and room-scoped WebSocket delivery. Stable client message IDs make REST and
+WebSocket retries idempotent. The local connection registry is process-local;
+cross-instance fan-out and slow-consumer backpressure remain out of scope.
+
+See `projects/chat-application/README.md` for setup, demo, API contract, tests,
+and known limitations, and `projects/chat-application/architecture.md` for
+the implemented component boundaries and message flows.
