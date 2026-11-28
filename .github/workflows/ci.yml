@@ -38,6 +38,9 @@ jobs:
       - name: Run Expense Tracker tests
         run: pytest -q projects/expense-tracker/tests
 
+      - name: Run News Feed tests with coverage
+        run: pytest --cov=projects/news-feed --cov-report=term-missing --cov-report=xml:coverage-news-feed.xml -q projects/news-feed/tests
+
   docker-build:
     name: Build Docker image
     runs-on: ubuntu-latest

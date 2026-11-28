@@ -1,102 +1,69 @@
-# News Feed — Architecture
+# News Feed Architecture
 
-## Day 69
+## Components
 
-Day 69 turns the News Feed HLD into a project-oriented architecture artifact
-for implementation planning and interview discussion.
+- **API layer:** Flask routes handle authentication, profile, follow, and post
+  requests.
+- **Authentication:** HMAC-signed bearer tokens identify the caller. Passwords
+  are stored as salted scrypt hashes.
+- **Persistence:** SQLite stores users, directed follow edges, and posts.
+  Foreign keys cascade when a user is removed.
 
-## Architecture
+## Data model
 
 ```text
-Client
-  |
-  v
-Feed API
-  |
-  +----> Redis / Feed Cache
-  |
-  +----> Feed Service ----> PostgreSQL / Feed Store
-  |
-  +----> Follow/Post data
+users
+  id (PK)
+  username (UNIQUE, case-insensitive)
+  password_salt
+  password_hash
+  bio
+  created_at
 
-Post creation
-  |
-  v
-Post Service
-  |
-  v
-Queue / Worker
-  |
-  +----> Materialized feed items
-  +----> Cache invalidation
+follows
+  follower_id (PK, FK -> users.id)
+  followed_id (PK, FK -> users.id)
+  created_at
+  CHECK follower_id != followed_id
+
+posts
+  id (PK)
+  author_id (FK -> users.id)
+  body
+  created_at
 ```
 
-## Core Flows
+The composite primary key on `follows` prevents duplicate edges. An additional
+index on `(followed_id, follower_id)` supports follower lookups. Posts have an
+index on `(author_id, id DESC)` for author timelines.
 
-### Read Feed
+## Request flows
 
-1. Authenticate the viewer.
-2. Validate page size and cursor.
-3. Check the bounded feed-page cache.
-4. On a miss, query the materialized feed or execute the indexed read query.
-5. Cache the result for a short TTL.
-6. Return items and an opaque next cursor.
-7. Record latency and cache-hit metrics.
+1. Registration validates the username/password and persists a salted password
+   hash.
+2. Login verifies the password and returns a signed, one-hour bearer token.
+3. Follow/unfollow operations use the authenticated user as `follower_id`;
+   clients cannot nominate another follower.
+4. Post creation derives `author_id` from the authenticated identity.
+5. Post retrieval returns the selected post to an authenticated user.
 
-### Publish Post
+## Current milestone boundary
 
-1. Authenticate the author.
-2. Persist the post.
-3. Publish a feed-propagation event.
-4. Workers materialize the post for eligible followers where fan-out-on-write
-   is appropriate.
-5. Invalidate or version affected first-page cache entries.
-6. Use retry-safe identifiers so repeated events do not create duplicates.
+This milestone establishes persistent users, directed follow relationships,
+profiles, and authenticated post creation/retrieval. Feed assembly, cursor
+pagination, and ranking are intentionally deferred to the next milestone.
 
-### Follow / Unfollow
+## Consistency and security
 
-1. Validate the target user.
-2. Persist the relationship change.
-3. Invalidate affected first-page caches.
-4. Reconcile materialized feed state asynchronously when required.
+- Each mutation runs in an explicit transaction.
+- Foreign keys and uniqueness constraints enforce relationship integrity.
+- SQL parameters are bound rather than interpolated.
+- All social graph and content endpoints require authentication.
+- Users cannot follow themselves or create content on behalf of another user.
 
-## Fan-Out Policy
+## Limitations
 
-The project uses a hybrid policy:
-
-- Normal accounts can use fan-out-on-write for fast reads.
-- Very high-fan-out accounts are read on demand to avoid massive write bursts.
-- The threshold should be data-driven and observable rather than hard-coded as a
-  universal constant.
-
-## Pagination
-
-Use cursor pagination instead of deep offsets.
-
-A cursor can represent the last `(created_at, post_id)` pair or a monotonic
-materialized `feed_item_id`. The API should keep the cursor opaque.
-
-## Caching
-
-Cache only bounded pages rather than an entire feed.
-
-Recommended controls:
-
-- Short TTL.
-- Versioned keys.
-- First-page priority.
-- Stampede protection for hot users.
-- Explicit invalidation after mutations.
-- Durable storage remains the source of truth.
-
-## Reliability Checklist
-
-- [ ] Feed reads use stable cursor pagination.
-- [ ] Cache failure falls back to durable storage.
-- [ ] Feed propagation is asynchronous.
-- [ ] High-fan-out authors do not cause unbounded synchronous writes.
-- [ ] Duplicate propagation is idempotent.
-- [ ] Deleted/private posts are filtered before delivery.
-- [ ] Queue lag and feed freshness are observable.
-- [ ] Database queries are reviewed with realistic `EXPLAIN` plans.
-- [ ] Cache keys do not expose sensitive data.
+This is a single-process Flask/SQLite MVP. It does not implement feed assembly, cursor
+pagination, ranking, likes,
+comments, media uploads, notifications, content moderation, block lists,
+search, engagement ranking, token revocation, or distributed caching.
